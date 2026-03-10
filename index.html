@@ -46,6 +46,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--cream);min-height:10
 .nav-tab .count{background:var(--surface);border-radius:10px;padding:1px 6px;font-size:10px;margin-left:4px;color:var(--stone);}
 .nav-add-btn{margin-left:auto;padding:8px 14px;border:1px dashed var(--border);border-radius:var(--radius);font-size:18px;color:var(--stone);cursor:pointer;background:transparent;transition:all .2s;}
 .nav-add-btn:hover{border-color:var(--gold);color:var(--gold);}
+.nav-moodboard-btn{padding:7px 13px;border:1px solid var(--gold);border-radius:var(--radius);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);cursor:pointer;background:transparent;font-family:var(--fb);transition:all .2s;white-space:nowrap;}
+.nav-moodboard-btn:hover{background:var(--gold);color:var(--bg);}
 
 /* ── ROOM SECTION ── */
 .room-section{padding:60px 24px 40px;max-width:1400px;margin:0 auto;border-bottom:1px solid var(--border);}
@@ -406,6 +408,7 @@ body.print-mode .card-move-wrap{display:none !important;}
   <button class="nav-tab" data-target="section-balcony">05 Balcony</button>
   <button class="nav-tab" data-target="section-kids">06 Kids</button>
   <button class="nav-add-btn" onclick="openAddRoomModal()" title="Add new room">＋</button>
+  <button class="nav-moodboard-btn" onclick="window.location.href='collage-board.html'" title="Open Mood Board">🎨 Mood Board</button>
 </nav>
 
 <!-- ═══ 01 LIVING ROOM ═══ -->
@@ -1063,6 +1066,9 @@ Decor &amp; Pillows</button>
 // INIT — wire up all static elements on load
 // ════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', function() {
+  // Prevent browser from restoring previous scroll position on reload
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
   initPhotoGrids();
   initCardGrids();
   initFilterBars();
@@ -2405,6 +2411,8 @@ function loadGallery() {
       var hasArchived = Object.keys(_archive).some(function(k) { return _archive[k] && _archive[k].length > 0; });
       if (hasArchived) document.getElementById('archive-section').style.display = '';
     }
+    // Clear any hardcoded HTML cards so we start with a clean slate
+    document.querySelectorAll('.card-grid .card').forEach(function(c) { c.remove(); });
     // Restore cards — replace importAll
     window._galleryLoading = true;
     data.cards.forEach(function(d) {
@@ -2412,7 +2420,7 @@ function loadGallery() {
       if (!grid) return;
       addCard(d.g, grid);
       var cards = grid.querySelectorAll('.card');
-      var card = cards[cards.length - 2] || cards[cards.length - 1];
+      var card = cards[cards.length - 1];
       if (!card) return;
       if (d.cid) card.dataset.cardId = d.cid;
       if (card.querySelector('.card-name')) card.querySelector('.card-name').textContent = d.name;
@@ -2663,6 +2671,8 @@ var items=[
 
 window._galleryCards={};
 function importAll(){
+  // Clear any hardcoded HTML cards before populating with default data
+  document.querySelectorAll('.card-grid .card').forEach(function(c) { c.remove(); });
   items.forEach(function(item){
     var grid=document.getElementById('grid-'+item.g);
     if(!grid)return;
