@@ -2750,6 +2750,12 @@ var items=[
 
 window._galleryCards={};
 function importAll(){
+  // Guard: if loadGallery() already restored from localStorage, bail out.
+  // The outer if(!_galleryLoaded) check runs at parse time (before DOMContentLoaded),
+  // so _galleryLoaded is always undefined there — this inner check is what actually works.
+  if (window._galleryLoaded) return;
+  // Suppress scrollIntoView on every addCard() call while populating
+  window._galleryLoading = true;
   // Clear any hardcoded HTML cards before populating with default data
   document.querySelectorAll('.card-grid .card').forEach(function(c) { c.remove(); });
   items.forEach(function(item){
@@ -2780,6 +2786,7 @@ function importAll(){
     syncCardToTable(card);
   });
   updateStats();
+  window._galleryLoading = false;
   setTimeout(applyImages,200);
 }
 function applyImages(){
