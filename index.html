@@ -1003,10 +1003,14 @@ Decor &amp; Pillows</button>
 <div id="gallery-bottom">
   <div class="gallery-toolbar">
     <button class="btn-toolbar gold" onclick="saveGallery()">💾 Save Gallery</button>
+    <button class="btn-toolbar" onclick="exportGalleryJSON()">⬇ Export JSON Backup</button>
+    <label class="btn-toolbar" style="cursor:pointer;" title="Restore from a previously exported JSON file">⬆ Import JSON<input type="file" accept=".json" style="display:none" onchange="importGalleryJSON(this)"></label>
+    <button class="btn-toolbar" onclick="togglePrintMode()">🖨 Print Mode</button>
+    <button class="btn-toolbar" onclick="window.print()">Print / Save PDF</button>
     <button class="btn-toolbar" onclick="openAiModal()">✨ AI Product Entry</button>
     <button class="btn-toolbar" onclick="findDuplicates()">🔍 Find Duplicates</button>
     <button class="btn-toolbar" onclick="document.getElementById('archive-section').style.display=document.getElementById('archive-section').style.display==='none'?'':'none'">📦 Toggle Archive</button>
-    <span class="save-status" id="save-status">Not saved</span>
+    <span class="save-status" id="save-status"></span>
   </div>
   <button class="btn-add-room" onclick="openAddRoomModal()">＋ Add New Room or Category</button>
 </div>
@@ -2414,6 +2418,62 @@ function saveGallery() {
     _setSaveStatus('unsaved', '✗ Save failed');
     console.warn('Gallery save error:', e);
   }
+}
+
+// ════════════════════════════════════════════
+// JSON EXPORT / IMPORT
+// ════════════════════════════════════════════
+function exportGalleryJSON() {
+  // Make sure we save the latest state first
+  saveGallery();
+  var raw = localStorage.getItem(_saveKey);
+  if (!raw) { alert('Nothing saved yet — add some items first.'); return; }
+  var date = new Date();
+  var stamp = date.getFullYear() + '-' +
+    String(date.getMonth()+1).padStart(2,'0') + '-' +
+    String(date.getDate()).padStart(2,'0');
+  var filename = 'sandy-gallery-backup-' + stamp + '.json';
+  var blob = new Blob([raw], { type: 'application/json' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  _setSaveStatus('saved', '✓ Exported ' + filename);
+  setTimeout(function(){ _setSaveStatus('', ''); }, 5000);
+}
+
+function importGalleryJSON(input) {
+  var file = input.files[0];
+  if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      var data = JSON.parse(e.target.result);
+      if (!data || !data.cards) { alert('Invalid backup file — no cards found.'); return; }
+      var count = data.cards.length;
+      var ok = confirm(
+        'Import backup from ' + new Date(data.ts).toLocaleDateString() + '?\n\n' +
+        'This will replace ALL current gallery items (' + count + ' items in the backup).\n\n' +
+        'Your current data will be overwritten. Export a backup first if needed.\n\nOK = Replace  |  Cancel = Keep current'
+      );
+      if (!ok) { input.value = ''; return; }
+      // Write to localStorage and reload
+      localStorage.setItem(_saveKey, JSON.stringify(data));
+      input.value = '';
+      // Reload the gallery in-place
+      document.querySelectorAll('.card-grid .card').forEach(function(c) { c.remove(); });
+      _archive = {};
+      loadGallery();
+      _setSaveStatus('saved', '✓ Imported ' + count + ' items');
+      setTimeout(function(){ _setSaveStatus('', ''); }, 5000);
+    } catch(err) {
+      alert('Could not read the file. Make sure it\'s a valid Sandy Gallery JSON backup.');
+      console.warn('Import error:', err);
+    }
+  };
+  reader.readAsText(file);
 }
 
 function loadGallery() {
