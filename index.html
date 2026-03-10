@@ -44,8 +44,27 @@ body{font-family:var(--fb);background:var(--bg);color:var(--cream);min-height:10
 .nav-tab:hover{color:var(--cream);}
 .nav-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
 .nav-tab .count{background:var(--surface);border-radius:10px;padding:1px 6px;font-size:10px;margin-left:4px;color:var(--stone);}
-.nav-add-btn{margin-left:auto;padding:8px 14px;border:1px dashed var(--border);border-radius:var(--radius);font-size:18px;color:var(--stone);cursor:pointer;background:transparent;transition:all .2s;}
+.nav-add-btn{padding:8px 14px;border:1px dashed var(--border);border-radius:var(--radius);font-size:18px;color:var(--stone);cursor:pointer;background:transparent;transition:all .2s;}
 .nav-add-btn:hover{border-color:var(--gold);color:var(--gold);}
+.nav-right-btns{margin-left:auto;display:flex;align-items:center;gap:4px;}
+.nav-hamburger{position:relative;}
+.nav-ham-btn{padding:10px 14px;background:transparent;border:none;color:var(--stone);font-size:16px;cursor:pointer;font-family:var(--fb);transition:color .2s;line-height:1;}
+.nav-ham-btn:hover{color:var(--gold);}
+.nav-ham-menu{position:absolute;right:0;top:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);min-width:190px;z-index:300;display:none;box-shadow:0 8px 32px rgba(0,0,0,.6);}
+.nav-ham-menu.open{display:block;}
+.nav-ham-item{display:block;width:100%;padding:11px 16px;background:transparent;border:none;color:var(--sand);font-size:12px;font-family:var(--fb);cursor:pointer;text-align:left;transition:background .15s;letter-spacing:.3px;white-space:nowrap;}
+.nav-ham-item:hover{background:var(--surface);color:var(--cream);}
+.nav-ham-item:first-child{border-radius:var(--radius) var(--radius) 0 0;}
+.nav-ham-item:last-child{border-radius:0 0 var(--radius) var(--radius);}
+/* ⋯ card menu */
+.card-dot-menu{position:relative;}
+.btn-card-dots{background:transparent;border:1px solid var(--border);color:var(--stone);padding:4px 10px;font-size:15px;border-radius:4px;cursor:pointer;font-family:var(--fb);transition:all .2s;line-height:1;letter-spacing:2px;}
+.btn-card-dots:hover{border-color:var(--gold);color:var(--gold);}
+.card-dot-dropdown{position:absolute;bottom:100%;right:0;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);min-width:170px;z-index:50;display:none;box-shadow:0 -4px 24px rgba(0,0,0,.5);margin-bottom:4px;}
+.card-dot-dropdown.open{display:block;}
+.card-dot-item{display:block;width:100%;padding:10px 14px;background:transparent;border:none;color:var(--sand);font-size:12px;font-family:var(--fb);cursor:pointer;text-align:left;transition:background .15s;white-space:nowrap;}
+.card-dot-item:hover{background:var(--surface);color:var(--cream);}
+.card-dot-item.danger:hover{color:#e74c3c;}
 
 /* ── ROOM SECTION ── */
 .room-section{padding:60px 24px 40px;max-width:1400px;margin:0 auto;border-bottom:1px solid var(--border);}
@@ -404,7 +423,19 @@ body.print-mode .card-move-wrap{display:none !important;}
   <button class="nav-tab" data-target="section-barstools">04 Bar Stools</button>
   <button class="nav-tab" data-target="section-balcony">05 Balcony</button>
   <button class="nav-tab" data-target="section-kids">06 Kids</button>
-  <button class="nav-add-btn" onclick="openAddRoomModal()" title="Add new room">＋</button>
+  <div class="nav-right-btns">
+    <button class="nav-add-btn" onclick="openAddRoomModal()" title="Add new room">＋</button>
+    <div class="nav-hamburger" id="nav-hamburger">
+      <button class="nav-ham-btn" onclick="toggleNavHam()" title="Menu">☰</button>
+      <div class="nav-ham-menu" id="nav-ham-menu">
+        <button class="nav-ham-item" onclick="saveGallery();closeNavHam()">💾 Save Gallery</button>
+        <button class="nav-ham-item" onclick="openAiModal();closeNavHam()">✨ AI Product Entry</button>
+        <button class="nav-ham-item" onclick="findDuplicates();closeNavHam()">🔍 Find Duplicates</button>
+        <button class="nav-ham-item" onclick="toggleArchive();closeNavHam()">📦 Toggle Archive</button>
+        <button class="nav-ham-item" onclick="openAddRoomModal();closeNavHam()">➕ Add New Room</button>
+      </div>
+    </div>
+  </div>
 </nav>
 
 <!-- ═══ 01 LIVING ROOM ═══ -->
@@ -1087,7 +1118,28 @@ document.addEventListener('DOMContentLoaded', function() {
   setTimeout(refreshAllCompTables, 50);
   updateStats();
   hookAutoSave();
+  // Force scroll to top after everything renders — prevents hash/observer scroll bugs
+  setTimeout(function() { window.scrollTo(0, 0); }, 150);
+  // Close nav hamburger when clicking outside
+  document.addEventListener('click', function(e) {
+    var ham = document.getElementById('nav-hamburger');
+    if (ham && !ham.contains(e.target)) closeNavHam();
+  });
 });
+
+function toggleNavHam() {
+  var menu = document.getElementById('nav-ham-menu');
+  if (menu) menu.classList.toggle('open');
+}
+function closeNavHam() {
+  var menu = document.getElementById('nav-ham-menu');
+  if (menu) menu.classList.remove('open');
+}
+function toggleArchive() {
+  var sec = document.getElementById('archive-section');
+  if (!sec) return;
+  sec.style.display = (sec.style.display === 'none' || !sec.style.display) ? '' : 'none';
+}
 
 // ── Photo grid slots (click + paste + upload) ──
 function initPhotoGrids() {
@@ -1251,16 +1303,21 @@ function initNavTabs() {
 }
 
 // ── IntersectionObserver for nav active state ──
+// _ioReady flag prevents the observer from firing during initial page render
+// (which caused the gallery to auto-jump to "04 Bar Stools" on every load)
+var _ioReady = false;
+setTimeout(function() { _ioReady = true; }, 900);
 var io = new IntersectionObserver(function(entries) {
+  if (!_ioReady) return;
   entries.forEach(function(e) {
-    if (e.isIntersecting && e.intersectionRatio > 0.2) {
+    if (e.isIntersecting && e.intersectionRatio > 0.3) {
       var id = e.target.id;
       document.querySelectorAll('.nav-tab').forEach(function(t) {
         t.classList.toggle('active', t.dataset.target === id);
       });
     }
   });
-}, { threshold: 0.2 });
+}, { threshold: 0.3, rootMargin: '-5% 0px -55% 0px' });
 document.querySelectorAll('.room-section').forEach(function(s) { io.observe(s); });
 
 // ════════════════════════════════════════════
@@ -2190,23 +2247,73 @@ function renderArchive() {
 function buildArchivedCard(d, cat, idx) {
   var card = document.createElement('div');
   card.className = 'card';
-  card.style.opacity = '.75';
-  card.innerHTML = '<div class="card-body" style="padding:14px;">' +
-    '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--stone);margin-bottom:6px;">Archived from: ' + cat + '</div>' +
-    '<div class="card-store" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);">' + (d.store||'') + '</div>' +
-    '<div class="card-name" style="font-family:var(--fd);font-size:16px;font-weight:600;color:var(--cream);margin:4px 0;">' + (d.name||'') + '</div>' +
-    '<div class="card-price" style="font-family:var(--fd);font-size:20px;color:var(--gold);">' + (d.price||'') + '</div>' +
-    '</div>' +
-    '<div class="card-footer"><button class="btn-restore-card">↩ Restore</button><button class="btn-remove-card">Delete</button></div>';
-  card.querySelector('.btn-restore-card').addEventListener('click', function() {
-    restoreFromArchive(d, cat, idx);
+  card.style.opacity = '.8';
+
+  var body = document.createElement('div');
+  body.className = 'card-body';
+  body.style.padding = '14px';
+
+  var fromLabel = document.createElement('div');
+  fromLabel.style.cssText = 'font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--stone);margin-bottom:6px;';
+  fromLabel.textContent = '📦 Archived from: ' + cat;
+  body.appendChild(fromLabel);
+
+  var storeEl = document.createElement('div');
+  storeEl.style.cssText = 'font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);';
+  storeEl.textContent = d.store || '';
+  body.appendChild(storeEl);
+
+  var nameEl = document.createElement('div');
+  nameEl.style.cssText = 'font-family:var(--fd);font-size:16px;font-weight:600;color:var(--cream);margin:4px 0;';
+  nameEl.textContent = d.name || '';
+  body.appendChild(nameEl);
+
+  var priceEl = document.createElement('div');
+  priceEl.style.cssText = 'font-family:var(--fd);font-size:20px;color:var(--gold);';
+  priceEl.textContent = d.price || '';
+  body.appendChild(priceEl);
+
+  // Product link ↗
+  if (d.url) {
+    var linkEl = document.createElement('a');
+    linkEl.textContent = 'View Product ↗';
+    linkEl.href = d.url.startsWith('http') ? d.url : 'https://' + d.url;
+    linkEl.target = '_blank';
+    linkEl.rel = 'noopener noreferrer';
+    linkEl.style.cssText = 'display:inline-block;margin-top:8px;font-size:11px;color:var(--gold);text-decoration:none;letter-spacing:.5px;';
+    linkEl.addEventListener('mouseenter', function(){ this.style.textDecoration='underline'; });
+    linkEl.addEventListener('mouseleave', function(){ this.style.textDecoration='none'; });
+    body.appendChild(linkEl);
+  }
+
+  card.appendChild(body);
+
+  var footer = document.createElement('div');
+  footer.className = 'card-footer';
+  footer.style.gap = '8px';
+
+  var restoreBtn = document.createElement('button');
+  restoreBtn.textContent = '↩ Restore';
+  restoreBtn.style.cssText = 'background:transparent;border:1px solid var(--gold);color:var(--gold);padding:5px 12px;font-size:11px;border-radius:4px;cursor:pointer;font-family:var(--fb);transition:all .2s;';
+  restoreBtn.addEventListener('click', function() { restoreFromArchive(d, cat, idx); });
+
+  var deleteBtn = document.createElement('button');
+  deleteBtn.textContent = '🗑 Delete';
+  deleteBtn.style.cssText = 'background:transparent;border:1px solid var(--border);color:var(--stone);padding:5px 12px;font-size:11px;border-radius:4px;cursor:pointer;font-family:var(--fb);transition:all .2s;';
+  deleteBtn.addEventListener('mouseenter', function(){ this.style.borderColor='#c0392b';this.style.color='#c0392b'; });
+  deleteBtn.addEventListener('mouseleave', function(){ this.style.borderColor='var(--border)';this.style.color='var(--stone)'; });
+  deleteBtn.addEventListener('click', function() {
+    if (confirm('Permanently delete "' + (d.name||'this item') + '"?\n\nOK = Delete   Cancel = Keep')) {
+      _archive[cat].splice(idx, 1);
+      if (_archive[cat].length === 0) delete _archive[cat];
+      renderArchive();
+      scheduleSave();
+    }
   });
-  card.querySelector('.btn-remove-card').addEventListener('click', function() {
-    _archive[cat].splice(idx, 1);
-    if (_archive[cat].length === 0) delete _archive[cat];
-    renderArchive();
-    scheduleSave();
-  });
+
+  footer.appendChild(restoreBtn);
+  footer.appendChild(deleteBtn);
+  card.appendChild(footer);
   return card;
 }
 
@@ -2237,24 +2344,64 @@ function restoreFromArchive(d, cat, idx) {
   card.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
-// Patch the remove card button to offer Archive option
+// Replace the remove card button with a ⋯ menu (Archive / Delete with confirm)
 function patchRemoveBtn(card) {
   var btn = card.querySelector('.btn-remove-card');
   if (!btn || btn._archivePatch) return;
   btn._archivePatch = true;
-  btn.removeEventListener('click', btn._origHandler);
-  btn.addEventListener('click', function(e) {
+  // Convert button to ⋯ style
+  btn.textContent = '⋯';
+  btn.className = 'btn-card-dots';
+  btn.title = 'Card options';
+
+  // Build dropdown
+  var footer = btn.parentElement;
+  footer.style.position = 'relative';
+  var wrapper = document.createElement('div');
+  wrapper.className = 'card-dot-menu';
+
+  var dropdown = document.createElement('div');
+  dropdown.className = 'card-dot-dropdown';
+
+  var archiveItem = document.createElement('button');
+  archiveItem.className = 'card-dot-item';
+  archiveItem.textContent = '📦 Archive Card';
+  archiveItem.addEventListener('click', function(e) {
     e.stopPropagation();
-    var choice = confirm('Archive this card instead of deleting it permanently?\n\nOK = Archive (recoverable)\nCancel = Delete permanently');
-    if (choice) {
-      archiveCard(card);
-    } else {
+    dropdown.classList.remove('open');
+    archiveCard(card);
+  });
+
+  var deleteItem = document.createElement('button');
+  deleteItem.className = 'card-dot-item danger';
+  deleteItem.textContent = '🗑 Delete Card';
+  deleteItem.addEventListener('click', function(e) {
+    e.stopPropagation();
+    dropdown.classList.remove('open');
+    var name = ((card.querySelector('.card-name') || {}).textContent || 'this card').trim();
+    if (confirm('Are you sure you want to permanently delete "' + name + '"?\n\nThis cannot be undone.\n\nOK = Delete   Cancel = Keep')) {
       removeCardFromTable(card);
       card.remove();
       updateStats();
       scheduleSave();
     }
   });
+
+  dropdown.appendChild(archiveItem);
+  dropdown.appendChild(deleteItem);
+
+  // Replace btn in DOM
+  footer.replaceChild(wrapper, btn);
+  btn.removeEventListener('click', btn._origHandler);
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    dropdown.classList.toggle('open');
+  });
+  wrapper.appendChild(btn);
+  wrapper.appendChild(dropdown);
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function() { dropdown.classList.remove('open'); });
 }
 
 // ════════════════════════════════════════════
@@ -2292,9 +2439,24 @@ function findDuplicates() {
       row.style.cssText = 'display:flex;align-items:center;gap:8px;margin-bottom:6px;';
       var price = ((card.querySelector('.card-price') || {}).textContent || '').trim();
       var store = ((card.querySelector('.card-store') || {}).textContent || '').trim();
+      var urlVal = (card.querySelector('.card-url') || {}).value || '';
       var label = document.createElement('span');
-      label.style.cssText = 'flex:1;font-size:12px;color:var(--sand);';
-      label.textContent = (i === 0 ? '✓ Keep: ' : '✗ Dupe: ') + store + ' — ' + price;
+      label.style.cssText = 'flex:1;font-size:12px;color:var(--sand);display:flex;align-items:center;gap:6px;';
+      var labelText = document.createElement('span');
+      labelText.textContent = (i === 0 ? '✓ Keep: ' : '✗ Dupe: ') + store + ' — ' + price;
+      label.appendChild(labelText);
+      if (urlVal) {
+        var urlLink = document.createElement('a');
+        urlLink.textContent = '↗';
+        urlLink.href = urlVal.startsWith('http') ? urlVal : 'https://' + urlVal;
+        urlLink.target = '_blank';
+        urlLink.rel = 'noopener noreferrer';
+        urlLink.title = 'Open product URL in new tab';
+        urlLink.style.cssText = 'color:var(--gold);text-decoration:none;font-size:13px;opacity:.8;';
+        urlLink.addEventListener('mouseenter', function() { this.style.opacity='1'; this.style.textDecoration='underline'; });
+        urlLink.addEventListener('mouseleave', function() { this.style.opacity='.8'; this.style.textDecoration='none'; });
+        label.appendChild(urlLink);
+      }
       var chk = document.createElement('button');
       chk.style.cssText = 'padding:3px 8px;font-size:10px;border:1px solid var(--border);border-radius:4px;background:transparent;color:var(--stone);cursor:pointer;font-family:var(--fb);';
       chk.textContent = i === 0 ? 'Keep' : 'Remove';
@@ -2309,13 +2471,13 @@ function findDuplicates() {
             chk.textContent = 'Keep';
             chk.style.color = 'var(--stone)';
             chk.style.borderColor = 'var(--border)';
-            label.textContent = '✓ Keep: ' + store + ' — ' + price;
+            labelText.textContent = '✓ Keep: ' + store + ' — ' + price;
           } else {
             _dupesToRemove.push(card);
             chk.textContent = 'Remove';
             chk.style.color = '#c0392b';
             chk.style.borderColor = 'rgba(192,57,43,.4)';
-            label.textContent = '✗ Dupe: ' + store + ' — ' + price;
+            labelText.textContent = '✗ Dupe: ' + store + ' — ' + price;
           }
         });
       }
