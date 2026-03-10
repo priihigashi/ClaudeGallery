@@ -48,6 +48,11 @@ body{font-family:var(--fb);background:var(--bg);color:var(--cream);min-height:10
 .nav-add-btn:hover{border-color:var(--gold);color:var(--gold);}
 .nav-moodboard-btn{padding:7px 13px;border:1px solid var(--gold);border-radius:var(--radius);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);cursor:pointer;background:transparent;font-family:var(--fb);transition:all .2s;white-space:nowrap;}
 .nav-moodboard-btn:hover{background:var(--gold);color:var(--bg);}
+.nav-save-btn{padding:7px 13px;border:1px solid var(--border);border-radius:var(--radius);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--stone);cursor:pointer;background:transparent;font-family:var(--fb);transition:all .2s;white-space:nowrap;}
+.nav-save-btn:hover{border-color:var(--cream);color:var(--cream);}
+.nav-save-btn.unsaved{border-color:#e8a020;color:#e8a020;}
+.nav-save-btn.saved{border-color:#5a9e5a;color:#5a9e5a;}
+.nav-save-status{font-size:10px;letter-spacing:1px;color:var(--stone);white-space:nowrap;opacity:.7;}
 
 /* ── ROOM SECTION ── */
 .room-section{padding:60px 24px 40px;max-width:1400px;margin:0 auto;border-bottom:1px solid var(--border);}
@@ -408,6 +413,8 @@ body.print-mode .card-move-wrap{display:none !important;}
   <button class="nav-tab" data-target="section-balcony">05 Balcony</button>
   <button class="nav-tab" data-target="section-kids">06 Kids</button>
   <button class="nav-add-btn" onclick="openAddRoomModal()" title="Add new room">＋</button>
+  <button class="nav-save-btn" id="nav-save-btn" onclick="saveGallery()" title="Save all changes now">💾 Save</button>
+  <span class="nav-save-status" id="nav-save-status"></span>
   <button class="nav-moodboard-btn" onclick="window.location.href='collage-board.html'" title="Open Mood Board">🎨 Mood Board</button>
 </nav>
 
@@ -2354,11 +2361,21 @@ function removeAllDupes() {
 var _saveTimer = null;
 var _saveKey = 'gallery-v1';
 
+function _setSaveStatus(state, msg) {
+  // Bottom status (legacy)
+  var st = document.getElementById('save-status');
+  if (st) st.textContent = msg;
+  // Nav button + status
+  var btn = document.getElementById('nav-save-btn');
+  var nst = document.getElementById('nav-save-status');
+  if (btn) { btn.classList.remove('unsaved','saved'); if (state) btn.classList.add(state); }
+  if (nst) nst.textContent = msg;
+}
+
 function scheduleSave() {
   clearTimeout(_saveTimer);
   _saveTimer = setTimeout(saveGallery, 1500);
-  var st = document.getElementById('save-status');
-  if (st) st.textContent = 'Unsaved changes...';
+  _setSaveStatus('unsaved', '● Unsaved');
 }
 
 function saveGallery() {
@@ -2389,11 +2406,12 @@ function saveGallery() {
       });
     });
     localStorage.setItem(_saveKey, JSON.stringify(data));
-    var st = document.getElementById('save-status');
-    if (st) { st.textContent = 'Saved ✓'; setTimeout(function(){ st.textContent = ''; }, 3000); }
+    var t = new Date();
+    var ts = t.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+    _setSaveStatus('saved', '✓ Saved ' + ts);
+    setTimeout(function(){ _setSaveStatus('', ''); }, 5000);
   } catch(e) {
-    var st = document.getElementById('save-status');
-    if (st) st.textContent = 'Save failed (storage full?)';
+    _setSaveStatus('unsaved', '✗ Save failed');
     console.warn('Gallery save error:', e);
   }
 }
@@ -2437,9 +2455,10 @@ function loadGallery() {
     });
     window._galleryLoading = false;
     updateStats();
-    var st = document.getElementById('save-status');
     var d = new Date(data.ts);
-    if (st) st.textContent = 'Restored from ' + d.toLocaleDateString() + ' ' + d.toLocaleTimeString();
+    var ts = d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+    _setSaveStatus('saved', '✓ Restored ' + d.toLocaleDateString() + ' ' + ts);
+    setTimeout(function(){ _setSaveStatus('', ''); }, 6000);
     return true;
   } catch(e) {
     console.warn('Gallery load error:', e);
