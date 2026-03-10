@@ -1576,7 +1576,7 @@ function addCard(sectionId, grid) {
   patchRemoveBtn(card);
   syncCardToTable(card);
   updateStats();
-  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  if (!window._galleryLoading) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 // ════════════════════════════════════════════
@@ -2406,6 +2406,7 @@ function loadGallery() {
       if (hasArchived) document.getElementById('archive-section').style.display = '';
     }
     // Restore cards — replace importAll
+    window._galleryLoading = true;
     data.cards.forEach(function(d) {
       var grid = document.getElementById('grid-' + d.g);
       if (!grid) return;
@@ -2426,6 +2427,7 @@ function loadGallery() {
       if (d.badge && d.badgeClass) setBadge(card, d.status, d.badge, d.badgeClass);
       syncCardToTable(card);
     });
+    window._galleryLoading = false;
     updateStats();
     var st = document.getElementById('save-status');
     var d = new Date(data.ts);
