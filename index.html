@@ -100,6 +100,7 @@ body.print-mode .slot-upload-btn{background:#f5f0e4 !important;border-color:#c8b
 .comp-table-toggle:hover{color:var(--gold);}
 .comp-table-body{display:block;overflow-x:auto;}
 .comp-table-body.open{display:block;}
+.comp-table-body.closed{display:none;}
 .comp-table{width:100%;border-collapse:collapse;font-size:12px;white-space:nowrap;}
 .comp-table th{background:var(--surface);color:var(--gold);padding:10px 14px;font-weight:500;letter-spacing:1px;text-align:left;border-bottom:1px solid var(--border);outline:none;}
 .comp-table th[contenteditable="true"]:focus{background:var(--surface2);}
@@ -307,6 +308,54 @@ body.print-mode .nav-add-btn            { color:#7a6840 !important; border-color
 .hidden{display:none !important;}
 [contenteditable="true"]{cursor:text;}
 [contenteditable="true"]:empty::before{content:attr(data-placeholder);opacity:.4;font-style:italic;}
+
+/* ── DELETE SUB-CAT BUTTON ── */
+.btn-delete-subcat{margin-left:auto;padding:4px 10px;font-size:10px;letter-spacing:1px;background:transparent;border:1px solid rgba(192,57,43,.3);color:#c0392b;border-radius:4px;cursor:pointer;font-family:var(--fb);opacity:0;transition:all .2s;}
+.sub-cat-header:hover .btn-delete-subcat{opacity:1;}
+.btn-delete-subcat:hover{background:rgba(192,57,43,.12);border-color:#c0392b;}
+
+/* ── PRICE SORT BAR ── */
+.price-sort-bar{display:flex;gap:6px;align-items:center;padding:6px 12px;background:var(--surface2);border-top:1px solid var(--border);}
+.price-sort-label{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--stone);}
+.price-sort-btn{padding:4px 10px;border:1px solid var(--border);border-radius:12px;background:transparent;color:var(--stone);font-size:10px;letter-spacing:.5px;cursor:pointer;font-family:var(--fb);transition:all .2s;}
+.price-sort-btn:hover{border-color:var(--gold);color:var(--gold);}
+.price-sort-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.08);}
+
+/* ── ARCHIVE SECTION ── */
+#archive-section{padding:60px 24px 40px;max-width:1400px;margin:0 auto;border-top:2px dashed var(--border);}
+.archive-header{display:flex;align-items:center;gap:20px;margin-bottom:32px;flex-wrap:wrap;}
+.archive-title{font-family:var(--fd);font-size:clamp(24px,3vw,36px);font-weight:300;font-style:italic;color:var(--stone);}
+.archive-subtitle{font-size:12px;color:var(--stone);letter-spacing:1px;}
+.archive-cat-block{margin-bottom:40px;}
+.archive-cat-title{font-family:var(--fd);font-size:18px;font-style:italic;color:var(--stone);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.archive-cat-title span{font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-left:8px;opacity:.6;}
+.btn-restore-card{background:transparent;border:1px solid var(--border);color:var(--stone);padding:5px 10px;font-size:11px;border-radius:4px;cursor:pointer;font-family:var(--fb);transition:all .2s;margin-right:6px;}
+.btn-restore-card:hover{border-color:var(--gold);color:var(--gold);}
+.archive-empty{font-size:13px;color:var(--stone);font-style:italic;text-align:center;padding:40px;opacity:.5;}
+
+/* ── DUPE HIGHLIGHT ── */
+.card.dupe-flag{border-color:rgba(235,87,87,.6) !important;box-shadow:0 0 0 2px rgba(235,87,87,.2);}
+
+/* ── TOOLBAR (save + tools) ── */
+.gallery-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:24px;}
+.btn-toolbar{padding:9px 18px;border:1px solid var(--border);border-radius:var(--radius);background:transparent;color:var(--stone);font-family:var(--fb);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .2s;}
+.btn-toolbar:hover{border-color:var(--gold);color:var(--gold);}
+.btn-toolbar.gold{background:var(--gold);border-color:var(--gold);color:#0F0E08;font-weight:500;}
+.btn-toolbar.gold:hover{background:var(--gold2);}
+.save-status{font-size:11px;color:var(--stone);letter-spacing:1px;opacity:.7;}
+
+/* ── CLAUDE AI MODAL ── */
+.modal-box.wide{max-width:560px;}
+.ai-textarea{width:100%;min-height:100px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;color:var(--cream);font-family:var(--fb);font-size:13px;resize:vertical;outline:none;margin-bottom:12px;line-height:1.6;}
+.ai-textarea:focus{border-color:var(--gold);}
+.ai-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:block;}
+.ai-result-box{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;font-size:12px;color:var(--sand);line-height:1.7;margin-bottom:12px;display:none;}
+.ai-result-box.visible{display:block;}
+.ai-status{font-size:12px;color:var(--stone);font-style:italic;margin-bottom:8px;min-height:18px;}
+.ai-key-row{display:flex;gap:8px;align-items:center;margin-bottom:12px;}
+.ai-key-input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:8px 12px;color:var(--cream);font-family:var(--fb);font-size:12px;outline:none;}
+.ai-key-input:focus{border-color:var(--gold);}
+.ai-cat-select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:8px 12px;color:var(--cream);font-family:var(--fb);font-size:13px;outline:none;margin-bottom:12px;}
 
 /* ── CARD MOVE LABEL ── */
 .card-move-wrap{padding:4px 0 6px;display:flex;align-items:center;gap:5px;position:relative;}
@@ -929,7 +978,25 @@ Decor &amp; Pillows</button>
   </div>
 </section>
 
+<!-- ARCHIVE SECTION -->
+<div id="archive-section" style="display:none;">
+  <div class="archive-header">
+    <div>
+      <div class="archive-title">Archive</div>
+      <div class="archive-subtitle">Removed items — organized by original category</div>
+    </div>
+  </div>
+  <div id="archive-body"><div class="archive-empty">No archived items yet. Use "Archive" instead of "Remove" on any card.</div></div>
+</div>
+
 <div id="gallery-bottom">
+  <div class="gallery-toolbar">
+    <button class="btn-toolbar gold" onclick="saveGallery()">💾 Save Gallery</button>
+    <button class="btn-toolbar" onclick="openAiModal()">✨ AI Product Entry</button>
+    <button class="btn-toolbar" onclick="findDuplicates()">🔍 Find Duplicates</button>
+    <button class="btn-toolbar" onclick="document.getElementById('archive-section').style.display=document.getElementById('archive-section').style.display==='none'?'':'none'">📦 Toggle Archive</button>
+    <span class="save-status" id="save-status">Not saved</span>
+  </div>
   <button class="btn-add-room" onclick="openAddRoomModal()">＋ Add New Room or Category</button>
 </div>
 
@@ -957,6 +1024,39 @@ Decor &amp; Pillows</button>
   </div>
 </div>
 
+<!-- CLAUDE AI MODAL -->
+<div class="modal-overlay" id="modal-ai">
+  <div class="modal-box wide">
+    <div class="modal-title">✨ AI Product Entry</div>
+    <label class="ai-label">Describe the product</label>
+    <textarea class="ai-textarea" id="ai-description" placeholder="e.g. West Elm Andes sofa 103 inches wide in charcoal linen $1,299 for the living room"></textarea>
+    <label class="ai-label">Add to category</label>
+    <select class="ai-cat-select" id="ai-target-cat"></select>
+    <label class="ai-label">Anthropic API Key <span style="font-size:10px;font-weight:300;text-transform:none;letter-spacing:0;">(stored only in this browser session)</span></label>
+    <div class="ai-key-row">
+      <input class="ai-key-input" id="ai-api-key" type="password" placeholder="sk-ant-...">
+    </div>
+    <div class="ai-status" id="ai-status"></div>
+    <div class="ai-result-box" id="ai-result"></div>
+    <div class="modal-actions">
+      <button class="modal-btn" onclick="closeModal('modal-ai')">Cancel</button>
+      <button class="modal-btn primary" id="ai-submit-btn" onclick="runAiProductEntry()">Generate Card</button>
+    </div>
+  </div>
+</div>
+
+<!-- DUPLICATE MODAL -->
+<div class="modal-overlay" id="modal-dupes">
+  <div class="modal-box wide">
+    <div class="modal-title">🔍 Duplicate Cards</div>
+    <div id="dupe-list" style="max-height:360px;overflow-y:auto;margin-bottom:16px;"></div>
+    <div class="modal-actions">
+      <button class="modal-btn" onclick="closeModal('modal-dupes')">Close</button>
+      <button class="modal-btn primary" onclick="removeAllDupes()">Remove All Duplicates</button>
+    </div>
+  </div>
+</div>
+
 <script>
 // ════════════════════════════════════════════
 // INIT — wire up all static elements on load
@@ -969,8 +1069,24 @@ document.addEventListener('DOMContentLoaded', function() {
   initNavTabs();
   addAddCardPlaceholders();
   initSubCatTitles();
+  initPriceSortBars();
+  // Wire archive patch onto all existing cards
+  document.querySelectorAll('.card').forEach(function(card) { patchRemoveBtn(card); });
+  // Load saved state or run importAll
+  var loaded = false;
+  try { loaded = loadGallery(); } catch(e) {}
+  if (!loaded) {
+    if (document.readyState === 'loading') {
+      // importAll script will run after DOMContentLoaded
+    }
+    // importAll runs via its own DOMContentLoaded handler below
+  } else {
+    // If we restored from localStorage, suppress importAll
+    window._galleryLoaded = true;
+  }
   setTimeout(refreshAllCompTables, 50);
   updateStats();
+  hookAutoSave();
 });
 
 // ── Photo grid slots (click + paste + upload) ──
@@ -1456,7 +1572,7 @@ function addCard(sectionId, grid) {
   else grid.appendChild(card);
 
   addMoveWrapToCard(card);
-  addMoveWrapToCard(card);
+  patchRemoveBtn(card);
   syncCardToTable(card);
   updateStats();
   card.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -1494,6 +1610,7 @@ function createSubCategory() {
   var anchor = document.createElement('button');
   anchor.className = 'sub-anchor-btn';
   anchor.textContent = name;
+  anchor._targetId = 'subcat-' + fullId;
   anchor.addEventListener('click', function() { scrollToSubCat('subcat-' + fullId); });
   subnav.insertBefore(anchor, addBtn);
 
@@ -1506,7 +1623,13 @@ function createSubCategory() {
 
   var hdr = document.createElement('div'); hdr.className = 'sub-cat-header';
   var ttl = document.createElement('span'); ttl.className = 'sub-cat-title'; ttl.textContent = name;
-  hdr.appendChild(ttl); block.appendChild(hdr);
+  hdr.appendChild(ttl);
+  // Delete sub-category button
+  var delBtn = document.createElement('button'); delBtn.className = 'btn-delete-subcat'; delBtn.textContent = '🗑 Delete Category'; delBtn.title = 'Delete this entire sub-category';
+  delBtn.addEventListener('click', function() { deleteSubCat(block, anchor); });
+  hdr.appendChild(delBtn);
+  block.appendChild(hdr);
+  setTimeout(function() { wireSubCatTitle(hdr); }, 10);
 
   // Comp table
   var wrap = document.createElement('div'); wrap.className = 'comp-table-wrap';
@@ -1525,7 +1648,9 @@ function createSubCategory() {
   });
   thead.appendChild(tr); tbl.appendChild(thead);
   var tb = document.createElement('tbody'); tb.id = 'ctbody-' + fullId; tbl.appendChild(tb);
-  tbody_wrap.appendChild(tbl); wrap.appendChild(tog); wrap.appendChild(tbody_wrap); block.appendChild(wrap);
+  tbody_wrap.appendChild(tbl); wrap.appendChild(tog); wrap.appendChild(tbody_wrap);
+  addPriceSortToTable(wrap);
+  block.appendChild(wrap);
 
   // Filter bar
   var fb = document.createElement('div'); fb.className = 'filter-bar';
@@ -1638,7 +1763,7 @@ function createRoom() {
   });
   cth.appendChild(ctr); ctt.appendChild(cth);
   var ctbd = document.createElement('tbody'); ctbd.id = 'ctbody-' + slug + '-all'; ctt.appendChild(ctbd);
-  ctb.appendChild(ctt); ctw.appendChild(cttog); ctw.appendChild(ctb); block.appendChild(ctw);
+  ctb.appendChild(ctt); ctw.appendChild(cttog); ctw.appendChild(ctb); addPriceSortToTable(ctw); block.appendChild(ctw);
 
   var fb = document.createElement('div'); fb.className = 'filter-bar';
   var cg = document.createElement('div'); cg.className = 'card-grid'; cg.id = 'grid-' + slug + '-all';
@@ -1711,6 +1836,10 @@ function wireSubCatTitle(hdr) {
   if (!title || title._wired) return;
   title._wired = true;
 
+  // Add delete button for all sub-cats (including static ones)
+  var block = hdr.closest('.sub-cat-block');
+  if (block) addDeleteBtnToHeader(hdr, block);
+
   // Add hint text
   if (!hdr.querySelector('.sub-cat-title-hint')) {
     var hint = document.createElement('span');
@@ -1767,7 +1896,7 @@ document.addEventListener('keydown', function(e) {
     if (document.getElementById('modal-addroom').classList.contains('open')) createRoom();
     if (document.getElementById('modal-addsubcat').classList.contains('open')) createSubCategory();
   }
-  if (e.key === 'Escape') { closeModal('modal-addroom'); closeModal('modal-addsubcat'); }
+  if (e.key === 'Escape') { closeModal('modal-addroom'); closeModal('modal-addsubcat'); closeModal('modal-ai'); closeModal('modal-dupes'); }
 });
 document.querySelectorAll('.modal-overlay').forEach(function(ov) {
   ov.addEventListener('click', function(e) { if (e.target === ov) ov.classList.remove('open'); });
@@ -1897,6 +2026,534 @@ function addMoveWrapToCard(card) {
   wrap.appendChild(btn);
   var body = card.querySelector('.card-body');
   if (body) body.insertBefore(wrap, body.firstChild);
+}
+
+// ════════════════════════════════════════════
+// DELETE SUB-CATEGORY
+// ════════════════════════════════════════════
+function deleteSubCat(block, anchorBtn) {
+  var title = (block.querySelector('.sub-cat-title') || {}).textContent || 'this category';
+  var cards = block.querySelectorAll('.card').length;
+  var msg = 'Delete "' + title.trim() + '"?' + (cards > 0 ? '\n\n' + cards + ' card(s) will also be removed.' : '');
+  if (!confirm(msg)) return;
+  // Remove all comparison table rows for cards in this block
+  block.querySelectorAll('.card').forEach(function(c) { removeCardFromTable(c); });
+  // Remove the anchor button in the sub-nav
+  if (anchorBtn && anchorBtn.parentNode) anchorBtn.parentNode.removeChild(anchorBtn);
+  block.remove();
+  updateStats();
+  scheduleSave();
+}
+
+// Wire delete button onto static sub-cat headers too (called from wireSubCatTitle)
+function addDeleteBtnToHeader(hdr, block) {
+  if (hdr.querySelector('.btn-delete-subcat')) return;
+  // Find the matching sub-nav anchor button
+  var section = block ? block.closest('.room-section') : null;
+  var subnav = section ? section.querySelector('.sub-nav') : null;
+  var blockId = block ? block.id : null;
+  var anchor = null;
+  if (subnav && blockId) {
+    subnav.querySelectorAll('.sub-anchor-btn').forEach(function(b) {
+      if (b._targetId === blockId) anchor = b;
+    });
+  }
+  var delBtn = document.createElement('button');
+  delBtn.className = 'btn-delete-subcat';
+  delBtn.textContent = '🗑 Delete Category';
+  delBtn.title = 'Delete this entire sub-category';
+  delBtn.addEventListener('click', function() { deleteSubCat(block, anchor); });
+  hdr.appendChild(delBtn);
+}
+
+// ════════════════════════════════════════════
+// PRICE SORT FOR COMPARISON TABLES
+// ════════════════════════════════════════════
+function addPriceSortToTable(wrap) {
+  if (wrap.querySelector('.price-sort-bar')) return;
+  var bar = document.createElement('div');
+  bar.className = 'price-sort-bar';
+  var lbl = document.createElement('span'); lbl.className = 'price-sort-label'; lbl.textContent = 'Sort:';
+  bar.appendChild(lbl);
+  var btns = [['orig', 'Default'], ['asc', '$ Low → High'], ['desc', '$ High → Low']];
+  var tbody = wrap.querySelector('tbody');
+  var origRows = null;
+  btns.forEach(function(b) {
+    var btn = document.createElement('button'); btn.className = 'price-sort-btn'; btn.textContent = b[1]; btn.dataset.sort = b[0];
+    if (b[0] === 'orig') btn.classList.add('active');
+    btn.addEventListener('click', function() {
+      bar.querySelectorAll('.price-sort-btn').forEach(function(x) { x.classList.remove('active'); });
+      btn.classList.add('active');
+      if (!tbody) return;
+      if (!origRows) origRows = Array.from(tbody.querySelectorAll('tr'));
+      var rows = Array.from(tbody.querySelectorAll('tr'));
+      if (b[0] === 'orig') {
+        origRows.forEach(function(r) { tbody.appendChild(r); });
+      } else {
+        rows.sort(function(a, c) {
+          var pa = parsePrice(a.cells[1] ? a.cells[1].textContent : '');
+          var pb = parsePrice(c.cells[1] ? c.cells[1].textContent : '');
+          return b[0] === 'asc' ? pa - pb : pb - pa;
+        });
+        rows.forEach(function(r) { tbody.appendChild(r); });
+      }
+    });
+    bar.appendChild(btn);
+  });
+  wrap.appendChild(bar);
+}
+
+function parsePrice(str) {
+  var n = parseFloat((str || '').replace(/[^0-9.]/g, ''));
+  return isNaN(n) ? 99999 : n;
+}
+
+function initPriceSortBars() {
+  document.querySelectorAll('.comp-table-wrap').forEach(function(wrap) {
+    addPriceSortToTable(wrap);
+  });
+}
+
+// ════════════════════════════════════════════
+// ARCHIVE
+// ════════════════════════════════════════════
+var _archive = {}; // { catLabel: [cardData, ...] }
+
+function archiveCard(card) {
+  var sectionId = card.dataset.section;
+  var catLabel = sectionId || 'Uncategorized';
+  // Try to get the human-readable sub-cat title
+  var grid = document.getElementById('grid-' + sectionId);
+  if (grid) {
+    var block = grid.closest('.sub-cat-block');
+    if (block) {
+      var t = block.querySelector('.sub-cat-title');
+      if (t) catLabel = t.textContent.trim();
+    }
+  }
+  // Serialize card fields
+  var data = {
+    catLabel: catLabel,
+    sectionId: sectionId,
+    name: (card.querySelector('.card-name') || {}).textContent || '',
+    price: (card.querySelector('.card-price') || {}).textContent || '',
+    store: (card.querySelector('.card-store') || {}).textContent || '',
+    note: (card.querySelector('.card-note') || {}).textContent || '',
+    url: (card.querySelector('.card-url') || {}).value || '',
+    status: card.dataset.status || '',
+    badge: (card.querySelector('.card-badge') || {}).textContent || '',
+    badgeClass: ((card.querySelector('.card-badge') || {}).className || '').replace('card-badge','').trim()
+  };
+  var vals = card.querySelectorAll('.card-attr-val');
+  var lbls = card.querySelectorAll('.card-attr-label');
+  data.a1l = lbls[0] ? lbls[0].textContent.replace(':','').trim() : 'Size';
+  data.a1v = vals[0] ? vals[0].textContent.trim() : '';
+  data.a2l = lbls[1] ? lbls[1].textContent.replace(':','').trim() : 'Color';
+  data.a2v = vals[1] ? vals[1].textContent.trim() : '';
+
+  if (!_archive[catLabel]) _archive[catLabel] = [];
+  _archive[catLabel].push(data);
+  renderArchive();
+  removeCardFromTable(card);
+  card.remove();
+  updateStats();
+  scheduleSave();
+  document.getElementById('archive-section').style.display = '';
+}
+
+function renderArchive() {
+  var body = document.getElementById('archive-body');
+  if (!body) return;
+  var cats = Object.keys(_archive);
+  if (cats.length === 0) {
+    body.innerHTML = '<div class="archive-empty">No archived items yet.</div>';
+    return;
+  }
+  body.innerHTML = '';
+  cats.forEach(function(cat) {
+    var items = _archive[cat];
+    if (!items || !items.length) return;
+    var blk = document.createElement('div'); blk.className = 'archive-cat-block';
+    var ttl = document.createElement('div'); ttl.className = 'archive-cat-title';
+    ttl.innerHTML = cat + ' <span>' + items.length + ' item' + (items.length > 1 ? 's' : '') + '</span>';
+    blk.appendChild(ttl);
+    var grid = document.createElement('div'); grid.className = 'card-grid';
+    items.forEach(function(d, idx) {
+      var card = buildArchivedCard(d, cat, idx);
+      grid.appendChild(card);
+    });
+    blk.appendChild(grid);
+    body.appendChild(blk);
+  });
+}
+
+function buildArchivedCard(d, cat, idx) {
+  var card = document.createElement('div');
+  card.className = 'card';
+  card.style.opacity = '.75';
+  card.innerHTML = '<div class="card-body" style="padding:14px;">' +
+    '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--stone);margin-bottom:6px;">Archived from: ' + cat + '</div>' +
+    '<div class="card-store" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);">' + (d.store||'') + '</div>' +
+    '<div class="card-name" style="font-family:var(--fd);font-size:16px;font-weight:600;color:var(--cream);margin:4px 0;">' + (d.name||'') + '</div>' +
+    '<div class="card-price" style="font-family:var(--fd);font-size:20px;color:var(--gold);">' + (d.price||'') + '</div>' +
+    '</div>' +
+    '<div class="card-footer"><button class="btn-restore-card">↩ Restore</button><button class="btn-remove-card">Delete</button></div>';
+  card.querySelector('.btn-restore-card').addEventListener('click', function() {
+    restoreFromArchive(d, cat, idx);
+  });
+  card.querySelector('.btn-remove-card').addEventListener('click', function() {
+    _archive[cat].splice(idx, 1);
+    if (_archive[cat].length === 0) delete _archive[cat];
+    renderArchive();
+    scheduleSave();
+  });
+  return card;
+}
+
+function restoreFromArchive(d, cat, idx) {
+  var grid = document.getElementById('grid-' + d.sectionId);
+  if (!grid) {
+    alert('Original category no longer exists. Cannot restore there.');
+    return;
+  }
+  addCard(d.sectionId, grid);
+  var cards = grid.querySelectorAll('.card');
+  var card = cards[cards.length - 2] || cards[cards.length - 1]; // before placeholder
+  if (!card) return;
+  if (card.querySelector('.card-name')) card.querySelector('.card-name').textContent = d.name;
+  if (card.querySelector('.card-price')) card.querySelector('.card-price').textContent = d.price;
+  if (card.querySelector('.card-store')) card.querySelector('.card-store').textContent = d.store;
+  if (card.querySelector('.card-note')) card.querySelector('.card-note').textContent = d.note;
+  var vals = card.querySelectorAll('.card-attr-val'); var lbls = card.querySelectorAll('.card-attr-label');
+  if (vals[0]) vals[0].textContent = d.a1v; if (lbls[0]) lbls[0].textContent = d.a1l;
+  if (vals[1]) vals[1].textContent = d.a2v; if (lbls[1]) lbls[1].textContent = d.a2l;
+  if (d.badge && d.badgeClass) setBadge(card, d.status, d.badge, d.badgeClass);
+  var ui = card.querySelector('.card-url'); if (ui && d.url) { ui.value = d.url; ui.dispatchEvent(new Event('input')); }
+  syncCardToTable(card);
+  _archive[cat].splice(idx, 1);
+  if (_archive[cat].length === 0) delete _archive[cat];
+  renderArchive();
+  scheduleSave();
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// Patch the remove card button to offer Archive option
+function patchRemoveBtn(card) {
+  var btn = card.querySelector('.btn-remove-card');
+  if (!btn || btn._archivePatch) return;
+  btn._archivePatch = true;
+  btn.removeEventListener('click', btn._origHandler);
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var choice = confirm('Archive this card instead of deleting it permanently?\n\nOK = Archive (recoverable)\nCancel = Delete permanently');
+    if (choice) {
+      archiveCard(card);
+    } else {
+      removeCardFromTable(card);
+      card.remove();
+      updateStats();
+      scheduleSave();
+    }
+  });
+}
+
+// ════════════════════════════════════════════
+// DUPLICATE DETECTION
+// ════════════════════════════════════════════
+var _dupesToRemove = [];
+
+function findDuplicates() {
+  var groups = {};
+  document.querySelectorAll('.card').forEach(function(card) {
+    var name = ((card.querySelector('.card-name') || {}).textContent || '').trim().toLowerCase();
+    if (!name || name === 'new item') return;
+    if (!groups[name]) groups[name] = [];
+    groups[name].push(card);
+  });
+  var dupes = Object.values(groups).filter(function(g) { return g.length > 1; });
+  _dupesToRemove = [];
+  // Flag duplicates
+  document.querySelectorAll('.card.dupe-flag').forEach(function(c) { c.classList.remove('dupe-flag'); });
+  var list = document.getElementById('dupe-list');
+  list.innerHTML = '';
+  if (dupes.length === 0) {
+    list.innerHTML = '<div style="text-align:center;color:var(--stone);font-style:italic;padding:24px;">No duplicate cards found.</div>';
+    document.getElementById('modal-dupes').classList.add('open');
+    return;
+  }
+  dupes.forEach(function(group) {
+    var name = ((group[0].querySelector('.card-name') || {}).textContent || '').trim();
+    var grpDiv = document.createElement('div');
+    grpDiv.style.cssText = 'border:1px solid var(--border);border-radius:6px;padding:12px;margin-bottom:12px;';
+    grpDiv.innerHTML = '<div style="font-size:12px;color:var(--gold);letter-spacing:1px;margin-bottom:8px;">' + name + ' — ' + group.length + ' copies</div>';
+    group.forEach(function(card, i) {
+      card.classList.add('dupe-flag');
+      var row = document.createElement('div');
+      row.style.cssText = 'display:flex;align-items:center;gap:8px;margin-bottom:6px;';
+      var price = ((card.querySelector('.card-price') || {}).textContent || '').trim();
+      var store = ((card.querySelector('.card-store') || {}).textContent || '').trim();
+      var label = document.createElement('span');
+      label.style.cssText = 'flex:1;font-size:12px;color:var(--sand);';
+      label.textContent = (i === 0 ? '✓ Keep: ' : '✗ Dupe: ') + store + ' — ' + price;
+      var chk = document.createElement('button');
+      chk.style.cssText = 'padding:3px 8px;font-size:10px;border:1px solid var(--border);border-radius:4px;background:transparent;color:var(--stone);cursor:pointer;font-family:var(--fb);';
+      chk.textContent = i === 0 ? 'Keep' : 'Remove';
+      if (i > 0) {
+        _dupesToRemove.push(card);
+        chk.style.color = '#c0392b';
+        chk.style.borderColor = 'rgba(192,57,43,.4)';
+        chk.addEventListener('click', function() {
+          var idx = _dupesToRemove.indexOf(card);
+          if (idx > -1) {
+            _dupesToRemove.splice(idx, 1);
+            chk.textContent = 'Keep';
+            chk.style.color = 'var(--stone)';
+            chk.style.borderColor = 'var(--border)';
+            label.textContent = '✓ Keep: ' + store + ' — ' + price;
+          } else {
+            _dupesToRemove.push(card);
+            chk.textContent = 'Remove';
+            chk.style.color = '#c0392b';
+            chk.style.borderColor = 'rgba(192,57,43,.4)';
+            label.textContent = '✗ Dupe: ' + store + ' — ' + price;
+          }
+        });
+      }
+      row.appendChild(label); row.appendChild(chk); grpDiv.appendChild(row);
+    });
+    list.appendChild(grpDiv);
+  });
+  document.getElementById('modal-dupes').classList.add('open');
+}
+
+function removeAllDupes() {
+  _dupesToRemove.forEach(function(card) {
+    removeCardFromTable(card);
+    card.classList.remove('dupe-flag');
+    card.remove();
+  });
+  var removed = _dupesToRemove.length;
+  _dupesToRemove = [];
+  document.querySelectorAll('.card.dupe-flag').forEach(function(c) { c.classList.remove('dupe-flag'); });
+  updateStats();
+  scheduleSave();
+  closeModal('modal-dupes');
+  if (removed > 0) alert(removed + ' duplicate card(s) removed.');
+}
+
+// ════════════════════════════════════════════
+// LOCALSTORAGE PERSISTENCE
+// ════════════════════════════════════════════
+var _saveTimer = null;
+var _saveKey = 'gallery-v1';
+
+function scheduleSave() {
+  clearTimeout(_saveTimer);
+  _saveTimer = setTimeout(saveGallery, 1500);
+  var st = document.getElementById('save-status');
+  if (st) st.textContent = 'Unsaved changes...';
+}
+
+function saveGallery() {
+  try {
+    var data = { v: 1, ts: Date.now(), cards: [], archive: _archive };
+    document.querySelectorAll('.card').forEach(function(card) {
+      var sectionId = card.dataset.section;
+      if (!sectionId) return;
+      var vals = card.querySelectorAll('.card-attr-val');
+      var lbls = card.querySelectorAll('.card-attr-label');
+      var urlEl = card.querySelector('.card-url');
+      var badge = card.querySelector('.card-badge');
+      data.cards.push({
+        g: sectionId,
+        cid: card.dataset.cardId || '',
+        name: (card.querySelector('.card-name') || {}).textContent || '',
+        price: (card.querySelector('.card-price') || {}).textContent || '',
+        store: (card.querySelector('.card-store') || {}).textContent || '',
+        note: (card.querySelector('.card-note') || {}).textContent || '',
+        url: urlEl ? urlEl.value : '',
+        a1l: lbls[0] ? lbls[0].textContent.replace(':','').trim() : '',
+        a1v: vals[0] ? vals[0].textContent.trim() : '',
+        a2l: lbls[1] ? lbls[1].textContent.replace(':','').trim() : '',
+        a2v: vals[1] ? vals[1].textContent.trim() : '',
+        status: card.dataset.status || '',
+        badge: badge ? badge.textContent.trim() : '',
+        badgeClass: badge ? (badge.className || '').replace('card-badge','').trim() : ''
+      });
+    });
+    localStorage.setItem(_saveKey, JSON.stringify(data));
+    var st = document.getElementById('save-status');
+    if (st) { st.textContent = 'Saved ✓'; setTimeout(function(){ st.textContent = ''; }, 3000); }
+  } catch(e) {
+    var st = document.getElementById('save-status');
+    if (st) st.textContent = 'Save failed (storage full?)';
+    console.warn('Gallery save error:', e);
+  }
+}
+
+function loadGallery() {
+  try {
+    var raw = localStorage.getItem(_saveKey);
+    if (!raw) return false;
+    var data = JSON.parse(raw);
+    if (!data || !data.cards || !data.cards.length) return false;
+    // Restore archive
+    if (data.archive) {
+      _archive = data.archive;
+      renderArchive();
+      var hasArchived = Object.keys(_archive).some(function(k) { return _archive[k] && _archive[k].length > 0; });
+      if (hasArchived) document.getElementById('archive-section').style.display = '';
+    }
+    // Restore cards — replace importAll
+    data.cards.forEach(function(d) {
+      var grid = document.getElementById('grid-' + d.g);
+      if (!grid) return;
+      addCard(d.g, grid);
+      var cards = grid.querySelectorAll('.card');
+      var card = cards[cards.length - 2] || cards[cards.length - 1];
+      if (!card) return;
+      if (d.cid) card.dataset.cardId = d.cid;
+      if (card.querySelector('.card-name')) card.querySelector('.card-name').textContent = d.name;
+      if (card.querySelector('.card-price')) card.querySelector('.card-price').textContent = d.price;
+      if (card.querySelector('.card-store')) card.querySelector('.card-store').textContent = d.store;
+      if (card.querySelector('.card-note')) card.querySelector('.card-note').textContent = d.note;
+      var vals = card.querySelectorAll('.card-attr-val'); var lbls = card.querySelectorAll('.card-attr-label');
+      if (vals[0]) vals[0].textContent = d.a1v; if (lbls[0]) lbls[0].textContent = d.a1l;
+      if (vals[1]) vals[1].textContent = d.a2v; if (lbls[1]) lbls[1].textContent = d.a2l;
+      var ui = card.querySelector('.card-url');
+      if (ui && d.url) { ui.value = d.url; ui.dispatchEvent(new Event('input')); }
+      if (d.badge && d.badgeClass) setBadge(card, d.status, d.badge, d.badgeClass);
+      syncCardToTable(card);
+    });
+    updateStats();
+    var st = document.getElementById('save-status');
+    var d = new Date(data.ts);
+    if (st) st.textContent = 'Restored from ' + d.toLocaleDateString() + ' ' + d.toLocaleTimeString();
+    return true;
+  } catch(e) {
+    console.warn('Gallery load error:', e);
+    return false;
+  }
+}
+
+// Hook save into all changes
+function hookAutoSave() {
+  // Observe card mutations (text edits)
+  var observer = new MutationObserver(function() { scheduleSave(); });
+  document.querySelectorAll('.card-grid').forEach(function(grid) {
+    observer.observe(grid, { childList: true, subtree: true, characterData: true });
+  });
+  // Also save when new cards/rooms are added
+  var outerObs = new MutationObserver(function(mutations) {
+    mutations.forEach(function(m) {
+      m.addedNodes.forEach(function(n) {
+        if (n.nodeType === 1) {
+          if (n.classList && (n.classList.contains('card') || n.classList.contains('sub-cat-block') || n.classList.contains('room-section'))) {
+            scheduleSave();
+          }
+        }
+      });
+    });
+  });
+  outerObs.observe(document.body, { childList: true, subtree: true });
+}
+
+// ════════════════════════════════════════════
+// CLAUDE AI PRODUCT ENTRY
+// ════════════════════════════════════════════
+function openAiModal() {
+  // Populate category dropdown
+  var sel = document.getElementById('ai-target-cat');
+  sel.innerHTML = '';
+  getAllSubCats().forEach(function(cat) {
+    var opt = document.createElement('option');
+    opt.value = cat.gridId.replace('grid-', '');
+    opt.textContent = cat.roomTitle + ' › ' + cat.subTitle;
+    sel.appendChild(opt);
+  });
+  document.getElementById('ai-status').textContent = '';
+  document.getElementById('ai-result').className = 'ai-result-box';
+  document.getElementById('ai-description').value = '';
+  document.getElementById('modal-ai').classList.add('open');
+  setTimeout(function() { document.getElementById('ai-description').focus(); }, 80);
+}
+
+function runAiProductEntry() {
+  var desc = (document.getElementById('ai-description').value || '').trim();
+  var apiKey = (document.getElementById('ai-api-key').value || '').trim();
+  var targetCat = document.getElementById('ai-target-cat').value;
+  if (!desc) { document.getElementById('ai-status').textContent = 'Please enter a product description.'; return; }
+  if (!apiKey) { document.getElementById('ai-status').textContent = 'Please enter your Anthropic API key.'; return; }
+
+  var statusEl = document.getElementById('ai-status');
+  var resultEl = document.getElementById('ai-result');
+  var submitBtn = document.getElementById('ai-submit-btn');
+  statusEl.textContent = 'Asking Claude...';
+  submitBtn.disabled = true;
+
+  var prompt = 'Extract product details from this description and return ONLY a valid JSON object (no markdown, no explanation) with these exact keys:\n' +
+    '{"name":"","price":"","brand":"","dimensions":"","url":"","note":""}\n\n' +
+    'Rules: price should include $ sign, dimensions in format like 48"W x 30"D x 30"H, url should be the product URL if mentioned or empty string, note should be a brief 1-sentence summary.\n\n' +
+    'Product description: ' + desc;
+
+  fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 400,
+      messages: [{ role: 'user', content: prompt }]
+    })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    submitBtn.disabled = false;
+    if (data.error) { statusEl.textContent = 'API error: ' + data.error.message; return; }
+    var text = data.content && data.content[0] && data.content[0].text;
+    if (!text) { statusEl.textContent = 'No response from Claude.'; return; }
+    // Extract JSON from response
+    var match = text.match(/\{[\s\S]*\}/);
+    if (!match) { statusEl.textContent = 'Could not parse Claude response.'; resultEl.textContent = text; resultEl.className = 'ai-result-box visible'; return; }
+    try {
+      var parsed = JSON.parse(match[0]);
+      statusEl.textContent = 'Done! Card created below ↓';
+      resultEl.textContent = JSON.stringify(parsed, null, 2);
+      resultEl.className = 'ai-result-box visible';
+      // Create card
+      var grid = document.getElementById('grid-' + targetCat);
+      if (!grid) { statusEl.textContent = 'Could not find target category grid.'; return; }
+      addCard(targetCat, grid);
+      var cards = grid.querySelectorAll('.card');
+      var card = cards[cards.length - 2] || cards[cards.length - 1];
+      if (!card) return;
+      if (parsed.name && card.querySelector('.card-name')) card.querySelector('.card-name').textContent = parsed.name;
+      if (parsed.price && card.querySelector('.card-price')) card.querySelector('.card-price').textContent = parsed.price;
+      if (parsed.brand && card.querySelector('.card-store')) card.querySelector('.card-store').textContent = parsed.brand;
+      if (parsed.note && card.querySelector('.card-note')) card.querySelector('.card-note').textContent = parsed.note;
+      var vals = card.querySelectorAll('.card-attr-val');
+      if (vals[0] && parsed.dimensions) vals[0].textContent = parsed.dimensions;
+      var ui = card.querySelector('.card-url');
+      if (ui && parsed.url) { ui.value = parsed.url; ui.dispatchEvent(new Event('input')); }
+      syncCardToTable(card);
+      updateStats();
+      scheduleSave();
+      closeModal('modal-ai');
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch(e) {
+      statusEl.textContent = 'JSON parse error.';
+      resultEl.textContent = text;
+      resultEl.className = 'ai-result-box visible';
+    }
+  })
+  .catch(function(err) {
+    submitBtn.disabled = false;
+    statusEl.textContent = 'Network error: ' + err.message;
+  });
 }
 
 </script>
@@ -2042,9 +2699,11 @@ function applyImages(){
     if(photo) setCardPhoto(photo,window._imgMap[idx]);
   });
 }
-if(document.readyState==='loading'){
-  document.addEventListener('DOMContentLoaded',function(){setTimeout(importAll,150);});
-}else{setTimeout(importAll,150);}
+if(!window._galleryLoaded){
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',function(){setTimeout(importAll,150);});
+  }else{setTimeout(importAll,150);}
+}
 })();
 </script>
 <script>
