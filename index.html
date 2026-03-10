@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sandy MCL — Home Furnishing Gallery</title>
+<script>
+  // CRITICAL: prevent scroll restoration before ANYTHING else on the page renders
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -53,6 +57,17 @@ body{font-family:var(--fb);background:var(--bg);color:var(--cream);min-height:10
 .nav-save-btn.unsaved{border-color:#e8a020;color:#e8a020;}
 .nav-save-btn.saved{border-color:#5a9e5a;color:#5a9e5a;}
 .nav-save-status{font-size:10px;letter-spacing:1px;color:var(--stone);white-space:nowrap;opacity:.7;}
+/* ── HAMBURGER MENU ── */
+.nav-hamburger-wrap{position:relative;}
+.nav-hamburger-btn{padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:18px;color:var(--stone);cursor:pointer;background:transparent;transition:all .2s;line-height:1;}
+.nav-hamburger-btn:hover{border-color:var(--gold);color:var(--gold);}
+.nav-hamburger-btn.open{border-color:var(--gold);color:var(--gold);}
+.nav-hamburger-dropdown{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);min-width:200px;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.6);overflow:hidden;}
+.nav-hamburger-dropdown.open{display:block;}
+.nav-hamburger-item{display:flex;align-items:center;gap:10px;padding:12px 16px;font-size:12px;letter-spacing:.5px;color:var(--sand);cursor:pointer;background:transparent;border:none;width:100%;text-align:left;font-family:var(--fb);transition:background .15s;}
+.nav-hamburger-item:hover{background:var(--surface2);color:var(--cream);}
+.nav-hamburger-item + .nav-hamburger-item{border-top:1px solid var(--border);}
+.nav-hamburger-divider{border:none;border-top:1px solid var(--border);margin:0;}
 
 /* ── ROOM SECTION ── */
 .room-section{padding:60px 24px 40px;max-width:1400px;margin:0 auto;border-bottom:1px solid var(--border);}
@@ -416,6 +431,16 @@ body.print-mode .card-move-wrap{display:none !important;}
   <button class="nav-save-btn" id="nav-save-btn" onclick="saveGallery()" title="Save all changes now">💾 Save</button>
   <span class="nav-save-status" id="nav-save-status"></span>
   <button class="nav-moodboard-btn" onclick="window.location.href='collage-board.html'" title="Open Mood Board">🎨 Mood Board</button>
+  <div class="nav-hamburger-wrap" id="nav-hamburger-wrap">
+    <button class="nav-hamburger-btn" id="nav-hamburger-btn" onclick="toggleHamburgerMenu()" title="Menu">☰</button>
+    <div class="nav-hamburger-dropdown" id="nav-hamburger-dropdown">
+      <button class="nav-hamburger-item" onclick="saveGallery();closeHamburgerMenu()">💾 Save Gallery</button>
+      <button class="nav-hamburger-item" onclick="openAiModal();closeHamburgerMenu()">🤖 AI Product Entry</button>
+      <button class="nav-hamburger-item" onclick="findDuplicates();closeHamburgerMenu()">🔍 Find Duplicates</button>
+      <button class="nav-hamburger-item" onclick="toggleArchiveSection();closeHamburgerMenu()">📦 Toggle Archive</button>
+      <button class="nav-hamburger-item" onclick="newEmptyList();closeHamburgerMenu()">➕ New Empty List</button>
+    </div>
+  </div>
 </nav>
 
 <!-- ═══ 01 LIVING ROOM ═══ -->
@@ -481,7 +506,7 @@ body.print-mode .card-move-wrap{display:none !important;}
           <div class="card-attr"><span class="card-attr-label" contenteditable="true" data-placeholder="Label">Size</span><span class="card-attr-val" contenteditable="true" data-placeholder="Value">125" L-shape</span></div>
           <div class="card-attr"><span class="card-attr-label" contenteditable="true" data-placeholder="Label">Color</span><span class="card-attr-val" contenteditable="true" data-placeholder="Value">Gray performance fabric</span></div>
           <div class="card-note" contenteditable="true" data-placeholder="Notes">Sandy's #1 sofa pick. Modular, reconfigurable. Fits TV wall at 125".</div>
-          <a class="card-link" href="https://www.roomstogo.com/search?query=ModularOne+Sectional&filters=true" target="_blank" rel="noopener">View at RTG →</a>
+          <div class="card-link-row" style="margin-top:8px;"><span style="font-size:10px;color:var(--stone);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Product URL</span><input type="url" class="card-url" placeholder="https://" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:6px 8px;color:var(--sand);font-size:11px;font-family:var(--fb);outline:none;" value="https://www.roomstogo.com/search?query=ModularOne+Sectional&filters=true"><a href="https://www.roomstogo.com/search?query=ModularOne+Sectional&filters=true" target="_blank" rel="noopener noreferrer" style="display:block;margin-top:5px;font-size:11px;color:var(--gold);font-family:var(--fb);letter-spacing:.5px;text-decoration:none;">View ↗</a></div>
         </div>
         <div class="card-footer"><button class="btn-remove-card">Remove Card</button></div>
       </div>
@@ -736,7 +761,7 @@ body.print-mode .card-move-wrap{display:none !important;}
           <div class="card-attr"><span class="card-attr-label" contenteditable="true">Shape</span><span class="card-attr-val" contenteditable="true">48" Round</span></div>
           <div class="card-attr"><span class="card-attr-label" contenteditable="true">Material</span><span class="card-attr-val" contenteditable="true">White marble top</span></div>
           <div class="card-note" contenteditable="true">Most likely dining table. Perfect contrast against dark cherry cabinets + black granite.</div>
-          <a class="card-link" href="https://www.wayfair.com/keyword.php?keyword=Mellonia+marble+dining+table" target="_blank" rel="noopener">View at Wayfair →</a>
+          <div class="card-link-row" style="margin-top:8px;"><span style="font-size:10px;color:var(--stone);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Product URL</span><input type="url" class="card-url" placeholder="https://" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:6px 8px;color:var(--sand);font-size:11px;font-family:var(--fb);outline:none;" value="https://www.wayfair.com/keyword.php?keyword=Mellonia+marble+dining+table"><a href="https://www.wayfair.com/keyword.php?keyword=Mellonia+marble+dining+table" target="_blank" rel="noopener noreferrer" style="display:block;margin-top:5px;font-size:11px;color:var(--gold);font-family:var(--fb);letter-spacing:.5px;text-decoration:none;">View ↗</a></div>
         </div>
         <div class="card-footer"><button class="btn-remove-card">Remove Card</button></div>
       </div>
@@ -752,7 +777,7 @@ body.print-mode .card-move-wrap{display:none !important;}
           <div class="card-attr"><span class="card-attr-label" contenteditable="true">Seats</span><span class="card-attr-val" contenteditable="true">8 chairs included</span></div>
           <div class="card-attr"><span class="card-attr-label" contenteditable="true">Material</span><span class="card-attr-val" contenteditable="true">White finish</span></div>
           <div class="card-note" contenteditable="true">Complete dining set alternative. All-in-one.</div>
-          <a class="card-link" href="https://www.wayfair.com/keyword.php?keyword=Vicente+9+piece+white+dining+set" target="_blank" rel="noopener">View at Wayfair →</a>
+          <div class="card-link-row" style="margin-top:8px;"><span style="font-size:10px;color:var(--stone);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Product URL</span><input type="url" class="card-url" placeholder="https://" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:6px 8px;color:var(--sand);font-size:11px;font-family:var(--fb);outline:none;" value="https://www.wayfair.com/keyword.php?keyword=Vicente+9+piece+white+dining+set"><a href="https://www.wayfair.com/keyword.php?keyword=Vicente+9+piece+white+dining+set" target="_blank" rel="noopener noreferrer" style="display:block;margin-top:5px;font-size:11px;color:var(--gold);font-family:var(--fb);letter-spacing:.5px;text-decoration:none;">View ↗</a></div>
         </div>
         <div class="card-footer"><button class="btn-remove-card">Remove Card</button></div>
       </div>
@@ -816,7 +841,7 @@ body.print-mode .card-move-wrap{display:none !important;}
           <div class="card-attr"><span class="card-attr-label" contenteditable="true">Height</span><span class="card-attr-val" contenteditable="true">Counter 26-30"</span></div>
           <div class="card-attr"><span class="card-attr-label" contenteditable="true">Swivel</span><span class="card-attr-val" contenteditable="true">Yes — 360°</span></div>
           <div class="card-note" contenteditable="true">Best match — warm brown complements black granite perfectly.</div>
-          <a class="card-link" href="https://www.wayfair.com/keyword.php?keyword=17+Stories+brown+swivel+counter+stool" target="_blank" rel="noopener">View at Wayfair →</a>
+          <div class="card-link-row" style="margin-top:8px;"><span style="font-size:10px;color:var(--stone);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Product URL</span><input type="url" class="card-url" placeholder="https://" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:6px 8px;color:var(--sand);font-size:11px;font-family:var(--fb);outline:none;" value="https://www.wayfair.com/keyword.php?keyword=17+Stories+brown+swivel+counter+stool"><a href="https://www.wayfair.com/keyword.php?keyword=17+Stories+brown+swivel+counter+stool" target="_blank" rel="noopener noreferrer" style="display:block;margin-top:5px;font-size:11px;color:var(--gold);font-family:var(--fb);letter-spacing:.5px;text-decoration:none;">View ↗</a></div>
         </div>
         <div class="card-footer"><button class="btn-remove-card">Remove Card</button></div>
       </div>
@@ -879,7 +904,7 @@ Decor &amp; Pillows</button>
           <div class="card-attr"><span class="card-attr-label" contenteditable="true">Use</span><span class="card-attr-val" contenteditable="true">Outdoor / balcony</span></div>
           <div class="card-attr"><span class="card-attr-label" contenteditable="true">Material</span><span class="card-attr-val" contenteditable="true">Weather-resistant</span></div>
           <div class="card-note" contenteditable="true">Don't skip this one! Excellent value at $19.99.</div>
-          <a class="card-link" href="https://www.ikea.com/us/en/search/?q=GANGSTIG+outdoor+rug" target="_blank" rel="noopener">View at IKEA →</a>
+          <div class="card-link-row" style="margin-top:8px;"><span style="font-size:10px;color:var(--stone);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Product URL</span><input type="url" class="card-url" placeholder="https://" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:6px 8px;color:var(--sand);font-size:11px;font-family:var(--fb);outline:none;" value="https://www.ikea.com/us/en/search/?q=GANGSTIG+outdoor+rug"><a href="https://www.ikea.com/us/en/search/?q=GANGSTIG+outdoor+rug" target="_blank" rel="noopener noreferrer" style="display:block;margin-top:5px;font-size:11px;color:var(--gold);font-family:var(--fb);letter-spacing:.5px;text-decoration:none;">View ↗</a></div>
         </div>
         <div class="card-footer"><button class="btn-remove-card">Remove Card</button></div>
       </div>
@@ -1063,11 +1088,11 @@ Decor &amp; Pillows</button>
 <!-- DUPLICATE MODAL -->
 <div class="modal-overlay" id="modal-dupes">
   <div class="modal-box wide">
-    <div class="modal-title">🔍 Duplicate Cards</div>
-    <div id="dupe-list" style="max-height:360px;overflow-y:auto;margin-bottom:16px;"></div>
+    <div class="modal-title">🔍 Find Duplicates</div>
+    <div style="font-size:11px;color:var(--stone);margin-bottom:12px;letter-spacing:.5px;">Fuzzy matching — flags cards with same brand + similar name. Click links to compare products.</div>
+    <div id="dupe-list" style="max-height:440px;overflow-y:auto;margin-bottom:16px;"></div>
     <div class="modal-actions">
       <button class="modal-btn" onclick="closeModal('modal-dupes')">Close</button>
-      <button class="modal-btn primary" onclick="removeAllDupes()">Remove All Duplicates</button>
     </div>
   </div>
 </div>
@@ -1105,6 +1130,15 @@ document.addEventListener('DOMContentLoaded', function() {
   setTimeout(refreshAllCompTables, 50);
   updateStats();
   hookAutoSave();
+  // Force scroll to top AFTER all init — override any browser scroll restoration
+  window.scrollTo(0, 0);
+});
+// Also force scroll to top on window load (fires after DOMContentLoaded, after all resources)
+window.addEventListener('load', function() {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+  // Double-ensure with rAF in case browser tries to restore scroll after load
+  requestAnimationFrame(function() { window.scrollTo(0, 0); });
 });
 
 // ── Photo grid slots (click + paste + upload) ──
@@ -1909,6 +1943,55 @@ function wireSubCatTitle(hdr) {
 // MODALS
 // ════════════════════════════════════════════
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+// ════════════════════════════════════════════
+// HAMBURGER MENU
+// ════════════════════════════════════════════
+function toggleHamburgerMenu() {
+  var btn = document.getElementById('nav-hamburger-btn');
+  var dd = document.getElementById('nav-hamburger-dropdown');
+  var open = dd.classList.contains('open');
+  if (open) { dd.classList.remove('open'); btn.classList.remove('open'); }
+  else { dd.classList.add('open'); btn.classList.add('open'); }
+}
+function closeHamburgerMenu() {
+  document.getElementById('nav-hamburger-dropdown').classList.remove('open');
+  document.getElementById('nav-hamburger-btn').classList.remove('open');
+}
+// Close hamburger when clicking outside
+document.addEventListener('click', function(e) {
+  var wrap = document.getElementById('nav-hamburger-wrap');
+  if (wrap && !wrap.contains(e.target)) closeHamburgerMenu();
+});
+
+function toggleArchiveSection() {
+  var sec = document.getElementById('archive-section');
+  if (sec) sec.style.display = sec.style.display === 'none' ? '' : 'none';
+}
+
+// ════════════════════════════════════════════
+// NEW EMPTY LIST
+// ════════════════════════════════════════════
+function newEmptyList() {
+  var ok = confirm(
+    'Start a New Empty List?\n\n' +
+    'This will clear ALL current cards from every section.\n\n' +
+    'Your data will NOT be deleted from this browser — you can import your backup or reload the page to get it back.\n\n' +
+    'Export a JSON backup first if you want to preserve your current data.\n\nOK = Clear All Cards  |  Cancel = Keep Current'
+  );
+  if (!ok) return;
+  document.querySelectorAll('.card-grid .card').forEach(function(c) { c.remove(); });
+  _archive = {};
+  var ab = document.getElementById('archive-body');
+  if (ab) ab.innerHTML = '<div class="archive-empty">No archived items yet. Use "Archive" instead of "Remove" on any card.</div>';
+  var sec = document.getElementById('archive-section');
+  if (sec) sec.style.display = 'none';
+  updateStats();
+  scheduleSave();
+  _setSaveStatus('saved', '✓ New empty list started');
+  setTimeout(function(){ _setSaveStatus('', ''); }, 4000);
+}
+
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Enter') {
     if (document.getElementById('modal-addroom').classList.contains('open')) createRoom();
@@ -2278,85 +2361,189 @@ function patchRemoveBtn(card) {
 // ════════════════════════════════════════════
 // DUPLICATE DETECTION
 // ════════════════════════════════════════════
-var _dupesToRemove = [];
+// ════════════════════════════════════════════
+// DUPLICATE DETECTION — FUZZY MATCHING
+// ════════════════════════════════════════════
+
+// Normalize a product name for fuzzy comparison:
+// lowercase, strip punctuation/extra spaces, collapse whitespace
+function _normName(s) {
+  return (s || '').toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\b(the|a|an|of|with|and|or|for|in|at|by|to|set|piece|pc|pk|pack)\b/g, ' ')
+    .replace(/\s+/g, ' ').trim();
+}
+
+// Extract the brand (first word) from a product name
+function _brand(name) {
+  var words = _normName(name).split(' ');
+  return words[0] || '';
+}
+
+// Compute a simple word-overlap similarity score (0..1)
+function _similarity(a, b) {
+  var wa = new Set(_normName(a).split(' ').filter(Boolean));
+  var wb = new Set(_normName(b).split(' ').filter(Boolean));
+  if (!wa.size || !wb.size) return 0;
+  var inter = 0;
+  wa.forEach(function(w) { if (wb.has(w)) inter++; });
+  return inter / Math.max(wa.size, wb.size);
+}
+
+// Returns true if two card names should be flagged as possible duplicates
+function _isFuzzyDupe(nameA, nameB) {
+  var na = _normName(nameA), nb = _normName(nameB);
+  if (!na || !nb || na === 'new item' || nb === 'new item') return false;
+  // Exact match
+  if (na === nb) return true;
+  // Same brand + high word overlap (>= 50%)
+  var ba = _brand(nameA), bb = _brand(nameB);
+  if (ba && bb && ba === bb && _similarity(nameA, nameB) >= 0.5) return true;
+  // One name contains the other (substring match on normalized)
+  if (na.includes(nb) || nb.includes(na)) return true;
+  return false;
+}
+
+function _deleteCard(card) {
+  removeCardFromTable(card);
+  card.classList.remove('dupe-flag');
+  card.remove();
+  updateStats();
+  scheduleSave();
+}
 
 function findDuplicates() {
-  var groups = {};
-  document.querySelectorAll('.card').forEach(function(card) {
-    var name = ((card.querySelector('.card-name') || {}).textContent || '').trim().toLowerCase();
-    if (!name || name === 'new item') return;
-    if (!groups[name]) groups[name] = [];
-    groups[name].push(card);
-  });
-  var dupes = Object.values(groups).filter(function(g) { return g.length > 1; });
-  _dupesToRemove = [];
-  // Flag duplicates
   document.querySelectorAll('.card.dupe-flag').forEach(function(c) { c.classList.remove('dupe-flag'); });
+
+  // Collect all live cards
+  var cards = Array.from(document.querySelectorAll('.card')).filter(function(c) {
+    var n = ((c.querySelector('.card-name') || {}).textContent || '').trim();
+    return n && n.toLowerCase() !== 'new item' && n.toLowerCase() !== 'new product';
+  });
+
+  // Build fuzzy pairs (each unique pair checked once)
+  var pairs = [];
+  var seen = new Set();
+  for (var i = 0; i < cards.length; i++) {
+    for (var j = i + 1; j < cards.length; j++) {
+      var na = ((cards[i].querySelector('.card-name') || {}).textContent || '').trim();
+      var nb = ((cards[j].querySelector('.card-name') || {}).textContent || '').trim();
+      var key = i + '-' + j;
+      if (!seen.has(key) && _isFuzzyDupe(na, nb)) {
+        seen.add(key);
+        pairs.push([cards[i], cards[j]]);
+        cards[i].classList.add('dupe-flag');
+        cards[j].classList.add('dupe-flag');
+      }
+    }
+  }
+
   var list = document.getElementById('dupe-list');
   list.innerHTML = '';
-  if (dupes.length === 0) {
-    list.innerHTML = '<div style="text-align:center;color:var(--stone);font-style:italic;padding:24px;">No duplicate cards found.</div>';
+
+  if (pairs.length === 0) {
+    list.innerHTML = '<div style="text-align:center;color:var(--stone);font-style:italic;padding:24px;">No possible duplicates found.</div>';
     document.getElementById('modal-dupes').classList.add('open');
     return;
   }
-  dupes.forEach(function(group) {
-    var name = ((group[0].querySelector('.card-name') || {}).textContent || '').trim();
-    var grpDiv = document.createElement('div');
-    grpDiv.style.cssText = 'border:1px solid var(--border);border-radius:6px;padding:12px;margin-bottom:12px;';
-    grpDiv.innerHTML = '<div style="font-size:12px;color:var(--gold);letter-spacing:1px;margin-bottom:8px;">' + name + ' — ' + group.length + ' copies</div>';
-    group.forEach(function(card, i) {
-      card.classList.add('dupe-flag');
-      var row = document.createElement('div');
-      row.style.cssText = 'display:flex;align-items:center;gap:8px;margin-bottom:6px;';
+
+  pairs.forEach(function(pair, pi) {
+    var cardA = pair[0], cardB = pair[1];
+    var pairWrap = document.createElement('div');
+    pairWrap.style.cssText = 'border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:14px;';
+
+    // Label
+    var lbl = document.createElement('div');
+    lbl.style.cssText = 'font-size:10px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;';
+    lbl.textContent = 'Possible Match #' + (pi + 1);
+    pairWrap.appendChild(lbl);
+
+    // Side-by-side cards
+    var sides = document.createElement('div');
+    sides.style.cssText = 'display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;';
+
+    function makeCardPanel(card, side) {
+      var name  = ((card.querySelector('.card-name')  || {}).textContent || '').trim();
       var price = ((card.querySelector('.card-price') || {}).textContent || '').trim();
       var store = ((card.querySelector('.card-store') || {}).textContent || '').trim();
-      var label = document.createElement('span');
-      label.style.cssText = 'flex:1;font-size:12px;color:var(--sand);';
-      label.textContent = (i === 0 ? '✓ Keep: ' : '✗ Dupe: ') + store + ' — ' + price;
-      var chk = document.createElement('button');
-      chk.style.cssText = 'padding:3px 8px;font-size:10px;border:1px solid var(--border);border-radius:4px;background:transparent;color:var(--stone);cursor:pointer;font-family:var(--fb);';
-      chk.textContent = i === 0 ? 'Keep' : 'Remove';
-      if (i > 0) {
-        _dupesToRemove.push(card);
-        chk.style.color = '#c0392b';
-        chk.style.borderColor = 'rgba(192,57,43,.4)';
-        chk.addEventListener('click', function() {
-          var idx = _dupesToRemove.indexOf(card);
-          if (idx > -1) {
-            _dupesToRemove.splice(idx, 1);
-            chk.textContent = 'Keep';
-            chk.style.color = 'var(--stone)';
-            chk.style.borderColor = 'var(--border)';
-            label.textContent = '✓ Keep: ' + store + ' — ' + price;
-          } else {
-            _dupesToRemove.push(card);
-            chk.textContent = 'Remove';
-            chk.style.color = '#c0392b';
-            chk.style.borderColor = 'rgba(192,57,43,.4)';
-            label.textContent = '✗ Dupe: ' + store + ' — ' + price;
-          }
-        });
-      }
-      row.appendChild(label); row.appendChild(chk); grpDiv.appendChild(row);
-    });
-    list.appendChild(grpDiv);
-  });
-  document.getElementById('modal-dupes').classList.add('open');
-}
+      var urlEl = card.querySelector('.card-url');
+      var url   = urlEl ? urlEl.value.trim() : '';
 
-function removeAllDupes() {
-  _dupesToRemove.forEach(function(card) {
-    removeCardFromTable(card);
-    card.classList.remove('dupe-flag');
-    card.remove();
+      var panel = document.createElement('div');
+      panel.style.cssText = 'background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:10px;';
+
+      var sideLabel = document.createElement('div');
+      sideLabel.style.cssText = 'font-size:10px;color:var(--stone);letter-spacing:1px;margin-bottom:6px;';
+      sideLabel.textContent = side === 'left' ? '← LEFT' : 'RIGHT →';
+      panel.appendChild(sideLabel);
+
+      var nameEl = document.createElement('div');
+      nameEl.style.cssText = 'font-size:13px;color:var(--cream);font-family:var(--fd);font-weight:600;margin-bottom:4px;line-height:1.3;';
+      nameEl.textContent = name;
+      panel.appendChild(nameEl);
+
+      var priceEl = document.createElement('div');
+      priceEl.style.cssText = 'font-size:14px;color:var(--gold);font-family:var(--fd);margin-bottom:6px;';
+      priceEl.textContent = price;
+      panel.appendChild(priceEl);
+
+      if (store) {
+        var storeEl = document.createElement('div');
+        storeEl.style.cssText = 'font-size:11px;color:var(--stone);margin-bottom:6px;';
+        storeEl.textContent = store;
+        panel.appendChild(storeEl);
+      }
+
+      if (url) {
+        var linkEl = document.createElement('a');
+        linkEl.href = url;
+        linkEl.target = '_blank';
+        linkEl.rel = 'noopener noreferrer';
+        linkEl.style.cssText = 'font-size:11px;color:var(--gold);text-decoration:none;display:inline-block;';
+        linkEl.textContent = '↗ Open Product';
+        linkEl.addEventListener('mouseenter', function(){ this.style.textDecoration='underline'; });
+        linkEl.addEventListener('mouseleave', function(){ this.style.textDecoration='none'; });
+        panel.appendChild(linkEl);
+      }
+
+      return panel;
+    }
+
+    sides.appendChild(makeCardPanel(cardA, 'left'));
+    sides.appendChild(makeCardPanel(cardB, 'right'));
+    pairWrap.appendChild(sides);
+
+    // Action buttons
+    var actions = document.createElement('div');
+    actions.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap;';
+    function makeActionBtn(label, color, handler) {
+      var btn = document.createElement('button');
+      btn.style.cssText = 'flex:1;min-width:0;padding:7px 10px;font-size:11px;letter-spacing:.5px;border:1px solid ' + color + ';border-radius:4px;background:transparent;color:' + color + ';cursor:pointer;font-family:var(--fb);transition:background .15s;';
+      btn.textContent = label;
+      btn.addEventListener('mouseenter', function(){ btn.style.background = color + '22'; });
+      btn.addEventListener('mouseleave', function(){ btn.style.background = 'transparent'; });
+      btn.addEventListener('click', function() {
+        handler();
+        pairWrap.style.opacity = '.35';
+        pairWrap.style.pointerEvents = 'none';
+        var done = document.createElement('div');
+        done.style.cssText = 'text-align:center;font-size:11px;color:var(--stone);padding:4px;';
+        done.textContent = '✓ Done';
+        pairWrap.appendChild(done);
+      });
+      return btn;
+    }
+    actions.appendChild(makeActionBtn('Delete Left ←', '#c0392b', function() { _deleteCard(cardA); }));
+    actions.appendChild(makeActionBtn('Delete Right →', '#c0392b', function() { _deleteCard(cardB); }));
+    actions.appendChild(makeActionBtn('Keep Both', 'var(--stone)', function() {
+      cardA.classList.remove('dupe-flag');
+      cardB.classList.remove('dupe-flag');
+    }));
+    pairWrap.appendChild(actions);
+    list.appendChild(pairWrap);
   });
-  var removed = _dupesToRemove.length;
-  _dupesToRemove = [];
-  document.querySelectorAll('.card.dupe-flag').forEach(function(c) { c.classList.remove('dupe-flag'); });
-  updateStats();
-  scheduleSave();
-  closeModal('modal-dupes');
-  if (removed > 0) alert(removed + ' duplicate card(s) removed.');
+
+  document.getElementById('modal-dupes').classList.add('open');
 }
 
 // ════════════════════════════════════════════
@@ -2515,6 +2702,8 @@ function loadGallery() {
     });
     window._galleryLoading = false;
     updateStats();
+    // Ensure page stays at top after loading saved data
+    window.scrollTo(0, 0);
     var d = new Date(data.ts);
     var ts = d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
     _setSaveStatus('saved', '✓ Restored ' + d.toLocaleDateString() + ' ' + ts);
@@ -2787,6 +2976,8 @@ function importAll(){
   });
   updateStats();
   window._galleryLoading = false;
+  // Scroll to top after populating default cards
+  window.scrollTo(0, 0);
   setTimeout(applyImages,200);
 }
 function applyImages(){
@@ -2797,6 +2988,8 @@ function applyImages(){
     var photo=card.querySelector('.card-photo');
     if(photo) setCardPhoto(photo,window._imgMap[idx]);
   });
+  // Ensure top position is maintained after images are applied
+  window.scrollTo(0, 0);
 }
 if(!window._galleryLoaded){
   if(document.readyState==='loading'){
