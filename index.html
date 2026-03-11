@@ -1222,6 +1222,7 @@ function initPhotoGrids() {
       if (img) img.remove();
       if (hintEl) hintEl.style.display = '';
       removeBtn.style.display = 'none';
+      scheduleSave();
     });
   });
 }
@@ -1239,6 +1240,9 @@ function setSlotPhoto(slot, src) {
   img.src = src;
   if (!slot.querySelector('img')) slot.appendChild(img);
   slot.querySelector('.slot-hint').style.display = 'none';
+  var rb = slot.querySelector('.remove-photo');
+  if (rb) rb.style.display = '';
+  if (!window._galleryLoading) scheduleSave();
 }
 
 // ── Card grids — wire cards and add-card placeholders ──
@@ -1345,7 +1349,7 @@ function initFilterBars() {
 function initTextareas() {
   document.querySelectorAll('.design-notes,.room-notes-area').forEach(function(ta) {
     autoExpand(ta);
-    ta.addEventListener('input', function() { autoExpand(ta); });
+    ta.addEventListener('input', function() { autoExpand(ta); scheduleSave(); });
   });
 }
 
@@ -1758,35 +1762,34 @@ function openAddSubCatModal(section, navId) {
   document.getElementById('modal-addsubcat').classList.add('open');
   setTimeout(function() { document.getElementById('new-subcat-name').focus(); }, 80);
 }
-function createSubCategory() {
-  var name    = document.getElementById('new-subcat-name').value.trim();
-  var section = document.getElementById('new-subcat-section').value;
-  var navId   = document.getElementById('new-subcat-navid').value;
-  if (!name || !section) return;
-  var slug = name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-  var fullId = section + '-' + slug;
+function _buildSubCatBlock(sectionId, blockId, name) {
+  var sectionEl = document.getElementById(sectionId);
+  if (!sectionEl) return null;
+  var sectionSlug = sectionId.replace('section-', '');
+  var navId = 'subnav-' + sectionSlug;
 
   // Anchor button in sub-nav
+  var anchor = null;
   var subnav = document.getElementById(navId);
-  var addBtn = subnav.querySelector('.sub-tab-add');
-  var anchor = document.createElement('button');
-  anchor.className = 'sub-anchor-btn';
-  anchor.textContent = name;
-  anchor._targetId = 'subcat-' + fullId;
-  anchor.addEventListener('click', function() { scrollToSubCat('subcat-' + fullId); });
-  subnav.insertBefore(anchor, addBtn);
+  if (subnav) {
+    var addBtn = subnav.querySelector('.sub-tab-add');
+    anchor = document.createElement('button');
+    anchor.className = 'sub-anchor-btn';
+    anchor.textContent = name;
+    anchor._targetId = blockId;
+    anchor.addEventListener('click', function() { scrollToSubCat(blockId); });
+    subnav.insertBefore(anchor, addBtn);
+  }
 
   // Build block
-  var sectionEl = document.getElementById('section-' + section);
-  var notesEl   = sectionEl.querySelector('.room-notes-section');
+  var notesEl = sectionEl.querySelector('.room-notes-section');
   var block = document.createElement('div');
   block.className = 'sub-cat-block';
-  block.id = 'subcat-' + fullId;
+  block.id = blockId;
 
   var hdr = document.createElement('div'); hdr.className = 'sub-cat-header';
   var ttl = document.createElement('span'); ttl.className = 'sub-cat-title'; ttl.textContent = name;
   hdr.appendChild(ttl);
-  // Delete sub-category button
   var delBtn = document.createElement('button'); delBtn.className = 'btn-delete-subcat'; delBtn.textContent = '🗑 Delete Category'; delBtn.title = 'Delete this entire sub-category';
   delBtn.addEventListener('click', function() { deleteSubCat(block, anchor); });
   hdr.appendChild(delBtn);
@@ -1794,6 +1797,7 @@ function createSubCategory() {
   setTimeout(function() { wireSubCatTitle(hdr); }, 10);
 
   // Comp table
+  var fullId = blockId.replace('subcat-', '');
   var wrap = document.createElement('div'); wrap.className = 'comp-table-wrap';
   var tog = document.createElement('button'); tog.className = 'comp-table-toggle';
   tog.innerHTML = '<span>Comparison Table</span><span>▼</span>';
@@ -1833,9 +1837,20 @@ function createSubCategory() {
   block.appendChild(grid);
   appendAddPlaceholder(grid);
   sectionEl.insertBefore(block, notesEl);
-  closeModal('modal-addsubcat');
   updateStats();
-  scrollToSubCat('subcat-' + fullId);
+  return block;
+}
+
+function createSubCategory() {
+  var name    = document.getElementById('new-subcat-name').value.trim();
+  var section = document.getElementById('new-subcat-section').value;
+  if (!name || !section) return;
+  var slug = name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  var blockId = 'subcat-' + section + '-' + slug;
+  var block = _buildSubCatBlock('section-' + section, blockId, name);
+  if (!block) return;
+  closeModal('modal-addsubcat');
+  scrollToSubCat(blockId);
 }
 
 // ════════════════════════════════════════════
@@ -1846,12 +1861,7 @@ function openAddRoomModal() {
   document.getElementById('modal-addroom').classList.add('open');
   setTimeout(function() { document.getElementById('new-room-name').focus(); }, 80);
 }
-function createRoom() {
-  var name = document.getElementById('new-room-name').value.trim();
-  if (!name) return;
-  var slug = 'room-' + name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-  var num  = document.querySelectorAll('.room-section').length + 1;
-
+function _buildRoomSection(slug, num, name) {
   // Nav tab
   var nav = document.getElementById('main-nav');
   var addNavBtn = nav.querySelector('.nav-add-btn');
@@ -1872,6 +1882,8 @@ function createRoom() {
   var snum = document.createElement('span'); snum.className = 'section-num'; snum.contentEditable = 'true'; snum.textContent = num;
   var stitle = document.createElement('h2'); stitle.className = 'section-title'; stitle.contentEditable = 'true'; stitle.textContent = name;
   var smeta = document.createElement('span'); smeta.className = 'section-meta'; smeta.contentEditable = 'true'; smeta.textContent = 'Click to add measurements';
+  snum.addEventListener('input', scheduleSave);
+  smeta.addEventListener('input', scheduleSave);
   hdr.appendChild(snum); hdr.appendChild(stitle); hdr.appendChild(smeta); sec.appendChild(hdr);
 
   // Section-top
@@ -1883,8 +1895,7 @@ function createRoom() {
     input.addEventListener('change', function() { loadSlotPhoto(this); });
     var h = document.createElement('div'); h.className = 'slot-hint'; h.textContent = hint;
     var rb = document.createElement('button'); rb.className = 'remove-photo'; rb.textContent = '×';
-    rb.addEventListener('click', function(e) { e.stopPropagation(); var img=slot.querySelector('img'); if(img)img.remove(); h.style.display=''; });
-    // Add upload label inside hint
+    rb.addEventListener('click', function(e) { e.stopPropagation(); var img=slot.querySelector('img'); if(img)img.remove(); h.style.display=''; rb.style.display='none'; scheduleSave(); });
     var ulbl = document.createElement('label'); ulbl.className = 'slot-upload-btn'; ulbl.textContent = '📁 Upload';
     ulbl.appendChild(input); h.appendChild(ulbl);
     slot.appendChild(h); slot.appendChild(rb);
@@ -1893,7 +1904,7 @@ function createRoom() {
   var dnw = document.createElement('div'); dnw.className = 'design-notes-wrap';
   var dnl = document.createElement('div'); dnl.className = 'notes-label'; dnl.textContent = 'Design Notes & Color Comments';
   var dna = document.createElement('textarea'); dna.className = 'design-notes'; dna.placeholder = 'Add design notes...';
-  dna.addEventListener('input', function() { autoExpand(this); });
+  dna.addEventListener('input', function() { autoExpand(this); scheduleSave(); });
   dnw.appendChild(dnl); dnw.appendChild(dna);
   stop.appendChild(grid4); stop.appendChild(dnw); sec.appendChild(stop);
 
@@ -1943,14 +1954,24 @@ function createRoom() {
   var rns = document.createElement('div'); rns.className = 'room-notes-section';
   var rnl = document.createElement('div'); rnl.className = 'room-notes-label'; rnl.textContent = 'Room Notes';
   var rna = document.createElement('textarea'); rna.className = 'room-notes-area'; rna.placeholder = 'Overall notes...';
-  rna.addEventListener('input', function() { autoExpand(this); });
+  rna.addEventListener('input', function() { autoExpand(this); scheduleSave(); });
   rns.appendChild(rnl); rns.appendChild(rna); sec.appendChild(rns);
 
   var bottom = document.getElementById('gallery-bottom');
   bottom.parentNode.insertBefore(sec, bottom);
   io.observe(sec);
-  closeModal('modal-addroom');
+  wireSectionTitle(sec);
   updateStats();
+  return sec;
+}
+
+function createRoom() {
+  var name = document.getElementById('new-room-name').value.trim();
+  if (!name) return;
+  var slug = 'room-' + name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  var num  = document.querySelectorAll('.room-section').length + 1;
+  var sec = _buildRoomSection(slug, num, name);
+  closeModal('modal-addroom');
   sec.scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -1990,6 +2011,7 @@ function wireSectionTitle(sec) {
     var match = current.match(/^(\d+[B]?[\.\s]+)/i);
     var prefix = match ? match[1] : '';
     tab.textContent = prefix + titleEl.textContent.trim();
+    scheduleSave();
   });
 }
 
@@ -2040,6 +2062,7 @@ function wireSubCatTitle(hdr) {
         btn.textContent = newName;
       }
     });
+    scheduleSave();
   }
 
   title.addEventListener('blur', finishEdit);
@@ -2730,7 +2753,9 @@ function scheduleSave() {
 
 function saveGallery() {
   try {
-    var data = { v: 1, ts: Date.now(), cards: [], archive: _archive };
+    var data = { v: 1, ts: Date.now(), cards: [], archive: _archive, rooms: [], subcats: [] };
+
+    // ── Cards ──
     document.querySelectorAll('.card').forEach(function(card) {
       var sectionId = card.dataset.section;
       if (!sectionId) return;
@@ -2756,21 +2781,64 @@ function saveGallery() {
         img: (function(){ var i = card.querySelector('.card-photo img'); return (i && i.src && i.src.indexOf('data:') === 0) ? i.src : ''; })()
       });
     });
+
+    // ── Rooms ──
+    document.querySelectorAll('.room-section').forEach(function(sec) {
+      var photos = [];
+      sec.querySelectorAll('.photo-slot').forEach(function(slot) {
+        var img = slot.querySelector('img');
+        photos.push((img && img.src && img.src.indexOf('data:') === 0) ? img.src : '');
+      });
+      var dn = sec.querySelector('.design-notes');
+      var rn = sec.querySelector('.room-notes-area');
+      data.rooms.push({
+        id: sec.id,
+        num: (sec.querySelector('.section-num') || {}).textContent || '',
+        title: (sec.querySelector('.section-title') || {}).textContent || '',
+        meta: (sec.querySelector('.section-meta') || {}).textContent || '',
+        notes: dn ? dn.value : '',
+        roomNotes: rn ? rn.value : '',
+        photos: photos,
+        dynamic: sec.id.indexOf('section-room-') === 0
+      });
+    });
+
+    // ── Sub-categories ──
+    document.querySelectorAll('.sub-cat-block').forEach(function(block) {
+      var sec = block.closest('.room-section');
+      if (!sec) return;
+      var titleEl = block.querySelector('.sub-cat-title');
+      var ths = block.querySelectorAll('.comp-table thead th');
+      data.subcats.push({
+        id: block.id,
+        sectionId: sec.id,
+        title: titleEl ? titleEl.textContent.trim() : '',
+        colC: ths[2] ? ths[2].textContent.trim() : '',
+        colD: ths[3] ? ths[3].textContent.trim() : ''
+      });
+    });
+
     var t = new Date();
     var ts = t.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
     try {
       localStorage.setItem(_saveKey, JSON.stringify(data));
       _setSaveStatus('saved', '✓ Saved ' + ts);
     } catch(qe) {
-      // Quota exceeded — retry without images
-      data.cards.forEach(function(c) { delete c.img; });
+      // Quota exceeded — retry without room photos first, then without all images
+      data.rooms.forEach(function(r) { r.photos = []; });
       try {
         localStorage.setItem(_saveKey, JSON.stringify(data));
-        _setSaveStatus('saved', '⚠ Saved (images excluded — storage full)');
-      } catch(e2) {
-        _setSaveStatus('unsaved', '✗ Save failed — storage full');
-        console.warn('Gallery save error (no images):', e2);
-        return;
+        _setSaveStatus('saved', '⚠ Saved (room photos excluded — storage full)');
+      } catch(qe2) {
+        data.cards.forEach(function(c) { delete c.img; });
+        try {
+          localStorage.setItem(_saveKey, JSON.stringify(data));
+          _setSaveStatus('saved', '⚠ Saved (images excluded — storage full)');
+        } catch(e2) {
+          _setSaveStatus('unsaved', '✗ Save failed — storage full');
+          console.warn('Gallery save error (no images):', e2);
+          return;
+        }
       }
     }
     setTimeout(function(){ _setSaveStatus('', ''); }, 5000);
@@ -2841,40 +2909,114 @@ function loadGallery() {
     var raw = localStorage.getItem(_saveKey);
     if (!raw) return false;
     var data = JSON.parse(raw);
-    if (!data || !data.cards || !data.cards.length) return false;
+    if (!data) return false;
     // Restore archive
     if (data.archive) {
       _archive = data.archive;
       renderArchive();
     }
+
+    // ── Step 1: Recreate any dynamic rooms not yet in DOM ──
+    if (data.rooms) {
+      data.rooms.forEach(function(r) {
+        if (!document.getElementById(r.id) && r.dynamic) {
+          var slug = r.id.replace('section-', '');
+          _buildRoomSection(slug, r.num || '', r.title || '');
+        }
+      });
+    }
+
+    // ── Step 2: Recreate any dynamic sub-cats not yet in DOM ──
+    if (data.subcats) {
+      data.subcats.forEach(function(sc) {
+        if (!document.getElementById(sc.id)) {
+          _buildSubCatBlock(sc.sectionId, sc.id, sc.title || '');
+        }
+      });
+    }
+
+    // ── Step 3: Restore cards ──
     // Clear any hardcoded HTML cards so we start with a clean slate
     document.querySelectorAll('.card-grid .card').forEach(function(c) { c.remove(); });
-    // Restore cards — replace importAll
     window._galleryLoading = true;
-    data.cards.forEach(function(d) {
-      var grid = document.getElementById('grid-' + d.g);
-      if (!grid) return;
-      addCard(d.g, grid);
-      var cards = grid.querySelectorAll('.card');
-      var card = cards[cards.length - 1];
-      if (!card) return;
-      if (d.cid) card.dataset.cardId = d.cid;
-      if (card.querySelector('.card-name')) card.querySelector('.card-name').textContent = d.name;
-      if (card.querySelector('.card-price')) card.querySelector('.card-price').textContent = d.price;
-      if (card.querySelector('.card-store')) card.querySelector('.card-store').textContent = d.store;
-      if (card.querySelector('.card-note')) card.querySelector('.card-note').textContent = d.note;
-      var vals = card.querySelectorAll('.card-attr-val'); var lbls = card.querySelectorAll('.card-attr-label');
-      if (vals[0]) vals[0].textContent = d.a1v; if (lbls[0]) lbls[0].textContent = d.a1l;
-      if (vals[1]) vals[1].textContent = d.a2v; if (lbls[1]) lbls[1].textContent = d.a2l;
-      var ui = card.querySelector('.card-url');
-      if (ui && d.url) { ui.value = d.url; ui.dispatchEvent(new Event('input')); }
-      if (d.badge && d.badgeClass) setBadge(card, d.status, d.badge, d.badgeClass);
-      if (d.img) { var ph = card.querySelector('.card-photo'); if (ph) setCardPhoto(ph, d.img); }
-      syncCardToTable(card);
-    });
+    if (data.cards) {
+      data.cards.forEach(function(d) {
+        var grid = document.getElementById('grid-' + d.g);
+        if (!grid) return;
+        addCard(d.g, grid);
+        var cards = grid.querySelectorAll('.card');
+        var card = cards[cards.length - 1];
+        if (!card) return;
+        if (d.cid) card.dataset.cardId = d.cid;
+        if (card.querySelector('.card-name')) card.querySelector('.card-name').textContent = d.name;
+        if (card.querySelector('.card-price')) card.querySelector('.card-price').textContent = d.price;
+        if (card.querySelector('.card-store')) card.querySelector('.card-store').textContent = d.store;
+        if (card.querySelector('.card-note')) card.querySelector('.card-note').textContent = d.note;
+        var vals = card.querySelectorAll('.card-attr-val'); var lbls = card.querySelectorAll('.card-attr-label');
+        if (vals[0]) vals[0].textContent = d.a1v; if (lbls[0]) lbls[0].textContent = d.a1l;
+        if (vals[1]) vals[1].textContent = d.a2v; if (lbls[1]) lbls[1].textContent = d.a2l;
+        var ui = card.querySelector('.card-url');
+        if (ui && d.url) { ui.value = d.url; ui.dispatchEvent(new Event('input')); }
+        if (d.badge && d.badgeClass) setBadge(card, d.status, d.badge, d.badgeClass);
+        if (d.img) { var ph = card.querySelector('.card-photo'); if (ph) setCardPhoto(ph, d.img); }
+        syncCardToTable(card);
+      });
+    }
     window._galleryLoading = false;
+
+    // ── Step 4: Restore room text, notes, and photos ──
+    if (data.rooms) {
+      data.rooms.forEach(function(r) {
+        var sec = document.getElementById(r.id);
+        if (!sec) return;
+        var numEl   = sec.querySelector('.section-num');
+        var titleEl = sec.querySelector('.section-title');
+        var metaEl  = sec.querySelector('.section-meta');
+        var dnEl    = sec.querySelector('.design-notes');
+        var rnEl    = sec.querySelector('.room-notes-area');
+        if (numEl   && r.num)       numEl.textContent   = r.num;
+        if (titleEl && r.title)     titleEl.textContent = r.title;
+        if (metaEl  && r.meta)      metaEl.textContent  = r.meta;
+        if (dnEl    && r.notes)     { dnEl.value    = r.notes;     autoExpand(dnEl); }
+        if (rnEl    && r.roomNotes) { rnEl.value    = r.roomNotes; autoExpand(rnEl); }
+        // Restore room photos
+        if (r.photos && r.photos.length) {
+          var slots = sec.querySelectorAll('.photo-slot');
+          r.photos.forEach(function(src, i) {
+            if (src && slots[i]) setSlotPhoto(slots[i], src);
+          });
+        }
+        // Sync nav tab label
+        var tab = document.querySelector('.nav-tab[data-target="' + r.id + '"]');
+        if (tab && r.title) {
+          var cur = tab.textContent;
+          var match = cur.match(/^(\d+[B]?[\.\s]+)/i);
+          tab.textContent = (match ? match[1] : '') + r.title;
+        }
+      });
+    }
+
+    // ── Step 5: Restore sub-category titles and table column headers ──
+    if (data.subcats) {
+      data.subcats.forEach(function(sc) {
+        var block = document.getElementById(sc.id);
+        if (!block) return;
+        var titleEl = block.querySelector('.sub-cat-title');
+        if (titleEl && sc.title) titleEl.textContent = sc.title;
+        var ths = block.querySelectorAll('.comp-table thead th');
+        if (ths[2] && sc.colC) ths[2].textContent = sc.colC;
+        if (ths[3] && sc.colD) ths[3].textContent = sc.colD;
+        // Sync sub-nav anchor label
+        var sec = document.getElementById(sc.sectionId);
+        if (sec) {
+          sec.querySelectorAll('.sub-anchor-btn').forEach(function(btn) {
+            if (btn._targetId === sc.id) btn.textContent = sc.title;
+          });
+        }
+      });
+    }
+
     updateStats();
-    // Ensure page stays at top after loading saved data
     window.scrollTo(0, 0);
     var d = new Date(data.ts);
     var ts = d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
@@ -2907,6 +3049,10 @@ function hookAutoSave() {
     });
   });
   outerObs.observe(document.body, { childList: true, subtree: true });
+  // Wire section-num and section-meta for static rooms (dynamic rooms wire in _buildRoomSection)
+  document.querySelectorAll('.section-num, .section-meta').forEach(function(el) {
+    el.addEventListener('input', scheduleSave);
+  });
 }
 
 // ════════════════════════════════════════════
