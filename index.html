@@ -158,8 +158,10 @@ body.print-mode .slot-upload-btn{background:#f5f0e4 !important;border-color:#c8b
 
 
 /* card photo */
-.card-photo{aspect-ratio:4/3;background:var(--surface2);position:relative;overflow:hidden;}
-.card-photo img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;}
+.card-photo{aspect-ratio:4/3;background:var(--surface2);position:relative;overflow:hidden;cursor:grab;}
+.card-photo img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;transform:scale(1.4);transform-origin:center center;}
+.card.card-dragging{opacity:.35;box-shadow:none !important;transform:none !important;}
+.card.card-drag-over{outline:2px solid var(--gold);outline-offset:-2px;}
 .card-photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
 .card-photo-placeholder .ph-icon{font-size:28px;opacity:.3;}
 .card-photo-placeholder .ph-text{font-size:11px;color:var(--stone);letter-spacing:1px;}
@@ -1334,8 +1336,8 @@ document.addEventListener('DOMContentLoaded', function() {
   addAddCardPlaceholders();
   initSubCatTitles();
   initPriceSortBars();
-  // Wire archive patch onto all existing cards
-  document.querySelectorAll('.card').forEach(function(card) { patchRemoveBtn(card); });
+  // Wire archive patch and drag onto all existing static cards
+  document.querySelectorAll('.card').forEach(function(card) { patchRemoveBtn(card); initCardDrag(card); });
   // Load saved state or run importAll
   var loaded = false;
   try { loaded = loadGallery(); } catch(e) {}
@@ -1943,6 +1945,53 @@ function addCard(sectionId, grid) {
     card.addEventListener('click', _onBulkCardClick);
   }
   if (!window._galleryLoading) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  initCardDrag(card);
+}
+
+// ════════════════════════════════════════════
+// CARD DRAG-TO-REORDER
+// ════════════════════════════════════════════
+var _dragCard = null;
+function initCardDrag(card) {
+  card.setAttribute('draggable', 'true');
+  card.addEventListener('dragstart', function(e) {
+    // Don't hijack drags starting from text/input elements
+    var t = e.target;
+    if (t.closest('[contenteditable="true"]') || t.closest('input') || t.closest('textarea') || t.closest('button') || t.closest('select')) {
+      e.preventDefault(); return;
+    }
+    _dragCard = card;
+    e.dataTransfer.effectAllowed = 'move';
+    setTimeout(function() { card.classList.add('card-dragging'); }, 0);
+  });
+  card.addEventListener('dragend', function() {
+    card.classList.remove('card-dragging');
+    document.querySelectorAll('.card-drag-over').forEach(function(c) { c.classList.remove('card-drag-over'); });
+    _dragCard = null;
+  });
+  card.addEventListener('dragover', function(e) {
+    if (!_dragCard || _dragCard === card) return;
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+  });
+  card.addEventListener('dragenter', function(e) {
+    if (!_dragCard || _dragCard === card) return;
+    if (_dragCard.parentElement === card.parentElement) card.classList.add('card-drag-over');
+  });
+  card.addEventListener('dragleave', function() { card.classList.remove('card-drag-over'); });
+  card.addEventListener('drop', function(e) {
+    e.preventDefault(); e.stopPropagation();
+    card.classList.remove('card-drag-over');
+    if (!_dragCard || _dragCard === card) return;
+    if (_dragCard.parentElement !== card.parentElement) return;
+    var rect = card.getBoundingClientRect();
+    if (e.clientX < rect.left + rect.width / 2) {
+      card.parentElement.insertBefore(_dragCard, card);
+    } else {
+      card.parentElement.insertBefore(_dragCard, card.nextSibling);
+    }
+    scheduleSave();
+  });
 }
 
 // ════════════════════════════════════════════
