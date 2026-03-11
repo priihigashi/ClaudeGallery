@@ -332,6 +332,24 @@ body.print-mode .nav-add-btn            { color:#7a6840 !important; border-color
 [contenteditable="true"]{cursor:text;}
 [contenteditable="true"]:empty::before{content:attr(data-placeholder);opacity:.4;font-style:italic;}
 
+/* ── BULK SELECT MODE ── */
+.bulk-select-bar{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--surface);border:1px solid var(--gold);border-radius:var(--radius);padding:12px 24px;display:flex;align-items:center;gap:16px;z-index:500;box-shadow:0 8px 32px rgba(0,0,0,.7);font-family:var(--fb);font-size:12px;letter-spacing:1px;pointer-events:all;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;}
+.bulk-select-bar.visible{opacity:1;visibility:visible;}
+.bulk-select-count{color:var(--cream);text-transform:uppercase;}
+.bulk-delete-btn{padding:8px 18px;background:rgba(192,57,43,.15);border:1px solid #c0392b;border-radius:4px;color:#e05a47;font-size:11px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:var(--fb);transition:all .2s;}
+.bulk-delete-btn:hover{background:rgba(192,57,43,.3);}
+.bulk-select-cancel{padding:8px 14px;background:transparent;border:1px solid var(--border);border-radius:4px;color:var(--stone);font-size:11px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:var(--fb);transition:all .2s;}
+.bulk-select-cancel:hover{border-color:var(--cream);color:var(--cream);}
+body.bulk-select-active .card{position:relative;cursor:pointer;}
+body.bulk-select-active .card::before{content:'';position:absolute;inset:0;border-radius:var(--radius);border:2px solid transparent;z-index:10;transition:border-color .15s,background .15s;pointer-events:none;}
+body.bulk-select-active .card:hover::before{border-color:var(--gold);background:rgba(201,168,76,.04);}
+body.bulk-select-active .card.bulk-selected::before{border-color:var(--gold);background:rgba(201,168,76,.08);}
+.card-bulk-check{position:absolute;top:8px;left:8px;width:20px;height:20px;border:2px solid var(--border);border-radius:4px;background:rgba(15,14,8,.7);z-index:20;display:none;align-items:center;justify-content:center;pointer-events:none;transition:all .15s;}
+body.bulk-select-active .card-bulk-check{display:flex;}
+.card.bulk-selected .card-bulk-check{border-color:var(--gold);background:var(--gold);}
+.card-bulk-check::after{content:'✓';font-size:12px;color:var(--bg);font-weight:bold;opacity:0;}
+.card.bulk-selected .card-bulk-check::after{opacity:1;}
+body.bulk-select-active .card-add-placeholder{pointer-events:none;opacity:.3;}
 /* ── DELETE SUB-CAT BUTTON ── */
 .btn-delete-subcat{margin-left:auto;padding:4px 10px;font-size:10px;letter-spacing:1px;background:transparent;border:1px solid rgba(192,57,43,.3);color:#c0392b;border-radius:4px;cursor:pointer;font-family:var(--fb);opacity:0;transition:all .2s;}
 .sub-cat-header:hover .btn-delete-subcat{opacity:1;}
@@ -480,6 +498,8 @@ body.print-mode .card-move-wrap{display:none !important;}
       <button class="nav-hamburger-item" onclick="findDuplicates();closeHamburgerMenu()">🔍 Find Duplicates</button>
       <button class="nav-hamburger-item" onclick="toggleArchiveSection();closeHamburgerMenu()">📦 Toggle Archive</button>
       <button class="nav-hamburger-item" onclick="openAddRoomModal();closeHamburgerMenu()">➕ Add New Room</button>
+      <hr class="nav-hamburger-divider">
+      <button class="nav-hamburger-item" id="bulk-select-menu-btn" onclick="toggleBulkSelect();closeHamburgerMenu()">☑ Bulk Select &amp; Delete</button>
     </div>
   </div>
 </nav>
@@ -1086,6 +1106,13 @@ Decor &amp; Pillows</button>
   <button class="btn-add-room" onclick="openAddRoomModal()">＋ Add New Room or Category</button>
 </div>
 
+<!-- BULK SELECT BAR -->
+<div class="bulk-select-bar" id="bulk-select-bar">
+  <span class="bulk-select-count" id="bulk-select-count">0 selected</span>
+  <button class="bulk-delete-btn" id="bulk-delete-btn" onclick="bulkDeleteSelected()">🗑 Delete Selected</button>
+  <button class="bulk-select-cancel" onclick="exitBulkSelect()">Cancel</button>
+</div>
+
 <!-- MODALS -->
 <div class="modal-overlay" id="modal-addroom">
   <div class="modal-box">
@@ -1232,7 +1259,11 @@ function loadSlotPhoto(input) {
   var file = input.files[0];
   if (!file) return;
   var reader = new FileReader();
-  reader.onload = function(e) { setSlotPhoto(slot, e.target.result); };
+  reader.onload = function(e) {
+    compressImageDataUrl(e.target.result, 1200, 0.82, function(compressed) {
+      setSlotPhoto(slot, compressed);
+    });
+  };
   reader.readAsDataURL(file);
 }
 function setSlotPhoto(slot, src) {
@@ -1570,7 +1601,9 @@ document.addEventListener('paste', function(e) {
       r.readAsDataURL(file);
     } else if (targetSlot) {
       var r2 = new FileReader();
-      r2.onload = (function(sl){ return function(ev){ setSlotPhoto(sl, ev.target.result); }; })(targetSlot);
+      r2.onload = (function(sl){ return function(ev){
+        compressImageDataUrl(ev.target.result, 1200, 0.82, function(compressed){ setSlotPhoto(sl, compressed); });
+      }; })(targetSlot);
       r2.readAsDataURL(file);
     }
   }
@@ -1722,7 +1755,26 @@ function addCard(sectionId, grid) {
   // Run once on creation in case URL is pre-filled
   setTimeout(updateLinkAnchor, 50);
 
-  linkRow.appendChild(linkLabel); linkRow.appendChild(linkInput); linkRow.appendChild(linkAnchor);
+  // Auto-search button — generates Google search URL from card name + store
+  var searchBtn = document.createElement('button');
+  searchBtn.textContent = '🔍 Auto-Search';
+  searchBtn.title = 'Generate Google search URL from product name';
+  searchBtn.style.cssText = 'margin-top:5px;padding:4px 8px;background:transparent;border:1px solid var(--border);border-radius:4px;color:var(--stone);font-size:10px;font-family:var(--fb);letter-spacing:.5px;cursor:pointer;transition:all .2s;display:block;';
+  searchBtn.addEventListener('mouseenter', function(){ this.style.borderColor='var(--gold)'; this.style.color='var(--gold)'; });
+  searchBtn.addEventListener('mouseleave', function(){ this.style.borderColor='var(--border)'; this.style.color='var(--stone)'; });
+  searchBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = ((card.querySelector('.card-name') || {}).textContent || '').trim();
+    var store = ((card.querySelector('.card-store') || {}).textContent || '').trim();
+    var query = [name, store].filter(Boolean).join(' ');
+    if (!query) { query = 'furniture'; }
+    var url = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+    linkInput.value = url;
+    linkInput.dispatchEvent(new Event('input'));
+    scheduleSave();
+  });
+
+  linkRow.appendChild(linkLabel); linkRow.appendChild(linkInput); linkRow.appendChild(searchBtn); linkRow.appendChild(linkAnchor);
   body.appendChild(linkRow);
   card.appendChild(body);
 
@@ -1741,6 +1793,13 @@ function addCard(sectionId, grid) {
   patchRemoveBtn(card);
   syncCardToTable(card);
   updateStats();
+  // If bulk select is active, wire the new card too
+  if (_bulkSelectActive) {
+    var chk = document.createElement('div');
+    chk.className = 'card-bulk-check';
+    card.appendChild(chk);
+    card.addEventListener('click', _onBulkCardClick);
+  }
   if (!window._galleryLoading) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
@@ -2101,6 +2160,71 @@ function toggleArchiveSection() {
   toggleArchiveCollapse();
   var sec = document.getElementById('archive-section');
   if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ════════════════════════════════════════════
+// BULK SELECT & DELETE
+// ════════════════════════════════════════════
+var _bulkSelectActive = false;
+
+function toggleBulkSelect() {
+  if (_bulkSelectActive) exitBulkSelect();
+  else enterBulkSelect();
+}
+
+function enterBulkSelect() {
+  _bulkSelectActive = true;
+  document.body.classList.add('bulk-select-active');
+  // Add checkboxes to all cards
+  document.querySelectorAll('.card').forEach(function(card) {
+    if (!card.querySelector('.card-bulk-check')) {
+      var chk = document.createElement('div');
+      chk.className = 'card-bulk-check';
+      card.appendChild(chk);
+    }
+    card.addEventListener('click', _onBulkCardClick);
+  });
+  _updateBulkBar();
+  document.getElementById('bulk-select-bar').classList.add('visible');
+}
+
+function exitBulkSelect() {
+  _bulkSelectActive = false;
+  document.body.classList.remove('bulk-select-active');
+  document.querySelectorAll('.card').forEach(function(card) {
+    card.classList.remove('bulk-selected');
+    card.removeEventListener('click', _onBulkCardClick);
+    var chk = card.querySelector('.card-bulk-check');
+    if (chk) chk.remove();
+  });
+  document.getElementById('bulk-select-bar').classList.remove('visible');
+}
+
+function _onBulkCardClick(e) {
+  // Don't toggle if user clicks an interactive element inside card
+  if (e.target.closest('input,button,a,[contenteditable]')) return;
+  var card = e.currentTarget;
+  card.classList.toggle('bulk-selected');
+  _updateBulkBar();
+}
+
+function _updateBulkBar() {
+  var n = document.querySelectorAll('.card.bulk-selected').length;
+  document.getElementById('bulk-select-count').textContent = n + ' selected';
+  document.getElementById('bulk-delete-btn').disabled = n === 0;
+}
+
+function bulkDeleteSelected() {
+  var selected = document.querySelectorAll('.card.bulk-selected');
+  if (!selected.length) return;
+  if (!confirm('Delete ' + selected.length + ' selected item(s)? This cannot be undone.')) return;
+  selected.forEach(function(card) {
+    removeCardFromTable(card);
+    card.remove();
+  });
+  updateStats();
+  scheduleSave();
+  _updateBulkBar();
 }
 
 // ════════════════════════════════════════════
@@ -2824,16 +2948,17 @@ function saveGallery() {
       localStorage.setItem(_saveKey, JSON.stringify(data));
       _setSaveStatus('saved', '✓ Saved ' + ts);
     } catch(qe) {
-      // Quota exceeded — retry without room photos first, then without all images
-      data.rooms.forEach(function(r) { r.photos = []; });
+      // Quota exceeded — retry without card images first (room grid photos are priority)
+      data.cards.forEach(function(c) { delete c.img; });
       try {
         localStorage.setItem(_saveKey, JSON.stringify(data));
-        _setSaveStatus('saved', '⚠ Saved (room photos excluded — storage full)');
+        _setSaveStatus('saved', '⚠ Saved (card thumbnails excluded — storage full)');
       } catch(qe2) {
-        data.cards.forEach(function(c) { delete c.img; });
+        // Still too large — now drop room photos too
+        data.rooms.forEach(function(r) { r.photos = []; });
         try {
           localStorage.setItem(_saveKey, JSON.stringify(data));
-          _setSaveStatus('saved', '⚠ Saved (images excluded — storage full)');
+          _setSaveStatus('saved', '⚠ Saved (all images excluded — storage full)');
         } catch(e2) {
           _setSaveStatus('unsaved', '✗ Save failed — storage full');
           console.warn('Gallery save error (no images):', e2);
