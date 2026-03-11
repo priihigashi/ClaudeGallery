@@ -451,6 +451,29 @@ body.bulk-select-active .card-add-placeholder{pointer-events:none;opacity:.3;}
 .card-move-item:hover{background:var(--surface);color:var(--cream);}
 .card-move-item.current{color:var(--gold);font-weight:500;}
 body.print-mode .card-move-wrap{display:none !important;}
+
+/* ── AI REVIEW & EDIT MODAL ── */
+.ai-edit-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:16px;}
+.ai-edit-tab{flex:1;padding:10px 6px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--stone);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;font-family:var(--fb);transition:color .2s;}
+.ai-edit-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.ai-edit-tab-panel{display:none;}
+.ai-edit-tab-panel.active{display:block;}
+.ai-diff-list,.ai-match-list,.ai-cleanup-list{max-height:300px;overflow-y:auto;margin-bottom:12px;}
+.ai-diff-row,.ai-match-row,.ai-cleanup-row{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);}
+.ai-diff-row:last-child,.ai-match-row:last-child,.ai-cleanup-row:last-child{border-bottom:none;}
+.ai-diff-chk,.ai-cleanup-chk{margin-top:3px;flex-shrink:0;cursor:pointer;}
+.ai-diff-body,.ai-match-info,.ai-cleanup-info{flex:1;min-width:0;}
+.ai-diff-card-name,.ai-match-card-name,.ai-cleanup-name{font-size:12px;color:var(--cream);font-weight:500;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ai-diff-field{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+.ai-diff-old{font-size:11px;color:var(--stone);text-decoration:line-through;}
+.ai-diff-new{font-size:11px;color:var(--sand);}
+.ai-match-thumb{width:60px;height:60px;object-fit:cover;border-radius:4px;border:1px solid var(--border);flex-shrink:0;}
+.ai-match-meta,.ai-cleanup-meta{font-size:10px;color:var(--stone);margin-bottom:3px;}
+.ai-match-conf{font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.ai-match-conf.high{color:#4caf50;}.ai-match-conf.medium{color:var(--gold);}.ai-match-conf.low{color:#e74c3c;}
+.ai-match-card-sel{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:4px 6px;color:var(--cream);font-family:var(--fb);font-size:11px;outline:none;}
+.ai-edit-danger{background:rgba(231,76,60,.12);border-color:#e74c3c;color:#e74c3c;}
+.ai-edit-danger:hover{background:rgba(231,76,60,.25);}
 </style>
 </head>
 <body>
@@ -495,6 +518,7 @@ body.print-mode .card-move-wrap{display:none !important;}
     <div class="nav-hamburger-dropdown" id="nav-hamburger-dropdown">
       <button class="nav-hamburger-item" onclick="saveGallery();closeHamburgerMenu()">💾 Save Gallery</button>
       <button class="nav-hamburger-item" onclick="openAiModal();closeHamburgerMenu()">✨ AI Product Entry</button>
+      <button class="nav-hamburger-item" onclick="openAiEditModal();closeHamburgerMenu()">👁 AI Review &amp; Edit Cards</button>
       <button class="nav-hamburger-item" onclick="findDuplicates();closeHamburgerMenu()">🔍 Find Duplicates</button>
       <button class="nav-hamburger-item" onclick="toggleArchiveSection();closeHamburgerMenu()">📦 Toggle Archive</button>
       <button class="nav-hamburger-item" onclick="openAddRoomModal();closeHamburgerMenu()">➕ Add New Room</button>
@@ -1195,6 +1219,102 @@ Decor &amp; Pillows</button>
     <div class="modal-actions">
       <button class="modal-btn" onclick="closeModal('modal-dupes')">Close</button>
     </div>
+  </div>
+</div>
+
+<!-- AI REVIEW & EDIT MODAL -->
+<div class="modal-overlay" id="modal-ai-edit">
+  <div class="modal-box wide">
+    <div class="modal-title">👁 AI Review &amp; Edit Cards</div>
+    <div class="ai-edit-tabs">
+      <button class="ai-edit-tab active" onclick="switchAiEditTab('edit')">✏️ Edit Cards</button>
+      <button class="ai-edit-tab" onclick="switchAiEditTab('match')">🖼 Match Images</button>
+      <button class="ai-edit-tab" onclick="switchAiEditTab('cleanup')">🗑 Clean Up</button>
+    </div>
+
+    <!-- TAB: EDIT CARDS -->
+    <div class="ai-edit-tab-panel active" id="ai-edit-panel-edit">
+      <label class="ai-label">Category to review</label>
+      <select class="ai-cat-select" id="ai-edit-cat"></select>
+      <label class="ai-label">Instruction <span style="font-size:10px;font-weight:300;text-transform:none;letter-spacing:0;">(what to add, fix, or move)</span></label>
+      <textarea class="ai-textarea" id="ai-edit-instruction" style="min-height:65px;" placeholder="e.g. &#34;Add dimensions to cards missing them&#34;  ·  &#34;Move all Queen beds to master-beds-queen&#34;  ·  &#34;Fill color from product name&#34;"></textarea>
+      <label class="ai-label">Reference images <span style="font-size:10px;font-weight:300;text-transform:none;letter-spacing:0;">(optional — visual context for Claude)</span></label>
+      <div class="ai-image-drop-zone" id="ai-edit-drop-zone" onclick="document.getElementById('ai-edit-img-input').click()">
+        <div id="ai-edit-drop-hint">📷 Drop images here for visual context</div>
+        <input type="file" id="ai-edit-img-input" accept="image/*" multiple style="display:none" onchange="aiEditImagesSelected(this)">
+        <div id="ai-edit-img-preview" style="display:none;flex-wrap:wrap;gap:6px;justify-content:center;"></div>
+      </div>
+      <div class="ai-key-row" style="margin-top:10px;">
+        <input class="ai-key-input" id="ai-edit-api-key" type="password" placeholder="sk-ant-... (Anthropic API Key)">
+      </div>
+      <div class="ai-status" id="ai-edit-status"></div>
+      <div id="ai-edit-diff-wrap" style="display:none;">
+        <label class="ai-label" id="ai-edit-diff-label">Suggested changes — uncheck any to skip</label>
+        <div class="ai-diff-list" id="ai-edit-diff-list"></div>
+      </div>
+      <div class="modal-actions" id="ai-edit-actions-review">
+        <button class="modal-btn" onclick="closeModal('modal-ai-edit')">Cancel</button>
+        <button class="modal-btn primary" id="ai-edit-review-btn" onclick="runAiEditCards()">Review Cards</button>
+      </div>
+      <div class="modal-actions" id="ai-edit-actions-apply" style="display:none;">
+        <button class="modal-btn" onclick="_aiEditReset()">← Back</button>
+        <button class="modal-btn primary" onclick="applySelectedEdits()">Apply Selected</button>
+      </div>
+    </div>
+
+    <!-- TAB: MATCH IMAGES -->
+    <div class="ai-edit-tab-panel" id="ai-edit-panel-match">
+      <label class="ai-label">Search in <span style="font-size:10px;font-weight:300;text-transform:none;letter-spacing:0;">(limit to category or search all)</span></label>
+      <select class="ai-cat-select" id="ai-match-cat"><option value="__all__">All categories</option></select>
+      <label class="ai-label">Drop product images — Claude will match each to an existing card</label>
+      <div class="ai-image-drop-zone" id="ai-match-drop-zone" onclick="document.getElementById('ai-match-img-input').click()">
+        <div id="ai-match-drop-hint">📷 Drop product images here (can be multiple)</div>
+        <input type="file" id="ai-match-img-input" accept="image/*" multiple style="display:none" onchange="aiMatchImagesSelected(this)">
+        <div id="ai-match-img-preview" style="display:none;flex-wrap:wrap;gap:6px;justify-content:center;"></div>
+      </div>
+      <div class="ai-key-row" style="margin-top:10px;">
+        <input class="ai-key-input" id="ai-match-api-key" type="password" placeholder="sk-ant-... (Anthropic API Key)">
+      </div>
+      <div class="ai-status" id="ai-match-status"></div>
+      <div id="ai-match-result-wrap" style="display:none;">
+        <label class="ai-label">Matches — pick correct card from each dropdown, skip unwanted</label>
+        <div class="ai-match-list" id="ai-match-list"></div>
+      </div>
+      <div class="modal-actions" id="ai-match-actions-find">
+        <button class="modal-btn" onclick="closeModal('modal-ai-edit')">Cancel</button>
+        <button class="modal-btn primary" onclick="runAiMatchImages()">Find Matches</button>
+      </div>
+      <div class="modal-actions" id="ai-match-actions-apply" style="display:none;">
+        <button class="modal-btn" onclick="_aiMatchReset()">← Back</button>
+        <button class="modal-btn primary" onclick="applySelectedMatches()">Apply Matches</button>
+      </div>
+    </div>
+
+    <!-- TAB: CLEAN UP -->
+    <div class="ai-edit-tab-panel" id="ai-edit-panel-cleanup">
+      <label class="ai-label">Find cards where (check all that apply)</label>
+      <div style="margin-bottom:14px;">
+        <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--sand);margin-bottom:7px;cursor:pointer;"><input type="checkbox" id="cu-empty-name"> Name is "New Item" or empty</label>
+        <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--sand);margin-bottom:7px;cursor:pointer;"><input type="checkbox" id="cu-zero-price"> Price is $0 or empty</label>
+        <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--sand);margin-bottom:7px;cursor:pointer;"><input type="checkbox" id="cu-no-url"> No product URL</label>
+        <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--sand);margin-bottom:7px;cursor:pointer;"><input type="checkbox" id="cu-no-note"> No notes</label>
+        <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--sand);margin-bottom:7px;cursor:pointer;"><input type="checkbox" id="cu-no-photo"> No photo attached</label>
+      </div>
+      <div class="ai-status" id="ai-cleanup-status"></div>
+      <div id="ai-cleanup-result-wrap" style="display:none;">
+        <label class="ai-label" id="ai-cleanup-count-label"></label>
+        <div class="ai-cleanup-list" id="ai-cleanup-list"></div>
+      </div>
+      <div class="modal-actions" id="ai-cleanup-actions-find">
+        <button class="modal-btn" onclick="closeModal('modal-ai-edit')">Cancel</button>
+        <button class="modal-btn primary" onclick="runAiCleanUp()">Find Cards</button>
+      </div>
+      <div class="modal-actions" id="ai-cleanup-actions-delete" style="display:none;">
+        <button class="modal-btn" onclick="_aiCleanupReset()">← Back</button>
+        <button class="modal-btn ai-edit-danger" onclick="applySelectedDeletions()">Delete Selected</button>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -2277,7 +2397,7 @@ document.addEventListener('keydown', function(e) {
     if (document.getElementById('modal-addroom').classList.contains('open')) createRoom();
     if (document.getElementById('modal-addsubcat').classList.contains('open')) createSubCategory();
   }
-  if (e.key === 'Escape') { closeModal('modal-addroom'); closeModal('modal-addsubcat'); closeModal('modal-ai'); closeModal('modal-dupes'); }
+  if (e.key === 'Escape') { closeModal('modal-addroom'); closeModal('modal-addsubcat'); closeModal('modal-ai'); closeModal('modal-dupes'); closeModal('modal-ai-edit'); }
 });
 document.querySelectorAll('.modal-overlay').forEach(function(ov) {
   ov.addEventListener('click', function(e) { if (e.target === ov) ov.classList.remove('open'); });
@@ -3427,6 +3547,495 @@ function runAiProductEntry() {
       statusEl.textContent = errMsg;
     });
   }
+}
+
+// ════════════════════════════════════════════
+// AI REVIEW & EDIT CARDS
+// ════════════════════════════════════════════
+
+var _aiEditImages  = [];   // reference images for Edit tab
+var _aiMatchImages = [];   // product images for Match tab
+var _aiEditPendingEdits = [];   // [{cardIndex,field,oldVal,newVal}]
+var _aiEditPendingCards = [];   // parallel array of card snapshots (with ._card ref)
+var _aiMatchPendingAll  = [];   // all card DOM elements for the current match run
+var _aiCleanupFound    = [];    // card DOM elements found by Clean Up scan
+
+// ─── open / tab switch ───────────────────────────────────────────────────────
+function openAiEditModal() {
+  var editSel  = document.getElementById('ai-edit-cat');
+  var matchSel = document.getElementById('ai-match-cat');
+  editSel.innerHTML  = '';
+  matchSel.innerHTML = '<option value="__all__">All categories</option>';
+  getAllSubCats().forEach(function(cat) {
+    var label = cat.roomTitle + ' \u203a ' + cat.subTitle;
+    var v = cat.gridId.replace('grid-','');
+    var o1 = document.createElement('option'); o1.value = v; o1.textContent = label; editSel.appendChild(o1);
+    var o2 = document.createElement('option'); o2.value = v; o2.textContent = label; matchSel.appendChild(o2);
+  });
+  var saved = localStorage.getItem('gallery-ai-key-v1') || '';
+  document.getElementById('ai-edit-api-key').value  = saved;
+  document.getElementById('ai-match-api-key').value = saved;
+  _aiEditReset();
+  _aiMatchReset();
+  _aiCleanupReset();
+  switchAiEditTab('edit');
+  // wire drag-and-drop for both drop zones
+  ['ai-edit-drop-zone','ai-match-drop-zone'].forEach(function(dzId) {
+    var dz = document.getElementById(dzId);
+    var mode = dzId.indexOf('match') !== -1 ? 'match' : 'edit';
+    dz.ondragover  = function(e){ e.preventDefault(); dz.classList.add('drag-over'); };
+    dz.ondragleave = function(){ dz.classList.remove('drag-over'); };
+    dz.ondrop = function(e){
+      e.preventDefault(); dz.classList.remove('drag-over');
+      var files = Array.from(e.dataTransfer.files).filter(function(f){ return f.type.indexOf('image') === 0; });
+      if (files.length) _processAiEditImages(files, mode);
+    };
+  });
+  document.getElementById('modal-ai-edit').classList.add('open');
+}
+
+function switchAiEditTab(name) {
+  ['edit','match','cleanup'].forEach(function(t, i) {
+    document.getElementById('ai-edit-panel-' + t).classList.toggle('active', t === name);
+    document.querySelectorAll('.ai-edit-tab')[i].classList.toggle('active', t === name);
+  });
+}
+
+// ─── reset helpers ────────────────────────────────────────────────────────────
+function _aiEditReset() {
+  _aiEditImages = []; _aiEditPendingEdits = []; _aiEditPendingCards = [];
+  document.getElementById('ai-edit-status').textContent = '';
+  document.getElementById('ai-edit-diff-wrap').style.display = 'none';
+  document.getElementById('ai-edit-actions-review').style.display = '';
+  document.getElementById('ai-edit-actions-apply').style.display = 'none';
+  _renderAiEditPreviews('edit');
+  if (document.getElementById('ai-edit-review-btn')) document.getElementById('ai-edit-review-btn').disabled = false;
+}
+function _aiMatchReset() {
+  _aiMatchImages = []; _aiMatchPendingAll = [];
+  document.getElementById('ai-match-status').textContent = '';
+  document.getElementById('ai-match-result-wrap').style.display = 'none';
+  document.getElementById('ai-match-actions-find').style.display = '';
+  document.getElementById('ai-match-actions-apply').style.display = 'none';
+  _renderAiEditPreviews('match');
+}
+function _aiCleanupReset() {
+  _aiCleanupFound = [];
+  document.getElementById('ai-cleanup-status').textContent = '';
+  document.getElementById('ai-cleanup-result-wrap').style.display = 'none';
+  document.getElementById('ai-cleanup-actions-find').style.display = '';
+  document.getElementById('ai-cleanup-actions-delete').style.display = 'none';
+}
+
+// ─── image handling (shared) ─────────────────────────────────────────────────
+function aiEditImagesSelected(input) {
+  _processAiEditImages(Array.from(input.files), 'edit'); input.value = '';
+}
+function aiMatchImagesSelected(input) {
+  _processAiEditImages(Array.from(input.files), 'match'); input.value = '';
+}
+function _processAiEditImages(files, mode) {
+  var statusEl = document.getElementById(mode === 'edit' ? 'ai-edit-status' : 'ai-match-status');
+  statusEl.textContent = 'Loading images...';
+  var pending = files.length, added = [];
+  files.forEach(function(file) {
+    if (file.type.indexOf('image') !== 0) { if (!--pending && added.length) _addAiEditImages(added, mode, statusEl); return; }
+    var r = new FileReader();
+    r.onload = function(e) {
+      compressImageDataUrl(e.target.result, 800, 0.7, function(c) {
+        added.push(c);
+        if (!--pending) { _addAiEditImages(added, mode, statusEl); }
+      });
+    };
+    r.readAsDataURL(file);
+  });
+}
+function _addAiEditImages(imgs, mode, statusEl) {
+  if (mode === 'edit') _aiEditImages = _aiEditImages.concat(imgs);
+  else _aiMatchImages = _aiMatchImages.concat(imgs);
+  _renderAiEditPreviews(mode);
+  statusEl.textContent = '';
+}
+function _renderAiEditPreviews(mode) {
+  var images   = mode === 'edit' ? _aiEditImages : _aiMatchImages;
+  var wrap     = document.getElementById(mode === 'edit' ? 'ai-edit-img-preview' : 'ai-match-img-preview');
+  var hint     = document.getElementById(mode === 'edit' ? 'ai-edit-drop-hint'   : 'ai-match-drop-hint');
+  var dz       = document.getElementById(mode === 'edit' ? 'ai-edit-drop-zone'   : 'ai-match-drop-zone');
+  wrap.innerHTML = '';
+  if (!images.length) { hint.style.display = ''; wrap.style.display = 'none'; dz.classList.remove('has-image'); return; }
+  hint.style.display = 'none'; wrap.style.display = 'flex'; dz.classList.add('has-image');
+  images.forEach(function(src, idx) {
+    var img = document.createElement('img'); img.className = 'ai-img-thumb'; img.src = src;
+    var wrap2 = document.createElement('div'); wrap2.style.cssText = 'position:relative;display:inline-block;';
+    var del = document.createElement('button');
+    del.textContent = '×';
+    del.style.cssText = 'position:absolute;top:-4px;right:-4px;width:16px;height:16px;border-radius:50%;background:#c0392b;border:none;color:#fff;font-size:11px;cursor:pointer;padding:0;line-height:1;';
+    del.onclick = (function(m, i){ return function(e){ e.stopPropagation(); if (m==='edit') _aiEditImages.splice(i,1); else _aiMatchImages.splice(i,1); _renderAiEditPreviews(m); }; })(mode, idx);
+    wrap2.appendChild(img); wrap2.appendChild(del); wrap.appendChild(wrap2);
+  });
+}
+
+// ─── read card data ───────────────────────────────────────────────────────────
+function _readCardData(card) {
+  var attrs = [];
+  card.querySelectorAll('.card-attr').forEach(function(a) {
+    var lbl = ((a.querySelector('.card-attr-label')||{}).textContent||'').replace(':','').trim();
+    var val = ((a.querySelector('.card-attr-val') ||{}).textContent||'').trim();
+    attrs.push({ label: lbl, val: val });
+  });
+  return {
+    _card: card,
+    name:     ((card.querySelector('.card-name') ||{}).textContent||'').trim(),
+    price:    ((card.querySelector('.card-price')||{}).textContent||'').trim(),
+    store:    ((card.querySelector('.card-store')||{}).textContent||'').trim(),
+    note:     ((card.querySelector('.card-note') ||{}).textContent||'').trim(),
+    url:      ((card.querySelector('.card-url')  ||{}).value      ||'').trim(),
+    hasPhoto: !!(card.querySelector('.card-photo img')),
+    section:  card.dataset.section || '',
+    attrs:    attrs
+  };
+}
+function _readAllCardsInCat(catId) {
+  var grid = document.getElementById('grid-' + catId);
+  if (!grid) return [];
+  return Array.from(grid.querySelectorAll('.card:not(.card-add-placeholder)')).map(function(c, i) {
+    return Object.assign({ _idx: i }, _readCardData(c));
+  });
+}
+
+// ─── _callAiApiJson — handles both [] and {} responses ───────────────────────
+function _callAiApiJson(apiKey, messages, maxTok, onSuccess, onError) {
+  fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: maxTok || 1500, messages: messages })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    if (data.error) { onError('API error: ' + data.error.message); return; }
+    var text = (data.content && data.content[0] && data.content[0].text) || '';
+    if (!text) { onError('No response from Claude.'); return; }
+    var match = text.match(/\[[\s\S]*\]/) || text.match(/\{[\s\S]*\}/);
+    if (!match) { onError('Could not parse response: ' + text.slice(0,200)); return; }
+    try { onSuccess(JSON.parse(match[0])); } catch(e) { onError('JSON parse error: ' + text.slice(0,200)); }
+  })
+  .catch(function(err){ onError('Network error: ' + err.message); });
+}
+
+// ─── TAB 1: Edit Cards ────────────────────────────────────────────────────────
+function runAiEditCards() {
+  var catId       = document.getElementById('ai-edit-cat').value;
+  var instruction = (document.getElementById('ai-edit-instruction').value || '').trim();
+  var apiKey      = (document.getElementById('ai-edit-api-key').value    || '').trim();
+  var statusEl    = document.getElementById('ai-edit-status');
+  if (!instruction) { statusEl.textContent = 'Please enter an instruction.'; return; }
+  if (!apiKey)      { statusEl.textContent = 'Please enter your Anthropic API key.'; return; }
+  localStorage.setItem('gallery-ai-key-v1', apiKey);
+
+  var cards = _readAllCardsInCat(catId);
+  if (!cards.length) { statusEl.textContent = 'No cards found in this category.'; return; }
+
+  var catLabel = (document.getElementById('ai-edit-cat').selectedOptions[0] || {}).text || catId;
+  var catIds   = getAllSubCats().map(function(c){ return c.gridId.replace('grid-',''); }).join(', ');
+
+  var cardData = cards.map(function(c) {
+    return {
+      idx:      c._idx,
+      name:     c.name,
+      price:    c.price,
+      store:    c.store,
+      note:     c.note.slice(0, 120),
+      url:      c.url.slice(0, 80),
+      hasPhoto: c.hasPhoto,
+      attrs:    c.attrs.map(function(a){ return a.label + ': ' + a.val; }).join('; ')
+    };
+  });
+
+  var prompt =
+    'You are reviewing furniture gallery cards in the category: "' + catLabel + '".\n' +
+    'User instruction: "' + instruction + '"\n\n' +
+    'Suggest ONLY changes needed to fulfil the instruction. Return ONLY a valid JSON array — no markdown.\n' +
+    'Each change object: { "cardIndex": N, "field": "FIELD", "oldVal": "current text", "newVal": "new text" }\n\n' +
+    'Allowed field values:\n' +
+    '  "name", "price", "store", "note", "url"\n' +
+    '  "attr.LABEL" where LABEL matches an existing attr label (e.g. "attr.Size", "attr.Color")\n' +
+    '  "category" — move the card; newVal must be one of: ' + catIds + '\n\n' +
+    'Rules: Only suggest changes you are confident about. Do NOT fabricate data. ' +
+    'Do NOT change photos. Return [] if nothing needs changing.\n\n' +
+    'Cards:\n' + JSON.stringify(cardData, null, 1);
+
+  var content = [];
+  _aiEditImages.forEach(function(src) {
+    var b64 = src.split(',')[1];
+    var mm  = src.match(/^data:([^;]+);/);
+    content.push({ type: 'image', source: { type: 'base64', media_type: mm ? mm[1] : 'image/jpeg', data: b64 } });
+  });
+  content.push({ type: 'text', text: prompt });
+
+  statusEl.textContent = 'Claude is reviewing ' + cards.length + ' card' + (cards.length !== 1 ? 's' : '') + '…';
+  document.getElementById('ai-edit-review-btn').disabled = true;
+
+  _callAiApiJson(apiKey, [{ role: 'user', content: content }], 2000, function(parsed) {
+    document.getElementById('ai-edit-review-btn').disabled = false;
+    if (!Array.isArray(parsed)) { statusEl.textContent = 'Unexpected response format.'; return; }
+    if (!parsed.length) { statusEl.textContent = '✓ Claude reviewed ' + cards.length + ' cards — no changes needed.'; return; }
+    _aiEditPendingEdits = parsed;
+    _aiEditPendingCards = cards;
+    statusEl.textContent = '';
+    _renderEditDiffPreview(parsed, cards);
+  }, function(err) {
+    document.getElementById('ai-edit-review-btn').disabled = false;
+    statusEl.textContent = err;
+  });
+}
+
+function _renderEditDiffPreview(edits, cards) {
+  var list = document.getElementById('ai-edit-diff-list');
+  list.innerHTML = '';
+  edits.forEach(function(edit, ei) {
+    var cd = cards[edit.cardIndex];
+    if (!cd) return;
+    var row  = document.createElement('div');  row.className = 'ai-diff-row';
+    var chk  = document.createElement('input'); chk.type = 'checkbox'; chk.checked = true; chk.className = 'ai-diff-chk'; chk.dataset.ei = ei;
+    var body = document.createElement('div');  body.className = 'ai-diff-body';
+    var n    = document.createElement('div');  n.className = 'ai-diff-card-name'; n.textContent = cd.name || ('Card #' + (edit.cardIndex + 1));
+    var f    = document.createElement('div');  f.className = 'ai-diff-field';     f.textContent = edit.field === 'category' ? 'MOVE TO CATEGORY' : edit.field.toUpperCase();
+    var o    = document.createElement('div');  o.className = 'ai-diff-old';       o.textContent = edit.oldVal || '(empty)';
+    var nv   = document.createElement('div');  nv.className = 'ai-diff-new';      nv.textContent = '→ ' + edit.newVal;
+    body.appendChild(n); body.appendChild(f); body.appendChild(o); body.appendChild(nv);
+    row.appendChild(chk); row.appendChild(body);
+    list.appendChild(row);
+  });
+  document.getElementById('ai-edit-diff-label').textContent = edits.length + ' suggested change' + (edits.length !== 1 ? 's' : '') + ' — uncheck any to skip';
+  document.getElementById('ai-edit-diff-wrap').style.display = '';
+  document.getElementById('ai-edit-actions-review').style.display = 'none';
+  document.getElementById('ai-edit-actions-apply').style.display = '';
+}
+
+function applySelectedEdits() {
+  var applied = 0;
+  document.querySelectorAll('#ai-edit-diff-list .ai-diff-chk:checked').forEach(function(chk) {
+    var edit = _aiEditPendingEdits[parseInt(chk.dataset.ei)];
+    var cd   = edit && _aiEditPendingCards[edit.cardIndex];
+    if (!edit || !cd || !cd._card) return;
+    _applyOneCardEdit(cd._card, edit);
+    applied++;
+  });
+  scheduleSave(); updateStats();
+  document.getElementById('ai-edit-status').textContent = '✓ Applied ' + applied + ' change' + (applied !== 1 ? 's' : '');
+  document.getElementById('ai-edit-diff-wrap').style.display = 'none';
+  document.getElementById('ai-edit-actions-review').style.display = '';
+  document.getElementById('ai-edit-actions-apply').style.display = 'none';
+}
+
+function _applyOneCardEdit(card, edit) {
+  var f = edit.field, v = edit.newVal;
+  if (f === 'name')  { var ne = card.querySelector('.card-name');  if (ne) ne.textContent = v; }
+  else if (f === 'price') { var pe = card.querySelector('.card-price'); if (pe) pe.textContent = v; }
+  else if (f === 'store') { var se = card.querySelector('.card-store'); if (se) se.textContent = v; }
+  else if (f === 'note')  { var no = card.querySelector('.card-note');  if (no) no.textContent = v; }
+  else if (f === 'url')   { var ue = card.querySelector('.card-url'); if (ue) { ue.value = v; ue.dispatchEvent(new Event('input')); } }
+  else if (f.indexOf('attr.') === 0) {
+    var lbl = f.slice(5).toLowerCase();
+    card.querySelectorAll('.card-attr').forEach(function(a) {
+      var al = ((a.querySelector('.card-attr-label')||{}).textContent||'').replace(':','').trim().toLowerCase();
+      if (al === lbl) { var av = a.querySelector('.card-attr-val'); if (av) av.textContent = v; }
+    });
+  } else if (f === 'category') {
+    var gid = 'grid-' + v, tg = document.getElementById(gid);
+    if (tg) {
+      var cats = getAllSubCats(), found = null;
+      for (var ci = 0; ci < cats.length; ci++) { if (cats[ci].gridId === gid) { found = cats[ci]; break; } }
+      moveCardToGrid(card, gid, found ? found.subTitle : v);
+      return; // moveCardToGrid calls syncCardToTable
+    }
+  }
+  syncCardToTable(card);
+}
+
+// ─── TAB 2: Match Images ──────────────────────────────────────────────────────
+function runAiMatchImages() {
+  var apiKey   = (document.getElementById('ai-match-api-key').value || '').trim();
+  var catId    = document.getElementById('ai-match-cat').value;
+  var statusEl = document.getElementById('ai-match-status');
+  if (!_aiMatchImages.length) { statusEl.textContent = 'Please drop some product images first.'; return; }
+  if (!apiKey)                { statusEl.textContent = 'Please enter your Anthropic API key.'; return; }
+  localStorage.setItem('gallery-ai-key-v1', apiKey);
+
+  var allCards = [];
+  if (catId === '__all__') {
+    getAllSubCats().forEach(function(cat) {
+      var g = document.getElementById(cat.gridId);
+      if (g) g.querySelectorAll('.card:not(.card-add-placeholder)').forEach(function(c){ allCards.push(c); });
+    });
+  } else {
+    var g = document.getElementById('grid-' + catId);
+    if (g) g.querySelectorAll('.card:not(.card-add-placeholder)').forEach(function(c){ allCards.push(c); });
+  }
+  if (!allCards.length) { statusEl.textContent = 'No cards to match against.'; return; }
+
+  var cardList = allCards.map(function(c, i) {
+    return {
+      idx:   i,
+      name:  ((c.querySelector('.card-name') ||{}).textContent||'').trim(),
+      store: ((c.querySelector('.card-store')||{}).textContent||'').trim(),
+      price: ((c.querySelector('.card-price')||{}).textContent||'').trim()
+    };
+  });
+
+  _aiMatchPendingAll = allCards;
+  var total = _aiMatchImages.length, current = 0, results = [];
+
+  function next() {
+    if (current >= total) { _renderMatchPreview(results, allCards); return; }
+    statusEl.textContent = 'Matching image ' + (current + 1) + ' of ' + total + '…';
+    var src = _aiMatchImages[current++];
+    var b64 = src.split(',')[1];
+    var mm  = src.match(/^data:([^;]+);/);
+    var prompt =
+      'Look at this product image and find the best match from the gallery card list below.\n' +
+      'Return ONLY valid JSON: { "matchIndex": N, "confidence": "high|medium|low", "reason": "brief" }\n' +
+      'If no good match exists: { "matchIndex": -1, "confidence": "low", "reason": "no match" }\n\n' +
+      'Cards:\n' + JSON.stringify(cardList, null, 1);
+    _callAiApiJson(apiKey, [{ role: 'user', content: [
+      { type: 'image', source: { type: 'base64', media_type: mm ? mm[1] : 'image/jpeg', data: b64 } },
+      { type: 'text',  text: prompt }
+    ]}], 300, function(p) { results.push(p); next(); }, function(err) { results.push({ matchIndex: -1, confidence: 'low', reason: err }); next(); });
+  }
+  next();
+}
+
+function _renderMatchPreview(results, allCards) {
+  var list = document.getElementById('ai-match-list');
+  list.innerHTML = '';
+  results.forEach(function(r, ri) {
+    var row  = document.createElement('div'); row.className = 'ai-match-row';
+    var img  = document.createElement('img'); img.className = 'ai-match-thumb'; img.src = _aiMatchImages[ri];
+    var info = document.createElement('div'); info.className = 'ai-match-info';
+
+    var matched = r.matchIndex >= 0 ? allCards[r.matchIndex] : null;
+    var nDiv = document.createElement('div'); nDiv.className = 'ai-match-card-name';
+    nDiv.textContent = matched ? ((matched.querySelector('.card-name')||{}).textContent||'Card').trim() : 'No confident match';
+    var mDiv = document.createElement('div'); mDiv.className = 'ai-match-meta'; mDiv.textContent = (r.reason || '');
+    var cDiv = document.createElement('div'); cDiv.className = 'ai-match-conf ' + (r.confidence || 'low');
+    cDiv.textContent = (r.confidence || 'low').toUpperCase() + ' CONFIDENCE';
+
+    var sel = document.createElement('select'); sel.className = 'ai-match-card-sel'; sel.dataset.imgIdx = ri;
+    var skipOpt = document.createElement('option'); skipOpt.value = '-1'; skipOpt.textContent = '— Skip this image —'; sel.appendChild(skipOpt);
+    allCards.forEach(function(c, ci) {
+      var opt = document.createElement('option'); opt.value = ci;
+      opt.textContent = ((c.querySelector('.card-name')||{}).textContent||'Card ' + ci).trim();
+      if (ci === r.matchIndex) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    if (r.matchIndex < 0) skipOpt.selected = true;
+
+    info.appendChild(nDiv); info.appendChild(mDiv); info.appendChild(cDiv); info.appendChild(sel);
+    row.appendChild(img); row.appendChild(info);
+    list.appendChild(row);
+  });
+  document.getElementById('ai-match-status').textContent = '';
+  document.getElementById('ai-match-result-wrap').style.display = '';
+  document.getElementById('ai-match-actions-find').style.display = 'none';
+  document.getElementById('ai-match-actions-apply').style.display = '';
+}
+
+function applySelectedMatches() {
+  var applied = 0;
+  document.querySelectorAll('#ai-match-list .ai-match-card-sel').forEach(function(sel) {
+    var ci  = parseInt(sel.value);
+    if (ci < 0) return;
+    var card = _aiMatchPendingAll[ci];
+    var src  = _aiMatchImages[parseInt(sel.dataset.imgIdx)];
+    if (!card || !src) return;
+    var ph = card.querySelector('.card-photo');
+    if (ph) { setCardPhoto(ph, src); applied++; }
+  });
+  scheduleSave();
+  document.getElementById('ai-match-status').textContent = '✓ Assigned ' + applied + ' photo' + (applied !== 1 ? 's' : '');
+  document.getElementById('ai-match-result-wrap').style.display = 'none';
+  document.getElementById('ai-match-actions-find').style.display = '';
+  document.getElementById('ai-match-actions-apply').style.display = 'none';
+  _aiMatchImages = []; _renderAiEditPreviews('match');
+}
+
+// ─── TAB 3: Clean Up ──────────────────────────────────────────────────────────
+function runAiCleanUp() {
+  var criteria = [];
+  if (document.getElementById('cu-empty-name').checked)  criteria.push('emptyname');
+  if (document.getElementById('cu-zero-price').checked)  criteria.push('zeroprice');
+  if (document.getElementById('cu-no-url').checked)      criteria.push('nourl');
+  if (document.getElementById('cu-no-note').checked)     criteria.push('nonote');
+  if (document.getElementById('cu-no-photo').checked)    criteria.push('nophoto');
+  if (!criteria.length) { document.getElementById('ai-cleanup-status').textContent = 'Please select at least one criterion.'; return; }
+
+  var found = [];
+  document.querySelectorAll('.card:not(.card-add-placeholder)').forEach(function(card) {
+    var name  = ((card.querySelector('.card-name') ||{}).textContent||'').trim();
+    var price = ((card.querySelector('.card-price')||{}).textContent||'').trim();
+    var url   = ((card.querySelector('.card-url')  ||{}).value      ||'').trim();
+    var note  = ((card.querySelector('.card-note') ||{}).textContent||'').trim();
+    var hasPh = !!(card.querySelector('.card-photo img'));
+    var hit = criteria.some(function(c) {
+      if (c === 'emptyname') return !name || name === 'New Item';
+      if (c === 'zeroprice') return !price || price === '$0' || price === '$0.00';
+      if (c === 'nourl')     return !url;
+      if (c === 'nonote')    return !note;
+      if (c === 'nophoto')   return !hasPh;
+      return false;
+    });
+    if (hit) found.push(card);
+  });
+
+  _aiCleanupFound = found;
+  document.getElementById('ai-cleanup-status').textContent = '';
+  if (!found.length) { document.getElementById('ai-cleanup-status').textContent = '✓ No cards match the selected criteria.'; return; }
+  _renderCleanUpList(found);
+}
+
+function _renderCleanUpList(cards) {
+  var list  = document.getElementById('ai-cleanup-list');
+  var count = document.getElementById('ai-cleanup-count-label');
+  list.innerHTML = '';
+  count.textContent = cards.length + ' card' + (cards.length !== 1 ? 's' : '') + ' found';
+  cards.forEach(function(card, ci) {
+    var name  = ((card.querySelector('.card-name') ||{}).textContent||'(no name)').trim();
+    var price = ((card.querySelector('.card-price')||{}).textContent||'—').trim();
+    var sec   = card.dataset.section || '';
+    var row   = document.createElement('div'); row.className = 'ai-cleanup-row';
+    var chk   = document.createElement('input'); chk.type = 'checkbox'; chk.checked = true; chk.className = 'ai-cleanup-chk'; chk.dataset.ci = ci;
+    var info  = document.createElement('div'); info.className = 'ai-cleanup-info';
+    var nd    = document.createElement('div'); nd.className = 'ai-cleanup-name'; nd.textContent = name;
+    var md    = document.createElement('div'); md.className = 'ai-cleanup-meta'; md.textContent = price + ' · ' + sec;
+    info.appendChild(nd); info.appendChild(md);
+    row.appendChild(chk); row.appendChild(info);
+    list.appendChild(row);
+  });
+  document.getElementById('ai-cleanup-result-wrap').style.display = '';
+  document.getElementById('ai-cleanup-actions-find').style.display = 'none';
+  document.getElementById('ai-cleanup-actions-delete').style.display = '';
+}
+
+function applySelectedDeletions() {
+  var toDelete = [];
+  document.querySelectorAll('#ai-cleanup-list .ai-cleanup-chk:checked').forEach(function(chk) {
+    var c = _aiCleanupFound[parseInt(chk.dataset.ci)];
+    if (c) toDelete.push(c);
+  });
+  if (!toDelete.length) { document.getElementById('ai-cleanup-status').textContent = 'Nothing selected.'; return; }
+  if (!confirm('Delete ' + toDelete.length + ' card' + (toDelete.length !== 1 ? 's' : '') + '? This cannot be undone.')) return;
+  toDelete.forEach(function(card) { removeCardFromTable(card); card.remove(); });
+  updateStats(); scheduleSave();
+  document.getElementById('ai-cleanup-status').textContent = '✓ Deleted ' + toDelete.length + ' card' + (toDelete.length !== 1 ? 's' : '');
+  document.getElementById('ai-cleanup-result-wrap').style.display = 'none';
+  document.getElementById('ai-cleanup-actions-find').style.display = '';
+  document.getElementById('ai-cleanup-actions-delete').style.display = 'none';
+  _aiCleanupFound = [];
 }
 
 </script>
