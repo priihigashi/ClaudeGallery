@@ -1502,7 +1502,7 @@ document.addEventListener('drop', function(e) {
 // ════════════════════════════════════════════
 // ADD CARD
 // ════════════════════════════════════════════
-function addCard(sectionId, grid) {
+function addCard(sectionId, grid, noScroll) {
   if (!grid) grid = document.getElementById('grid-' + sectionId);
   if (!grid) return;
 
@@ -1632,7 +1632,7 @@ function addCard(sectionId, grid) {
   patchRemoveBtn(card);
   syncCardToTable(card);
   updateStats();
-  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  if (!noScroll) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 // ════════════════════════════════════════════
@@ -2325,7 +2325,7 @@ function restoreFromArchive(d, cat, idx) {
   }
   addCard(d.sectionId, grid);
   var cards = grid.querySelectorAll('.card');
-  var card = cards[cards.length - 2] || cards[cards.length - 1]; // before placeholder
+  var card = cards[cards.length - 1];
   if (!card) return;
   if (card.querySelector('.card-name')) card.querySelector('.card-name').textContent = d.name;
   if (card.querySelector('.card-price')) card.querySelector('.card-price').textContent = d.price;
@@ -2540,7 +2540,8 @@ function saveGallery() {
         a2v: vals[1] ? vals[1].textContent.trim() : '',
         status: card.dataset.status || '',
         badge: badge ? badge.textContent.trim() : '',
-        badgeClass: badge ? (badge.className || '').replace('card-badge','').trim() : ''
+        badgeClass: badge ? (badge.className || '').replace('card-badge','').trim() : '',
+        img: (function(){ var i = card.querySelector('.card-photo img'); return i ? i.src : ''; })()
       });
     });
     localStorage.setItem(_saveKey, JSON.stringify(data));
@@ -2570,9 +2571,9 @@ function loadGallery() {
     data.cards.forEach(function(d) {
       var grid = document.getElementById('grid-' + d.g);
       if (!grid) return;
-      addCard(d.g, grid);
+      addCard(d.g, grid, true);
       var cards = grid.querySelectorAll('.card');
-      var card = cards[cards.length - 2] || cards[cards.length - 1];
+      var card = cards[cards.length - 1];
       if (!card) return;
       if (d.cid) card.dataset.cardId = d.cid;
       if (card.querySelector('.card-name')) card.querySelector('.card-name').textContent = d.name;
@@ -2585,6 +2586,7 @@ function loadGallery() {
       var ui = card.querySelector('.card-url');
       if (ui && d.url) { ui.value = d.url; ui.dispatchEvent(new Event('input')); }
       if (d.badge && d.badgeClass) setBadge(card, d.status, d.badge, d.badgeClass);
+      if (d.img) { var ph = card.querySelector('.card-photo'); if (ph) setCardPhoto(ph, d.img); }
       syncCardToTable(card);
     });
     updateStats();
@@ -2691,7 +2693,7 @@ function runAiProductEntry() {
       if (!grid) { statusEl.textContent = 'Could not find target category grid.'; return; }
       addCard(targetCat, grid);
       var cards = grid.querySelectorAll('.card');
-      var card = cards[cards.length - 2] || cards[cards.length - 1];
+      var card = cards[cards.length - 1];
       if (!card) return;
       if (parsed.name && card.querySelector('.card-name')) card.querySelector('.card-name').textContent = parsed.name;
       if (parsed.price && card.querySelector('.card-price')) card.querySelector('.card-price').textContent = parsed.price;
@@ -2822,10 +2824,11 @@ var items=[
 
 window._galleryCards={};
 function importAll(){
+  if(window._galleryLoaded)return;
   items.forEach(function(item){
     var grid=document.getElementById('grid-'+item.g);
     if(!grid)return;
-    addCard(item.g,grid);
+    addCard(item.g,grid,true);
     var cards=grid.querySelectorAll('.card');
     var card=cards[cards.length-1];
     if(!card)return;
