@@ -707,17 +707,24 @@ body.print-mode .card-move-wrap{display:none !important;}
   </div>
   <div class="sub-nav" id="subnav-master">
     <span class="sub-nav-label">Jump to:</span>
-    <button class="sub-anchor-btn" onclick="scrollToSubCat('subcat-master-beds')">Beds &amp; Frames</button>
+    <button class="sub-anchor-btn" onclick="scrollToSubCat('subcat-master-beds-queen')">Queen Beds</button>
+    <button class="sub-anchor-btn" onclick="scrollToSubCat('subcat-master-beds-king')">King Beds</button>
     <button class="sub-anchor-btn" onclick="scrollToSubCat('subcat-master-dressers')">Dressers</button>
     <button class="sub-anchor-btn" onclick="scrollToSubCat('subcat-master-nightstands')">Nightstands</button>
     <button class="sub-anchor-btn" onclick="scrollToSubCat('subcat-master-decor')">Decor &amp; Lighting</button>
     <button class="sub-tab-add" onclick="openAddSubCatModal('master','subnav-master')" title="Add sub-category">＋</button>
   </div>
-  <div class="sub-cat-block" id="subcat-master-beds">
-    <div class="sub-cat-header"><span class="sub-cat-title">Beds &amp; Frames</span></div>
-    <div class="comp-table-wrap"><button class="comp-table-toggle" onclick="toggleCompTable(this)"><span>Comparison Table</span><span>▲</span></button><div class="comp-table-body" id="ctable-master-beds"><table class="comp-table"><thead><tr><th>Item</th><th>Price</th><th contenteditable="true" data-col="C">Dimension</th><th contenteditable="true" data-col="D">Color</th><th>Store</th><th>Notes</th></tr></thead><tbody id="ctbody-master-beds"></tbody></table></div></div>
+  <div class="sub-cat-block" id="subcat-master-beds-queen">
+    <div class="sub-cat-header"><span class="sub-cat-title">Queen Beds</span></div>
+    <div class="comp-table-wrap"><button class="comp-table-toggle" onclick="toggleCompTable(this)"><span>Comparison Table</span><span>▲</span></button><div class="comp-table-body" id="ctable-master-beds-queen"><table class="comp-table"><thead><tr><th>Item</th><th>Price</th><th contenteditable="true" data-col="C">Dimension</th><th contenteditable="true" data-col="D">Color</th><th>Store</th><th>Notes</th></tr></thead><tbody id="ctbody-master-beds-queen"></tbody></table></div></div>
     <div class="filter-bar"><button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="top">⭐ Top Pick</button><button class="filter-btn" data-filter="liked">✓ Liked</button><button class="filter-btn" data-filter="budget">💚 Best Budget</button><button class="filter-btn" data-filter="maybe">🤔 Maybe</button><button class="filter-btn" data-filter="floor">🏷 Floor Sample</button><button class="filter-btn" data-filter="search">🔍 Find This</button></div>
-    <div class="card-grid" id="grid-master-beds"></div>
+    <div class="card-grid" id="grid-master-beds-queen"></div>
+  </div>
+  <div class="sub-cat-block" id="subcat-master-beds-king">
+    <div class="sub-cat-header"><span class="sub-cat-title">King Beds</span></div>
+    <div class="comp-table-wrap"><button class="comp-table-toggle" onclick="toggleCompTable(this)"><span>Comparison Table</span><span>▲</span></button><div class="comp-table-body" id="ctable-master-beds-king"><table class="comp-table"><thead><tr><th>Item</th><th>Price</th><th contenteditable="true" data-col="C">Dimension</th><th contenteditable="true" data-col="D">Color</th><th>Store</th><th>Notes</th></tr></thead><tbody id="ctbody-master-beds-king"></tbody></table></div></div>
+    <div class="filter-bar"><button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="top">⭐ Top Pick</button><button class="filter-btn" data-filter="liked">✓ Liked</button><button class="filter-btn" data-filter="budget">💚 Best Budget</button><button class="filter-btn" data-filter="maybe">🤔 Maybe</button><button class="filter-btn" data-filter="floor">🏷 Floor Sample</button><button class="filter-btn" data-filter="search">🔍 Find This</button></div>
+    <div class="card-grid" id="grid-master-beds-king"></div>
   </div>
   <div class="sub-cat-block" id="subcat-master-dressers">
     <div class="sub-cat-header"><span class="sub-cat-title">Dressers &amp; Storage</span></div>
@@ -764,14 +771,14 @@ body.print-mode .card-move-wrap{display:none !important;}
   </div>
   <div class="sub-nav" id="subnav-guest">
     <span class="sub-nav-label">Jump to:</span>
-    <button class="sub-anchor-btn" onclick="scrollToSubCat('subcat-guest-all')">All Items</button>
+    <button class="sub-anchor-btn" onclick="scrollToSubCat('subcat-guest-beds-king')">King Beds</button>
     <button class="sub-tab-add" onclick="openAddSubCatModal('guest','subnav-guest')" title="Add sub-category">＋</button>
   </div>
-  <div class="sub-cat-block" id="subcat-guest-all">
-    <div class="sub-cat-header"><span class="sub-cat-title">All Items</span></div>
-    <div class="comp-table-wrap"><button class="comp-table-toggle" onclick="toggleCompTable(this)"><span>Comparison Table</span><span>▲</span></button><div class="comp-table-body" id="ctable-guest-all"><table class="comp-table"><thead><tr><th>Item</th><th>Price</th><th contenteditable="true" data-col="C">Dimension</th><th contenteditable="true" data-col="D">Color</th><th>Store</th><th>Notes</th></tr></thead><tbody id="ctbody-guest-all"></tbody></table></div></div>
+  <div class="sub-cat-block" id="subcat-guest-beds-king">
+    <div class="sub-cat-header"><span class="sub-cat-title">King Beds</span></div>
+    <div class="comp-table-wrap"><button class="comp-table-toggle" onclick="toggleCompTable(this)"><span>Comparison Table</span><span>▲</span></button><div class="comp-table-body" id="ctable-guest-beds-king"><table class="comp-table"><thead><tr><th>Item</th><th>Price</th><th contenteditable="true" data-col="C">Dimension</th><th contenteditable="true" data-col="D">Color</th><th>Store</th><th>Notes</th></tr></thead><tbody id="ctbody-guest-beds-king"></tbody></table></div></div>
     <div class="filter-bar"><button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="top">⭐ Top Pick</button><button class="filter-btn" data-filter="liked">✓ Liked</button><button class="filter-btn" data-filter="budget">💚 Best Budget</button><button class="filter-btn" data-filter="maybe">🤔 Maybe</button><button class="filter-btn" data-filter="floor">🏷 Floor Sample</button><button class="filter-btn" data-filter="search">🔍 Find This</button></div>
-    <div class="card-grid" id="grid-guest-all"></div>
+    <div class="card-grid" id="grid-guest-beds-king"></div>
   </div>
   <div class="room-notes-section">
     <div class="room-notes-label">Room Notes</div>
@@ -3383,7 +3390,7 @@ function runAiProductEntry() {
         // Use suggested category if user hasn't overridden
         var cat = targetCat;
         if (parsed.category) {
-          var catMap = { living:'living-sofas', master:'master-bed', guest:'guest-bed', dining:'dining-tables-small', barstools:'bar-stools', balcony:'balcony-seating', kids:'kids-main' };
+          var catMap = { living:'living-sofas', master:'master-beds-queen', guest:'guest-beds-king', dining:'dining-tables-small', barstools:'bar-stools', balcony:'balcony-seating', kids:'kids-main' };
           var suggested = catMap[parsed.category] || targetCat;
           if (document.getElementById('grid-' + suggested)) cat = suggested;
         }
@@ -3407,7 +3414,7 @@ function runAiProductEntry() {
       resultEl.className = 'ai-result-box visible';
       var cat = targetCat;
       if (parsed.category) {
-        var catMap2 = { living:'living-sofas', master:'master-bed', guest:'guest-bed', dining:'dining-tables-small', barstools:'bar-stools', balcony:'balcony-seating', kids:'kids-main' };
+        var catMap2 = { living:'living-sofas', master:'master-beds-queen', guest:'guest-beds-king', dining:'dining-tables-small', barstools:'bar-stools', balcony:'balcony-seating', kids:'kids-main' };
         var sug = catMap2[parsed.category] || targetCat;
         if (document.getElementById('grid-' + sug)) cat = sug;
       }
@@ -3468,11 +3475,11 @@ var items=[
 {i:37,g:'living-tables',n:'Kelly Clarkson Round Modern Coffee Table — Cream Travertine Drum (Kelly Clarkson Home)',p:'$549.99',s:'Wayfair',nt:'SKU W110567318. Cream travertine / stone effect. 4.6★ 583 reviews — Wayfair Verified. Open box from $305.99. FREE 3-day delivery by Mar 8. Universal — any path.',d:'W:35.4" D:35.4" H:12"',u:'https://www.wayfair.com/keyword.php?keyword=Kelly+Clarkson+Round+Modern+Coffee+Table+Cream+Travertine+Drum+Kelly+Clarkson+Home',b:'maybe',bl:'🤔 Maybe',bc:'badge-maybe'},
 {i:38,g:'living-tables',n:'Brayden Studio Round Coffee Table — Brown Marble Effect + Wood Pedestal',p:'$669.99',s:'Wayfair',nt:'SKU W114094610. Brown marble effect top + solid wood conical pedestal. 4.8★ 35 reviews. Consumer $669.99. Delivery Mar 10-13. Also avail 41.73" size.',d:'W:35.43" D:35.43" H:17.44"',u:'https://www.wayfair.com/keyword.php?keyword=Brayden+Studio+Round+Coffee+Table+Brown+Marble+Effect+Wood+Pedestal',b:'maybe',bl:'🤔 Maybe',bc:'badge-maybe'},
 {i:39,g:'living-tables',n:'Ivy Bronx 35" Round Marble Coffee Table w/ Drawer — NO Assembly (Ivy Bronx)',p:'$699.99',s:'Wayfair',nt:'SKU W113349368. 35" round. White/gray marble top + walnut drum base with HIDDEN DRAWER + rotating top. NO ASSEMBLY. 4.7★ 11 reviews. Consumer $699.99. Delivery Mar 10-13.',d:'W:35" D:35" H:~14"',u:'https://www.wayfair.com/keyword.php?keyword=Ivy+Bronx+35+Round+Marble+Coffee+Table+w+Drawer+NO+Assembly+Ivy+Bronx',b:'maybe',bl:'🤔 Maybe',bc:'badge-maybe'},
-{i:40,g:'master-beds',n:'RTG Bedroom Set — Queen w/ Dresser+Mirror+Nightstand+Chest',p:'$1,495',s:'Rooms To Go',nt:'Adds nightstand & chest to $1,395 package. ⚠️ Adjustable base sold separately — confirm compatibility.',d:'W:Set" D:Set" H:Set"',u:'https://www.roomstogo.com/search/?query=RTG+Bedroom+Set+Queen+w+Dresser+Mirror+Nightstand+Chest',b:'liked',bl:'✓ Liked',bc:'badge-liked'},
+{i:40,g:'master-beds-queen',n:'RTG Bedroom Set — Queen w/ Dresser+Mirror+Nightstand+Chest',p:'$1,495',s:'Rooms To Go',nt:'Adds nightstand & chest to $1,395 package. ⚠️ Adjustable base sold separately — confirm compatibility.',d:'W:Set" D:Set" H:Set"',u:'https://www.roomstogo.com/search/?query=RTG+Bedroom+Set+Queen+w+Dresser+Mirror+Nightstand+Chest',b:'liked',bl:'✓ Liked',bc:'badge-liked'},
 {i:41,g:'master-dressers',n:'Moreno Dresser — 9-Drawer Light Oak/Whitewash',p:'$899.99',s:'Rooms To Go',nt:'Beautiful piece. Also sold as part of bedroom package.',d:'W:60" D:18" H:52"',u:'https://www.roomstogo.com/search/?query=Moreno+Dresser+9+Drawer+Light+Oak+Whitewash',b:'liked',bl:'✓ Liked',bc:'badge-liked'},
 {i:42,g:'master-dressers',n:'Round Silver Mirror (for over Moreno dresser)',p:'$399.99',s:'Rooms To Go',nt:'Wall-mounted. Pairs perfectly with Moreno dresser.',d:'W:32" D:2" H:32"',u:'https://www.roomstogo.com/search/?query=Round+Silver+Mirror+for+over+Moreno+dresser',b:'liked',bl:'✓ Liked',bc:'badge-liked'},
-{i:43,g:'master-beds',n:'King Storage Bed — Natural Pine/Ash',p:'$499',s:'Rooms To Go',nt:'3-drawer footboard storage. Floor sample outlet price. ⚠️ King size — needs large room.',d:'W:80" D:90" H:50"',u:'https://www.roomstogo.com/search/?query=King+Storage+Bed+Natural+Pine+Ash',b:'liked',bl:'✓ Liked',bc:'badge-liked'},
-{i:44,g:'master-beds',n:'SAGESUND/LÖNSET Upholstered Bed (Queen) — Gray',p:'$569',s:'IKEA',nt:'Includes slatted base. No box spring needed. Gray fabric headboard.',d:'W:66" D:88" H:47"',u:'https://www.ikea.com/us/en/search/?q=SAGESUND%20LÖNSET%20Upholstered%20Bed%20Queen%20Gray',b:'liked',bl:'✓ Liked',bc:'badge-liked'},
+{i:43,g:'master-beds-king',n:'King Storage Bed — Natural Pine/Ash',p:'$499',s:'Rooms To Go',nt:'3-drawer footboard storage. Floor sample outlet price. ⚠️ King size — needs large room.',d:'W:80" D:90" H:50"',u:'https://www.roomstogo.com/search/?query=King+Storage+Bed+Natural+Pine+Ash',b:'liked',bl:'✓ Liked',bc:'badge-liked'},
+{i:44,g:'master-beds-queen',n:'SAGESUND/LÖNSET Upholstered Bed (Queen) — Gray',p:'$569',s:'IKEA',nt:'Includes slatted base. No box spring needed. Gray fabric headboard.',d:'W:66" D:88" H:47"',u:'https://www.ikea.com/us/en/search/?q=SAGESUND%20LÖNSET%20Upholstered%20Bed%20Queen%20Gray',b:'liked',bl:'✓ Liked',bc:'badge-liked'},
 {i:45,g:'master-nightstands',n:'TONSTAD Nightstand — Cream/Off-White',p:'$129.99',s:'IKEA',nt:'1 drawer + open shelf. Buy 2 for both sides of bed.',d:'W:19" D:16" H:26"',u:'https://www.ikea.com/us/en/search/?q=TONSTAD%20Nightstand%20Cream%20Off%20White',b:'liked',bl:'✓ Liked',bc:'badge-liked'},
 {i:46,g:'master-nightstands',n:'BLÅSDATEN Nightstand — White',p:'$129.99',s:'IKEA',nt:'Slightly larger than TONSTAD. Verify exact dims on site.',d:'W:22" D:17" H:26"',u:'https://www.ikea.com/us/en/search/?q=BLÅSDATEN%20Nightstand%20White',b:'maybe',bl:'🤔 Maybe',bc:'badge-maybe'},
 {i:47,g:'master-nightstands',n:'SETSKOG Nightstand — Black Metal (Clearance)',p:'$37.97',s:'IKEA',nt:'Budget option. 1 drawer + perforated shelf. Was $49.99.',d:'W:16" D:12" H:22"',u:'https://www.ikea.com/us/en/search/?q=SETSKOG%20Nightstand%20Black%20Metal%20Clearance',b:'maybe',bl:'🤔 Maybe',bc:'badge-maybe'},
