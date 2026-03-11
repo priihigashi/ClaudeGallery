@@ -1089,6 +1089,9 @@ Decor &amp; Pillows</button>
 </div>
 
 <script>
+// Disable browser scroll restoration so our explicit scrollTo(0,0) wins
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
 // ════════════════════════════════════════════
 // INIT — wire up all static elements on load
 // ════════════════════════════════════════════
@@ -1232,6 +1235,7 @@ function wireCard(card) {
     var ph = photo.querySelector('.card-photo-placeholder');
     if (ph) ph.style.display = '';
     this.style.display = 'none';
+    delete photo.dataset.userSet;
   });
 
   // Remove card
@@ -1430,7 +1434,7 @@ function uploadCardPhoto(input) {
   var file = input.files[0];
   if (!file) return;
   var reader = new FileReader();
-  reader.onload = function(e) { setCardPhoto(photo, e.target.result); };
+  reader.onload = function(e) { setCardPhoto(photo, e.target.result); photo.dataset.userSet = '1'; };
   reader.readAsDataURL(file);
 }
 function setCardPhoto(photo, src) {
@@ -1476,7 +1480,7 @@ document.addEventListener('paste', function(e) {
     e.preventDefault();
     if (targetCard) {
       var r = new FileReader();
-      r.onload = (function(ph){ return function(ev){ setCardPhoto(ph, ev.target.result); }; })(targetCard);
+      r.onload = (function(ph){ return function(ev){ setCardPhoto(ph, ev.target.result); ph.dataset.userSet = '1'; }; })(targetCard);
       r.readAsDataURL(file);
     } else if (targetSlot) {
       var r2 = new FileReader();
@@ -1495,7 +1499,7 @@ document.addEventListener('drop', function(e) {
   var file = e.dataTransfer.files[0];
   if (!file || file.type.indexOf('image') === -1) return;
   var reader = new FileReader();
-  reader.onload = function(ev) { setCardPhoto(photo, ev.target.result); };
+  reader.onload = function(ev) { setCardPhoto(photo, ev.target.result); photo.dataset.userSet = '1'; };
   reader.readAsDataURL(file);
 });
 
@@ -2541,7 +2545,7 @@ function saveGallery() {
         status: card.dataset.status || '',
         badge: badge ? badge.textContent.trim() : '',
         badgeClass: badge ? (badge.className || '').replace('card-badge','').trim() : '',
-        img: (function(){ var i = card.querySelector('.card-photo img'); return i ? i.src : ''; })()
+        img: (function(){ var ph = card.querySelector('.card-photo'); var i = ph && ph.querySelector('img'); return (ph && ph.dataset.userSet === '1' && i) ? i.src : ''; })()
       });
     });
     localStorage.setItem(_saveKey, JSON.stringify(data));
@@ -2586,7 +2590,7 @@ function loadGallery() {
       var ui = card.querySelector('.card-url');
       if (ui && d.url) { ui.value = d.url; ui.dispatchEvent(new Event('input')); }
       if (d.badge && d.badgeClass) setBadge(card, d.status, d.badge, d.badgeClass);
-      if (d.img) { var ph = card.querySelector('.card-photo'); if (ph) setCardPhoto(ph, d.img); }
+      if (d.img) { var ph = card.querySelector('.card-photo'); if (ph) { setCardPhoto(ph, d.img); ph.dataset.userSet = '1'; } }
       syncCardToTable(card);
     });
     updateStats();
