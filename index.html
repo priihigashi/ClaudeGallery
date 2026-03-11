@@ -1611,12 +1611,17 @@ document.addEventListener('keydown', function(e) {
 var _activeSlot = null;
 var _activeCardPhoto = null;
 
-document.addEventListener('mousemove', function(e) {
-  var slot = e.target.closest('.photo-slot');
-  var cphoto = e.target.closest('.card-photo');
+function setActivePasteTarget(el) {
+  var slot = el && el.closest('.photo-slot');
+  var cphoto = el && el.closest('.card-photo');
   if (slot) { _activeSlot = slot; _activeCardPhoto = null; }
   else if (cphoto) { _activeCardPhoto = cphoto; _activeSlot = null; }
-});
+  else { _activeSlot = null; _activeCardPhoto = null; }
+}
+
+document.addEventListener('mouseover',   function(e) { setActivePasteTarget(e.target); });
+document.addEventListener('pointerdown', function(e) { setActivePasteTarget(e.target); });
+document.addEventListener('focusin',     function(e) { setActivePasteTarget(e.target); });
 
 // Ctrl+V for both card photos AND room photo slots
 document.addEventListener('paste', function(e) {
@@ -1628,11 +1633,9 @@ document.addEventListener('paste', function(e) {
   }
   if (!imageItem) return;
 
-  // Also check CSS :hover as fallback
-  var hoverSlot = document.querySelector('.photo-slot:hover');
-  var hoverCardPhoto = document.querySelector('.card-photo:hover');
-  var targetSlot = hoverSlot || _activeSlot;
-  var targetCard = hoverCardPhoto || _activeCardPhoto;
+  // Prefer explicit active target; fallback to CSS :hover only if none
+  var targetSlot = _activeSlot || document.querySelector('.photo-slot:hover');
+  var targetCard = _activeCardPhoto || document.querySelector('.card-photo:hover');
 
   if (targetSlot || targetCard) {
     var file = imageItem.getAsFile();
