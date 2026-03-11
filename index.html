@@ -19,6 +19,18 @@
   --radius:8px;
   --fd:'Cormorant Garamond',serif;--fb:'DM Sans',sans-serif;
 }
+[data-theme="light"]{
+  --bg:#F5F3EE;--surface:#FFFFFF;--surface2:#F0EDE6;--border:#DDD8CC;
+  --gold:#B8860B;--gold2:#C9A84C;--cream:#1C1A14;--stone:#5C5448;--sand:#3a2e1e;
+  --green:#2a6b3a;--green-bg:#d4f0de;--amber:#8B6914;--amber-bg:#f5e6c0;
+  --blue:#1a50c0;--blue-bg:#dce8ff;--brown:#6b3a1a;--brown-bg:#f5e6d4;
+}
+[data-theme="warm"]{
+  --bg:#2C1F14;--surface:#3D2B1A;--surface2:#4A3525;--border:#5C4030;
+  --gold:#E8C46A;--gold2:#FAF5EC;--cream:#FAF5EC;--stone:#D4C8B0;--sand:#FAF5EC;
+  --green:#5aad74;--green-bg:#1A3020;--amber:#e8a020;--amber-bg:#3a2a10;
+  --blue:#4a90d9;--blue-bg:#101e30;--brown:#c08050;--brown-bg:#301a08;
+}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:var(--fb);background:var(--bg);color:var(--cream);min-height:100vh;}
 
@@ -499,7 +511,17 @@ body.print-mode .card-move-wrap{display:none !important;}
       <button class="nav-hamburger-item" onclick="toggleArchiveSection();closeHamburgerMenu()">📦 Toggle Archive</button>
       <button class="nav-hamburger-item" onclick="openAddRoomModal();closeHamburgerMenu()">➕ Add New Room</button>
       <hr class="nav-hamburger-divider">
+      <button class="nav-hamburger-item" onclick="exportGalleryJSON();closeHamburgerMenu()">⬇ Export JSON Backup</button>
+      <label class="nav-hamburger-item" style="cursor:pointer;" title="Restore from JSON backup">⬆ Import JSON<input type="file" accept=".json" style="display:none" onchange="importGalleryJSON(this);closeHamburgerMenu()"></label>
+      <hr class="nav-hamburger-divider">
       <button class="nav-hamburger-item" id="bulk-select-menu-btn" onclick="toggleBulkSelect();closeHamburgerMenu()">☑ Bulk Select &amp; Delete</button>
+      <hr class="nav-hamburger-divider">
+      <div style="padding:8px 16px 4px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);">Theme</div>
+      <div style="display:flex;gap:6px;padding:6px 16px 10px;">
+        <button class="nav-hamburger-item" style="flex:1;padding:6px 8px;font-size:11px;justify-content:center;border-radius:6px;border:1px solid var(--border);" onclick="setGalleryTheme('dark');closeHamburgerMenu()" id="theme-btn-dark">🌑 Dark</button>
+        <button class="nav-hamburger-item" style="flex:1;padding:6px 8px;font-size:11px;justify-content:center;border-radius:6px;border:1px solid var(--border);" onclick="setGalleryTheme('light');closeHamburgerMenu()" id="theme-btn-light">☀️ Light</button>
+        <button class="nav-hamburger-item" style="flex:1;padding:6px 8px;font-size:11px;justify-content:center;border-radius:6px;border:1px solid var(--border);" onclick="setGalleryTheme('warm');closeHamburgerMenu()" id="theme-btn-warm">🔥 Warm</button>
+      </div>
     </div>
   </div>
 </nav>
@@ -2877,7 +2899,17 @@ function scheduleSave() {
 
 function saveGallery() {
   try {
-    var data = { v: 1, ts: Date.now(), cards: [], archive: _archive, rooms: [], subcats: [] };
+    var data = { v: 1, ts: Date.now(), cards: [], archive: _archive, rooms: [], subcats: [], cover: {}, theme: document.documentElement.dataset.theme || 'dark' };
+
+    // ── Cover page ──
+    var eyebrow = document.querySelector('#cover .cover-eyebrow');
+    var titleEm = document.querySelector('#cover .cover-title em');
+    var subtitle = document.querySelector('#cover .cover-subtitle');
+    var address = document.querySelector('#cover .cover-address');
+    if (eyebrow) data.cover.eyebrow = eyebrow.textContent;
+    if (titleEm) data.cover.name = titleEm.textContent;
+    if (subtitle) data.cover.subtitle = subtitle.textContent;
+    if (address) data.cover.address = address.textContent;
 
     // ── Cards ──
     document.querySelectorAll('.card').forEach(function(card) {
@@ -3141,6 +3173,21 @@ function loadGallery() {
       });
     }
 
+    // ── Step 6: Restore cover page content ──
+    if (data.cover) {
+      var eyebrow = document.querySelector('#cover .cover-eyebrow');
+      var titleEm = document.querySelector('#cover .cover-title em');
+      var subtitle = document.querySelector('#cover .cover-subtitle');
+      var address = document.querySelector('#cover .cover-address');
+      if (eyebrow && data.cover.eyebrow) eyebrow.textContent = data.cover.eyebrow;
+      if (titleEm && data.cover.name) titleEm.textContent = data.cover.name;
+      if (subtitle && data.cover.subtitle) subtitle.textContent = data.cover.subtitle;
+      if (address && data.cover.address) address.textContent = data.cover.address;
+    }
+
+    // ── Step 7: Restore theme ──
+    if (data.theme) setGalleryTheme(data.theme, true);
+
     updateStats();
     window.scrollTo(0, 0);
     var d = new Date(data.ts);
@@ -3178,6 +3225,30 @@ function hookAutoSave() {
   document.querySelectorAll('.section-num, .section-meta').forEach(function(el) {
     el.addEventListener('input', scheduleSave);
   });
+  // Wire cover page editable fields
+  document.querySelectorAll('#cover [contenteditable]').forEach(function(el) {
+    el.addEventListener('input', scheduleSave);
+  });
+}
+
+// ════════════════════════════════════════════
+// THEME SWITCHING
+// ════════════════════════════════════════════
+function setGalleryTheme(theme, silent) {
+  if (theme === 'dark' || !theme) {
+    document.documentElement.removeAttribute('data-theme');
+  } else {
+    document.documentElement.setAttribute('data-theme', theme);
+  }
+  // Update active state on theme buttons
+  ['dark','light','warm'].forEach(function(t) {
+    var btn = document.getElementById('theme-btn-' + t);
+    if (!btn) return;
+    var active = (t === theme) || (t === 'dark' && !theme);
+    btn.style.borderColor = active ? 'var(--gold)' : 'var(--border)';
+    btn.style.color = active ? 'var(--gold)' : '';
+  });
+  if (!silent) scheduleSave();
 }
 
 // ════════════════════════════════════════════
