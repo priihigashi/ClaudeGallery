@@ -159,9 +159,21 @@ body.print-mode .slot-upload-btn{background:#f5f0e4 !important;border-color:#c8b
 
 /* card photo */
 .card-photo{aspect-ratio:4/3;background:var(--surface2);position:relative;overflow:hidden;cursor:grab;}
-.card-photo img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;transform:scale(1.4);transform-origin:center center;}
+.card-photo img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;transition:transform .2s;}
+.card[data-focus="left"] .card-photo img{transform:scale(1.25);transform-origin:10% center;}
+.card[data-focus="center"] .card-photo img{transform:scale(1.25);transform-origin:center center;}
+.card[data-focus="right"] .card-photo img{transform:scale(1.25);transform-origin:90% center;}
 .card.card-dragging{opacity:.35;box-shadow:none !important;transform:none !important;}
 .card.card-drag-over{outline:2px solid var(--gold);outline-offset:-2px;}
+.card-focus-picker{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);display:none;gap:3px;z-index:4;background:rgba(0,0,0,.7);border-radius:4px;padding:3px 5px;}
+.card-photo:hover .card-focus-picker{display:flex;}
+.card-focus-opt{border:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.65);width:24px;height:20px;border-radius:3px;cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center;transition:all .15s;padding:0;}
+.card-focus-opt:hover{background:rgba(201,168,76,.4);border-color:var(--gold);}
+.card-focus-opt.active{background:var(--gold);border-color:var(--gold);color:#000;}
+.bulk-focus-sep{width:1px;background:var(--border);align-self:stretch;margin:0 4px;}
+.bulk-focus-label{color:var(--stone);font-size:10px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;}
+.bulk-focus-btn{width:28px;height:28px;background:rgba(201,168,76,.08);border:1px solid var(--border);border-radius:4px;color:var(--cream);font-size:13px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;}
+.bulk-focus-btn:hover{background:var(--gold);border-color:var(--gold);color:#000;}
 .card-photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
 .card-photo-placeholder .ph-icon{font-size:28px;opacity:.3;}
 .card-photo-placeholder .ph-text{font-size:11px;color:var(--stone);letter-spacing:1px;}
@@ -1157,6 +1169,13 @@ Decor &amp; Pillows</button>
 <!-- BULK SELECT BAR -->
 <div class="bulk-select-bar" id="bulk-select-bar">
   <span class="bulk-select-count" id="bulk-select-count">0 selected</span>
+  <div class="bulk-focus-sep"></div>
+  <span class="bulk-focus-label">Focus:</span>
+  <button class="bulk-focus-btn" onclick="bulkSetFocus('left')" title="Focus Left">←</button>
+  <button class="bulk-focus-btn" onclick="bulkSetFocus('center')" title="Focus Center">⊙</button>
+  <button class="bulk-focus-btn" onclick="bulkSetFocus('right')" title="Focus Right">→</button>
+  <button class="bulk-focus-btn" onclick="bulkSetFocus('')" title="No Zoom">✕</button>
+  <div class="bulk-focus-sep"></div>
   <button class="bulk-delete-btn" id="bulk-delete-btn" onclick="bulkDeleteSelected()">🗑 Delete Selected</button>
   <button class="bulk-select-cancel" onclick="exitBulkSelect()">Cancel</button>
 </div>
@@ -1336,8 +1355,13 @@ document.addEventListener('DOMContentLoaded', function() {
   addAddCardPlaceholders();
   initSubCatTitles();
   initPriceSortBars();
-  // Wire archive patch and drag onto all existing static cards
-  document.querySelectorAll('.card').forEach(function(card) { patchRemoveBtn(card); initCardDrag(card); });
+  // Wire archive patch, drag, and focus picker onto all existing static cards
+  document.querySelectorAll('.card').forEach(function(card) {
+    patchRemoveBtn(card);
+    initCardDrag(card);
+    var ph = card.querySelector('.card-photo');
+    if (ph && !ph.querySelector('.card-focus-picker')) addFocusPicker(card, ph);
+  });
   // Load saved state or run importAll
   var loaded = false;
   try { loaded = loadGallery(); } catch(e) {}
@@ -1817,6 +1841,7 @@ function addCard(sectionId, grid) {
     ph.style.display = ''; rpb.style.display = 'none';
   });
   photo.appendChild(rpb);
+  addFocusPicker(card, photo);
   card.appendChild(photo);
 
   // Badge
@@ -1992,6 +2017,43 @@ function initCardDrag(card) {
     }
     scheduleSave();
   });
+}
+
+// ════════════════════════════════════════════
+// CARD PHOTO FOCUS / ZOOM
+// ════════════════════════════════════════════
+function setCardFocus(card, val) {
+  card.dataset.focus = val || '';
+  card.querySelectorAll('.card-focus-opt').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.focusVal === (val || ''));
+  });
+}
+
+function addFocusPicker(card, photo) {
+  var picker = document.createElement('div');
+  picker.className = 'card-focus-picker';
+  var opts = [['left','←'],['center','⊙'],['right','→'],['','✕']];
+  opts.forEach(function(o) {
+    var btn = document.createElement('button');
+    btn.className = 'card-focus-opt';
+    btn.textContent = o[1];
+    btn.dataset.focusVal = o[0];
+    btn.title = o[0] ? 'Focus ' + o[0] : 'No zoom';
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      setCardFocus(card, o[0]);
+      scheduleSave();
+    });
+    picker.appendChild(btn);
+  });
+  photo.appendChild(picker);
+}
+
+function bulkSetFocus(val) {
+  document.querySelectorAll('.card.bulk-selected').forEach(function(card) {
+    setCardFocus(card, val);
+  });
+  scheduleSave();
 }
 
 // ════════════════════════════════════════════
@@ -3124,6 +3186,7 @@ function saveGallery() {
         a2l: lbls[1] ? lbls[1].textContent.replace(':','').trim() : '',
         a2v: vals[1] ? vals[1].textContent.trim() : '',
         status: card.dataset.status || '',
+        focus: card.dataset.focus || '',
         badge: badge ? badge.textContent.trim() : '',
         badgeClass: badge ? (badge.className || '').replace('card-badge','').trim() : '',
         img: (function(){ var i = card.querySelector('.card-photo img'); return (i && i.src && i.src.indexOf('data:') === 0) ? i.src : ''; })()
@@ -3297,6 +3360,7 @@ function loadGallery() {
         var card = cards[cards.length - 1];
         if (!card) return;
         if (d.cid) card.dataset.cardId = d.cid;
+        if (d.focus) setCardFocus(card, d.focus);
         if (card.querySelector('.card-name')) card.querySelector('.card-name').textContent = d.name;
         if (card.querySelector('.card-price')) card.querySelector('.card-price').textContent = d.price;
         if (card.querySelector('.card-store')) card.querySelector('.card-store').textContent = d.store;
