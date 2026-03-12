@@ -3984,6 +3984,45 @@ function _readCardsInMultipleCats(catIds) {
   });
   return all;
 }
+var _AI_EDIT_CHUNK_SIZE = 20; // cards per API batch to avoid JSON truncation
+
+function _buildEditPrompt(catLabel, instruction, catIds, chunk) {
+  var cardData = chunk.map(function(c) {
+    return {
+      idx:      c._idx,
+      name:     c.name,
+      price:    c.price,
+      store:    c.store,
+      note:     c.note.slice(0, 120),
+      url:      c.url.slice(0, 80),
+      hasPhoto: c.hasPhoto,
+      attrs:    c.attrs.map(function(a){ return a.label + ': ' + a.val; }).join('; ')
+    };
+  });
+  return (
+    'You are reviewing furniture gallery cards in the category: "' + catLabel + '".\n' +
+    'User instruction: "' + instruction + '"\n\n' +
+    'Suggest ONLY changes needed to fulfil the instruction. Return ONLY a valid JSON array — no markdown, no commentary.\n' +
+    'Each change: { "cardIndex": N, "field": "FIELD", "oldVal": "current text", "newVal": "new text" }\n\n' +
+    'Allowed fields:\n' +
+    '  "name"  — product/model name ONLY. NEVER include brand, store, retailer, or dimensions here.\n' +
+    '  "price" — price with $ sign\n' +
+    '  "store" — brand or retailer name ONLY (not product name)\n' +
+    '  "note"  — descriptive notes\n' +
+    '  "url"   — product URL\n' +
+    '  "attr.LABEL" — matches an existing attr label exactly (e.g. "attr.Size", "attr.Dimensions")\n' +
+    '  "category" — move card; newVal must be one of: ' + catIds + '\n\n' +
+    'CRITICAL naming rules:\n' +
+    '  • "name" = product model name only. Example: "ModularOne Sectional" not "ModularOne Sectional by Cindy Crawford"\n' +
+    '  • Brand/designer/manufacturer → "store" field, not "name"\n' +
+    '  • Dimensions (e.g. W:103" D:38") → "attr.Dimensions" field, NEVER in "name"\n' +
+    '  • Size variants (Queen, King) may stay in name only if they were already there\n\n' +
+    'Other rules: Only suggest changes you are confident about. Do NOT fabricate URLs or prices. ' +
+    'Do NOT change photos. Return [] if nothing needs changing.\n\n' +
+    'Cards:\n' + JSON.stringify(cardData, null, 1)
+  );
+}
+
 function runAiEditCards() {
   var selectedCats = _getSelectedEditCats();
   var instruction = (document.getElementById('ai-edit-instruction').value || '').trim();
@@ -4000,55 +4039,66 @@ function runAiEditCards() {
   var catLabel = selectedCats.length === 1 ? selectedCats[0] : selectedCats.length + ' categories';
   var catIds   = getAllSubCats().map(function(c){ return c.gridId.replace('grid-',''); }).join(', ');
 
-  var cardData = cards.map(function(c) {
-    return {
-      idx:      c._idx,
-      name:     c.name,
-      price:    c.price,
-      store:    c.store,
-      note:     c.note.slice(0, 120),
-      url:      c.url.slice(0, 80),
-      hasPhoto: c.hasPhoto,
-      attrs:    c.attrs.map(function(a){ return a.label + ': ' + a.val; }).join('; ')
-    };
-  });
+  // Split into chunks to avoid JSON truncation on large categories
+  var chunks = [];
+  for (var ci = 0; ci < cards.length; ci += _AI_EDIT_CHUNK_SIZE) {
+    chunks.push(cards.slice(ci, ci + _AI_EDIT_CHUNK_SIZE));
+  }
 
-  var prompt =
-    'You are reviewing furniture gallery cards in the category: "' + catLabel + '".\n' +
-    'User instruction: "' + instruction + '"\n\n' +
-    'Suggest ONLY changes needed to fulfil the instruction. Return ONLY a valid JSON array — no markdown.\n' +
-    'Each change object: { "cardIndex": N, "field": "FIELD", "oldVal": "current text", "newVal": "new text" }\n\n' +
-    'Allowed field values:\n' +
-    '  "name", "price", "store", "note", "url"\n' +
-    '  "attr.LABEL" where LABEL matches an existing attr label (e.g. "attr.Size", "attr.Color")\n' +
-    '  "category" — move the card; newVal must be one of: ' + catIds + '\n\n' +
-    'Rules: Only suggest changes you are confident about. Do NOT fabricate data. ' +
-    'Do NOT change photos. Return [] if nothing needs changing.\n\n' +
-    'Cards:\n' + JSON.stringify(cardData, null, 1);
-
-  var content = [];
-  _aiEditImages.forEach(function(src) {
-    var b64 = src.split(',')[1];
-    var mm  = src.match(/^data:([^;]+);/);
-    content.push({ type: 'image', source: { type: 'base64', media_type: mm ? mm[1] : 'image/jpeg', data: b64 } });
-  });
-  content.push({ type: 'text', text: prompt });
-
-  statusEl.textContent = 'Claude is reviewing ' + cards.length + ' card' + (cards.length !== 1 ? 's' : '') + '…';
+  var allResults = [];
+  var chunkIdx = 0;
   document.getElementById('ai-edit-review-btn').disabled = true;
 
-  _callAiApiJson(apiKey, [{ role: 'user', content: content }], 2000, function(parsed) {
-    document.getElementById('ai-edit-review-btn').disabled = false;
-    if (!Array.isArray(parsed)) { statusEl.textContent = 'Unexpected response format.'; return; }
-    if (!parsed.length) { statusEl.textContent = '✓ Claude reviewed ' + cards.length + ' cards — no changes needed.'; return; }
-    _aiEditPendingEdits = parsed;
-    _aiEditPendingCards = cards;
-    statusEl.textContent = '';
-    _renderEditDiffPreview(parsed, cards);
-  }, function(err) {
-    document.getElementById('ai-edit-review-btn').disabled = false;
-    statusEl.textContent = err;
-  });
+  function processChunk() {
+    if (chunkIdx >= chunks.length) {
+      // All chunks done
+      document.getElementById('ai-edit-review-btn').disabled = false;
+      _aiEditPendingEdits = allResults;
+      _aiEditPendingCards = cards;
+      statusEl.textContent = '';
+      if (!allResults.length) {
+        statusEl.textContent = '✓ Claude reviewed ' + cards.length + ' cards — no changes needed.';
+      } else {
+        _renderEditDiffPreview(allResults, cards);
+      }
+      return;
+    }
+
+    var chunk = chunks[chunkIdx];
+    var chunkOffset = chunkIdx * _AI_EDIT_CHUNK_SIZE;
+    var batchLabel = chunks.length > 1
+      ? ' (batch ' + (chunkIdx + 1) + ' of ' + chunks.length + ')'
+      : '';
+    statusEl.textContent = 'Claude is reviewing cards ' + (chunkOffset + 1) + '–' + (chunkOffset + chunk.length) + ' of ' + cards.length + batchLabel + '…';
+
+    var prompt = _buildEditPrompt(catLabel, instruction, catIds, chunk);
+    var content = [];
+    // Only attach reference images on first chunk to save tokens
+    if (chunkIdx === 0) {
+      _aiEditImages.forEach(function(src) {
+        var b64 = src.split(',')[1];
+        var mm  = src.match(/^data:([^;]+);/);
+        content.push({ type: 'image', source: { type: 'base64', media_type: mm ? mm[1] : 'image/jpeg', data: b64 } });
+      });
+    }
+    content.push({ type: 'text', text: prompt });
+
+    _callAiApiJson(apiKey, [{ role: 'user', content: content }], 4000, function(parsed) {
+      if (Array.isArray(parsed)) allResults = allResults.concat(parsed);
+      chunkIdx++;
+      if (chunkIdx < chunks.length) {
+        // Small pause between chunks
+        setTimeout(processChunk, 1500);
+      } else {
+        processChunk();
+      }
+    }, function(err) {
+      document.getElementById('ai-edit-review-btn').disabled = false;
+      statusEl.textContent = '✗ Error on batch ' + (chunkIdx + 1) + ': ' + err;
+    });
+  }
+
+  processChunk();
 }
 
 function _renderEditDiffPreview(edits, cards) {
