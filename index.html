@@ -170,8 +170,22 @@ body.print-mode .slot-upload-btn{background:#f5f0e4 !important;border-color:#c8b
 
 
 /* card photo */
-.card-photo{aspect-ratio:4/3;background:var(--surface2);position:relative;overflow:hidden;}
-.card-photo img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;}
+.card-photo{aspect-ratio:4/3;background:var(--surface2);position:relative;overflow:hidden;cursor:grab;}
+.card-photo img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;transition:transform .2s;}
+.card[data-focus="left"] .card-photo img{transform:scale(1.25);transform-origin:10% center;}
+.card[data-focus="center"] .card-photo img{transform:scale(1.25);transform-origin:center center;}
+.card[data-focus="right"] .card-photo img{transform:scale(1.25);transform-origin:90% center;}
+.card.card-dragging{opacity:.35;box-shadow:none !important;transform:none !important;}
+.card.card-drag-over{outline:2px solid var(--gold);outline-offset:-2px;}
+.card-focus-picker{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);display:none;gap:3px;z-index:4;background:rgba(0,0,0,.7);border-radius:4px;padding:3px 5px;}
+.card-photo:hover .card-focus-picker{display:flex;}
+.card-focus-opt{border:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.65);width:24px;height:20px;border-radius:3px;cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center;transition:all .15s;padding:0;}
+.card-focus-opt:hover{background:rgba(201,168,76,.4);border-color:var(--gold);}
+.card-focus-opt.active{background:var(--gold);border-color:var(--gold);color:#000;}
+.bulk-focus-sep{width:1px;background:var(--border);align-self:stretch;margin:0 4px;}
+.bulk-focus-label{color:var(--stone);font-size:10px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;}
+.bulk-focus-btn{width:28px;height:28px;background:rgba(201,168,76,.08);border:1px solid var(--border);border-radius:4px;color:var(--cream);font-size:13px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;}
+.bulk-focus-btn:hover{background:var(--gold);border-color:var(--gold);color:#000;}
 .card-photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
 .card-photo-placeholder .ph-icon{font-size:28px;opacity:.3;}
 .card-photo-placeholder .ph-text{font-size:11px;color:var(--stone);letter-spacing:1px;}
@@ -449,6 +463,17 @@ body.bulk-select-active .card-add-placeholder{pointer-events:none;opacity:.3;}
 .ai-key-input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:8px 12px;color:var(--cream);font-family:var(--fb);font-size:12px;outline:none;}
 .ai-key-input:focus{border-color:var(--gold);}
 .ai-cat-select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:8px 12px;color:var(--cream);font-family:var(--fb);font-size:13px;outline:none;margin-bottom:12px;}
+.ai-cat-multiselect{position:relative;margin-bottom:12px;}
+.ai-cat-multiselect-trigger{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:8px 12px;color:var(--cream);font-family:var(--fb);font-size:13px;cursor:pointer;user-select:none;}
+.ai-cat-multiselect-trigger:hover{border-color:var(--gold);}
+.ai-cat-multiselect-panel{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);z-index:300;max-height:260px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,.5);}
+.ai-cat-ms-row{display:flex;align-items:center;gap:8px;padding:7px 12px;font-size:12px;color:var(--sand);cursor:pointer;}
+.ai-cat-ms-row:hover{background:var(--surface2);}
+.ai-cat-ms-row input[type=checkbox]{accent-color:var(--gold);cursor:pointer;flex-shrink:0;}
+.ai-cat-ms-room{padding:6px 12px 3px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:8px;cursor:pointer;}
+.ai-cat-ms-room:hover{background:var(--surface2);}
+.ai-cat-ms-room input[type=checkbox]{accent-color:var(--gold);cursor:pointer;flex-shrink:0;}
+.ai-cat-ms-sub{padding-left:28px;}
 
 /* ── CARD MOVE LABEL ── */
 .card-move-wrap{padding:4px 0 6px;display:flex;align-items:center;gap:5px;position:relative;}
@@ -1177,6 +1202,13 @@ Decor &amp; Pillows</button>
 <!-- BULK SELECT BAR -->
 <div class="bulk-select-bar" id="bulk-select-bar">
   <span class="bulk-select-count" id="bulk-select-count">0 selected</span>
+  <div class="bulk-focus-sep"></div>
+  <span class="bulk-focus-label">Focus:</span>
+  <button class="bulk-focus-btn" onclick="bulkSetFocus('left')" title="Focus Left">←</button>
+  <button class="bulk-focus-btn" onclick="bulkSetFocus('center')" title="Focus Center">⊙</button>
+  <button class="bulk-focus-btn" onclick="bulkSetFocus('right')" title="Focus Right">→</button>
+  <button class="bulk-focus-btn" onclick="bulkSetFocus('')" title="No Zoom">✕</button>
+  <div class="bulk-focus-sep"></div>
   <button class="bulk-delete-btn" id="bulk-delete-btn" onclick="bulkDeleteSelected()">🗑 Delete Selected</button>
   <button class="bulk-select-cancel" onclick="exitBulkSelect()">Cancel</button>
 </div>
@@ -1257,7 +1289,18 @@ Decor &amp; Pillows</button>
     <!-- TAB: EDIT CARDS -->
     <div class="ai-edit-tab-panel active" id="ai-edit-panel-edit">
       <label class="ai-label">Category to review</label>
-      <select class="ai-cat-select" id="ai-edit-cat"></select>
+      <div class="ai-cat-multiselect" id="ai-edit-cat-wrap">
+        <div class="ai-cat-multiselect-trigger" id="ai-edit-cat-trigger" onclick="toggleAiEditCatDropdown()">
+          <span id="ai-edit-cat-label">Select categories…</span>
+          <span style="float:right;opacity:.5;">▾</span>
+        </div>
+        <div class="ai-cat-multiselect-panel" id="ai-edit-cat-panel" style="display:none;">
+          <label class="ai-cat-ms-row ai-cat-ms-selectall">
+            <input type="checkbox" id="ai-edit-cat-all" onchange="aiEditCatSelectAll(this.checked)"> <strong>All Categories</strong>
+          </label>
+          <div id="ai-edit-cat-groups"></div>
+        </div>
+      </div>
       <label class="ai-label">Instruction <span style="font-size:10px;font-weight:300;text-transform:none;letter-spacing:0;">(what to add, fix, or move)</span></label>
       <textarea class="ai-textarea" id="ai-edit-instruction" style="min-height:65px;" placeholder="e.g. &#34;Add dimensions to cards missing them&#34;  ·  &#34;Move all Queen beds to master-beds-queen&#34;  ·  &#34;Fill color from product name&#34;"></textarea>
       <label class="ai-label">Reference images <span style="font-size:10px;font-weight:300;text-transform:none;letter-spacing:0;">(optional — visual context for Claude)</span></label>
@@ -1324,7 +1367,13 @@ Decor &amp; Pillows</button>
       </div>
       <div class="ai-status" id="ai-cleanup-status"></div>
       <div id="ai-cleanup-result-wrap" style="display:none;">
-        <label class="ai-label" id="ai-cleanup-count-label"></label>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+          <label class="ai-label" id="ai-cleanup-count-label" style="margin-bottom:0;"></label>
+          <div style="display:flex;gap:8px;">
+            <button class="modal-btn" style="padding:3px 10px;font-size:10px;" onclick="_aiCleanupSelectAll(true)">Select All</button>
+            <button class="modal-btn" style="padding:3px 10px;font-size:10px;" onclick="_aiCleanupSelectAll(false)">Deselect All</button>
+          </div>
+        </div>
         <div class="ai-cleanup-list" id="ai-cleanup-list"></div>
       </div>
       <div class="modal-actions" id="ai-cleanup-actions-find">
@@ -1333,7 +1382,8 @@ Decor &amp; Pillows</button>
       </div>
       <div class="modal-actions" id="ai-cleanup-actions-delete" style="display:none;">
         <button class="modal-btn" onclick="_aiCleanupReset()">← Back</button>
-        <button class="modal-btn ai-edit-danger" onclick="applySelectedDeletions()">Delete Selected</button>
+        <button class="modal-btn ai-edit-danger" onclick="applySelectedDeletions(false)">Delete Selected</button>
+        <button class="modal-btn ai-edit-danger" onclick="applySelectedDeletions(true)">Delete All</button>
       </div>
     </div>
 
@@ -1356,8 +1406,13 @@ document.addEventListener('DOMContentLoaded', function() {
   addAddCardPlaceholders();
   initSubCatTitles();
   initPriceSortBars();
-  // Wire archive patch onto all existing cards
-  document.querySelectorAll('.card').forEach(function(card) { patchRemoveBtn(card); });
+  // Wire archive patch, drag, and focus picker onto all existing static cards
+  document.querySelectorAll('.card').forEach(function(card) {
+    patchRemoveBtn(card);
+    initCardDrag(card);
+    var ph = card.querySelector('.card-photo');
+    if (ph && !ph.querySelector('.card-focus-picker')) addFocusPicker(card, ph);
+  });
   // Load saved state or run importAll
   var loaded = false;
   try { loaded = loadGallery(); } catch(e) {}
@@ -1840,6 +1895,7 @@ function addCard(sectionId, grid) {
     ph.style.display = ''; rpb.style.display = 'none';
   });
   photo.appendChild(rpb);
+  addFocusPicker(card, photo);
   card.appendChild(photo);
 
   // Badge
@@ -1968,6 +2024,90 @@ function addCard(sectionId, grid) {
     card.addEventListener('click', _onBulkCardClick);
   }
   if (!window._galleryLoading) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  initCardDrag(card);
+}
+
+// ════════════════════════════════════════════
+// CARD DRAG-TO-REORDER
+// ════════════════════════════════════════════
+var _dragCard = null;
+function initCardDrag(card) {
+  card.setAttribute('draggable', 'true');
+  card.addEventListener('dragstart', function(e) {
+    // Don't hijack drags starting from text/input elements
+    var t = e.target;
+    if (t.closest('[contenteditable="true"]') || t.closest('input') || t.closest('textarea') || t.closest('button') || t.closest('select')) {
+      e.preventDefault(); return;
+    }
+    _dragCard = card;
+    e.dataTransfer.effectAllowed = 'move';
+    setTimeout(function() { card.classList.add('card-dragging'); }, 0);
+  });
+  card.addEventListener('dragend', function() {
+    card.classList.remove('card-dragging');
+    document.querySelectorAll('.card-drag-over').forEach(function(c) { c.classList.remove('card-drag-over'); });
+    _dragCard = null;
+  });
+  card.addEventListener('dragover', function(e) {
+    if (!_dragCard || _dragCard === card) return;
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+  });
+  card.addEventListener('dragenter', function(e) {
+    if (!_dragCard || _dragCard === card) return;
+    if (_dragCard.parentElement === card.parentElement) card.classList.add('card-drag-over');
+  });
+  card.addEventListener('dragleave', function() { card.classList.remove('card-drag-over'); });
+  card.addEventListener('drop', function(e) {
+    e.preventDefault(); e.stopPropagation();
+    card.classList.remove('card-drag-over');
+    if (!_dragCard || _dragCard === card) return;
+    if (_dragCard.parentElement !== card.parentElement) return;
+    var rect = card.getBoundingClientRect();
+    if (e.clientX < rect.left + rect.width / 2) {
+      card.parentElement.insertBefore(_dragCard, card);
+    } else {
+      card.parentElement.insertBefore(_dragCard, card.nextSibling);
+    }
+    scheduleSave();
+  });
+}
+
+// ════════════════════════════════════════════
+// CARD PHOTO FOCUS / ZOOM
+// ════════════════════════════════════════════
+function setCardFocus(card, val) {
+  card.dataset.focus = val || '';
+  card.querySelectorAll('.card-focus-opt').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.focusVal === (val || ''));
+  });
+}
+
+function addFocusPicker(card, photo) {
+  var picker = document.createElement('div');
+  picker.className = 'card-focus-picker';
+  var opts = [['left','←'],['center','⊙'],['right','→'],['','✕']];
+  opts.forEach(function(o) {
+    var btn = document.createElement('button');
+    btn.className = 'card-focus-opt';
+    btn.textContent = o[1];
+    btn.dataset.focusVal = o[0];
+    btn.title = o[0] ? 'Focus ' + o[0] : 'No zoom';
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      setCardFocus(card, o[0]);
+      scheduleSave();
+    });
+    picker.appendChild(btn);
+  });
+  photo.appendChild(picker);
+}
+
+function bulkSetFocus(val) {
+  document.querySelectorAll('.card.bulk-selected').forEach(function(card) {
+    setCardFocus(card, val);
+  });
+  scheduleSave();
 }
 
 // ════════════════════════════════════════════
@@ -3110,6 +3250,7 @@ function saveGallery() {
         a2l: lbls[1] ? lbls[1].textContent.replace(':','').trim() : '',
         a2v: vals[1] ? vals[1].textContent.trim() : '',
         status: card.dataset.status || '',
+        focus: card.dataset.focus || '',
         badge: badge ? badge.textContent.trim() : '',
         badgeClass: badge ? (badge.className || '').replace('card-badge','').trim() : '',
         img: (function(){ var i = card.querySelector('.card-photo img'); return (i && i.src && i.src.indexOf('data:') === 0) ? i.src : ''; })()
@@ -3283,6 +3424,7 @@ function loadGallery() {
         var card = cards[cards.length - 1];
         if (!card) return;
         if (d.cid) card.dataset.cardId = d.cid;
+        if (d.focus) setCardFocus(card, d.focus);
         if (card.querySelector('.card-name')) card.querySelector('.card-name').textContent = d.name;
         if (card.querySelector('.card-price')) card.querySelector('.card-price').textContent = d.price;
         if (card.querySelector('.card-store')) card.querySelector('.card-store').textContent = d.store;
@@ -3669,17 +3811,82 @@ var _aiMatchPendingAll  = [];   // all card DOM elements for the current match r
 var _aiCleanupFound    = [];    // card DOM elements found by Clean Up scan
 
 // ─── open / tab switch ───────────────────────────────────────────────────────
-function openAiEditModal() {
-  var editSel  = document.getElementById('ai-edit-cat');
-  var matchSel = document.getElementById('ai-match-cat');
-  editSel.innerHTML  = '';
-  matchSel.innerHTML = '<option value="__all__">All categories</option>';
-  getAllSubCats().forEach(function(cat) {
-    var label = cat.roomTitle + ' \u203a ' + cat.subTitle;
-    var v = cat.gridId.replace('grid-','');
-    var o1 = document.createElement('option'); o1.value = v; o1.textContent = label; editSel.appendChild(o1);
-    var o2 = document.createElement('option'); o2.value = v; o2.textContent = label; matchSel.appendChild(o2);
+function _getSelectedEditCats() {
+  var checked = [];
+  document.querySelectorAll('#ai-edit-cat-groups .ai-edit-cat-sub-chk:checked').forEach(function(chk) {
+    checked.push(chk.value);
   });
+  return checked;
+}
+function _updateEditCatLabel() {
+  var checked = _getSelectedEditCats();
+  var all = document.querySelectorAll('#ai-edit-cat-groups .ai-edit-cat-sub-chk').length;
+  var lbl = document.getElementById('ai-edit-cat-label');
+  if (!checked.length) lbl.textContent = 'Select categories…';
+  else if (checked.length === all) lbl.textContent = 'All categories (' + all + ')';
+  else lbl.textContent = checked.length + ' categor' + (checked.length === 1 ? 'y' : 'ies') + ' selected';
+  // sync the "all" checkbox
+  document.getElementById('ai-edit-cat-all').checked = (checked.length === all);
+  document.getElementById('ai-edit-cat-all').indeterminate = (checked.length > 0 && checked.length < all);
+}
+function toggleAiEditCatDropdown() {
+  var panel = document.getElementById('ai-edit-cat-panel');
+  panel.style.display = panel.style.display === 'none' ? '' : 'none';
+}
+function aiEditCatSelectAll(checked) {
+  document.querySelectorAll('#ai-edit-cat-groups .ai-edit-cat-sub-chk').forEach(function(chk) { chk.checked = checked; });
+  document.getElementById('ai-edit-cat-all').checked = checked;
+  document.getElementById('ai-edit-cat-all').indeterminate = false;
+  _updateEditCatLabel();
+}
+function _aiEditCatRoomToggle(roomName, checked) {
+  document.querySelectorAll('#ai-edit-cat-groups .ai-edit-cat-sub-chk[data-room="' + CSS.escape(roomName) + '"]').forEach(function(chk) { chk.checked = checked; });
+  _updateEditCatLabel();
+}
+// close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  var wrap = document.getElementById('ai-edit-cat-wrap');
+  if (wrap && !wrap.contains(e.target)) {
+    var panel = document.getElementById('ai-edit-cat-panel');
+    if (panel) panel.style.display = 'none';
+  }
+});
+
+function openAiEditModal() {
+  var matchSel = document.getElementById('ai-match-cat');
+  matchSel.innerHTML = '<option value="__all__">All categories</option>';
+  // build multi-select groups
+  var groups = document.getElementById('ai-edit-cat-groups');
+  groups.innerHTML = '';
+  var byRoom = {};
+  var roomOrder = [];
+  getAllSubCats().forEach(function(cat) {
+    var v = cat.gridId.replace('grid-','');
+    var o2 = document.createElement('option'); o2.value = v; o2.textContent = cat.roomTitle + ' \u203a ' + cat.subTitle; matchSel.appendChild(o2);
+    if (!byRoom[cat.roomTitle]) { byRoom[cat.roomTitle] = []; roomOrder.push(cat.roomTitle); }
+    byRoom[cat.roomTitle].push(cat);
+  });
+  roomOrder.forEach(function(room) {
+    var roomRow = document.createElement('div'); roomRow.className = 'ai-cat-ms-room';
+    var roomChk = document.createElement('input'); roomChk.type = 'checkbox';
+    roomChk.addEventListener('change', (function(r){ return function(){ _aiEditCatRoomToggle(r, this.checked); }; })(room));
+    var roomLbl = document.createElement('span'); roomLbl.textContent = room;
+    roomRow.appendChild(roomChk); roomRow.appendChild(roomLbl);
+    roomRow.addEventListener('click', function(e) {
+      if (e.target !== roomChk) { roomChk.checked = !roomChk.checked; _aiEditCatRoomToggle(room, roomChk.checked); }
+    });
+    groups.appendChild(roomRow);
+    byRoom[room].forEach(function(cat) {
+      var v = cat.gridId.replace('grid-','');
+      var subRow = document.createElement('label'); subRow.className = 'ai-cat-ms-row ai-cat-ms-sub';
+      var subChk = document.createElement('input'); subChk.type = 'checkbox'; subChk.className = 'ai-edit-cat-sub-chk'; subChk.value = v; subChk.setAttribute('data-room', room);
+      subChk.addEventListener('change', function() { _updateEditCatLabel(); });
+      var subLbl = document.createElement('span'); subLbl.textContent = cat.subTitle;
+      subRow.appendChild(subChk); subRow.appendChild(subLbl);
+      groups.appendChild(subRow);
+    });
+  });
+  _updateEditCatLabel();
   var saved = localStorage.getItem('gallery-ai-key-v1') || '';
   document.getElementById('ai-edit-api-key').value  = saved;
   document.getElementById('ai-match-api-key').value = saved;
@@ -3762,7 +3969,11 @@ function _addAiEditImages(imgs, mode, statusEl) {
   if (mode === 'edit') _aiEditImages = _aiEditImages.concat(imgs);
   else _aiMatchImages = _aiMatchImages.concat(imgs);
   _renderAiEditPreviews(mode);
-  statusEl.textContent = '';
+  if (mode === 'match' && _aiMatchImages.length > 3) {
+    statusEl.innerHTML = '⚠️ ' + _aiMatchImages.length + ' images — processing will take ~' + Math.round(_aiMatchImages.length * (_AI_MATCH_DELAY_MS/1000 + 5)) + 's due to rate limiting between calls.';
+  } else {
+    statusEl.textContent = '';
+  }
 }
 function _renderAiEditPreviews(mode) {
   var images   = mode === 'edit' ? _aiEditImages : _aiMatchImages;
@@ -3836,22 +4047,21 @@ function _callAiApiJson(apiKey, messages, maxTok, onSuccess, onError) {
 }
 
 // ─── TAB 1: Edit Cards ────────────────────────────────────────────────────────
-function runAiEditCards() {
-  var catId       = document.getElementById('ai-edit-cat').value;
-  var instruction = (document.getElementById('ai-edit-instruction').value || '').trim();
-  var apiKey      = (document.getElementById('ai-edit-api-key').value    || '').trim();
-  var statusEl    = document.getElementById('ai-edit-status');
-  if (!instruction) { statusEl.textContent = 'Please enter an instruction.'; return; }
-  if (!apiKey)      { statusEl.textContent = 'Please enter your Anthropic API key.'; return; }
-  localStorage.setItem('gallery-ai-key-v1', apiKey);
+function _readCardsInMultipleCats(catIds) {
+  var all = [];
+  catIds.forEach(function(catId) {
+    var grid = document.getElementById('grid-' + catId);
+    if (!grid) return;
+    Array.from(grid.querySelectorAll('.card:not(.card-add-placeholder)')).forEach(function(c, i) {
+      all.push(Object.assign({ _idx: all.length }, _readCardData(c)));
+    });
+  });
+  return all;
+}
+var _AI_EDIT_CHUNK_SIZE = 20; // cards per API batch to avoid JSON truncation
 
-  var cards = _readAllCardsInCat(catId);
-  if (!cards.length) { statusEl.textContent = 'No cards found in this category.'; return; }
-
-  var catLabel = (document.getElementById('ai-edit-cat').selectedOptions[0] || {}).text || catId;
-  var catIds   = getAllSubCats().map(function(c){ return c.gridId.replace('grid-',''); }).join(', ');
-
-  var cardData = cards.map(function(c) {
+function _buildEditPrompt(catLabel, instruction, catIds, chunk) {
+  var cardData = chunk.map(function(c) {
     return {
       idx:      c._idx,
       name:     c.name,
@@ -3863,43 +4073,106 @@ function runAiEditCards() {
       attrs:    c.attrs.map(function(a){ return a.label + ': ' + a.val; }).join('; ')
     };
   });
-
-  var prompt =
+  return (
     'You are reviewing furniture gallery cards in the category: "' + catLabel + '".\n' +
     'User instruction: "' + instruction + '"\n\n' +
-    'Suggest ONLY changes needed to fulfil the instruction. Return ONLY a valid JSON array — no markdown.\n' +
-    'Each change object: { "cardIndex": N, "field": "FIELD", "oldVal": "current text", "newVal": "new text" }\n\n' +
-    'Allowed field values:\n' +
-    '  "name", "price", "store", "note", "url"\n' +
-    '  "attr.LABEL" where LABEL matches an existing attr label (e.g. "attr.Size", "attr.Color")\n' +
-    '  "category" — move the card; newVal must be one of: ' + catIds + '\n\n' +
-    'Rules: Only suggest changes you are confident about. Do NOT fabricate data. ' +
+    'Suggest ONLY changes needed to fulfil the instruction. Return ONLY a valid JSON array — no markdown, no commentary.\n' +
+    'Each change: { "cardIndex": N, "field": "FIELD", "oldVal": "current text", "newVal": "new text" }\n\n' +
+    'Allowed fields:\n' +
+    '  "name"  — product/model name ONLY. NEVER include brand, store, retailer, or dimensions here.\n' +
+    '  "price" — price with $ sign\n' +
+    '  "store" — brand or retailer name ONLY (not product name)\n' +
+    '  "note"  — descriptive notes\n' +
+    '  "url"   — product URL\n' +
+    '  "attr.LABEL" — matches an existing attr label exactly (e.g. "attr.Size", "attr.Dimensions")\n' +
+    '  "category" — move card; newVal must be one of: ' + catIds + '\n\n' +
+    'CRITICAL naming rules:\n' +
+    '  • "name" = product model name only. Example: "ModularOne Sectional" not "ModularOne Sectional by Cindy Crawford"\n' +
+    '  • Brand/designer/manufacturer → "store" field, not "name"\n' +
+    '  • Dimensions (e.g. W:103" D:38") → "attr.Dimensions" field, NEVER in "name"\n' +
+    '  • Size variants (Queen, King) may stay in name only if they were already there\n\n' +
+    'Other rules: Only suggest changes you are confident about. Do NOT fabricate URLs or prices. ' +
     'Do NOT change photos. Return [] if nothing needs changing.\n\n' +
-    'Cards:\n' + JSON.stringify(cardData, null, 1);
+    'Cards:\n' + JSON.stringify(cardData, null, 1)
+  );
+}
 
-  var content = [];
-  _aiEditImages.forEach(function(src) {
-    var b64 = src.split(',')[1];
-    var mm  = src.match(/^data:([^;]+);/);
-    content.push({ type: 'image', source: { type: 'base64', media_type: mm ? mm[1] : 'image/jpeg', data: b64 } });
-  });
-  content.push({ type: 'text', text: prompt });
+function runAiEditCards() {
+  var selectedCats = _getSelectedEditCats();
+  var instruction = (document.getElementById('ai-edit-instruction').value || '').trim();
+  var apiKey      = (document.getElementById('ai-edit-api-key').value    || '').trim();
+  var statusEl    = document.getElementById('ai-edit-status');
+  if (!selectedCats.length) { statusEl.textContent = 'Please select at least one category.'; return; }
+  if (!instruction) { statusEl.textContent = 'Please enter an instruction.'; return; }
+  if (!apiKey)      { statusEl.textContent = 'Please enter your Anthropic API key.'; return; }
+  localStorage.setItem('gallery-ai-key-v1', apiKey);
 
-  statusEl.textContent = 'Claude is reviewing ' + cards.length + ' card' + (cards.length !== 1 ? 's' : '') + '…';
+  var cards = _readCardsInMultipleCats(selectedCats);
+  if (!cards.length) { statusEl.textContent = 'No cards found in the selected categories.'; return; }
+
+  var catLabel = selectedCats.length === 1 ? selectedCats[0] : selectedCats.length + ' categories';
+  var catIds   = getAllSubCats().map(function(c){ return c.gridId.replace('grid-',''); }).join(', ');
+
+  // Split into chunks to avoid JSON truncation on large categories
+  var chunks = [];
+  for (var ci = 0; ci < cards.length; ci += _AI_EDIT_CHUNK_SIZE) {
+    chunks.push(cards.slice(ci, ci + _AI_EDIT_CHUNK_SIZE));
+  }
+
+  var allResults = [];
+  var chunkIdx = 0;
   document.getElementById('ai-edit-review-btn').disabled = true;
 
-  _callAiApiJson(apiKey, [{ role: 'user', content: content }], 2000, function(parsed) {
-    document.getElementById('ai-edit-review-btn').disabled = false;
-    if (!Array.isArray(parsed)) { statusEl.textContent = 'Unexpected response format.'; return; }
-    if (!parsed.length) { statusEl.textContent = '✓ Claude reviewed ' + cards.length + ' cards — no changes needed.'; return; }
-    _aiEditPendingEdits = parsed;
-    _aiEditPendingCards = cards;
-    statusEl.textContent = '';
-    _renderEditDiffPreview(parsed, cards);
-  }, function(err) {
-    document.getElementById('ai-edit-review-btn').disabled = false;
-    statusEl.textContent = err;
-  });
+  function processChunk() {
+    if (chunkIdx >= chunks.length) {
+      // All chunks done
+      document.getElementById('ai-edit-review-btn').disabled = false;
+      _aiEditPendingEdits = allResults;
+      _aiEditPendingCards = cards;
+      statusEl.textContent = '';
+      if (!allResults.length) {
+        statusEl.textContent = '✓ Claude reviewed ' + cards.length + ' cards — no changes needed.';
+      } else {
+        _renderEditDiffPreview(allResults, cards);
+      }
+      return;
+    }
+
+    var chunk = chunks[chunkIdx];
+    var chunkOffset = chunkIdx * _AI_EDIT_CHUNK_SIZE;
+    var batchLabel = chunks.length > 1
+      ? ' (batch ' + (chunkIdx + 1) + ' of ' + chunks.length + ')'
+      : '';
+    statusEl.textContent = 'Claude is reviewing cards ' + (chunkOffset + 1) + '–' + (chunkOffset + chunk.length) + ' of ' + cards.length + batchLabel + '…';
+
+    var prompt = _buildEditPrompt(catLabel, instruction, catIds, chunk);
+    var content = [];
+    // Only attach reference images on first chunk to save tokens
+    if (chunkIdx === 0) {
+      _aiEditImages.forEach(function(src) {
+        var b64 = src.split(',')[1];
+        var mm  = src.match(/^data:([^;]+);/);
+        content.push({ type: 'image', source: { type: 'base64', media_type: mm ? mm[1] : 'image/jpeg', data: b64 } });
+      });
+    }
+    content.push({ type: 'text', text: prompt });
+
+    _callAiApiJson(apiKey, [{ role: 'user', content: content }], 4000, function(parsed) {
+      if (Array.isArray(parsed)) allResults = allResults.concat(parsed);
+      chunkIdx++;
+      if (chunkIdx < chunks.length) {
+        // Small pause between chunks
+        setTimeout(processChunk, 1500);
+      } else {
+        processChunk();
+      }
+    }, function(err) {
+      document.getElementById('ai-edit-review-btn').disabled = false;
+      statusEl.textContent = '✗ Error on batch ' + (chunkIdx + 1) + ': ' + err;
+    });
+  }
+
+  processChunk();
 }
 
 function _renderEditDiffPreview(edits, cards) {
@@ -3967,6 +4240,10 @@ function _applyOneCardEdit(card, edit) {
 }
 
 // ─── TAB 2: Match Images ──────────────────────────────────────────────────────
+// Delay between image API calls to avoid tokens-per-minute rate limits
+var _AI_MATCH_DELAY_MS = 4000; // 4s between calls
+var _AI_MATCH_RATE_RETRY_WAIT = 65000; // 65s wait on 429
+
 function runAiMatchImages() {
   var apiKey   = (document.getElementById('ai-match-api-key').value || '').trim();
   var catId    = document.getElementById('ai-match-cat').value;
@@ -3974,6 +4251,11 @@ function runAiMatchImages() {
   if (!_aiMatchImages.length) { statusEl.textContent = 'Please drop some product images first.'; return; }
   if (!apiKey)                { statusEl.textContent = 'Please enter your Anthropic API key.'; return; }
   localStorage.setItem('gallery-ai-key-v1', apiKey);
+
+  // Warn about cost/time when many images
+  if (_aiMatchImages.length > 3) {
+    statusEl.innerHTML = '⚠️ Processing ' + _aiMatchImages.length + ' images. To avoid rate limits, a ~' + Math.round(_AI_MATCH_DELAY_MS/1000) + 's delay is added between calls. Estimated time: ~' + Math.round(_aiMatchImages.length * (_AI_MATCH_DELAY_MS/1000 + 5)) + 's. Each image uses API tokens — this may incur cost.';
+  }
 
   var allCards = [];
   if (catId === '__all__') {
@@ -3998,11 +4280,13 @@ function runAiMatchImages() {
 
   _aiMatchPendingAll = allCards;
   var total = _aiMatchImages.length, current = 0, results = [];
+  var retries = 0, maxRetries = 3;
 
   function next() {
     if (current >= total) { _renderMatchPreview(results, allCards); return; }
-    statusEl.textContent = 'Matching image ' + (current + 1) + ' of ' + total + '…';
-    var src = _aiMatchImages[current++];
+    var imgIdx = current;
+    statusEl.textContent = 'Matching image ' + (imgIdx + 1) + ' of ' + total + '…';
+    var src = _aiMatchImages[imgIdx];
     var b64 = src.split(',')[1];
     var mm  = src.match(/^data:([^;]+);/);
     var prompt =
@@ -4013,7 +4297,36 @@ function runAiMatchImages() {
     _callAiApiJson(apiKey, [{ role: 'user', content: [
       { type: 'image', source: { type: 'base64', media_type: mm ? mm[1] : 'image/jpeg', data: b64 } },
       { type: 'text',  text: prompt }
-    ]}], 300, function(p) { results.push(p); next(); }, function(err) { results.push({ matchIndex: -1, confidence: 'low', reason: err }); next(); });
+    ]}], 300,
+    function(p) {
+      results.push(p);
+      current++;
+      retries = 0;
+      // Delay before next call to respect tokens-per-minute limit
+      if (current < total) {
+        statusEl.textContent = 'Image ' + current + ' of ' + total + ' matched. Waiting ' + Math.round(_AI_MATCH_DELAY_MS/1000) + 's before next…';
+        setTimeout(next, _AI_MATCH_DELAY_MS);
+      } else {
+        next();
+      }
+    },
+    function(err) {
+      var isRateLimit = err && (err.indexOf('rate_limit') !== -1 || err.indexOf('rate limit') !== -1 || err.indexOf('529') !== -1 || err.indexOf('429') !== -1 || err.indexOf('overloaded') !== -1);
+      if (isRateLimit && retries < maxRetries) {
+        retries++;
+        statusEl.innerHTML = '⚠️ Rate limit hit on image ' + (imgIdx + 1) + '. Waiting 65s before retry ' + retries + '/' + maxRetries + '…';
+        setTimeout(next, _AI_MATCH_RATE_RETRY_WAIT);
+      } else {
+        results.push({ matchIndex: -1, confidence: 'low', reason: err });
+        current++;
+        retries = 0;
+        if (current < total) {
+          setTimeout(next, _AI_MATCH_DELAY_MS);
+        } else {
+          next();
+        }
+      }
+    });
   }
   next();
 }
@@ -4089,7 +4402,8 @@ function runAiCleanUp() {
     var url   = ((card.querySelector('.card-url')  ||{}).value      ||'').trim();
     var note  = ((card.querySelector('.card-note') ||{}).textContent||'').trim();
     var hasPh = !!(card.querySelector('.card-photo img'));
-    var hit = criteria.some(function(c) {
+    // AND logic: card must match ALL checked criteria
+    var hit = criteria.every(function(c) {
       if (c === 'emptyname') return !name || name === 'New Item';
       if (c === 'zeroprice') return !price || price === '$0' || price === '$0.00';
       if (c === 'nourl')     return !url;
@@ -4129,12 +4443,20 @@ function _renderCleanUpList(cards) {
   document.getElementById('ai-cleanup-actions-delete').style.display = '';
 }
 
-function applySelectedDeletions() {
+function _aiCleanupSelectAll(checked) {
+  document.querySelectorAll('#ai-cleanup-list .ai-cleanup-chk').forEach(function(chk) { chk.checked = checked; });
+}
+
+function applySelectedDeletions(deleteAll) {
   var toDelete = [];
-  document.querySelectorAll('#ai-cleanup-list .ai-cleanup-chk:checked').forEach(function(chk) {
-    var c = _aiCleanupFound[parseInt(chk.dataset.ci)];
-    if (c) toDelete.push(c);
-  });
+  if (deleteAll) {
+    toDelete = _aiCleanupFound.slice();
+  } else {
+    document.querySelectorAll('#ai-cleanup-list .ai-cleanup-chk:checked').forEach(function(chk) {
+      var c = _aiCleanupFound[parseInt(chk.dataset.ci)];
+      if (c) toDelete.push(c);
+    });
+  }
   if (!toDelete.length) { document.getElementById('ai-cleanup-status').textContent = 'Nothing selected.'; return; }
   if (!confirm('Delete ' + toDelete.length + ' card' + (toDelete.length !== 1 ? 's' : '') + '? This cannot be undone.')) return;
   toDelete.forEach(function(card) { removeCardFromTable(card); card.remove(); });
