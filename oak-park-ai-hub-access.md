@@ -27,3 +27,7 @@ If you need access to the Oak Park AI Hub, send this message to your admin/IT co
 - Include your manager in CC if approval is required.
 - Mention exact deadline and reason for access.
 - Ask for temporary access if urgent.
+
+## Repository list
+
+- `priihigashi/oak-park-ai-hub`
