@@ -35,20 +35,24 @@ This is the project's source of truth for *how it's built and deployed* and *wha
   - Scoring fix (log original round, trend excludes recoveries) + `verificationBasis` on all 30 + Ch14-02 Miami-Dade wording + Ch14-03 $2,450 cap note. `9ee1aee`
   - Ch14-03 wording made precise (note cap $2,450; recorded FL mortgage taxed once, uncapped). `54e719b`
   - **Correction:** earlier reports wrongly called exact-page mapping "blocked / needs Vision API." It is not — the searchable book is local and PyMuPDF is installed (verified). OPEN items below rewritten accordingly.
-  - Exact-page mapping pass run via PyMuPDF (per-page printed-number detection from headers, all 5 chapters anchor-validated, chapter-restricted multi-keyword search). **17/30** `ax-` questions got exact verified printed pages; **13** stayed low-confidence and were left unchanged. `b7b40b5`
+  - Exact-page mapping pass run via PyMuPDF; deployed 17 citations. `b7b40b5`
+  - **Reverted all 17** — deeper audit proved the local PDF is a different edition/pagination than the quiz's scanned 14th-ed `book.page` scheme (ch6 penalty content on PDF p.96 vs quiz p.104; cross-chapter offset not constant, −7..+19). Restored honest curriculum refs. `fdfc086`
 
 ## Reporting & verification discipline (to prevent the mistakes that triggered this correction)
 - **No blocker claim without a probe.** Before writing "blocked / requires / not possible / pending," run the real check (`ls` the path, import the tool, open the file) and keep the evidence. Rule #1 of the global CLAUDE.md; do not skip it.
 - **Headline must match the body.** Each item gets one label only — ✅ Done (verified by a check actually run) · 🟡 Open (with the real reason) · 🔴 Blocked (with tested proof). A summary may say "done" only if every sub-item is ✅. Never pair "all closed" with a 🟡.
 - **"Verified live" means a check was run** against the deployed artifact — never "should work."
+- **Anchor/validation checks must require STRONG agreement, not a single common word.** The reverted page-mapping passed a ≥1-token anchor check that was coincidence-level. A source/edition match must be confirmed by distinctive multi-term agreement on the *expected* page (and ideally a known answer phrase landing where the citation claims) before trusting it.
 
-## Exact-page mapping — status (2026-06-22)
-- **Method:** local `English RE Sales Associate SalesPreBook.pdf` (628 pp) + PyMuPDF. Printed page numbers read **per page** from the running header (number leads on even pages, trails on odd; offset is +7 but detection is per-page, not assumed). Search restricted to each question's chapter window (from `CHPAGE`); a page must contain **≥2 distinct signature terms**; all 5 priority chapters passed ≥3 anchor checks against existing scanned `book.page` values.
-- **Result: 17/30 high-confidence → exact pages deployed** (`b7b40b5`). Each carries `printedPage`, `pdfPageIndex` (kept distinct), `bookPage` (display), and a "(exact page verified)" `verificationBasis`.
-  - Ch10: 01→164, 02→170, 03→174, 04→174, 05→164 · Ch11: 01→182, 02→202, 03→202, 05→182 · Ch12: 01→210, 04→216, 05→208 · Ch14: 02→266, 04→266, 05→274, 06→262 · Ch16: 03→302
-- **13 low-confidence → left UNCHANGED** (still broad curriculum refs; no fabricated pages): `ax-ch10-06, ax-ch11-04, ax-ch11-06, ax-ch12-02, ax-ch12-03, ax-ch12-06, ax-ch14-01, ax-ch14-03, ax-ch16-01, ax-ch16-02, ax-ch16-04, ax-ch16-05, ax-ch16-06`.
-  - Causes: keyword tie across pages, single-keyword match, or **no in-chapter match** (e.g. negative amortization / progression-regression likely taught in a neighboring chapter than the one the question is tagged to). A future targeted pass can widen to adjacent chapters and use the `SalesPreChapterHighlights 14thEd.pdf` to pinpoint teaching passages.
+## Exact-page mapping — ATTEMPTED, then REVERTED (2026-06-22)
+- A first pass mapped 17/30 `ax-` questions to pages in the local `English RE Sales Associate SalesPreBook.pdf` and deployed them (`b7b40b5`).
+- **A deeper audit found the local PDF is a DIFFERENT EDITION/pagination than the quiz's `book.page` scheme** (the scanned 14th ed. the displayed page images come from):
+  - ch6 penalty content ("misleading advertising"/misdemeanor) is on the PDF's printed **p.96**, but the quiz cites **p.104** (verified-correct against the scan). Same content, ~8-page shift.
+  - The shift is **NOT a clean constant** — measured deltas across chapters scatter from −7 to +19, so there is no reliable PDF→quiz-page conversion.
+  - Therefore the 17 PDF-based citations were in the wrong numbering for this quiz and mixed two page schemes.
+- **Action: all 17 reverted** to honest curriculum/statute references (`fdfc086`). No fabricated/inconsistent pages remain. The `ax-ch14-02/03` statute content and precise wording were preserved (those were separate, correct fixes).
+- **Root cause of the miss:** the page-mapping anchor check accepted ≥1 matching common word, which is coincidence-level — it gave false confidence and let the edition mismatch through. See discipline note below.
 
 ## OPEN audit items
-- **13 low-confidence `ax-` page citations** (listed above) — re-run with adjacent-chapter search + chapter-highlights PDF; deploy only what clears the same high-confidence bar.
-- **Pixel-accurate highlights** for `ax-` questions and the 14 honest-note questions: NOT blocked — `search_for()` rectangles (normalized by page width/height) can produce `hl` boxes from the local PDF without OCR. Gated by priority: add for questions the user repeatedly misses or in high-weight chapters.
+- **Exact-page citations + highlights still want the CORRECT edition.** What's needed: the *same edition the scanned `book.imgs` came from* (the 14th ed.). Options: (a) OCR the displayed Drive scan images themselves (gives both the right pages AND box coordinates that align with what the user sees — needs Tesseract/Vision, neither installed yet); (b) obtain a 14th-ed PDF whose pagination matches the quiz scheme. The local PDFs (`English RE…`, `Gold Coast …Jan 2024`) are byte-identical to each other but are NOT that edition.
+- **Highlights specifically:** must be computed in the **displayed scan's** coordinate space, not this PDF's — proven by stored boxes resolving to unrelated text when interpreted against the PDF. Not feasible from the local PDF.
