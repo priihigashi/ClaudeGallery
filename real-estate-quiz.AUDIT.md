@@ -33,7 +33,7 @@ This is the project's source of truth for *how it's built and deployed* and *wha
   - Verified penalty questions `ch6-q07` / `ch6-q15` (page 104) — correct & consistent.
   - +30 audited questions across Ch 10/11/12/14/16 (~40% of exam). Bank 241 → 271. `a8fb64e`
   - Scoring fix (log original round, trend excludes recoveries) + `verificationBasis` on all 30 + Ch14-02 Miami-Dade wording + Ch14-03 $2,450 cap note. `9ee1aee`
-  - Ch14-03 wording made precise (note cap $2,450; recorded FL mortgage taxed once, uncapped). `<this commit>`
+  - Ch14-03 wording made precise (note cap $2,450; recorded FL mortgage taxed once, uncapped). `54e719b`
 
 ## OPEN audit items
 - **Exact-page mapping for the 30 `ax-` questions is NOT complete.** Current `verificationBasis` cites statutes for the FL-tax and Statute-of-Frauds items, but the rest use broad chapter + approximate chapter-start page (e.g. "Ch 10, book p.163+"). These are useful curriculum references, **not exact per-concept page citations.** Producing exact pages requires the Gold Coast SalesPreBook (14th ed.) page index/scans. Do not fabricate page numbers.
