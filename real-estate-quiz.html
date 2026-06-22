@@ -56,12 +56,22 @@
   .statrow span:first-child { flex:1.6; }
   .pbarwrap { flex:1; background:#edf0f6; border-radius:6px; height:10px; overflow:hidden; display:block; }
   .pbar { display:block; height:100%; border-radius:6px; background:var(--blue); }
+#bsModal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;z-index:1200;padding:18px;box-sizing:border-box}
+#bsModal.open{display:flex;align-items:flex-start;justify-content:center}
+#bsBox{background:#fff;border-radius:10px;max-width:820px;width:100%;max-height:92vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+#bsHead{display:flex;gap:8px;align-items:center;padding:12px;border-bottom:1px solid #ddd;flex-wrap:wrap}
+#bsInput{flex:1;min-width:150px;font-size:1em;padding:9px 11px;border:1px solid #bbb;border-radius:6px}
+#bsHead button{padding:8px 12px;border:1px solid #bbb;border-radius:6px;background:#f3f3f3;cursor:pointer;font-size:.9em}
+#bsCount{font-size:.85em;color:#555;min-width:64px;text-align:center}
+#bsPageHead{padding:9px 16px;font-weight:bold;color:#1565c0;border-bottom:1px solid #eee;font-size:.95em}
+#bsText{padding:14px 18px;overflow:auto;line-height:1.55;font-size:.95em;color:#222}
+#bsText mark{background:#ffe000;color:#000;padding:0 1px;border-radius:2px}
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>🏠 Florida Real Estate Exam Practice</h1>
-  <div class="sub">Your approved study deck · Source shown after each answer · <button class="btn gray" id="statsBtn" style="font-size:.85em;padding:6px 12px">📊 My progress</button> <button class="btn" id="starBtn" style="font-size:.85em;padding:6px 12px;border-color:#ef6c00;color:#ef6c00">⭐ Drill teacher star items</button> <button class="btn" id="examBtn" style="font-size:.85em;padding:6px 12px;color:#fff">📝 Practice exam (100 Q)</button></div>
+  <div class="sub">Your approved study deck · Source shown after each answer · <button class="btn gray" id="statsBtn" style="font-size:.85em;padding:6px 12px">📊 My progress</button> <button class="btn" id="starBtn" style="font-size:.85em;padding:6px 12px;border-color:#ef6c00;color:#ef6c00">⭐ Drill teacher star items</button> <button class="btn" id="examBtn" style="font-size:.85em;padding:6px 12px;color:#fff">📝 Practice exam (100 Q)</button> <button class="btn gray" id="searchBookBtn" style="font-size:.85em;padding:6px 12px">🔍 Search the book</button></div>
 
   <div class="card" id="quizCard">
     <div class="score">
@@ -482,6 +492,58 @@ function bkRender(){
     }
   }
 }
+</script>
+<div id="bsModal" onclick="if(event.target===this)bsClose()">
+ <div id="bsBox">
+  <div id="bsHead">
+   <input id="bsInput" placeholder="Type a word, then Enter or Next…" autocomplete="off">
+   <button onclick="bsGo(-1)" title="Previous page (Shift+Enter)">◀ Prev</button>
+   <button onclick="bsGo(1)" title="Next page (Enter)">Next ▶</button>
+   <span id="bsCount"></span>
+   <button onclick="bsClose()" style="border-color:#c62828;color:#c62828">Close</button>
+  </div>
+  <div id="bsPageHead"></div>
+  <div id="bsText"><p style="color:#888">Type any word to search all 628 pages of the book. <b>Next</b> jumps to the next page that contains it, looping through the whole book.</p></div>
+ </div>
+</div>
+<script src="book-text.js"></script>
+<script>
+var bsMatches=[], bsPos=-1, bsCur=0, bsTerm="";
+function bsOpen(){ document.getElementById('bsModal').classList.add('open'); setTimeout(function(){var el=document.getElementById('bsInput'); el.focus(); el.select();},60); }
+function bsClose(){ document.getElementById('bsModal').classList.remove('open'); }
+function bsEsc(s){ var d=document.createElement('div'); d.textContent=s||''; return d.innerHTML; }
+function bsSearch(){
+  bsTerm=document.getElementById('bsInput').value.trim();
+  var head=document.getElementById('bsPageHead'), box=document.getElementById('bsText'), cnt=document.getElementById('bsCount');
+  if(typeof BOOKPAGES==='undefined'){ box.innerHTML='<p style="color:#888">Loading the book… try again in a moment.</p>'; return; }
+  if(!bsTerm){ bsMatches=[]; bsPos=-1; cnt.textContent=''; head.textContent=''; box.innerHTML='<p style="color:#888">Type any word to search all 628 pages of the book.</p>'; return; }
+  var t=bsTerm.toLowerCase(); bsMatches=[];
+  for(var i=0;i<BOOKPAGES.length;i++){ if(BOOKPAGES[i].t.toLowerCase().indexOf(t)>=0) bsMatches.push(i); }
+  if(!bsMatches.length){ bsPos=-1; cnt.textContent='0'; head.textContent=''; box.innerHTML='<p style="color:#888">No page contains “'+bsEsc(bsTerm)+'”.</p>'; return; }
+  // start at the first match on/after the page we're on; otherwise wrap to the first
+  bsPos=0;
+  for(var k=0;k<bsMatches.length;k++){ if(bsMatches[k]>=bsCur){ bsPos=k; break; } }
+  bsShow();
+}
+function bsGo(dir){ if(!bsMatches.length) return; bsPos=(bsPos+dir+bsMatches.length)%bsMatches.length; bsShow(); }
+function bsShow(){
+  var idx=bsMatches[bsPos]; bsCur=idx; var pg=BOOKPAGES[idx];
+  document.getElementById('bsPageHead').textContent='Book page '+(pg.p||('#'+(idx+1)))+'  ·  result '+(bsPos+1)+' of '+bsMatches.length+' pages';
+  document.getElementById('bsCount').textContent=(bsPos+1)+' / '+bsMatches.length;
+  var re=new RegExp('('+bsTerm.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+  var html=bsEsc(pg.t).replace(/\n/g,'<br>').replace(re,'<mark>$1</mark>');
+  var box=document.getElementById('bsText'); box.innerHTML=html; box.scrollTop=0;
+  var first=box.querySelector('mark'); if(first) first.scrollIntoView({block:'center'});
+}
+(function(){
+  var inp=document.getElementById('bsInput');
+  if(inp){
+    inp.addEventListener('input', bsSearch);
+    inp.addEventListener('keydown', function(e){ if(e.key==='Enter'){ e.preventDefault(); if(e.shiftKey) bsGo(-1); else if(bsMatches.length) bsGo(1); else bsSearch(); } });
+  }
+  var b=document.getElementById('searchBookBtn'); if(b) b.onclick=bsOpen;
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') bsClose(); });
+})();
 </script>
 </body>
 </html>
