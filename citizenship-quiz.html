@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U.S. Citizenship Civics Test — 2025 (128 Questions)</title>
+<style>
+  :root{
+    --navy:#1b3a6b; --red:#b22234; --blue:#2a5db0; --green:#2e7d32; --amber:#b26a00;
+    --bg:#f4f6f9; --card:#ffffff; --ink:#1a1f29; --muted:#5b6473; --line:#dce1ea;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; }
+  body{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        background:var(--bg); color:var(--ink); padding:14px; line-height:1.5; -webkit-text-size-adjust:100%; }
+  .wrap{ max-width:720px; margin:0 auto; }
+  h1{ font-size:1.18em; margin:0 0 2px; color:var(--navy); }
+  .sub{ color:var(--muted); font-size:.82em; margin-bottom:10px; }
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:8px; padding:18px; margin-bottom:12px; }
+  .row{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  /* mode bar */
+  .modebar{ display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
+  .mode{ padding:8px 11px; border:1px solid var(--line); background:#fff; border-radius:8px; font:inherit;
+         font-size:.82em; cursor:pointer; color:var(--ink); }
+  .mode:hover{ border-color:var(--blue); }
+  .mode.active{ background:var(--navy); color:#fff; border-color:var(--navy); }
+  /* score */
+  .score{ display:flex; gap:14px; flex-wrap:wrap; font-size:.84em; color:var(--muted); margin-bottom:10px; }
+  .score b{ color:var(--ink); }
+  .bar{ height:8px; background:#e7ebf2; border-radius:6px; overflow:hidden; margin-bottom:14px; }
+  .bar i{ display:block; height:100%; background:var(--blue); transition:width .25s; }
+  .tags{ display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px; }
+  .tag{ font-size:.72em; padding:3px 9px; border-radius:6px; background:#eef2f8; color:var(--navy); }
+  .tag.star{ background:#fff3d6; color:var(--amber); font-weight:600; }
+  .tag.dyn{ background:#fde7ea; color:var(--red); font-weight:600; }
+  .qnum{ font-size:.76em; color:var(--muted); margin-bottom:4px; }
+  .qtext{ font-size:1.18em; font-weight:600; line-height:1.45; margin-bottom:6px; }
+  .banner{ padding:10px 13px; border-radius:8px; font-size:.86em; margin-bottom:12px; }
+  .banner.retry{ background:#fff3e0; border-left:4px solid var(--amber); }
+  .banner.exam{ background:#eef3fb; border-left:4px solid var(--navy); }
+  .banner.mc{ background:#fff6f6; border-left:4px solid var(--red); }
+  /* buttons */
+  .btn{ padding:11px 16px; border:none; border-radius:8px; font:inherit; font-size:.95em; cursor:pointer;
+        background:var(--navy); color:#fff; }
+  .btn:hover{ filter:brightness(1.07); }
+  .btn.ghost{ background:#fff; color:var(--navy); border:1px solid var(--line); }
+  .btn.gray{ background:#eef1f6; color:var(--ink); }
+  .btn.green{ background:var(--green); }
+  .btn.red{ background:var(--red); }
+  .btn.sm{ padding:7px 11px; font-size:.82em; }
+  .btn:focus-visible,.mode:focus-visible,.opt:focus-visible{ outline:3px solid #ffbf47; outline-offset:2px; }
+  .nav{ display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+  /* oral answer reveal */
+  .answers{ margin-top:14px; padding:14px; border-radius:8px; background:#eef7ee; border:1px solid #cfe6cf; display:none; }
+  .answers.show{ display:block; }
+  .answers h4{ margin:0 0 6px; font-size:.82em; color:var(--green); text-transform:uppercase; letter-spacing:.04em; }
+  .answers ul{ margin:0; padding-left:20px; }
+  .answers li{ margin:3px 0; font-size:1.02em; }
+  .dynbox{ margin-top:10px; padding:11px; border-radius:8px; background:#fdf2f3; border:1px solid #f3cdd2; font-size:.9em; }
+  .dynbox .lv{ display:inline-block; font-size:.72em; padding:2px 8px; border-radius:6px; background:#fff; border:1px solid #f3cdd2; color:var(--red); margin-left:6px; }
+  .verif{ font-size:.78em; color:var(--muted); margin-top:8px; }
+  .pdfbtns{ display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+  /* multiple choice */
+  .opt{ display:block; width:100%; text-align:left; margin:7px 0; padding:12px 14px; border:1px solid var(--line);
+        border-radius:8px; background:#fff; font:inherit; font-size:.98em; cursor:pointer; }
+  .opt:hover:not(:disabled){ border-color:var(--blue); }
+  .opt:disabled{ cursor:default; }
+  .opt.correct{ border-color:var(--green); background:#eef7ee; font-weight:600; }
+  .opt.wrong{ border-color:var(--red); background:#fdeeee; }
+  /* lists */
+  .missed{ background:#fff8f8; border:1px solid #f1c9cd; border-radius:8px; padding:11px 13px; margin:9px 0; font-size:.92em; }
+  .statrow{ display:flex; align-items:center; gap:10px; padding:7px 0; border-bottom:1px solid #eef0f5; font-size:.86em; }
+  .statrow span:first-child{ flex:1.5; }
+  .pbarwrap{ flex:1; background:#edf0f6; border-radius:6px; height:9px; overflow:hidden; }
+  .pbar{ display:block; height:100%; }
+  .chrow{ cursor:pointer; }
+  h3{ font-size:.98em; color:var(--navy); margin:18px 0 6px; }
+  /* vocab */
+  .vtabs{ display:flex; gap:6px; margin-bottom:12px; }
+  .vcat{ font-size:.78em; color:var(--navy); font-weight:600; margin:14px 0 4px; }
+  .chips{ display:flex; gap:6px; flex-wrap:wrap; }
+  .chip{ font-size:.86em; padding:5px 10px; border:1px solid var(--line); border-radius:6px; background:#fff; }
+  /* pdf modal */
+  #pdfModal{ position:fixed; inset:0; background:rgba(10,16,30,.78); display:none; z-index:60; padding:10px;
+             align-items:center; justify-content:center; }
+  #pdfModal.open{ display:flex; }
+  #pdfBox{ background:#fff; border-radius:8px; width:100%; max-width:900px; height:92vh; display:flex; flex-direction:column; overflow:hidden; }
+  #pdfHead{ display:flex; gap:8px; align-items:center; padding:9px 12px; border-bottom:1px solid var(--line); flex-wrap:wrap; }
+  #pdfHead b{ flex:1; font-size:.9em; min-width:120px; }
+  #pdfNote{ font-size:.74em; color:var(--muted); padding:7px 12px; background:#fafbfd; }
+  #pdfFrameWrap{ flex:1; position:relative; background:#525659; }
+  #pdfFrame{ width:100%; height:100%; border:0; }
+  .pdfBtn{ font:inherit; font-size:.82em; padding:6px 10px; border:1px solid var(--line); border-radius:7px; background:#fff; cursor:pointer; }
+  .disclose{ font-size:.76em; color:var(--muted); margin-top:8px; }
+  a{ color:var(--blue); }
+  @media (max-width:480px){ .qtext{ font-size:1.1em; } .card{ padding:14px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🇺🇸 U.S. Citizenship Civics Test — 2025</h1>
+  <div class="sub">All 128 official USCIS questions · The real test is <b>oral</b> · <button class="mode" id="versionBtn" style="padding:3px 9px">ⓘ Which test do I take?</button></div>
+
+  <div class="modebar" id="modeBar"></div>
+
+  <!-- VERSION NOTICE -->
+  <div class="card" id="versionCard" style="display:none">
+    <h3 style="margin-top:0">Which civics test version do you take?</h3>
+    <p style="font-size:.9em">USCIS uses your <b>Form N-400 filing date</b> to decide which test applies. This app covers the <b>2025 version (128 questions)</b>.</p>
+    <div class="row" style="margin:10px 0">
+      <label style="font-size:.9em">My N-400 filing date:
+        <input type="date" id="n400date" style="font:inherit;padding:6px;border:1px solid var(--line);border-radius:6px">
+      </label>
+      <button class="btn sm" id="checkVersionBtn">Check</button>
+    </div>
+    <div id="versionResult" style="font-size:.9em"></div>
+    <p class="disclose">USCIS sets the exact effective dates and may update them. Always confirm on the official USCIS Test Updates page: <a href="https://www.uscis.gov/citizenship/testupdates" target="_blank" rel="noopener">uscis.gov/citizenship/testupdates</a>. This notice is guidance, not legal advice.</p>
+    <button class="btn gray sm" onclick="document.getElementById('versionCard').style.display='none'">Close</button>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="card" id="quizCard">
+    <div class="score">
+      <span>Q <b id="qPos">1</b>/<b id="qTotal">128</b></span>
+      <span>✅ <b id="nRight">0</b></span>
+      <span>❌ <b id="nWrong">0</b></span>
+      <span id="examTimer" style="display:none;color:var(--navy);font-weight:600"></span>
+    </div>
+    <div class="bar"><i id="bar" style="width:0%"></i></div>
+    <div class="banner retry" id="retryBanner" style="display:none"><b>🔁 Final attempt</b> — questions you just missed. Get them right to recover.</div>
+    <div class="banner exam" id="examBanner" style="display:none"></div>
+    <div class="banner mc" id="mcBanner" style="display:none"><b>📝 Multiple-choice — practice/learning only.</b> The real USCIS civics test is <b>oral</b>: an officer asks you to say the answer aloud. These options are study aids, <b>not</b> official USCIS answer choices.</div>
+
+    <div class="tags" id="qTags"></div>
+    <div class="qnum" id="qNum"></div>
+    <div class="qtext" id="qText"></div>
+    <div class="row" style="margin-top:4px">
+      <button class="btn ghost sm" id="speakBtn">🔊 Hear the question</button>
+    </div>
+
+    <!-- oral self-grade -->
+    <div id="oralArea">
+      <div class="nav" id="revealRow">
+        <button class="btn" id="revealBtn">Show accepted answer</button>
+      </div>
+      <div class="answers" id="answers">
+        <h4>Official USCIS accepted answer(s)</h4>
+        <ul id="ansList"></ul>
+        <div id="dynArea"></div>
+        <div class="verif" id="verifLine"></div>
+        <div class="pdfbtns">
+          <button class="btn ghost sm" id="pdfQBtn">📄 See official answer (PDF)</button>
+          <button class="btn ghost sm" id="pdfGBtn">📘 Learn it in the study guide</button>
+        </div>
+        <div class="nav" id="gradeRow" style="margin-top:14px">
+          <span style="font-size:.86em;color:var(--muted);align-self:center">Did you answer correctly out loud?</span>
+          <button class="btn green sm" id="gotItBtn">✅ I got it right</button>
+          <button class="btn red sm" id="missedBtn">❌ I missed it</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- multiple choice (practice only) -->
+    <div id="mcArea" style="display:none">
+      <div id="opts"></div>
+      <div class="answers" id="mcFb"></div>
+    </div>
+
+    <div class="nav">
+      <button class="btn" id="nextBtn" style="display:none">Next →</button>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="card" id="summaryCard" style="display:none">
+    <h2 style="font-size:1.1em" id="sumTitle">Session complete</h2>
+    <p id="finalLine"></p>
+    <div id="missedList"></div>
+    <div class="nav">
+      <button class="btn" id="restartBtn">New session</button>
+      <button class="btn gray" id="reviewMissedBtn" style="display:none">Retry missed</button>
+      <button class="btn gray" id="statsBtn2">📊 Progress</button>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="card" id="statsCard" style="display:none">
+    <h2 style="font-size:1.1em">📊 My progress</h2>
+    <div id="statsBody"></div>
+    <div class="nav" style="margin-top:10px">
+      <button class="btn gray sm" id="exportBtn">⬆️ Export progress (JSON)</button>
+      <button class="btn gray sm" id="importBtn">⬇️ Import progress</button>
+      <button class="btn red sm" id="resetBtn">🗑️ Reset my progress</button>
+      <button class="btn sm" id="statsBackBtn">← Back to quiz</button>
+    </div>
+    <p class="disclose">⚠️ Progress is saved only in <b>this browser on this device</b>. It does not sync across phones/computers automatically. Use <b>Export</b> to move it between devices.</p>
+  </div>
+
+  <!-- VOCAB -->
+  <div class="card" id="vocabCard" style="display:none">
+    <h2 style="font-size:1.1em">📚 English vocabulary</h2>
+    <div class="vtabs">
+      <button class="mode active" id="vReadBtn">Reading</button>
+      <button class="mode" id="vWriteBtn">Writing</button>
+    </div>
+    <p style="font-size:.84em;color:var(--muted)" id="vocabIntro"></p>
+    <div id="vocabBody"></div>
+    <button class="btn sm" id="vocabBackBtn" style="margin-top:12px">← Back to quiz</button>
+  </div>
+</div>
+
+<!-- PDF MODAL -->
+<div id="pdfModal" onclick="if(event.target===this)pdfClose()">
+  <div id="pdfBox">
+    <div id="pdfHead">
+      <b id="pdfTitle"></b>
+      <button class="pdfBtn" id="pdfPrev">◀ Prev page</button>
+      <button class="pdfBtn" id="pdfNext">Next page ▶</button>
+      <button class="pdfBtn" id="pdfOpen">↗ Open official PDF</button>
+      <button class="pdfBtn" style="border-color:var(--red);color:var(--red)" onclick="pdfClose()">Close</button>
+    </div>
+    <div id="pdfNote"></div>
+    <div id="pdfFrameWrap"><iframe id="pdfFrame" title="Official USCIS PDF"></iframe></div>
+  </div>
+</div>
+
+<script id="quizData" type="application/json">{"version": "2025", "lastDataBuild": "2026-06-22", "bank": [{"id": "uscis-001", "questionNumber": 1, "officialQuestion": "What is the form of government of the United States?", "acceptedAnswers": ["Republic", "Constitution-based federal republic", "Representative democracy"], "category": "American Government — Principles of American Government", "catId": 1, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 2, "studyGuidePage": 77, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-002", "questionNumber": 2, "officialQuestion": "What is the supreme law of the land?", "acceptedAnswers": ["(U.S.) Constitution"], "category": "American Government — Principles of American Government", "catId": 1, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 2, "studyGuidePage": 77, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-003", "questionNumber": 3, "officialQuestion": "Name one thing the U.S. Constitution does.", "acceptedAnswers": ["Forms the government", "Defines powers of government", "Defines the parts of government", "Protects the rights of the people"], "category": "American Government — Principles of American Government", "catId": 1, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 2, "studyGuidePage": 77, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-004", "questionNumber": 4, "officialQuestion": "The U.S. Constitution starts with the words “We the People.” What does “We the People” mean?", "acceptedAnswers": ["Self-government", "Popular sovereignty", "Consent of the governed", "People should govern themselves", "(Example of) social contract"], "category": "American Government — Principles of American Government", "catId": 1, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 2, "studyGuidePage": 77, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-005", "questionNumber": 5, "officialQuestion": "How are changes made to the U.S. Constitution?", "acceptedAnswers": ["Amendments", "The amendment process"], "category": "American Government — Principles of American Government", "catId": 1, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 2, "studyGuidePage": 77, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-006", "questionNumber": 6, "officialQuestion": "What does the Bill of Rights protect?", "acceptedAnswers": ["(The basic) rights of Americans", "(The basic) rights of people living in the United States"], "category": "American Government — Principles of American Government", "catId": 1, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 2, "studyGuidePage": 77, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-007", "questionNumber": 7, "officialQuestion": "How many amendments does the U.S. Constitution have?", "acceptedAnswers": ["Twenty-seven (27)"], "category": "American Government — Principles of American Government", "catId": 1, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 2, "studyGuidePage": 77, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-008", "questionNumber": 8, "officialQuestion": "Why is the Declaration of Independence important?", "acceptedAnswers": ["It says America is free from British control.", "It says all people are created equal.", "It identifies inherent rights.", "It identifies individual freedoms."], "category": "American Government — Principles of American Government", "catId": 1, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 2, "studyGuidePage": 77, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-009", "questionNumber": 9, "officialQuestion": "What founding document said the American colonies were free from Britain?", "acceptedAnswers": ["Declaration of Independence"], "category": "American Government — Principles of American Government", "catId": 1, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 3, "studyGuidePage": 77, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-010", "questionNumber": 10, "officialQuestion": "Name two important ideas from the Declaration of Independence and the U.S. Constitution.", "acceptedAnswers": ["Equality", "Liberty", "Social contract", "Natural rights", "Limited government", "Self-government"], "category": "American Government — Principles of American Government", "catId": 1, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 3, "studyGuidePage": 77, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-011", "questionNumber": 11, "officialQuestion": "The words “Life, Liberty, and the pursuit of Happiness” are in what founding document?", "acceptedAnswers": ["Declaration of Independence"], "category": "American Government — Principles of American Government", "catId": 1, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 3, "studyGuidePage": 77, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-012", "questionNumber": 12, "officialQuestion": "What is the economic system of the United States?", "acceptedAnswers": ["Capitalism", "Free market economy"], "category": "American Government — Principles of American Government", "catId": 1, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 3, "studyGuidePage": 77, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-013", "questionNumber": 13, "officialQuestion": "What is the rule of law?", "acceptedAnswers": ["Everyone must follow the law.", "Leaders must obey the law.", "Government must obey the law.", "No one is above the law."], "category": "American Government — Principles of American Government", "catId": 1, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 3, "studyGuidePage": 77, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-014", "questionNumber": 14, "officialQuestion": "Many documents influenced the U.S. Constitution. Name one.", "acceptedAnswers": ["Declaration of Independence", "Articles of Confederation", "Federalist Papers", "Anti-Federalist Papers", "Virginia Declaration of Rights", "Fundamental Orders of Connecticut", "Mayflower Compact", "Iroquois Great Law of Peace"], "category": "American Government — Principles of American Government", "catId": 1, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 3, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-015", "questionNumber": 15, "officialQuestion": "There are three branches of government. Why?", "acceptedAnswers": ["So one part does not become too powerful", "Checks and balances", "Separation of powers"], "category": "American Government — Principles of American Government", "catId": 1, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 3, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-016", "questionNumber": 16, "officialQuestion": "Name the three branches of government.", "acceptedAnswers": ["Legislative, executive, and judicial", "Congress, president, and the courts"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 4, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-017", "questionNumber": 17, "officialQuestion": "The President of the United States is in charge of which branch of government?", "acceptedAnswers": ["Executive branch"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 4, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-018", "questionNumber": 18, "officialQuestion": "What part of the federal government writes laws?", "acceptedAnswers": ["(U.S.) Congress", "(U.S. or national) legislature", "Legislative branch"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 4, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-019", "questionNumber": 19, "officialQuestion": "What are the two parts of the U.S. Congress?", "acceptedAnswers": ["Senate and House (of Representatives)"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 4, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-020", "questionNumber": 20, "officialQuestion": "Name one power of the U.S. Congress.", "acceptedAnswers": ["Writes laws", "Declares war", "Makes the federal budget"], "category": "American Government — System of Government", "catId": 2, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 4, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-021", "questionNumber": 21, "officialQuestion": "How many U.S. senators are there?", "acceptedAnswers": ["One hundred (100)"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 4, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-022", "questionNumber": 22, "officialQuestion": "How long is a term for a U.S. senator?", "acceptedAnswers": ["Six (6) years"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 4, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-023", "questionNumber": 23, "officialQuestion": "Who is one of your state’s U.S. senators now?", "acceptedAnswers": ["Answers will vary. [District of Columbia residents and residents of U.S. territories should answer that D.C. (or the territory where the applicant lives) has no U.S. senators.]"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": true, "currentAnswer": "Florida (default): Rick Scott; Ashley Moody", "lastVerified": "2026-06-22", "officialPdfPage": 4, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "https://www.senate.gov/states/FL/intro.htm", "plainLanguageNote": "State-specific. Defaults to Florida. Confirm YOUR state's senators at senate.gov. Official accepted answer is the name(s) serving at your interview."}, {"id": "uscis-024", "questionNumber": 24, "officialQuestion": "How many voting members are in the House of Representatives?", "acceptedAnswers": ["Four hundred thirty-five (435)"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 4, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-025", "questionNumber": 25, "officialQuestion": "How long is a term for a member of the House of Representatives?", "acceptedAnswers": ["Two (2) years"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 4, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-026", "questionNumber": 26, "officialQuestion": "Why do U.S. representatives serve shorter terms than U.S. senators?", "acceptedAnswers": ["To more closely follow public opinion"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 4, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-027", "questionNumber": 27, "officialQuestion": "How many senators does each state have?", "acceptedAnswers": ["Two (2)"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 4, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-028", "questionNumber": 28, "officialQuestion": "Why does each state have two senators?", "acceptedAnswers": ["Equal representation (for small states)", "The Great Compromise (Connecticut Compromise)"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 5, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-029", "questionNumber": 29, "officialQuestion": "Name your U.S. representative.", "acceptedAnswers": ["Answers will vary. [Residents of territories with nonvoting Delegates or Resident Commissioners may provide the name of that Delegate or Commissioner. Also acceptable is any statement that the territory has no (voting) representatives in Congress.]"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": true, "currentAnswer": "", "lastVerified": "2026-06-22", "officialPdfPage": 5, "studyGuidePage": 78, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "https://www.house.gov/representatives/find-your-representative", "plainLanguageNote": "Depends on your congressional district — enter your ZIP to find it. This app will NOT guess your representative. Find it at house.gov."}, {"id": "uscis-030", "questionNumber": 30, "officialQuestion": "What is the name of the Speaker of the House of Representatives now?", "acceptedAnswers": ["Visit uscis.gov/citizenship/testupdates for the name of the Speaker of the House of Representatives."], "category": "American Government — System of Government", "catId": 2, "special65_20": true, "dynamicAnswer": true, "currentAnswer": "Mike Johnson (also: Johnson; James Michael Johnson)", "lastVerified": "2026-06-22", "officialPdfPage": 5, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "https://www.uscis.gov/citizenship/testupdates", "plainLanguageNote": "Current official — may change. Answer the person serving at your interview."}, {"id": "uscis-031", "questionNumber": 31, "officialQuestion": "Who does a U.S. senator represent?", "acceptedAnswers": ["Citizens of their state", "People of their state"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 5, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-032", "questionNumber": 32, "officialQuestion": "Who elects U.S. senators?", "acceptedAnswers": ["Citizens from their state"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 5, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-033", "questionNumber": 33, "officialQuestion": "Who does a member of the House of Representatives represent?", "acceptedAnswers": ["Citizens in their (congressional) district", "Citizens in their district", "People from their (congressional) district", "People in their district"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 5, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-034", "questionNumber": 34, "officialQuestion": "Who elects members of the House of Representatives?", "acceptedAnswers": ["Citizens from their (congressional) district"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 5, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-035", "questionNumber": 35, "officialQuestion": "Some states have more representatives than other states. Why?", "acceptedAnswers": ["(Because of) the state’s population", "(Because) they have more people", "(Because) some states have more people"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 5, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-036", "questionNumber": 36, "officialQuestion": "The President of the United States is elected for how many years?", "acceptedAnswers": ["Four (4) years"], "category": "American Government — System of Government", "catId": 2, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 5, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-037", "questionNumber": 37, "officialQuestion": "The President of the United States can serve only two terms. Why?", "acceptedAnswers": ["(Because of) the 22nd Amendment", "To keep the president from becoming too powerful"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 5, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-038", "questionNumber": 38, "officialQuestion": "What is the name of the President of the United States now?", "acceptedAnswers": ["Visit uscis.gov/citizenship/testupdates for the name of the President of the United States."], "category": "American Government — System of Government", "catId": 2, "special65_20": true, "dynamicAnswer": true, "currentAnswer": "Donald J. Trump (also: Donald Trump; Trump)", "lastVerified": "2026-06-22", "officialPdfPage": 5, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "https://www.uscis.gov/citizenship/testupdates", "plainLanguageNote": "Current official — may change after an election. Answer the person serving at your interview."}, {"id": "uscis-039", "questionNumber": 39, "officialQuestion": "What is the name of the Vice President of the United States now?", "acceptedAnswers": ["Visit uscis.gov/citizenship/testupdates for the name of the Vice President of the United States."], "category": "American Government — System of Government", "catId": 2, "special65_20": true, "dynamicAnswer": true, "currentAnswer": "JD Vance (also: Vance)", "lastVerified": "2026-06-22", "officialPdfPage": 6, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "https://www.uscis.gov/citizenship/testupdates", "plainLanguageNote": "Current official — may change after an election. Answer the person serving at your interview."}, {"id": "uscis-040", "questionNumber": 40, "officialQuestion": "If the president can no longer serve, who becomes president?", "acceptedAnswers": ["The Vice President (of the United States)"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 6, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-041", "questionNumber": 41, "officialQuestion": "Name one power of the president.", "acceptedAnswers": ["Signs bills into law", "Vetoes bills", "Enforces laws", "Commander in Chief (of the military)", "Chief diplomat", "Appoints federal judges"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 6, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-042", "questionNumber": 42, "officialQuestion": "Who is Commander in Chief of the U.S. military?", "acceptedAnswers": ["The President (of the United States)"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 6, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-043", "questionNumber": 43, "officialQuestion": "Who signs bills to become laws?", "acceptedAnswers": ["The President (of the United States)"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 6, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-044", "questionNumber": 44, "officialQuestion": "Who vetoes bills?", "acceptedAnswers": ["The President (of the United States)"], "category": "American Government — System of Government", "catId": 2, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 6, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-045", "questionNumber": 45, "officialQuestion": "Who appoints federal judges?", "acceptedAnswers": ["The President (of the United States)"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 6, "studyGuidePage": 79, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-046", "questionNumber": 46, "officialQuestion": "The executive branch has many parts. Name one.", "acceptedAnswers": ["President (of the United States)", "Cabinet", "Federal departments and agencies"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 6, "studyGuidePage": 80, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-047", "questionNumber": 47, "officialQuestion": "What does the President’s Cabinet do?", "acceptedAnswers": ["Advises the President (of the United States)"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 6, "studyGuidePage": 80, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-048", "questionNumber": 48, "officialQuestion": "What are two Cabinet-level positions?", "acceptedAnswers": ["Attorney General", "Secretary of Agriculture", "Secretary of Commerce", "Secretary of Education", "Secretary of Energy", "Secretary of Health and Human Services", "Secretary of Homeland Security", "Secretary of Housing and Urban Development", "Secretary of the Interior", "Secretary of Labor", "Secretary of State", "Secretary of Transportation", "Secretary of the Treasury", "Secretary of Veterans Affairs", "Secretary of War (Defense)", "Vice-President", "Administrator of the Environmental Protection Agency", "Administrator of the Small Business Administration", "Director of the Central Intelligence Agency", "Director of the Office of Management and Budget", "Director of National Intelligence", "United States Trade Representative"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 7, "studyGuidePage": 80, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-049", "questionNumber": 49, "officialQuestion": "Why is the Electoral College important?", "acceptedAnswers": ["It decides who is elected president.", "It provides a compromise between the popular election of the president and congressional selection."], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 7, "studyGuidePage": 80, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-050", "questionNumber": 50, "officialQuestion": "What is one part of the judicial branch?", "acceptedAnswers": ["Supreme Court", "Federal Courts"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 7, "studyGuidePage": 80, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-051", "questionNumber": 51, "officialQuestion": "What does the judicial branch do?", "acceptedAnswers": ["Reviews laws", "Explains laws", "Resolves disputes (disagreements) about the law", "Decides if a law goes against the (U.S.) Constitution"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 7, "studyGuidePage": 80, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-052", "questionNumber": 52, "officialQuestion": "What is the highest court in the United States?", "acceptedAnswers": ["Supreme Court"], "category": "American Government — System of Government", "catId": 2, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 7, "studyGuidePage": 80, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-053", "questionNumber": 53, "officialQuestion": "How many seats are on the Supreme Court?", "acceptedAnswers": ["Nine (9)"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 8, "studyGuidePage": 80, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-054", "questionNumber": 54, "officialQuestion": "How many Supreme Court justices are usually needed to decide a case?", "acceptedAnswers": ["Five (5)"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 8, "studyGuidePage": 80, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-055", "questionNumber": 55, "officialQuestion": "How long do Supreme Court justices serve?", "acceptedAnswers": ["(For) life", "Lifetime appointment", "(Until) retirement"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 8, "studyGuidePage": 80, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-056", "questionNumber": 56, "officialQuestion": "Supreme Court justices serve for life. Why?", "acceptedAnswers": ["To be independent (of politics)", "To limit outside (political) influence"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 8, "studyGuidePage": 80, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-057", "questionNumber": 57, "officialQuestion": "Who is the Chief Justice of the United States now?", "acceptedAnswers": ["Visit uscis.gov/citizenship/testupdates for the name of the Chief Justice of the United States."], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": true, "currentAnswer": "John Roberts (John G. Roberts, Jr.)", "lastVerified": "2026-06-22", "officialPdfPage": 8, "studyGuidePage": 80, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "https://www.uscis.gov/citizenship/testupdates", "plainLanguageNote": "Current official — may change on appointment. Answer the person serving at your interview."}, {"id": "uscis-058", "questionNumber": 58, "officialQuestion": "Name one power that is only for the federal government.", "acceptedAnswers": ["Print paper money", "Mint coins", "Declare war", "Create an army", "Make treaties", "Set foreign policy"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 8, "studyGuidePage": 81, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-059", "questionNumber": 59, "officialQuestion": "Name one power that is only for the states.", "acceptedAnswers": ["Provide schooling and education", "Provide protection (police)", "Provide safety (fire departments)", "Give a driver’s license", "Approve zoning and land use"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 8, "studyGuidePage": 81, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-060", "questionNumber": 60, "officialQuestion": "What is the purpose of the 10th Amendment?", "acceptedAnswers": ["(It states that the) powers not given to the federal government belong to the states or to the people."], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 8, "studyGuidePage": 81, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-061", "questionNumber": 61, "officialQuestion": "Who is the governor of your state now?", "acceptedAnswers": ["Answers will vary. [District of Columbia residents should answer that D.C. does not have a governor.]"], "category": "American Government — System of Government", "catId": 2, "special65_20": true, "dynamicAnswer": true, "currentAnswer": "Florida (default): Ron DeSantis", "lastVerified": "2026-06-22", "officialPdfPage": 8, "studyGuidePage": 81, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "https://www.flgov.com/", "plainLanguageNote": "State-specific. Defaults to Florida. D.C. has no governor. Confirm YOUR state's governor."}, {"id": "uscis-062", "questionNumber": 62, "officialQuestion": "What is the capital of your state?", "acceptedAnswers": ["Answers will vary. [District of Columbia residents should answer that D.C. is not a state and does not have a capital. Residents of U.S. territories should name the capital of the territory.]"], "category": "American Government — System of Government", "catId": 2, "special65_20": false, "dynamicAnswer": true, "currentAnswer": "Florida (default): Tallahassee", "lastVerified": "2026-06-22", "officialPdfPage": 8, "studyGuidePage": 81, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "https://www.flgov.com/", "plainLanguageNote": "State-specific. Defaults to Florida. D.C. is not a state. Confirm YOUR state's capital."}, {"id": "uscis-063", "questionNumber": 63, "officialQuestion": "There are four amendments to the U.S. Constitution about who can vote. Describe one of them.", "acceptedAnswers": ["Citizens eighteen (18) and older (can vote).", "You don’t have to pay (a poll tax) to vote.", "Any citizen can vote. (Women and men can vote.)", "A male citizen of any race (can vote)."], "category": "American Government — Rights and Responsibilities", "catId": 3, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 9, "studyGuidePage": 81, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-064", "questionNumber": 64, "officialQuestion": "Who can vote in federal elections, run for federal office, and serve on a jury in the United States?", "acceptedAnswers": ["Citizens", "Citizens of the United States", "U.S. citizens"], "category": "American Government — Rights and Responsibilities", "catId": 3, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 9, "studyGuidePage": 81, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-065", "questionNumber": 65, "officialQuestion": "What are three rights of everyone living in the United States?", "acceptedAnswers": ["Freedom of expression", "Freedom of speech", "Freedom of assembly", "Freedom to petition the government", "Freedom of religion", "The right to bear arms"], "category": "American Government — Rights and Responsibilities", "catId": 3, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 9, "studyGuidePage": 81, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-066", "questionNumber": 66, "officialQuestion": "What do we show loyalty to when we say the Pledge of Allegiance?", "acceptedAnswers": ["The United States", "The flag"], "category": "American Government — Rights and Responsibilities", "catId": 3, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 9, "studyGuidePage": 81, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-067", "questionNumber": 67, "officialQuestion": "Name two promises that new citizens make in the Oath of Allegiance.", "acceptedAnswers": ["Give up loyalty to other countries", "Defend the (U.S.) Constitution", "Obey the laws of the United States", "Serve in the military (if needed)", "Serve (help, do important work for) the nation (if needed)", "Be loyal to the United States"], "category": "American Government — Rights and Responsibilities", "catId": 3, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 9, "studyGuidePage": 81, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-068", "questionNumber": 68, "officialQuestion": "How can people become United States citizens?", "acceptedAnswers": ["Be born in the United States, under the conditions set by the 14th Amendment", "Naturalize", "Derive citizenship (under conditions set by Congress)"], "category": "American Government — Rights and Responsibilities", "catId": 3, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 9, "studyGuidePage": 82, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-069", "questionNumber": 69, "officialQuestion": "What are two examples of civic participation in the United States?", "acceptedAnswers": ["Vote", "Run for office", "Join a political party", "Help with a campaign", "Join a civic group", "Join a community group", "Give an elected official your opinion (on an issue)", "Contact elected officials", "Support or oppose an issue or policy", "Write to a newspaper"], "category": "American Government — Rights and Responsibilities", "catId": 3, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 10, "studyGuidePage": 82, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-070", "questionNumber": 70, "officialQuestion": "What is one way Americans can serve their country?", "acceptedAnswers": ["Vote", "Pay taxes", "Obey the law", "Serve in the military", "Run for office", "Work for local, state, or federal government"], "category": "American Government — Rights and Responsibilities", "catId": 3, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 10, "studyGuidePage": 82, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-071", "questionNumber": 71, "officialQuestion": "Why is it important to pay federal taxes?", "acceptedAnswers": ["Required by law", "All people pay to fund the federal government", "Required by the (U.S.) Constitution (16th Amendment)", "Civic duty"], "category": "American Government — Rights and Responsibilities", "catId": 3, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 10, "studyGuidePage": 82, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-072", "questionNumber": 72, "officialQuestion": "It is important for all men age 18 through 25 to register for the Selective Service. Name one reason why.", "acceptedAnswers": ["Required by law", "Civic duty", "Makes the draft fair, if needed"], "category": "American Government — Rights and Responsibilities", "catId": 3, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 10, "studyGuidePage": 82, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-073", "questionNumber": 73, "officialQuestion": "The colonists came to America for many reasons. Name one.", "acceptedAnswers": ["Freedom", "Political liberty", "Religious freedom", "Economic opportunity", "Escape persecution"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 11, "studyGuidePage": 82, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-074", "questionNumber": 74, "officialQuestion": "Who lived in America before the Europeans arrived?", "acceptedAnswers": ["American Indians", "Native Americans"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 11, "studyGuidePage": 82, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-075", "questionNumber": 75, "officialQuestion": "What group of people was taken and sold as slaves?", "acceptedAnswers": ["Africans", "People from Africa"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 11, "studyGuidePage": 82, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-076", "questionNumber": 76, "officialQuestion": "What war did the Americans fight to win independence from Britain?", "acceptedAnswers": ["American Revolution", "The (American) Revolutionary War", "War for (American) Independence"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 11, "studyGuidePage": 82, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-077", "questionNumber": 77, "officialQuestion": "Name one reason why the Americans declared independence from Britain.", "acceptedAnswers": ["High taxes", "Taxation without representation", "British soldiers stayed in Americans’ houses (boarding, quartering)", "They did not have self-government", "Boston Massacre", "Boston Tea Party (Tea Act)", "Stamp Act", "Sugar Act", "Townshend Acts", "Intolerable (Coercive) Acts"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 11, "studyGuidePage": 83, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-078", "questionNumber": 78, "officialQuestion": "Who wrote the Declaration of Independence?", "acceptedAnswers": ["(Thomas) Jefferson"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 11, "studyGuidePage": 83, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-079", "questionNumber": 79, "officialQuestion": "When was the Declaration of Independence adopted?", "acceptedAnswers": ["July 4, 1776"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 11, "studyGuidePage": 83, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-080", "questionNumber": 80, "officialQuestion": "The American Revolution had many important events. Name one.", "acceptedAnswers": ["(Battle of) Bunker Hill", "Declaration of Independence", "Washington Crossing the Delaware (Battle of Trenton)", "(Battle of) Saratoga", "Valley Forge (Encampment)", "(Battle of) Yorktown (British surrender at Yorktown)"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 12, "studyGuidePage": 83, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-081", "questionNumber": 81, "officialQuestion": "There were 13 original states. Name five.", "acceptedAnswers": ["New Hampshire", "Massachusetts", "Rhode Island", "Connecticut", "New York", "New Jersey", "Pennsylvania", "Delaware", "Maryland", "Virginia", "North Carolina", "South Carolina", "Georgia"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 12, "studyGuidePage": 83, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-082", "questionNumber": 82, "officialQuestion": "What founding document was written in 1787?", "acceptedAnswers": ["(U.S.) Constitution"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 12, "studyGuidePage": 83, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-083", "questionNumber": 83, "officialQuestion": "The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.", "acceptedAnswers": ["(James) Madison", "(Alexander) Hamilton", "(John) Jay", "Publius"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 12, "studyGuidePage": 83, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-084", "questionNumber": 84, "officialQuestion": "Why were the Federalist Papers important?", "acceptedAnswers": ["They helped people understand the (U.S.) Constitution.", "They supported passing the (U.S.) Constitution."], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 12, "studyGuidePage": 83, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-085", "questionNumber": 85, "officialQuestion": "Benjamin Franklin is famous for many things. Name one.", "acceptedAnswers": ["Founded the first free public libraries", "First Postmaster General of the United States", "Helped write the Declaration of Independence", "Inventor", "U.S. diplomat"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 12, "studyGuidePage": 83, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-086", "questionNumber": 86, "officialQuestion": "George Washington is famous for many things. Name one.", "acceptedAnswers": ["“Father of Our Country”", "First president of the United States", "General of the Continental Army", "President of the Constitutional Convention"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 13, "studyGuidePage": 84, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-087", "questionNumber": 87, "officialQuestion": "Thomas Jefferson is famous for many things. Name one.", "acceptedAnswers": ["Writer of the Declaration of Independence", "Third president of the United States", "Doubled the size of the United States (Louisiana Purchase)", "First Secretary of State", "Founded the University of Virginia", "Writer of the Virginia Statute on Religious Freedom"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 13, "studyGuidePage": 84, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-088", "questionNumber": 88, "officialQuestion": "James Madison is famous for many things. Name one.", "acceptedAnswers": ["“Father of the Constitution”", "Fourth president of the United States", "President during the War of 1812", "One of the writers of the Federalist Papers"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 13, "studyGuidePage": 84, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-089", "questionNumber": 89, "officialQuestion": "Alexander Hamilton is famous for many things. Name one.", "acceptedAnswers": ["First Secretary of the Treasury", "One of the writers of the Federalist Papers", "Helped establish the First Bank of the United States", "Aide to General George Washington", "Member of the Continental Congress"], "category": "American History — Colonial Period and Independence", "catId": 4, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 13, "studyGuidePage": 84, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-090", "questionNumber": 90, "officialQuestion": "What territory did the United States buy from France in 1803?", "acceptedAnswers": ["Louisiana Territory", "Louisiana"], "category": "American History — 1800s", "catId": 5, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 13, "studyGuidePage": 84, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-091", "questionNumber": 91, "officialQuestion": "Name one war fought by the United States in the 1800s.", "acceptedAnswers": ["War of 1812", "Mexican-American War", "Civil War", "Spanish-American War"], "category": "American History — 1800s", "catId": 5, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 13, "studyGuidePage": 84, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-092", "questionNumber": 92, "officialQuestion": "Name the U.S. war between the North and the South.", "acceptedAnswers": ["The Civil War"], "category": "American History — 1800s", "catId": 5, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 13, "studyGuidePage": 84, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-093", "questionNumber": 93, "officialQuestion": "The Civil War had many important events. Name one.", "acceptedAnswers": ["(Battle of) Fort Sumter", "Emancipation Proclamation", "(Battle of) Vicksburg", "(Battle of) Gettysburg", "Sherman’s March", "(Surrender at) Appomattox", "(Battle of) Antietam/Sharpsburg", "Lincoln was assassinated."], "category": "American History — 1800s", "catId": 5, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 14, "studyGuidePage": 84, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-094", "questionNumber": 94, "officialQuestion": "Abraham Lincoln is famous for many things. Name one.", "acceptedAnswers": ["Freed the slaves (Emancipation Proclamation)", "Saved (or preserved) the Union", "Led the United States during the Civil War", "16th president of the United States", "Delivered the Gettysburg Address"], "category": "American History — 1800s", "catId": 5, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 14, "studyGuidePage": 84, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-095", "questionNumber": 95, "officialQuestion": "What did the Emancipation Proclamation do?", "acceptedAnswers": ["Freed the slaves", "Freed slaves in the Confederacy", "Freed slaves in the Confederate states", "Freed slaves in most Southern states"], "category": "American History — 1800s", "catId": 5, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 14, "studyGuidePage": 84, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-096", "questionNumber": 96, "officialQuestion": "What U.S. war ended slavery?", "acceptedAnswers": ["The Civil War"], "category": "American History — 1800s", "catId": 5, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 14, "studyGuidePage": 84, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-097", "questionNumber": 97, "officialQuestion": "What amendment says all persons born or naturalized in the United States, and subject to the jurisdiction thereof, are U.S. citizens?", "acceptedAnswers": ["14th Amendment"], "category": "American History — 1800s", "catId": 5, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 14, "studyGuidePage": 85, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-098", "questionNumber": 98, "officialQuestion": "When did all men get the right to vote?", "acceptedAnswers": ["After the Civil War", "During Reconstruction", "(With the) 15th Amendment", "1870"], "category": "American History — 1800s", "catId": 5, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 14, "studyGuidePage": 85, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-099", "questionNumber": 99, "officialQuestion": "Name one leader of the women’s rights movement in the 1800s.", "acceptedAnswers": ["Susan B. Anthony", "Elizabeth Cady Stanton", "Sojourner Truth", "Harriet Tubman", "Lucretia Mott", "Lucy Stone"], "category": "American History — 1800s", "catId": 5, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 14, "studyGuidePage": 85, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-100", "questionNumber": 100, "officialQuestion": "Name one war fought by the United States in the 1900s.", "acceptedAnswers": ["World War I", "World War II", "Korean War", "Vietnam War", "(Persian) Gulf War"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 15, "studyGuidePage": 85, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-101", "questionNumber": 101, "officialQuestion": "Why did the United States enter World War I?", "acceptedAnswers": ["Because Germany attacked U.S. (civilian) ships", "To support the Allied Powers (England, France, Italy, and Russia)", "To oppose the Central Powers (Germany, Austria-Hungary, the Ottoman Empire, and Bulgaria)"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 15, "studyGuidePage": 85, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-102", "questionNumber": 102, "officialQuestion": "When did all women get the right to vote?", "acceptedAnswers": ["1920", "After World War I", "(With the) 19th Amendment"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 15, "studyGuidePage": 85, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-103", "questionNumber": 103, "officialQuestion": "What was the Great Depression?", "acceptedAnswers": ["Longest economic recession in modern history"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 15, "studyGuidePage": 85, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-104", "questionNumber": 104, "officialQuestion": "When did the Great Depression start?", "acceptedAnswers": ["The Great Crash (1929)", "Stock market crash of 1929"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 15, "studyGuidePage": 85, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-105", "questionNumber": 105, "officialQuestion": "Who was president during the Great Depression and World War II?", "acceptedAnswers": ["(Franklin) Roosevelt"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 15, "studyGuidePage": 85, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-106", "questionNumber": 106, "officialQuestion": "Why did the United States enter World War II?", "acceptedAnswers": ["(Bombing of) Pearl Harbor", "Japanese attacked Pearl Harbor", "To support the Allied Powers (England, France, and Russia)", "To oppose the Axis Powers (Germany, Italy, and Japan)"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 15, "studyGuidePage": 85, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-107", "questionNumber": 107, "officialQuestion": "Dwight Eisenhower is famous for many things. Name one.", "acceptedAnswers": ["General during World War II", "President at the end of (during) the Korean War", "34th president of the United States", "Signed the Federal-Aid Highway Act of 1956 (Created the Interstate System)"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 15, "studyGuidePage": 85, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-108", "questionNumber": 108, "officialQuestion": "Who was the United States’ main rival during the Cold War?", "acceptedAnswers": ["Soviet Union", "USSR", "Russia"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 16, "studyGuidePage": 85, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-109", "questionNumber": 109, "officialQuestion": "During the Cold War, what was one main concern of the United States?", "acceptedAnswers": ["Communism", "Nuclear war"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 16, "studyGuidePage": 86, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-110", "questionNumber": 110, "officialQuestion": "Why did the United States enter the Korean War?", "acceptedAnswers": ["To stop the spread of communism"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 16, "studyGuidePage": 86, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-111", "questionNumber": 111, "officialQuestion": "Why did the United States enter the Vietnam War?", "acceptedAnswers": ["To stop the spread of communism"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 16, "studyGuidePage": 86, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-112", "questionNumber": 112, "officialQuestion": "What did the civil rights movement do?", "acceptedAnswers": ["Fought to end racial discrimination"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 16, "studyGuidePage": 86, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-113", "questionNumber": 113, "officialQuestion": "Martin Luther King, Jr. is famous for many things. Name one.", "acceptedAnswers": ["Fought for civil rights", "Worked for equality for all Americans", "Worked to ensure that people would “not be judged by the color of their skin, but by the content of their character”"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 16, "studyGuidePage": 86, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-114", "questionNumber": 114, "officialQuestion": "Why did the United States enter the Persian Gulf War?", "acceptedAnswers": ["To force the Iraqi military from Kuwait"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 16, "studyGuidePage": 86, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-115", "questionNumber": 115, "officialQuestion": "What major event happened on September 11, 2001 in the United States?", "acceptedAnswers": ["Terrorists attacked the United States", "Terrorists took over two planes and crashed them into the World Trade Center in New York City", "Terrorists took over a plane and crashed into the Pentagon in Arlington, Virginia", "Terrorists took over a plane originally aimed at Washington, D.C., and crashed in a field in Pennsylvania"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 16, "studyGuidePage": 86, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-116", "questionNumber": 116, "officialQuestion": "Name one U.S. military conflict after the September 11, 2001 attacks.", "acceptedAnswers": ["(Global) War on Terror", "War in Afghanistan", "War in Iraq"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 16, "studyGuidePage": 86, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-117", "questionNumber": 117, "officialQuestion": "Name one American Indian tribe in the United States.", "acceptedAnswers": ["Apache", "Blackfeet", "Cayuga", "Cherokee", "Cheyenne", "Chippewa", "Choctaw", "Creek", "Crow", "Hopi", "Huron", "Inupiat", "Lakota", "Mohawk", "Mohegan", "Navajo", "Oneida", "Onondaga", "Pueblo", "Seminole", "Seneca", "Shawnee", "Sioux", "Teton", "Tuscarora For a complete list of tribes, please visit bia.gov."], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 17, "studyGuidePage": 86, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-118", "questionNumber": 118, "officialQuestion": "Name one example of an American innovation.", "acceptedAnswers": ["Light bulb", "Automobile (cars, internal combustion engine)", "Skyscrapers", "Airplane", "Assembly line", "Landing on the moon", "Integrated circuit (IC)"], "category": "American History — Recent American History and Other Important Historical Information", "catId": 6, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 17, "studyGuidePage": 87, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-119", "questionNumber": 119, "officialQuestion": "What is the capital of the United States?", "acceptedAnswers": ["Washington, D.C."], "category": "Symbols And Holidays — Symbols", "catId": 7, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 18, "studyGuidePage": 87, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-120", "questionNumber": 120, "officialQuestion": "Where is the Statue of Liberty?", "acceptedAnswers": ["New York (Harbor)", "Liberty Island [Also acceptable are New Jersey, near New York City, and on the Hudson (River).]"], "category": "Symbols And Holidays — Symbols", "catId": 7, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 18, "studyGuidePage": 87, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-121", "questionNumber": 121, "officialQuestion": "Why does the flag have 13 stripes?", "acceptedAnswers": ["(Because there were) 13 original colonies", "(Because the stripes) represent the original colonies"], "category": "Symbols And Holidays — Symbols", "catId": 7, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 18, "studyGuidePage": 87, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-122", "questionNumber": 122, "officialQuestion": "Why does the flag have 50 stars?", "acceptedAnswers": ["(Because there is) one star for each state", "(Because) each star represents a state", "(Because there are) 50 states"], "category": "Symbols And Holidays — Symbols", "catId": 7, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 18, "studyGuidePage": 87, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-123", "questionNumber": 123, "officialQuestion": "What is the name of the national anthem?", "acceptedAnswers": ["The Star-Spangled Banner"], "category": "Symbols And Holidays — Symbols", "catId": 7, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 18, "studyGuidePage": 87, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-124", "questionNumber": 124, "officialQuestion": "The Nation’s first motto was “E Pluribus Unum.” What does that mean?", "acceptedAnswers": ["Out of many, one", "We all become one"], "category": "Symbols And Holidays — Symbols", "catId": 7, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 18, "studyGuidePage": 87, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-125", "questionNumber": 125, "officialQuestion": "What is Independence Day?", "acceptedAnswers": ["A holiday to celebrate U.S. independence (from Britain)", "The country’s birthday"], "category": "Symbols And Holidays — Holidays", "catId": 8, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 19, "studyGuidePage": 87, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-126", "questionNumber": 126, "officialQuestion": "Name three national U.S. holidays.", "acceptedAnswers": ["New Year’s Day", "Martin Luther King, Jr. Day", "Presidents Day (Washington’s Birthday)", "Memorial Day", "Juneteenth", "Independence Day", "Labor Day", "Columbus Day", "Veterans Day", "Thanksgiving Day", "Christmas Day"], "category": "Symbols And Holidays — Holidays", "catId": 8, "special65_20": true, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 19, "studyGuidePage": 87, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-127", "questionNumber": 127, "officialQuestion": "What is Memorial Day?", "acceptedAnswers": ["A holiday to honor soldiers who died in military service"], "category": "Symbols And Holidays — Holidays", "catId": 8, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 19, "studyGuidePage": 87, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}, {"id": "uscis-128", "questionNumber": 128, "officialQuestion": "What is Veterans Day?", "acceptedAnswers": ["A holiday to honor people in the (U.S.) military", "A holiday to honor people who have served (in the U.S. military)"], "category": "Symbols And Holidays — Holidays", "catId": 8, "special65_20": false, "dynamicAnswer": false, "currentAnswer": "", "lastVerified": "", "officialPdfPage": 19, "studyGuidePage": 87, "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "dynamicSourceUrl": "", "plainLanguageNote": ""}], "vocab": {"reading": [{"word": "Abraham Lincoln", "category": "People", "page": 5}, {"word": "George Washington", "category": "People", "page": 6}, {"word": "American flag", "category": "Civics", "page": 7}, {"word": "Bill of Rights", "category": "Civics", "page": 8}, {"word": "capital", "category": "Civics", "page": 9}, {"word": "citizen", "category": "Civics", "page": 10}, {"word": "city", "category": "Civics", "page": 11}, {"word": "Congress", "category": "Civics", "page": 12}, {"word": "country", "category": "Civics", "page": 13}, {"word": "Father of", "category": "Civics", "page": 14}, {"word": "government", "category": "Civics", "page": 15}, {"word": "President", "category": "Civics", "page": 16}, {"word": "right", "category": "Civics", "page": 17}, {"word": "Senators", "category": "Civics", "page": 18}, {"word": "state/states", "category": "Civics", "page": 19}, {"word": "White House", "category": "Civics", "page": 20}, {"word": "America", "category": "Places", "page": 21}, {"word": "United States", "category": "Places", "page": 22}, {"word": "U.S.", "category": "Places", "page": 23}, {"word": "Presidents’ Day", "category": "Holidays", "page": 24}, {"word": "Memorial Day", "category": "Holidays", "page": 25}, {"word": "Flag Day", "category": "Holidays", "page": 26}, {"word": "Independence Day", "category": "Holidays", "page": 27}, {"word": "Labor Day", "category": "Holidays", "page": 28}, {"word": "Columbus Day", "category": "Holidays", "page": 29}, {"word": "Thanksgiving", "category": "Holidays", "page": 30}, {"word": "How", "category": "Question Words", "page": 31}, {"word": "What", "category": "Question Words", "page": 32}, {"word": "When", "category": "Question Words", "page": 33}, {"word": "Where", "category": "Question Words", "page": 34}, {"word": "Who", "category": "Question Words", "page": 35}, {"word": "Why", "category": "Question Words", "page": 36}, {"word": "can", "category": "Verbs", "page": 37}, {"word": "come", "category": "Verbs", "page": 38}, {"word": "do/does", "category": "Verbs", "page": 39}, {"word": "elects", "category": "Verbs", "page": 40}, {"word": "have/has", "category": "Verbs", "page": 41}, {"word": "is/are/was/be", "category": "Verbs", "page": 42}, {"word": "lives/lived", "category": "Verbs", "page": 43}, {"word": "meet", "category": "Verbs", "page": 44}, {"word": "name", "category": "Verbs", "page": 45}, {"word": "pay", "category": "Verbs", "page": 46}, {"word": "vote", "category": "Verbs", "page": 47}, {"word": "want", "category": "Verbs", "page": 48}, {"word": "a", "category": "Other (Function)", "page": 49}, {"word": "for", "category": "Other (Function)", "page": 50}, {"word": "here", "category": "Other (Function)", "page": 51}, {"word": "in", "category": "Other (Function)", "page": 52}, {"word": "of", "category": "Other (Function)", "page": 53}, {"word": "on", "category": "Other (Function)", "page": 54}, {"word": "the", "category": "Other (Function)", "page": 55}, {"word": "to", "category": "Other (Function)", "page": 56}, {"word": "we", "category": "Other (Function)", "page": 57}, {"word": "colors", "category": "Other (Content)", "page": 58}, {"word": "dollar bill", "category": "Other (Content)", "page": 59}, {"word": "first", "category": "Other (Content)", "page": 60}, {"word": "largest", "category": "Other (Content)", "page": 61}, {"word": "many", "category": "Other (Content)", "page": 62}, {"word": "most", "category": "Other (Content)", "page": 63}, {"word": "north", "category": "Other (Content)", "page": 64}, {"word": "one", "category": "Other (Content)", "page": 65}, {"word": "people", "category": "People", "page": 66}, {"word": "second", "category": "Other (Content)", "page": 67}, {"word": "south", "category": "Other (Content)", "page": 68}], "writing": {"People": ["Adams", "Lincoln", "Washington"], "Civics": ["American Indians", "capital", "citizens", "Civil War", "Congress", "Father of Our Country", "flag", "free", "freedom of speech", "President", "right", "Senators", "state/states", "White House"], "Places": ["Alaska", "California", "Canada", "Delaware", "Mexico", "New York City", "United States", "Washington", "Washington, D.C."], "Months": ["February", "May", "June", "July", "September", "October", "November"], "Holidays": ["Presidents' Day", "Memorial Day", "Flag Day", "Independence Day", "Labor Day", "Columbus Day", "Thanksgiving"], "Verbs": ["can", "come", "elect", "have/has", "is/was/be", "lives/lived", "meets", "pay", "vote", "want"], "Other (Function)": ["and", "during", "for", "here", "in", "of", "on", "the", "to", "we"], "Other (Content)": ["blue", "dollar bill", "fifty/50", "first", "largest", "most", "north", "one", "one hundred/100", "people", "red", "second", "south", "taxes", "white"]}}, "sources": {"q128": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf", "guide": "https://www.uscis.gov/sites/default/files/document/brochures/USCIS-2025-Civics-Test-Study-Guide.pdf", "testupdates": "https://www.uscis.gov/citizenship/testupdates", "reading": "https://www.uscis.gov/sites/default/files/document/guides/M-715_reading.pdf", "writing": "https://www.uscis.gov/sites/default/files/document/guides/M-1178_Writing_Strips_E.pdf"}}</script>
+<script>
+"use strict";
+/* ============ DATA ============ */
+const DATA = JSON.parse(document.getElementById('quizData').textContent);
+const BANK = DATA.bank;
+const BYID = {}; for (const q of BANK) BYID[q.id] = q;
+const CAT_NAMES = {};
+for (const q of BANK){ CAT_NAMES[q.catId] = q.category; }
+const EXAM_STD = {total:20, pass:12, label:'Official oral test simulation — 20 questions, pass at 12'};
+const EXAM_6520 = {total:10, pass:6, label:'65/20 oral simulation — 10 starred questions, pass at 6'};
+
+/* ============ STORAGE (uscisQuiz_ only — never touches reqz_/anything else) ============ */
+const K = { hist:'uscisQuiz_hist', log:'uscisQuiz_log', sessions:'uscisQuiz_sessions',
+            current:'uscisQuiz_current', settings:'uscisQuiz_settings' };
+function loadJ(k,d){ try{ return JSON.parse(localStorage.getItem(k)) || d; }catch(e){ return d; } }
+let storageWarned=false;
+function saveJ(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){
+  if(!storageWarned){ storageWarned=true; try{ alert('⚠️ This browser is not saving progress (storage full or private mode). Use Export progress to keep your data.'); }catch(_){} } } }
+
+/* ============ STATE ============ */
+let MODE='learn', order=[], idx=0, right=0, wrong=0, missed=[], isRetry=false;
+let examCfg=null, examTimer=null, examSecs=0, mcMode=false, revealed=false, graded=false;
+
+/* ============ LOGGING (first-attempt vs retry kept separate) ============ */
+function logAnswer(q, ok, recovered){
+  const h = loadJ(K.hist, {});
+  const e = h[q.id] || {seen:0, miss:0, weak:0, rec:0};
+  e.seen++; if(!ok){ e.miss++; if(isRetry) e.weak++; } if(recovered) e.rec++;
+  e.last = ok?1:0; e.t = Date.now(); h[q.id]=e; saveJ(K.hist,h);
+  const rec = { questionId:q.id, questionNumber:q.questionNumber, catId:q.catId, category:q.category,
+    attemptNumber:isRetry?2:1, retry:!!isRetry, isCorrect:!!ok, recovered:!!recovered,
+    exam: !!examCfg, mc: mcMode, mode: MODE, ts:Date.now(), iso:new Date().toISOString() };
+  const log = loadJ(K.log, []); log.push(rec); while(log.length>6000) log.shift(); saveJ(K.log, log);
+}
+// Sessions: first-pass rounds have retry:false (counted in trends); recovery rounds retry:true (excluded)
+function logSession(rec){ const s = loadJ(K.sessions, []); s.push(rec); while(s.length>120) s.shift(); saveJ(K.sessions, s); }
+
+/* ============ HELPERS ============ */
+function esc(s){ const d=document.createElement('div'); d.textContent = (s==null?'':String(s)); return d.innerHTML; }
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function show(id){ for(const c of ['quizCard','summaryCard','statsCard','vocabCard']) document.getElementById(c).style.display=(c===id)?'block':'none'; }
+
+/* ============ START / MODES ============ */
+function start(list, opts){
+  opts = opts || {};
+  if(!list || !list.length){ try{ alert('Nothing to practice here yet 🎉'); }catch(e){} return; }
+  stopExamTimer();
+  examCfg = opts.exam || null;
+  mcMode = !!opts.mc;
+  isRetry = !!opts.retry;
+  order = shuffle(list.slice());
+  if(examCfg) order = order.slice(0, examCfg.total);
+  idx=0; right=0; wrong=0; missed=[];
+  document.getElementById('retryBanner').style.display = isRetry?'block':'none';
+  document.getElementById('mcBanner').style.display = mcMode?'block':'none';
+  const eb = document.getElementById('examBanner');
+  if(examCfg){ eb.style.display='block'; eb.innerHTML = '<b>🏛️ '+esc(examCfg.label)+'.</b> Answer out loud, then self-grade.'; }
+  else eb.style.display='none';
+  document.getElementById('examTimer').style.display = examCfg?'inline':'none';
+  if(examCfg){ examSecs=0; examTimer=setInterval(tickExam,1000); tickExam(); }
+  // oral vs mc area
+  document.getElementById('oralArea').style.display = mcMode?'none':'block';
+  document.getElementById('mcArea').style.display = mcMode?'block':'none';
+  show('quizCard'); render();
+}
+function tickExam(){ examSecs++; const m=Math.floor(examSecs/60), s=examSecs%60;
+  document.getElementById('examTimer').textContent='⏱ '+m+':'+(s<10?'0':'')+s; }
+function stopExamTimer(){ if(examTimer){ clearInterval(examTimer); examTimer=null; } }
+
+/* ============ RENDER ============ */
+function render(){
+  const q = order[idx];
+  revealed=false; graded=false;
+  document.getElementById('qPos').textContent = idx+1;
+  document.getElementById('qTotal').textContent = order.length;
+  document.getElementById('bar').style.width = ((idx+1)/order.length*100)+'%';
+  // tags
+  const tags=[];
+  tags.push('<span class="tag">'+esc(q.category)+'</span>');
+  if(q.special65_20) tags.push('<span class="tag star">★ 65/20</span>');
+  if(q.dynamicAnswer) tags.push('<span class="tag dyn">⟳ Current-answer — may change</span>');
+  document.getElementById('qTags').innerHTML = tags.join('');
+  document.getElementById('qNum').textContent = 'Official question #'+q.questionNumber+' · 128-question PDF p.'+q.officialPdfPage;
+  document.getElementById('qText').textContent = q.officialQuestion;
+  updateScore();
+  if(mcMode){ renderMC(q); }
+  else {
+    document.getElementById('answers').classList.remove('show');
+    document.getElementById('revealRow').style.display='flex';
+    document.getElementById('nextBtn').style.display='none';
+  }
+  saveCurrent();
+}
+
+function renderAnswers(q){
+  const list = document.getElementById('ansList'); list.innerHTML='';
+  for(const a of q.acceptedAnswers){ const li=document.createElement('li'); li.textContent=a; list.appendChild(li); }
+  const dyn = document.getElementById('dynArea'); dyn.innerHTML='';
+  if(q.dynamicAnswer){
+    let inner = '<b>⟳ Current answer (verified):</b> ';
+    if(q.currentAnswer){ inner += esc(q.currentAnswer) + '<span class="lv">last verified '+esc(q.lastVerified)+'</span>'; }
+    else { inner += '<i>Depends on your address — this app will not guess it.</i>'; }
+    inner += '<div style="margin-top:6px">'+esc(q.plainLanguageNote)+'</div>';
+    inner += '<div style="margin-top:6px;font-size:.85em">Official source: <a href="'+esc(q.dynamicSourceUrl)+'" target="_blank" rel="noopener">'+esc(q.dynamicSourceUrl)+'</a></div>';
+    if(q.questionNumber===29){
+      inner += '<div class="row" style="margin-top:8px"><input id="zipIn" inputmode="numeric" maxlength="5" placeholder="ZIP code" style="font:inherit;padding:7px;border:1px solid var(--line);border-radius:6px;width:120px"> <a class="btn ghost sm" id="zipGo" target="_blank" rel="noopener" href="https://www.house.gov/representatives/find-your-representative">Find my representative ↗</a></div>';
+    }
+    dyn.innerHTML = '<div class="dynbox">'+inner+'</div>';
+    if(q.questionNumber===29){
+      const zi=document.getElementById('zipIn'), zg=document.getElementById('zipGo');
+      if(zi&&zg) zi.addEventListener('input',()=>{ const z=zi.value.replace(/\D/g,'').slice(0,5); zi.value=z;
+        zg.href = z.length===5 ? 'https://ziplook.house.gov/htbin/findrep_house?ZIP='+z : 'https://www.house.gov/representatives/find-your-representative'; });
+    }
+  }
+  document.getElementById('verifLine').innerHTML =
+    '🔎 Verification basis: official USCIS M-1778 (2025 version), question #'+q.questionNumber+
+    (q.dynamicAnswer?'. Current official confirmed from the government source above on '+esc(q.lastVerified)+'.':'.');
+}
+
+function reveal(){
+  if(revealed) return; revealed=true;
+  const q=order[idx];
+  renderAnswers(q);
+  document.getElementById('answers').classList.add('show');
+  document.getElementById('revealRow').style.display='none';
+  // dynamic questions are not auto-graded for correctness pass/fail of trend in a misleading way;
+  // still self-graded by the learner.
+}
+
+function grade(ok){
+  if(!revealed || graded) return; graded=true;
+  const q=order[idx];
+  logAnswer(q, ok, ok && isRetry);
+  if(ok) right++; else { wrong++; missed.push(q); }
+  updateScore();
+  const last = (idx+1>=order.length);
+  const nb=document.getElementById('nextBtn');
+  nb.style.display='inline-block';
+  nb.textContent = last ? ((!examCfg && !isRetry && missed.length)?'Final attempt →':'See results') : 'Next →';
+  // lock grade buttons
+  document.getElementById('gotItBtn').disabled=true;
+  document.getElementById('missedBtn').disabled=true;
+}
+
+/* ---- multiple choice (practice/learning only) ---- */
+function renderMC(q){
+  const box=document.getElementById('opts'); box.innerHTML='';
+  document.getElementById('mcFb').classList.remove('show'); document.getElementById('mcFb').innerHTML='';
+  document.getElementById('nextBtn').style.display='none';
+  // correct = first accepted answer; distractors from OTHER questions' answers (clearly practice-only)
+  const correct = q.acceptedAnswers[0];
+  const pool=[];
+  for(const o of BANK){ if(o.id===q.id) continue; for(const a of o.acceptedAnswers){ if(!q.acceptedAnswers.includes(a)) pool.push(a); } }
+  shuffle(pool);
+  const distract=[]; const used=new Set();
+  for(const a of pool){ if(distract.length>=3) break; if(!used.has(a)){ used.add(a); distract.push(a); } }
+  const opts = shuffle([correct, ...distract]);
+  opts.forEach(text=>{
+    const b=document.createElement('button'); b.className='opt'; b.type='button'; b.textContent=text;
+    b.onclick=()=>mcAnswer(b, text===correct, q); box.appendChild(b);
+  });
+}
+function mcAnswer(btn, ok, q){
+  if(graded) return; graded=true;
+  logAnswer(q, ok, ok && isRetry);
+  document.querySelectorAll('#opts .opt').forEach(b=>{ b.disabled=true;
+    if(b.textContent===q.acceptedAnswers[0]) b.classList.add('correct'); });
+  if(!ok){ btn.classList.add('wrong'); wrong++; missed.push(q); } else right++;
+  const fb=document.getElementById('mcFb'); fb.classList.add('show');
+  fb.innerHTML = '<h4>'+(ok?'✅ Correct':'❌ The accepted answer is')+'</h4><ul>'+
+    q.acceptedAnswers.map(a=>'<li>'+esc(a)+'</li>').join('')+'</ul>'+
+    '<div class="pdfbtns"><button class="btn ghost sm" onclick="openPdf(\''+q.id+'\',\'q\')">📄 Official answer (PDF)</button>'+
+    '<button class="btn ghost sm" onclick="openPdf(\''+q.id+'\',\'guide\')">📘 Study guide</button></div>';
+  updateScore();
+  const last=(idx+1>=order.length);
+  const nb=document.getElementById('nextBtn'); nb.style.display='inline-block';
+  nb.textContent = last ? ((!examCfg && !isRetry && missed.length)?'Final attempt →':'See results') : 'Next →';
+}
+
+function updateScore(){ document.getElementById('nRight').textContent=right; document.getElementById('nWrong').textContent=wrong; }
+
+/* ============ NEXT / RETRY / FINISH ============ */
+function next(){
+  idx++;
+  if(idx<order.length){ render(); return; }
+  if(!examCfg && !isRetry && missed.length){
+    // log the FIRST-PASS session (counts toward trend), then auto-launch recovery round
+    logSession({ t:Date.now(), n:order.length, r:right, retry:false, exam:false, mc:mcMode, mode:MODE });
+    clearCurrent();
+    start(missed, {retry:true, mc:mcMode});
+    return;
+  }
+  finish();
+}
+function finish(){
+  stopExamTimer(); clearCurrent();
+  const pct = Math.round(right/order.length*100);
+  logSession({ t:Date.now(), n:order.length, r:right, retry:isRetry, exam:!!examCfg, mc:mcMode, mode:MODE });
+  show('summaryCard');
+  let head, title='Session complete';
+  if(examCfg){
+    const passed = right>=examCfg.pass;
+    const m=Math.floor(examSecs/60), s=examSecs%60;
+    title = passed?'🎯 PASS':'Keep studying';
+    head = 'You answered <b>'+right+' / '+order.length+'</b> correctly in '+m+'m '+s+'s. '+
+      'This simulation passes at <b>'+examCfg.pass+'</b>. '+
+      (passed?'On the real oral test, that is a pass. ':'You need '+examCfg.pass+' correct. ')+
+      '<br><span style="font-size:.85em;color:var(--muted)">Reminder: the real test is oral and the officer stops once you reach the passing number.</span>';
+  } else if(isRetry){
+    const recovered = order.length - missed.length;
+    title='Final attempt done';
+    head = 'Recovered <b>'+recovered+' / '+order.length+'</b>.'+(missed.length?' '+missed.length+' still missed — saved as weak spots.':' All recovered! 🏆')+
+      '<br><span style="font-size:.85em;color:var(--muted)">Recovery rounds are tracked separately and do not inflate your improvement trend.</span>';
+  } else {
+    head = 'You scored <b>'+right+' / '+order.length+' ('+pct+'%)</b>.';
+  }
+  document.getElementById('sumTitle').textContent=title;
+  document.getElementById('finalLine').innerHTML=head;
+  const ml=document.getElementById('missedList');
+  ml.innerHTML = missed.length?'<h3>Review these:</h3>':(isRetry?'':'<p>Perfect — nothing missed! 🏆</p>');
+  for(const q of missed){
+    const d=document.createElement('div'); d.className='missed';
+    d.innerHTML='<b>#'+q.questionNumber+'. '+esc(q.officialQuestion)+'</b><br>'+
+      esc(q.acceptedAnswers.join(' · '))+
+      '<div class="pdfbtns"><button class="btn ghost sm" onclick="openPdf(\''+q.id+'\',\'q\')">📄 Official</button>'+
+      '<button class="btn ghost sm" onclick="openPdf(\''+q.id+'\',\'guide\')">📘 Guide</button></div>';
+    ml.appendChild(d);
+  }
+  document.getElementById('reviewMissedBtn').style.display = missed.length?'inline-block':'none';
+}
+
+/* ============ STATS (trend from FIRST-ATTEMPT sessions only) ============ */
+function recentCatAcc(){
+  const log = loadJ(K.log, []);
+  const byCat={};
+  for(const r of log){ if(r.attemptNumber && r.attemptNumber!==1) continue; (byCat[r.catId]=byCat[r.catId]||[]).push(r); }
+  const acc={};
+  for(const c in byCat){ const recent=byCat[c].slice(-20); const ok=recent.filter(r=>r.isCorrect).length;
+    acc[c]={ acc:ok/recent.length, seen:recent.length }; }
+  return acc;
+}
+function showStats(){
+  stopExamTimer(); show('statsCard');
+  const box=document.getElementById('statsBody');
+  const sessions=loadJ(K.sessions,[]); const hist=loadJ(K.hist,{}); const log=loadJ(K.log,[]);
+  let html='';
+  // coverage
+  const seenIds = new Set(Object.keys(hist).filter(id=>hist[id].seen>0));
+  const cov = Math.round(seenIds.size/128*100);
+  html += '<h3>📋 Coverage</h3><div class="statrow"><span>Questions practiced at least once</span><span class="pbarwrap"><i class="pbar" style="width:'+cov+'%;background:var(--blue)"></i></span><b>'+seenIds.size+'/128</b></div>';
+  // session history (last 10)
+  html += '<h3>📈 Last 10 sessions</h3>';
+  if(!sessions.length) html+='<p style="font-size:.88em">No sessions yet — finish a round.</p>';
+  else {
+    for(const s of sessions.slice(-10).reverse()){
+      const p = s.n?Math.round(s.r/s.n*100):0;
+      const tag = s.exam?'🏛️ exam ':(s.retry?'↩️ recovery ':(s.mc?'📝 MC ':'🔊 oral '));
+      const dt=new Date(s.t);
+      html += '<div class="statrow"><span>'+tag+dt.toLocaleDateString()+' '+dt.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})+' — '+s.r+'/'+s.n+'</span><span class="pbarwrap"><i class="pbar" style="width:'+p+'%;background:'+(p>=60?'var(--green)':'var(--red)')+'"></i></span><b>'+p+'%</b></div>';
+    }
+    // trend: FIRST-PASS only (exclude retry/recovery rounds)
+    const valid = sessions.filter(s=>s.n>0 && !s.retry);
+    if(valid.length>=6){
+      const avg=a=>a.reduce((x,s)=>x+s.r/s.n,0)/a.length*100;
+      const prior=avg(valid.slice(-6,-3)), recent=avg(valid.slice(-3)); const d=recent-prior;
+      html += '<p style="font-size:.9em"><b>Trend (last 3 vs prior 3 first-attempt rounds):</b> '+
+        (d>3?'⬆️ improving (+'+d.toFixed(0)+' pts)':d<-3?'⬇️ slipping ('+d.toFixed(0)+' pts)':'➡️ steady')+'</p>';
+    } else html += '<p style="font-size:.82em;color:var(--muted)">Finish 6+ first-attempt rounds to see an improvement trend (recovery rounds are excluded).</p>';
+  }
+  // recovery data (separate)
+  const recovered = log.filter(r=>r.recovered).length;
+  if(recovered) html += '<p style="font-size:.85em;color:var(--muted)">↩️ Recovery data: '+recovered+' question(s) recovered on a final attempt (tracked separately, not counted in the trend).</p>';
+  // weak categories by error rate (enough attempts)
+  html += '<h3>🎯 Weakest categories — tap to drill</h3>';
+  const racc=recentCatAcc(); const rows=[];
+  for(const c in racc){ const a=racc[c]; if(a.seen>=3) rows.push({c:+c, acc:a.acc, seen:a.seen, err:1-a.acc}); }
+  rows.sort((x,y)=>y.err-x.err);
+  if(!rows.length) html+='<p style="font-size:.85em">Answer at least 3 in a category to rank it.</p>';
+  for(const r of rows){
+    html += '<div class="statrow chrow" data-cat="'+r.c+'"><span>'+esc(CAT_NAMES[r.c])+' · '+Math.round(r.acc*100)+'% right (last '+r.seen+') ▶ drill</span><span class="pbarwrap"><i class="pbar" style="width:'+Math.round(r.err*100)+'%;background:var(--red)"></i></span></div>';
+  }
+  // all-time missed
+  const missedAny = BANK.filter(q=>hist[q.id] && hist[q.id].miss>0);
+  const missedTwice = BANK.filter(q=>hist[q.id] && (hist[q.id].weak||0)>0);
+  html += '<h3>🔁 All-time missed: '+missedAny.length+'</h3>';
+  html += '<h3>🔥 Missed in a final attempt (true weak spots): '+missedTwice.length+'</h3>';
+  for(const q of missedTwice.slice(0,12))
+    html += '<div class="missed"><b>#'+q.questionNumber+'. '+esc(q.officialQuestion)+'</b><br>'+esc(q.acceptedAnswers.join(' · '))+'</div>';
+  box.innerHTML=html;
+  box.querySelectorAll('.chrow').forEach(row=>row.onclick=()=>{ const c=+row.dataset.cat; start(BANK.filter(q=>q.catId===c),{}); });
+}
+
+/* ============ RESUME / RESET (uscisQuiz_ scope only) ============ */
+function saveCurrent(){
+  if(examCfg || isRetry) return;          // only main first-pass round is resumable
+  if(idx===0 && right===0 && wrong===0) return;
+  saveJ(K.current, { ids:order.map(q=>q.id), idx, right, wrong, missed:missed.map(q=>q.id), mc:mcMode, mode:MODE, t:Date.now() });
+}
+function clearCurrent(){ try{ localStorage.removeItem(K.current); }catch(e){} }
+function resume(c){
+  stopExamTimer();
+  order = (c.ids||[]).map(id=>BYID[id]).filter(Boolean);
+  if(!order.length){ clearCurrent(); start(BANK,{}); return; }
+  idx=Math.min(c.idx||0, order.length-1); right=c.right||0; wrong=c.wrong||0;
+  missed=(c.missed||[]).map(id=>BYID[id]).filter(Boolean);
+  isRetry=false; examCfg=null; mcMode=!!c.mc; MODE=c.mode||'learn';
+  document.getElementById('retryBanner').style.display='none';
+  document.getElementById('examBanner').style.display='none';
+  document.getElementById('examTimer').style.display='none';
+  document.getElementById('mcBanner').style.display=mcMode?'block':'none';
+  document.getElementById('oralArea').style.display=mcMode?'none':'block';
+  document.getElementById('mcArea').style.display=mcMode?'block':'none';
+  show('quizCard'); render();
+}
+function resetProgress(){
+  if(!confirm('This erases ALL of YOUR citizenship-quiz progress on this device — history, stats, weak spots, and any in-progress round. This canNOT be undone. (Your other apps and quizzes are not affected.) Continue?')) return;
+  // remove ONLY uscisQuiz_* keys — never touch reqz_ (real-estate) or any other storage
+  const toRemove=[];
+  for(let i=0;i<localStorage.length;i++){ const key=localStorage.key(i); if(key && key.indexOf('uscisQuiz_')===0) toRemove.push(key); }
+  toRemove.forEach(k=>{ try{ localStorage.removeItem(k); }catch(e){} });
+  try{ alert('Your progress was reset ✅'); }catch(e){}
+  start(BANK,{});
+}
+
+/* ============ EXPORT / IMPORT ============ */
+function exportProgress(){
+  const data={ app:'uscisQuiz', exported:new Date().toISOString(),
+    hist:loadJ(K.hist,{}), sessions:loadJ(K.sessions,[]), log:loadJ(K.log,[]), settings:loadJ(K.settings,{}) };
+  const blob=new Blob([JSON.stringify(data,null,1)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='citizenship-progress-'+new Date().toISOString().slice(0,10)+'.json'; a.click();
+}
+function importProgress(){
+  const inp=document.createElement('input'); inp.type='file'; inp.accept='.json,application/json';
+  inp.onchange=()=>{ const f=inp.files[0]; if(!f) return; f.text().then(t=>{
+    try{ const d=JSON.parse(t);
+      if(d.app && d.app!=='uscisQuiz'){ if(!confirm('This file is not from the citizenship quiz. Import anyway?')) return; }
+      if(d.hist) saveJ(K.hist,d.hist); if(d.sessions) saveJ(K.sessions,d.sessions);
+      if(d.log) saveJ(K.log,d.log); if(d.settings) saveJ(K.settings,d.settings);
+      alert('Progress imported ✅'); showStats();
+    }catch(e){ alert('Could not read that file.'); } }); };
+  inp.click();
+}
+
+/* ============ PDF MODAL (by immutable question id — never global mutable state) ============ */
+let pdfState=null; // {url, page, which, qid}
+function openPdf(id, which){
+  const q=BYID[id]; if(!q) return;
+  const url = which==='guide' ? DATA.sources.guide : q.sourceUrl;
+  const page = which==='guide' ? q.studyGuidePage : q.officialPdfPage;
+  pdfState={ baseUrl:url, page:page, which:which, qid:id };
+  document.getElementById('pdfModal').classList.add('open');
+  pdfRender();
+}
+function pdfRender(){
+  if(!pdfState) return;
+  const q=BYID[pdfState.qid];
+  const which = pdfState.which;
+  document.getElementById('pdfTitle').textContent =
+    (which==='guide'?'Study guide — page ':'Official 128 Q&A — page ') + pdfState.page +
+    ' · Q#'+q.questionNumber;
+  document.getElementById('pdfNote').innerHTML =
+    'Showing the <b>full official page '+pdfState.page+'</b> for question #'+q.questionNumber+
+    '. We deliberately do <b>not</b> draw a highlight box — exact line coordinates are not pixel-verified, and a wrong box would mislead you. Read the page to find the exact wording. '+
+    'If the embedded view does not load, use <b>↗ Open official PDF</b>.';
+  const full = pdfState.baseUrl + '#page=' + pdfState.page + '&view=FitH';
+  document.getElementById('pdfFrame').src = full;
+  document.getElementById('pdfOpen').onclick = ()=>window.open(full,'_blank','noopener');
+}
+function pdfNav(d){
+  if(!pdfState) return;
+  const max = pdfState.which==='guide' ? 88 : 19;
+  const np = Math.min(max, Math.max(1, pdfState.page + d));
+  if(np===pdfState.page) return; pdfState.page=np; pdfRender();
+}
+function pdfClose(){ document.getElementById('pdfModal').classList.remove('open'); document.getElementById('pdfFrame').src='about:blank'; pdfState=null; }
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') pdfClose(); });
+
+/* ============ SPEECH (oral test feel) ============ */
+function speak(){
+  try{
+    const q=order[idx]; if(!q) return;
+    window.speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(q.officialQuestion); u.lang='en-US'; u.rate=.92;
+    window.speechSynthesis.speak(u);
+  }catch(e){ /* unsupported — silent */ }
+}
+
+/* ============ VOCAB ============ */
+function renderVocab(which){
+  document.getElementById('vReadBtn').classList.toggle('active', which==='reading');
+  document.getElementById('vWriteBtn').classList.toggle('active', which==='writing');
+  const intro = document.getElementById('vocabIntro');
+  const body = document.getElementById('vocabBody'); body.innerHTML='';
+  if(which==='reading'){
+    intro.innerHTML='Official USCIS Reading Vocabulary (M-715). You must read 1 of 3 sentences correctly. <a href="'+DATA.sources.reading+'" target="_blank" rel="noopener">Open official flash cards ↗</a>';
+    const byCat={}; for(const w of DATA.vocab.reading){ (byCat[w.category]=byCat[w.category]||[]).push(w); }
+    for(const cat of Object.keys(byCat)){
+      const d=document.createElement('div'); d.innerHTML='<div class="vcat">'+esc(cat)+'</div>';
+      const chips=document.createElement('div'); chips.className='chips';
+      for(const w of byCat[cat]){ const c=document.createElement('span'); c.className='chip'; c.textContent=w.word; chips.appendChild(c); }
+      d.appendChild(chips); body.appendChild(d);
+    }
+  } else {
+    intro.innerHTML='Official USCIS Writing Vocabulary (M-1178). You must write 1 of 3 sentences correctly. <a href="'+DATA.sources.writing+'" target="_blank" rel="noopener">Open official word list ↗</a>';
+    for(const cat of Object.keys(DATA.vocab.writing)){
+      const d=document.createElement('div'); d.innerHTML='<div class="vcat">'+esc(cat)+'</div>';
+      const chips=document.createElement('div'); chips.className='chips';
+      for(const w of DATA.vocab.writing[cat]){ const c=document.createElement('span'); c.className='chip'; c.textContent=w; chips.appendChild(c); }
+      d.appendChild(chips); body.appendChild(d);
+    }
+  }
+}
+
+/* ============ MODE BAR ============ */
+const MODES = [
+  {key:'learn', label:'🔊 Learn all 128', fn:()=>{ MODE='learn'; start(BANK,{}); }},
+  {key:'exam', label:'🏛️ Oral test sim (20)', fn:()=>{ MODE='exam'; start(BANK,{exam:EXAM_STD}); }},
+  {key:'missed', label:'🔁 Practice missed', fn:()=>{ MODE='missed'; const h=loadJ(K.hist,{}); start(BANK.filter(q=>h[q.id]&&h[q.id].miss>0),{}); }},
+  {key:'weak', label:'🎯 Weak categories', fn:()=>{ MODE='weak'; drillWeak(); }},
+  {key:'star', label:'★ 65/20 mode', fn:()=>{ MODE='star'; start(BANK.filter(q=>q.special65_20),{}); }},
+  {key:'dyn', label:'⟳ Current officials', fn:()=>{ MODE='dyn'; start(BANK.filter(q=>q.dynamicAnswer),{}); }},
+  {key:'mc', label:'📝 Multiple-choice (practice)', fn:()=>{ MODE='mc'; start(BANK,{mc:true}); }},
+  {key:'vocab', label:'📚 Reading/Writing', fn:()=>{ show('vocabCard'); renderVocab('reading'); }},
+  {key:'stats', label:'📊 Progress', fn:showStats},
+];
+function drillWeak(){
+  const racc=recentCatAcc(); const rows=[];
+  for(const c in racc){ if(racc[c].seen>=3) rows.push({c:+c, err:1-racc[c].acc}); }
+  rows.sort((x,y)=>y.err-x.err);
+  if(!rows.length){ alert('Answer at least 3 questions in a few categories first, then this will target your weakest ones.'); start(BANK,{}); return; }
+  const top = rows.slice(0,3).map(r=>r.c);
+  start(BANK.filter(q=>top.includes(q.catId)),{});
+}
+function buildModeBar(){
+  const bar=document.getElementById('modeBar'); bar.innerHTML='';
+  for(const m of MODES){ const b=document.createElement('button'); b.className='mode'; b.textContent=m.label;
+    b.onclick=()=>{ document.querySelectorAll('.modebar .mode').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active'); m.fn(); }; b.dataset.key=m.key; bar.appendChild(b); }
+}
+
+/* ============ VERSION NOTICE ============ */
+function checkVersion(){
+  const v=document.getElementById('n400date').value; const out=document.getElementById('versionResult');
+  if(!v){ out.textContent='Enter your N-400 filing date.'; return; }
+  // 2025 (128-question) test applies to N-400s filed on/after 2025-10-20 (USCIS announced effective date).
+  const cutoff = new Date('2025-10-20'); const d=new Date(v);
+  if(d >= cutoff){
+    out.innerHTML='<b style="color:var(--green)">✅ 2025 version (128 questions).</b> This app is built for you. Confirm the exact effective date on the official Test Updates page.';
+  } else {
+    out.innerHTML='<b style="color:var(--amber)">⚠️ You may be on the 2008 version (100 questions, answer 6 of 10 to pass).</b> This app covers the 128-question 2025 test — many questions still overlap, but verify your version with USCIS before relying on it. <a href="https://www.uscis.gov/citizenship/testupdates" target="_blank" rel="noopener">Check official Test Updates ↗</a>';
+  }
+}
+
+/* ============ WIRE + BOOT ============ */
+function wire(id, fn){ const el=document.getElementById(id); if(el) el.onclick=fn; }
+wire('revealBtn', reveal);
+wire('gotItBtn', ()=>grade(true));
+wire('missedBtn', ()=>grade(false));
+wire('nextBtn', next);
+wire('speakBtn', speak);
+wire('pdfQBtn', ()=>openPdf(order[idx].id,'q'));
+wire('pdfGBtn', ()=>openPdf(order[idx].id,'guide'));
+wire('pdfPrev', ()=>pdfNav(-1));
+wire('pdfNext', ()=>pdfNav(1));
+wire('restartBtn', ()=>start(BANK,{}));
+wire('reviewMissedBtn', ()=>start(missed,{retry:true}));
+wire('statsBtn2', showStats);
+wire('statsBackBtn', ()=>start(BANK,{}));
+wire('exportBtn', exportProgress);
+wire('importBtn', importProgress);
+wire('resetBtn', resetProgress);
+wire('vReadBtn', ()=>renderVocab('reading'));
+wire('vWriteBtn', ()=>renderVocab('writing'));
+wire('vocabBackBtn', ()=>start(BANK,{}));
+wire('versionBtn', ()=>{ const c=document.getElementById('versionCard'); c.style.display = c.style.display==='none'?'block':'none'; });
+wire('checkVersionBtn', checkVersion);
+
+function boot(){
+  buildModeBar();
+  document.querySelector('.modebar .mode').classList.add('active'); // learn
+  const c=loadJ(K.current, null);
+  start(BANK,{}); // fresh learn round ready; idx0 guard keeps it from clobbering saved round
+  if(c && c.ids && c.ids.length && (c.idx||0)<c.ids.length && ((c.idx||0)>0 || c.right>0 || c.wrong>0)){
+    const pos=Math.min((c.idx||0)+1, c.ids.length);
+    const bar=document.createElement('div');
+    bar.style.cssText='background:#fff8e1;border:1px solid var(--amber);border-radius:8px;padding:10px 13px;margin:0 0 12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:.9em';
+    bar.innerHTML='<span>▶️ You left off at <b>Q'+pos+' of '+c.ids.length+'</b>.</span>';
+    const rb=document.createElement('button'); rb.className='btn sm'; rb.textContent='Resume';
+    rb.onclick=()=>{ bar.remove(); resume(c); };
+    const fb=document.createElement('button'); fb.className='btn gray sm'; fb.textContent='Start fresh';
+    fb.onclick=()=>{ bar.remove(); clearCurrent(); start(BANK,{}); };
+    bar.appendChild(rb); bar.appendChild(fb);
+    const card=document.getElementById('quizCard'); card.parentNode.insertBefore(bar, card);
+  }
+}
+boot();
+</script>
+</body>
+</html>
