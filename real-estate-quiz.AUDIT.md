@@ -56,3 +56,9 @@ This is the project's source of truth for *how it's built and deployed* and *wha
 ## OPEN audit items
 - **Exact-page citations + highlights still want the CORRECT edition.** What's needed: the *same edition the scanned `book.imgs` came from* (the 14th ed.). Options: (a) OCR the displayed Drive scan images themselves (gives both the right pages AND box coordinates that align with what the user sees — needs Tesseract/Vision, neither installed yet); (b) obtain a 14th-ed PDF whose pagination matches the quiz scheme. The local PDFs (`English RE…`, `Gold Coast …Jan 2024`) are byte-identical to each other but are NOT that edition.
 - **Highlights specifically:** must be computed in the **displayed scan's** coordinate space, not this PDF's — proven by stored boxes resolving to unrelated text when interpreted against the PDF. Not feasible from the local PDF.
+
+## Feature backlog
+- **Keyword search box in the book-page viewer** (Priscila request, 2026-06-22): a text input in the page modal — type a word and it highlights every occurrence on the page, live. *Plan:* for the 30 PDF-rendered `ax-` pages we already have exact word coordinates from PyMuPDF — pre-extract a compact per-page word-box map, ship it with the quiz, and have the search box draw `.bkhl` overlays on matches client-side. Works for the new rendered pages out of the box; the old scanned-image pages would need OCR word boxes to support the same search.
+
+## Done — book-page highlights (2026-06-22)
+- 30 `ax-` questions now have a self-contained highlighted page image rendered from the SalesPreBook PDF (answer text boxed), hosted in-repo at `book-pages/` and shown via a "📖 See it in the book — highlighted" button. No page-number citation is attached (the image is self-contained), which avoids the edition-pagination mismatch. Commit `1638b59`.
