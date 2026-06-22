@@ -102,6 +102,7 @@
       <button class="btn gray" id="practiceStarBtn">⭐ Practice teacher's star items</button>
       <button class="btn gray" id="backupBtn">⬆️ Backup history</button>
       <button class="btn gray" id="restoreBtn">⬇️ Restore history</button>
+      <button class="btn gray" id="resetBtn" style="border-color:#c62828;color:#c62828">🗑️ Reset my progress</button>
       <button class="btn" id="statsBackBtn">← Back to quiz</button>
     </div>
   </div>
@@ -180,6 +181,7 @@ function render(){
   const fb = document.getElementById('fb'); fb.className = 'feedback'; fb.innerHTML = '';
   document.getElementById('nextBtn').style.display = 'none';
   updateScore();
+  saveCurrent();
 }
 
 function answer(k, btn){
@@ -229,6 +231,7 @@ document.getElementById('nextBtn').onclick = () => {
 
 function finish(){
   stopExamTimer();
+  clearCurrent();
   const pct = Math.round(right / order.length * 100);
   // log the session once, at the true end of the whole flow
   logSession({ t: Date.now(), n: order.length, r: right, exam: examMode, retry: isRetry });
@@ -361,6 +364,48 @@ function restoreHistory(){
   inp.click();
 }
 
+// ---- resume an unfinished round + reset progress ----
+function saveCurrent(){
+  if (examMode || isRetry) return;                 // only the main round is resumable
+  if (idx === 0 && right === 0 && wrong === 0) return; // don't clobber a fresh load before any answer
+  saveJ('reqz_current', { ids: order.map(q=>q.id), idx:idx, right:right, wrong:wrong, missed: missed.map(q=>q.id), t: Date.now() });
+}
+function clearCurrent(){ try { localStorage.removeItem('reqz_current'); } catch(e){} }
+function resume(c){
+  stopExamTimer();
+  order = (c.ids||[]).map(id=>BYID[id]).filter(Boolean);
+  if (!order.length){ clearCurrent(); start(BANK, false); return; }
+  idx = Math.min(c.idx||0, order.length-1);
+  right = c.right||0; wrong = c.wrong||0;
+  missed = (c.missed||[]).map(id=>BYID[id]).filter(Boolean);
+  isRetry = false; examMode = false;
+  document.getElementById('roundBanner').style.display = 'none';
+  document.getElementById('examTimer').style.display = 'none';
+  show('quizCard'); render();
+}
+function resetProgress(){
+  if (!confirm('This erases ALL your saved progress on this device — session history, stats, true weaknesses, and any in-progress round. This cannot be undone. Continue?')) return;
+  ['reqz_hist','reqz_log','reqz_sessions','reqz_queue','reqz_current'].forEach(k => { try { localStorage.removeItem(k); } catch(e){} });
+  alert('Progress reset ✅'); start(BANK, false);
+}
+function boot(){
+  const c = loadJ('reqz_current', null);
+  start(BANK, false);  // a fresh round is ready; the idx0/0/0 guard keeps this from overwriting c
+  if (c && c.ids && c.ids.length && (c.idx||0) < c.ids.length && ((c.idx||0) > 0 || c.right > 0 || c.wrong > 0)){
+    const pos = Math.min((c.idx||0)+1, c.ids.length);
+    const bar = document.createElement('div');
+    bar.style.cssText = 'background:#fff8e1;border:1px solid #ef6c00;border-radius:8px;padding:10px 14px;margin:10px 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap';
+    bar.innerHTML = '<span>▶️ You left off at <b>Q'+pos+' of '+c.ids.length+'</b>.</span>';
+    const rb = document.createElement('button'); rb.className='btn'; rb.style.cssText='font-size:.85em;padding:6px 12px;color:#fff'; rb.textContent='Resume';
+    rb.onclick = () => { bar.remove(); resume(c); };
+    const fb = document.createElement('button'); fb.className='btn gray'; fb.style.cssText='font-size:.85em;padding:6px 12px'; fb.textContent='Start fresh';
+    fb.onclick = () => { bar.remove(); clearCurrent(); start(BANK, false); };
+    bar.appendChild(rb); bar.appendChild(fb);
+    const card = document.getElementById('quizCard');
+    card.parentNode.insertBefore(bar, card);
+  }
+}
+
 function wire(id, fn){ const el = document.getElementById(id); if (el) el.onclick = fn; }
 wire('restartBtn', () => start(BANK, false));
 wire('reviewMissedBtn', () => start(missed, true));
@@ -374,9 +419,10 @@ wire('practiceWeakBtn', () => { const hist=loadJ('reqz_hist',{}); start(BANK.fil
 wire('practiceWeak2Btn', () => { const hist=loadJ('reqz_hist',{}); start(BANK.filter(q=>hist[q.id]&&(hist[q.id].weak||0)>0), false); });
 wire('backupBtn', backupHistory);
 wire('restoreBtn', restoreHistory);
+wire('resetBtn', resetProgress);
 flushQueue();
 
-start(BANK, false);
+boot();
 </script>
 
 <div id="bkModal" onclick="if(event.target===this)bkClose()">
