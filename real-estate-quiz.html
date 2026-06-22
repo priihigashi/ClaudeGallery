@@ -447,7 +447,12 @@ function bkNav(d){ if(!bkQ) return; const pages = Object.keys(bkQ.book.imgs).map
 function bkRender(){
   const b = bkQ.book, id = b.imgs[String(bkCur)];
   document.getElementById('bkTitle').textContent = 'Book — page ' + bkCur + (bkCur === b.page ? ' — where the answer is taught' : '');
-  document.getElementById('bkNote').textContent = b.auto ? 'This is the teaching page where the book explains this answer — the highlight marks the key text. Use the arrows to flip pages.' : 'Verified page reference.';
+  const hasHl = !!(bkCur === b.page && b.hl && b.hl.length);
+  document.getElementById('bkNote').textContent = b.auto
+    ? (hasHl
+        ? 'This is the teaching page where the book explains this answer — the highlight marks the key text. Use the arrows to flip pages.'
+        : 'This is the teaching page where the book explains this answer (page ' + b.page + '). The exact line isn’t pinpointed on this page yet — read the full page; use the arrows to flip pages.')
+    : 'Verified page reference.';
   const wrap = document.getElementById('bkImgWrap');
   wrap.querySelectorAll('.bkhl').forEach(e => e.remove());
   const img = document.getElementById('bkImg');
