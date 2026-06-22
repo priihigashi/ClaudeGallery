@@ -88,9 +88,14 @@
   #pdfHead{ display:flex; gap:8px; align-items:center; padding:9px 12px; border-bottom:1px solid var(--line); flex-wrap:wrap; }
   #pdfHead b{ flex:1; font-size:.9em; min-width:120px; }
   #pdfNote{ font-size:.74em; color:var(--muted); padding:7px 12px; background:#fafbfd; }
+  #pdfSearchInfo{ font-size:.8em; padding:7px 12px; background:#eef7ee; border-bottom:1px solid var(--line); }
   #pdfFrameWrap{ flex:1; position:relative; background:#525659; }
   #pdfFrame{ width:100%; height:100%; border:0; }
+  #pdfText{ position:absolute; inset:0; overflow:auto; background:#fff; color:var(--ink); padding:18px; -webkit-overflow-scrolling:touch; }
+  #pdfText mark{ background:#ffe9a8; color:#000; padding:0 1px; border-radius:2px; }
+  #pdfSearch{ font:inherit; font-size:.82em; padding:6px 9px; border:1px solid var(--line); border-radius:7px; min-width:140px; }
   .pdfBtn{ font:inherit; font-size:.82em; padding:6px 10px; border:1px solid var(--line); border-radius:7px; background:#fff; cursor:pointer; }
+  .pdfBtn.on{ background:var(--navy); color:#fff; border-color:var(--navy); }
   .disclose{ font-size:.76em; color:var(--muted); margin-top:8px; }
   a{ color:var(--blue); }
   @media (max-width:480px){ .qtext{ font-size:1.1em; } .card{ padding:14px; } }
@@ -221,13 +226,19 @@
   <div id="pdfBox">
     <div id="pdfHead">
       <b id="pdfTitle"></b>
-      <button class="pdfBtn" id="pdfPrev">◀ Prev page</button>
-      <button class="pdfBtn" id="pdfNext">Next page ▶</button>
+      <input id="pdfSearch" type="text" placeholder="🔎 Search this page…" aria-label="Search official text on this page" autocomplete="off" spellcheck="false">
+      <button class="pdfBtn" id="pdfViewToggle">🔤 Text view</button>
+      <button class="pdfBtn" id="pdfPrev">◀ Prev</button>
+      <button class="pdfBtn" id="pdfNext">Next ▶</button>
       <button class="pdfBtn" id="pdfOpen">↗ Open official PDF</button>
       <button class="pdfBtn" style="border-color:var(--red);color:var(--red)" onclick="pdfClose()">Close</button>
     </div>
     <div id="pdfNote"></div>
-    <div id="pdfFrameWrap"><iframe id="pdfFrame" title="Official USCIS PDF"></iframe></div>
+    <div id="pdfSearchInfo" style="display:none"></div>
+    <div id="pdfFrameWrap">
+      <iframe id="pdfFrame" title="Official USCIS PDF"></iframe>
+      <div id="pdfText" style="display:none"></div>
+    </div>
   </div>
 </div>
 
@@ -656,14 +667,65 @@ function importProgress(){
 }
 
 /* ============ PDF MODAL (by immutable question id — never global mutable state) ============ */
-let pdfState=null; // {url, page, which, qid}
+let pdfState=null; // {baseUrl, page, which, qid, view:'image'|'text', query}
 function openPdf(id, which){
   const q=BYID[id]; if(!q) return;
   const url = which==='guide' ? DATA.sources.guide : q.sourceUrl;
   const page = which==='guide' ? q.studyGuidePage : q.officialPdfPage;
-  pdfState={ baseUrl:url, page:page, which:which, qid:id };
+  pdfState={ baseUrl:url, page:page, which:which, qid:id, view:'image', query:'' };
+  const si=document.getElementById('pdfSearch'); if(si) si.value='';
+  document.getElementById('pdfSearchInfo').style.display='none';
   document.getElementById('pdfModal').classList.add('open');
   pdfRender();
+}
+// the official questions whose verified text lives on this page (Q&A pdf) or this teaching chapter (guide)
+function pdfPageQuestions(){
+  const p=pdfState.page, which=pdfState.which;
+  return BANK.filter(q => (which==='guide'? q.studyGuidePage : q.officialPdfPage) === p)
+             .sort((a,b)=>a.questionNumber-b.questionNumber);
+}
+function pdfHL(text){
+  const e=esc(text); const q=(pdfState.query||'').trim(); if(!q) return e;
+  try{ const rx=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'); return e.replace(rx,'<mark>$1</mark>'); }
+  catch(_){ return e; }
+}
+function renderPdfText(){
+  const box=document.getElementById('pdfText'); const qs=pdfPageQuestions();
+  if(!qs.length){ box.innerHTML='<p style="color:var(--muted)">No official question text is mapped to this exact page. Use the page image or “Open official PDF”.</p>'; return 0; }
+  let html='<p style="font-size:.8em;color:var(--muted);margin:0 0 14px">Exact official USCIS text mapped to this page — type above to highlight a keyword.</p>';
+  for(const it of qs){
+    html += '<div style="margin:0 0 16px;padding-bottom:12px;border-bottom:1px solid var(--line)">'+
+      '<div style="font-weight:600">#'+it.questionNumber+'. '+pdfHL(it.officialQuestion)+(it.special65_20?' <span class="tag star" style="font-size:.7em">★ 65/20</span>':'')+'</div>'+
+      '<ul style="margin:6px 0 0;padding-left:20px">'+
+      it.acceptedAnswers.map(a=>'<li>'+pdfHL(a)+'</li>').join('')+
+      (it.currentAnswer?'<li style="color:var(--red)"><i>Current ('+esc(it.lastVerified)+'): '+pdfHL(it.currentAnswer)+'</i></li>':'')+
+      '</ul></div>';
+  }
+  box.innerHTML=html;
+  return box.querySelectorAll('mark').length;
+}
+function applyPdfView(){
+  const isText = pdfState.view==='text';
+  document.getElementById('pdfFrame').style.display = isText?'none':'block';
+  document.getElementById('pdfText').style.display = isText?'block':'none';
+  const tb=document.getElementById('pdfViewToggle');
+  tb.textContent = isText?'🖼 Page image':'🔤 Text view'; tb.classList.toggle('on', isText);
+}
+function pdfToggleView(){ pdfState.view = pdfState.view==='text'?'image':'text'; if(pdfState.view==='text') renderPdfText(); applyPdfView(); }
+function pdfSearch(){
+  if(!pdfState) return;
+  pdfState.query=(document.getElementById('pdfSearch').value||'').trim();
+  const info=document.getElementById('pdfSearchInfo');
+  if(!pdfState.query){ info.style.display='none'; if(pdfState.view==='text') renderPdfText(); return; }
+  // keyword highlighting is reliable only on the verified text, so switch to Text view to show it
+  pdfState.view='text'; const n=renderPdfText(); applyPdfView();
+  // bonus: also hint the native viewer (honored by some browsers, ignored by others)
+  document.getElementById('pdfFrame').src = pdfState.baseUrl+'#page='+pdfState.page+'&view=FitH&search='+encodeURIComponent(pdfState.query);
+  info.style.display='block';
+  info.style.background = n?'#eef7ee':'#fff7e6';
+  info.innerHTML = n
+    ? '✅ Highlighted <b>'+n+'</b> match'+(n===1?'':'es')+' for “'+esc(pdfState.query)+'” in the official text on this page.'
+    : 'No matches for “'+esc(pdfState.query)+'” in the official text on this page — try ◀ Prev / Next ▶ to search other pages.';
 }
 function pdfRender(){
   if(!pdfState) return;
@@ -675,11 +737,14 @@ function pdfRender(){
   document.getElementById('pdfNote').innerHTML =
     'Showing the <b>full official page '+pdfState.page+'</b>'+
     (which==='guide'? ' — the teaching chapter ('+esc(q.studyGuideChapter||'')+') where this is explained.' : ' for question #'+q.questionNumber+'.')+
-    ' We deliberately do <b>not</b> draw a highlight box — exact line coordinates are not pixel-verified, and a wrong box would mislead you. Read the page to find the exact wording. '+
-    'If the embedded view does not load, use <b>↗ Open official PDF</b>.';
-  const full = pdfState.baseUrl + '#page=' + pdfState.page + '&view=FitH';
+    ' No highlight box is drawn on the image (exact line coordinates are not pixel-verified). For keyword highlighting, use <b>🔤 Text view</b> / the search box — it highlights the exact official wording. '+
+    'If the embedded image does not load, use <b>↗ Open official PDF</b>.';
+  const full = pdfState.baseUrl + '#page=' + pdfState.page + '&view=FitH' + (pdfState.query?('&search='+encodeURIComponent(pdfState.query)):'');
   document.getElementById('pdfFrame').src = full;
   document.getElementById('pdfOpen').onclick = ()=>window.open(full,'_blank','noopener');
+  renderPdfText();
+  applyPdfView();
+  if(pdfState.query) pdfSearch();
 }
 function pdfNav(d){
   if(!pdfState) return;
@@ -780,6 +845,8 @@ wire('pdfQBtn', ()=>openPdf(order[idx].id,'q'));
 wire('pdfGBtn', ()=>openPdf(order[idx].id,'guide'));
 wire('pdfPrev', ()=>pdfNav(-1));
 wire('pdfNext', ()=>pdfNav(1));
+wire('pdfViewToggle', pdfToggleView);
+(function(){ const ps=document.getElementById('pdfSearch'); if(ps){ ps.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); pdfSearch(); } }); ps.addEventListener('input', ()=>{ if(!ps.value.trim()) pdfSearch(); }); } })();
 wire('restartBtn', ()=>start(BANK,{}));
 wire('reviewMissedBtn', ()=>start(missed,{retry:true}));
 wire('statsBtn2', showStats);

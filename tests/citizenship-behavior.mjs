@@ -95,6 +95,20 @@ E("openPdf('uscis-038','guide')");
 T('guide PDF opens at TEACHING page (not index)', w.document.getElementById('pdfFrame').src.includes('#page=' + E("BYID['uscis-038'].studyGuidePage")));
 T('guide note mentions teaching chapter', w.document.getElementById('pdfNote').innerHTML.includes('teaching chapter'));
 
+console.log('\n[7b] PDF popup keyword search (highlights verified official text)');
+E("openPdf('uscis-103','q')");  // Q103 What was the Great Depression -> 128 Q&A page 15
+T('text view lists questions mapped to the page', E('pdfPageQuestions().length') >= 1);
+w.document.getElementById('pdfSearch').value = 'depression';
+E('pdfSearch()');
+T('search switches to Text view', E("pdfState.view") === 'text');
+T('search highlights >=1 match (<mark>)', w.document.querySelectorAll('#pdfText mark').length >= 1);
+T('search info reports matches', w.document.getElementById('pdfSearchInfo').innerHTML.includes('Highlighted'));
+w.document.getElementById('pdfSearch').value = 'zzzznotfound';
+E('pdfSearch()');
+T('no-match shows honest "No matches" note', w.document.getElementById('pdfSearchInfo').innerHTML.includes('No matches'));
+T('toggle back to image view works', (E('pdfToggleView()'), E("pdfState.view")) === 'image');
+E('pdfClose()');
+
 console.log('\n[8] Reset isolation (uscisQuiz_* only)');
 E('resetProgress()');
 T('reqz_hist (real-estate quiz) SURVIVES', w.localStorage.getItem('reqz_hist') !== null);
