@@ -15,18 +15,15 @@
  * On first save it auto-creates a sheet called "Study Progress Sync" in your Drive.
  */
 
-var SHEET_TITLE = 'Study Progress Sync';
+// The "Study Progress Sync" sheet (already created in the Studies drive).
+var SHEET_ID = '1ECBcw0Ycc5RGZ2-fRzjLbzn52rLUZCGrZby5lYvM9Xk';
 var TAB = 'Sync';
 var HEADERS = ['profile', 'passHash', 'updated', 'citizenship', 'realestate'];
 
 function getSheet_() {
-  var props = PropertiesService.getScriptProperties();
-  var id = props.getProperty('SHEET_ID');
-  var ss = null;
-  if (id) { try { ss = SpreadsheetApp.openById(id); } catch (e) { id = null; } }
-  if (!ss) { ss = SpreadsheetApp.create(SHEET_TITLE); props.setProperty('SHEET_ID', ss.getId()); }
-  var sh = ss.getSheetByName(TAB);
-  if (!sh) { sh = ss.insertSheet(TAB); sh.appendRow(HEADERS); }
+  var ss = SpreadsheetApp.openById(SHEET_ID);
+  var sh = ss.getSheetByName(TAB) || ss.insertSheet(TAB);
+  if (sh.getLastRow() === 0) sh.appendRow(HEADERS);
   return sh;
 }
 

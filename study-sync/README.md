@@ -12,9 +12,15 @@ quizzes (separate columns), so it doesn't create a cluster of spreadsheets.
   instead of overwriting each other. Apps Script can't send CORS headers, hence JSONP.
 - Each profile is protected by a **passphrase**, stored only as a SHA-256 hash.
 
+Sheet (already created, in the Studies drive):
+https://docs.google.com/spreadsheets/d/1ECBcw0Ycc5RGZ2-fRzjLbzn52rLUZCGrZby5lYvM9Xk/edit
+
 ## One-time setup (~3 minutes, once ever)
+0. Make sure you're signed into the **Google account that owns the Studies drive**
+   (priscila@oakpark-construction.com) — the script reads/writes the sheet above.
 1. Go to **script.google.com** → **New project**.
 2. Delete the default code, paste the contents of [`study-sync.gs`](study-sync.gs), Save.
+   (The sheet ID is already filled in.)
 3. **Deploy → New deployment**. Click the gear → **Web app**.
 4. **Execute as: Me** · **Who has access: Anyone** → **Deploy**.
 5. **Authorize access** → choose your Google account → Allow (you may see an "unverified app"
