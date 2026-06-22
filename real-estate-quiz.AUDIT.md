@@ -35,15 +35,20 @@ This is the project's source of truth for *how it's built and deployed* and *wha
   - Scoring fix (log original round, trend excludes recoveries) + `verificationBasis` on all 30 + Ch14-02 Miami-Dade wording + Ch14-03 $2,450 cap note. `9ee1aee`
   - Ch14-03 wording made precise (note cap $2,450; recorded FL mortgage taxed once, uncapped). `54e719b`
   - **Correction:** earlier reports wrongly called exact-page mapping "blocked / needs Vision API." It is not — the searchable book is local and PyMuPDF is installed (verified). OPEN items below rewritten accordingly.
+  - Exact-page mapping pass run via PyMuPDF (per-page printed-number detection from headers, all 5 chapters anchor-validated, chapter-restricted multi-keyword search). **17/30** `ax-` questions got exact verified printed pages; **13** stayed low-confidence and were left unchanged. `b7b40b5`
 
 ## Reporting & verification discipline (to prevent the mistakes that triggered this correction)
 - **No blocker claim without a probe.** Before writing "blocked / requires / not possible / pending," run the real check (`ls` the path, import the tool, open the file) and keep the evidence. Rule #1 of the global CLAUDE.md; do not skip it.
 - **Headline must match the body.** Each item gets one label only — ✅ Done (verified by a check actually run) · 🟡 Open (with the real reason) · 🔴 Blocked (with tested proof). A summary may say "done" only if every sub-item is ✅. Never pair "all closed" with a 🟡.
 - **"Verified live" means a check was run** against the deployed artifact — never "should work."
 
+## Exact-page mapping — status (2026-06-22)
+- **Method:** local `English RE Sales Associate SalesPreBook.pdf` (628 pp) + PyMuPDF. Printed page numbers read **per page** from the running header (number leads on even pages, trails on odd; offset is +7 but detection is per-page, not assumed). Search restricted to each question's chapter window (from `CHPAGE`); a page must contain **≥2 distinct signature terms**; all 5 priority chapters passed ≥3 anchor checks against existing scanned `book.page` values.
+- **Result: 17/30 high-confidence → exact pages deployed** (`b7b40b5`). Each carries `printedPage`, `pdfPageIndex` (kept distinct), `bookPage` (display), and a "(exact page verified)" `verificationBasis`.
+  - Ch10: 01→164, 02→170, 03→174, 04→174, 05→164 · Ch11: 01→182, 02→202, 03→202, 05→182 · Ch12: 01→210, 04→216, 05→208 · Ch14: 02→266, 04→266, 05→274, 06→262 · Ch16: 03→302
+- **13 low-confidence → left UNCHANGED** (still broad curriculum refs; no fabricated pages): `ax-ch10-06, ax-ch11-04, ax-ch11-06, ax-ch12-02, ax-ch12-03, ax-ch12-06, ax-ch14-01, ax-ch14-03, ax-ch16-01, ax-ch16-02, ax-ch16-04, ax-ch16-05, ax-ch16-06`.
+  - Causes: keyword tie across pages, single-keyword match, or **no in-chapter match** (e.g. negative amortization / progression-regression likely taught in a neighboring chapter than the one the question is tagged to). A future targeted pass can widen to adjacent chapters and use the `SalesPreChapterHighlights 14thEd.pdf` to pinpoint teaching passages.
+
 ## OPEN audit items
-- **Exact-page mapping for the 30 `ax-` questions is NOT complete — but NOT blocked.** Current `verificationBasis` cites statutes for the FL-tax and Statute-of-Frauds items; the rest use broad chapter + approximate chapter-start page (e.g. "Ch 10, book p.163+"), which are curriculum references, not exact per-concept citations.
-  - **Source is local and searchable** (correcting an earlier wrong "blocked" claim): `/Users/priscilahigashi/REAL ESTATE STUDIES/01 Book/English RE Sales Associate SalesPreBook.pdf` (628 pp, unencrypted) + siblings, plus `Table of Contents w State Exam Question Percents.pdf`.
-  - **Tooling:** PyMuPDF 1.26.5 installed. `page.search_for(term)` returns page numbers **and** rectangles. No Vision API or OCR required for text-based pages.
-  - **Caveat to handle in the mapping pass:** PDF page index ≠ printed book page number — compute the offset before writing `book.page` so new citations match the existing scanned-question page scheme.
-- **Pixel-accurate highlights** for `ax-` questions and the 14 honest-note questions: NOT blocked either — `search_for()` rectangles (normalized by page width/height) can produce `hl` boxes from the local PDF without OCR. Still gated by priority: do the page-mapping pass first; add highlights for questions the user repeatedly misses or in high-weight chapters.
+- **13 low-confidence `ax-` page citations** (listed above) — re-run with adjacent-chapter search + chapter-highlights PDF; deploy only what clears the same high-confidence bar.
+- **Pixel-accurate highlights** for `ax-` questions and the 14 honest-note questions: NOT blocked — `search_for()` rectangles (normalized by page width/height) can produce `hl` boxes from the local PDF without OCR. Gated by priority: add for questions the user repeatedly misses or in high-weight chapters.
