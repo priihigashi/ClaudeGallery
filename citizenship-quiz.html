@@ -689,6 +689,7 @@ function importProgress(){
    profile + passphrase MERGE by unioning their answer logs, then deriving stats — so
    nothing is lost. No Google credentials are exposed; the endpoint is gated by your
    passphrase. Reads use JSONP (Apps Script can't send CORS headers); writes use POST. */
+const DEFAULT_SYNC_URL = 'https://script.google.com/macros/s/AKfycbzk1JgPOqxFKkeHDM7falfAGK4jXlmxZCq-exxz6m9KYGYPQEIHNFSpnaGNK_7ciYR7/exec';
 function syncCfg(){ return (loadJ(K.settings,{}).sync) || {}; }
 function saveSyncCfg(c){ const s=loadJ(K.settings,{}); s.sync=c; saveJ(K.settings,s); }
 function setSyncStatus(msg){ const el=document.getElementById('syncStatus'); if(el) el.textContent = msg?(' · '+msg):''; }
@@ -753,7 +754,7 @@ function pullSync(done){
 function renderSyncUI(){
   const c=syncCfg();
   const u=document.getElementById('syncUrl'), p=document.getElementById('syncProfile'), pw=document.getElementById('syncPass');
-  if(u && !u.value) u.value=c.url||''; if(p && !p.value) p.value=c.profile||''; if(pw && !pw.value) pw.value=c.pass||'';
+  if(u && !u.value) u.value=c.url||DEFAULT_SYNC_URL; if(p && !p.value) p.value=c.profile||''; if(pw && !pw.value) pw.value=c.pass||'';
   const on=!!c.on;
   document.getElementById('syncEnableBtn').style.display = on?'none':'inline-block';
   document.getElementById('syncNowBtn').style.display = on?'inline-block':'none';
