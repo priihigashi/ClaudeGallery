@@ -34,7 +34,16 @@ This is the project's source of truth for *how it's built and deployed* and *wha
   - +30 audited questions across Ch 10/11/12/14/16 (~40% of exam). Bank 241 → 271. `a8fb64e`
   - Scoring fix (log original round, trend excludes recoveries) + `verificationBasis` on all 30 + Ch14-02 Miami-Dade wording + Ch14-03 $2,450 cap note. `9ee1aee`
   - Ch14-03 wording made precise (note cap $2,450; recorded FL mortgage taxed once, uncapped). `54e719b`
+  - **Correction:** earlier reports wrongly called exact-page mapping "blocked / needs Vision API." It is not — the searchable book is local and PyMuPDF is installed (verified). OPEN items below rewritten accordingly.
+
+## Reporting & verification discipline (to prevent the mistakes that triggered this correction)
+- **No blocker claim without a probe.** Before writing "blocked / requires / not possible / pending," run the real check (`ls` the path, import the tool, open the file) and keep the evidence. Rule #1 of the global CLAUDE.md; do not skip it.
+- **Headline must match the body.** Each item gets one label only — ✅ Done (verified by a check actually run) · 🟡 Open (with the real reason) · 🔴 Blocked (with tested proof). A summary may say "done" only if every sub-item is ✅. Never pair "all closed" with a 🟡.
+- **"Verified live" means a check was run** against the deployed artifact — never "should work."
 
 ## OPEN audit items
-- **Exact-page mapping for the 30 `ax-` questions is NOT complete.** Current `verificationBasis` cites statutes for the FL-tax and Statute-of-Frauds items, but the rest use broad chapter + approximate chapter-start page (e.g. "Ch 10, book p.163+"). These are useful curriculum references, **not exact per-concept page citations.** Producing exact pages requires the Gold Coast SalesPreBook (14th ed.) page index/scans. Do not fabricate page numbers.
-- **Pixel-accurate highlights** for `ax-` questions and the 14 honest-note questions: parked. Trigger = a question the user repeatedly misses, or a high-weight chapter. Requires OCR of book page images (Vision API key pending).
+- **Exact-page mapping for the 30 `ax-` questions is NOT complete — but NOT blocked.** Current `verificationBasis` cites statutes for the FL-tax and Statute-of-Frauds items; the rest use broad chapter + approximate chapter-start page (e.g. "Ch 10, book p.163+"), which are curriculum references, not exact per-concept citations.
+  - **Source is local and searchable** (correcting an earlier wrong "blocked" claim): `/Users/priscilahigashi/REAL ESTATE STUDIES/01 Book/English RE Sales Associate SalesPreBook.pdf` (628 pp, unencrypted) + siblings, plus `Table of Contents w State Exam Question Percents.pdf`.
+  - **Tooling:** PyMuPDF 1.26.5 installed. `page.search_for(term)` returns page numbers **and** rectangles. No Vision API or OCR required for text-based pages.
+  - **Caveat to handle in the mapping pass:** PDF page index ≠ printed book page number — compute the offset before writing `book.page` so new citations match the existing scanned-question page scheme.
+- **Pixel-accurate highlights** for `ax-` questions and the 14 honest-note questions: NOT blocked either — `search_for()` rectangles (normalized by page width/height) can produce `hl` boxes from the local PDF without OCR. Still gated by priority: do the page-mapping pass first; add highlights for questions the user repeatedly misses or in high-weight chapters.
