@@ -205,7 +205,23 @@
       <button class="btn red sm" id="resetBtn">🗑️ Reset my progress</button>
       <button class="btn sm" id="statsBackBtn">← Back to quiz</button>
     </div>
-    <p class="disclose">⚠️ Progress is saved only in <b>this browser on this device</b>. It does not sync across phones/computers automatically. Use <b>Export</b> to move it between devices.</p>
+    <p class="disclose">⚠️ Progress is saved in <b>this browser on this device</b>. Refreshing keeps it. Use <b>Export</b> for a manual backup, or set up <b>cross-device sync</b> below.</p>
+
+    <div id="syncPanel" style="margin-top:14px;border-top:1px solid var(--line);padding-top:12px">
+      <h3 style="margin:0 0 4px">☁️ Cross-device sync<span id="syncStatus" style="font-size:.72em;color:var(--muted);font-weight:400"></span></h3>
+      <p style="font-size:.82em;color:var(--muted);margin:0 0 8px">Use the <b>same profile + passphrase</b> on your phone and laptop and your progress stays merged automatically. It's saved in <b>your own Google Drive</b> (one tiny sheet that doesn't pile up). One-time setup needed — see the link below.</p>
+      <div class="row" style="margin-bottom:6px"><input id="syncUrl" type="text" placeholder="Sync URL (paste once, from setup)" autocomplete="off" spellcheck="false" style="flex:1;min-width:200px;font:inherit;padding:8px;border:1px solid var(--line);border-radius:7px"></div>
+      <div class="row" style="margin-bottom:6px">
+        <input id="syncProfile" type="text" placeholder="Profile name" autocomplete="off" spellcheck="false" style="flex:1;min-width:120px;font:inherit;padding:8px;border:1px solid var(--line);border-radius:7px">
+        <input id="syncPass" type="text" placeholder="Passphrase" autocomplete="off" spellcheck="false" style="flex:1;min-width:120px;font:inherit;padding:8px;border:1px solid var(--line);border-radius:7px">
+      </div>
+      <div class="nav">
+        <button class="btn sm" id="syncEnableBtn">Enable &amp; sync now</button>
+        <button class="btn gray sm" id="syncNowBtn" style="display:none">⟳ Sync now</button>
+        <button class="btn gray sm" id="syncOffBtn" style="display:none">Turn off</button>
+      </div>
+      <p class="disclose">Private to your profile + passphrase (not bank-grade encryption — fine for a study app). No Google password or key is ever exposed. Don't reuse a sensitive password here.</p>
+    </div>
   </div>
 
   <!-- VOCAB -->
@@ -279,6 +295,7 @@ function logAnswer(q, ok, recovered, level, typed){
     typed: (typed||'').slice(0,200),  // stored for review only — never overwrites official answers
     exam: !!examCfg, mc: mcMode, mode: MODE, ts:Date.now(), iso:new Date().toISOString() };
   const log = loadJ(K.log, []); log.push(rec); while(log.length>6000) log.shift(); saveJ(K.log, log);
+  if(typeof schedulePush==='function') schedulePush();   // debounced cross-device sync (no-op unless enabled)
 }
 
 /* ====== typed-answer auto-check (a STUDY HINT only — self-grade is the official score) ====== */
@@ -351,7 +368,7 @@ function checkTyped(){
   return r;
 }
 // Sessions: first-pass rounds have retry:false (counted in trends); recovery rounds retry:true (excluded)
-function logSession(rec){ const s = loadJ(K.sessions, []); s.push(rec); while(s.length>120) s.shift(); saveJ(K.sessions, s); }
+function logSession(rec){ const s = loadJ(K.sessions, []); s.push(rec); while(s.length>120) s.shift(); saveJ(K.sessions, s); if(typeof schedulePush==='function') schedulePush(); }
 
 /* ============ HELPERS ============ */
 function esc(s){ const d=document.createElement('div'); d.textContent = (s==null?'':String(s)); return d.innerHTML; }
@@ -666,6 +683,95 @@ function importProgress(){
   inp.click();
 }
 
+/* ============ CROSS-DEVICE SYNC (optional, opt-in) ============
+   Snapshot model: ONE row per profile in a private Google-Apps-Script-backed sheet in
+   YOUR Drive, overwritten each sync (never accumulates). Two devices using the same
+   profile + passphrase MERGE by unioning their answer logs, then deriving stats — so
+   nothing is lost. No Google credentials are exposed; the endpoint is gated by your
+   passphrase. Reads use JSONP (Apps Script can't send CORS headers); writes use POST. */
+function syncCfg(){ return (loadJ(K.settings,{}).sync) || {}; }
+function saveSyncCfg(c){ const s=loadJ(K.settings,{}); s.sync=c; saveJ(K.settings,s); }
+function setSyncStatus(msg){ const el=document.getElementById('syncStatus'); if(el) el.textContent = msg?(' · '+msg):''; }
+
+// derive per-question history from the (merged) answer log — keeps cross-device merge correct
+function rebuildHistFromLog(log){
+  const h={};
+  for(const r of log){
+    const id=r.questionId; if(!id) continue;
+    const e=h[id]||{seen:0,miss:0,weak:0,rec:0};
+    e.seen++; if(!r.isCorrect){ e.miss++; if(r.retry||r.attemptNumber===2) e.weak++; }
+    if(r.recovered) e.rec++; if(r.grade==='almost') e.almost=(e.almost||0)+1;
+    e.last=r.isCorrect?1:0; e.t=r.ts||e.t; h[id]=e;
+  }
+  return h;
+}
+function _logKey(r){ return (r.questionId||'')+'|'+(r.ts||'')+'|'+(r.grade||'')+'|'+(r.attemptNumber||''); }
+function mergeRemote(remote){
+  if(!remote || typeof remote!=='object') return false;
+  // union answer logs (dedup by event key)
+  const seen=new Set(), mergedLog=[];
+  for(const r of loadJ(K.log,[]).concat(remote.log||[])){ const k=_logKey(r); if(seen.has(k)) continue; seen.add(k); mergedLog.push(r); }
+  mergedLog.sort((a,b)=>(a.ts||0)-(b.ts||0)); while(mergedLog.length>8000) mergedLog.shift();
+  // union sessions (dedup by t+n+r+retry)
+  const sseen=new Set(), mergedSess=[];
+  for(const s of loadJ(K.sessions,[]).concat(remote.sessions||[])){ const k=(s.t||'')+'|'+(s.n||'')+'|'+(s.r||'')+'|'+(s.retry?1:0); if(sseen.has(k)) continue; sseen.add(k); mergedSess.push(s); }
+  mergedSess.sort((a,b)=>(a.t||0)-(b.t||0)); while(mergedSess.length>200) mergedSess.shift();
+  saveJ(K.log, mergedLog); saveJ(K.sessions, mergedSess); saveJ(K.hist, rebuildHistFromLog(mergedLog));
+  return true;
+}
+
+let _pushTimer=null;
+function schedulePush(){ const c=syncCfg(); if(!c.on||!c.url||!c.profile) return; clearTimeout(_pushTimer); _pushTimer=setTimeout(pushSync, 1500); }
+function pushSync(){
+  const c=syncCfg(); if(!c.on||!c.url||!c.profile) return;
+  const payload={ action:'save', app:'citizenship', profile:c.profile, pass:c.pass, updated:Date.now(),
+    blob: JSON.stringify({ hist:loadJ(K.hist,{}), sessions:loadJ(K.sessions,[]), log:loadJ(K.log,[]) }) };
+  try{
+    fetch(c.url,{ method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(payload) })
+      .then(()=>{ const cc=syncCfg(); cc.lastPush=Date.now(); saveSyncCfg(cc); setSyncStatus('saved ✓'); })
+      .catch(()=>setSyncStatus('save failed (offline?)'));
+  }catch(e){ setSyncStatus('save failed'); }
+}
+function pullSync(done){
+  const c=syncCfg(); if(!c.url||!c.profile){ if(done) done(false); return; }
+  const cbName='__uscisSyncCb'; let finished=false; let s=null;
+  const cleanup=()=>{ try{ if(s&&s.parentNode) s.parentNode.removeChild(s); }catch(_){} };
+  window[cbName]=function(resp){
+    if(finished) return; finished=true;
+    try{
+      if(resp && resp.ok && resp.blob){ mergeRemote(JSON.parse(resp.blob)); const cc=syncCfg(); cc.lastPull=Date.now(); saveSyncCfg(cc); setSyncStatus('synced ✓'); if(typeof showStats==='function' && document.getElementById('statsCard').style.display!=='none') showStats(); if(done) done(true); }
+      else if(resp && resp.ok && resp.empty){ setSyncStatus('synced ✓ (nothing saved yet)'); if(done) done(true); }
+      else { setSyncStatus(resp&&resp.error?('sync: '+resp.error):'sync failed'); if(done) done(false); }
+    } finally { cleanup(); }
+  };
+  s=document.createElement('script');
+  s.src=c.url+'?action=load&app=citizenship&profile='+encodeURIComponent(c.profile)+'&pass='+encodeURIComponent(c.pass)+'&callback='+cbName+'&t='+Date.now();
+  s.onerror=()=>{ if(finished) return; finished=true; setSyncStatus('sync failed (check URL)'); cleanup(); if(done) done(false); };
+  document.body.appendChild(s);
+  setTimeout(()=>{ if(!finished){ finished=true; setSyncStatus('sync timed out'); cleanup(); if(done) done(false); } }, 12000);
+}
+function renderSyncUI(){
+  const c=syncCfg();
+  const u=document.getElementById('syncUrl'), p=document.getElementById('syncProfile'), pw=document.getElementById('syncPass');
+  if(u && !u.value) u.value=c.url||''; if(p && !p.value) p.value=c.profile||''; if(pw && !pw.value) pw.value=c.pass||'';
+  const on=!!c.on;
+  document.getElementById('syncEnableBtn').style.display = on?'none':'inline-block';
+  document.getElementById('syncNowBtn').style.display = on?'inline-block':'none';
+  document.getElementById('syncOffBtn').style.display = on?'inline-block':'none';
+  if(on && c.lastPull) setSyncStatus('on');
+}
+function enableSync(){
+  const url=(document.getElementById('syncUrl').value||'').trim();
+  const profile=(document.getElementById('syncProfile').value||'').trim();
+  const pass=(document.getElementById('syncPass').value||'').trim();
+  if(!url || !profile || !pass){ alert('Enter the Sync URL, a profile name, and a passphrase.'); return; }
+  saveSyncCfg({ url, profile, pass, on:true });
+  renderSyncUI(); setSyncStatus('connecting…');
+  pullSync(ok=>{ pushSync(); }); // merge what's there, then push our merged state up
+}
+function syncOff(){ const c=syncCfg(); c.on=false; saveSyncCfg(c); renderSyncUI(); setSyncStatus('off'); }
+function syncNow(){ setSyncStatus('syncing…'); pullSync(ok=>{ pushSync(); }); }
+
 /* ============ PDF MODAL (by immutable question id — never global mutable state) ============ */
 let pdfState=null; // {baseUrl, page, which, qid, view:'image'|'text', query}
 function openPdf(id, which){
@@ -859,12 +965,18 @@ wire('vWriteBtn', ()=>renderVocab('writing'));
 wire('vocabBackBtn', ()=>start(BANK,{}));
 wire('versionBtn', ()=>{ const c=document.getElementById('versionCard'); c.style.display = c.style.display==='none'?'block':'none'; });
 wire('checkVersionBtn', checkVersion);
+wire('syncEnableBtn', enableSync);
+wire('syncNowBtn', syncNow);
+wire('syncOffBtn', syncOff);
+renderSyncUI();
 
 function boot(){
   buildModeBar();
   document.querySelector('.modebar .mode').classList.add('active'); // learn
   const c=loadJ(K.current, null);
   start(BANK,{}); // fresh learn round ready; idx0 guard keeps it from clobbering saved round
+  // if cross-device sync is on, pull + merge in the background on load
+  try{ const sc=syncCfg(); if(sc.on && sc.url && sc.profile) pullSync(); }catch(e){}
   if(c && c.ids && c.ids.length && (c.idx||0)<c.ids.length && ((c.idx||0)>0 || c.right>0 || c.wrong>0)){
     const pos=Math.min((c.idx||0)+1, c.ids.length);
     const bar=document.createElement('div');

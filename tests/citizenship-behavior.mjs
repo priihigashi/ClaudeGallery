@@ -139,6 +139,40 @@ T('stats render with old sessions (no crash)', w2.document.getElementById('stats
 w2.eval("resume({ids:['uscis-001','uscis-002','uscis-003'],idx:1,right:1,wrong:0,missed:[],t:1})");
 T('old saved round resumes to correct position', w2.eval('idx') === 1 && w2.eval('order.length') === 3);
 
+console.log('\n[10b] Cross-device sync: merge unions logs + rebuilds stats, never clobbers');
+// rebuildHistFromLog derives stats from events
+const hist = E(`rebuildHistFromLog([
+  {questionId:'uscis-001',isCorrect:true,attemptNumber:1,ts:10,grade:'right'},
+  {questionId:'uscis-001',isCorrect:false,attemptNumber:1,ts:20,grade:'missed'},
+  {questionId:'uscis-001',isCorrect:false,attemptNumber:2,retry:true,ts:30,grade:'missed'}
+])`);
+T('rebuildHistFromLog counts seen/miss/weak', hist['uscis-001'].seen === 3 && hist['uscis-001'].miss === 2 && hist['uscis-001'].weak === 1);
+// mergeRemote unions device A (local) + device B (remote) without losing either
+E("saveJ(K.log, [{questionId:'uscis-005',isCorrect:true,attemptNumber:1,ts:100,grade:'right'}]); saveJ(K.sessions,[{t:100,n:5,r:5,retry:false}]); saveJ(K.hist,{})");
+E("mergeRemote({ log:[{questionId:'uscis-006',isCorrect:false,attemptNumber:1,ts:200,grade:'missed'}], sessions:[{t:200,n:5,r:3,retry:false}] })");
+const mlog = JSON.parse(w.localStorage.getItem('uscisQuiz_log'));
+T('merge keeps BOTH devices events (no data loss)', mlog.some(r=>r.questionId==='uscis-005') && mlog.some(r=>r.questionId==='uscis-006'));
+T('merge dedups identical events', (E("mergeRemote({log:[{questionId:'uscis-005',isCorrect:true,attemptNumber:1,ts:100,grade:'right'}]})"), JSON.parse(w.localStorage.getItem('uscisQuiz_log')).filter(r=>r.questionId==='uscis-005').length) === 1);
+const msess = JSON.parse(w.localStorage.getItem('uscisQuiz_sessions'));
+T('merge unions sessions from both devices', msess.length === 2);
+
+console.log('\n[10c] Sync settings + UI (opt-in, off by default, no network unless enabled)');
+T('sync OFF by default (no auto-push config)', E("syncCfg().on") !== true);
+E("enableSync_TEST=1"); // mark
+w.document.getElementById('syncUrl').value = 'https://script.google.com/macros/s/ABC/exec';
+w.document.getElementById('syncProfile').value = 'pri';
+w.document.getElementById('syncPass').value = 'lemon42';
+// stub network so enableSync doesn't actually fetch/JSONP
+w.fetch = () => Promise.resolve({});
+const origAppend = w.document.body.appendChild.bind(w.document.body);
+w.document.body.appendChild = function(n){ if(n && n.tagName === 'SCRIPT' && /action=load/.test(n.src||'')) { return n; } return origAppend(n); };
+E('enableSync()');
+T('enableSync stores url+profile+pass and turns on', E("syncCfg().on") === true && E("syncCfg().profile") === 'pri');
+T('Sync-now + Turn-off buttons revealed', w.document.getElementById('syncNowBtn').style.display !== 'none');
+E('syncOff()');
+T('syncOff turns sync off (stops pushing)', E("syncCfg().on") === false);
+w.document.body.appendChild = origAppend;
+
 console.log('\n[11] No runtime errors');
 T('no jsdom/script errors', errs.length === 0); if (errs.length) console.log('   ', errs.slice(0, 3));
 
