@@ -115,6 +115,21 @@
       <button class="btn gray" id="resetBtn" style="border-color:#c62828;color:#c62828">🗑️ Reset my progress</button>
       <button class="btn" id="statsBackBtn">← Back to quiz</button>
     </div>
+    <div id="syncPanel" style="margin-top:14px;border-top:1px solid #ddd;padding-top:12px">
+      <h3 style="margin:0 0 4px">☁️ Cross-device sync<span id="syncStatus" style="font-size:.72em;color:#888;font-weight:400"></span></h3>
+      <p style="font-size:.82em;color:#888;margin:0 0 8px">Use the <b>same profile + passphrase</b> on your phone and laptop and your progress stays merged automatically. Saved in <b>your own Google Drive</b> (one tiny sheet, shared with the citizenship quiz — no clutter). The URL is pre-filled.</p>
+      <div style="margin-bottom:6px"><input id="syncUrl" type="text" placeholder="Sync URL (pre-filled)" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;font:inherit;padding:8px;border:1px solid #bbb;border-radius:7px"></div>
+      <div style="display:flex;gap:6px;margin-bottom:6px;flex-wrap:wrap">
+        <input id="syncProfile" type="text" placeholder="Profile name" autocomplete="off" spellcheck="false" style="flex:1;min-width:120px;font:inherit;padding:8px;border:1px solid #bbb;border-radius:7px">
+        <input id="syncPass" type="text" placeholder="Passphrase" autocomplete="off" spellcheck="false" style="flex:1;min-width:120px;font:inherit;padding:8px;border:1px solid #bbb;border-radius:7px">
+      </div>
+      <div class="nav">
+        <button class="btn" id="syncEnableBtn">Enable &amp; sync now</button>
+        <button class="btn gray" id="syncNowBtn" style="display:none">⟳ Sync now</button>
+        <button class="btn gray" id="syncOffBtn" style="display:none">Turn off</button>
+      </div>
+      <p style="font-size:.72em;color:#999;margin:6px 0 0">Private to your profile + passphrase (not bank-grade encryption — fine for a study app). No Google password or key is exposed. Don't reuse a sensitive password.</p>
+    </div>
   </div>
 
 </div>
@@ -133,7 +148,7 @@ let examMode = false, examTimer = null, examSecs = 0;
 
 function loadJ(k,d){ try { return JSON.parse(localStorage.getItem(k)) || d; } catch(e){ return d; } }
 let storageWarned = false;
-function saveJ(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){
+function saveJ(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); if(typeof schedulePush==='function') schedulePush(); } catch(e){
   if(!storageWarned){ storageWarned = true; try{ alert('⚠️ Your browser is not saving progress (storage full or private mode). Use Backup history to keep your data.'); }catch(_){} } } }
 
 function logAnswer(q, sel, ok, recovered){
@@ -544,6 +559,102 @@ function bsShow(){
   var b=document.getElementById('searchBookBtn'); if(b) b.onclick=bsOpen;
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') bsClose(); });
 })();
+</script>
+<script>
+/* ===== Cross-device sync — same backend + sheet as the citizenship quiz, app='realestate'.
+   Snapshot blob per profile; reads merge (union logs + sessions, rebuild stats, never shrink). ===== */
+const DEFAULT_SYNC_URL = 'https://script.google.com/macros/s/AKfycbzk1JgPOqxFKkeHDM7falfAGK4jXlmxZCq-exxz6m9KYGYPQEIHNFSpnaGNK_7ciYR7/exec';
+function syncCfg(){ return (loadJ('reqz_settings',{}).sync) || {}; }
+function saveSyncCfg(c){ const s=loadJ('reqz_settings',{}); s.sync=c; saveJ('reqz_settings',s); }
+function setSyncStatus(msg){ const el=document.getElementById('syncStatus'); if(el) el.textContent = msg?(' · '+msg):''; }
+function rebuildHistFromLog(log){
+  const h={};
+  for(const r of log){
+    const id=r.questionId; if(!id) continue;
+    const e=h[id]||{s:0,w:0,weak:0,rec:0};
+    e.s++; if(!r.isCorrect){ e.w++; if(r.attemptNumber===2) e.weak++; }
+    if(r.recoveredOnFinalAttempt) e.rec++;
+    e.last=r.isCorrect?1:0; e.t=r.ts||e.t; h[id]=e;
+  }
+  return h;
+}
+function _maxHist(a,b){ // field-wise max so progress can NEVER shrink on merge
+  const out=Object.assign({},a);
+  for(const id in b){ const x=out[id]||{s:0,w:0,weak:0,rec:0}, y=b[id]||{};
+    out[id]={ s:Math.max(x.s||0,y.s||0), w:Math.max(x.w||0,y.w||0), weak:Math.max(x.weak||0,y.weak||0),
+              rec:Math.max(x.rec||0,y.rec||0), last:((y.t||0)>(x.t||0))?(y.last):(x.last), t:Math.max(x.t||0,y.t||0) }; }
+  return out;
+}
+function _logKey(r){ return (r.questionId||'')+'|'+(r.ts||'')+'|'+(r.attemptNumber||''); }
+function mergeRemote(remote){
+  if(!remote || typeof remote!=='object') return false;
+  const seen=new Set(), mergedLog=[];
+  for(const r of loadJ('reqz_log',[]).concat(remote.log||[])){ const k=_logKey(r); if(seen.has(k)) continue; seen.add(k); mergedLog.push(r); }
+  mergedLog.sort((a,b)=>(a.ts||0)-(b.ts||0)); while(mergedLog.length>8000) mergedLog.shift();
+  const sseen=new Set(), mergedSess=[];
+  for(const s of loadJ('reqz_sessions',[]).concat(remote.sessions||[])){ const k=(s.t||'')+'|'+(s.n||'')+'|'+(s.r||'')+'|'+(s.retry?1:0); if(sseen.has(k)) continue; sseen.add(k); mergedSess.push(s); }
+  mergedSess.sort((a,b)=>(a.t||0)-(b.t||0)); while(mergedSess.length>200) mergedSess.shift();
+  let hist=rebuildHistFromLog(mergedLog);
+  hist=_maxHist(hist, loadJ('reqz_hist',{}));              // never below this device
+  if(remote.hist) hist=_maxHist(hist, remote.hist);        // never below the server
+  saveJ('reqz_log',mergedLog); saveJ('reqz_sessions',mergedSess); saveJ('reqz_hist',hist);
+  return true;
+}
+let _pushTimer=null;
+function schedulePush(){ const c=syncCfg(); if(!c.on||!c.url||!c.profile) return; clearTimeout(_pushTimer); _pushTimer=setTimeout(pushSync,1500); }
+function pushSync(){
+  const c=syncCfg(); if(!c.on||!c.url||!c.profile) return;
+  const payload={ action:'save', app:'realestate', profile:c.profile, pass:c.pass, updated:Date.now(),
+    blob: JSON.stringify({ hist:loadJ('reqz_hist',{}), sessions:loadJ('reqz_sessions',[]), log:loadJ('reqz_log',[]) }) };
+  try{
+    fetch(c.url,{ method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(payload) })
+      .then(()=>{ const cc=syncCfg(); cc.lastPush=Date.now(); saveSyncCfg(cc); setSyncStatus('saved ✓'); })
+      .catch(()=>setSyncStatus('save failed (offline?)'));
+  }catch(e){ setSyncStatus('save failed'); }
+}
+function pullSync(done){
+  const c=syncCfg(); if(!c.url||!c.profile){ if(done) done(false); return; }
+  const cbName='__reqzSyncCb'; let finished=false, s=null;
+  const cleanup=()=>{ try{ if(s&&s.parentNode) s.parentNode.removeChild(s); }catch(_){} };
+  window[cbName]=function(resp){
+    if(finished) return; finished=true;
+    try{
+      if(resp && resp.ok && resp.blob){ mergeRemote(JSON.parse(resp.blob)); const cc=syncCfg(); cc.lastPull=Date.now(); saveSyncCfg(cc); setSyncStatus('synced ✓'); if(typeof showStats==='function' && document.getElementById('statsCard').style.display!=='none') showStats(); if(done) done(true); }
+      else if(resp && resp.ok && resp.empty){ setSyncStatus('synced ✓ (nothing saved yet)'); if(done) done(true); }
+      else { setSyncStatus(resp&&resp.error?('sync: '+resp.error):'sync failed'); if(done) done(false); }
+    } finally { cleanup(); }
+  };
+  s=document.createElement('script');
+  s.src=c.url+'?action=load&app=realestate&profile='+encodeURIComponent(c.profile)+'&pass='+encodeURIComponent(c.pass)+'&callback='+cbName+'&t='+Date.now();
+  s.onerror=()=>{ if(finished) return; finished=true; setSyncStatus('sync failed (check URL)'); cleanup(); if(done) done(false); };
+  document.body.appendChild(s);
+  setTimeout(()=>{ if(!finished){ finished=true; setSyncStatus('sync timed out'); cleanup(); if(done) done(false); } },12000);
+}
+function renderSyncUI(){
+  const c=syncCfg();
+  const u=document.getElementById('syncUrl'), p=document.getElementById('syncProfile'), pw=document.getElementById('syncPass');
+  if(u && !u.value) u.value=c.url||DEFAULT_SYNC_URL; if(p && !p.value) p.value=c.profile||''; if(pw && !pw.value) pw.value=c.pass||'';
+  const on=!!c.on;
+  const eb=document.getElementById('syncEnableBtn'), nb=document.getElementById('syncNowBtn'), ob=document.getElementById('syncOffBtn');
+  if(eb) eb.style.display=on?'none':'inline-block';
+  if(nb) nb.style.display=on?'inline-block':'none';
+  if(ob) ob.style.display=on?'inline-block':'none';
+  if(on && c.lastPull) setSyncStatus('on');
+}
+function enableSync(){
+  const url=(document.getElementById('syncUrl').value||'').trim();
+  const profile=(document.getElementById('syncProfile').value||'').trim();
+  const pass=(document.getElementById('syncPass').value||'').trim();
+  if(!url || !profile || !pass){ alert('Enter the Sync URL, a profile name, and a passphrase.'); return; }
+  saveSyncCfg({ url, profile, pass, on:true });
+  renderSyncUI(); setSyncStatus('connecting…');
+  pullSync(()=>{ pushSync(); });
+}
+function syncOff(){ const c=syncCfg(); c.on=false; saveSyncCfg(c); renderSyncUI(); setSyncStatus('off'); }
+function syncNow(){ setSyncStatus('syncing…'); pullSync(()=>{ pushSync(); }); }
+if(typeof wire==='function'){ wire('syncEnableBtn', enableSync); wire('syncNowBtn', syncNow); wire('syncOffBtn', syncOff); }
+renderSyncUI();
+if(syncCfg().on) pullSync();
 </script>
 </body>
 </html>
