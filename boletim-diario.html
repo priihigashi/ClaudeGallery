@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0a0f">
+<title>Boletim Diário · by Claude</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0a0f;
+    --bg2:#15101c;
+    --pink:#D88FAC;
+    --pink-soft:#e7b3c8;
+    --pink-dim:rgba(216,143,172,.14);
+    --glass:rgba(255,255,255,.055);
+    --glass-strong:rgba(255,255,255,.09);
+    --stroke:rgba(255,255,255,.12);
+    --stroke-pink:rgba(216,143,172,.35);
+    --text:#f3eef2;
+    --muted:#b3a9b6;
+    --muted2:#8c8290;
+    --good:#7fd1a8;
+    --bad:#e89090;
+    --shadow:0 18px 50px -20px rgba(0,0,0,.8);
+    --radius:22px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    color:var(--text);
+    background:
+      radial-gradient(1100px 600px at 8% -8%, rgba(216,143,172,.18), transparent 60%),
+      radial-gradient(900px 600px at 108% 8%, rgba(140,90,180,.16), transparent 55%),
+      linear-gradient(180deg, var(--bg) 0%, #0a0810 100%);
+    background-attachment:fixed;
+    min-height:100vh;
+    line-height:1.5;
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 16px 80px}
+
+  header{padding:26px 4px 8px}
+  .hello{font-size:13px;color:var(--pink-soft);letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  h1{
+    font-family:'Playfair Display',serif;
+    font-weight:800;
+    font-size:clamp(30px,8vw,42px);
+    margin:4px 0 2px;
+    letter-spacing:.3px;
+    line-height:1.05;
+  }
+  h1 .accent{color:var(--pink)}
+  .date{color:var(--muted);font-size:14px;font-weight:500}
+
+  .scroller{display:flex;gap:8px;overflow-x:auto;padding:14px 4px 6px;scrollbar-width:none;-ms-overflow-style:none}
+  .scroller::-webkit-scrollbar{display:none}
+  .chip{
+    flex:0 0 auto;border:1px solid var(--stroke);background:var(--glass);
+    color:var(--muted);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;
+    cursor:pointer;transition:.18s;backdrop-filter:blur(8px);white-space:nowrap;
+  }
+  .chip .d{font-size:11px;display:block;color:var(--muted2);font-weight:500}
+  .chip.active{background:var(--pink);color:#1a0e14;border-color:var(--pink);box-shadow:0 6px 18px -6px var(--pink)}
+  .chip.active .d{color:#3a1f2b}
+
+  .hl-head{display:flex;align-items:center;justify-content:space-between;margin:18px 4px 8px}
+  .hl-head h2{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;margin:0}
+  .ghost-btn{
+    background:var(--glass);border:1px solid var(--stroke);color:var(--pink-soft);
+    border-radius:999px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer;transition:.18s;
+  }
+  .ghost-btn:active{transform:scale(.96)}
+  .hl-row{display:flex;gap:10px;overflow-x:auto;padding:2px 4px 6px;scrollbar-width:none}
+  .hl-row::-webkit-scrollbar{display:none}
+  .hl-card{
+    flex:0 0 74%;max-width:280px;background:linear-gradient(150deg,var(--pink-dim),var(--glass));
+    border:1px solid var(--stroke-pink);border-radius:18px;padding:14px;cursor:pointer;transition:.18s;
+  }
+  .hl-card:active{transform:scale(.98)}
+  .hl-card .tag{font-size:10.5px;color:var(--pink-soft);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+  .hl-card .t{font-weight:600;margin-top:5px;font-size:14px;line-height:1.35}
+  .hl-card .why{color:var(--muted);font-size:12px;margin-top:6px}
+
+  .tip{
+    margin-top:16px;border-radius:var(--radius);padding:18px 18px 16px;
+    background:linear-gradient(150deg, rgba(216,143,172,.22), rgba(140,90,180,.12)), var(--glass-strong);
+    border:1px solid var(--stroke-pink);box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .tip:before{content:"";position:absolute;inset:0;background:radial-gradient(400px 120px at 80% -20%,rgba(216,143,172,.3),transparent);pointer-events:none}
+  .tip .label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pink-soft)}
+  .tip h3{font-family:'Playfair Display',serif;font-weight:700;font-size:21px;margin:8px 0 6px;line-height:1.2}
+  .tip p{margin:0;color:#ecdfe6;font-size:14.5px}
+
+  nav.topics{display:flex;gap:8px;overflow-x:auto;padding:18px 4px 4px;scrollbar-width:none;position:sticky;top:0;z-index:20;
+    background:linear-gradient(180deg, #0c0a0f 60%, transparent);margin:0 -4px}
+  nav.topics::-webkit-scrollbar{display:none}
+  .tnav{
+    flex:0 0 auto;border:1px solid var(--stroke);background:var(--glass);color:var(--muted);
+    border-radius:14px;padding:9px 13px;font-size:13px;font-weight:600;cursor:pointer;transition:.18s;
+    display:flex;align-items:center;gap:7px;backdrop-filter:blur(8px);white-space:nowrap;
+  }
+  .tnav.active{background:var(--glass-strong);color:var(--text);border-color:var(--stroke-pink);box-shadow:inset 0 0 0 1px var(--stroke-pink)}
+  .tnav .em{font-size:15px}
+
+  .topic-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:20px 4px 6px}
+  .topic-head h2{font-family:'Playfair Display',serif;font-weight:700;font-size:26px;margin:0;line-height:1.1}
+  .topic-head .sub{color:var(--muted);font-size:13px;margin-top:3px}
+  .toggle{display:flex;background:var(--glass);border:1px solid var(--stroke);border-radius:999px;padding:3px;gap:2px}
+  .toggle button{
+    border:0;background:transparent;color:var(--muted);font-size:12px;font-weight:700;
+    padding:7px 12px;border-radius:999px;cursor:pointer;transition:.18s;white-space:nowrap;
+  }
+  .toggle button.on{background:var(--pink);color:#1a0e14}
+
+  .cards{margin-top:12px;display:flex;flex-direction:column;gap:14px}
+  .card{
+    background:var(--glass);border:1px solid var(--stroke);border-radius:var(--radius);
+    padding:18px;backdrop-filter:blur(14px);box-shadow:var(--shadow);transition:.2s;position:relative;
+  }
+  .card.fav{border-color:var(--stroke-pink)}
+  .card .crown{position:absolute;top:14px;right:16px;font-size:11px;font-weight:700;letter-spacing:.06em;
+    color:var(--pink-soft);background:var(--pink-dim);border:1px solid var(--stroke-pink);padding:3px 9px;border-radius:999px}
+  .card h3{font-family:'Playfair Display',serif;font-weight:600;font-size:19px;margin:0 70px 10px 0;line-height:1.25}
+  .row{display:flex;gap:9px;margin:9px 0}
+  .row .k{flex:0 0 auto;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--pink-soft);width:96px;padding-top:2px}
+  .row .v{flex:1;font-size:14px;color:#e6dde3}
+  .row .v.muted{color:var(--muted)}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .links a{
+    text-decoration:none;font-size:12.5px;font-weight:600;color:var(--pink-soft);
+    background:var(--glass-strong);border:1px solid var(--stroke);border-radius:10px;padding:7px 11px;transition:.18s;
+  }
+  .links a:active{transform:scale(.96)}
+  .links a.none{color:var(--muted2);pointer-events:none;opacity:.6}
+
+  .feedback{display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:13px;border-top:1px solid var(--stroke)}
+  .fb{
+    border:1px solid var(--stroke);background:var(--glass-strong);color:var(--muted);
+    width:42px;height:36px;border-radius:11px;font-size:16px;cursor:pointer;transition:.16s;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .fb:active{transform:scale(.9)}
+  .fb.up.on{background:rgba(127,209,168,.18);border-color:var(--good);color:var(--good)}
+  .fb.down.on{background:rgba(232,144,144,.16);border-color:var(--bad);color:var(--bad)}
+  .fb.star.on{background:var(--pink);border-color:var(--pink);color:#1a0e14}
+  .fb-note{font-size:11.5px;color:var(--muted2);margin-left:auto}
+
+  .empty{text-align:center;color:var(--muted);padding:40px 20px;border:1px dashed var(--stroke);border-radius:var(--radius);margin-top:12px}
+  .empty .big{font-size:30px;margin-bottom:8px}
+  .seed-banner{font-size:11.5px;color:var(--muted2);background:var(--glass);border:1px solid var(--stroke);
+    border-radius:12px;padding:9px 12px;margin-top:12px;display:flex;gap:8px;align-items:center}
+
+  .modal-bg{position:fixed;inset:0;background:rgba(6,4,9,.7);backdrop-filter:blur(6px);z-index:60;
+    display:none;align-items:flex-end;justify-content:center}
+  .modal-bg.show{display:flex}
+  .modal{background:var(--bg2);border:1px solid var(--stroke-pink);border-radius:24px 24px 0 0;
+    width:100%;max-width:680px;max-height:80vh;overflow-y:auto;padding:22px 18px 30px;box-shadow:var(--shadow)}
+  .modal .grip{width:42px;height:5px;background:var(--stroke);border-radius:9px;margin:0 auto 16px}
+  .modal h2{font-family:'Playfair Display',serif;margin:0 0 4px;font-size:22px}
+  .modal .msub{color:var(--muted);font-size:13px;margin-bottom:14px}
+  .hist-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--stroke)}
+  .hist-item .dot{flex:0 0 auto;width:9px;height:9px;border-radius:50%;background:var(--pink);margin-top:6px}
+  .hist-item .ht{font-weight:600;font-size:14px}
+  .hist-item .hm{color:var(--muted);font-size:12px;margin-top:2px}
+
+  footer{text-align:center;color:var(--muted2);font-size:11.5px;padding:26px 0 10px}
+  footer .heart{color:var(--pink)}
+  @media(min-width:560px){ .row .k{width:108px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="hello">Bom dia, Priscila ☀️</div>
+    <h1>Boletim <span class="accent">Diário</span></h1>
+    <div class="date" id="todayDate">—</div>
+  </header>
+
+  <div class="scroller" id="dayChips"></div>
+
+  <div class="hl-head">
+    <h2>✦ Destaques</h2>
+    <button class="ghost-btn" id="histBtn">⟲ Histórico</button>
+  </div>
+  <div class="hl-row" id="highlights"></div>
+
+  <div class="tip" id="tipBox">
+    <span class="label">✨ Tip do Dia</span>
+    <h3 id="tipTitle">—</h3>
+    <p id="tipBody">—</p>
+  </div>
+
+  <nav class="topics" id="topicNav"></nav>
+
+  <div class="topic-head">
+    <div>
+      <h2 id="topicTitle">—</h2>
+      <div class="sub" id="topicSub">—</div>
+    </div>
+    <div class="toggle">
+      <button id="tgTop" class="on" onclick="setView('top')">Top da Claude</button>
+      <button id="tgFav" onclick="setView('fav')">Favoritos</button>
+    </div>
+  </div>
+
+  <div class="cards" id="cards"></div>
+
+  <footer>Feito com <span class="heart">♥</span> pela Claude · atualiza todo dia às 10h</footer>
+</div>
+
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <div class="grip"></div>
+    <h2>Histórico</h2>
+    <div class="msub">Boletins dos últimos dias — toque pra reabrir</div>
+    <div id="histList"></div>
+  </div>
+</div>
+
+<script>
+const TOPICS = [
+  {id:'tip',    em:'✨', name:'Tip do Dia',        sub:'Produtividade pra cérebro TDAH — terminar o que importa', daily:true},
+  {id:'receita',em:'🍽️', name:'Receita do Dia',    sub:'Vegana/veg, fácil, kid-friendly — sem peixe, sem leite de vaca'},
+  {id:'merch',  em:'🛍️', name:'Loja & Merch',      sub:'Print-on-demand de qualidade + bordado + tees longline'},
+  {id:'conteudo',em:'🤖', name:'Conteúdo Automático', sub:'Claude/Codex: B-roll, templates, carrossel + vídeo'},
+  {id:'obra',   em:'🏗️', name:'IA p/ Obra',        sub:'Viral de reforma no Instagram → replicar pra OPC'},
+  {id:'geo',    em:'🌍', name:'Geopolítica',        sub:'1 conceito/dia → vira pauta das news'},
+  {id:'ads',    em:'🎯', name:'Google Ads',         sub:'Estrutura + copy/keywords com IA, medir e cortar'},
+  {id:'iafim',  em:'🧩', name:'IA que Termina',     sub:'Ferramentas/agentes que fecham tarefas sozinhos'},
+];
+
+const SEED = {
+  tip:[
+    {id:'tip-1', top:true, t:'Tira a decisão de dentro do navegador',
+     resumo:'Cada aba aberta é uma decisão pendente ocupando RAM mental. A regra: nada decide dentro do Chrome.',
+     porque:'Cérebro TDAH trata 50 abas como 50 tarefas vivas — paralisa. Mover pra fora fecha o loop.',
+     aplicar:'Manda toda aba "pra ver depois" pro 📥 Inbox (planilha). O Chrome volta a ser ferramenta, não lista de tarefas.',
+     plano:'1) Abre o Inbox · 2) Triagem de 5 itens · 3) Fecha as 5 abas correspondentes · 4) Repete amanhã.',
+     fonte:{t:'Método (Inbox triagem 5/dia)',u:''}, video:{t:'',u:''}},
+  ],
+  receita:[
+    {id:'rec-1', top:true, t:'Mac & “queijo” vegano de verdade cremoso',
+     resumo:'Molho de castanha + batata + cenoura que derrete igual queijo. Kid-friendly, 25 min, sem leite de vaca.',
+     porque:'Bate a vontade de queijo (que você ama) sem laticínio, e as crianças comem sem reclamar.',
+     aplicar:'Jantar de quarta. Dobra a receita e guarda metade do molho pra nachos no dia seguinte.',
+     plano:'1) Cozinha 2 batatas + 1 cenoura · 2) Bate com 1/2 xíc castanha de caju, alho, levedura nutricional, limão · 3) Mistura no macarrão.',
+     fonte:{t:'Buscar marca de queijo vegano boa na FL',u:''}, video:{t:'',u:''}},
+  ],
+  merch:[
+    {id:'mer-1', top:true, t:'Printful vs Printify — qual entrega bordado decente',
+     resumo:'Pra bordado e tees femininas longline, a diferença de qualidade entre as duas é grande. Pedir sample antes de listar.',
+     porque:'Você nunca achou um POD bom de verdade — o gargalo costuma ser bordado e caimento, não estampa.',
+     aplicar:'Pede 1 sample de tee longline bordada nas duas plataformas e compara lado a lado antes de abrir loja.',
+     plano:'1) Lista 2 produtos-teste · 2) Pede sample nas 2 · 3) Compara caimento/bordado/lavagem · 4) Decide a plataforma.',
+     fonte:{t:'Comparar com reviews reais (não do site)',u:''}, video:{t:'',u:''}},
+  ],
+  conteudo:[
+    {id:'con-1', top:true, t:'Template por marca + storyline por tópico',
+     resumo:'Em vez de gerar post genérico, o Claude/Codex peneira o B-roll e monta carrossel + vídeo seguindo um template fixo por marca.',
+     porque:'Conteúdo genérico não converte. Template por marca mantém identidade e acelera produção.',
+     aplicar:'Define 1 template OPC e 1 template news; deixa o agente combinar tópicos numa storyline só.',
+     plano:'1) Organiza B-roll por tema · 2) Cria template visual por marca · 3) Agente gera carrossel+vídeo · 4) Revisa e aprova.',
+     fonte:{t:'Alternar Claude ↔ Codex ↔ app',u:''}, video:{t:'',u:''}},
+  ],
+  obra:[
+    {id:'obr-1', top:true, t:'Viral de reforma do dia → replicar pra OPC',
+     resumo:'1 vídeo viral do nicho remodel/reforma no Instagram por dia, com a ideia de como replicar com o Mike / avatar HeyGen.',
+     porque:'Modelar o que já viralizou no nicho é o caminho mais curto pra alcance — sem inventar do zero.',
+     aplicar:'Pega o gancho do viral e adapta pra um projeto real da OPC com fonte verificável.',
+     plano:'1) Puxa o top reel do nicho (API) · 2) Extrai o gancho · 3) Roteiriza pro Mike/HeyGen · 4) Grava.',
+     fonte:{t:'Instagram (nicho reforma)',u:''}, video:{t:'',u:''}},
+  ],
+  geo:[
+    {id:'geo-1', top:true, t:'Soft power: influência sem usar força',
+     resumo:'Capacidade de um país conseguir o que quer por atração (cultura, valores) em vez de coerção. Conceito-base de geopolítica.',
+     porque:'Vira pauta de news fácil: explica por que K-pop, Hollywood ou Copa importam tanto quanto exército.',
+     aplicar:'Próximo explainer: "como o Brasil usa (ou perde) soft power". Conecta com um fato da semana.',
+     plano:'1) Define o conceito em 1 slide · 2) Acha 1 exemplo atual · 3) Liga a uma notícia recente · 4) Roteiriza carrossel.',
+     fonte:{t:'Joseph Nye — Soft Power',u:''}, video:{t:'',u:''}},
+  ],
+  ads:[
+    {id:'ads-1', top:true, t:'Estrutura de conta antes de subir verba',
+     resumo:'Campanha → grupos de anúncio por intenção → keywords agrupadas. Sem estrutura, IA otimiza no escuro e queima orçamento.',
+     porque:'A maioria perde dinheiro por estrutura ruim, não por copy ruim. Estrutura primeiro.',
+     aplicar:'Monta 1 campanha OPC com 3 grupos (reforma cozinha / banheiro / piso) e keywords separadas.',
+     plano:'1) Define 3 intenções · 2) 1 grupo por intenção · 3) Copy/keywords com IA · 4) Mede 7 dias e corta o que não converte.',
+     fonte:{t:'Google Ads — estrutura de conta',u:''}, video:{t:'',u:''}},
+  ],
+  iafim:[
+    {id:'iaf-1', top:true, t:'Agente que fecha a tarefa, não só sugere',
+     resumo:'A diferença entre IA que escreve passos e IA que executa: dar ferramentas (deploy, planilha, email) e um critério de "pronto".',
+     porque:'Sugestão sem execução vira mais uma aba aberta. Você quer coisa terminada, não mais lista.',
+     aplicar:'Pra cada rotina (boletim, captura, ads), define o "Definition of Done" e deixa o agente fechar sozinho.',
+     plano:'1) Escolhe 1 rotina · 2) Escreve o critério de pronto · 3) Dá as ferramentas ao agente · 4) Revisa só o resultado.',
+     fonte:{t:'Master Plan — Conteúdo Automático',u:''}, video:{t:'',u:''}},
+  ],
+};
+
+const STORE_KEY = 'boletim_fb_v1';
+let state = load();
+let current = 'tip';
+let view = 'top';
+
+function load(){ try{return JSON.parse(localStorage.getItem(STORE_KEY))||{}}catch(e){return {}} }
+function save(){ localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
+function fb(id){ return state[id]||{}; }
+
+const MES=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+const DIA=['dom','seg','ter','qua','qui','sex','sáb'];
+
+const today = new Date();
+document.getElementById('todayDate').textContent =
+  today.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'});
+
+(function buildDayChips(){
+  const box=document.getElementById('dayChips');
+  for(let i=6;i>=0;i--){
+    const d=new Date(today); d.setDate(today.getDate()-i);
+    const c=document.createElement('button');
+    c.className='chip'+(i===0?' active':'');
+    c.innerHTML=(i===0?'Hoje':DIA[d.getDay()])+'<span class="d">'+d.getDate()+'/'+(d.getMonth()+1)+'</span>';
+    c.onclick=()=>{ document.querySelectorAll('#dayChips .chip').forEach(x=>x.classList.remove('active')); c.classList.add('active'); };
+    box.appendChild(c);
+  }
+})();
+
+const HIGHLIGHTS=[
+  {tag:'Imóveis FL', t:'As 5 áreas que mais reprovam no exam', why:'Exam perto na agenda + prioridade ativa', go:'tip'},
+  {tag:'IA p/ Obra', t:'Reel viral de reforma de cozinha (Score 4)', why:'Candidata prioritária pra produção OPC', go:'obra'},
+  {tag:'Geopolítica', t:'Soft power explicado em 1 carrossel', why:'Vira pauta de news fácil', go:'geo'},
+  {tag:'Conteúdo', t:'Template por marca + storyline', why:'Acelera carrossel + vídeo sem ficar genérico', go:'conteudo'},
+];
+(function buildHL(){
+  const row=document.getElementById('highlights');
+  HIGHLIGHTS.forEach(h=>{
+    const c=document.createElement('div'); c.className='hl-card';
+    c.innerHTML='<div class="tag">'+h.tag+'</div><div class="t">'+h.t+'</div><div class="why">'+h.why+'</div>';
+    c.onclick=()=>selectTopic(h.go);
+    row.appendChild(c);
+  });
+})();
+
+(function setTip(){
+  const t=SEED.tip[0];
+  document.getElementById('tipTitle').textContent=t.t;
+  document.getElementById('tipBody').textContent=t.resumo;
+})();
+
+(function buildNav(){
+  const nav=document.getElementById('topicNav');
+  TOPICS.forEach(tp=>{
+    const b=document.createElement('button');
+    b.className='tnav'+(tp.id===current?' active':'');
+    b.dataset.id=tp.id;
+    b.innerHTML='<span class="em">'+tp.em+'</span>'+tp.name;
+    b.onclick=()=>selectTopic(tp.id);
+    nav.appendChild(b);
+  });
+})();
+
+function selectTopic(id){
+  current=id;
+  document.querySelectorAll('.tnav').forEach(b=>b.classList.toggle('active',b.dataset.id===id));
+  const tp=TOPICS.find(t=>t.id===id);
+  document.getElementById('topicTitle').textContent=tp.em+' '+tp.name;
+  document.getElementById('topicSub').textContent=tp.sub;
+  render();
+  window.scrollTo({top:document.querySelector('.topic-head').offsetTop-70,behavior:'smooth'});
+}
+
+function setView(v){
+  view=v;
+  document.getElementById('tgTop').classList.toggle('on',v==='top');
+  document.getElementById('tgFav').classList.toggle('on',v==='fav');
+  render();
+}
+
+function render(){
+  const wrap=document.getElementById('cards');
+  let list=(SEED[current]||[]).slice();
+  if(view==='fav') list=list.filter(c=>fb(c.id).fav);
+  wrap.innerHTML='';
+  if(view==='fav' && list.length===0){
+    wrap.innerHTML='<div class="empty"><div class="big">🤍</div>Nenhum favorito aqui ainda.<br>Toque na ★ de um card pra salvar.</div>';
+    return;
+  }
+  if(list.length===0){
+    wrap.innerHTML='<div class="empty"><div class="big">⏳</div>A pesquisa do dia ainda não rodou pra este tópico.</div>';
+    return;
+  }
+  list.forEach(c=>{
+    const f=fb(c.id);
+    const el=document.createElement('div');
+    el.className='card'+(f.fav?' fav':'');
+    el.innerHTML=
+      (c.top?'<span class="crown">★ Top da Claude</span>':'')+
+      '<h3>'+c.t+'</h3>'+
+      rowHTML('Resumo',c.resumo)+
+      rowHTML('Por quê',c.porque)+
+      rowHTML('Onde aplicar',c.aplicar)+
+      rowHTML('Plano de ação',c.plano)+
+      linksHTML(c)+
+      '<div class="feedback">'+
+        btn(c.id,'up','👍')+
+        btn(c.id,'down','👎')+
+        btn(c.id,'star','★')+
+        '<span class="fb-note" id="note-'+c.id+'">'+noteText(f)+'</span>'+
+      '</div>';
+    wrap.appendChild(el);
+  });
+  bindFb(list);
+}
+function rowHTML(k,v){ return '<div class="row"><div class="k">'+k+'</div><div class="v">'+v+'</div></div>'; }
+function linksHTML(c){
+  const src=c.fonte&&c.fonte.t? (c.fonte.u? '<a href="'+c.fonte.u+'" target="_blank" rel="noopener">🔗 '+c.fonte.t+'</a>' : '<a class="none">🔗 '+c.fonte.t+'</a>') : '';
+  const vid=c.video&&c.video.t? (c.video.u? '<a href="'+c.video.u+'" target="_blank" rel="noopener">▶ '+c.video.t+'</a>' : '') : '';
+  if(!src && !vid) return '';
+  return '<div class="links">'+src+vid+'</div>';
+}
+function btn(id,kind,sym){
+  const f=fb(id);
+  const on=(kind==='up'&&f.vote==='up')||(kind==='down'&&f.vote==='down')||(kind==='star'&&f.fav);
+  return '<button class="fb '+kind+(on?' on':'')+'" data-id="'+id+'" data-kind="'+kind+'">'+sym+'</button>';
+}
+function noteText(f){
+  if(f.fav) return 'salvo nos favoritos ★';
+  if(f.vote==='up') return 'a Claude vai trazer mais assim';
+  if(f.vote==='down') return 'a Claude evita esse tipo';
+  return '';
+}
+function bindFb(list){
+  document.querySelectorAll('.fb').forEach(b=>{
+    b.onclick=()=>{
+      const id=b.dataset.id, kind=b.dataset.kind;
+      const f=state[id]||{};
+      if(kind==='star'){ f.fav=!f.fav; }
+      else { f.vote = (f.vote===kind)? null : kind; }
+      state[id]=f; save();
+      render();
+    };
+  });
+}
+
+const HISTORY=[
+  {t:'Boletim de ontem', m:'8 tópicos · 2 favoritos salvos'},
+  {t:'Anteontem', m:'Destaque: soft power + reel de reforma'},
+  {t:'3 dias atrás', m:'Receita: curry de grão-de-bico'},
+];
+(function buildHist(){
+  const l=document.getElementById('histList');
+  HISTORY.forEach(h=>{
+    const d=document.createElement('div'); d.className='hist-item';
+    d.innerHTML='<div class="dot"></div><div><div class="ht">'+h.t+'</div><div class="hm">'+h.m+'</div></div>';
+    l.appendChild(d);
+  });
+})();
+const mb=document.getElementById('modalBg');
+document.getElementById('histBtn').onclick=()=>mb.classList.add('show');
+mb.onclick=e=>{ if(e.target===mb) mb.classList.remove('show'); };
+
+selectTopic('tip');
+setView('top');
+</script>
+</body>
+</html>
