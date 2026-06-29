@@ -3,6 +3,26 @@
 Durable reference for `real-estate-quiz.html` (Florida real estate pre-license exam study tool).
 This is the project's source of truth for *how it's built and deployed* and *what has been audited*.
 
+
+## INVARIANT — "See it in the book" on every question (NON-NEGOTIABLE)
+**Every question in `BANK`, with no exception, must offer a per-question link to the exact book
+page that proves its answer.** This is the core promise of the tool and must never be removed or
+silently weakened again.
+- A question satisfies the rule iff it has **`book.imgs`** (with `book.page`) **or** **`pageImg`**.
+- After answering — whether the student was **right or wrong** — and in **every** review surface
+  (correct feedback, wrong feedback, exam-mode review, end-of-round missed list, weakness list),
+  `refLine(q)` must render a **"📖 See it in the book"** button.
+- The **"Search the book"** full-text box is a **secondary, optional** tool. It is **NOT** a
+  substitute for the per-question page button and must never replace it.
+- **Enforcement (so it can't disappear quietly):**
+  1. `refLine(q)` renders a red **`⚠️ Missing book page`** warning if a question has neither source.
+  2. An on-load guard in the HTML logs to console + shows a red banner if any question lacks proof.
+  3. `real-estate-quiz.test.js` (run before every deploy) **exits non-zero** if
+     `count(BANK) !== count(questions with proof)`.
+- **Known gap (tracked, not a violation):** the 241 `book.imgs` pages load from Google Drive
+  (`drive.google.com/thumbnail`), which can fail on mobile. The button still renders; reliability
+  is a separate follow-up (migrate those scans in-repo like the 30 `ax-` `pageImg` pages).
+
 ## Location & deploy
 - **Repo / file:** `priihigashi/ClaudeGallery` → `real-estate-quiz.html` (single self-contained HTML file).
 - **Hosting:** GitHub Pages off branch `main`. **Push to `main` → auto-redeploys in ~1 min.** No build step.
