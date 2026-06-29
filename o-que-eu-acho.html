@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f1115">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="O que eu acho">
+<title>O que eu acho · e o que eu achei</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f1115; --card:#171a21; --card2:#1d212a; --line:rgba(255,255,255,.10);
+    --text:#eef1f6; --muted:#9aa3b2; --muted2:#6f7787;
+    --certo:#54c98a; --parcial:#e6b54a; --errado:#e8716f; --accent:#7aa2ff;
+    --certo-bg:rgba(84,201,138,.13); --parcial-bg:rgba(230,181,74,.13); --errado-bg:rgba(232,113,111,.13);
+    --shadow:0 16px 44px -22px rgba(0,0,0,.85); --radius:18px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--text);
+    background:radial-gradient(900px 500px at 100% -10%,rgba(122,162,255,.10),transparent 60%),linear-gradient(180deg,#0f1115,#0b0d11);
+    background-attachment:fixed;min-height:100vh;line-height:1.5;padding-bottom:env(safe-area-inset-bottom)}
+  .wrap{max-width:720px;margin:0 auto;padding:0 16px 90px}
+  header{padding:26px 4px 6px}
+  .kicker{font-size:12px;color:var(--accent);letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+  h1{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(26px,7vw,38px);margin:6px 0 2px;line-height:1.06}
+  h1 .b{color:var(--muted)}
+  .tagline{color:var(--muted);font-size:14px}
+  .gate{position:fixed;inset:0;background:linear-gradient(180deg,#0f1115,#0b0d11);display:flex;align-items:center;justify-content:center;z-index:80;padding:24px}
+  .gate .box{width:100%;max-width:340px;text-align:center}
+  .gate h2{font-family:'Playfair Display',serif;font-size:26px;margin:0 0 6px}
+  .gate p{color:var(--muted);font-size:14px;margin:0 0 18px}
+  .gate input{width:100%;background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:14px;font-size:16px;text-align:center;letter-spacing:.2em}
+  .gate button{margin-top:12px;width:100%;background:var(--accent);color:#0b0d11;border:0;border-radius:12px;padding:13px;font-size:15px;font-weight:700;cursor:pointer}
+  .gate .err{color:var(--errado);font-size:13px;margin-top:10px;min-height:18px}
+  .hidden{display:none!important}
+  .toolbar{display:flex;gap:8px;align-items:center;margin:16px 4px 4px;flex-wrap:wrap}
+  .btn{background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:11px;padding:9px 13px;font-size:13px;font-weight:600;cursor:pointer;transition:.15s}
+  .btn:active{transform:scale(.97)}
+  .btn.primary{background:var(--accent);color:#0b0d11;border-color:var(--accent)}
+  .count{color:var(--muted2);font-size:12.5px;margin-left:auto}
+  .search{flex:1 1 100%;background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:11px;padding:10px 13px;font-size:14px;margin-top:6px}
+  .cards{margin-top:14px;display:flex;flex-direction:column;gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .verdict{display:flex;align-items:center;gap:10px;padding:13px 16px;font-weight:700;font-size:14px;border-bottom:1px solid var(--line)}
+  .verdict .dot{width:10px;height:10px;border-radius:50%}
+  .verdict .pct{margin-left:auto;font-size:12.5px;font-weight:700;opacity:.9}
+  .v-certo{background:var(--certo-bg);color:var(--certo)} .v-certo .dot{background:var(--certo)}
+  .v-parcial{background:var(--parcial-bg);color:var(--parcial)} .v-parcial .dot{background:var(--parcial)}
+  .v-errado{background:var(--errado-bg);color:var(--errado)} .v-errado .dot{background:var(--errado)}
+  .body{padding:16px}
+  .lab{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2);margin:0 0 4px}
+  .afirma{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;line-height:1.3;margin:0 0 12px}
+  .pensa{color:#d6dbe6;font-size:14.5px;margin:0 0 16px;padding-left:12px;border-left:2px solid var(--line)}
+  .verif{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:6px 0 16px}
+  @media(max-width:520px){ .verif{grid-template-columns:1fr} }
+  .vbox{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:11px}
+  .vbox .src{font-size:11px;font-weight:700;color:var(--accent);margin-bottom:5px}
+  .vbox .dat{font-size:13px;color:#dfe4ee}
+  .vbox.empty{opacity:.55}
+  .vbox.empty .dat{color:var(--muted2);font-style:italic}
+  .concl{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px;font-size:14px;color:#e7ebf3}
+  .foot{display:flex;gap:8px;align-items:center;padding:12px 16px;border-top:1px solid var(--line)}
+  .foot .when{font-size:11.5px;color:var(--muted2);margin-right:auto}
+  .icobtn{background:var(--card2);border:1px solid var(--line);color:var(--muted);border-radius:9px;padding:7px 11px;font-size:12.5px;font-weight:600;cursor:pointer}
+  .icobtn:active{transform:scale(.95)}
+  .empty-state{text-align:center;color:var(--muted);padding:48px 20px;border:1px dashed var(--line);border-radius:var(--radius);margin-top:14px}
+  .empty-state .big{font-size:34px;margin-bottom:10px}
+  .modal-bg{position:fixed;inset:0;background:rgba(5,7,10,.74);backdrop-filter:blur(6px);z-index:70;display:none;align-items:flex-end;justify-content:center}
+  .modal-bg.show{display:flex}
+  .modal{background:var(--card);border:1px solid var(--line);border-radius:22px 22px 0 0;width:100%;max-width:720px;max-height:92vh;overflow-y:auto;padding:18px 16px 28px}
+  .grip{width:40px;height:5px;background:var(--line);border-radius:9px;margin:0 auto 14px}
+  .modal h2{font-family:'Playfair Display',serif;margin:0 0 14px;font-size:22px}
+  .field{margin-bottom:13px}
+  .field label{display:block;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+  .field input,.field textarea,.field select{width:100%;background:var(--card2);border:1px solid var(--line);color:var(--text);border-radius:11px;padding:11px;font-size:15px;font-family:inherit}
+  .field textarea{min-height:64px;resize:vertical}
+  .verif-edit{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:520px){ .verif-edit{grid-template-columns:1fr} }
+  .verif-edit .vcol{background:var(--card2);border:1px solid var(--line);border-radius:11px;padding:9px}
+  .verif-edit input{background:var(--bg);margin-top:5px}
+  .seg{display:flex;gap:6px}
+  .seg button{flex:1;background:var(--card2);border:1px solid var(--line);color:var(--muted);border-radius:10px;padding:10px;font-size:13px;font-weight:700;cursor:pointer}
+  .seg button.on.certo{background:var(--certo-bg);color:var(--certo);border-color:var(--certo)}
+  .seg button.on.parcial{background:var(--parcial-bg);color:var(--parcial);border-color:var(--parcial)}
+  .seg button.on.errado{background:var(--errado-bg);color:var(--errado);border-color:var(--errado)}
+  .modal .actions{display:flex;gap:10px;margin-top:8px}
+  .modal .actions .btn{flex:1;justify-content:center;text-align:center;padding:13px}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#222733;border:1px solid var(--line);color:#fff;padding:11px 16px;border-radius:12px;font-size:13.5px;z-index:90;opacity:0;transition:.25s;box-shadow:var(--shadow)}
+  .toast.show{opacity:1}
+  footer{text-align:center;color:var(--muted2);font-size:11.5px;padding:24px 0 8px}
+</style>
+</head>
+<body>
+
+<div class="gate" id="gate">
+  <div class="box">
+    <h2>O que eu acho</h2>
+    <p>Espaço privado da Pri. Digite a senha pra entrar.</p>
+    <input id="pw" type="password" inputmode="text" autocomplete="off" placeholder="senha" />
+    <button onclick="tryEnter()">Entrar</button>
+    <div class="err" id="pwErr"></div>
+  </div>
+</div>
+
+<div class="wrap hidden" id="app">
+  <header>
+    <div class="kicker">Fact-check pessoal</div>
+    <h1>O que eu acho <span class="b">· e o que eu achei</span></h1>
+    <div class="tagline">Eu escrevo o que penso. A verificação mostra se bate com os fatos.</div>
+  </header>
+
+  <div class="toolbar">
+    <button class="btn primary" onclick="openForm()">+ Nova verificação</button>
+    <button class="btn" onclick="reload()">↻ Atualizar</button>
+    <span class="count" id="count">—</span>
+    <input class="search" id="search" placeholder="Buscar…" oninput="render()" />
+  </div>
+
+  <div class="cards" id="cards"></div>
+  <footer>Privado · senha protege esta página · feito com a Claude</footer>
+</div>
+
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <div class="grip"></div>
+    <h2>Nova verificação</h2>
+
+    <div class="field">
+      <label>Nota</label>
+      <div class="seg" id="seg">
+        <button type="button" class="certo" data-v="Certo" onclick="setVerdict('Certo')">✓ Certo</button>
+        <button type="button" class="parcial" data-v="Parcialmente certo" onclick="setVerdict('Parcialmente certo')">~ Parcial</button>
+        <button type="button" class="errado" data-v="Errado" onclick="setVerdict('Errado')">✕ Errado</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>% de suporte (o quanto os fatos apoiam)</label>
+      <input id="f_pct" type="number" min="0" max="100" placeholder="ex: 70" />
+    </div>
+    <div class="field">
+      <label>A afirmação — o que eu acho</label>
+      <textarea id="f_afirma" placeholder="Escreve com suas palavras, simples mesmo."></textarea>
+    </div>
+    <div class="field">
+      <label>O pensamento — por quê eu acho isso</label>
+      <textarea id="f_pensa" placeholder="O raciocínio por trás."></textarea>
+    </div>
+    <div class="field">
+      <label>Verificação — 3 fontes (deixe vazio = "não encontrado")</label>
+      <div class="verif-edit">
+        <div class="vcol"><input id="f_s1" placeholder="fonte/tipo 1"><input id="f_d1" placeholder="dado encontrado"></div>
+        <div class="vcol"><input id="f_s2" placeholder="fonte/tipo 2"><input id="f_d2" placeholder="dado encontrado"></div>
+        <div class="vcol"><input id="f_s3" placeholder="fonte/tipo 3"><input id="f_d3" placeholder="dado encontrado"></div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Conclusão</label>
+      <textarea id="f_concl" placeholder="Por que está certo/errado, ou o complemento — ou os dois."></textarea>
+    </div>
+    <div class="actions">
+      <button class="btn" onclick="closeForm()">Cancelar</button>
+      <button class="btn primary" onclick="saveEntry()">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const PASS = "pri123";
+const SYNC_URL = "";
+
+const LS_AUTH='oqea_auth', LS_DATA='oqea_local_v1';
+let DATA=[];
+let verdict='Errado';
+
+if(sessionStorage.getItem(LS_AUTH)==='1'){ enter(); }
+document.getElementById('pw').addEventListener('keydown',e=>{ if(e.key==='Enter') tryEnter(); });
+function tryEnter(){
+  const v=document.getElementById('pw').value.trim();
+  if(v===PASS){ sessionStorage.setItem(LS_AUTH,'1'); enter(); }
+  else { document.getElementById('pwErr').textContent='Senha errada.'; }
+}
+function enter(){
+  document.getElementById('gate').classList.add('hidden');
+  document.getElementById('app').classList.remove('hidden');
+  reload();
+}
+
+function localData(){ try{return JSON.parse(localStorage.getItem(LS_DATA))||[]}catch(e){return []} }
+function saveLocal(arr){ localStorage.setItem(LS_DATA, JSON.stringify(arr)); }
+
+function reload(){
+  if(SYNC_URL){
+    const cb='oqea_cb_'+Date.now();
+    window[cb]=resp=>{ try{ if(resp&&resp.ok&&Array.isArray(resp.items)){ DATA=resp.items; } }catch(e){} render(); cleanup(cb); };
+    const s=document.createElement('script');
+    s.src=SYNC_URL+(SYNC_URL.indexOf('?')<0?'?':'&')+'action=list&pass='+encodeURIComponent(PASS)+'&callback='+cb+'&_='+Date.now();
+    s.onerror=()=>{ DATA=localData(); render(); cleanup(cb); };
+    document.body.appendChild(s);
+  } else {
+    DATA=localData(); render();
+  }
+}
+function cleanup(cb){ try{ delete window[cb]; }catch(e){} document.querySelectorAll('script[src*="'+cb+'"]').forEach(n=>n.remove()); }
+
+function vClass(v){ if(v==='Certo')return 'certo'; if(v==='Parcialmente certo')return 'parcial'; return 'errado'; }
+function esc(s){ return (s==null?'':String(s)).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m])); }
+
+function render(){
+  const wrap=document.getElementById('cards');
+  const q=(document.getElementById('search').value||'').toLowerCase();
+  let list=DATA.slice().sort((a,b)=>(b.ts||'').localeCompare(a.ts||''));
+  if(q) list=list.filter(e=>JSON.stringify(e).toLowerCase().includes(q));
+  document.getElementById('count').textContent=DATA.length+(DATA.length===1?' verificação':' verificações');
+  wrap.innerHTML='';
+  if(list.length===0){
+    wrap.innerHTML='<div class="empty-state"><div class="big">🧐</div>Nada aqui ainda.<br>Toque em <b>+ Nova verificação</b> e escreve o que você acha.</div>';
+    return;
+  }
+  list.forEach(e=>{
+    const vc=vClass(e.verdict);
+    const v=[ [e.s1,e.d1],[e.s2,e.d2],[e.s3,e.d3] ];
+    const boxes=v.map(([s,d])=> (s||d)
+      ? '<div class="vbox"><div class="src">'+esc(s||'fonte')+'</div><div class="dat">'+esc(d||'—')+'</div></div>'
+      : '<div class="vbox empty"><div class="src">—</div><div class="dat">não encontrado</div></div>').join('');
+    const el=document.createElement('div'); el.className='card';
+    el.innerHTML=
+      '<div class="verdict v-'+vc+'"><span class="dot"></span>'+esc(e.verdict)+
+        (e.pct!=null&&e.pct!==''?'<span class="pct">'+esc(e.pct)+'% de suporte</span>':'')+'</div>'+
+      '<div class="body">'+
+        '<p class="lab">A afirmação</p><div class="afirma">'+esc(e.afirma)+'</div>'+
+        (e.pensa?'<p class="lab">O pensamento</p><div class="pensa">'+esc(e.pensa)+'</div>':'')+
+        '<p class="lab">Verificação</p><div class="verif">'+boxes+'</div>'+
+        (e.concl?'<p class="lab">Conclusão</p><div class="concl">'+esc(e.concl)+'</div>':'')+
+      '</div>'+
+      '<div class="foot"><span class="when">'+esc((e.ts||'').slice(0,10))+'</span>'+
+        '<button class="icobtn" data-id="'+esc(e.id)+'" onclick="copyEntry(this)">📋 Copiar texto</button></div>';
+    wrap.appendChild(el);
+  });
+}
+
+function copyEntry(btn){
+  const e=DATA.find(x=>String(x.id)===btn.dataset.id); if(!e) return;
+  const L=[];
+  L.push('['+e.verdict.toUpperCase()+(e.pct!=null&&e.pct!==''?' · '+e.pct+'% de suporte':'')+']');
+  L.push('');
+  L.push('O QUE EU ACHO: '+(e.afirma||''));
+  if(e.pensa) L.push('POR QUÊ: '+e.pensa);
+  L.push('');
+  L.push('O QUE EU ACHEI:');
+  [[e.s1,e.d1],[e.s2,e.d2],[e.s3,e.d3]].forEach(([s,d])=>{ if(s||d) L.push('• '+(s||'fonte')+': '+(d||'—')); });
+  if(e.concl){ L.push(''); L.push('CONCLUSÃO: '+e.concl); }
+  const txt=L.join('\n');
+  navigator.clipboard.writeText(txt).then(()=>toast('Texto copiado ✓')).catch(()=>toast('Não consegui copiar'));
+}
+
+function setVerdict(v){ verdict=v; document.querySelectorAll('#seg button').forEach(b=>b.classList.toggle('on',b.dataset.v===v)); }
+function openForm(){
+  verdict='Errado'; setVerdict('Errado');
+  ['f_pct','f_afirma','f_pensa','f_s1','f_d1','f_s2','f_d2','f_s3','f_d3','f_concl'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('modalBg').classList.add('show');
+}
+function closeForm(){ document.getElementById('modalBg').classList.remove('show'); }
+function val(id){ return document.getElementById(id).value.trim(); }
+
+function saveEntry(){
+  const afirma=val('f_afirma');
+  if(!afirma){ toast('Escreve a afirmação primeiro'); return; }
+  const entry={
+    id:'e'+Date.now(), ts:new Date().toISOString(), verdict:verdict, pct:val('f_pct'),
+    afirma:afirma, pensa:val('f_pensa'),
+    s1:val('f_s1'),d1:val('f_d1'), s2:val('f_s2'),d2:val('f_d2'), s3:val('f_s3'),d3:val('f_d3'),
+    concl:val('f_concl')
+  };
+  const loc=localData(); loc.push(entry); saveLocal(loc);
+  if(DATA.indexOf(entry)<0) DATA.push(entry);
+  render(); closeForm(); toast('Salvo ✓');
+  if(SYNC_URL){
+    try{ fetch(SYNC_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},
+      body:JSON.stringify(Object.assign({action:'add',pass:PASS},entry))}); }catch(e){}
+  }
+}
+
+let toastT;
+function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('show'),2200); }
+
+document.getElementById('modalBg').addEventListener('click',e=>{ if(e.target.id==='modalBg') closeForm(); });
+</script>
+</body>
+</html>
