@@ -1,0 +1,79 @@
+{
+  "date": "2026-06-28",
+  "generated_by": "manual-seed-run",
+  "highlights": [
+    {"tag": "Geopolítica", "t": "Chokepoint: por que Ormuz move o mundo", "why": "Manchete quente + explica em 1 ideia", "go": "geo"},
+    {"tag": "IA p/ Obra", "t": "Bastidor 'acontecendo agora' + before/after", "why": "Formato que viraliza no nicho reforma", "go": "obra"},
+    {"tag": "Conteúdo", "t": "OpusClip + Submagic pra B-roll", "why": "Reaproveita o que você já filmou", "go": "conteudo"},
+    {"tag": "Google Ads", "t": "Consolide grupos (3-10 por campanha)", "why": "A regra que mudou em 2026", "go": "ads"}
+  ],
+  "history": [
+    {"date": "2026-06-28", "label": "Boletim de hoje", "note": "8 tópicos pesquisados · 4 destaques"}
+  ],
+  "topics": {
+    "tip": [
+      {"id": "tip-2026-06-28", "top": true, "t": "Troque o alarme 'trabalhar' por 'fechar o navegador e abrir X'",
+       "resumo": "Alarme genérico não tira você da inércia. Um alarme com a próxima ação exata ('feche o Chrome, abra o relatório') remove a decisão na hora em que ele toca.",
+       "porque": "Cada aba aberta é memória de trabalho terceirizada — fechar exige justamente a função executiva que o TDAH afeta. Especificar a ação reduz a fadiga de decisão.",
+       "aplicar": "Use grupos de aba do Chrome (1 por projeto) e colapse os que não está usando: somem da vista sem você perder nada.",
+       "plano": "1) Cria 1 grupo de aba por projeto · 2) Colapsa todos menos o atual · 3) Alarme nomeado pela próxima ação · 4) O resto vai pro 📥 Inbox.",
+       "fonte": {"t": "SupaSidebar — ADHD & browser tabs", "u": "https://supasidebar.com/blog/adhd-browser-tab-overload"}, "video": {"t": "", "u": ""}}
+    ],
+    "receita": [
+      {"id": "rec-2026-06-28", "top": true, "t": "Mac & 'queijo' de castanha — 20-25 min, as crianças aprovam",
+       "resumo": "Molho de castanha de caju + levedura nutricional + limão e mostarda, batido até cremoso. Sem leite de vaca, kid-friendly, testado por milhares de leitores.",
+       "porque": "Mata a vontade de queijo (que você ama) sem laticínio e é rápido o bastante pra noite de semana.",
+       "aplicar": "Jantar de quarta. Faz o molho enquanto o macarrão cozinha.",
+       "plano": "1) Cozinha o macarrão · 2) Bate 1 xíc castanha demolhada + água + suco de limão + mostarda + sal + levedura nutricional · 3) Mistura · 4) Sobra de molho vira nachos no dia seguinte.",
+       "fonte": {"t": "Minimalist Baker — 20-min vegan mac", "u": "https://minimalistbaker.com/20-minute-mac-and-cheese-vegan/"}, "video": {"t": "", "u": ""}}
+    ],
+    "merch": [
+      {"id": "mer-2026-06-28", "top": true, "t": "Pra bordado, Printful ganha da Printify na consistência",
+       "resumo": "Printful produz em fábrica própria (máquinas Tajima) com revisão de digitalização — bordado limpo e consistente até ~10 mil pontos. Na Printify a qualidade varia conforme o fornecedor da rede.",
+       "porque": "Seu gargalo sempre foi bordado + caimento, não a estampa. Consistência importa mais que preço aqui.",
+       "aplicar": "Pede 1 sample de tee longline bordada na Printful antes de listar; compara lado a lado com 1 da Printify.",
+       "plano": "1) Escolhe 1 tee longline · 2) Sample bordado nas 2 plataformas · 3) Compara stitch / caimento / lavagem · 4) Fecha com a mais consistente.",
+       "fonte": {"t": "Merch Titans — Printful vs Printify 2026", "u": "https://merchtitans.com/blog/printful-vs-printify"}, "video": {"t": "", "u": ""}}
+    ],
+    "conteudo": [
+      {"id": "con-2026-06-28", "top": true, "t": "OpusClip + Submagic: B-roll vira clipe 9:16 com legenda automática",
+       "resumo": "OpusClip analisa o vídeo longo, acha os melhores momentos e corta em vertical com legendas; Submagic adiciona legenda animada e sugere B-roll. Combinar 2-3 ferramentas (gerar + legendar + agendar) é o que funciona.",
+       "porque": "Em vez de post genérico, você reaproveita o B-roll que já tem, seguindo um template por marca.",
+       "aplicar": "Roda o B-roll OPC no OpusClip, define 1 template visual da marca e agenda.",
+       "plano": "1) Junta B-roll por tema · 2) OpusClip corta 9:16 · 3) Submagic legenda + B-roll · 4) Aplica template OPC e agenda.",
+       "fonte": {"t": "OfficeChai — 14 AI tools for Reels 2026", "u": "https://officechai.com/learn/ai-tools-for-instagram-reels/"}, "video": {"t": "", "u": ""}}
+    ],
+    "obra": [
+      {"id": "obr-2026-06-28", "top": true, "t": "Reel de obra que viraliza: bastidor 'acontecendo agora' + before/after",
+       "resumo": "O que cresce em 2026 no nicho reforma: bastidor de canteiro (azulejo sendo assentado, armário entrando) com timestamp de 'agora', sliders before/after e timelapse — passam confiança na velocidade do time.",
+       "porque": "Modelar o formato que já viraliza é o caminho mais curto pra alcance, e dá pra replicar com o Mike / avatar HeyGen.",
+       "aplicar": "Grava 15s de um detalhe do canteiro hoje, corta na batida da música, abre com before/after.",
+       "plano": "1) Filma 1 detalhe 'acontecendo agora' · 2) Slider before/after · 3) Corta na batida · 4) Roteiriza versão Mike/HeyGen.",
+       "fonte": {"t": "Amra & Elma — viral renovation creators 2026", "u": "https://www.amraandelma.com/creators-with-viral-home-renovation-content/"}, "video": {"t": "", "u": ""}}
+    ],
+    "geo": [
+      {"id": "geo-2026-06-28", "top": true, "t": "Chokepoint: por que o Estreito de Ormuz move o mundo",
+       "resumo": "Chokepoint é uma passagem estreita (estreito/canal) que, se bloqueada, abala a economia global. Ormuz carrega ~1/4 do petróleo marítimo — e está bloqueado pelo Irã desde fev/2026, mostrando na prática o poder de um ponto de estrangulamento.",
+       "porque": "Conceito que vira pauta de news na hora: explica manchete de petróleo, inflação e geopolítica com uma ideia só.",
+       "aplicar": "Próximo explainer: 'o que é um chokepoint e por que Ormuz importa pro seu bolso'.",
+       "plano": "1) Define chokepoint em 1 slide · 2) Mapa de Ormuz · 3) Liga ao preço do combustível · 4) Carrossel.",
+       "fonte": {"t": "Brookings — Hormuz: chokepoint to crisis", "u": "https://www.brookings.edu/articles/from-chokepoint-to-crisis-the-strait-of-hormuz-and-global-oil-markets/"}, "video": {"t": "", "u": ""}}
+    ],
+    "ads": [
+      {"id": "ads-2026-06-28", "top": true, "t": "Em 2026, consolide grupos de anúncio (3-10 por campanha)",
+       "resumo": "A melhor prática mudou: menos grupos, mais ricos em dados, pro Smart Bidding ter volume. Mire 3-10 grupos temáticos por campanha; ative o AI Max só com base sólida (15+ headlines, 4-5 descrições, 30+ conversões/mês).",
+       "porque": "A maioria perde dinheiro por estrutura fragmentada, não por copy ruim. Estrutura primeiro.",
+       "aplicar": "Monta 1 campanha OPC com 3 grupos: reforma cozinha / banheiro / piso — cada um com keywords e copy próprias.",
+       "plano": "1) 3 grupos temáticos · 2) 15 headlines + 5 descrições · 3) Conversão configurada · 4) US$10-20/dia, mede 2-4 semanas, corta o que não converte.",
+       "fonte": {"t": "GROAS — Google Ads best practices 2026", "u": "https://www.groas.com/post/google-ads-best-practices-2026-rules-that-actually-matter"}, "video": {"t": "", "u": ""}}
+    ],
+    "iafim": [
+      {"id": "iaf-2026-06-28", "top": true, "t": "IA que termina: dê ferramentas + um 'Definition of Done'",
+       "resumo": "Em 2026, ~40% dos apps devem usar agentes autônomos. A diferença entre IA que sugere e IA que entrega é dar ferramentas (browser, planilha, deploy) + um critério claro de 'pronto' — ex: Claude Code (multi-arquivo, git), Operator (web), Perplexity Deep Research.",
+       "porque": "Sugestão sem execução vira mais uma aba aberta. Você quer coisa terminada, não mais lista.",
+       "aplicar": "Pra cada rotina (boletim, captura, ads), escreve o 'pronto' e deixa o agente fechar sozinho.",
+       "plano": "1) Escolhe 1 rotina · 2) Escreve o Definition of Done · 3) Dá as ferramentas · 4) Revisa só o resultado.",
+       "fonte": {"t": "Lindy — 12 best AI agents 2026", "u": "https://www.lindy.ai/blog/best-ai-agents"}, "video": {"t": "", "u": ""}}
+    ]
+  }
+}
