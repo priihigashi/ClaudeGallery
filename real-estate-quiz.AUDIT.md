@@ -19,9 +19,7 @@ silently weakened again.
   2. An on-load guard in the HTML logs to console + shows a red banner if any question lacks proof.
   3. `real-estate-quiz.test.js` (run before every deploy) **exits non-zero** if
      `count(BANK) !== count(questions with proof)`.
-- **Known gap (tracked, not a violation):** the 241 `book.imgs` pages load from Google Drive
-  (`drive.google.com/thumbnail`), which can fail on mobile. The button still renders; reliability
-  is a separate follow-up (migrate those scans in-repo like the 30 `ax-` `pageImg` pages).
+- **Reliability — DONE 2026-06-29:** all 241 `book.imgs` page scans were migrated **in-repo** to `book-pages/scan-<driveId>.jpg` (240 unique images) and `bkRender` now loads them directly. **No `drive.google.com` dependency** — book pages always load, including on mobile. Commit `0c846a0b` (+ batched asset commits).
 
 ## Location & deploy
 - **Repo / file:** `priihigashi/ClaudeGallery` → `real-estate-quiz.html` (single self-contained HTML file).
