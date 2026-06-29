@@ -1,1 +1,191 @@
-{"date":"2026-06-28","note":"archive copy of boletim-data.json for day-chip history","see":"boletim-data.json"}
+{
+  "date": "2026-06-28",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "🚨 Pipeline",
+      "t": "338 posts OPC esperando aprovação",
+      "why": "Sua pipeline acumulou 338 posts OPC sem aprovação. O card de Conteúdo de hoje mostra como usar IA para transformar B-roll em carrossel e reel em minutos — ideal para desafogar esse backlog.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "🌍 Geopolítica",
+      "t": "China controla 90% do Porto do Paranaguá",
+      "why": "Você capturou ontem um reel sobre contratos chineses no Brasil. O card Geo de hoje explica o conceito por trás: Geopolítica dos Metais Críticos — e como isso vira pauta de news.",
+      "go": "geo"
+    },
+    {
+      "tag": "🏗️ OPC Reels",
+      "t": "Viral de reforma → avatar Mike (HeyGen) → OPC",
+      "why": "Com 15 GitHub Actions rodando e conteúdo OPC parado, o card Obra de hoje mostra o fluxo exato para replicar reels virais de construção com o avatar Mike para Oak Park Construction.",
+      "go": "obra"
+    },
+    {
+      "tag": "🤖 Agentes IA",
+      "t": "40% dos apps corporativos terão agente IA até dez/2026",
+      "why": "Sua pipeline AI já usa agentes (o alerta de quota do Anthropic ontem foi um agente em ação). O card iafim explica onde investir atenção agora — e onde eles podem falhar feio.",
+      "go": "iafim"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-06-28",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-06-28",
+        "top": true,
+        "t": "Sprint de Fechamento: o ritual de 5 min que faz o TDAH terminar tarefas de verdade",
+        "resumo": "Pessoas com TDAH abandonam tarefas a 80% — o cérebro já ganhou dopamina suficiente ao 'quase terminar'. O Sprint de Fechamento quebra esse ciclo com uma regra: reserve os últimos 5 minutos de qualquer sessão APENAS para micro-tarefas de conclusão.",
+        "porque": "O TDAH troca 'terminar' por 'começar algo novo' porque o novo gera mais dopamina. Criar um ritual de fechamento de 5 minutos re-treina o circuito de recompensa, associando a conclusão real à satisfação — não o começo.",
+        "aplicar": "Ao encerrar qualquer projeto hoje (código, email, planilha), ponha um timer de 5 min e só faça micro-fechamentos: salva arquivo com nota 'próximo passo: X', fecha abas desnecessárias, marca tarefa como Em Revisão. Não começa nada novo durante esses 5 min.",
+        "plano": "1) Escolha uma tarefa que está 80% pronta agora. · 2) Sete um timer de 5 min. · 3) Só faça ações de fechamento: salvar, anotar próximo passo, enviar atualização de status. · 4) Celebre ativamente — diga em voz alta 'feito'. Repita em todas as sessões de hoje.",
+        "fonte": {
+          "t": "Clínica TDAH Campinas — Não consigo terminar as tarefas",
+          "u": "https://tdahcampinas.com.br/nao-consigo-terminar-as-tarefas/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-06-28",
+        "top": true,
+        "t": "Pão de Queijo Vegano — Crocante por Fora, Macio por Dentro (sem leite, sem ovo)",
+        "resumo": "O clássico brasileiro zero laticínio que fica igual ao original. Feito com polvilho azedo, polvilho doce, leite vegetal e queijo vegano ralado. Pronto em 35 min. As crianças aprovam — e não percebem a diferença.",
+        "porque": "Polvilho já é naturalmente sem glúten e sem leite. Trocar leite de vaca por leite de castanha ou amêndoa mantém a textura pegajosa necessária para a bolinha. Queijo vegano ralado (estilo mozzarella) dá o sabor sem lactose.",
+        "aplicar": "Ingredientes que podem já estar em casa: polvilho azedo, polvilho doce, leite vegetal, óleo, sal, queijo vegano ralado. Mistura, enrola em bolinhas, forno 180°C por 25 min.",
+        "plano": "1) Misture 200g polvilho azedo + 100g polvilho doce + 1 col. chá sal. · 2) Aqueça 200ml leite vegetal + 4 col. sopa de óleo (não ferva). · 3) Despeje o líquido quente sobre o polvilho e misture até incorporar. · 4) Adicione 150g queijo vegano ralado, enrole em bolinhas de 3cm e asse 180°C por 25 min.",
+        "fonte": {
+          "t": "Receitas de Pesos — Pão de Queijo Vegano 100% Sem Lactose",
+          "u": "https://receitasdepesos.com.br/receitas/2026/02/09/pao-de-queijo-vegano-macio-por-dentro-crocante-por-fora-e-100-sem-lactose/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-06-28",
+        "top": true,
+        "t": "Apliiq: o único POD que faz bordado de verdade em tees longline femininas",
+        "resumo": "Apliiq é o POD focado em bordado premium — não DTG barato que racha. Oferece tees longline femininas em algodão pesado com bordado em fio real. Reviews de lojistas independentes confirmam qualidade consistente e embalagem de marca própria sem o logo do fornecedor.",
+        "porque": "Printful e Printify usam DTG (jato de tinta) que desbota na lavagem. Apliiq usa bordado por agulha e permite misturar bordado no peito + estampa nas costas no mesmo produto. Para marca feminina de qualidade, a diferença é visível e justifica preço premium.",
+        "aplicar": "Cadastre em apliiq.com, peça uma sample da tee longline feminina com bordado no peito (~$25 amostra). Compare pessoalmente com uma peça Printful para sentir a diferença de toque e acabamento antes de listar na loja.",
+        "plano": "1) Acesse apliiq.com/print-on-demand e crie conta gratuita. · 2) Selecione 'Women's Longline Tee' + adicione bordado no peito. · 3) Configure sua arte (Apliiq converte PNG para bordado automaticamente). · 4) Peça 1 sample — recebe em ~7 dias — antes de publicar.",
+        "fonte": {
+          "t": "Apliiq — Print on Demand com Bordado Real",
+          "u": "https://www.apliiq.com/print-on-demand"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-06-28",
+        "top": true,
+        "t": "OpusClip + quso.ai: B-roll vira carrossel e reel em menos de 10 minutos",
+        "resumo": "Dois fluxos complementares: OpusClip usa IA para detectar os melhores momentos do B-roll e gerar clipes curtos com legenda automática. quso.ai pega esses clipes e converte em slides de carrossel prontos para Instagram — extrai momentos-chave e monta o layout automaticamente.",
+        "porque": "Com 338 posts OPC na fila, o gargalo é produção manual. Esse fluxo elimina a edição frame-a-frame: você filma, joga no OpusClip, exporta os melhores clipes, importa no quso.ai e sai com carrossel + reel do mesmo conteúdo.",
+        "aplicar": "Pegue qualquer B-roll de obra OPC que você já tem gravado. Sobe no OpusClip (opus.pro), a IA corta automaticamente. Depois importa o melhor clip no quso.ai para gerar o carrossel. Todo o processo leva menos de 10 min por vídeo.",
+        "plano": "1) Acesse opus.pro e sobe 1 vídeo de obra OPC existente. · 2) Aguarde a IA recortar (3-5 min) e escolha os 2 melhores clipes. · 3) Acesse quso.ai → Video to Carousel Generator e importe o clip. · 4) Baixe o carrossel gerado, revise e poste.",
+        "fonte": {
+          "t": "OpusClip — AI B-Roll Generator",
+          "u": "https://www.opus.pro/tools/ai-b-roll-generator"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-06-28",
+        "top": true,
+        "t": "Reel viral de reforma → avatar Mike (HeyGen) → OPC em 4 passos",
+        "resumo": "O algoritmo do Instagram em 2026 prioriza retenção nos primeiros 3 segundos e compartilhamentos entre não-seguidores. Reels de construção que mostram problema → solução visual em 5-15s performam melhor. Com HeyGen, você replica esse gancho com o avatar do Mike falando para o público da Oak Park Construction.",
+        "porque": "Você tem pipeline OPC com 338 posts gerados, mas o formato viral certo faz toda a diferença. Reels de reforma com hook de 'você sabia que isso é ilegal na Flórida?' ou 'veja o antes/depois em 10 segundos' explodem em compartilhamentos — exatamente o sinal que o algoritmo mais premia em 2026.",
+        "aplicar": "Encontre 3 reels virais de reforma no Instagram hoje (#remodel #contractor #beforeafter). Anote o hook de abertura. Escreva versão OPC do mesmo hook e gere o reel com avatar Mike no HeyGen. Publique com split-screen antes/depois.",
+        "plano": "1) Busque #remodel #floridacontractor no Instagram — anote os hooks dos 3 reels com mais de 10k views. · 2) Escreva versão OPC de cada hook (ex: 'Before you renovate your bathroom in Florida, watch this'). · 3) Acesse heygen.com/tool/ai-reel-generator, selecione avatar Mike, cole o script. · 4) Adicione B-roll OPC e publique como Reel.",
+        "fonte": {
+          "t": "HeyGen — AI Reel Generator for Instagram",
+          "u": "https://www.heygen.com/tool/ai-reel-generator"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-06-28",
+        "top": true,
+        "t": "Metais Críticos: por que lítio e cobalto valem mais que petróleo em 2026",
+        "resumo": "O poder geopolítico em 2026 não é sobre quem controla o petróleo — é sobre quem controla os metais críticos (lítio, cobalto, terras raras). EUA, China e Brasil formam um triângulo tenso: o Brasil tem 20% das reservas mundiais de lítio, a China processa 80% de todos os metais críticos, e os EUA dependem de ambos para chips e veículos elétricos.",
+        "porque": "Esse conceito explica movimentos aparentemente desconexos nas notícias: por que a China investe em portos brasileiros (Paranaguá, 90% capital chinês), por que os EUA pressionam aliados contra contratos com Beijing, e por que conflitos regionais hoje ocorrem frequentemente sobre recursos minerais.",
+        "aplicar": "Na próxima notícia sobre China no Brasil, EUA na África ou conflito no Congo — procure o metal crítico por trás. Cobalto no Congo, lítio no Chile/Argentina/Brasil, terras raras na China. O conflito de recursos é a pauta real.",
+        "plano": "1) Leia a matéria da Coface sobre Geopolítica 2026 e Metais Críticos (5 min). · 2) No próximo post do canal de news, adicione o ângulo: qual metal está em jogo? · 3) Use a captura de ontem (China/Paranaguá) como exemplo prático no carrossel. · 4) Teste o hook: 'A China não comprou um porto. Ela comprou acesso ao lítio do Paraná.'",
+        "fonte": {
+          "t": "Coface — Geopolítica 2026: Metais Críticos e Risco Empresarial",
+          "u": "https://www.coface.pt/noticias-economia-e-insights/ate-onde-irao-os-jogos-de-poder"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-06-28",
+        "top": true,
+        "t": "AI Max for Search: o Google Ads que escolhe palavras-chave sozinho em 2026",
+        "resumo": "AI Max for Search é a maior mudança no Google Ads em anos: você não lista mais palavras-chave manualmente. Descreve seu negócio em linguagem natural e a IA prevê quais buscas são relevantes em tempo real. Para OPC, isso significa anunciar para 'bathroom remodel Deerfield Beach' mesmo sem ter pensado nessa keyword.",
+        "porque": "Campanhas com AI Max mostram eficácia 67% superior às tradicionais com keywords manuais. O público de reforma busca de formas imprevisíveis — 'quanto custa reformar banheiro em Florida', 'contractor perto de mim', 'before after bathroom renovation' — e a IA cobre todas automaticamente.",
+        "aplicar": "Se você já tem campanha de Search para OPC, ative AI Max nas configurações (botão 'Usar correspondência ampla com IA'). Se não tem campanha, comece com AI Max ativado e orçamento de $10/dia para validar antes de escalar.",
+        "plano": "1) Acesse Google Ads → campanha OPC de Search. · 2) Em Configurações, ative 'AI Max for Search Campaigns'. · 3) Revise os ativos de texto (título, descrição) — a IA vai combiná-los automaticamente. · 4) Monitore os termos de pesquisa reais após 7 dias e exclua os irrelevantes.",
+        "fonte": {
+          "t": "Agência Kaizen — Google Ads 2026: IA Generativa nas Campanhas",
+          "u": "https://agenciakaizen.com.br/google-ads-2026-ia-generativa-campanhas/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-06-28",
+        "top": true,
+        "t": "Agentes IA em 2026: 40% dos apps corporativos terão um agente até dezembro",
+        "resumo": "A Gartner projeta que 40% das aplicações corporativas estarão integradas a agentes de IA específicos até o final de 2026 (contra 5% em 2025). Agentes autônomos já escrevem código, organizam emails, fazem pesquisa e entregam resultados sem supervisão constante. A diferença para um chatbot: o agente age, não só responde.",
+        "porque": "Sua pipeline já usa agentes (o alerta de quota do Anthropic ontem foi exatamente isso — um agente capturando conteúdo e postando automaticamente). Entender agentes é entender seu próprio sistema — e saber onde eles falham (uma pesquisadora da Meta pediu para organizar emails e o agente deletou milhares de mensagens).",
+        "aplicar": "Revise sua pipeline OPC: em qual etapa um agente poderia substituir uma ação manual? Aprovação de posts é candidato — mas com gate humano (você aprova com um clique, o agente executa o restante: formata, posta, arquiva, atualiza planilha).",
+        "plano": "1) Liste as 3 etapas manuais mais repetitivas na sua pipeline hoje. · 2) Para cada uma, pergunte: 'um agente poderia fazer isso com um input mínimo meu?' · 3) Priorize a com mais volume (ex: aprovação dos 338 posts pendentes). · 4) Pesquise se existe agente pronto (Zapier AI, Make.com AI, Claude via API) antes de construir do zero.",
+        "fonte": {
+          "t": "TI Inside — Por que 2026 é o ano dos Agentes de IA",
+          "u": "https://tiinside.com.br/22/01/2026/por-que-2026-tem-tudo-para-ficar-conhecido-como-o-ano-dos-agentes-de-ia/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ]
+  }
+}
