@@ -237,7 +237,7 @@ function answer(k, btn){
     // exam mode: count only, minimal feedback, no explanation until the end
     if (ok) right++; else { wrong++; missed.push(q); btn.classList.add('wrong'); }
     fb.className = 'feedback ' + (ok?'good':'bad');
-    fb.innerHTML = ok ? '<b>✅</b>' : '<b>❌ Answer: ' + correct.toUpperCase() + '</b>';
+    fb.innerHTML = (ok ? '<b>✅</b>' : '<b>❌ Answer: ' + correct.toUpperCase() + '</b>') + refLine(q);
   } else {
     if (ok){ right++; fb.className='feedback good';
       fb.innerHTML = '<b>' + (isRetry?'✅ Recovered!':'✅ Correct!') + '</b> ' + esc(q.aiReasoning) + refLine(q);
