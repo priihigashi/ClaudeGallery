@@ -140,6 +140,25 @@ const WEIGHTS = {1:1,2:6,3:2,4:7,5:12,6:3,7:3,8:8,9:7,10:5,11:12,12:9,13:4,14:6,
 const CHNAMES = {1:'The Real Estate Business',2:'License Law & Qualifications',3:'License Law & FREC Rules',4:'Authorized Relationships',5:'Brokerage Activities & Procedures',6:'Violations, Penalties & Procedures',7:'Federal & State Laws',8:'Real Property',9:'Title, Deeds & Ownership',10:'Legal Descriptions',11:'Real Estate Contracts',12:'Residential Mortgages',13:'Mortgage Types & Finance',14:'Computations & Closing',15:'RE Market & Analysis',16:'Appraisal',17:'Investments & Business Brokerage',18:'Taxes Affecting Real Estate',19:'Planning, Zoning & Env. Hazards'};
 const CHPAGE = {1:1,2:13,3:35,4:49,5:67,6:95,7:115,8:129,9:145,10:163,11:181,12:207,13:225,14:255,15:279,16:293,17:319,18:341,19:357};
 const BYID = {}; for (const q of BANK) BYID[q.id] = q;
+/* INVARIANT GUARD - every question must have a per-question book/source proof
+   (book.imgs with a page, or a pageImg). If any question lacks both, fail loudly. */
+(function(){
+  var noProof = BANK.filter(function(q){
+    return !(q.book && q.book.imgs && Object.keys(q.book.imgs).length) && !q.pageImg;
+  });
+  window.__REQZ_NO_PROOF__ = noProof.map(function(q){ return q.id; });
+  if (noProof.length){
+    console.error('[real-estate-quiz] INVARIANT BROKEN - ' + noProof.length +
+      ' question(s) have no book/source page:', window.__REQZ_NO_PROOF__);
+    document.addEventListener('DOMContentLoaded', function(){
+      var b = document.createElement('div');
+      b.style.cssText = 'background:#c62828;color:#fff;padding:10px 14px;font-weight:bold;text-align:center';
+      b.textContent = '⚠️ ' + noProof.length + ' question(s) missing their book page: ' +
+        window.__REQZ_NO_PROOF__.join(', ');
+      document.body.insertBefore(b, document.body.firstChild);
+    });
+  }
+})();
 const SYNC_URL = '';
 const PASS = 75;
 
@@ -235,7 +254,12 @@ function answer(k, btn){
 function refLine(q){
   let s = '<div class="ref">📖 ' + esc(q.source) + ' · ' + esc(q.sourceRef) + (q.bookPage ? ' · book p. ' + q.bookPage : '') + '</div>';
   if (q.verificationBasis) s += '<div class="ref">🔎 Basis: ' + esc(q.verificationBasis) + '</div>';
-  if (q.book && q.book.imgs && Object.keys(q.book.imgs).length)
+  const hasBookImgs = !!(q.book && q.book.imgs && Object.keys(q.book.imgs).length);
+  // INVARIANT: every question must offer a per-question book/source page. If neither source
+  // exists, fail loudly instead of silently rendering nothing (this must never appear in prod).
+  if (!hasBookImgs && !q.pageImg)
+    s += '<div class="ref" style="color:#c62828;font-weight:bold">⚠️ Missing book page for this question (' + esc(q.id) + ') — needs source. Every question must link to its book page.</div>';
+  if (hasBookImgs)
     s += '<button class="bookbtn" onclick="bkOpenById(\'' + q.id + '\')">📖 See it in the book — p. ' + q.book.page + '</button>';
   if (q.pageImg)
     s += '<button class="bookbtn" onclick="axBook(\'' + q.id + '\')">📖 See it in the book — highlighted</button>';
