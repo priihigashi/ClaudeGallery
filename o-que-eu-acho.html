@@ -194,17 +194,22 @@ function enter(){
 function localData(){ try{return JSON.parse(localStorage.getItem(LS_DATA))||[]}catch(e){return []} }
 function saveLocal(arr){ localStorage.setItem(LS_DATA, JSON.stringify(arr)); }
 
-function reload(){
-  if(SYNC_URL){
-    const cb='oqea_cb_'+Date.now();
-    window[cb]=resp=>{ try{ if(resp&&resp.ok&&Array.isArray(resp.items)){ DATA=resp.items; } }catch(e){} render(); cleanup(cb); };
-    const s=document.createElement('script');
-    s.src=SYNC_URL+(SYNC_URL.indexOf('?')<0?'?':'&')+'action=list&pass='+encodeURIComponent(PASS)+'&callback='+cb+'&_='+Date.now();
-    s.onerror=()=>{ DATA=localData(); render(); cleanup(cb); };
-    document.body.appendChild(s);
-  } else {
-    DATA=localData(); render();
-  }
+/* Conteúdo gerenciado pela Claude (aparece em QUALQUER aparelho) + suas adições locais */
+const DATA_URL = "o-que-eu-acho-data.json";
+function mergeItems(repoItems, localItems){
+  const seen={}, out=[];
+  (repoItems||[]).forEach(e=>{ if(e&&e.id) seen[e.id]=1; out.push(e); });
+  (localItems||[]).forEach(e=>{ if(e&&e.id&&!seen[e.id]) out.push(e); });
+  return out;
+}
+async function reload(){
+  let repo=[];
+  try{
+    const r=await fetch(DATA_URL+'?cb='+Date.now(),{cache:'no-store'});
+    if(r.ok){ const j=await r.json(); repo=(j&&j.items)||[]; }
+  }catch(e){}
+  DATA=mergeItems(repo, localData());
+  render();
 }
 function cleanup(cb){ try{ delete window[cb]; }catch(e){} document.querySelectorAll('script[src*="'+cb+'"]').forEach(n=>n.remove()); }
 
@@ -219,7 +224,7 @@ function render(){
   document.getElementById('count').textContent=DATA.length+(DATA.length===1?' verificação':' verificações');
   wrap.innerHTML='';
   if(list.length===0){
-    wrap.innerHTML='<div class="empty-state"><div class="big">🧐</div>Nada aqui ainda.<br>Toque em <b>+ Nova verificação</b> e escreve o que você acha.</div>';
+    wrap.innerHTML='<div class="empty-state"><div class="big">🧐</div>Nada aqui ainda.<br>Toque em <b>+ Nova verificação</b> — ou peça pra <b>Claude</b>: "checa isso pra mim: ___" (aparece em todos os aparelhos).</div>';
     return;
   }
   list.forEach(e=>{
@@ -279,7 +284,7 @@ function saveEntry(){
   };
   const loc=localData(); loc.push(entry); saveLocal(loc);
   if(DATA.indexOf(entry)<0) DATA.push(entry);
-  render(); closeForm(); toast('Salvo ✓');
+  render(); closeForm(); toast('Salvo neste aparelho ✓ (peça pra Claude pra aparecer em todos)');
   if(SYNC_URL){
     try{ fetch(SYNC_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},
       body:JSON.stringify(Object.assign({action:'add',pass:PASS},entry))}); }catch(e){}
