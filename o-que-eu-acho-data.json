@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "id": "welcome-2026-06-30",
+      "ts": "2026-06-30T18:00:00Z",
+      "verdict": "Certo",
+      "pct": "100",
+      "afirma": "Esta página agora abre em qualquer aparelho seu — celular e computador.",
+      "pensa": "A Pri queria ver as verificações de qualquer lugar, não só num aparelho.",
+      "s1": "Como funciona", "d1": "A Claude guarda as verificações no GitHub e a página lê de lá sozinha.",
+      "s2": "Pra adicionar", "d2": "Diga: 'Claude, checa isso pra mim: ___' que a verificação aparece aqui em todos os aparelhos.",
+      "s3": "", "d3": "",
+      "concl": "Pronto pra usar — sem instalar nada e sem deploy de Apps Script. É só pedir."
+    }
+  ]
+}
