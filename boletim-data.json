@@ -3,28 +3,28 @@
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "Pipeline Ativa",
-      "t": "Seu agente 4AM rodou — veja como escalar para mais tarefas",
-      "why": "Você tem 15 GitHub Actions rodando e um agente autônomo funcionando todo dia. O card mostra como delegar ainda mais tarefas repetitivas a agentes.",
-      "go": "iafim"
+      "tag": "🗂️ 50 Abas Abertas",
+      "t": "Sua pilha de abas está pedindo socorro — Arc resolve isso de vez para TDAH",
+      "why": "Você tem 50 abas abertas e múltiplas sessões rodando hoje. O card de Tip mostra como o Arc browser usa Spaces e archiving automático para eliminar a paralisia de decisão sem perder nenhum contexto.",
+      "go": "tip"
     },
     {
-      "tag": "OPC Content",
-      "t": "Reel viral de construção: a fórmula com HeyGen e o avatar do Mike",
-      "why": "Seu pipeline de captura de reels está ativo. Hoje tem o passo a passo para replicar os virais de reforma para a Oak Park Construction.",
-      "go": "obra"
-    },
-    {
-      "tag": "B-roll → Carrossel",
-      "t": "VEED e InVideo transformam seu B-roll em carrossel sem editar frame por frame",
-      "why": "Você já tem conteúdo bruto capturado pelo pipeline. Essas ferramentas fecham o gargalo de edição — Reel + carrossel num clique.",
+      "tag": "🎬 OPC Sem Transcrição",
+      "t": "4 capturas OPC hoje com transcrição vazia — Descript edita o vídeo mesmo assim",
+      "why": "Seus OPC captures de hoje retornaram com transcrição vazia ou sem dados utilizáveis. O Descript edita vídeo pelo texto existente e remove silêncios automaticamente — contorna o problema de transcrição na fonte.",
       "go": "conteudo"
     },
     {
-      "tag": "Google Ads",
-      "t": "AI Max substituiu os Dynamic Search Ads: o que muda na sua conta",
-      "why": "Google migrou DSA para AI Max com +7% de conversões médias. Relevante para campanhas de OPC e McFolling.",
-      "go": "ads"
+      "tag": "🏗️ Reels OPC Sem HeyGen",
+      "t": "CapCut tem templates de reforma trending — produz Reel OPC em menos de 5 min",
+      "why": "Com capturas de hoje prontas mas transcrições falhas, o CapCut template é a rota mais rápida: importa os clipes, aplica o template trending de construção, adiciona áudio em alta e publica — sem precisar de script narrado.",
+      "go": "obra"
+    },
+    {
+      "tag": "🤖 Pipeline Autônoma",
+      "t": "n8n pode fechar o gap: quando transcrição falha, o agente tenta outra fonte automaticamente",
+      "why": "Seus 15 GitHub Actions capturam mas não recuperam quando a transcrição está vazia. Um agente n8n com fallback inteligente pode tentar uma segunda API de transcrição, notificar você e gerar o brief com o que tem — sem sua intervenção.",
+      "go": "iafim"
     }
   ],
   "history": [
@@ -39,152 +39,128 @@
       {
         "id": "tip-2026-07-01",
         "top": true,
-        "t": "Body Doubling Digital: termine metas com uma IA (ou vídeo) do seu lado",
-        "resumo": "Body Doubling é ter alguém presente enquanto você trabalha — não pra ajudar, só pra existir. Funciona porque o cérebro TDAH ativa foco quando sente 'companhia'. A versão digital (YouTube study-with-me, videochamada silenciosa, ou IA em loop) tem o mesmo efeito neurológico da presença física.",
-        "porque": "TDAH troca de tarefa não por falta de vontade — é déficit de ativação. Body Doubling cria pressão social leve o suficiente pra iniciar e manter. Pesquisas de 2025/26 mostram que a versão virtual funciona quase igual à presencial para adultos neurodivergentes.",
-        "aplicar": "Use hoje: abra uma aba do YouTube com qualquer 'study with me' (2-4 horas), ou coloque uma videochamada silenciosa com alguém. Não precisa falar. Só existir junto — isso já ativa o mecanismo.",
-        "plano": "1) Escolha UMA tarefa que você vem adiando · 2) Abra YouTube e pesquise 'study with me 2 hours lofi' · 3) Inicie o vídeo, coloque em tela cheia, comece a tarefa sem configurar mais nada · 4) Ao terminar, anote quanto tempo levou — crie o hábito de medir para calibrar",
+        "t": "Arc Browser para TDAH: Spaces + Archiving Automático Eliminam a Espiral de Abas",
+        "resumo": "O cérebro com TDAH abre abas como memória de trabalho externa — fechar parece perder a informação. O Arc Browser resolve isso diferente: Spaces separam contextos (OPC / Pesquisa / Pessoal) e o archiving automático fecha abas não usadas em 12h sem você precisar decidir nada.",
+        "porque": "A paralisia de decisão do TDAH piora quando você tem que escolher qual aba fechar — o Arc tira essa decisão de você. Abas arquivadas continuam acessíveis mas somem da vista, reduzindo a carga cognitiva sem o medo de 'perder'.",
+        "aplicar": "Crie 3 Spaces no Arc hoje: 'OPC + Pipeline', 'Pesquisa & Ideias', 'Pessoal'. Cada espaço tem suas próprias abas — trocar de espaço é como trocar de modo mental. O que não tocar em 12h some sozinho.",
+        "plano": "1) Baixa Arc (arc.net) e instala — grátis. · 2) Cria 3 Spaces com nomes dos seus contextos principais. · 3) Move cada aba aberta para o Space correto (arrasta). · 4) Ativa o archiving automático nas configurações — pronto, as abas se gerenciam.",
         "fonte": {
-          "t": "Mind Vortex — Body Doubling para TDAH",
-          "u": "https://www.mindvortex.app/pt/blog/body-doubling-para-tdah-tecnica-para-foco-e-produtividade-no-brasil"
+          "t": "SupaSidebar — ADHD & Too Many Browser Tabs: How to Stop the Tab Spiral",
+          "u": "https://supasidebar.com/blog/adhd-browser-tab-overload"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ],
     "receita": [
       {
         "id": "receita-2026-07-01",
         "top": true,
-        "t": "Pão de Queijo Vegano de Polvilho (sem leite, sem ovo, kids-approved)",
-        "resumo": "Clássico brasileiro totalmente vegano: polvilho doce + azedo, batata cozida amassada, levedura nutricional para dar gostinho de queijo, azeite e sal. Fica macio por dentro e crocante por fora — crianças adoram e não percebem a diferença.",
-        "porque": "Sem leite de vaca, sem ovo, sem queijo animal. A levedura nutricional entrega o sabor de queijo sem nenhum ingrediente de origem animal. Simples o suficiente para fazer num dia de semana — e pode congelar cru para assar a qualquer hora.",
-        "aplicar": "Ingredientes fáceis de achar em qualquer mercado. Congele as bolinhas cruas e asse direto do freezer quando quiser — perfeito para lanchinhos rápidos das crianças.",
-        "plano": "1) Misture 1 xíc polvilho doce + 1 xíc polvilho azedo + 1 batata média cozida amassada + 3 colh azeite + 2 colh levedura nutricional + sal a gosto · 2) Sove até dar ponto (acrescente água quente colher a colher se necessário) · 3) Enrole bolinhas do tamanho de uma noz · 4) Asse a 200°C por 20-25 min até dourar — ou congele cru para usar depois",
+        "t": "Pizza de Frigideira Vegana: Pronta em 15 Min, Sem Forno, Kid-Friendly",
+        "resumo": "Pizza vegana feita direto na frigideira com massa de polvilho, molho de tomate, queijo vegano cremoso de mandioca e cobertura à escolha. Sem leite de vaca, sem ovo, sem forno. As crianças montam a própria pizza — engajamento garantido.",
+        "porque": "A frigideira elimina o tempo de pré-aquecimento do forno e a espera da massa crescer. O queijo vegano de mandioca derrete de verdade quando coberto com tampa — textura cremosa sem lactose. Ideal para noite de semana corrida.",
+        "aplicar": "Queijo vegano cremoso fácil: bate 1 xíc mandioca cozida + 2 col sopa azeite + 1 col sopa vinagre + sal + água quente até virar creme liso. Derrete na frigideira com tampa e fica parecendo requeijão cremoso.",
+        "plano": "1) Mistura 1 xíc polvilho azedo + pitada sal + azeite + água quente até dar liga (massa não gruda nas mãos). · 2) Achata numa frigideira antiaderente quente, tapa e cozinha 5 min de cada lado. · 3) Espalha molho de tomate + queijo vegano + tomate cereja + orégano. · 4) Tapa a frigideira por 3 min até o queijo derreter — serve na hora.",
         "fonte": {
-          "t": "Receitas de Pesos — Pão de Queijo Vegano",
-          "u": "https://receitasdepesos.com.br/receitas/2026/03/30/sem-leite-sem-queijo-e-com-muito-sabor-o-pao-de-queijo-vegano-que-surpreende-logo-no-primeiro-cafe/"
+          "t": "Vegana Sem Glúten — Pizza de Frigideira Super Rápida e Fácil",
+          "u": "https://veganasemgluten.com.br/receitas/pizza-de-frigideira-super-rapida-e-facil/"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ],
     "merch": [
       {
         "id": "merch-2026-07-01",
         "top": true,
-        "t": "Apliiq: o POD que realmente entrega bordado de qualidade em tees longline femininas",
-        "resumo": "Apliiq é o único POD focado em marca premium — oferece bordado real (não só DTG), tees longline femininas de algodão pesado, sem estoque mínimo, e reviews de lojistas confirmam qualidade consistente por item. Aceita customização profunda: etiqueta, acabamento, bordado + estampa combinados.",
-        "porque": "A maioria dos PODs faz DTG (estampa plana) — que desbota com lavagens. Bordado requer tecido mais pesado e tensão calibrada. Apliiq faz os dois e mantém controle de qualidade por peça. Para uma linha de merch premium, isso é o diferencial real.",
-        "aplicar": "Peça um sample ($25-40) antes de qualquer lançamento. Teste bordado no peito + estampa nas costas — a combinação mais vendida em longlines femininas. Fotografe no corpo real para Instagram antes de abrir para venda.",
-        "plano": "1) Acesse apliiq.com → Women's Longline Tees · 2) Escolha 1 modelo cotton pesado (6 oz+) · 3) Configure bordado no peito com logo + DTG nas costas com frase · 4) Peça o sample, fotografe e teste lavagem antes de publicar — nunca venda sem testar a peça física",
+        "t": "SPOD (Spreadshirt): Bordado + Tee Longline Feminina Entregue em 48h",
+        "resumo": "SPOD é o POD de produção mais rápida do mercado: 95% dos pedidos saem em 48h. Suporta bordado real (por agulha, não DTG) em tees femininas. Taxa de devolução menor que 1% em mais de 5 milhões de pedidos — qualidade consistente sem necessidade de sample obrigatório para validar.",
+        "porque": "A velocidade de produção do SPOD é o diferencial: enquanto Printful leva 3-5 dias úteis, o SPOD entrega na metade do tempo. Para drops relâmpago de coleção nova ou campanhas de 48h, isso muda a equação sem precisar segurar estoque.",
+        "aplicar": "Use SPOD para o primeiro drop de tees longline femininas com bordado — o ciclo de teste é mais rápido. Para produto permanente no catálogo com qualidade máxima, vale o sample do Printful. SPOD é a ferramenta de validação rápida.",
+        "plano": "1) Cria conta em spod.com e escolhe 'Women's T-shirt' no catálogo. · 2) Faz upload da arte e seleciona 'Embroidery' (bordado por agulha) como técnica. · 3) Define área máxima de bordado: 4x4cm no peito esquerdo para custo controlado. · 4) Ativa integração Shopify ou Etsy e publica — primeiro pedido chega em 48h após compra.",
         "fonte": {
-          "t": "Apliiq — Print on Demand Premium com Bordado",
-          "u": "https://www.apliiq.com/print-on-demand"
+          "t": "Merch Titans — SPOD Print on Demand Review 2026",
+          "u": "https://merchtitans.com/blog/spod-print-on-demand-review-2026"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ],
     "conteudo": [
       {
         "id": "conteudo-2026-07-01",
         "top": true,
-        "t": "VEED + InVideo: de B-roll bruto a carrossel e Reel em minutos com IA",
-        "resumo": "VEED transforma o mesmo vídeo em Reel, carrossel e Story sem trocar de ferramenta — um upload, três formatos. InVideo em 2026 integra Sora 2 + VEO 3.1: você entra com B-roll fraco e sai com cenas coerentes e editadas por IA generativa. Juntos, eliminam o gargalo de edição para quem tem conteúdo bruto mas não tem tempo.",
-        "porque": "Você já tem B-roll capturado (pipeline ativo). O problema não é ter conteúdo — é transformar rápido. Essas ferramentas fecham esse gap sem precisar de editor humano no loop.",
-        "aplicar": "Fluxo recomendado: VEED para cortar e formatar em múltiplos formatos; InVideo para gerar ou melhorar B-roll com IA generativa quando o material bruto não está no nível.",
-        "plano": "1) Escolha 1 vídeo do seu pipeline de captura · 2) Suba no VEED (veed.io) → use 'Repurpose' para gerar Reel + carrossel automaticamente · 3) Exporte os slides do carrossel como PNG e publique no Instagram · 4) Teste o mesmo clipe no InVideo para comparar qualidade de saída com IA generativa",
+        "t": "Descript: Edita Vídeo Editando Texto — Legenda, Corte e Limpeza de Áudio em 1 Lugar",
+        "resumo": "O Descript transcreve seu vídeo automaticamente e permite editar o conteúdo apagando palavras no texto — o corte acontece no vídeo em tempo real. Remove palavras de preenchimento automaticamente. Gera legendas em múltiplos idiomas. Plano gratuito disponível. AI co-editor 'Underlord' corta e limpa automaticamente.",
+        "porque": "Para criar carrossel e reel a partir de vídeos longos de obra ou briefing, o Descript é o caminho mais rápido: você lê o texto, apaga o que não presta e o vídeo já está cortado. Sem timeline, sem arrastão de clipe — edição por quem pensa em palavras, não em frames.",
+        "aplicar": "Joga qualquer vídeo OPC no Descript, espera a transcrição (2-3 min) e seleciona os melhores trechos de texto para o carrossel. O Underlord remove silêncios e faz corte limpo automaticamente — você só revisa e exporta.",
+        "plano": "1) Cria conta grátis em descript.com — sem cartão de crédito. · 2) Faz upload de 1 vídeo OPC bruto (pode ser o capture de hoje). · 3) Aguarda a transcrição automática (2-3 min) e lê o texto gerado. · 4) Seleciona os melhores 30-60 seg no texto, exporta como Reel 9:16 — pronto.",
         "fonte": {
-          "t": "Inro Social — Melhores ferramentas de IA para Instagram 2026",
-          "u": "https://www.inro.social/blog/ai-for-instagram-growth-tools"
+          "t": "ComparebestAI — Descript AI Review 2026: Best Video Editor? Honest Verdict",
+          "u": "https://comparebestai.com/articles/top-descript-ai-review-2026"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ],
     "obra": [
       {
         "id": "obra-2026-07-01",
         "top": true,
-        "t": "Fórmula do Reel viral de reforma: como replicar para Oak Park Construction com o Mike no HeyGen",
-        "resumo": "Reels virais de construção seguem um padrão: gancho visual antes/depois nos primeiros 3s, narração com dado concreto de ROI, música trending, CTA visual. Com HeyGen você cria o avatar do Mike com a voz dele e produz 1 Reel por dia sem câmera, sem estúdio, sem depender da agenda de ninguém.",
-        "porque": "Seu pipeline já captura reels virais de reforma. O próximo passo é replicar o formato para OPC — e HeyGen resolve o problema de disponibilidade do Mike para gravar, escalando a produção sem custo adicional por vídeo.",
-        "aplicar": "Fórmula testada: 0-3s (foto chocante do antes), 3-8s (transformação acelerada), 8-15s (Mike narrando dado de ROI: '$12k de reforma que valorizou $40k'), 15-20s (CTA: 'DM para orçamento').",
-        "plano": "1) Acesse heygen.com → Avatars → crie o avatar do Mike com 2-3 min de vídeo dele falando diretamente para a câmera · 2) Escolha template Before/After ou Product Showcase · 3) Escreva script de máx 60 palavras: gancho + dado de ROI + CTA · 4) Exporte, adicione música trending no CapCut e publique — meta: 3x por semana",
+        "t": "CapCut Templates de Reforma: Reel OPC em 5 Min com Áudio Trending Sem Narrador",
+        "resumo": "O CapCut tem templates específicos de antes/depois e renovação com áudio trending pré-sincronizado — você importa os clipes da obra nos slots marcados e o template faz os cortes no ritmo certo. Sem narrador, sem script, sem HeyGen. Só o visual da transformação + áudio que já está viralando.",
+        "porque": "Reels de reforma com áudio trending recebem boost do algoritmo do Instagram em 2026 — o áudio popular sinaliza relevância antes mesmo das visualizações. Um clip de antes/depois bem montado num template viral performa melhor que narração longa sem áudio reconhecido.",
+        "aplicar": "Filma os 3 momentos obrigatórios: antes (demolição ou espaço vazio), durante (trabalhadores em ação) e depois (resultado finalizado). O CapCut preenche os slots e sincroniza com o beat automaticamente.",
+        "plano": "1) Abre o CapCut (app ou web) → aba Explorar → busca 'construction' ou 'before after renovation'. · 2) Escolhe um template com mais de 100k usos — sinal de que está trending. · 3) Substitui os clipes nos slots pelo material OPC de hoje. · 4) Adiciona localização 'Deerfield Beach, FL' na legenda e posta — sem narração necessária.",
         "fonte": {
-          "t": "HeyGen — Vídeos para redes sociais com IA",
-          "u": "https://www.heygen.com/use-cases/social-media"
+          "t": "HeyOrca — The Top Trending CapCut Templates in 2026 (Updated Weekly)",
+          "u": "https://www.heyorca.com/blog/capcut-trends-and-templates"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ],
     "geo": [
       {
         "id": "geo-2026-07-01",
         "top": true,
-        "t": "Metais Críticos: por que a África virou o centro da geopolítica global em 2026",
-        "resumo": "Cobalto, grafite, nióbio e terras raras são os 'novos petróleo' — sem eles não há baterias, chips nem transição energética. Em 2026, EUA, China e UE competem ferozmente por acordos com países africanos que têm as maiores reservas. Quem controla os metais controla o futuro industrial do mundo.",
-        "porque": "Esse conceito explica 80% das tensões geopolíticas de 2026 que parecem desconectadas: conflito no Congo, investimento chinês na África, sanções americanas a mineradoras, corrida por acordos de mineração. Com esse mapa mental, qualquer notícia faz sentido.",
-        "aplicar": "Próxima vez que ver notícia sobre conflito na África Central ou acordo de mineração, pergunte: qual metal crítico está em jogo? Isso transforma a leitura de geopolítica de passiva para analítica.",
-        "plano": "1) Memorize 3 países e seus metais: Congo (cobalto → baterias EV), Moçambique (grafite → anodos), África do Sul (manganês → aço) · 2) Leia o artigo da Coface na fonte abaixo · 3) Ao ler news essa semana, identifique qual metal está por trás do conflito ou acordo · 4) Compartilhe 1 análise no formato do Verdade Pela Metade usando esse enquadramento",
+        "t": "Estreito de Taiwan: Por que Chips de Celular Dependem de uma Faixa d'Água de 180km",
+        "resumo": "O Estreito de Taiwan tem 180km de largura e é o ponto geopolítico mais tenso do mundo em 2026. A China aumentou gastos militares em 7% (US$277 bilhões), realizou o maior exercício militar ao redor de Taiwan desde 2022, e a tensão afeta diretamente o preço global de semicondutores — 90% dos chips avançados são fabricados na ilha.",
+        "porque": "'Gray zone tactics' (zona cinzenta) é o conceito do dia: ações militares abaixo do limiar de guerra que forçam resposta sem declaração de conflito. A China usa isso no Estreito de Taiwan para pressionar sem acionar tratados de defesa — é a geopolítica do 'nem paz, nem guerra' que governa 2026.",
+        "aplicar": "Quando ver notícia de preço de eletrônicos subindo ou escassez de chips, a primeira pergunta é: o que está acontecendo no Estreito de Taiwan? Qualquer instabilidade lá impacta diretamente iPhone, PlayStation e carros elétricos no mundo todo.",
+        "plano": "1) Lê a matéria do Brussels Morning sobre Taiwan Strait Tensions (link abaixo, ~5 min). · 2) Localiza o Estreito de Taiwan no mapa — veja fisicamente a distância entre China continental e Taiwan. · 3) Pesquisa 'TSMC Taiwan' — entende por que essa empresa é estratégica para o mundo. · 4) Na próxima notícia sobre chips ou eletrônicos, aplica o contexto: o que está acontecendo em Taiwan?",
         "fonte": {
-          "t": "Coface — Geopolítica 2026: Metais Críticos e Risco Empresarial",
-          "u": "https://www.coface.pt/noticias-economia-e-insights/ate-onde-irao-os-jogos-de-poder"
+          "t": "Brussels Morning — Taiwan Strait Tensions: 5 Major Risks for Global Trade 2026",
+          "u": "https://brusselsmorning.com/taiwan-strait-tensions-2026/98840/"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ],
     "ads": [
       {
         "id": "ads-2026-07-01",
         "top": true,
-        "t": "AI Max substituiu os Dynamic Search Ads: o que muda na sua conta Google Ads",
-        "resumo": "O Google migrou Dynamic Search Ads (DSA) para AI Max em 2026 — IA que expande correspondência de termos de busca, personaliza textos e otimiza URLs em tempo real. Resultado médio: +7% de conversões com o mesmo CPA. Mas exige revisão de Brand Exclusions para não perder controle do que aciona.",
-        "porque": "Se você roda campanhas para OPC ou McFolling, suas campanhas DSA já foram (ou serão) migradas automaticamente. Entender o AI Max evita surpresas no orçamento e aproveita os ganhos reais que a nova configuração oferece.",
-        "aplicar": "Ação imediata: verifique se suas campanhas DSA foram migradas. Configure Brand Exclusions para não aparecer em buscas de concorrentes ou termos irrelevantes — esse é o erro mais comum pós-migração.",
-        "plano": "1) Acesse Google Ads → campanhas → filtre por tipo AI Max · 2) Revise os relatórios de Search Themes para ver quais termos a IA está expandindo · 3) Configure Brand Exclusions com termos que você não quer atigar · 4) Adicione lista de clientes como First-Party Data para melhorar segmentação da IA",
+        "t": "Enhanced Conversions: A Config Que Recupera 40% dos Leads Perdidos no Google Ads",
+        "resumo": "Enhanced Conversions é a atualização mais impactante do Google Ads em 2026: envia dados de primeiro partido (email, telefone) com hash SHA-256 para o Google, que cruza com usuários logados e atribui conversões que o cookie sozinho perderia. Contas que ativam veem 25% mais conversões rastreadas na média.",
+        "porque": "Com o fim dos cookies de terceiros, o rastreamento padrão do Google Ads perdeu 30-40% de cobertura. Enhanced Conversions recupera esse gap sem violar privacidade — você não envia dado cru, só o hash. Para OPC e Js Luxury, isso significa ver leads reais que as campanhas estão gerando mas que antes sumiam.",
+        "aplicar": "Antes de qualquer mudança de campanha, confirma se o Enhanced Conversions está ativo — provavelmente não está. É a configuração mais subestimada do Google Ads e a de maior impacto imediato em contas pequenas e médias.",
+        "plano": "1) Acessa Google Ads → Configurações → Conversões → escolhe uma ação de conversão. · 2) Em 'Configurações avançadas' ativa 'Enhanced Conversions for Web'. · 3) Configura via Google Tag Manager: adiciona variável de email do usuário que converte. · 4) Aguarda 7 dias e compara o volume de conversões antes/depois — a diferença é o que você estava perdendo.",
         "fonte": {
-          "t": "NEXA MIND — Performance Max 2026: Guia de Alta Performance",
-          "u": "https://www.nexamind.com.br/blog/google-ads-ai-max-performance-2026"
+          "t": "HyperFX — Google Ads Conversion Tracking in 2026: Complete Setup Guide",
+          "u": "https://www.hyperfx.ai/blog/google-ads-conversion-tracking-guide"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ],
     "iafim": [
       {
         "id": "iafim-2026-07-01",
         "top": true,
-        "t": "Agentes de IA em turnos de 14 horas: como delegar trabalho real e completo para eles",
-        "resumo": "Agentes autônomos em 2026 não são chatbots — são sistemas que planejam, executam e entregam resultados sem supervisão contínua. Fecham chamados, conciliam caixa, monitoram infra, conduzem procurement. 68% das empresas globais já têm planos de integração. Seu 4AM agent já é parte desse movimento.",
-        "porque": "A Gartner projeta que 40% das aplicações empresariais vão integrar agentes até o fim de 2026 (vs 5% em 2025). Você já provou o modelo com seu agente de madrugada. O próximo passo é identificar quais outras tarefas manuais podem ser delegadas no mesmo framework.",
-        "aplicar": "Documente o que seu 4AM agent já faz. Liste 2-3 tarefas que você repete toda semana e que têm padrão claro de input/output — essas são as candidatas ao próximo agente.",
-        "plano": "1) Liste tarefas repetidas (>2x/semana): triagem de emails, relatórios, postagens, respostas padrão · 2) Para cada uma: tem API disponível? Tem padrão claro? Se sim = candidata a agente · 3) Pesquise se já existe workflow pronto no Make, n8n ou Zapier com IA para essa tarefa · 4) Construa o próximo agente no mesmo GitHub Actions onde o 4AM já roda — reaproveite a infra",
+        "t": "n8n: Agentes com Memória e Fallback que Executam Sem Você Estar Online",
+        "resumo": "O n8n em 2026 é plataforma de agentes IA autônomos: além de automações, você constrói agentes com memória, uso de ferramentas e suporte multi-modelo (Claude, GPT, Gemini, Ollama). Uma equipe de 5 pessoas deployou um agente n8n de suporte e ele resolveu 78% dos tickets sem intervenção humana na primeira semana.",
+        "porque": "Diferente do Make.com e Zapier, o n8n roda self-hosted (grátis no servidor próprio) e tem AI nodes nativos onde o agente toma decisões, tenta alternativas e só escalona para você quando não consegue resolver. Para automatizar com agentes que aprendem contexto, é a opção mais flexível e sem limite de operações.",
+        "aplicar": "Caso concreto para sua pipeline OPC: quando um capture retorna transcrição vazia, o agente n8n pode tentar automaticamente uma segunda API de transcrição, registrar a falha na planilha e notificar você — sem monitorar cada Action manualmente.",
+        "plano": "1) Acessa n8n.io e cria conta cloud grátis (ou instala no Railway.app em 10 min). · 2) Cria workflow: trigger de email OPC → verifica se transcrição está vazia → se sim, tenta API alternativa. · 3) Adiciona node de AI Agent com Claude ou GPT para gerar brief com os dados disponíveis. · 4) Ativa e deixa rodar — monitora o log de execução uma vez por dia.",
         "fonte": {
-          "t": "Vanquish — Agentes de IA em Turnos de 6 a 14 Horas",
-          "u": "https://www.vanquish.com.br/blog/agentes-ia-operam-turnos-6-14-horas"
+          "t": "MyDigipal — AI Agents with n8n: Build & Deploy in 2026",
+          "u": "https://mydigipal.com/en/blog/ai-agents-n8n-automation"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ]
   }
