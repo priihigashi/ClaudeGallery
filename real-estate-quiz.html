@@ -422,7 +422,7 @@ function saveCurrent(){
   if (idx === 0 && right === 0 && wrong === 0) return; // don't clobber a fresh load before any answer
   saveJ('reqz_current', { ids: order.map(q=>q.id), idx:idx, right:right, wrong:wrong, missed: missed.map(q=>q.id), t: Date.now() });
 }
-function clearCurrent(){ try { localStorage.removeItem('reqz_current'); } catch(e){} }
+function clearCurrent(){ try { localStorage.removeItem('reqz_current'); } catch(e){} if(typeof schedulePush==='function') schedulePush(); }
 function resume(c){
   stopExamTimer();
   order = (c.ids||[]).map(id=>BYID[id]).filter(Boolean);
@@ -440,22 +440,24 @@ function resetProgress(){
   ['reqz_hist','reqz_log','reqz_sessions','reqz_queue','reqz_current'].forEach(k => { try { localStorage.removeItem(k); } catch(e){} });
   alert('Progress reset ✅'); start(BANK, false);
 }
+function offerResume(c){
+  const old = document.getElementById('resumeBar'); if (old) old.remove();
+  if (!(c && c.ids && c.ids.length && (c.idx||0) < c.ids.length && ((c.idx||0) > 0 || c.right > 0 || c.wrong > 0))) return;
+  const pos = Math.min((c.idx||0)+1, c.ids.length);
+  const bar = document.createElement('div'); bar.id = 'resumeBar';
+  bar.style.cssText = 'background:#fff8e1;border:1px solid #ef6c00;border-radius:8px;padding:10px 14px;margin:10px 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap';
+  bar.innerHTML = '<span>▶️ You left off at <b>Q'+pos+' of '+c.ids.length+'</b>.</span>';
+  const rb = document.createElement('button'); rb.className='btn'; rb.style.cssText='font-size:.85em;padding:6px 12px;color:#fff'; rb.textContent='Resume';
+  rb.onclick = () => { bar.remove(); resume(c); };
+  const fb = document.createElement('button'); fb.className='btn gray'; fb.style.cssText='font-size:.85em;padding:6px 12px'; fb.textContent='Start fresh';
+  fb.onclick = () => { bar.remove(); clearCurrent(); start(BANK, false); };
+  bar.appendChild(rb); bar.appendChild(fb);
+  const card = document.getElementById('quizCard');
+  card.parentNode.insertBefore(bar, card);
+}
 function boot(){
-  const c = loadJ('reqz_current', null);
   start(BANK, false);  // a fresh round is ready; the idx0/0/0 guard keeps this from overwriting c
-  if (c && c.ids && c.ids.length && (c.idx||0) < c.ids.length && ((c.idx||0) > 0 || c.right > 0 || c.wrong > 0)){
-    const pos = Math.min((c.idx||0)+1, c.ids.length);
-    const bar = document.createElement('div');
-    bar.style.cssText = 'background:#fff8e1;border:1px solid #ef6c00;border-radius:8px;padding:10px 14px;margin:10px 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap';
-    bar.innerHTML = '<span>▶️ You left off at <b>Q'+pos+' of '+c.ids.length+'</b>.</span>';
-    const rb = document.createElement('button'); rb.className='btn'; rb.style.cssText='font-size:.85em;padding:6px 12px;color:#fff'; rb.textContent='Resume';
-    rb.onclick = () => { bar.remove(); resume(c); };
-    const fb = document.createElement('button'); fb.className='btn gray'; fb.style.cssText='font-size:.85em;padding:6px 12px'; fb.textContent='Start fresh';
-    fb.onclick = () => { bar.remove(); clearCurrent(); start(BANK, false); };
-    bar.appendChild(rb); bar.appendChild(fb);
-    const card = document.getElementById('quizCard');
-    card.parentNode.insertBefore(bar, card);
-  }
+  offerResume(loadJ('reqz_current', null));  // local bookmark now; a cloud sync will refresh this if the phone left off further along
 }
 
 function wire(id, fn){ const el = document.getElementById(id); if (el) el.onclick = fn; }
@@ -622,14 +624,19 @@ function mergeRemote(remote){
   hist=_maxHist(hist, loadJ('reqz_hist',{}));              // never below this device
   if(remote.hist) hist=_maxHist(hist, remote.hist);        // never below the server
   saveJ('reqz_log',mergedLog); saveJ('reqz_sessions',mergedSess); saveJ('reqz_hist',hist);
+  // cross-device resume: adopt whichever unfinished-round bookmark was touched most recently
+  const localCur=loadJ('reqz_current',null), remoteCur=(remote.current&&remote.current.ids&&remote.current.ids.length)?remote.current:null;
+  if(remoteCur && (!localCur || (remoteCur.t||0) > (localCur.t||0))) saveJ('reqz_current', remoteCur);
   return true;
 }
 let _pushTimer=null;
 function schedulePush(){ const c=syncCfg(); if(!c.on||!c.url||!c.profile) return; clearTimeout(_pushTimer); _pushTimer=setTimeout(pushSync,1500); }
 function pushSync(){
   const c=syncCfg(); if(!c.on||!c.url||!c.profile) return;
+  const hist=loadJ('reqz_hist',{});
+  if(!Object.keys(hist).length && !loadJ('reqz_current',null)) return; // never overwrite the cloud with an empty device
   const payload={ action:'save', app:'realestate', profile:c.profile, pass:c.pass, updated:Date.now(),
-    blob: JSON.stringify({ hist:loadJ('reqz_hist',{}), sessions:loadJ('reqz_sessions',[]), log:loadJ('reqz_log',[]) }) };
+    blob: JSON.stringify({ hist:hist, sessions:loadJ('reqz_sessions',[]), log:loadJ('reqz_log',[]), current:loadJ('reqz_current',null) }) };
   try{
     fetch(c.url,{ method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(payload) })
       .then(()=>{ const cc=syncCfg(); cc.lastPush=Date.now(); saveSyncCfg(cc); setSyncStatus('saved ✓'); })
@@ -643,7 +650,7 @@ function pullSync(done){
   window[cbName]=function(resp){
     if(finished) return; finished=true;
     try{
-      if(resp && resp.ok && resp.blob){ mergeRemote(JSON.parse(resp.blob)); const cc=syncCfg(); cc.lastPull=Date.now(); saveSyncCfg(cc); setSyncStatus('synced ✓'); if(typeof showStats==='function' && document.getElementById('statsCard').style.display!=='none') showStats(); if(done) done(true); }
+      if(resp && resp.ok && resp.blob){ mergeRemote(JSON.parse(resp.blob)); if(typeof offerResume==='function') offerResume(loadJ('reqz_current',null)); const cc=syncCfg(); cc.lastPull=Date.now(); saveSyncCfg(cc); setSyncStatus('synced ✓'); if(typeof showStats==='function' && document.getElementById('statsCard').style.display!=='none') showStats(); if(done) done(true); }
       else if(resp && resp.ok && resp.empty){ setSyncStatus('synced ✓ (nothing saved yet)'); if(done) done(true); }
       else { setSyncStatus(resp&&resp.error?('sync: '+resp.error):'sync failed'); if(done) done(false); }
     } finally { cleanup(); }
@@ -672,13 +679,16 @@ function enableSync(){
   if(!url || !profile || !pass){ alert('Enter the Sync URL, a profile name, and a passphrase.'); return; }
   saveSyncCfg({ url, profile, pass, on:true });
   renderSyncUI(); setSyncStatus('connecting…');
-  pullSync(()=>{ pushSync(); });
+  pullSync((ok)=>{ if(ok) pushSync(); });
 }
 function syncOff(){ const c=syncCfg(); c.on=false; saveSyncCfg(c); renderSyncUI(); setSyncStatus('off'); }
-function syncNow(){ setSyncStatus('syncing…'); pullSync(()=>{ pushSync(); }); }
+function syncNow(){ setSyncStatus('syncing…'); pullSync((ok)=>{ if(ok) pushSync(); }); }
 if(typeof wire==='function'){ wire('syncEnableBtn', enableSync); wire('syncNowBtn', syncNow); wire('syncOffBtn', syncOff); }
+// Personal study app: pin ONE shared profile so every device (phone + iPad) uses the same cloud row - no typing, no capital/lowercase mistakes. Also auto-heals the empty lowercase pri.
+(function(){ const c=syncCfg(); const isPri=(c.profile||'').toLowerCase()==='pri';
+  if(!c.profile || isPri){ saveSyncCfg({url:DEFAULT_SYNC_URL, profile:'Pri', pass:'Pri', on:true}); clearTimeout(_pushTimer); } })();
 renderSyncUI();
-if(syncCfg().on) pullSync();
+pullSync((ok)=>{ if(ok) pushSync(); });
 </script>
 </body>
 </html>
