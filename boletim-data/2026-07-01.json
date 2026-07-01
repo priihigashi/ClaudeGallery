@@ -138,7 +138,7 @@
         "resumo": "Cobalto, grafite, nióbio e terras raras são os 'novos petróleo' — sem eles não há baterias, chips nem transição energética. Em 2026, EUA, China e UE competem ferozmente por acordos com países africanos que têm as maiores reservas. Quem controla os metais controla o futuro industrial do mundo.",
         "porque": "Esse conceito explica 80% das tensões geopolíticas de 2026 que parecem desconectadas: conflito no Congo, investimento chinês na África, sanções americanas a mineradoras, corrida por acordos de mineração. Com esse mapa mental, qualquer notícia faz sentido.",
         "aplicar": "Próxima vez que ver notícia sobre conflito na África Central ou acordo de mineração, pergunte: qual metal crítico está em jogo? Isso transforma a leitura de geopolítica de passiva para analítica.",
-        "plano": "1) Memorize 3 países e seus metais: Congo (cobalto → baterias EV), Moçambique (grafite → anodos), África do Sul (manganês → aço) · 2) Leia o artigo da Coface na fonte abaixo · 3) Ao ler news essa semana, identifique qual metal está por trás do conflito ou acordo · 4) Compartilhe 1 análise no formato do Verdade Pela Metade usando esse enquadramento",
+        "plano": "1) Memorize 3 países e seus metais: Congo (cobalto → baterias EV), Moçambique (grafite → anodos), África do Sul (manganês → aço) · 2) Leia o artigo da Coface na fonte abaixo · 3) Ao ler news essa semana, identifique qual metal está por trás do conflito ou acordo · 4) Compartilhe 1 análise no Verdade Pela Metade usando esse enquadramento",
         "fonte": {
           "t": "Coface — Geopolítica 2026: Metais Críticos e Risco Empresarial",
           "u": "https://www.coface.pt/noticias-economia-e-insights/ate-onde-irao-os-jogos-de-poder"
@@ -156,7 +156,7 @@
         "t": "AI Max substituiu os Dynamic Search Ads: o que muda na sua conta Google Ads",
         "resumo": "O Google migrou Dynamic Search Ads (DSA) para AI Max em 2026 — IA que expande correspondência de termos de busca, personaliza textos e otimiza URLs em tempo real. Resultado médio: +7% de conversões com o mesmo CPA. Mas exige revisão de Brand Exclusions para não perder controle do que aciona.",
         "porque": "Se você roda campanhas para OPC ou McFolling, suas campanhas DSA já foram (ou serão) migradas automaticamente. Entender o AI Max evita surpresas no orçamento e aproveita os ganhos reais que a nova configuração oferece.",
-        "aplicar": "Ação imediata: verifique se suas campanhas DSA foram migradas. Configure Brand Exclusions para não aparecer em buscas de concorrentes ou termos irrelevantes — esse é o erro mais comum pós-migração.",
+        "aplicar": "Ação imediata: verifique se suas campanhas DSA foram migradas. Configure Brand Exclusions com os termos que você não quer atigar — esse é o erro mais comum pós-migração.",
         "plano": "1) Acesse Google Ads → campanhas → filtre por tipo AI Max · 2) Revise os relatórios de Search Themes para ver quais termos a IA está expandindo · 3) Configure Brand Exclusions com termos que você não quer atigar · 4) Adicione lista de clientes como First-Party Data para melhorar segmentação da IA",
         "fonte": {
           "t": "NEXA MIND — Performance Max 2026: Guia de Alta Performance",
@@ -174,8 +174,8 @@
         "top": true,
         "t": "Agentes de IA em turnos de 14 horas: como delegar trabalho real e completo para eles",
         "resumo": "Agentes autônomos em 2026 não são chatbots — são sistemas que planejam, executam e entregam resultados sem supervisão contínua. Fecham chamados, conciliam caixa, monitoram infra, conduzem procurement. 68% das empresas globais já têm planos de integração. Seu 4AM agent já é parte desse movimento.",
-        "porque": "A Gartner projeta que 40% das aplicações empresariais vão integrar agentes até o fim de 2026 (vs 5% em 2025). Você já provou o modelo com seu agente de madrugada. O próximo passo é identificar quais outras tarefas manuais podem ser delegadas no mesmo framework.",
-        "aplicar": "Documente o que seu 4AM agent já faz. Liste 2-3 tarefas que você repete toda semana e que têm padrão claro de input/output — essas são as candidatas ao próximo agente.",
+        "porque": "A Gartner projeta que 40% das aplicações empresariais vão integrar agentes até o fim de 2026 (vs 5% em 2025). Você já provou o modelo com seu 4AM agent. O próximo passo é identificar quais outras tarefas manuais podem ser delegadas no mesmo framework.",
+        "aplicar": "Documente o que seu 4AM agent já faz. Liste 2-3 tarefas que você repete toda semana com padrão claro de input/output — essas são as candidatas ao próximo agente.",
         "plano": "1) Liste tarefas repetidas (>2x/semana): triagem de emails, relatórios, postagens, respostas padrão · 2) Para cada uma: tem API disponível? Tem padrão claro? Se sim = candidata a agente · 3) Pesquise se já existe workflow pronto no Make, n8n ou Zapier com IA para essa tarefa · 4) Construa o próximo agente no mesmo GitHub Actions onde o 4AM já roda — reaproveite a infra",
         "fonte": {
           "t": "Vanquish — Agentes de IA em Turnos de 6 a 14 Horas",
