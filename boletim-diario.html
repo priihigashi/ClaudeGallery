@@ -49,9 +49,8 @@
   .hl-head h2{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;margin:0}
   .ghost-btn{background:var(--glass);border:1px solid var(--stroke);color:var(--pink-soft);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer;transition:.18s}
   .ghost-btn:active{transform:scale(.96)}
-  .hl-row{display:flex;gap:10px;overflow-x:auto;padding:2px 4px 6px;scrollbar-width:none}
-  .hl-row::-webkit-scrollbar{display:none}
-  .hl-card{flex:0 0 74%;max-width:280px;background:linear-gradient(150deg,var(--pink-dim),var(--glass));border:1px solid var(--stroke-pink);border-radius:18px;padding:14px;cursor:pointer;transition:.18s}
+  .hl-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:2px 4px 6px}
+  .hl-card{background:linear-gradient(150deg,var(--pink-dim),var(--glass));border:1px solid var(--stroke-pink);border-radius:18px;padding:14px;cursor:pointer;transition:.18s}
   .hl-card:active{transform:scale(.98)}
   .hl-card .tag{font-size:10.5px;color:var(--pink-soft);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
   .hl-card .t{font-weight:600;margin-top:5px;font-size:14px;line-height:1.35}
@@ -198,7 +197,7 @@ document.getElementById('todayDate').textContent=today.toLocaleDateString('pt-BR
   for(let i=6;i>=0;i--){
     const d=new Date(today); d.setDate(today.getDate()-i);
     const c=document.createElement('button');
-    c.className='chip'+(i===0?' active':'');
+    c.className='chip'+(i===0?' active':''); c.dataset.date=iso(d);
     c.innerHTML=(i===0?'Hoje':DIA[d.getDay()])+'<span class="d">'+d.getDate()+'/'+(d.getMonth()+1)+'</span>';
     c.onclick=()=>{
       document.querySelectorAll('#dayChips .chip').forEach(x=>x.classList.remove('active'));
@@ -241,12 +240,6 @@ function hydrate(){
     const c=document.createElement('div'); c.className='hl-card';
     c.innerHTML='<div class="tag">'+esc(h.tag)+'</div><div class="t">'+esc(h.t)+'</div><div class="why">'+esc(h.why)+'</div>';
     c.onclick=()=>selectTopic(h.go||'tip'); row.appendChild(c);
-  });
-  const l=document.getElementById('histList'); l.innerHTML='';
-  (DATA.history||[]).forEach(h=>{
-    const d=document.createElement('div'); d.className='hist-item';
-    d.innerHTML='<div class="dot"></div><div><div class="ht">'+esc(h.label||h.date)+'</div><div class="hm">'+esc(h.note||'')+'</div></div>';
-    l.appendChild(d);
   });
   render();
 }
@@ -336,7 +329,36 @@ function syncFeedback(id, kind, f){
 }
 
 const mb=document.getElementById('modalBg');
-document.getElementById('histBtn').onclick=()=>mb.classList.add('show');
+async function openHistory(){
+  mb.classList.add('show');
+  const l=document.getElementById('histList');
+  l.innerHTML='<div class="hm" style="padding:6px 2px">carregando…</div>';
+  const rows=[];
+  for(let i=0;i<7;i++){
+    const d=new Date(today); d.setDate(today.getDate()-i);
+    const ds=iso(d);
+    try{
+      const r=await fetch('boletim-data/'+ds+'.json',{cache:'no-store'});
+      if(!r.ok) continue;
+      const j=await r.json();
+      const tip=j.topics&&j.topics.tip&&j.topics.tip[0]? j.topics.tip[0].t : '';
+      rows.push({date:ds, label:(i===0?'Hoje':DIA[d.getDay()])+' · '+d.getDate()+'/'+(d.getMonth()+1), note:tip});
+    }catch(e){}
+  }
+  l.innerHTML='';
+  if(!rows.length){ l.innerHTML='<div class="hm">Nenhum boletim recente encontrado.</div>'; return; }
+  rows.forEach(row=>{
+    const el=document.createElement('div'); el.className='hist-item'; el.style.cursor='pointer';
+    el.innerHTML='<div class="dot"></div><div><div class="ht">'+esc(row.label)+'</div><div class="hm">'+esc(row.note||'—')+'</div></div>';
+    el.onclick=()=>{
+      mb.classList.remove('show');
+      const chip=document.querySelector('#dayChips .chip[data-date="'+row.date+'"]');
+      if(chip) chip.click();
+    };
+    l.appendChild(el);
+  });
+}
+document.getElementById('histBtn').onclick=openHistory;
 mb.onclick=e=>{ if(e.target===mb) mb.classList.remove('show'); };
 
 setSync('');
