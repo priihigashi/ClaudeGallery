@@ -47,9 +47,14 @@
   #bkHead b { flex:1; font-size:.95em; }
   #bkHead button { font:inherit; padding:6px 12px; border:1px solid #c9cedb; border-radius:7px; background:#fff; cursor:pointer; }
   #bkNote { font-size:.72em; color:#888; padding:0 14px 6px; }
-  #bkScroll { overflow:auto; -webkit-overflow-scrolling:touch; }
+  #bkScroll { overflow:auto; -webkit-overflow-scrolling:touch; flex:1 1 auto; min-height:0; }
   #bkImgWrap { position:relative; line-height:0; }
   #bkImgWrap img { width:100%; height:auto; display:block; }
+  .bkpage { margin:0 0 4px; }
+  .bkpageimg { position:relative; line-height:0; }
+  .bkpageimg img { width:100%; height:auto; display:block; }
+  .bkpagecap { line-height:1.3; font-size:.72em; color:#8a8f9c; padding:7px 14px 6px; background:#f7f7f2; border-top:1px solid #eceadf; }
+  .bkpage.answer .bkpagecap { color:#b26a00; background:#fff7e0; font-weight:700; }
   .bkhl { position:absolute; background:rgba(255,235,59,.45); border:2px solid rgba(255,193,7,.9); border-radius:3px; }
   .teach { margin-top:6px; }
   .teach .tline { margin:7px 0; }
@@ -524,7 +529,7 @@ boot();
    <button onclick="bkClose()" style="border-color:#c62828;color:#c62828">Close</button>
   </div>
   <div id="bkNote"></div>
-  <div id="bkScroll"><div id="bkImgWrap"><img id="bkImg" alt="book page"></div><div id="bkQuote" style="display:none"></div></div>
+  <div id="bkScroll"><div id="bkImgWrap"></div><div id="bkQuote" style="display:none"></div></div>
  </div>
 </div>
 <script>
@@ -541,45 +546,54 @@ function setBkQuote(q){
 }
 function axBook(qid){
   const q = BYID[qid]; if (!q || !q.pageImg) return;
-  bkQ = null; // disables the page-flip arrows for these self-contained highlighted pages
-  const wrap = document.getElementById('bkImgWrap');
-  wrap.querySelectorAll('.bkhl').forEach(e => e.remove());
+  bkQ = null;
   document.getElementById('bkTitle').textContent = 'In the book — the highlighted passage teaches this answer';
   document.getElementById('bkNote').textContent = 'From the Florida SalesPreBook. The yellow highlight marks the exact text that answers this question.';
-  const img = document.getElementById('bkImg');
-  img.onerror = function(){ this.onerror = null; document.getElementById('bkNote').textContent = '⚠️ Could not load the book page image.'; };
-  img.src = q.pageImg;
+  const wrap = document.getElementById('bkImgWrap'); wrap.innerHTML = '';
+  const holder = document.createElement('div'); holder.className = 'bkpageimg';
+  const img = document.createElement('img'); img.alt = 'book page';
+  img.onerror = function(){ this.onerror=null; document.getElementById('bkNote').textContent = '⚠️ Could not load the book page image.'; };
+  img.src = q.pageImg; holder.appendChild(img); wrap.appendChild(holder);
+  const sc = document.getElementById('bkScroll'); if(sc) sc.scrollTop = 0;
   setBkQuote(q);
   document.getElementById('bkModal').classList.add('open');
 }
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') bkClose(); });
-function bkNav(d){ if(!bkQ) return; const pages = Object.keys(bkQ.book.imgs).map(Number).sort((a,b)=>a-b);
-  const i = pages.indexOf(bkCur); const j = i + d; if(j < 0 || j >= pages.length) return; bkCur = pages[j]; bkRender(); }
+function bkNav(d){ const wrap=document.getElementById('bkImgWrap'); const pages=wrap.querySelectorAll('.bkpage'); if(!pages.length) return;
+  const sc=document.getElementById('bkScroll'); const mid=sc.scrollTop + sc.clientHeight/2;
+  let cur=0; for(let k=0;k<pages.length;k++){ if(pages[k].offsetTop<=mid) cur=k; }
+  const j=Math.max(0, Math.min(pages.length-1, cur+d));
+  sc.scrollTo({top: pages[j].offsetTop - 6, behavior:'smooth'}); }
 function bkRender(){
-  const b = bkQ.book, id = b.imgs[String(bkCur)];
-  document.getElementById('bkTitle').textContent = 'Book — page ' + bkCur + (bkCur === b.page ? ' — where the answer is taught' : '');
-  const hasHl = !!(bkCur === b.page && b.hl && b.hl.length);
-  document.getElementById('bkNote').textContent = b.auto
-    ? (hasHl
-        ? 'This is the teaching page where the book explains this answer — the highlight marks the key text. Use the arrows to flip pages.'
-        : 'This is the teaching page where the book explains this answer (page ' + b.page + '). The exact line isn’t pinpointed on this page yet — read the full page; use the arrows to flip pages.')
-    : 'Verified page reference.';
-  if(bkQ.teach && bkQ.teach.quote && bkCur === b.page)
-    document.getElementById('bkNote').textContent = 'This is the teaching page. The exact line that answers the question is highlighted and quoted just below the image.';
-  const wrap = document.getElementById('bkImgWrap');
-  wrap.querySelectorAll('.bkhl').forEach(e => e.remove());
-  const img = document.getElementById('bkImg');
-  img.onerror = function(){ this.onerror=null; document.getElementById('bkNote').innerHTML = '⚠️ Could not load the book image. Check your connection.'; };
-  img.src = id;
-  if(bkCur === b.page && b.hl && b.hl.length){
-    for(const r of b.hl){
-      const d = document.createElement('div'); d.className = 'bkhl';
-      d.style.left = (r[0]*100) + '%'; d.style.top = (r[1]*100) + '%';
-      d.style.width = ((r[2]-r[0])*100) + '%'; d.style.height = ((r[3]-r[1])*100) + '%';
-      wrap.appendChild(d);
+  const b = bkQ.book;
+  const pages = Object.keys(b.imgs).map(Number).sort((x,y)=>x-y);
+  document.getElementById('bkTitle').textContent = 'Book — page ' + b.page + ' (scroll for before & after)';
+  document.getElementById('bkNote').textContent = 'The answer page is centered and highlighted. Scroll up for the previous page, down for the next page.';
+  const wrap = document.getElementById('bkImgWrap'); wrap.innerHTML = '';
+  const sc = document.getElementById('bkScroll');
+  let answerEl = null;
+  function bkCenter(){ if(!answerEl) return; const t = answerEl.offsetTop + answerEl.offsetHeight/2 - sc.clientHeight/2; sc.scrollTop = t>0?t:0; }
+  for(const p of pages){
+    const pg = document.createElement('div'); pg.className = 'bkpage' + (p===b.page?' answer':'');
+    const cap = document.createElement('div'); cap.className = 'bkpagecap';
+    cap.textContent = (p===b.page) ? ('📖 Page ' + p + ' — the answer is here') : (p<b.page ? ('Page ' + p + ' — previous page') : ('Page ' + p + ' — next page'));
+    pg.appendChild(cap);
+    const holder = document.createElement('div'); holder.className = 'bkpageimg';
+    const img = document.createElement('img'); img.alt = 'book page ' + p;
+    img.onerror = function(){ this.onerror=null; cap.textContent = '⚠️ Page ' + p + ' image could not load (check connection).'; };
+    if(p<=b.page) img.addEventListener('load', bkCenter);
+    img.src = b.imgs[String(p)];
+    holder.appendChild(img);
+    if(p===b.page && b.hl && b.hl.length){
+      for(const r of b.hl){ const d = document.createElement('div'); d.className = 'bkhl';
+        d.style.left=(r[0]*100)+'%'; d.style.top=(r[1]*100)+'%'; d.style.width=((r[2]-r[0])*100)+'%'; d.style.height=((r[3]-r[1])*100)+'%'; holder.appendChild(d); }
     }
+    pg.appendChild(holder);
+    if(p===b.page) answerEl = pg;
+    wrap.appendChild(pg);
   }
   setBkQuote(bkQ);
+  bkCenter(); requestAnimationFrame(bkCenter);
 }
 </script>
 <div id="bsModal" onclick="if(event.target===this)bsClose()">
