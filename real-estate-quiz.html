@@ -201,6 +201,30 @@ function flushQueue(){ const q = loadJ('reqz_queue', []); if(!q.length || !SYNC_
 function logSession(rec){ const s = loadJ('reqz_sessions', []); s.push(rec); while (s.length > 80) s.shift(); saveJ('reqz_sessions', s); }
 
 function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a; }
+function isMathQ(q){
+  if(q.ch===14) return true;
+  const t=(q.question||'')+' '+(q.options?Object.keys(q.options).map(k=>q.options[k]).join(' '):'');
+  return /\$\s?\d|\d\s?%|\bpercent\b|\bprorat|\bmillage\b|\bmills?\b|\bsquare\s?f(ee|oo)t|\bacres?\b/i.test(t);
+}
+function spreadOrder(list){
+  const chs={}; for(const q of list){(chs[q.ch]=chs[q.ch]||[]).push(q);}
+  const keys=Object.keys(chs);
+  if(keys.length<2) return shuffle(list.slice());
+  const items=[];
+  for(const k of keys){ const g=shuffle(chs[k].slice()); const n=g.length, off=Math.random();
+    for(let i=0;i<n;i++) items.push({q:g[i], pos:(i+off)/n}); }
+  items.sort((a,b)=>a.pos-b.pos);
+  const base=items.map(o=>o.q);
+  const M=base.filter(isMathQ), N=base.filter(q=>!isMathQ(q));
+  if(M.length===0||N.length===0) return base;
+  const out=N.slice();
+  const denom=Math.max(1,M.length-1), span=N.length-1;
+  const slots=[];
+  for(let g=0; g<M.length; g++){ let s=1+Math.round(g*span/denom); slots.push(s); }
+  for(let g=0; g<slots.length; g++){ if(g>0 && slots[g]<=slots[g-1]) slots[g]=slots[g-1]+1; if(slots[g]>N.length) slots[g]=N.length; }
+  for(let g=M.length-1; g>=0; g--){ out.splice(slots[g],0,M[g]); }
+  return out;
+}
 function show(id){ for (const c of ['quizCard','summaryCard','statsCard']) document.getElementById(c).style.display = (c===id)?'block':'none'; }
 
 function start(list, retry, opts){
@@ -209,7 +233,7 @@ function start(list, retry, opts){
   stopExamTimer();
   examMode = !!opts.exam;
   isRetry = !!retry;
-  order = shuffle(list.slice());
+  order = (opts.exam ? shuffle(list.slice()) : spreadOrder(list.slice()));  // spread topics; never 2 math in a row (exam stays fully random)
   if (opts.limit) order = order.slice(0, opts.limit);
   idx = 0; right = 0; wrong = 0; missed = [];
   document.getElementById('roundBanner').style.display = isRetry ? 'block' : 'none';
