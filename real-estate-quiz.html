@@ -21,7 +21,7 @@
   .gtabs .gtab.on { background:#1565c0; color:#fff; border-color:#1565c0; }
   .ggrid { display:flex; flex-wrap:wrap; gap:5px; margin:6px 0 14px; }
   .gtile { width:26px; height:26px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:.62em; color:#fff; cursor:pointer; font-weight:700; }
-  .gtile.good { background:#2e7d32; } .gtile.bad { background:#c62828; }
+  .gtile.good { background:#2e7d32; } .gtile.bad { background:#c62828; } .gtile.unk { background:#9aa0ab; }
   .gacc { margin:4px 0 8px; }
   #rvModal { position:fixed; inset:0; background:rgba(0,0,0,.75); display:none; z-index:60; align-items:center; justify-content:center; padding:12px; }
   #rvModal.open { display:flex; }
@@ -598,7 +598,7 @@ function feedbackHTML(q, sel){
   if (sel === '?') return '<b>📌 You answered this earlier.</b> The answer is <b>' + correct.toUpperCase() + '</b>. ' + expl;
   return ok ? ('<b>✅ Correct!</b> ' + expl) : ('<b>❌ Not quite.</b> The answer is <b>' + correct.toUpperCase() + '</b>. ' + expl);
 }
-function gtiles(items){ let s = '<div class="ggrid">'; for (const it of items) s += '<span class="gtile ' + (it.ok?'good':'bad') + '" title="Ch ' + it.q.ch + '" data-qid="' + it.q.id + '">' + it.q.ch + '</span>'; return s + '</div>'; }
+function gtiles(items){ let s = '<div class="ggrid">'; for (const it of items){ const cl = it.ok===true?'good':(it.ok===false?'bad':'unk'); s += '<span class="gtile ' + cl + '" title="Ch ' + it.q.ch + '" data-qid="' + it.q.id + '">' + it.q.ch + '</span>'; } return s + '</div>'; }
 function gaboGridHTML(which){
   const hist = loadJ('reqz_hist', {}); const items = [];
   if (which === 'session'){ for (const id in sessionResults){ const q = BYID[id]; if (q) items.push({ q: q, ok: sessionResults[id].ok }); } }
@@ -623,7 +623,7 @@ function reviewQ(id){
   let s = '<div class="qnum">' + esc(q.source) + ' · Ch ' + q.ch + pg + '</div><div class="qtext">' + esc(q.question) + '</div>';
   for (const k of ['a','b','c','d']){ let cls = 'opt'; if (k === q.finalAnswer) cls += ' correct'; if (sel && k === sel && sel !== q.finalAnswer) cls += ' wrong';
     s += '<div class="' + cls + '" style="cursor:default">' + k.toUpperCase() + '.  ' + esc(q.options[k]) + '</div>'; }
-  s += '<div class="feedback ' + (sel && sel !== q.finalAnswer ? 'bad' : 'good') + '">' + feedbackHTML(q, sel || q.finalAnswer) + '</div>';
+  s += '<div class="feedback ' + (sel ? (sel !== q.finalAnswer ? 'bad' : 'good') : '') + '">' + feedbackHTML(q, sel || '?') + '</div>';
   s += '<div style="margin-top:10px"><button class="btn gray" data-bk="' + id + '">📖 See it in the book</button></div>';
   document.getElementById('rvBody').innerHTML = s;
   document.getElementById('rvModal').classList.add('open');
@@ -632,9 +632,10 @@ function rvClose(){ document.getElementById('rvModal').classList.remove('open');
 function renderRoundRecap(){
   const el = document.getElementById('recapList'); if (!el) return;
   if (examMode){ el.innerHTML = ''; return; }
-  const items = order.map((q, i) => ({ q: q, ok: picks[i] === q.finalAnswer }));
-  const corr = items.filter(x => x.ok).length, pct = order.length ? Math.round(corr/order.length*100) : 0;
-  el.innerHTML = '<h3>🗂️ This round — tap any to review</h3><p class="gacc">' + corr + ' / ' + order.length + ' correct = <b>' + pct + '%</b></p>' + gtiles(items);
+  const items = order.map((q, i) => ({ q: q, ok: picks[i] === '?' ? null : (picks[i] === q.finalAnswer) }));
+  const done = items.filter(x => x.ok !== null).length;
+  const corr = items.filter(x => x.ok === true).length, pct = done ? Math.round(corr/done*100) : 0;
+  el.innerHTML = '<h3>🗂️ This round — tap any to review</h3><p class="gacc">' + corr + ' / ' + done + ' correct = <b>' + pct + '%</b></p>' + gtiles(items);
 }
 document.addEventListener('keydown', function(e){ if (e.key === 'Escape') rvClose(); });
 document.addEventListener('click', function(e){
