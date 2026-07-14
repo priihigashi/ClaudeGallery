@@ -16,6 +16,20 @@
   .score b { font-size:1.1em; }
   .qnum { color:#888; font-size:.8em; margin-bottom:6px; }
   .qtext { font-size:1.08em; line-height:1.5; margin-bottom:18px; }
+  .gtabs { display:flex; gap:8px; margin:6px 0 10px; }
+  .gtabs .gtab { font:inherit; padding:6px 12px; border:1px solid #c9cedb; border-radius:7px; background:#fff; cursor:pointer; }
+  .gtabs .gtab.on { background:#1565c0; color:#fff; border-color:#1565c0; }
+  .ggrid { display:flex; flex-wrap:wrap; gap:5px; margin:6px 0 14px; }
+  .gtile { width:26px; height:26px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:.62em; color:#fff; cursor:pointer; font-weight:700; }
+  .gtile.good { background:#2e7d32; } .gtile.bad { background:#c62828; }
+  .gacc { margin:4px 0 8px; }
+  #rvModal { position:fixed; inset:0; background:rgba(0,0,0,.75); display:none; z-index:60; align-items:center; justify-content:center; padding:12px; }
+  #rvModal.open { display:flex; }
+  #rvModal .rvbox { background:#fff; border-radius:12px; max-width:820px; width:100%; max-height:94vh; display:flex; flex-direction:column; overflow:hidden; }
+  #rvModal .rvhead { display:flex; align-items:center; gap:10px; padding:10px 14px; border-bottom:1px solid #e3e6ee; }
+  #rvModal .rvhead b { flex:1; }
+  #rvModal .rvhead button { font:inherit; padding:6px 12px; border:1px solid #c9cedb; border-radius:7px; background:#fff; cursor:pointer; }
+  #rvBody { padding:14px 16px 18px; overflow:auto; }
   .opt { display:block; width:100%; text-align:left; margin:8px 0; padding:13px 16px; border:2px solid #d8dce6;
          border-radius:9px; background:#fff; font:inherit; font-size:1em; cursor:pointer; line-height:1.4; }
   .opt:hover:not(:disabled) { border-color: var(--blue); background:#f0f6ff; }
@@ -102,7 +116,9 @@
     <div id="opts"></div>
     <div class="feedback" id="fb"></div>
     <div class="nav">
+      <button class="btn gray" id="backBtn" style="display:none">◀ Back</button>
       <button class="btn" id="nextBtn" style="display:none">Next question →</button>
+      <button class="btn gray" id="toCurrentBtn" style="display:none">↩ Back to current</button>
     </div>
   </div>
 
@@ -110,6 +126,7 @@
     <h2>Session complete! 🎉</h2>
     <p id="finalLine"></p>
     <div id="missedList"></div>
+    <div id="recapList"></div>
     <div class="nav">
       <button class="btn" id="restartBtn">Start a new session</button>
       <button class="btn gray" id="reviewMissedBtn" style="display:none">Retry missed again</button>
@@ -176,7 +193,8 @@ const BYID = {}; for (const q of BANK) BYID[q.id] = q;
 const SYNC_URL = '';
 const PASS = 75;
 
-let order = [], idx = 0, right = 0, wrong = 0, missed = [], isRetry = false;
+let order = [], idx = 0, right = 0, wrong = 0, missed = [], isRetry = false, picks = [], viewIdx = 0;
+let sessionResults = {}, gaboWhich = 'session';
 let examMode = false, examTimer = null, examSecs = 0;
 
 function loadJ(k,d){ try { return JSON.parse(localStorage.getItem(k)) || d; } catch(e){ return d; } }
@@ -235,7 +253,7 @@ function start(list, retry, opts){
   isRetry = !!retry;
   order = (opts.exam ? shuffle(list.slice()) : spreadOrder(list.slice()));  // spread topics; never 2 math in a row (exam stays fully random)
   if (opts.limit) order = order.slice(0, opts.limit);
-  idx = 0; right = 0; wrong = 0; missed = [];
+  idx = 0; right = 0; wrong = 0; missed = []; picks = []; viewIdx = 0;
   document.getElementById('roundBanner').style.display = isRetry ? 'block' : 'none';
   document.getElementById('examTimer').style.display = examMode ? 'inline' : 'none';
   if (examMode){ examSecs = 0; examTimer = setInterval(tickExam, 1000); tickExam(); }
@@ -247,27 +265,46 @@ function tickExam(){ examSecs++; const m=Math.floor(examSecs/60), s=examSecs%60;
 function stopExamTimer(){ if(examTimer){ clearInterval(examTimer); examTimer=null; } }
 
 function render(){
-  const q = order[idx];
-  document.getElementById('qPos').textContent = idx + 1;
+  const q = order[viewIdx];
+  const answered = picks[viewIdx] !== undefined;
+  const reviewing = viewIdx < idx;
+  const sel = picks[viewIdx];
+  document.getElementById('qPos').textContent = viewIdx + 1;
   document.getElementById('qTotal').textContent = order.length;
   document.getElementById('bar').style.width = (((idx+1) / order.length) * 100) + '%';
   const starTag = q.star ? '<span style="color:#ef6c00;font-weight:bold">⭐ Teacher star item</span> · ' : '';
-  document.getElementById('qSrc').innerHTML = starTag + esc(q.source) + ' · ' + esc(q.sourceRef) + ' · Ch ' + q.ch + ' (' + (WEIGHTS[q.ch]||0) + '% of exam)' + (q.bookPage ? ' · book p. ' + q.bookPage : '');
+  const revTag = reviewing ? '<span style="color:#1565c0;font-weight:bold">🔎 Reviewing (answer locked)</span> · ' : '';
+  document.getElementById('qSrc').innerHTML = revTag + starTag + esc(q.source) + ' · ' + esc(q.sourceRef) + ' · Ch ' + q.ch + ' (' + (WEIGHTS[q.ch]||0) + '% of exam)' + (q.bookPage ? ' · book p. ' + q.bookPage : '');
   document.getElementById('qText').textContent = q.question;
   const box = document.getElementById('opts'); box.innerHTML = '';
   for (const k of ['a','b','c','d']){
     const b = document.createElement('button');
-    b.className = 'opt'; b.textContent = k.toUpperCase() + '.  ' + q.options[k];
-    b.onclick = () => answer(k, b); b.dataset.k = k; box.appendChild(b);
+    b.className = 'opt'; b.textContent = k.toUpperCase() + '.  ' + q.options[k]; b.dataset.k = k;
+    if (answered){ b.disabled = true; if (k === q.finalAnswer) b.classList.add('correct'); if (sel === k && sel !== q.finalAnswer && sel !== '?') b.classList.add('wrong'); }
+    else { b.onclick = () => answer(k, b); }
+    box.appendChild(b);
   }
-  const fb = document.getElementById('fb'); fb.className = 'feedback'; fb.innerHTML = '';
-  document.getElementById('nextBtn').style.display = 'none';
+  const fb = document.getElementById('fb');
+  if (answered && examMode){ fb.className = 'feedback ' + (sel === q.finalAnswer ? 'good' : 'bad'); fb.innerHTML = (sel === q.finalAnswer ? '<b>✅</b>' : '<b>❌ Answer: ' + q.finalAnswer.toUpperCase() + '</b>') + refLine(q); }
+  else if (answered && sel === '?'){ fb.className = 'feedback'; fb.innerHTML = feedbackHTML(q, '?'); }
+  else if (answered){ fb.className = 'feedback ' + (sel === q.finalAnswer ? 'good' : 'bad'); fb.innerHTML = feedbackHTML(q, sel); }
+  else { fb.className = 'feedback'; fb.innerHTML = ''; }
+  const nb = document.getElementById('nextBtn'), bk = document.getElementById('backBtn'), tc = document.getElementById('toCurrentBtn');
+  if (bk) bk.style.display = (viewIdx > 0 && !examMode) ? 'inline-block' : 'none';
+  if (tc) tc.style.display = reviewing ? 'inline-block' : 'none';
+  if (answered){
+    const last = (idx + 1 >= order.length);
+    nb.style.display = 'inline-block';
+    nb.textContent = reviewing ? 'Next →' : (last ? ((!examMode && missed.length && !isRetry) ? 'Final attempt →' : 'See my results') : 'Next question →');
+  } else { nb.style.display = 'none'; }
   updateScore();
-  saveCurrent();
+  if (viewIdx === idx) saveCurrent();
 }
 
 function answer(k, btn){
+  if (viewIdx !== idx || picks[idx] !== undefined) return;
   const q = order[idx]; const correct = q.finalAnswer; const ok = (k === correct);
+  picks[idx] = k; sessionResults[q.id] = { ok: ok, ch: q.ch, pick: k };
   logAnswer(q, k, ok, ok && isRetry);
   document.querySelectorAll('.opt').forEach(b => { b.disabled = true; if (b.dataset.k === correct) b.classList.add('correct'); });
   const fb = document.getElementById('fb');
@@ -340,8 +377,9 @@ function updateScore(){
 }
 
 document.getElementById('nextBtn').onclick = () => {
+  if (viewIdx < idx){ viewIdx++; render(); return; }
   idx++;
-  if (idx < order.length){ render(); return; }
+  if (idx < order.length){ viewIdx = idx; render(); return; }
   if (!examMode && missed.length && !isRetry){ logSession({ t: Date.now(), n: order.length, r: right, exam: false, retry: false }); clearCurrent(); start(missed, true); return; }
   finish();
 };
@@ -367,6 +405,7 @@ function finish(){
     head = 'You scored <b>' + right + ' / ' + order.length + ' (' + pct + '%)</b>.' + (pct >= PASS ? ' Passing pace — Florida needs 75%. 🎯' : ' Florida needs 75% — keep drilling! 💪');
   }
   document.getElementById('finalLine').innerHTML = head;
+  renderRoundRecap();
   const ml = document.getElementById('missedList');
   ml.innerHTML = missed.length ? '<h3>Review these:</h3>' : (isRetry ? '' : '<p>Perfect session — nothing missed! 🏆</p>');
   for (const q of missed){
@@ -401,7 +440,7 @@ function showStats(){
   const sessions = loadJ('reqz_sessions', []);
   const hist = loadJ('reqz_hist', {});
   let html = '';
-
+  html += gaboPanelHTML();
   html += '<h3>📈 Session history</h3>';
   if (!sessions.length){ html += '<p>No completed sessions yet — finish a round first.</p>'; }
   else {
@@ -492,7 +531,7 @@ function resume(c){
   stopExamTimer();
   order = (c.ids||[]).map(id=>BYID[id]).filter(Boolean);
   if (!order.length){ clearCurrent(); start(BANK, false); return; }
-  idx = Math.min(c.idx||0, order.length-1);
+  idx = Math.min(c.idx||0, order.length-1); picks = []; for (let z=0; z<idx; z++) picks[z]='?'; viewIdx = idx;
   right = c.right||0; wrong = c.wrong||0;
   missed = (c.missed||[]).map(id=>BYID[id]).filter(Boolean);
   isRetry = false; examMode = false;
@@ -528,6 +567,8 @@ function boot(){
 function wire(id, fn){ const el = document.getElementById(id); if (el) el.onclick = fn; }
 wire('restartBtn', () => start(BANK, false));
 wire('reviewMissedBtn', () => start(missed, true));
+wire('backBtn', () => { if (viewIdx > 0){ viewIdx--; render(); } });
+wire('toCurrentBtn', () => { viewIdx = idx; render(); });
 wire('statsBtn', showStats);
 wire('statsBtn2', showStats);
 wire('statsBackBtn', () => start(BANK, false));
@@ -544,6 +585,65 @@ flushQueue();
 boot();
 </script>
 
+<div id="rvModal" onclick="if(event.target===this)rvClose()">
+ <div class="rvbox">
+  <div class="rvhead"><b>🔎 Review</b><button onclick="rvClose()" style="border-color:#c62828;color:#c62828">Close</button></div>
+  <div id="rvBody"></div>
+ </div>
+</div>
+<script>
+function feedbackHTML(q, sel){
+  const correct = q.finalAnswer; const ok = (sel === correct);
+  const expl = (q.teach ? teachBlock(q) : esc(q.aiReasoning || '')) + refLine(q);
+  if (sel === '?') return '<b>📌 You answered this earlier.</b> The answer is <b>' + correct.toUpperCase() + '</b>. ' + expl;
+  return ok ? ('<b>✅ Correct!</b> ' + expl) : ('<b>❌ Not quite.</b> The answer is <b>' + correct.toUpperCase() + '</b>. ' + expl);
+}
+function gtiles(items){ let s = '<div class="ggrid">'; for (const it of items) s += '<span class="gtile ' + (it.ok?'good':'bad') + '" title="Ch ' + it.q.ch + '" data-qid="' + it.q.id + '">' + it.q.ch + '</span>'; return s + '</div>'; }
+function gaboGridHTML(which){
+  const hist = loadJ('reqz_hist', {}); const items = [];
+  if (which === 'session'){ for (const id in sessionResults){ const q = BYID[id]; if (q) items.push({ q: q, ok: sessionResults[id].ok }); } }
+  else { for (const q of BANK){ const h = hist[q.id]; if (h && h.s > 0) items.push({ q: q, ok: h.last === 1 }); } }
+  const total = items.length, corr = items.filter(x => x.ok).length, pct = total ? Math.round(corr/total*100) : 0;
+  let s = '<p class="gacc"><b>' + (which==='session'?'This session':'Overall') + ':</b> ' + corr + ' / ' + total + ' correct = <b>' + (total?pct+'%':'—') + '</b></p>';
+  if (!total) return s + '<p style="color:#888">' + (which==='session'?'Answer some questions and they will appear here.':'No answered questions yet.') + '</p>';
+  return s + gtiles(items);
+}
+function gaboPanelHTML(){
+  return '<h3>🗂️ Gabarito — your answers</h3>' +
+    '<div class="gtabs"><button class="gtab' + (gaboWhich==='session'?' on':'') + '" data-w="session">This session</button>' +
+    '<button class="gtab' + (gaboWhich==='overall'?' on':'') + '" data-w="overall">Overall</button></div>' +
+    '<div id="gaboGrid">' + gaboGridHTML(gaboWhich) + '</div>';
+}
+function gabaritoTab(w){ gaboWhich = w; const g = document.getElementById('gaboGrid'); if (g) g.innerHTML = gaboGridHTML(w);
+  document.querySelectorAll('.gtabs .gtab').forEach(b => b.classList.toggle('on', b.getAttribute('data-w') === w)); }
+function reviewQ(id){
+  const q = BYID[id]; if (!q) return;
+  const sel = sessionResults[id] ? sessionResults[id].pick : null;
+  const pg = (q.book && q.book.page) ? (' · book p. ' + q.book.page) : (q.bookPage ? (' · book p. ' + q.bookPage) : '');
+  let s = '<div class="qnum">' + esc(q.source) + ' · Ch ' + q.ch + pg + '</div><div class="qtext">' + esc(q.question) + '</div>';
+  for (const k of ['a','b','c','d']){ let cls = 'opt'; if (k === q.finalAnswer) cls += ' correct'; if (sel && k === sel && sel !== q.finalAnswer) cls += ' wrong';
+    s += '<div class="' + cls + '" style="cursor:default">' + k.toUpperCase() + '.  ' + esc(q.options[k]) + '</div>'; }
+  s += '<div class="feedback ' + (sel && sel !== q.finalAnswer ? 'bad' : 'good') + '">' + feedbackHTML(q, sel || q.finalAnswer) + '</div>';
+  s += '<div style="margin-top:10px"><button class="btn gray" data-bk="' + id + '">📖 See it in the book</button></div>';
+  document.getElementById('rvBody').innerHTML = s;
+  document.getElementById('rvModal').classList.add('open');
+}
+function rvClose(){ document.getElementById('rvModal').classList.remove('open'); }
+function renderRoundRecap(){
+  const el = document.getElementById('recapList'); if (!el) return;
+  if (examMode){ el.innerHTML = ''; return; }
+  const items = order.map((q, i) => ({ q: q, ok: picks[i] === q.finalAnswer }));
+  const corr = items.filter(x => x.ok).length, pct = order.length ? Math.round(corr/order.length*100) : 0;
+  el.innerHTML = '<h3>🗂️ This round — tap any to review</h3><p class="gacc">' + corr + ' / ' + order.length + ' correct = <b>' + pct + '%</b></p>' + gtiles(items);
+}
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape') rvClose(); });
+document.addEventListener('click', function(e){
+  if (!e.target.closest) return;
+  const t = e.target.closest('.gtile[data-qid]'); if (t){ reviewQ(t.getAttribute('data-qid')); return; }
+  const tab = e.target.closest('.gtab[data-w]'); if (tab){ gabaritoTab(tab.getAttribute('data-w')); return; }
+  const bk = e.target.closest('[data-bk]'); if (bk){ rvClose(); bkOpenById(bk.getAttribute('data-bk')); return; }
+});
+</script>
 <div id="bkModal" onclick="if(event.target===this)bkClose()">
  <div id="bkBox">
   <div id="bkHead">
