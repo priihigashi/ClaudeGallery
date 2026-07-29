@@ -243,6 +243,15 @@ function spreadOrder(list){
   for(let g=M.length-1; g>=0; g--){ out.splice(slots[g],0,M[g]); }
   return out;
 }
+function interleaveStars(base){
+  const stars=base.filter(q=>q.star), rest=base.filter(q=>!q.star);
+  const out=[]; let si=0, ri=0;
+  for(let i=0; i<base.length; i++){
+    if(i%2===0 && si<stars.length) out.push(stars[si++]);
+    else out.push(rest[ri++]);
+  }
+  return out;
+}
 function show(id){ for (const c of ['quizCard','summaryCard','statsCard']) document.getElementById(c).style.display = (c===id)?'block':'none'; }
 
 function start(list, retry, opts){
@@ -252,6 +261,7 @@ function start(list, retry, opts){
   examMode = !!opts.exam;
   isRetry = !!retry;
   order = (opts.exam ? shuffle(list.slice()) : spreadOrder(list.slice()));  // spread topics; never 2 math in a row (exam stays fully random)
+  if (opts.paceStars) order = interleaveStars(order);  // full-deck rounds only: pace star items ~every other question
   if (opts.limit) order = order.slice(0, opts.limit);
   idx = 0; right = 0; wrong = 0; missed = []; picks = []; viewIdx = 0;
   document.getElementById('roundBanner').style.display = isRetry ? 'block' : 'none';
@@ -530,7 +540,7 @@ function clearCurrent(){ try { localStorage.removeItem('reqz_current'); } catch(
 function resume(c){
   stopExamTimer();
   order = (c.ids||[]).map(id=>BYID[id]).filter(Boolean);
-  if (!order.length){ clearCurrent(); start(BANK, false); return; }
+  if (!order.length){ clearCurrent(); start(BANK, false, {paceStars:true}); return; }
   idx = Math.min(c.idx||0, order.length-1); picks = []; for (let z=0; z<idx; z++) picks[z]='?'; viewIdx = idx;
   right = c.right||0; wrong = c.wrong||0;
   missed = (c.missed||[]).map(id=>BYID[id]).filter(Boolean);
@@ -542,7 +552,7 @@ function resume(c){
 function resetProgress(){
   if (!confirm('This erases ALL your saved progress on this device — session history, stats, true weaknesses, and any in-progress round. This cannot be undone. Continue?')) return;
   ['reqz_hist','reqz_log','reqz_sessions','reqz_queue','reqz_current'].forEach(k => { try { localStorage.removeItem(k); } catch(e){} });
-  alert('Progress reset ✅'); start(BANK, false);
+  alert('Progress reset ✅'); start(BANK, false, {paceStars:true});
 }
 function offerResume(c){
   const old = document.getElementById('resumeBar'); if (old) old.remove();
@@ -554,24 +564,24 @@ function offerResume(c){
   const rb = document.createElement('button'); rb.className='btn'; rb.style.cssText='font-size:.85em;padding:6px 12px;color:#fff'; rb.textContent='Resume';
   rb.onclick = () => { bar.remove(); resume(c); };
   const fb = document.createElement('button'); fb.className='btn gray'; fb.style.cssText='font-size:.85em;padding:6px 12px'; fb.textContent='Start fresh';
-  fb.onclick = () => { bar.remove(); clearCurrent(); start(BANK, false); };
+  fb.onclick = () => { bar.remove(); clearCurrent(); start(BANK, false, {paceStars:true}); };
   bar.appendChild(rb); bar.appendChild(fb);
   const card = document.getElementById('quizCard');
   card.parentNode.insertBefore(bar, card);
 }
 function boot(){
-  start(BANK, false);  // a fresh round is ready; the idx0/0/0 guard keeps this from overwriting c
+  start(BANK, false, {paceStars:true});  // a fresh round is ready; the idx0/0/0 guard keeps this from overwriting c
   offerResume(loadJ('reqz_current', null));  // local bookmark now; a cloud sync will refresh this if the phone left off further along
 }
 
 function wire(id, fn){ const el = document.getElementById(id); if (el) el.onclick = fn; }
-wire('restartBtn', () => start(BANK, false));
+wire('restartBtn', () => start(BANK, false, {paceStars:true}));
 wire('reviewMissedBtn', () => start(missed, true));
 wire('backBtn', () => { if (viewIdx > 0){ viewIdx--; render(); } });
 wire('toCurrentBtn', () => { viewIdx = idx; render(); });
 wire('statsBtn', showStats);
 wire('statsBtn2', showStats);
-wire('statsBackBtn', () => start(BANK, false));
+wire('statsBackBtn', () => start(BANK, false, {paceStars:true}));
 wire('examBtn', () => start(BANK, false, {exam:true, limit:100}));
 wire('starBtn', () => start(BANK.filter(q=>q.star), false));
 wire('practiceStarBtn', () => start(BANK.filter(q=>q.star), false));
