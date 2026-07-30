@@ -99,7 +99,7 @@
 <body>
 <div class="wrap">
   <h1>🏠 Florida Real Estate Exam Practice</h1>
-  <div class="sub">Your approved study deck · Source shown after each answer · <button class="btn gray" id="statsBtn" style="font-size:.85em;padding:6px 12px">📊 My progress</button> <button class="btn" id="starBtn" style="font-size:.85em;padding:6px 12px;border-color:#ef6c00;color:#ef6c00">⭐ Drill teacher star items</button> <button class="btn" id="examBtn" style="font-size:.85em;padding:6px 12px;color:#fff">📝 Practice exam (100 Q)</button> <button class="btn gray" id="searchBookBtn" style="font-size:.85em;padding:6px 12px">🔍 Search the book</button></div>
+  <div class="sub">Your approved study deck · Source shown after each answer · <button class="btn gray" id="statsBtn" style="font-size:.85em;padding:6px 12px">📊 My progress</button> <button class="btn gray" id="allBtn" style="font-size:.85em;padding:6px 12px;border-color:#1565c0;color:#1565c0">📚 All 271 questions</button> <button class="btn" id="starBtn" style="font-size:.85em;padding:6px 12px;border-color:#ef6c00;color:#ef6c00">⭐ Drill teacher star items</button> <button class="btn" id="examBtn" style="font-size:.85em;padding:6px 12px;color:#fff">📝 Practice exam (100 Q)</button> <button class="btn gray" id="wrongBtn" style="font-size:.85em;padding:6px 12px;border-color:#c62828;color:#c62828">❌ Practice wrong questions</button> <button class="btn gray" id="searchBookBtn" style="font-size:.85em;padding:6px 12px">🔍 Search the book</button></div>
 
   <div class="card" id="quizCard">
     <div class="score">
@@ -578,6 +578,8 @@ wire('statsBtn', showStats);
 wire('statsBtn2', showStats);
 wire('statsBackBtn', () => start(BANK, false, {paceStars:true}));
 wire('examBtn', () => start(BANK, false, {exam:true, limit:100}));
+wire('allBtn', () => start(BANK, false, {paceStars:true}));
+wire('wrongBtn', () => { const hist=loadJ('reqz_hist',{}); start(BANK.filter(q=>hist[q.id]&&hist[q.id].w>0), false); });
 wire('starBtn', () => start(BANK.filter(q=>q.star), false));
 wire('practiceStarBtn', () => start(BANK.filter(q=>q.star), false));
 wire('practiceWeakBtn', () => { const hist=loadJ('reqz_hist',{}); start(BANK.filter(q=>hist[q.id]&&hist[q.id].w>0), false); });
