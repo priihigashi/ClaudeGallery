@@ -10,8 +10,23 @@
   body { font-family: Georgia, 'Times New Roman', serif; background: var(--bg); margin:0; padding:20px; color:#222; }
   .wrap { max-width: 760px; margin: 0 auto; }
   h1 { font-size: 1.3em; color: var(--blue); margin: 0 0 4px; }
-  .sub { color:#666; font-size:.85em; margin-bottom:16px; }
+  .sub { color:#666; font-size:.85em; margin-bottom:14px; }
   .card { background:#fff; border-radius:12px; padding:24px; box-shadow:0 2px 8px rgba(0,0,0,.08); margin-bottom:16px; }
+  .toolbar { display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; margin-bottom:18px; padding:12px;
+    background:rgba(255,255,255,.55); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.7); border-radius:16px; box-shadow:0 4px 24px rgba(30,42,90,.08); }
+  @media (max-width:520px){ .toolbar{ grid-template-columns:repeat(2, 1fr); } }
+  .gbtn { display:flex; align-items:center; justify-content:center; gap:7px; padding:13px 10px; border-radius:12px;
+    border:1px solid rgba(21,30,60,.08); background:rgba(255,255,255,.75); backdrop-filter:blur(6px);
+    font:inherit; font-size:.82em; font-weight:600; line-height:1.25; text-align:center; cursor:pointer;
+    color:#33415c; box-shadow:0 1px 3px rgba(20,30,60,.05); transition:transform .15s ease, box-shadow .15s ease; }
+  .gbtn:hover { transform:translateY(-2px); box-shadow:0 8px 18px rgba(20,30,60,.12); }
+  .gbtn:active { transform:translateY(0); }
+  .gbtn .gicon { font-size:1.15em; line-height:1; }
+  .gbtn.gsolid { background:var(--blue); color:#fff; border-color:var(--blue); }
+  .gbtn.gstar { color:#ef6c00; border-color:rgba(239,108,0,.3); }
+  .gbtn.gwrong { color:var(--red); border-color:rgba(198,40,40,.3); }
+  .gbtn.gblue { color:var(--blue); border-color:rgba(21,101,192,.3); }
   .score { display:flex; gap:16px; font-size:.9em; color:#444; margin-bottom:12px; flex-wrap:wrap; }
   .score b { font-size:1.1em; }
   .qnum { color:#888; font-size:.8em; margin-bottom:6px; }
@@ -99,7 +114,15 @@
 <body>
 <div class="wrap">
   <h1>🏠 Florida Real Estate Exam Practice</h1>
-  <div class="sub">Your approved study deck · Source shown after each answer · <button class="btn gray" id="statsBtn" style="font-size:.85em;padding:6px 12px">📊 My progress</button> <button class="btn gray" id="allBtn" style="font-size:.85em;padding:6px 12px;border-color:#1565c0;color:#1565c0">📚 All 271 questions</button> <button class="btn" id="starBtn" style="font-size:.85em;padding:6px 12px;border-color:#ef6c00;color:#ef6c00">⭐ Drill teacher star items</button> <button class="btn" id="examBtn" style="font-size:.85em;padding:6px 12px;color:#fff">📝 Practice exam (100 Q)</button> <button class="btn gray" id="wrongBtn" style="font-size:.85em;padding:6px 12px;border-color:#c62828;color:#c62828">❌ Practice wrong questions</button> <button class="btn gray" id="searchBookBtn" style="font-size:.85em;padding:6px 12px">🔍 Search the book</button></div>
+  <div class="sub">Your approved study deck · Source shown after each answer</div>
+  <div class="toolbar">
+    <button class="gbtn gsolid" id="allBtn"><span class="gicon">📚</span> All 271 questions</button>
+    <button class="gbtn gsolid" id="examBtn"><span class="gicon">📝</span> Practice exam (100 Q)</button>
+    <button class="gbtn gstar" id="starBtn"><span class="gicon">⭐</span> Drill teacher star items</button>
+    <button class="gbtn gwrong" id="wrongBtn"><span class="gicon">❌</span> Practice wrong questions</button>
+    <button class="gbtn gblue" id="statsBtn"><span class="gicon">📊</span> My progress</button>
+    <button class="gbtn" id="searchBookBtn"><span class="gicon">🔍</span> Search the book</button>
+  </div>
 
   <div class="card" id="quizCard">
     <div class="score">
