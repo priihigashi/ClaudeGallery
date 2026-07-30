@@ -12,21 +12,31 @@
   h1 { font-size: 1.3em; color: var(--blue); margin: 0 0 4px; }
   .sub { color:#666; font-size:.85em; margin-bottom:14px; }
   .card { background:#fff; border-radius:12px; padding:24px; box-shadow:0 2px 8px rgba(0,0,0,.08); margin-bottom:16px; }
-  .toolbar { display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; margin-bottom:18px; padding:12px;
-    background:rgba(255,255,255,.55); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
-    border:1px solid rgba(255,255,255,.7); border-radius:16px; box-shadow:0 4px 24px rgba(30,42,90,.08); }
+  .toolbar { position:relative; overflow:hidden; display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-bottom:20px; padding:16px;
+    background:rgba(255,255,255,.45); backdrop-filter:blur(20px) saturate(180%); -webkit-backdrop-filter:blur(20px) saturate(180%);
+    border:1px solid rgba(255,255,255,.7); border-radius:22px; box-shadow:0 8px 32px rgba(30,42,90,.10); }
+  .toolbar::before { content:''; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(135deg, rgba(255,255,255,.4) 0%, transparent 55%); }
   @media (max-width:520px){ .toolbar{ grid-template-columns:repeat(2, 1fr); } }
-  .gbtn { display:flex; align-items:center; justify-content:center; gap:7px; padding:13px 10px; border-radius:12px;
-    border:1px solid rgba(21,30,60,.08); background:rgba(255,255,255,.75); backdrop-filter:blur(6px);
+  .gbtn { position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; gap:7px;
+    padding:15px 14px; border-radius:999px;
+    border:1px solid rgba(21,30,60,.10); background:rgba(255,255,255,.6); backdrop-filter:blur(12px) saturate(160%); -webkit-backdrop-filter:blur(12px) saturate(160%);
     font:inherit; font-size:.82em; font-weight:600; line-height:1.25; text-align:center; cursor:pointer;
-    color:#33415c; box-shadow:0 1px 3px rgba(20,30,60,.05); transition:transform .15s ease, box-shadow .15s ease; }
-  .gbtn:hover { transform:translateY(-2px); box-shadow:0 8px 18px rgba(20,30,60,.12); }
+    color:#33415c; box-shadow:0 2px 8px rgba(20,30,60,.06); transition:transform .18s ease, box-shadow .18s ease, background .18s ease; }
+  .gbtn::before { content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+    background:linear-gradient(135deg, rgba(255,255,255,.55) 0%, transparent 55%); }
+  .gbtn:hover { transform:translateY(-2px); box-shadow:0 10px 26px rgba(20,30,60,.16); }
   .gbtn:active { transform:translateY(0); }
-  .gbtn .gicon { font-size:1.15em; line-height:1; }
-  .gbtn.gsolid { background:var(--blue); color:#fff; border-color:var(--blue); }
-  .gbtn.gstar { color:#ef6c00; border-color:rgba(239,108,0,.3); }
-  .gbtn.gwrong { color:var(--red); border-color:rgba(198,40,40,.3); }
-  .gbtn.gblue { color:var(--blue); border-color:rgba(21,101,192,.3); }
+  .gbtn .gicon, .gbtn .glabel { position:relative; z-index:1; }
+  .gbtn .gicon { font-size:1.2em; line-height:1; }
+  .gbtn.gsolid { background:rgba(21,101,192,.85); color:#fff; border-color:rgba(21,101,192,.9); box-shadow:0 4px 16px rgba(21,101,192,.28); }
+  .gbtn.gsolid:hover { box-shadow:0 12px 28px rgba(21,101,192,.4); }
+  .gbtn.gstar { color:#ef6c00; border-color:rgba(239,108,0,.35); }
+  .gbtn.gstar:hover { background:rgba(239,108,0,.14); box-shadow:0 10px 26px rgba(239,108,0,.25); }
+  .gbtn.gwrong { color:var(--red); border-color:rgba(198,40,40,.35); }
+  .gbtn.gwrong:hover { background:rgba(198,40,40,.12); box-shadow:0 10px 26px rgba(198,40,40,.22); }
+  .gbtn.gblue { color:var(--blue); border-color:rgba(21,101,192,.35); }
+  .gbtn.gblue:hover { background:rgba(21,101,192,.12); box-shadow:0 10px 26px rgba(21,101,192,.22); }
   .score { display:flex; gap:16px; font-size:.9em; color:#444; margin-bottom:12px; flex-wrap:wrap; }
   .score b { font-size:1.1em; }
   .qnum { color:#888; font-size:.8em; margin-bottom:6px; }
@@ -116,12 +126,12 @@
   <h1>🏠 Florida Real Estate Exam Practice</h1>
   <div class="sub">Your approved study deck · Source shown after each answer</div>
   <div class="toolbar">
-    <button class="gbtn gsolid" id="allBtn"><span class="gicon">📚</span> All 271 questions</button>
-    <button class="gbtn gsolid" id="examBtn"><span class="gicon">📝</span> Practice exam (100 Q)</button>
-    <button class="gbtn gstar" id="starBtn"><span class="gicon">⭐</span> Drill teacher star items</button>
-    <button class="gbtn gwrong" id="wrongBtn"><span class="gicon">❌</span> Practice wrong questions</button>
-    <button class="gbtn gblue" id="statsBtn"><span class="gicon">📊</span> My progress</button>
-    <button class="gbtn" id="searchBookBtn"><span class="gicon">🔍</span> Search the book</button>
+    <button class="gbtn gsolid" id="allBtn"><span class="gicon">📚</span><span class="glabel">All 271 questions</span></button>
+    <button class="gbtn gsolid" id="examBtn"><span class="gicon">📝</span><span class="glabel">Practice exam (100 Q)</span></button>
+    <button class="gbtn gstar" id="starBtn"><span class="gicon">⭐</span><span class="glabel">Drill teacher star items</span></button>
+    <button class="gbtn gwrong" id="wrongBtn"><span class="gicon">❌</span><span class="glabel">Practice wrong questions</span></button>
+    <button class="gbtn gblue" id="statsBtn"><span class="gicon">📊</span><span class="glabel">My progress</span></button>
+    <button class="gbtn" id="searchBookBtn"><span class="gicon">🔍</span><span class="glabel">Search the book</span></button>
   </div>
 
   <div class="card" id="quizCard">
