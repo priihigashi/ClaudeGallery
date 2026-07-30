@@ -42,7 +42,16 @@
   .qnum { color:#888; font-size:.8em; margin-bottom:6px; }
   .qtext { font-size:1.08em; line-height:1.5; margin-bottom:18px; }
   .gtabs { display:flex; gap:8px; margin:6px 0 10px; }
-  .gtabs .gtab { font:inherit; padding:6px 12px; border:1px solid #c9cedb; border-radius:7px; background:#fff; cursor:pointer; }
+  .gtabs .gtab { font:inherit; padding:7px 14px; border:1px solid rgba(21,30,60,.12); border-radius:999px;
+    background:rgba(255,255,255,.7); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); cursor:pointer;
+    box-shadow:0 1px 3px rgba(20,30,60,.05); transition:transform .15s ease, box-shadow .15s ease; }
+  .gtabs .gtab:hover { transform:translateY(-1px); box-shadow:0 4px 10px rgba(20,30,60,.12); }
+  .gicon-btn { flex:0 0 auto; width:30px; height:30px; display:flex; align-items:center; justify-content:center;
+    border-radius:999px; border:1px solid rgba(21,30,60,.12); background:rgba(255,255,255,.7);
+    backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); cursor:pointer; font-size:.9em; padding:0;
+    box-shadow:0 1px 3px rgba(20,30,60,.06); transition:transform .15s ease, box-shadow .15s ease; }
+  .gicon-btn:hover { transform:translateY(-1px); box-shadow:0 4px 10px rgba(20,30,60,.14); }
+  .gicon-btn.gicon-danger:hover { background:rgba(198,40,40,.14); }
   .gtabs .gtab.on { background:#1565c0; color:#fff; border-color:#1565c0; }
   .ggrid { display:flex; flex-wrap:wrap; gap:5px; margin:6px 0 14px; }
   .gtile { width:26px; height:26px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:.62em; color:#fff; cursor:pointer; font-weight:700; }
@@ -170,14 +179,14 @@
   <div class="card" id="statsCard" style="display:none">
     <h2>📊 My progress</h2>
     <div id="statsBody"></div>
-    <div class="nav">
-      <button class="btn gray" id="practiceWeakBtn" style="display:none">🔁 Practice everything I have ever missed</button>
-      <button class="btn gray" id="practiceWeak2Btn" style="display:none">🔥 Practice my true weaknesses</button>
-      <button class="btn gray" id="practiceStarBtn">⭐ Practice teacher's star items</button>
-      <button class="btn gray" id="backupBtn">⬆️ Backup history</button>
-      <button class="btn gray" id="restoreBtn">⬇️ Restore history</button>
-      <button class="btn gray" id="resetBtn" style="border-color:#c62828;color:#c62828">🗑️ Reset my progress</button>
-      <button class="btn" id="statsBackBtn">← Back to quiz</button>
+    <div class="nav" style="flex-wrap:wrap">
+      <button class="gbtn" id="practiceWeakBtn" style="display:none">🔁 Practice everything I have ever missed</button>
+      <button class="gbtn" id="practiceWeak2Btn" style="display:none">🔥 Practice my true weaknesses</button>
+      <button class="gbtn gstar" id="practiceStarBtn">⭐ Practice teacher's star items</button>
+      <button class="gbtn" id="backupBtn">⬆️ Backup history</button>
+      <button class="gbtn" id="restoreBtn">⬇️ Restore history</button>
+      <button class="gbtn gwrong" id="resetBtn">🗑️ Reset my progress</button>
+      <button class="gbtn gsolid" id="statsBackBtn">← Back to quiz</button>
     </div>
     <div id="syncPanel" style="margin-top:14px;border-top:1px solid #ddd;padding-top:12px">
       <h3 style="margin:0 0 4px">☁️ Cross-device sync<span id="syncStatus" style="font-size:.72em;color:#888;font-weight:400"></span></h3>
@@ -250,6 +259,11 @@ function logAnswer(q, sel, ok, recovered){
 function flushQueue(){ const q = loadJ('reqz_queue', []); if(!q.length || !SYNC_URL) return;
   fetch(SYNC_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(q)}).then(()=>saveJ('reqz_queue',[])).catch(()=>{}); }
 function logSession(rec){ const s = loadJ('reqz_sessions', []); s.push(rec); while (s.length > 80) s.shift(); saveJ('reqz_sessions', s); }
+// records a still-open session to history before it's overwritten/discarded, so every opened session shows up, not just finished ones
+function archiveAbandoned(prev){
+  if (!prev || !prev.ids || !prev.ids.length || !((prev.idx||0) > 0)) return;
+  logSession({ t: prev.t || Date.now(), n: prev.ids.length, r: prev.right||0, answered: prev.idx||0, exam:false, retry:false, abandoned:true });
+}
 
 function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a; }
 function isMathQ(q){
@@ -484,18 +498,23 @@ function showStats(){
     const total = cur.ids.length, answered = cur.idx, r = cur.right||0, w = cur.wrong||0;
     const pct = (r+w) ? Math.round(r/(r+w)*100) : 0;
     html += '<h3>▶️ In-progress session</h3>';
-    html += '<div class="statrow"><span>' + new Date(cur.t).toLocaleDateString() + ' ' + new Date(cur.t).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) + ' — Q' + answered + ' of ' + total + ' answered · ' + r + '/' + (r+w) + ' correct so far</span><span class="pbarwrap"><i class="pbar" style="width:' + pct + '%;background:' + (pct>=PASS?'var(--green)':'var(--red)') + '"></i></span><b>' + pct + '%</b></div>';
-    html += '<div style="margin:8px 0 16px"><button class="btn" data-resume-current style="font-size:.85em;padding:8px 14px">▶️ Resume</button> <button class="btn gray" data-discard-current style="font-size:.85em;padding:8px 14px;color:#c62828;border-color:#c62828">🗑️ Delete this in-progress session</button></div>';
+    html += '<div class="statrow"><span>' + new Date(cur.t).toLocaleDateString() + ' ' + new Date(cur.t).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) + ' — Q' + answered + ' of ' + total + ' answered · ' + r + '/' + (r+w) + ' correct so far</span><span class="pbarwrap"><i class="pbar" style="width:' + pct + '%;background:' + (pct>=PASS?'var(--green)':'var(--red)') + '"></i></span><b>' + pct + '%</b><button class="gicon-btn" data-resume-current title="Resume this session">▶️</button><button class="gicon-btn gicon-danger" data-discard-current title="Delete this in-progress session">🗑️</button></div>';
   }
   html += '<h3>📈 Session history</h3>';
-  if (!sessions.length){ html += '<p>No completed sessions yet — finish a round first.</p>'; }
+  if (!sessions.length){ html += '<p>No sessions yet — start a round first.</p>'; }
   else {
-    for (const s of sessions.slice(-10).reverse()){
+    for (const s of sessions.slice(-20).reverse()){
+      const when = new Date(s.t).toLocaleDateString() + ' ' + new Date(s.t).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+      if (s.abandoned){
+        const answered = s.answered || 0, acc = answered ? Math.round(s.r / answered * 100) : 0;
+        html += '<div class="statrow"><span>⏸️ ' + when + ' — abandoned at Q' + answered + ' of ' + s.n + ' · ' + s.r + '/' + answered + ' correct</span><span class="pbarwrap"><i class="pbar" style="width:' + acc + '%;background:#9aa0ae"></i></span><b>' + acc + '%</b></div>';
+        continue;
+      }
       const p = s.n ? Math.round(s.r / s.n * 100) : 0;
       const tag = s.exam ? '📝 ' : (s.retry ? '↩️ ' : '');
-      html += '<div class="statrow"><span>' + tag + new Date(s.t).toLocaleDateString() + ' ' + new Date(s.t).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) + ' — ' + s.r + '/' + s.n + (s.retry ? ' recovery' : '') + '</span><span class="pbarwrap"><i class="pbar" style="width:' + p + '%;background:' + (p>=PASS?'var(--green)':'var(--red)') + '"></i></span><b>' + p + '%</b></div>';
+      html += '<div class="statrow"><span>' + tag + when + ' — ' + s.r + '/' + s.n + (s.retry ? ' recovery' : '') + '</span><span class="pbarwrap"><i class="pbar" style="width:' + p + '%;background:' + (p>=PASS?'var(--green)':'var(--red)') + '"></i></span><b>' + p + '%</b></div>';
     }
-    const valid = sessions.filter(s => s.n > 0 && !s.retry);
+    const valid = sessions.filter(s => s.n > 0 && !s.retry && !s.abandoned);
     if (valid.length >= 6){
       const avg = a => a.reduce((x,s) => x + s.r/s.n, 0) / a.length * 100;
       const prior = avg(valid.slice(-6,-3)), recent = avg(valid.slice(-3));
@@ -570,7 +589,11 @@ function restoreHistory(){
 function saveCurrent(){
   if (examMode || isRetry) return;                 // only the main round is resumable
   if (idx === 0 && right === 0 && wrong === 0) return; // don't clobber a fresh load before any answer
-  saveJ('reqz_current', { ids: order.map(q=>q.id), idx:idx, right:right, wrong:wrong, missed: missed.map(q=>q.id), t: Date.now() });
+  const prev = loadJ('reqz_current', null);
+  const sameRound = !!(prev && prev.ids && prev.ids.length === order.length && prev.ids[0] === order[0].id && prev.ids[prev.ids.length-1] === order[order.length-1].id);
+  if (prev && !sameRound) archiveAbandoned(prev); // a different round is about to overwrite this slot — keep a record of it
+  const startedAt = sameRound ? (prev.t || Date.now()) : Date.now();
+  saveJ('reqz_current', { ids: order.map(q=>q.id), idx:idx, right:right, wrong:wrong, missed: missed.map(q=>q.id), t: startedAt });
 }
 function clearCurrent(){ try { localStorage.removeItem('reqz_current'); } catch(e){} if(typeof schedulePush==='function') schedulePush(); }
 function resume(c){
@@ -600,7 +623,7 @@ function offerResume(c){
   const rb = document.createElement('button'); rb.className='btn'; rb.style.cssText='font-size:.85em;padding:6px 12px;color:#fff'; rb.textContent='Resume';
   rb.onclick = () => { bar.remove(); resume(c); };
   const fb = document.createElement('button'); fb.className='btn gray'; fb.style.cssText='font-size:.85em;padding:6px 12px'; fb.textContent='Start fresh';
-  fb.onclick = () => { bar.remove(); clearCurrent(); start(BANK, false, {paceStars:true}); };
+  fb.onclick = () => { bar.remove(); archiveAbandoned(c); clearCurrent(); start(BANK, false, {paceStars:true}); };
   bar.appendChild(rb); bar.appendChild(fb);
   const card = document.getElementById('quizCard');
   card.parentNode.insertBefore(bar, card);
@@ -692,7 +715,7 @@ document.addEventListener('click', function(e){
   const tab = e.target.closest('.gtab[data-w]'); if (tab){ gabaritoTab(tab.getAttribute('data-w')); return; }
   const bk = e.target.closest('[data-bk]'); if (bk){ rvClose(); bkOpenById(bk.getAttribute('data-bk')); return; }
   const rc = e.target.closest('[data-resume-current]'); if (rc){ const c = loadJ('reqz_current', null); if (c) resume(c); return; }
-  const dc = e.target.closest('[data-discard-current]'); if (dc){ if (confirm('Delete this in-progress session? This cannot be undone.')){ clearCurrent(); showStats(); } return; }
+  const dc = e.target.closest('[data-discard-current]'); if (dc){ if (confirm('Delete this in-progress session? It stays in your session history, but the resume slot is cleared for good.')){ archiveAbandoned(loadJ('reqz_current', null)); clearCurrent(); showStats(); } return; }
 });
 </script>
 <div id="bkModal" onclick="if(event.target===this)bkClose()">
