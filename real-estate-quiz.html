@@ -284,7 +284,8 @@ function render(){
   document.getElementById('bar').style.width = (((idx+1) / order.length) * 100) + '%';
   const starTag = q.star ? '<span style="color:#ef6c00;font-weight:bold">⭐ Teacher star item</span> · ' : '';
   const revTag = reviewing ? '<span style="color:#1565c0;font-weight:bold">🔎 Reviewing (answer locked)</span> · ' : '';
-  document.getElementById('qSrc').innerHTML = revTag + starTag + esc(q.source) + ' · ' + esc(q.sourceRef) + ' · Ch ' + q.ch + ' (' + (WEIGHTS[q.ch]||0) + '% of exam)' + (q.bookPage ? ' · book p. ' + q.bookPage : '');
+  const qPg = (q.book && q.book.page) ? q.book.page : q.bookPage;
+  document.getElementById('qSrc').innerHTML = revTag + starTag + esc(q.source) + ' · ' + esc(q.sourceRef) + ' · Ch ' + q.ch + ' (' + (WEIGHTS[q.ch]||0) + '% of exam)' + (qPg ? ' · book p. ' + qPg : '');
   document.getElementById('qText').textContent = q.question;
   const box = document.getElementById('opts'); box.innerHTML = '';
   for (const k of ['a','b','c','d']){
@@ -295,8 +296,7 @@ function render(){
     box.appendChild(b);
   }
   const fb = document.getElementById('fb');
-  if (answered && examMode){ fb.className = 'feedback ' + (sel === q.finalAnswer ? 'good' : 'bad'); fb.innerHTML = (sel === q.finalAnswer ? '<b>✅</b>' : '<b>❌ Answer: ' + q.finalAnswer.toUpperCase() + '</b>') + refLine(q); }
-  else if (answered && sel === '?'){ fb.className = 'feedback'; fb.innerHTML = feedbackHTML(q, '?'); }
+  if (answered && sel === '?'){ fb.className = 'feedback'; fb.innerHTML = feedbackHTML(q, '?'); }
   else if (answered){ fb.className = 'feedback ' + (sel === q.finalAnswer ? 'good' : 'bad'); fb.innerHTML = feedbackHTML(q, sel); }
   else { fb.className = 'feedback'; fb.innerHTML = ''; }
   const nb = document.getElementById('nextBtn'), bk = document.getElementById('backBtn'), tc = document.getElementById('toCurrentBtn');
@@ -318,17 +318,11 @@ function answer(k, btn){
   logAnswer(q, k, ok, ok && isRetry);
   document.querySelectorAll('.opt').forEach(b => { b.disabled = true; if (b.dataset.k === correct) b.classList.add('correct'); });
   const fb = document.getElementById('fb');
-  if (examMode){
-    // exam mode: count only, minimal feedback, no explanation until the end
-    if (ok) right++; else { wrong++; missed.push(q); btn.classList.add('wrong'); }
-    fb.className = 'feedback ' + (ok?'good':'bad');
-    fb.innerHTML = (ok ? '<b>✅</b>' : '<b>❌ Answer: ' + correct.toUpperCase() + '</b>') + refLine(q);
-  } else {
-    if (ok){ right++; fb.className='feedback good';
-      fb.innerHTML = '<b>' + (isRetry?'✅ Recovered!':'✅ Correct!') + '</b> ' + (q.teach ? teachBlock(q) : esc(q.aiReasoning)) + refLine(q);
-    } else { wrong++; missed.push(q); btn.classList.add('wrong'); fb.className='feedback bad';
-      fb.innerHTML = '<b>' + (isRetry?'❌ Missed twice — true weakness, logged.':'❌ Not quite.') + '</b> The answer is <b>' + correct.toUpperCase() + '</b>. ' + (q.teach ? teachBlock(q) : esc(q.aiReasoning)) + refLine(q);
-    }
+  // exam mode shows the full explanation immediately too, same as regular practice
+  if (ok){ right++; fb.className='feedback good';
+    fb.innerHTML = '<b>' + (isRetry?'✅ Recovered!':'✅ Correct!') + '</b> ' + (q.teach ? teachBlock(q) : esc(q.aiReasoning)) + refLine(q);
+  } else { wrong++; missed.push(q); btn.classList.add('wrong'); fb.className='feedback bad';
+    fb.innerHTML = '<b>' + (isRetry?'❌ Missed twice — true weakness, logged.':'❌ Not quite.') + '</b> The answer is <b>' + correct.toUpperCase() + '</b>. ' + (q.teach ? teachBlock(q) : esc(q.aiReasoning)) + refLine(q);
   }
   const last = (idx + 1 >= order.length);
   document.getElementById('nextBtn').style.display = 'inline-block';
@@ -364,7 +358,8 @@ function teachBlock(q){
   return s + '</div>';
 }
 function refLine(q){
-  let s = '<div class="ref">📖 ' + esc(q.source) + ' · ' + esc(q.sourceRef) + (q.bookPage ? ' · book p. ' + q.bookPage : '') + '</div>';
+  const rPg = (q.book && q.book.page) ? q.book.page : q.bookPage;
+  let s = '<div class="ref">📖 ' + esc(q.source) + ' · ' + esc(q.sourceRef) + (rPg ? ' · book p. ' + rPg : '') + '</div>';
   if (q.verificationBasis) s += '<div class="ref">🔎 Basis: ' + esc(q.verificationBasis) + '</div>';
   const hasBookImgs = !!(q.book && q.book.imgs && Object.keys(q.book.imgs).length);
   // INVARIANT: every question must offer a per-question book/source page. If neither source
