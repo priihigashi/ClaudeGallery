@@ -479,6 +479,14 @@ function showStats(){
   const hist = loadJ('reqz_hist', {});
   let html = '';
   html += gaboPanelHTML();
+  const cur = loadJ('reqz_current', null);
+  if (cur && cur.ids && cur.ids.length && (cur.idx||0) > 0){
+    const total = cur.ids.length, answered = cur.idx, r = cur.right||0, w = cur.wrong||0;
+    const pct = (r+w) ? Math.round(r/(r+w)*100) : 0;
+    html += '<h3>▶️ In-progress session</h3>';
+    html += '<div class="statrow"><span>' + new Date(cur.t).toLocaleDateString() + ' ' + new Date(cur.t).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) + ' — Q' + answered + ' of ' + total + ' answered · ' + r + '/' + (r+w) + ' correct so far</span><span class="pbarwrap"><i class="pbar" style="width:' + pct + '%;background:' + (pct>=PASS?'var(--green)':'var(--red)') + '"></i></span><b>' + pct + '%</b></div>';
+    html += '<div style="margin:8px 0 16px"><button class="btn" data-resume-current style="font-size:.85em;padding:8px 14px">▶️ Resume</button> <button class="btn gray" data-discard-current style="font-size:.85em;padding:8px 14px;color:#c62828;border-color:#c62828">🗑️ Delete this in-progress session</button></div>';
+  }
   html += '<h3>📈 Session history</h3>';
   if (!sessions.length){ html += '<p>No completed sessions yet — finish a round first.</p>'; }
   else {
@@ -683,6 +691,8 @@ document.addEventListener('click', function(e){
   const t = e.target.closest('.gtile[data-qid]'); if (t){ reviewQ(t.getAttribute('data-qid')); return; }
   const tab = e.target.closest('.gtab[data-w]'); if (tab){ gabaritoTab(tab.getAttribute('data-w')); return; }
   const bk = e.target.closest('[data-bk]'); if (bk){ rvClose(); bkOpenById(bk.getAttribute('data-bk')); return; }
+  const rc = e.target.closest('[data-resume-current]'); if (rc){ const c = loadJ('reqz_current', null); if (c) resume(c); return; }
+  const dc = e.target.closest('[data-discard-current]'); if (dc){ if (confirm('Delete this in-progress session? This cannot be undone.')){ clearCurrent(); showStats(); } return; }
 });
 </script>
 <div id="bkModal" onclick="if(event.target===this)bkClose()">
