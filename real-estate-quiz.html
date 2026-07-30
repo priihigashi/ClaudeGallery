@@ -161,6 +161,7 @@
       <button class="btn gray" id="backBtn" style="display:none">◀ Back</button>
       <button class="btn" id="nextBtn" style="display:none">Next question →</button>
       <button class="btn gray" id="toCurrentBtn" style="display:none">↩ Back to current</button>
+      <button class="btn gray" id="finishHereBtn" style="display:none;margin-left:auto">🏁 Finish here for now</button>
     </div>
   </div>
 
@@ -346,9 +347,10 @@ function render(){
   if (answered && sel === '?'){ fb.className = 'feedback'; fb.innerHTML = feedbackHTML(q, '?'); }
   else if (answered){ fb.className = 'feedback ' + (sel === q.finalAnswer ? 'good' : 'bad'); fb.innerHTML = feedbackHTML(q, sel); }
   else { fb.className = 'feedback'; fb.innerHTML = ''; }
-  const nb = document.getElementById('nextBtn'), bk = document.getElementById('backBtn'), tc = document.getElementById('toCurrentBtn');
+  const nb = document.getElementById('nextBtn'), bk = document.getElementById('backBtn'), tc = document.getElementById('toCurrentBtn'), fh = document.getElementById('finishHereBtn');
   if (bk) bk.style.display = (viewIdx > 0 && !examMode) ? 'inline-block' : 'none';
   if (tc) tc.style.display = reviewing ? 'inline-block' : 'none';
+  if (fh) fh.style.display = (!examMode && !isRetry && idx > 0 && idx < order.length) ? 'inline-block' : 'none';
   if (answered){
     const last = (idx + 1 >= order.length);
     nb.style.display = 'inline-block';
@@ -436,12 +438,13 @@ document.getElementById('nextBtn').onclick = () => {
   finish();
 };
 
-function finish(){
+function finish(stoppedEarly){
   stopExamTimer();
   clearCurrent();
-  const pct = Math.round(right / order.length * 100);
-  // log the session once, at the true end of the whole flow
-  logSession({ t: Date.now(), n: order.length, r: right, exam: examMode, retry: isRetry });
+  const denom = stoppedEarly ? idx : order.length;
+  const pct = denom ? Math.round(right / denom * 100) : 0;
+  // log the session once, at the true end of the whole flow (or right when you choose to stop)
+  logSession({ t: Date.now(), n: denom, r: right, exam: examMode, retry: isRetry, partial: !!stoppedEarly });
   show('summaryCard');
   let head;
   if (examMode){
@@ -453,6 +456,8 @@ function finish(){
   } else if (isRetry){
     const recovered = order.length - missed.length;
     head = '<b>Final attempt done:</b> recovered <b>' + recovered + ' / ' + order.length + '</b>.' + (missed.length ? ' ' + missed.length + ' missed twice — marked as true weaknesses.' : ' All recovered! 🏆');
+  } else if (stoppedEarly){
+    head = 'You stopped after <b>' + idx + ' of ' + order.length + '</b> questions — scored <b>' + right + ' / ' + denom + ' (' + pct + '%)</b>.' + (pct >= PASS ? ' Passing pace — Florida needs 75%. 🎯' : ' Florida needs 75% — keep drilling! 💪') + ' Pick up the rest any time from 📚 All 271 questions.';
   } else {
     head = 'You scored <b>' + right + ' / ' + order.length + ' (' + pct + '%)</b>.' + (pct >= PASS ? ' Passing pace — Florida needs 75%. 🎯' : ' Florida needs 75% — keep drilling! 💪');
   }
@@ -511,8 +516,8 @@ function showStats(){
         continue;
       }
       const p = s.n ? Math.round(s.r / s.n * 100) : 0;
-      const tag = s.exam ? '📝 ' : (s.retry ? '↩️ ' : '');
-      html += '<div class="statrow"><span>' + tag + when + ' — ' + s.r + '/' + s.n + (s.retry ? ' recovery' : '') + '</span><span class="pbarwrap"><i class="pbar" style="width:' + p + '%;background:' + (p>=PASS?'var(--green)':'var(--red)') + '"></i></span><b>' + p + '%</b></div>';
+      const tag = s.exam ? '📝 ' : (s.retry ? '↩️ ' : (s.partial ? '🏁 ' : ''));
+      html += '<div class="statrow"><span>' + tag + when + ' — ' + s.r + '/' + s.n + (s.retry ? ' recovery' : (s.partial ? ' (stopped early)' : '')) + '</span><span class="pbarwrap"><i class="pbar" style="width:' + p + '%;background:' + (p>=PASS?'var(--green)':'var(--red)') + '"></i></span><b>' + p + '%</b></div>';
     }
     const valid = sessions.filter(s => s.n > 0 && !s.retry && !s.abandoned);
     if (valid.length >= 6){
@@ -636,6 +641,7 @@ function boot(){
 function wire(id, fn){ const el = document.getElementById(id); if (el) el.onclick = fn; }
 wire('restartBtn', () => start(BANK, false, {paceStars:true}));
 wire('reviewMissedBtn', () => start(missed, true));
+wire('finishHereBtn', () => { if (confirm('Finish here for now? This logs ' + idx + ' of ' + order.length + ' questions as a session in your history — you can pick up the rest later from 📚 All 271 questions.')) finish(true); });
 wire('backBtn', () => { if (viewIdx > 0){ viewIdx--; render(); } });
 wire('toCurrentBtn', () => { viewIdx = idx; render(); });
 wire('statsBtn', showStats);
@@ -703,7 +709,7 @@ function rvClose(){ document.getElementById('rvModal').classList.remove('open');
 function renderRoundRecap(){
   const el = document.getElementById('recapList'); if (!el) return;
   if (examMode){ el.innerHTML = ''; return; }
-  const items = order.map((q, i) => ({ q: q, ok: picks[i] === '?' ? null : (picks[i] === q.finalAnswer) }));
+  const items = order.map((q, i) => ({ q: q, ok: (picks[i] === '?' || picks[i] === undefined) ? null : (picks[i] === q.finalAnswer) }));
   const done = items.filter(x => x.ok !== null).length;
   const corr = items.filter(x => x.ok === true).length, pct = done ? Math.round(corr/done*100) : 0;
   el.innerHTML = '<h3>🗂️ This round — tap any to review</h3><p class="gacc">' + corr + ' / ' + done + ' correct = <b>' + pct + '%</b></p>' + gtiles(items);
