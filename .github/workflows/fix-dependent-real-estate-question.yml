@@ -1,0 +1,52 @@
+name: Fix dependent real-estate question
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/fix-dependent-real-estate-question.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix-question:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Make question self-contained
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path("real-estate-quiz.html")
+          text = path.read_text(encoding="utf-8")
+
+          replacements = {
+              "Based on the information in the previous question, Charlie's interest in the land is which of the following?":
+                  "An owner grants a life estate to another person. When that person dies, title will pass to a third person. What interest does the third person hold in the property?",
+              "Title passes to a third party (Charlie) at the end of the life estate, making Charlie the remainderman. If title returned to the grantor (Able), it would be a reversion.":
+                  "Title passes to a third person at the end of the life estate, so that person holds a remainder estate. If title returned to the original owner, it would be a reversion.",
+              "When a life estate ends (at the life tenant's death), whoever receives the property next holds a remainder estate. Charlie gets the land after Baker dies, so Charlie is the remainderman with a remainder estate.":
+                  "When a life estate ends at the life tenant's death, the third person who receives the property next holds a remainder estate and is called the remainderman.",
+              "A reversion would return the property to the original grantor — but here it goes to Charlie, a third party.":
+                  "A reversion would return the property to the original owner, but here it passes to a third person.",
+          }
+
+          for old, new in replacements.items():
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"Expected exactly one occurrence, found {count}: {old}")
+              text = text.replace(old, new)
+
+          path.write_text(text, encoding="utf-8")
+
+      - name: Commit repair
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add real-estate-quiz.html
+          git commit -m "Fix standalone remainder-estate question"
+          git push
