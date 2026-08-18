@@ -83,7 +83,7 @@
         "top": true,
         "t": "Descript 2026: Edite Vídeo Deletando Texto — Remove 'Éhs', Clona Voz e Gera B-Roll com IA",
         "resumo": "No Descript, você edita o vídeo editando a transcrição automática: apague uma frase do texto e o vídeo desaparece. Um clique remove todos os 'éh', 'então' e pausas da gravação inteira. Studio Sound 4.0 transforma áudio de celular em qualidade de estúdio.",
-        "porque": "Para criar conteúdo de podcast, depoimento ou vídeo educativo sem saber editar linha do tempo. Diferente do CapCut e VEED — o Descript trabalha como editor de texto, não de vídeo, o que é muito mais intuitivo para quem pensa em palavras.",
+        "porque": "Para criar conteúdo de podcast, depoimento ou vídeo educativo sem saber editar linha do tempo. Diferente do CapCut e VEED — o Descript trabalha como editor de texto, não de vídeo, o que é muito mais intuitivo.",
         "aplicar": "Para a OPC: grave depoimento de cliente ou walkthrough de obra no celular, suba no Descript, limpe o áudio em 1 clique e exporte em 9:16 para Reel — sem abrir editor de vídeo externo.",
         "plano": "1) Crie conta gratuita em descript.com (1h de transcrição/mês no plano free) · 2) Suba vídeo de até 5 min da OPC e veja a transcrição automática em PT-BR · 3) Delete pausas e repetições diretamente no texto — o vídeo acompanha · 4) Aplique Studio Sound e exporte em 9:16 para Instagram Reels",
         "fonte": {"t": "Descript AI Review 2026: The Video Editor That Treats Your Script as the Source", "u": "https://rimo.app/en/blogs/descript-ai_en-US"},
@@ -110,8 +110,8 @@
         "t": "Aliança do Sahel 2026: Mali, Burkina Faso e Niger Saíram da CEDEAO — e a Rússia Ocupa o Espaço que a França Deixou",
         "resumo": "Mali, Burkina Faso e Niger formaram a AES (Aliança dos Estados do Sahel) após golpes militares, expulsaram França e EUA e viraram para a Rússia. O Africa Corps russo — sucessor do Wagner — tem ~3.500 combatentes no Mali e expande para o Golfo da Guiné.",
         "porque": "O Sahel é o novo campo de batalha das grandes potências: mineração de urânio e ouro, rotas de migração para a Europa e presença satelital russa na África. O que acontece lá pressiona preços de commodities e fluxo migratório global — pauta que vai aparecer nas news.",
-        "aplicar": "Ao cobrir migração para a Flórida ou instabilidade europeia no seu conteúdo de notícias, o Sahel é contexto direto — a desordem na região empurra migrantes pelo Mediterrâneo e pressiona as economias vizinhas.",
-        "plano": "1) Mapa mental: Sahel = faixa semiárida abaixo do Saara (Mali, Burkina, Niger, Chade, Mauritânia) · 2) AES = confederação dos 3 que saíram da CEDEAO em 2024 · 3) Africa Corps = Wagner renomeado, subordinado ao Ministério da Defesa russo · 4) Para acompanhar sem filtro ocidental: allafrica.com e riotimesonline.com",
+        "aplicar": "Ao cobrir migração para a Flórida ou instabilidade europeia no conteúdo de notícias, o Sahel é contexto direto — a desordem na região empurra migrantes pelo Mediterrâneo e pressiona as economias vizinhas.",
+        "plano": "1) Mapa mental: Sahel = faixa semiárida abaixo do Saara (Mali, Burkina, Niger, Chade, Mauritânia) · 2) AES = confederação dos 3 que saíram da CEDEAO em 2024 · 3) Africa Corps = Wagner renomeado, subordinado ao Ministério da Defesa russo · 4) Acompanhe sem filtro ocidental: allafrica.com e riotimesonline.com",
         "fonte": {"t": "CDM Press: Russia Signs Expanded Military Pact With Sahel Junta Alliance (Aug 2026)", "u": "https://cdm.press/news/africa/2026/08/01/russia-signs-expanded-military-pact-with-sahel-junta-alliance-moscows-africa-corps-deepens-grip-as-france-gets-kicked-out/"},
         "video": {"t": "", "u": ""}
       }
