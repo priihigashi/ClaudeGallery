@@ -1,0 +1,167 @@
+{
+  "date": "2026-08-22",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "⚠️ Anthropic Dia 12",
+      "t": "Crédito Anthropic degradado pelo 12° dia seguido — alerta disparou hoje às 5h17",
+      "why": "Todos os pipelines da OPC ainda rodam em fallback desde 11/ago. Dois minutos resolvem: console.anthropic.com → Plans & Billing → Credits → adicione crédito fixo ou ative auto-reload. Cada dia sem recarregar = mais automações impactadas invisívelmente.",
+      "go": "iafim"
+    },
+    {
+      "tag": "🚨 Duas Actions Quebradas",
+      "t": "inbox_cleanup.yml e opc_inventory.yml falharam esta semana — dois pipelines sem monitoramento",
+      "why": "inbox_cleanup falhou em 20/ago (run 32398177331, 17h32) e opc_inventory.yml falhou no sync de 20/ago. Com Anthropic degradado ao mesmo tempo, essas falhas se acumulam sem visibilidade. Checar ambas antes de adicionar qualquer nova automação.",
+      "go": "iafim"
+    },
+    {
+      "tag": "🎬 FP-0504 /watch Decide Hoje",
+      "t": "31-day: acceptance test bradautomates/claude-video vs fork taoufik — decidir rota canônica para o Editor Home",
+      "why": "Ciclo de 31 dias começou ontem. FP-0504 pede o teste hoje: rodar as duas rotas num vídeo já conhecido, comparar frame-recall/transcrição/custo e decidir KEEP UPSTREAM / KEEP FORK / REJECT antes de amanhã.",
+      "go": "obra"
+    },
+    {
+      "tag": "💰 Finance 31-Day Começa",
+      "t": "Nova série de 31 dias: hoje montar a tabela de APR/juros de todos os cartões — base do plano de pagamento",
+      "why": "Persistência criada ontem. O primeiro passo concreto é a tabela de APR de cada cartão. Tarefa de 20 minutos de alto impacto.",
+      "go": "tip"
+    }
+  ],
+  "history": [
+    {"date": "2026-08-22","label": "Boletim de hoje","note": "8 tópicos pesquisados"},
+    {"date": "2026-08-21","label": "Boletim de 21/08","note": "8 tópicos pesquisados"},
+    {"date": "2026-08-20","label": "Boletim de 20/08","note": "8 tópicos pesquisados"},
+    {"date": "2026-08-19","label": "Boletim de 19/08","note": "8 tópicos pesquisados"},
+    {"date": "2026-08-18","label": "Boletim de 18/08","note": "8 tópicos pesquisados"},
+    {"date": "2026-08-17","label": "Boletim de 17/08","note": "8 tópicos pesquisados"},
+    {"date": "2026-08-16","label": "Boletim de 16/08","note": "8 tópicos pesquisados"},
+    {"date": "2026-08-15","label": "Boletim de 15/08","note": "8 tópicos pesquisados"}
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-08-22",
+        "top": true,
+        "t": "Temptation Bundling para TDAH: Transforme a Tarefa que Você Empurra em Algo que Você Anseia",
+        "resumo": "Emparelhe uma tarefa que evita com uma atividade que gosta — e crie uma regra: só acesso ao prazer ENQUANTO faz a tarefa. Katherine Milkman testou com academia e aumentou frequência em 51%.",
+        "porque": "O TDAH não é falta de esforço — é falta de recompensa imediata. Temptation bundling cria a recompensa artificial que o cérebro TDAH não gera sozinho.",
+        "aplicar": "1 tarefa que empurra + 1 prazer sem permissão. Regra: só acesso ao prazer enquanto a tarefa acontece. Blocos de 20-30 minutos.",
+        "plano": "1) Identifique sua 'guilty pleasure' · 2) Identifique a tarefa que mais empurra esta semana · 3) Crie a regra em voz alta · 4) Pause o prazer imediatamente ao pausar a tarefa",
+        "fonte": {
+          "t": "How to Stop Procrastinating Using Temptation Bundling — James Clear",
+          "u": "https://jamesclear.com/temptation-bundling"
+        },
+        "video": {"t": "","u": ""}
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-08-22",
+        "top": true,
+        "t": "Dal de Lentilha Vermelha com Leite de Coco e Cúrcuma — 25 Min, Uma Panela",
+        "resumo": "Lentilha vermelha vira creme naturalmente suave em 20 minutos. Com leite de coco e cúrcuma fica adocicado e perfumado. Sem leite de vaca, sem peixe.",
+        "porque": "Lentilha vermelha desmonta criando textura cremosa sem liquidificador. Combinação lentilha + arroz = proteína completa. Uma panela, 25 minutos.",
+        "aplicar": "Sirva com arroz ou pão pita. Reduza gengibre para crianças. Congela 2 meses.",
+        "plano": "1) Refogue cebola + alho + gengibre 5 min · 2) Adicione cúrcuma + cominho, mexa 30s · 3) Adicione lentilha + leite de coco + água + sal, cozinhe 18-20 min · 4) Finalize com limão e coentro",
+        "fonte": {
+          "t": "Lentilha Vegana Cremosa — Receiteria",
+          "u": "https://www.receiteria.com.br/receita/lentilha-vegana-cremosa/"
+        },
+        "video": {"t": "","u": ""}
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-08-22",
+        "top": true,
+        "t": "Printify 2026: Marketplace de POD com 80+ Fornecedores — Você Escolhe Quem Produz",
+        "resumo": "Printify conecta sua loja a 80+ fornecedores globais com 900+ produtos. Para cada item, você escolhe qual fornecedor produz. Premium ($29/mês) desbloqueia 20% de desconto.",
+        "porque": "Diferente de Gelato, Gooten e CustomCat, o Printify deixa testar e comparar fornecedores para o mesmo produto. Para bordado: filtre por 'Embroidery' e compare reviews.",
+        "aplicar": "Troque de fornecedor sem trocar de plataforma. Peça sample do mesmo design em 2 fornecedores antes de publicar.",
+        "plano": "1) Conta gratuita em printify.com · 2) Busque 'women longline' e filtre 'Embroidery' · 3) Samples em 2 fornecedores (~$15-20 cada) · 4) Premium se paga com 5 vendas de $40+/mês",
+        "fonte": {
+          "t": "Best quality t-shirts for printing 2026 — Printify Blog",
+          "u": "https://printify.com/blog/best-t-shirts-for-printing/"
+        },
+        "video": {"t": "","u": ""}
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-08-22",
+        "top": true,
+        "t": "Pictory AI 2026: Roteiro → Vídeo com Stock Footage e Locução — Sem Câmera, $19/mês",
+        "resumo": "Cole o script e a IA seleciona stock footage, gera locução e adiciona legendas. Para conteúdo educativo de reforma sem câmera.",
+        "porque": "O gargalo da OPC não é falta de ideia — é falta de filmagem. Pictory cria do zero a partir do texto. Diferente de Klap e Submagic que recortam o que existe.",
+        "aplicar": "Melhor para conteúdo educativo com roteiro pronto. Não substitui vídeos de obra real.",
+        "plano": "1) pictory.ai — 3 vídeos grátis · 2) Script to Video: roteiro de 100-200 palavras · 3) Revise stock footage · 4) Adicione locução PT-BR e exporte 9:16",
+        "fonte": {
+          "t": "Pictory AI Review 2026 — Cybernews",
+          "u": "https://cybernews.com/ai-tools/pictory-ai-review/"
+        },
+        "video": {"t": "","u": ""}
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-08-22",
+        "top": true,
+        "t": "CapCut AI Home Renovation Post Maker: Fotos Reais do Canteiro em Carrossel e Reel — Grátis",
+        "resumo": "Sobe fotos reais do projeto, escolhe template before/after, e a IA compõe carrossel ou Reel. Resultado profissional em 5 minutos, grátis.",
+        "porque": "Diferente de Krea e Veo 3.1 (renders artificiais), o CapCut parte das suas FOTOS REAIS. Para a OPC, onde o arquivo de fotos existe mas o conteúdo não sai, resolve o gargalo real.",
+        "aplicar": "2+ fotos do mesmo cômodo. Templates 'before after house' na busca. 4-8 fotos para carrosséis.",
+        "plano": "1) CapCut celular → Template → 'renovation' · 2) Ou capcut.com → AI Home Renovation Post Maker · 3) Suba fotos antes/depois · 4) Ajuste texto e exporte 9:16",
+        "fonte": {
+          "t": "AI Home Renovation Post Maker — CapCut",
+          "u": "https://www.capcut.com/ideas/ai-poster-generator/ai-home-renovation-post-maker"
+        },
+        "video": {"t": "","u": ""}
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-08-22",
+        "top": true,
+        "t": "Venezuela Pós-Maduro 2026: Petróleo, Flórida e o Vácuo que China e Rússia Querem Preencher",
+        "resumo": "Maduro foi capturado. Mas oposição fragmentada, economia colapsada, China/Rússia mantendo influência sobre o petróleo. Pauta migratória mais quente da Flórida no 2º semestre.",
+        "porque": "Narrativa A: EUA eliminaram aliado de Rússia/China. Narrativa B: vácuo mais instável. TPS venezuelano em revisão — afeta clientes e subcontratados da OPC.",
+        "aplicar": "Conceito: 'decapitação sem transição'. Haiti é o paralelo: tirar o líder sem Estado funcional não resolve.",
+        "plano": "1) Leia ICG: Venezuela after Maduro · 2) TPS venezuelano em revisão — monitorar para OPC · 3) Carrossel: 'petróleo venezuelano financia influência russa' · 4) Al Jazeera para perspectiva complementar",
+        "fonte": {
+          "t": "Venezuela after Maduro: Transaction or Transition? — ICG",
+          "u": "https://www.crisisgroup.org/stm/latin-america-caribbean/venezuela-united-states/venezuela-after-maduro-transaction-or-transition"
+        },
+        "video": {"t": "","u": ""}
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-08-22",
+        "top": true,
+        "t": "RLSA 2026: Lance Maior para Quem Já Visitou o Site da OPC — Conversão 2-4x Maior que Tráfego Frio",
+        "resumo": "RLSA mostra anúncios específicos e paga lances maiores quando visitantes anteriores pesquisam de novo. Taxa de conversão 2-4x maior que tráfego frio.",
+        "porque": "Visitante que saiu e volta pesquisar é lead quente. Com RLSA aparece com anúncio personalizado pagando 30-50% mais de lance.",
+        "aplicar": "Mínimo de 1.000 visitantes únicos nos últimos 30 dias para RLSA ativar. Cheque no Analytics primeiro.",
+        "plano": "1) Google Ads → Audiences → 3 audiências de visitantes · 2) Adicione às campanhas Search em 'Observation' · 3) Após 2 semanas compare conversão · 4) Se 2x mais, eleve lance 30-50%",
+        "fonte": {
+          "t": "Ultimate Guide to Remarketing in Google Ads 2026 — Growth Minded Marketing",
+          "u": "https://growthmindedmarketing.com/blog/google-ads-remarketing/"
+        },
+        "video": {"t": "","u": ""}
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-08-22",
+        "top": true,
+        "t": "Lindy AI 2026: Agentes de IA que Gerenciam Emails, Agendam Reuniões e Registram no CRM — Plano Free",
+        "resumo": "Lindy cria agentes que leem emails de leads, classificam, redigem resposta e agendam reunião no Google Calendar. 24/7. Integra com Gmail, Google Calendar, HubSpot. Plano Free disponível.",
+        "porque": "O primeiro a responder fecha o contrato. Lindy responde em minutos sem você abrir o email. Único focado em assistente pessoal sem configuração técnica.",
+        "aplicar": "Lindy de triagem: classifica como lead/fornecedor/spam, rascunha resposta, envia para aprovação. Economiza 30-60 min/dia.",
+        "plano": "1) lindy.ai — plano Free sem cartão · 2) 'Email Manager OPC': classifica e rascunha PT-BR sem enviar sem aprovação · 3) Cada LEAD → linha no Google Sheets · 4) Após 1 semana, ative agendamento para leads HOT",
+        "fonte": {"t": "","u": ""},
+        "video": {"t": "","u": ""}
+      }
+    ]
+  }
+}
