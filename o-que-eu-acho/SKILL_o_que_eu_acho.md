@@ -1,3 +1,30 @@
+> # ⛔ FROZEN — DO NOT ADD NEW ENTRIES (2026-08-23)
+>
+> **Priscila's instruction, 2026-08-23: treat this app as PUBLIC and stop adding anything
+> sensitive to it until it has been migrated.**
+>
+> This repo (`ClaudeGallery`) is **public** and has **GitHub Pages enabled**. That means
+> `o-que-eu-acho-data.json` is public, and so is everything ever committed to it. The
+> `pri123` password below is a **client-side** check on a public page — it does not make
+> any of this private, and changing it will not either.
+>
+> **Until migration is complete, no Claude/Codex session may commit a new item to
+> `o-que-eu-acho-data.json`.** If Priscila asks for a verification, tell her this app is
+> frozen pending migration and record it somewhere private instead.
+>
+> Current state: the data file holds only the original `welcome-2026-06-30` demo item.
+> **No sensitive content has been committed.** Keep it that way. Her own entries live in
+> her browser's localStorage, on her device, and are not affected by this freeze.
+>
+> Migration plan: private repo + authenticated deployment (not GitHub Pages), preserving
+> this public URL afterwards only as a harmless redirect/placeholder. Tracked in the sheet
+> **CODE HOMES — App Repo Registry** (Creations root).
+>
+> ⚠️ Also note: this app was briefly recorded as the Creations "Political Reaction APP".
+> **That mapping was checked on 2026-08-23 and is wrong** — the Political Reaction APP is
+> "Civic Reaction Studio", a React/TypeScript + FastAPI + Supabase PWA. This is a separate
+> personal tool. Nothing here is Political Reaction APP data.
+
 ---
 name: o-que-eu-acho
 description: Operate Priscila's PERSONAL fact-check site (password pri123). NOT the public Verificamos/Fact-Checked series.
