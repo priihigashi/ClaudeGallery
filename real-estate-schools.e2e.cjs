@@ -21,7 +21,7 @@ async function verifyLive(){
 }
 async function main(){
   const filename='cameron-bank.enc.json',saved=fs.readFileSync(filename);
-  const question=(id)=>({id:'ca-'+id,sourceRef:id,source:'Cameron Academy',topic:'Synthetic CI fixture',ch:0,question:'Fixture: select the first choice.',options:{a:'First choice',b:'Second choice',c:'Third choice',d:'Fourth choice'},finalAnswer:'a',aiReasoning:'The instruction asks for the first choice.',courseExplanation:'Synthetic explanation for testing, not a course quote.',readingTip:'Read the instruction.',doubt:{question:'Why not the second?',answer:'The instruction explicitly asks for the first.'}});
+  const question=(id)=>({id:'ca-'+id,sourceRef:id,source:'Cameron Academy',topic:'Synthetic CI fixture',ch:0,teach:{},question:'Fixture: select the first choice.',options:{a:'First choice',b:'Second choice',c:'Third choice',d:'Fourth choice'},finalAnswer:'a',aiReasoning:'The instruction asks for the first choice.',courseExplanation:'Synthetic explanation for testing, not a course quote.',readingTip:'Read the instruction.',doubt:{question:'Why not the second?',answer:'The instruction explicitly asks for the first.'}});
   const data={version:1,school:'cameron',capturedThrough:'fixture',questions:[question('Q900'),question('Q901')],pending:[{id:'ca-Q902',sourceRef:'Q902',question:'Fixture without an answer.',options:{a:'A',b:'B',c:'C',d:'D'},reason:'Answer not captured.'}]};
   const key=crypto.randomBytes(32),iv=crypto.randomBytes(12),cipher=crypto.createCipheriv('aes-256-gcm',key,iv);
   const encrypted=Buffer.concat([cipher.update(zlib.gzipSync(Buffer.from(JSON.stringify(data)))),cipher.final(),cipher.getAuthTag()]);
