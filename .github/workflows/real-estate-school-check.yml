@@ -12,6 +12,7 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -19,10 +20,21 @@ jobs:
           node-version: '22'
       - name: Preserve Gold Coast book references
         run: node real-estate-quiz.test.js
-      - name: Validate school selector when present
+      - name: Validate school isolation
+        run: node real-estate-schools.test.cjs
+      - name: Verify browser interactions and live deployment
         run: |
-          if [ -f real-estate-schools.test.cjs ]; then node real-estate-schools.test.cjs; fi
-      - name: Package exact source for browser regression testing
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
+          node real-estate-schools.e2e.cjs
+      - name: Save fixture-only browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: real-estate-school-browser-check
+          retention-days: 3
+          path: school-test-screenshots/
+      - name: Package exact source for regression review
         uses: actions/upload-artifact@v4
         with:
           name: real-estate-school-source
