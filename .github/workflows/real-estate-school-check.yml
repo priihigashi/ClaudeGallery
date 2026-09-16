@@ -1,0 +1,37 @@
+name: Real estate school regression check
+on:
+  push:
+    paths:
+      - '.github/workflows/real-estate-school-check.yml'
+      - 'real-estate-study*'
+      - 'real-estate-schools*'
+      - 'cameron-bank.enc.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preserve Gold Coast book references
+        run: node real-estate-quiz.test.js
+      - name: Validate school selector when present
+        run: |
+          if [ -f real-estate-schools.test.cjs ]; then node real-estate-schools.test.cjs; fi
+      - name: Package exact source for browser regression testing
+        uses: actions/upload-artifact@v4
+        with:
+          name: real-estate-school-source
+          retention-days: 3
+          path: |
+            real-estate-quiz.html
+            real-estate-quiz.test.js
+            real-estate-quiz.MANUAL.md
+            real-estate-quiz.AUDIT.md
+            real-estate-study*
+            real-estate-schools*
+            cameron-bank.enc.json
