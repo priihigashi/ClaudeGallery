@@ -5,7 +5,7 @@ const crypto=require('node:crypto'),zlib=require('node:zlib'),assert=require('no
 const {chromium}=require('playwright');
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 async function verifyLive(){
-  const names=['real-estate-study.html','real-estate-schools.js','cameron-bank.enc.json','real-estate-quiz.html'];
+  const names=['real-estate-study.html','real-estate-schools.js','cameron-bank.enc.json','cameron-section-3.enc.json','real-estate-schools-sections.js','real-estate-quiz.html'];
   for(let attempt=0;attempt<12;attempt++){
     let good=true;
     for(const name of names){
@@ -20,12 +20,17 @@ async function verifyLive(){
   throw Error('Live files did not match this revision; do not report this revision as verified live.');
 }
 async function main(){
-  const filename='cameron-bank.enc.json',saved=fs.readFileSync(filename);
+  const filename='cameron-bank.enc.json',saved=fs.readFileSync(filename),extraSaved=fs.readFileSync('cameron-section-3.enc.json');
   const question=(id)=>({id:'ca-'+id,sourceRef:id,source:'Cameron Academy',topic:'Synthetic CI fixture',ch:0,teach:{},question:'Fixture: select the first choice.',options:{a:'First choice',b:'Second choice',c:'Third choice',d:'Fourth choice'},finalAnswer:'a',aiReasoning:'The instruction asks for the first choice.',courseExplanation:'Synthetic explanation for testing, not a course quote.',readingTip:'Read the instruction.',doubt:{question:'Why not the second?',answer:'The instruction explicitly asks for the first.'}});
   const data={version:1,school:'cameron',capturedThrough:'fixture',questions:[question('Q900'),question('Q901')],pending:[{id:'ca-Q902',sourceRef:'Q902',question:'Fixture without an answer.',options:{a:'A',b:'B',c:'C',d:'D'},reason:'Answer not captured.'}]};
   const key=crypto.randomBytes(32),iv=crypto.randomBytes(12),cipher=crypto.createCipheriv('aes-256-gcm',key,iv);
   const encrypted=Buffer.concat([cipher.update(zlib.gzipSync(Buffer.from(JSON.stringify(data)))),cipher.final(),cipher.getAuthTag()]);
   fs.writeFileSync(filename,JSON.stringify({version:1,algorithm:'AES-GCM',compression:'gzip',iv:iv.toString('base64'),ciphertext:encrypted.toString('base64')}));
+  const extraQuestions=['Q903','Q904'].map((id,i)=>({...question(id),sectionId:'FLREEPS3',sourceQuestion:i+1,sourcePdfPages:[1]}));
+  const extra={version:1,school:'cameron',section:{id:'FLREEPS3',number:3,title:'Section 3: Sales Associate (Unit 4) and Brokers (Unit 10)',total:2},questions:extraQuestions,pending:[]};
+  const extraIV=crypto.randomBytes(12),extraCipher=crypto.createCipheriv('aes-256-gcm',key,extraIV);
+  const extraEncrypted=Buffer.concat([extraCipher.update(zlib.gzipSync(Buffer.from(JSON.stringify(extra)))),extraCipher.final(),extraCipher.getAuthTag()]);
+  fs.writeFileSync('cameron-section-3.enc.json',JSON.stringify({version:1,algorithm:'AES-GCM',compression:'gzip',iv:extraIV.toString('base64'),ciphertext:extraEncrypted.toString('base64')}));
   let browser,server;
   try{
     server=http.createServer((req,res)=>{
@@ -44,24 +49,35 @@ async function main(){
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
     fs.mkdirSync('school-test-screenshots',{recursive:true});await page.screenshot({path:'school-test-screenshots/home-mobile.png',fullPage:true});
     await page.locator('#cameron').click();let frame=await (await page.locator('#quizFrame').elementHandle()).contentFrame();
-    await frame.waitForFunction(()=>window.RE_BANK_COUNT===2);assert.equal(await frame.locator('#qTotal').innerText(),'2');
+    await frame.waitForFunction(()=>window.RE_BANK_COUNT===4);await frame.locator('#sectionSelect').selectOption('FLREEPS1');assert.equal(await frame.locator('#qTotal').innerText(),'2');
     assert.equal(await frame.locator('#searchBookBtn').isVisible(),false);assert(!await frame.locator('#qSrc').innerText().then(s=>s.includes('Ch ')));
     await frame.locator('[data-k="a"]').click();assert.equal(await frame.locator('#nRight').innerText(),'1');
     assert((await frame.locator('#fb').innerText()).includes('Course explanation'));await page.screenshot({path:'school-test-screenshots/cameron-fixture.png',fullPage:true});
     await page.locator('#homeBtn').click();await page.locator('#goldCoast').click();frame=await (await page.locator('#quizFrame').elementHandle()).contentFrame();
     await frame.waitForFunction(()=>typeof BANK!=='undefined'&&BANK.length===271);assert(await frame.locator('#searchBookBtn').isVisible());
     await page.locator('#homeBtn').click();await page.locator('#cameron').click();frame=await (await page.locator('#quizFrame').elementHandle()).contentFrame();
-    await frame.locator('#resumeBar button').first().click();assert.equal(await frame.locator('#nRight').innerText(),'1');assert.equal(await frame.locator('.opt:disabled').count(),4);
+    await frame.locator('#resumeBar button').first().click();assert.equal(await frame.locator('#nRight').innerText(),'1');assert.equal(await frame.locator('#sectionSelect').inputValue(),'FLREEPS1');assert.equal(await frame.locator('.opt:disabled').count(),4);
     await frame.locator('#nextBtn').click();await frame.locator('[data-k="b"]').click();assert.equal(await frame.locator('#nWrong').innerText(),'1');
     await frame.locator('#statsBtn').click();assert((await frame.locator('#statsBody').innerText()).includes('Q902'));assert(!(await frame.locator('#statsBody').innerText()).includes('Projected exam'));
     await frame.locator('.gtile').first().click();assert(await frame.locator('#rvModal').isVisible());assert.equal(await frame.locator('#rvBody [data-bk]').count(),0);assert(await frame.locator('#rvBody .feedback').isVisible());
     await frame.locator('#rvModal button').first().click();await frame.locator('#statsBackBtn').click();await frame.locator('#finishHereBtn').click();assert.equal(await frame.evaluate(()=>loadJ('reqz_cameron_sessions',[]).at(-1).n),2);
+    await frame.locator('#sectionSelect').selectOption('FLREEPS3');
+    assert.equal(await frame.locator('#qTotal').innerText(),'2');assert(await frame.evaluate(()=>order.every(q=>q.sectionId==='FLREEPS3')));
+    assert((await frame.locator('#qSrc').innerText()).includes('Source question'));
+    await frame.locator('[data-k="a"]').click();
+    assert((await frame.locator('#fb').innerText()).includes('Additional clarification based on this source.'));
+    assert.equal(await frame.locator('[data-bk]').count(),0);
+    await page.screenshot({path:'school-test-screenshots/section3-fixture-mobile.png',fullPage:true});
+    await page.locator('#homeBtn').click();await page.locator('#cameron').click();frame=await (await page.locator('#quizFrame').elementHandle()).contentFrame();
+    await frame.locator('#resumeBar button').first().click();assert.equal(await frame.locator('#sectionSelect').inputValue(),'FLREEPS3');assert.equal(await frame.locator('#nRight').innerText(),'1');assert.equal(await frame.locator('.opt:disabled').count(),4);
+    assert(await frame.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+    await frame.locator('#sectionSelect').selectOption('all');assert.equal(await frame.locator('#qTotal').innerText(),'4');
     assert.equal(await page.evaluate(()=>localStorage.getItem('reqz_hist')),sentinel);
-    await page.goto(address);await page.locator('#cameron').click();frame=await (await page.locator('#quizFrame').elementHandle()).contentFrame();await frame.waitForFunction(()=>window.RE_BANK_COUNT===2);
+    await page.goto(address);await page.locator('#cameron').click();frame=await (await page.locator('#quizFrame').elementHandle()).contentFrame();await frame.waitForFunction(()=>window.RE_BANK_COUNT===4);
     await page.locator('#homeBtn').click();await page.setViewportSize({width:1280,height:900});await page.screenshot({path:'school-test-screenshots/home-desktop.png',fullPage:true});
     const fresh=await browser.newContext();await fresh.route('**/*',route=>route.request().url().startsWith(origin)?route.continue():route.abort());const locked=await fresh.newPage();await locked.goto(address);await locked.locator('#cameron').click();await locked.locator('#unlock').waitFor({state:'visible'});assert(await locked.locator('#home').isVisible());
     assert.deepEqual(errors,[]);console.log('PASS browser: real fetch/decrypt, school switching, unchanged Gold Coast, answer-locked resume, separate storage, review panel, pending-answer exclusion, early finish, remembered key, locked fresh device, 390px and 1280px layouts.');
-  }finally{fs.writeFileSync(filename,saved);if(browser)await browser.close();if(server)await new Promise(r=>server.close(r));}
+  }finally{fs.writeFileSync(filename,saved);fs.writeFileSync('cameron-section-3.enc.json',extraSaved);if(browser)await browser.close();if(server)await new Promise(r=>server.close(r));}
   if(process.env.GITHUB_ACTIONS)await verifyLive();
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});
