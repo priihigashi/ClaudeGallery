@@ -6,6 +6,7 @@ on:
       - 'real-estate-study*'
       - 'real-estate-schools*'
       - 'cameron-bank.enc.json'
+      - 'cameron-section-3.enc.json'
   workflow_dispatch:
 permissions:
   contents: read
@@ -47,3 +48,4 @@ jobs:
             real-estate-study*
             real-estate-schools*
             cameron-bank.enc.json
+            cameron-section-3.enc.json
