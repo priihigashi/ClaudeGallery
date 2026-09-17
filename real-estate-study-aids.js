@@ -141,7 +141,7 @@ if(typeof document!=='undefined' && typeof buildCameronHTML==='function'){
     let html=builderBeforeStudyAids(original,data);
     const hasPT=[...(data.questions||[]),...(data.pending||[])].every(q=>q.pt&&q.pt.question&&q.pt.options&&q.pt.study!==undefined);
     if(!hasPT) return html;
-    const config='<script>('+cameronStudyAidsRuntime.toString()+')();<\\/script>';
+    const config='<script>('+cameronStudyAidsRuntime.toString()+')();<\/script>';
     return html.replace('</body>',config+'</body>');
   };
 }
