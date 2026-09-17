@@ -26,7 +26,11 @@ async function loadCameronStudyAids(data,key){
 }
 if(typeof extendCameronCollection==='function'){
   const extendBeforeStudyAids=extendCameronCollection;
-  extendCameronCollection=async function(data,key){data=await extendBeforeStudyAids(data,key);return loadCameronStudyAids(data,key);};
+  extendCameronCollection=async function(data,key){
+    data=await extendBeforeStudyAids(data,key);
+    try{return await loadCameronStudyAids(data,key);}
+    catch(_){data.studyTranslation={language:'pt-BR',canonical:'en',kind:'study-aid',available:false};return data;}
+  };
 }
 
 function cameronStudyAidsRuntime(){
