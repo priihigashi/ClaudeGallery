@@ -10,13 +10,14 @@ on:
       - 'cameron-section-4.enc.json'
       - 'cameron-section-5.enc.json'
       - 'cameron-section-6.enc.json'
+      - 'cameron-pt-study*'
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -30,11 +31,13 @@ jobs:
           node real-estate-schools-extra.test.cjs
           node real-estate-schools-section5.test.cjs
           node real-estate-schools-section6.test.cjs
+          node real-estate-study-aids.test.cjs
       - name: Verify browser interactions and live deployment
         run: |
           npm install --no-save --package-lock=false playwright
           npx playwright install --with-deps chromium
           node real-estate-schools.e2e.cjs
+          node real-estate-study-aids.e2e.cjs
       - name: Save fixture-only browser screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -59,3 +62,4 @@ jobs:
             cameron-section-4.enc.json
             cameron-section-5.enc.json
             cameron-section-6.enc.json
+            cameron-pt-study*
