@@ -123,7 +123,7 @@ function setupSchoolHome(){
   }
   $('goldCoast').onclick=()=>{busyId++;school='gold-coast';$('quizFrame').removeAttribute('srcdoc');$('quizFrame').src='real-estate-quiz.html';showFrame('Gold Coast');};
   $('cameron').onclick=async()=>{const job=++busyId;status('Opening Cameron Academy…');try{
-    const data=await unlock();const original=await fetchText('real-estate-quiz.html');if(job!==busyId)return;
+    let data=await unlock();if(typeof extendCameronCollection==='function')data=await extendCameronCollection(data,key);const original=await fetchText('real-estate-quiz.html');if(job!==busyId)return;
     const html=buildCameronHTML(original,data);remember();$('unlock').hidden=true;school='cameron';$('quizFrame').removeAttribute('src');$('quizFrame').srcdoc=html;showFrame('Cameron Academy');status('');
   }catch(e){if(job!==busyId)return;status(e.message||'Cameron could not be opened. Gold Coast is unchanged.',true);$('unlock').hidden=false;$('accessKey').focus();}};
   $('homeBtn').onclick=()=>{const w=$('quizFrame').contentWindow;try{if(w.eval('examMode || isRetry')&&!confirm('Timed practice and retry rounds do not resume. Return to the school chooser?'))return;}catch(_){}home();};
