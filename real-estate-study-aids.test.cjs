@@ -1,0 +1,16 @@
+'use strict';
+const assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs');
+const source=fs.readFileSync('real-estate-study-aids.js','utf8');
+new vm.Script(source);
+const mod=require('./real-estate-study-aids.js');
+assert.equal(typeof mod.cameronStudyAidsRuntime,'function');
+const runtime=mod.cameronStudyAidsRuntime.toString();
+assert(runtime.includes("reqz_cameron_study_lang"));
+assert(runtime.includes("reqz_cameron_reading_cues"));
+assert(runtime.includes("#opts .opt"));
+assert(runtime.includes("getElementById('qText')"));
+assert(runtime.includes("A resposta é"));
+assert(runtime.includes("Translation")||runtime.includes("Tradução")||runtime.includes("tradução"));
+assert(!runtime.includes('fetch('),'runtime must not call an external translation service');
+assert(!runtime.includes('q.finalAnswer) qt'),'question cue renderer must not use the correct answer');
+console.log('PASS: Portuguese/cue runtime parses; uses Cameron-only preference keys; no runtime translation network; cues target question separately from options.');
