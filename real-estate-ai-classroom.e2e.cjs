@@ -23,7 +23,9 @@ async function main(){
       assert.equal(await page.locator('.schools .school').count(),3);
       assert.equal(await page.locator('#aiClassroom').getAttribute('aria-disabled'),'true');
       assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'No horizontal overflow');
-      const previous=page.url();await page.locator('#aiClassroom').click();
+      // Intentionally exercise the defensive handler even though aria-disabled
+      // correctly tells automation and assistive technology this path is locked.
+      const previous=page.url();await page.locator('#aiClassroom').click({force:true});
       assert.equal(page.url(),previous,'Unverified classroom must not navigate');
       assert((await page.locator('#status').innerText()).includes('not available yet'));
       await page.screenshot({path:'school-test-screenshots/three-paths-staged-'+size.name+'.png',fullPage:true});
