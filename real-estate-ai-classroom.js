@@ -1,20 +1,30 @@
-/* Public bridge from the static Real Estate Study home to the separately deployed
-   protected AI Classroom. No secret belongs in this file. */
+/* Public bridge to a separately deployed protected classroom. No secret belongs here. */
 'use strict';
-(function(){
-  const cfg=window.RE_AI_CLASSROOM||{};
+function resolveClassroomDestination(config){
+  if(!config||config.status!=='verified'||typeof config.url!=='string')return null;
+  try{
+    const url=new URL(config.url);
+    if(url.protocol!=='https:'||url.username||url.password||url.search||url.hash)return null;
+    if(url.port&&url.port!=='443')return null;
+    if(url.hostname==='localhost'||url.hostname.endsWith('.local')||/^\[|^\d+\./.test(url.hostname))return null;
+    return url.href;
+  }catch(_){return null;}
+}
+function setupClassroomLauncher(){
+  const destination=resolveClassroomDestination(window.RE_AI_CLASSROOM);
   const button=document.getElementById('aiClassroom');
   const status=document.getElementById('status');
   if(!button)return;
-  const url=typeof cfg.url==='string'?cfg.url.trim():'';
-  const ready=/^https:\/\//i.test(url);
-  button.dataset.status=ready?'ready':'not-deployed';
-  button.setAttribute('aria-disabled',String(!ready));
+  button.dataset.status=destination?'ready':'not-deployed';
+  button.setAttribute('aria-disabled',String(!destination));
   button.onclick=()=>{
-    if(!ready){
-      if(status)status.textContent='AI Classroom is staged on the feature branch but its protected OpenMAIC deployment is not live yet.';
+    if(!destination){
+      if(status)status.textContent='AI Classroom is not available yet. Its protected deployment must pass verification before this study path opens.';
       return;
     }
-    location.assign(url);
+    // No access key, local progress, or source material is passed to the new app.
+    location.assign(destination);
   };
-})();
+}
+if(typeof module!=='undefined'&&module.exports)module.exports={resolveClassroomDestination};
+if(typeof document!=='undefined')setupClassroomLauncher();
