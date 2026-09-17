@@ -40,10 +40,11 @@ jobs:
           npx playwright install --with-deps chromium
           if [ "$GITHUB_REF_NAME" = "main" ]; then
             node real-estate-schools.e2e.cjs
+            node real-estate-study-aids.e2e.cjs
           else
             env -u GITHUB_ACTIONS node real-estate-schools.e2e.cjs
+            env -u GITHUB_ACTIONS node real-estate-study-aids.e2e.cjs
           fi
-          node real-estate-study-aids.e2e.cjs
       - name: Save fixture-only browser screenshots
         if: always()
         uses: actions/upload-artifact@v4
