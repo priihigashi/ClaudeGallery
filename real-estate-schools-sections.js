@@ -22,7 +22,7 @@ function mergeCameronSections(base,pack,validate){
 async function extendCameronCollection(data,key){
   const bytes=s=>Uint8Array.from(atob(s.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));
   const cryptoKey=await crypto.subtle.importKey('raw',bytes(key),{name:'AES-GCM'},false,['decrypt']);
-  for(const number of [3,4]){
+  for(const number of [3,4,5]){
     const response=await fetch('cameron-section-'+number+'.enc.json',{cache:'no-cache',referrerPolicy:'no-referrer'});
     if(!response.ok)throw Error('Section '+number+' could not be loaded. Please refresh and try again. Your saved progress is unchanged.');
     const envelope=await response.json();
