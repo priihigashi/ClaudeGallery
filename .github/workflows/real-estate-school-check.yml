@@ -7,6 +7,7 @@ on:
       - 'real-estate-schools*'
       - 'cameron-bank.enc.json'
       - 'cameron-section-3.enc.json'
+      - 'cameron-section-4.enc.json'
   workflow_dispatch:
 permissions:
   contents: read
@@ -21,8 +22,10 @@ jobs:
           node-version: '22'
       - name: Preserve Gold Coast book references
         run: node real-estate-quiz.test.js
-      - name: Validate school isolation
-        run: node real-estate-schools.test.cjs
+      - name: Validate school isolation and additional sections
+        run: |
+          node real-estate-schools.test.cjs
+          node real-estate-schools-extra.test.cjs
       - name: Verify browser interactions and live deployment
         run: |
           npm install --no-save --package-lock=false playwright
@@ -49,3 +52,4 @@ jobs:
             real-estate-schools*
             cameron-bank.enc.json
             cameron-section-3.enc.json
+            cameron-section-4.enc.json
