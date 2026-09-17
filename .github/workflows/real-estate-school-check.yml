@@ -8,6 +8,7 @@ on:
       - 'cameron-bank.enc.json'
       - 'cameron-section-3.enc.json'
       - 'cameron-section-4.enc.json'
+      - 'cameron-section-5.enc.json'
   workflow_dispatch:
 permissions:
   contents: read
@@ -26,6 +27,7 @@ jobs:
         run: |
           node real-estate-schools.test.cjs
           node real-estate-schools-extra.test.cjs
+          node real-estate-schools-section5.test.cjs
       - name: Verify browser interactions and live deployment
         run: |
           npm install --no-save --package-lock=false playwright
@@ -53,3 +55,4 @@ jobs:
             cameron-bank.enc.json
             cameron-section-3.enc.json
             cameron-section-4.enc.json
+            cameron-section-5.enc.json
