@@ -20,3 +20,14 @@ const xss=buildCameronHTML(html,{...fixture,questions:[{...fixture.questions[0],
 assert(!xss.includes('<script>throw Error("unsafe")'),'Imported text cannot close a script');
 assert.equal(fs.readFileSync('real-estate-quiz.html','utf8'),html,'Original quiz remains byte-identical');
 console.log('PASS: original 271 questions; private bank adapter; isolated storage; no wrong-school textbook/sync; missing-answer rejection; source guards; JavaScript parsing; script-text escaping.');
+const {mergeCameronSections,cameronSectionsRuntime}=require('./real-estate-schools-sections.js');
+const pack={version:1,school:'cameron',section:{id:'FLREEPS3',title:'Section 3',number:3,total:1},questions:[{...fixture.questions[0],id:'ca-Q903',sourceRef:'Q903',sectionId:'FLREEPS3',sourceQuestion:1,courseExplanation:'Fixture explanation.'}]};
+const merged=mergeCameronSections(fixture,pack,checkedBank);
+assert.equal(merged.questions.length,2);assert.equal(merged.pending.length,1);
+assert.equal(merged.questions[0].id,fixture.questions[0].id);assert.equal(merged.questions[0].sectionId,'FLREEPS1');
+assert.deepEqual(merged.sections.map(s=>s.id),['FLREEPS1','FLREEPS3']);
+assert.equal(fixture.questions[0].sectionId,undefined,'Original source is not mutated');
+assert.throws(()=>mergeCameronSections(fixture,{...pack,questions:[{...pack.questions[0],id:'ca-Q900'}]},checkedBank));
+assert.throws(()=>mergeCameronSections(fixture,{...pack,questions:[{...pack.questions[0],courseExplanation:''}]},checkedBank));
+new vm.Script('('+cameronSectionsRuntime.toString()+')();');
+console.log('PASS: section merge preserves original ids; unique source ordinals; incomplete answers excluded; named sections 1/3; course provenance required.');
