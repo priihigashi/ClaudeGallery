@@ -5,7 +5,7 @@ const crypto=require('node:crypto'),zlib=require('node:zlib'),assert=require('no
 const {chromium}=require('playwright');
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 async function verifyLive(){
-  const names=['real-estate-study.html','real-estate-schools.js','cameron-bank.enc.json','cameron-section-3.enc.json','cameron-section-4.enc.json','real-estate-schools-sections.js','real-estate-quiz.html'];
+  const names=['real-estate-study.html','real-estate-schools.js','cameron-bank.enc.json','cameron-section-3.enc.json','cameron-section-4.enc.json','cameron-section-5.enc.json','real-estate-schools-sections.js','real-estate-quiz.html'];
   for(let attempt=0;attempt<12;attempt++){
     let good=true;
     for(const name of names){
@@ -20,7 +20,7 @@ async function verifyLive(){
   throw Error('Live files did not match this revision; do not report this revision as verified live.');
 }
 async function main(){
-  const filename='cameron-bank.enc.json',saved=fs.readFileSync(filename),extraSaved=fs.readFileSync('cameron-section-3.enc.json'),fourSaved=fs.readFileSync('cameron-section-4.enc.json');
+  const filename='cameron-bank.enc.json',saved=fs.readFileSync(filename),extraSaved=fs.readFileSync('cameron-section-3.enc.json'),fourSaved=fs.readFileSync('cameron-section-4.enc.json'),fiveSaved=fs.readFileSync('cameron-section-5.enc.json');
   const question=(id)=>({id:'ca-'+id,sourceRef:id,source:'Cameron Academy',topic:'Synthetic CI fixture',ch:0,teach:{},question:'Fixture: select the first choice.',options:{a:'First choice',b:'Second choice',c:'Third choice',d:'Fourth choice'},finalAnswer:'a',aiReasoning:'The instruction asks for the first choice.',courseExplanation:'Synthetic explanation for testing, not a course quote.',readingTip:'Read the instruction.',doubt:{question:'Why not the second?',answer:'The instruction explicitly asks for the first.'}});
   const data={version:1,school:'cameron',capturedThrough:'fixture',questions:[question('Q900'),question('Q901')],pending:[{id:'ca-Q902',sourceRef:'Q902',question:'Fixture without an answer.',options:{a:'A',b:'B',c:'C',d:'D'},reason:'Answer not captured.'}]};
   const key=crypto.randomBytes(32),iv=crypto.randomBytes(12),cipher=crypto.createCipheriv('aes-256-gcm',key,iv);
@@ -35,6 +35,10 @@ async function main(){
   const fourIV=crypto.randomBytes(12),fourCipher=crypto.createCipheriv('aes-256-gcm',key,fourIV);
   const fourEncrypted=Buffer.concat([fourCipher.update(zlib.gzipSync(Buffer.from(JSON.stringify(four)))),fourCipher.final(),fourCipher.getAuthTag()]);
   fs.writeFileSync('cameron-section-4.enc.json',JSON.stringify({version:1,algorithm:'AES-GCM',compression:'gzip',iv:fourIV.toString('base64'),ciphertext:fourEncrypted.toString('base64')}));
+  const five={version:1,school:'cameron',section:{id:'FLREEPS5',number:5,title:'Section 5: Synthetic fixture',total:2},questions:['Q907','Q908'].map((id,i)=>({...question(id),sectionId:'FLREEPS5',sourceQuestion:i+1,sourcePdfPages:[1],sourceWarning:i===0?'Internal source inconsistency in this synthetic fixture.':undefined})),pending:[],sourceAttempts:[{sectionId:'FLREEPS4',correct:1,total:2,duration:'00:01:46',duplicateQuestions:2,importAsAppProgress:false},{sectionId:'FLREEPS5',correct:1,total:2,duration:'00:00:30',importAsAppProgress:false}]};
+  const fiveIV=crypto.randomBytes(12),fiveCipher=crypto.createCipheriv('aes-256-gcm',key,fiveIV);
+  const fiveEncrypted=Buffer.concat([fiveCipher.update(zlib.gzipSync(Buffer.from(JSON.stringify(five)))),fiveCipher.final(),fiveCipher.getAuthTag()]);
+  fs.writeFileSync('cameron-section-5.enc.json',JSON.stringify({version:1,algorithm:'AES-GCM',compression:'gzip',iv:fiveIV.toString('base64'),ciphertext:fiveEncrypted.toString('base64')}));
   let browser,server;
   try{
     server=http.createServer((req,res)=>{
@@ -43,7 +47,7 @@ async function main(){
       const ext=path.extname(name);res.setHeader('Content-Type',({'.html':'text/html','.js':'text/javascript','.json':'application/json','.jpg':'image/jpeg'})[ext]||'application/octet-stream');res.end(fs.readFileSync(name));
     });
     await new Promise(r=>server.listen(0,'127.0.0.1',r));const origin='http://127.0.0.1:'+server.address().port;
-    browser=await chromium.launch();const context=await browser.newContext({viewport:{width:390,height:844}});
+    browser=await chromium.launch(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE}:{});const context=await browser.newContext({viewport:{width:390,height:844}});
     // Never connect to a real user's cross-device backend from a test.
     await context.route('**/*',route=>route.request().url().startsWith(origin)?route.continue():route.abort());
     const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('dialog',d=>d.accept());
@@ -53,7 +57,7 @@ async function main(){
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
     fs.mkdirSync('school-test-screenshots',{recursive:true});await page.screenshot({path:'school-test-screenshots/home-mobile.png',fullPage:true});
     await page.locator('#cameron').click();let frame=await (await page.locator('#quizFrame').elementHandle()).contentFrame();
-    await frame.waitForFunction(()=>window.RE_BANK_COUNT===6);await frame.locator('#sectionSelect').selectOption('FLREEPS1');assert.equal(await frame.locator('#qTotal').innerText(),'2');
+    await frame.waitForFunction(()=>window.RE_BANK_COUNT===8);await frame.locator('#sectionSelect').selectOption('FLREEPS1');assert.equal(await frame.locator('#qTotal').innerText(),'2');
     assert.equal(await frame.locator('#searchBookBtn').isVisible(),false);assert(!await frame.locator('#qSrc').innerText().then(s=>s.includes('Ch ')));
     await frame.locator('[data-k="a"]').click();assert.equal(await frame.locator('#nRight').innerText(),'1');
     assert((await frame.locator('#fb').innerText()).includes('Course explanation'));await page.screenshot({path:'school-test-screenshots/cameron-fixture.png',fullPage:true});
@@ -85,13 +89,26 @@ async function main(){
     await frame.locator('#resumeBar button').first().click();assert.equal(await frame.locator('#sectionSelect').inputValue(),'FLREEPS4');assert.equal(await frame.locator('.opt:disabled').count(),4);
     await frame.evaluate(()=>reviewQ('ca-Q905'));assert((await frame.locator('#rvBody .ca-source-warning').innerText()).includes('mid-sentence'));
     await frame.locator('#rvModal button').first().click();await page.screenshot({path:'school-test-screenshots/section4-fixture-mobile.png',fullPage:true});
-    await frame.locator('#sectionSelect').selectOption('all');assert.equal(await frame.locator('#qTotal').innerText(),'6');
+    await frame.locator('#sectionSelect').selectOption('FLREEPS5');assert.equal(await frame.locator('#qTotal').innerText(),'2');
+    assert(await frame.evaluate(()=>order.every(q=>q.sectionId==='FLREEPS5')));
+    assert.deepEqual(await frame.evaluate(()=>window.RE_SECTION_IDS),['FLREEPS1','FLREEPS3','FLREEPS4','FLREEPS5']);
+    assert.equal(await frame.evaluate(()=>Object.keys(loadJ('reqz_cameron_hist',{})).filter(id=>id==='ca-Q907'||id==='ca-Q908').length),0);
+    await frame.locator('[data-k="a"]').click();assert.equal(await frame.locator('#nRight').innerText(),'1');
+    await page.locator('#homeBtn').click();await page.locator('#cameron').click();frame=await (await page.locator('#quizFrame').elementHandle()).contentFrame();
+    await frame.locator('#resumeBar button').first().click();assert.equal(await frame.locator('#sectionSelect').inputValue(),'FLREEPS5');assert.equal(await frame.locator('.opt:disabled').count(),4);
+    await frame.evaluate(()=>reviewQ('ca-Q907'));assert((await frame.locator('#rvBody .ca-source-warning').innerText()).includes('Internal source inconsistency'));
+    await frame.locator('#rvModal button').first().click();
+    assert(await frame.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+    await page.screenshot({path:'school-test-screenshots/section5-fixture-mobile.png',fullPage:true});
+    await frame.locator('#statsBtn').click();await frame.locator('#sourceAttempts summary').click();assert((await frame.locator('#sourceAttempts').innerText()).includes('00:01:46'));assert((await frame.locator('#sourceAttempts').innerText()).includes('00:00:30'));
+    await frame.locator('#statsBackBtn').click();
+    await frame.locator('#sectionSelect').selectOption('all');assert.equal(await frame.locator('#qTotal').innerText(),'8');
     assert.equal(await page.evaluate(()=>localStorage.getItem('reqz_hist')),sentinel);
-    await page.goto(address);await page.locator('#cameron').click();frame=await (await page.locator('#quizFrame').elementHandle()).contentFrame();await frame.waitForFunction(()=>window.RE_BANK_COUNT===6);
+    await page.goto(address);await page.locator('#cameron').click();frame=await (await page.locator('#quizFrame').elementHandle()).contentFrame();await frame.waitForFunction(()=>window.RE_BANK_COUNT===8);
     await page.locator('#homeBtn').click();await page.setViewportSize({width:1280,height:900});await page.screenshot({path:'school-test-screenshots/home-desktop.png',fullPage:true});
     const fresh=await browser.newContext();await fresh.route('**/*',route=>route.request().url().startsWith(origin)?route.continue():route.abort());const locked=await fresh.newPage();await locked.goto(address);await locked.locator('#cameron').click();await locked.locator('#unlock').waitFor({state:'visible'});assert(await locked.locator('#home').isVisible());
     assert.deepEqual(errors,[]);console.log('PASS browser: real fetch/decrypt, school switching, unchanged Gold Coast, answer-locked resume, separate storage, review panel, pending-answer exclusion, early finish, remembered key, locked fresh device, 390px and 1280px layouts.');
-  }finally{fs.writeFileSync(filename,saved);fs.writeFileSync('cameron-section-3.enc.json',extraSaved);fs.writeFileSync('cameron-section-4.enc.json',fourSaved);if(browser)await browser.close();if(server)await new Promise(r=>server.close(r));}
+  }finally{fs.writeFileSync(filename,saved);fs.writeFileSync('cameron-section-3.enc.json',extraSaved);fs.writeFileSync('cameron-section-4.enc.json',fourSaved);fs.writeFileSync('cameron-section-5.enc.json',fiveSaved);if(browser)await browser.close();if(server)await new Promise(r=>server.close(r));}
   if(process.env.GITHUB_ACTIONS)await verifyLive();
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});
