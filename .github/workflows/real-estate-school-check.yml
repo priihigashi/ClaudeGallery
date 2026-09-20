@@ -5,6 +5,7 @@ on:
       - '.github/workflows/real-estate-school-check.yml'
       - 'real-estate-study*'
       - 'real-estate-schools*'
+      - 'real-estate-ai-classroom*'
       - 'cameron-bank.enc.json'
       - 'cameron-section-3.enc.json'
       - 'cameron-section-4.enc.json'
@@ -25,19 +26,26 @@ jobs:
           node-version: '22'
       - name: Preserve Gold Coast book references
         run: node real-estate-quiz.test.js
-      - name: Validate school isolation and additional sections
+      - name: Validate school isolation, study aids, and AI Classroom launcher
         run: |
           node real-estate-schools.test.cjs
           node real-estate-schools-extra.test.cjs
           node real-estate-schools-section5.test.cjs
           node real-estate-schools-section6.test.cjs
           node real-estate-study-aids.test.cjs
-      - name: Verify browser interactions and live deployment
+          node real-estate-ai-classroom-launcher.test.cjs
+      - name: Verify browser interactions
         run: |
           npm install --no-save --package-lock=false playwright
           npx playwright install --with-deps chromium
-          node real-estate-schools.e2e.cjs
-          node real-estate-study-aids.e2e.cjs
+          node real-estate-ai-classroom.e2e.cjs
+          if [ "$GITHUB_REF_NAME" = "main" ]; then
+            node real-estate-schools.e2e.cjs
+            node real-estate-study-aids.e2e.cjs
+          else
+            env -u GITHUB_ACTIONS node real-estate-schools.e2e.cjs
+            env -u GITHUB_ACTIONS node real-estate-study-aids.e2e.cjs
+          fi
       - name: Save fixture-only browser screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -57,6 +65,7 @@ jobs:
             real-estate-quiz.AUDIT.md
             real-estate-study*
             real-estate-schools*
+            real-estate-ai-classroom*
             cameron-bank.enc.json
             cameron-section-3.enc.json
             cameron-section-4.enc.json
