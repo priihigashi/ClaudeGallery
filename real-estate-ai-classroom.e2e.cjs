@@ -21,17 +21,18 @@ async function main(){
       await page.goto(origin+'/real-estate-study.html');
       for(const id of ['goldCoast','cameron','aiClassroom'])assert(await page.locator('#'+id).isVisible());
       assert.equal(await page.locator('.schools .school').count(),3);
-      assert.equal(await page.locator('#aiClassroom').getAttribute('aria-disabled'),'true');
+      assert.equal(await page.locator('#aiClassroom').getAttribute('aria-disabled'),'false');
+      assert.equal(await page.locator('#aiClassroom').getAttribute('data-status'),'ready');
       assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'No horizontal overflow');
-      // Intentionally exercise the defensive handler even though aria-disabled
-      // correctly tells automation and assistive technology this path is locked.
-      const previous=page.url();await page.locator('#aiClassroom').click({force:true});
-      assert.equal(page.url(),previous,'Unverified classroom must not navigate');
-      assert((await page.locator('#status').innerText()).includes('not available yet'));
-      await page.screenshot({path:'school-test-screenshots/three-paths-staged-'+size.name+'.png',fullPage:true});
+      // Navigation semantics are covered in the launcher unit test; this fixture
+      // keeps external requests blocked and verifies the live classroom card is ready.
+      const configured=await page.evaluate(()=>window.RE_AI_CLASSROOM);
+      assert.equal(configured.status,'verified');
+      assert.equal(configured.url,'https://real-estate-ai-classroom.vercel.app/');
+      await page.screenshot({path:'school-test-screenshots/three-paths-live-'+size.name+'.png',fullPage:true});
     }
     assert.deepEqual(errors,[]);
-    console.log('PASS: staged three-entry homepage at 390px and 1280px; all cards visible; no overflow; unverified classroom stays disabled; no live classroom URL or user secret used.');
+    console.log('PASS: live three-entry homepage at 390px and 1280px; all cards visible; no overflow; verified AI Classroom card is ready; no user secret used.');
   }finally{
     if(browser)await browser.close();
     if(server)await new Promise(resolve=>server.close(resolve));
