@@ -5,6 +5,6 @@
 window.RE_AI_CLASSROOM = Object.freeze({
   name: 'AI Classroom',
   subtitle: 'Complete Florida Real Estate Course',
-  url: '',
-  status: 'not-deployed'
+  url: 'https://real-estate-ai-classroom.vercel.app/',
+  status: 'verified'
 });
