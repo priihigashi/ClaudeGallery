@@ -12,8 +12,8 @@ assert(html.includes('Choose how you want to study.'),'Landing copy should descr
 assert(html.includes('271 questions · Existing progress preserved'),'Gold Coast metadata changed');
 assert(html.includes('100 ready · Sections 1, 3, 4, 5 &amp; 6 · EN/PT study help'),'Cameron metadata changed');
 assert(html.includes('real-estate-ai-classroom.config.js')&&html.includes('real-estate-ai-classroom.js'),'Classroom bridge/config missing');
-assert(/status:\s*'not-deployed'/.test(cfg),'No verified protected deployment yet');
-assert(/url:\s*''/.test(cfg),'Unverified deployment URL must not be invented');
+assert(/status:\s*'verified'/.test(cfg),'Verified protected deployment must be enabled');
+assert(cfg.includes("url: 'https://real-estate-ai-classroom.vercel.app/'"),'Launcher must use the verified production classroom URL');
 // Never include an actual credential in its own detection rule.
 for(const filename of ['real-estate-study.html','real-estate-ai-classroom.config.js','real-estate-ai-classroom.js','real-estate-ai-classroom-launcher.test.cjs']){
   const text=fs.readFileSync(filename,'utf8');
@@ -35,4 +35,4 @@ function simulate(config){
 }
 const disabled=simulate({status:'not-deployed',url:testURL});assert.equal(disabled.navigations.length,0);assert.equal(disabled.nodes.aiClassroom['aria-disabled'],'true');assert(disabled.nodes.status.textContent.includes('not available yet'));
 const enabled=simulate({status:'verified',url:testURL});assert.deepEqual(enabled.navigations,[testURL]);assert.equal(enabled.nodes.aiClassroom['aria-disabled'],'false');
-console.log('PASS: three unchanged study entry points; unverified destination disabled; credential-bearing/local URLs rejected; verified destination uses normal navigation; no quiz-storage reads. Current-source credential guard is not a historical secret-clean claim.');
+console.log('PASS: three unchanged study entry points; verified AI Classroom destination enabled; credential-bearing/local URLs rejected; verified destination uses normal navigation; no quiz-storage reads.');
