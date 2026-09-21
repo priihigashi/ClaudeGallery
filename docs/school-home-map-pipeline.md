@@ -80,3 +80,14 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 
 | UI | Sale price filter | DONE | All / ~$250–399K / ~$400–550K / ~$600–750K |
 | Classification | 1400 NE 54th St #102 | DONE | Direct Zillow detail verified current FOR RENT, not active sale |
+
+
+| UI | R/S centered circle + separate price pill | IN PROGRESS | Latest marker rule |
+| UI | Community pool = orange; private pool = pink | IN PROGRESS | Replace old pink-ring convention |
+| Data audit | Direct rent/sale URL classification | IN PROGRESS | Exact Zillow pages take precedence |
+| Data audit | 1400 NE 54th St #102 | DONE | Zillow currently says condo for rent, $2,950/mo, 3/3 |
+| Photos | Preserve existing embedded photo sets | DONE | Never regress researched photo records to link-only |
+| Photos | Backfill 4 previews on active rentals | IN PROGRESS | Continue in next research blocks |
+| Rental audit | Never delete during review; archive with reason | DONE | Canonical rule added |
+| Rental search | Slight radius expansion only as last resort | DONE | Canonical rule added |
+| Rental search | $5K hard ceiling / $4.5K normal stretch | DONE | Canonical rule added |
