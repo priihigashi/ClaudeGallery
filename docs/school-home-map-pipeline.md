@@ -58,7 +58,7 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Sales | Remodel candidates | TODO | Up to 2 where appropriate |
 | Politics | 2024 official vote context | TODO | Must use exact official scope / precinct; no guessing |
 | Audit | JS syntax + data audit | DONE | Required before each deployment |
-| Audit | GitHub Pages deployment verification | IN PROGRESS | Verify after this batch |
+| Audit | GitHub Pages deployment verification | DONE | Page-code commit 8f6f479 deployed successfully; final docs-only deploy rechecked at handoff |
 
 | School discovery | Near-home 9/10+ screening | DONE | Floranada 9/10 and Palmview 9/10 are mapped; Hollywood excluded; other close-area candidates require 9/10+ standard |
 | Neighborhood | Walkability / family-area context | IN PROGRESS | Floranada/Palmview objective context added; extend only with sourced block-level data |
@@ -97,4 +97,10 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Pool audit | Bell Boca Town Center | DONE | Community pool apartment property |
 | Pool audit | 5160 Sabal Gardens Ln #4 | DONE | Community-pool development; not private |
 | Backup | Rental backup regenerated after latest corrections | DONE | 126 canonical rental records preserved |
-| Continuity | Fresh-chat handoff prompt | TODO | Generate after final deploy verification |
+| Continuity | Fresh-chat handoff prompt | DONE | docs/school-home-map-handoff-2026-09-21.md |
+
+| Final handoff audit | Page JavaScript parses | DONE | Rechecked after marker/filter fix |
+| Final handoff audit | Home pin + Morikami present in canonical data | DONE | 1621 NE 34th Ct + Morikami school record |
+| Final handoff audit | Pool filters + R/S marker layout | DONE | Any/private/community pool + centered category circle + price pill |
+| Final handoff audit | Rental backup current | DONE | 126 canonical rental rows preserved in same Google Sheet |
+| Pool audit | Remaining active pool records source-by-source | TODO | 35 active pool records; no unknown poolType fields, but older classifications still need source verification |
