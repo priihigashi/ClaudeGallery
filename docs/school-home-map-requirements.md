@@ -54,26 +54,28 @@ This file is the source of truth for the School + Home Map. Do not silently drop
 - Prefer VPK that minimizes total morning drive.
 
 ## 4. Rental rules
-- Minimum 2 bedrooms / 2 bathrooms.
-- Primary preference: house or townhouse.
-- Strong preference: private backyard.
-- 2/2 without private backyard should normally be excluded unless there is a strong compensating perk:
-  - gated community
-  - strong clubhouse / playground / family amenities
-  - exceptional location very close to target school
-  - unusually strong value / layout / condition
-- Older apartment/condo inventory is low priority unless exceptional.
-- Current rent ceiling: up to $4,300.
-- Without a pool, prefer under $4,000 unless proximity/perks justify otherwise.
-- Current research target: up to 10 rental candidates per school.
-- Focus future rental research on homes with pools.
-- Pool classification must be exact:
+- Absolute minimum: **2 bedrooms / 2 bathrooms**. Reject any 1-bath rental.
+- Default target: **3 bedrooms / 2 bathrooms or better**.
+- Property-type priority: **single-family house first**, then a strong townhouse; condo/apartment inventory is low priority and should only survive as a clearly labeled fallback.
+- Strong preference: **private backyard**.
+- A 2/2 without a private backyard should normally be excluded unless it has a meaningful compensating feature: verified pool, exceptional gated/resort-style amenities, unusually strong condition/value, or exceptional proximity to the target school.
+- A 2/2 under roughly **1,100 sqft** should normally be excluded even if cheap unless there is an unusually strong reason to retain it.
+- Pool hierarchy: **private pool preferred**, then community pool, then no pool.
+- Pool classification must be exact where the listing supports it:
   - private pool
   - community pool
-  - no pool / unknown
-- Private-pool rentals get the strongest pink visual treatment.
-- Community-pool rentals stay pink but must have a distinct visual treatment from private pool.
-- No-pool rentals stay blue.
+  - pool type unknown / verify
+  - no pool
+- Private-pool rental visual: solid pink pin, no outer ring.
+- Community-pool rental visual: pink with a solid outer pink ring.
+- Unknown-pool rental visual: pink with a dashed outer pink ring.
+- No-pool rental visual: blue.
+- Normal rent target: around **$4,000 or less**.
+- A no-pool rental should generally remain under ~$4,000 unless school proximity, yard, size, condition, or another exceptional perk justifies a modest stretch.
+- Pool homes can stretch somewhat above $4,000. The normal live-map ceiling is currently **$4,300**; listings around ~$4,400–$4,600 can be retained as clearly labeled stretch/reference options when they strongly match the brief.
+- ~$5,000 rentals are **reference-only**, not normal recommendations.
+- Research target: **7–10 useful rental candidates per school area** after quality elimination, not 7–10 filler listings.
+- When inventory is weak, show the best available near the target budget rather than filling the map with low-quality old condos/townhouses.
 - Every rental card should show:
   - price
   - beds / baths
@@ -83,10 +85,11 @@ This file is the source of truth for the School + Home Map. Do not silently drop
   - pool type
   - important community perks
   - target school
-  - property-to-school distance and drive estimate
-  - home-to-property or home-to-school context as appropriate
+  - property-to-school distance and base drive estimate
+  - current-home-to-property drive context
   - Zillow/source link
-  - current availability check date
+  - current availability/check date
+  - history flags when available (price changes, prior rental cycles, last sold)
 
 ## 5. Future purchase reference rules
 This is reference only; no immediate purchase is assumed.
