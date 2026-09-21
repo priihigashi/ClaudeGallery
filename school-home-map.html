@@ -16,7 +16,7 @@ body{overflow:hidden}.app{height:100%;display:grid;grid-template-columns:330px 1
 .mapwrap{position:relative;min-width:0}#map{height:100%;width:100%;background:#dfe5ec}.status{position:absolute;top:12px;left:12px;z-index:700;background:white;color:#1c2430;padding:9px 11px;border-radius:10px;font-size:12px;box-shadow:0 5px 18px #0002}
 .detail{position:absolute;right:12px;bottom:12px;z-index:750;width:min(390px,calc(100% - 24px));background:#111722f2;border:1px solid #354157;border-radius:16px;padding:15px;box-shadow:0 10px 35px #0008;display:none;max-height:62%;overflow:auto}.detail.show{display:block}.detail h2{margin:4px 0 6px;font-size:19px}.small{font-size:12px;color:var(--muted);line-height:1.45}.chips{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}.chip{padding:5px 8px;border-radius:999px;border:1px solid #3d485d;background:#202938;font-size:11px}.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{display:inline-block;text-decoration:none;background:white;color:#10141c;border-radius:10px;padding:10px 12px;font-weight:800;font-size:12px;border:0}.close{position:absolute;right:8px;top:7px;background:transparent;border:0;color:#aeb7c6;font-size:22px}
 .pin{white-space:nowrap;min-height:30px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;padding:5px 9px;border-radius:10px;color:#111827;border:2px solid #fff;box-shadow:0 2px 8px #0006;letter-spacing:.01em}
-.pin.school{width:34px;height:34px;min-height:34px;padding:0;border-radius:50%;background:var(--school);font-size:18px}
+.pin.school{width:30px;height:30px;min-height:30px;padding:0;border-radius:50%;background:var(--school);font-size:13px;font-weight:950}
 .pin.vpk{background:var(--vpk);color:#111827}
 .pin.rent{background:#9fc0ff;color:#0b1220}
 .pin.sale{background:#d7a8ff;color:#0b1220}
@@ -58,18 +58,18 @@ const visible=d=>{
   if(d.type==="school"){
     return state.filterGroup==="all" || d.group===state.filterGroup;
   }
-  const activeGroup=state.filterGroup==="all" ? state.focusGroup : state.filterGroup;
-  return d.group===activeGroup && (d.type!=="rent" || d.price<=state.rent) && (!state.pool || d.pool);
+  const groupMatch=state.filterGroup==="all" ? true : d.group===state.filterGroup;
+  return groupMatch && (d.type!=="rent" || d.price<=state.rent) && (!state.pool || d.pool);
 };
 function icon(d){let label=d.type==="school"?"SCHOOL":d.type==="vpk"?"VPK":d.type==="rent"?"R "+fmt(d.price):"S "+fmt(d.price);return L.divIcon({className:"",html:'<div class="pin '+d.type+(d.pool?" pool":"")+'">'+label+'</div>',iconAnchor:[16,12]})}
 async function geo(a){let q=a.replace(/#\S+/g,"").trim();if(cache[q])return cache[q];let u="https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=us&q="+encodeURIComponent(q);let r=await fetch(u,{headers:{"Accept":"application/json"}});let j=await r.json();if(!j[0])throw Error("no");let v=[+j[0].lat,+j[0].lon];cache[q]=v;localStorage.setItem("schoolHomeGeo",JSON.stringify(cache));return v}
 function chips(d){let c=[];if(d.type==="school")c=[d.rating,d.grade,d.aff,d.grades,"Through 5th: Yes"];if(d.type==="vpk")c=[d.aff,"VPK"];if(d.type==="rent"||d.type==="sale")c=[d.type==="rent"?"RENT":"FOR SALE",fmt(d.price),d.beds+" bd",d.baths+" ba"];if(d.pool)c.push("POOL");return c.filter(Boolean)}
 function show(d){dtype.textContent=d.type==="school"?"TARGET SCHOOL":d.type==="vpk"?"MIA — VPK BRIDGE":d.type==="rent"?"RENTAL":"HOME FOR SALE";dtitle.textContent=d.name;daddr.textContent=d.address;chipsEl.innerHTML=chips(d).map(x=>'<span class="chip">'+x+"</span>").join("");let t=d.note||"";if(d.type==="school")t=(d.vpk||"")+" · "+(d.after||"")+" · "+t;if(d.type==="rent"||d.type==="sale")t="Nearby candidate for "+schoolName(d.group)+". Verify current availability and exact school assignment before committing.";dtext.textContent=t;links.innerHTML='<a class="btn" target="_blank" rel="noopener" href="'+d.url+'">'+(d.type==="school"?"School website":d.type==="vpk"?"Open VPK map":"Open Zillow / photos")+"</a>";detail.classList.add("show")}
 function schoolName(g){let s=D.find(x=>x.type==="school"&&x.group===g);return s?s.name:g}
-function renderList(){list.innerHTML="";D.filter(visible).forEach(d=>{let e=document.createElement("div");e.className="item "+d.type;e.innerHTML="<b>"+d.name+"</b><div class=meta>"+(d.type==="rent"||d.type==="sale"?fmt(d.price)+" · "+d.beds+" bd / "+d.baths+" ba"+(d.pool?" · POOL":""):d.type==="school"?d.rating+" · "+d.aff+" · "+d.grades:(d.aff||"VPK"))+"</div>";e.onclick=async()=>{show(d);if(d.type==="school"){state.focusGroup=d.group;updateFocusLabel();await loadGroup(d.group);apply();fitVisible()}let m=marks.get(d);if(m)map.setView(m.getLatLng(),15)};list.appendChild(e)})}
+function renderList(){list.innerHTML="";D.filter(visible).forEach(d=>{let e=document.createElement("div");e.className="item "+d.type;e.innerHTML="<b>"+d.name+"</b><div class=meta>"+(d.type==="rent"||d.type==="sale"?fmt(d.price)+" · "+d.beds+" bd / "+d.baths+" ba"+(d.pool?" · POOL":""):d.type==="school"?d.rating+" · "+d.aff+" · "+d.grades:(d.aff||"VPK"))+"</div>";e.onclick=async()=>{show(d);if(d.type==="school"){state.focusGroup=d.group;updateFocusLabel();await loadGroup(d.group);apply()}let m=marks.get(d);if(m)map.setView(m.getLatLng(),13)};list.appendChild(e)})}
 function apply(){marks.forEach((m,d)=>{if(visible(d)){if(!map.hasLayer(m))m.addTo(map)}else if(map.hasLayer(m))map.removeLayer(m)});renderList()}
 const detail=document.getElementById("detail"),dtype=document.getElementById("dtype"),dtitle=document.getElementById("dtitle"),daddr=document.getElementById("daddr"),chipsEl=document.getElementById("chips"),dtext=document.getElementById("dtext"),links=document.getElementById("links"),list=document.getElementById("list"),closeBtn=document.getElementById("close"),schoolSel=document.getElementById("school"),rentInput=document.getElementById("rent"),poolBtn=document.getElementById("poolOnly"),statusEl=document.getElementById("status"),focusLabel=document.getElementById("focusLabel");
-function updateFocusLabel(){focusLabel.innerHTML="Focused properties: <b>"+schoolName(state.focusGroup)+"</b>"+(state.filterGroup==="all"?" · dropdown remains All until you filter it":" · filtered by dropdown");}
+function updateFocusLabel(){focusLabel.innerHTML=state.filterGroup==="all"?"Showing <b>all schools + all loaded properties</b> · tap a school to center it":"Filtered to <b>"+schoolName(state.filterGroup)+"</b>";}
 closeBtn.onclick=()=>detail.classList.remove("show");
 schoolSel.onchange=async e=>{
   state.filterGroup=e.target.value;
@@ -83,7 +83,7 @@ rentInput.oninput=e=>{state.rent=+(e.target.value||4300);apply();fitVisible()};
 document.querySelectorAll(".filter[data-type]").forEach(b=>b.onclick=()=>{let t=b.dataset.type;state.types.has(t)?state.types.delete(t):state.types.add(t);b.classList.toggle("off",!state.types.has(t));apply()});
 poolBtn.onclick=()=>{state.pool=!state.pool;poolBtn.classList.toggle("off",!state.pool);apply();fitVisible()};
 const loaded=new Set(),loadingGroups=new Map();
-async function addPoint(d){if(marks.has(d))return;try{let ll=await geo(d.address),m=L.marker(ll,{icon:icon(d)});m.on("click",async()=>{show(d);if(d.type==="school"){state.focusGroup=d.group;updateFocusLabel();await loadGroup(d.group);apply();fitVisible()}});if(d.type==="school")m.bindTooltip(d.name,{permanent:true,direction:"top",offset:[0,-12],className:"school-label"});else m.bindTooltip(d.type==="rent"?"R · "+fmt(d.price):d.type==="sale"?"S · "+fmt(d.price):"VPK",{direction:"top"});marks.set(d,m);pts.push(ll);if(visible(d))m.addTo(map)}catch(e){}}
+async function addPoint(d){if(marks.has(d))return;try{let ll=await geo(d.address),m=L.marker(ll,{icon:icon(d)});m.on("click",async()=>{show(d);if(d.type==="school"){state.focusGroup=d.group;updateFocusLabel();await loadGroup(d.group);apply()}});if(d.type==="school")m.bindTooltip(d.name,{permanent:true,direction:"top",offset:[0,-10],className:"school-label"});else m.bindTooltip(d.type==="rent"?"R · "+fmt(d.price):d.type==="sale"?"S · "+fmt(d.price):"VPK",{direction:"top"});marks.set(d,m);pts.push(ll);if(visible(d))m.addTo(map)}catch(e){}}
 async function loadGroup(g){
   if(loaded.has(g)) return;
   if(loadingGroups.has(g)) return loadingGroups.get(g);
@@ -111,11 +111,15 @@ function fitVisible(){let p=[];marks.forEach((m,d)=>{if(visible(d)&&map.hasLayer
     await addPoint(d);
     await new Promise(r=>setTimeout(r,120));
   }
-  statusEl.textContent="Loading A.D. Henderson properties…";
-  await loadGroup("adh");
-  apply();fitVisible();
+  statusEl.textContent="Loading all school-area properties…";
+  for(const g of [...new Set(D.filter(x=>x.type==="school").map(x=>x.group))]){
+    await loadGroup(g);
+  }
+  apply();
+  state.focusGroup="adh";
+  fitVisible();
   statusEl.style.display="block";
-  statusEl.textContent="All schools shown · A.D. Henderson properties loaded · tap another school to change focus";
-  setTimeout(()=>statusEl.style.display="none",3500);
+  statusEl.textContent="All schools + properties loaded · use dropdown only when you want to filter";
+  setTimeout(()=>statusEl.style.display="none",3000);
 })();
 </script></body></html>
