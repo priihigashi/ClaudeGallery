@@ -30,7 +30,7 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 <div class="head"><div class="headrow"><div><h1>School + Home Map</h1><p>Schools + Mia's VPK bridge + rentals + future sale references.</p></div><div class="toolbar"><button class="mini" id="fitAllBtn">Fit all</button><a class="mini" href="./school-home-map-rules.html">Instructions</a><button class="mini" id="addBtn">Add / Update</button></div></div></div>
 <div class="controls">
 <select id="school"><option value="all">All school areas</option></select>
-<input id="rent" type="number" min="0" step="50" value="4300" aria-label="Max rent">
+<input id="rent" type="number" min="0" step="50" value="4500" aria-label="Max rent">
 <div class="legend">
 <button class="filter" data-type="school"><span class="d sc"></span>Schools</button>
 <button class="filter" data-type="vpk"><span class="d vc"></span>VPK</button>
@@ -65,7 +65,7 @@ const baseData=window.SCHOOL_HOME_MAP_DATA||[];
 let customItems=[];
 try{customItems=JSON.parse(localStorage.getItem(CUSTOM_KEY)||"[]")}catch(e){customItems=[]}
 const D=baseData.concat(customItems);
-const state={filterGroup:"all",focusGroup:"adh",rent:4300,types:new Set(["school","vpk","rent","sale"]),poolMode:"all",yardOnly:false};
+const state={filterGroup:"all",focusGroup:"adh",rent:4500,types:new Set(["school","vpk","rent","sale"]),poolMode:"all",yardOnly:false};
 const marks=new Map(),loaded=new Set(),loadingGroups=new Map();
 const map=L.map("map",{zoomControl:true}).setView([26.33,-80.14],10);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; OpenStreetMap"}).addTo(map);
@@ -89,6 +89,7 @@ function rentalPreferencePass(d){
   return true;
 }
 function visible(d){
+  if(d.active===false)return false;
   if(d.type==="home")return true;
   if(d.type==="school")return state.types.has("school")&&(state.filterGroup==="all"||d.group===state.filterGroup);
   if(!state.types.has(d.type))return false;
@@ -165,7 +166,7 @@ function chips(d){
   if(d.type==="home")c.push("CURRENT HOME");
   if(d.type==="school")c.push(d.rating,d.grade,d.aff,d.grades,d.admission,d.movingHelps?"Moving helps: "+d.movingHelps:"");
   if(d.type==="vpk")c.push(d.aff,"VPK");
-  if(d.type==="rent"||d.type==="sale")c.push(d.type==="rent"?"RENT":"FOR SALE",fmt(d.price),(d.beds||"?")+" bd",(d.baths||"?")+" ba",d.sqft?d.sqft.toLocaleString()+" sqft":"",d.propertyType||"",poolLabel(d),d.backyard&&d.backyard!=="unknown"?"Yard: "+d.backyard:"");
+  if(d.type==="rent"||d.type==="sale")c.push(d.type==="rent"?"RENT":"FOR SALE",fmt(d.price),(d.beds||"?")+" bd",(d.baths||"?")+" ba",d.sqft?d.sqft.toLocaleString()+" sqft":"",d.propertyType||"",poolLabel(d),d.backyard&&d.backyard!=="unknown"?"Yard: "+d.backyard:"",d.match||"",d.referenceOnly?"REFERENCE":"");
   return c.filter(Boolean);
 }
 function historyHtml(d){
@@ -220,7 +221,7 @@ async function commuteHtml(d){
 }
 function renderPhotos(d){
   photoStrip.innerHTML="";
-  if(!Array.isArray(d.photos))return;
+  if(!Array.isArray(d.photos)||!d.photos.length){if((d.type==="rent"||d.type==="sale")&&d.url)photoStrip.innerHTML='<a class="photoFallback" target="_blank" rel="noopener" href="'+d.url+'">Open listing photos ↗</a>';return;}
   d.photos.slice(0,3).forEach(src=>{const a=document.createElement("a");a.href=d.url||src;a.target="_blank";a.rel="noopener";const img=document.createElement("img");img.src=src;img.alt="Property preview";img.loading="lazy";a.appendChild(img);photoStrip.appendChild(a)});
 }
 async function show(d){
@@ -234,10 +235,10 @@ async function show(d){
   commuteBox.innerHTML=await commuteHtml(d);
 }
 function listMeta(d){
-  if(d.type==="school")return [d.rating,d.aff,d.grades,d.admission].filter(Boolean).join(" · ");
+  if(d.type==="school")return [d.rating,d.aff,d.grades,d.admission,d._homeRoute?"🏠 "+d._homeRoute.minutes+"m · "+d._homeRoute.miles+"mi":""].filter(Boolean).join(" · ");
   if(d.type==="vpk")return [d.aff,"VPK"].filter(Boolean).join(" · ");
   if(d.type==="rent"||d.type==="sale"){
-    const bits=[fmt(d.price),(d.beds||"?")+" bd / "+(d.baths||"?")+" ba",d.sqft?d.sqft.toLocaleString()+" sqft":"",poolLabel(d),hasPrivateYard(d)?"PRIVATE YARD":"",d.propertyType||""];
+    const bits=[fmt(d.price),(d.beds||"?")+" bd / "+(d.baths||"?")+" ba",d.sqft?d.sqft.toLocaleString()+" sqft":"",poolLabel(d),hasPrivateYard(d)?"PRIVATE YARD":"",d.propertyType||"",d.match||"",d.referenceOnly?"REFERENCE":""];
     return bits.filter(Boolean).join(" · ");
   }
   return d.note||"";
@@ -291,6 +292,12 @@ async function loadGroup(g){
   })().finally(()=>loadingGroups.delete(g));
   loadingGroups.set(g,job);return job;
 }
+async function enrichSchoolCommutes(){
+  const schools=D.filter(x=>x.type==="school");
+  for(const s of schools){
+    try{s._homeRoute=await routeInfo(homeRecord,s);if((state.filterGroup==="all"?state.focusGroup:state.filterGroup)===s.group)renderList()}catch(e){}
+  }
+}
 async function enrichGroupCommutes(g){
   const s=D.find(x=>x.type==="school"&&x.group===g);if(!s)return;
   const items=D.filter(x=>x.group===g&&(x.type==="rent"||x.type==="sale")&&visible(x));
@@ -301,7 +308,7 @@ async function enrichGroupCommutes(g){
 function fitCore(){
   const core=[];
   marks.forEach((m,d)=>{if(d.type==="school"||d.type==="home")core.push(m.getLatLng())});
-  if(core.length)map.fitBounds(core,{padding:[42,42],maxZoom:10});
+  if(core.length)map.fitBounds(core,{padding:[34,34],maxZoom:9});
 }
 function fitFocused(){
   const p=[];marks.forEach((m,d)=>{if(visible(d)&&map.hasLayer(m))p.push(m.getLatLng())});
@@ -311,7 +318,7 @@ function addDynamicFilters(){
   const legend=document.querySelector(".legend");
   if(!document.getElementById("privatePoolOnly")){
     const b=document.createElement("button");b.type="button";b.className="filter off";b.id="privatePoolOnly";b.innerHTML='<span class="d" style="background:#ff8fc9"></span>Private pool';legend.appendChild(b);
-    b.onclick=()=>{state.poolMode=state.poolMode==="private"?"all":"private";b.classList.toggle("off",state.poolMode!=="private");poolBtn.classList.add("off");apply()};
+    b.onclick=()=>{state.poolMode=state.poolMode==="private"?"all":"private";b.classList.toggle("off",state.poolMode!=="private");poolBtn.classList.add("off");state.types.add("rent");const rb=document.querySelector('.filter[data-type="rent"]');if(rb)rb.classList.remove("off");apply()};
   }
   if(!document.getElementById("yardOnly")){
     const b=document.createElement("button");b.type="button";b.className="filter off";b.id="yardOnly";b.innerHTML='<span class="d" style="background:#7ee787"></span>Private yard';legend.appendChild(b);
@@ -328,9 +335,9 @@ function saveLocal(item){
 }
 closeBtn.onclick=()=>detail.classList.remove("show");
 schoolSel.onchange=async e=>{state.filterGroup=e.target.value;if(state.filterGroup!=="all"){state.focusGroup=state.filterGroup;await loadGroup(state.filterGroup);apply();fitFocused();enrichGroupCommutes(state.filterGroup)}else{apply();fitCore()}updateFocusLabel()};
-rentInput.oninput=e=>{state.rent=+(e.target.value||4300);apply()};
+rentInput.oninput=e=>{state.rent=+(e.target.value||4500);apply()};
 document.querySelectorAll(".filter[data-type]").forEach(b=>b.onclick=()=>{const t=b.dataset.type;state.types.has(t)?state.types.delete(t):state.types.add(t);b.classList.toggle("off",!state.types.has(t));apply()});
-poolBtn.textContent="Any pool";poolBtn.classList.add("off");poolBtn.onclick=()=>{state.poolMode=state.poolMode==="any"?"all":"any";poolBtn.classList.toggle("off",state.poolMode!=="any");const pb=document.getElementById("privatePoolOnly");if(pb)pb.classList.add("off");apply()};
+poolBtn.textContent="Any pool";poolBtn.classList.add("off");poolBtn.onclick=()=>{state.poolMode=state.poolMode==="any"?"all":"any";poolBtn.classList.toggle("off",state.poolMode!=="any");const pb=document.getElementById("privatePoolOnly");if(pb)pb.classList.add("off");state.types.add("rent");const rb=document.querySelector('.filter[data-type="rent"]');if(rb)rb.classList.remove("off");apply()};
 fitAllBtn.onclick=fitCore;
 addBtn.onclick=()=>addModal.classList.add("show");cancelAdd.onclick=()=>addModal.classList.remove("show");
 localAdd.onclick=e=>{e.preventDefault();const item=readAddForm();if(!item.name||!item.address)return;saveLocal(item);addModal.classList.remove("show")};
@@ -343,6 +350,7 @@ addModal.addEventListener("click",e=>{if(e.target===addModal)addModal.classList.
   const core=D.filter(x=>x.type==="school"||x.type==="home");
   for(const d of core){await addPoint(d);await new Promise(r=>setTimeout(r,250))}
   fitCore();
+  enrichSchoolCommutes();
   await loadGroup(state.focusGroup);apply();enrichGroupCommutes(state.focusGroup);
   statusEl.style.display="block";statusEl.textContent="All school areas shown · property focus: "+schoolName(state.focusGroup);
   setTimeout(()=>statusEl.style.display="none",2600);
