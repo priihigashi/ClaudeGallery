@@ -64,14 +64,15 @@ function schoolName(g){let s=D.find(x=>x.type==="school"&&x.group===g);return s?
 function renderList(){list.innerHTML="";D.filter(visible).forEach(d=>{let e=document.createElement("div");e.className="item "+d.type;e.innerHTML="<b>"+d.name+"</b><div class=meta>"+(d.type==="rent"||d.type==="sale"?fmt(d.price)+" · "+d.beds+" bd / "+d.baths+" ba"+(d.pool?" · POOL":""):d.type==="school"?d.rating+" · "+d.aff+" · "+d.grades:(d.aff||"VPK"))+"</div>";e.onclick=async()=>{show(d);if(d.type==="school"){state.focusGroup=d.group;updateFocusLabel();await loadGroup(d.group);apply();fitVisible()}let m=marks.get(d);if(m)map.setView(m.getLatLng(),15)};list.appendChild(e)})}
 function apply(){marks.forEach((m,d)=>{if(visible(d)){if(!map.hasLayer(m))m.addTo(map)}else if(map.hasLayer(m))map.removeLayer(m)});renderList()}
 const detail=document.getElementById("detail"),dtype=document.getElementById("dtype"),dtitle=document.getElementById("dtitle"),daddr=document.getElementById("daddr"),chipsEl=document.getElementById("chips"),dtext=document.getElementById("dtext"),links=document.getElementById("links"),list=document.getElementById("list"),closeBtn=document.getElementById("close"),schoolSel=document.getElementById("school"),rentInput=document.getElementById("rent"),poolBtn=document.getElementById("poolOnly"),statusEl=document.getElementById("status"),focusLabel=document.getElementById("focusLabel");
-function updateFocusLabel(){focusLabel.innerHTML="Focused properties: <b>"+schoolName(state.focusGroup)+"</b>"+(state.filterGroup==="all"?" · dropdown remains All until you filter it":" · filtered by dropdown");}\ncloseBtn.onclick=()=>detail.classList.remove("show");
+function updateFocusLabel(){focusLabel.innerHTML="Focused properties: <b>"+schoolName(state.focusGroup)+"</b>"+(state.filterGroup==="all"?" · dropdown remains All until you filter it":" · filtered by dropdown");}
+closeBtn.onclick=()=>detail.classList.remove("show");
 schoolSel.onchange=async e=>{
   state.filterGroup=e.target.value;
   if(state.filterGroup!=="all"){
     state.focusGroup=state.filterGroup;
     await loadGroup(state.filterGroup);
   }
-  apply();fitVisible();
+  updateFocusLabel();apply();fitVisible();
 };
 rentInput.oninput=e=>{state.rent=+(e.target.value||4300);apply();fitVisible()};
 document.querySelectorAll(".filter[data-type]").forEach(b=>b.onclick=()=>{let t=b.dataset.type;state.types.has(t)?state.types.delete(t):state.types.add(t);b.classList.toggle("off",!state.types.has(t));apply()});
