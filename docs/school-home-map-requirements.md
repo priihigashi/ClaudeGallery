@@ -66,10 +66,11 @@ This file is the source of truth for the School + Home Map. Do not silently drop
   - community pool
   - pool type unknown / verify
   - no pool
-- Private-pool rental visual: solid pink pin, no outer ring.
-- Community-pool rental visual: pink with a solid outer pink ring.
-- Unknown-pool rental visual: pink with a dashed outer pink ring.
+- Private-pool rental visual: **pink**.
+- Community-pool rental visual: **orange**.
+- Unknown-pool rental visual: **orange with a dashed border / VERIFY label** until confirmed.
 - No-pool rental visual: blue.
+- A pool label may never imply "private" unless the listing/source supports that classification.
 - Normal rent target: around **$4,000 or less**.
 - A no-pool rental should generally remain under ~$4,000 unless school proximity, yard, size, condition, or another exceptional perk justifies a modest stretch.
 - Pool homes can stretch somewhat above $4,000. The normal live-map ceiling is currently **$4,500**; listings around ~$4,600–$5,000 are stretch/reference options only when they strongly match the brief.
@@ -153,9 +154,14 @@ Categories must be visually distinct:
 - Sale: purple
 
 Property labels:
-- Rent: `R · $3.5K`
-- Sale: `S · $450K`
-- Text must be dark/black and centered.
+- The category letter must be centered inside a compact circular marker: **R** for rent, **S** for sale.
+- The price is a separate adjacent pill/label, e.g. **R circle + $3.5K pill**. Do not center the whole "R · $3.5K" sentence inside the circle.
+- Rent/no pool: blue marker + price pill.
+- Rent/private pool: pink marker + price pill.
+- Rent/community pool: orange marker + price pill.
+- Rent/unknown pool: orange marker with VERIFY styling.
+- Sale: purple marker + price pill.
+- Text must be dark/black, legible, and centered within its own shape.
 
 Responsive behavior:
 - Desktop detail card stays fully inside map frame, preferably upper-right.
@@ -242,3 +248,27 @@ Every future update follows:
 - The backup is regenerated from the canonical map data after material rental-data changes.
 - The live map may hide inactive/low-fit records, but the backup preserves them with the reason.
 - If an active school area has fewer than the target number of quality rentals, say so explicitly instead of filling the map with weak inventory.
+
+
+## 16. Audit / correction discipline
+- **Do not delete records during ordinary audits.** Correct the record, set `active:false` when it should be hidden, and record the reason. Preserve it in the rental backup.
+- A review pass must never silently shrink the research set. Any hidden/pruned record needs an explicit reason.
+- Push work in coherent blocks (UI rules, data corrections, research additions, backup refresh) so a later interruption does not lose completed work.
+- Before calling a Zillow record rent or sale, check the direct listing page when possible. If a user reports a mismatch, re-open that exact URL and record the check date/status.
+- Current example: 1400 NE 54th St APT 102, Fort Lauderdale, FL 33334 is currently a **rental** on Zillow as of 2026-09-21; keep its direct-source status in the data.
+- For listings with image URLs already researched, show up to **4 embedded preview photos** in the detail card. Do not regress those records to link-only.
+- Photo backfill remains a required research task for active rentals without embedded previews.
+
+## 17. Rental search expansion order
+Use this order when a school area has fewer than the target count:
+1. Exact school area / closest radius.
+2. Private-pool houses with private yard.
+3. Strong 3/2 houses without pool but with private yard / excellent condition / school proximity.
+4. 2-bedroom + office or unusually good 2/2 only when it earns its place.
+5. Strong gated/community option only as a fallback.
+6. Expand the radius slightly **only as a last resort** and label the wider-radius record.
+- Hard floor remains 2 bed / 2 bath.
+- Normal target remains around $4,000; normal stretch around $4,500.
+- $4,600–$5,000 is reference/stretch only for unusually strong private-pool/yard/size/location fit.
+- Do not include rentals above $5,000.
+- Normal research target is 7–10 quality rentals per school. Morikami and Calusa may stop at 5 best-fit rentals per the current user instruction.
