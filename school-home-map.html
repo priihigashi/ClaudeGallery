@@ -14,7 +14,7 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 .list{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:9px;display:grid;gap:7px}.item{border:1px solid var(--line);background:#1e2634;border-radius:12px;padding:10px;cursor:pointer}.item b{font-size:13px}.item .meta{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.35}.item .commute{font-size:10px;color:#d4dceb;margin-top:4px}
 .item.school{border-left:4px solid var(--school)}.item.vpk{border-left:4px solid var(--vpk)}.item.rent{border-left:4px solid var(--rent)}.item.sale{border-left:4px solid var(--sale)}
 .mapwrap{position:relative;min-width:0;min-height:0;overflow:hidden}#map{height:100%;width:100%;background:#dfe5ec}.status{position:absolute;top:12px;left:12px;z-index:700;background:white;color:#1c2430;padding:9px 11px;border-radius:10px;font-size:12px;box-shadow:0 5px 18px #0002}
-.detail{position:absolute;right:16px;top:16px;bottom:auto;z-index:750;width:min(390px,calc(100% - 32px));background:#111722f2;border:1px solid #354157;border-radius:16px;padding:15px;box-shadow:0 10px 35px #0008;display:none;max-height:calc(100% - 32px);overflow:auto}.detail.show{display:block}.detail h2{margin:4px 0 6px;font-size:19px}.small{font-size:12px;color:var(--muted);line-height:1.45}.chips{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}.chip{padding:5px 8px;border-radius:999px;border:1px solid #3d485d;background:#202938;font-size:11px}.photos{display:flex;gap:7px;overflow-x:auto;margin:10px 0;padding-bottom:2px}.photos:empty{display:none}.photos img{width:132px;height:92px;object-fit:cover;border-radius:10px;border:1px solid #3b465a;flex:0 0 auto}.infoBox{margin-top:9px;padding:9px;border:1px solid #344055;border-radius:10px;background:#18202c;font-size:11px;line-height:1.45;color:#d9e1ed}.infoBox:empty{display:none}.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{display:inline-block;text-decoration:none;background:white;color:#10141c;border-radius:10px;padding:10px 12px;font-weight:800;font-size:12px;border:0}.close{position:absolute;right:8px;top:7px;background:transparent;border:0;color:#aeb7c6;font-size:22px}
+.detail{position:absolute;right:16px;top:16px;bottom:auto;z-index:750;width:min(390px,calc(100% - 32px));background:#111722f2;border:1px solid #354157;border-radius:16px;padding:15px;box-shadow:0 10px 35px #0008;display:none;max-height:calc(100% - 32px);overflow:auto}.detail.show{display:block}.detail h2{margin:4px 0 6px;font-size:19px}.small{font-size:12px;color:var(--muted);line-height:1.45}.chips{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}.chip{padding:5px 8px;border-radius:999px;border:1px solid #3d485d;background:#202938;font-size:11px}.photos{display:flex;gap:7px;overflow-x:auto;margin:10px 0;padding-bottom:2px}.photos:empty{display:none}.photos img{width:132px;height:92px;object-fit:cover;border-radius:10px;border:1px solid #3b465a;flex:0 0 auto}.photoFallback{min-width:100%;padding:10px;border:1px dashed #536075;border-radius:10px;background:#121925;color:#b9c4d4;font-size:11px;line-height:1.4}.photoFallback b{color:#fff}.infoBox{margin-top:9px;padding:9px;border:1px solid #344055;border-radius:10px;background:#18202c;font-size:11px;line-height:1.45;color:#d9e1ed}.infoBox:empty{display:none}.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{display:inline-block;text-decoration:none;background:white;color:#10141c;border-radius:10px;padding:10px 12px;font-weight:800;font-size:12px;border:0}.close{position:absolute;right:8px;top:7px;background:transparent;border:0;color:#aeb7c6;font-size:22px}
 .pin{white-space:nowrap;min-height:30px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;padding:5px 9px;border-radius:10px;color:#111827;border:2px solid #fff;box-shadow:0 2px 8px #0006;letter-spacing:.01em}
 .pin.school{width:30px;height:30px;min-height:30px;padding:0;border-radius:50%;background:var(--school);font-size:13px;font-weight:950}
 .pin.vpk{background:var(--vpk);color:#111827}
@@ -79,8 +79,8 @@ const homeRecord=D.find(x=>x.type==="home");
 
 function fmt(p){if(!p)return "";return p>=1000000?"$"+(p/1000000).toFixed(p%1000000?1:0)+"M":p>=100000?"$"+Math.round(p/1000)+"K":"$"+(p/1000).toFixed(1)+"K"}
 function schoolName(g){const s=D.find(x=>x.type==="school"&&x.group===g);return s?s.name:g}
-function rentalCount(g){return D.filter(x=>x.type==="rent"&&x.group===g&&rentalPreferencePass(x)&&(!x.price||x.price<=state.rent)).length}
-function saleCount(g){return D.filter(x=>x.type==="sale"&&x.group===g).length}
+function rentalCount(g){return D.filter(x=>x.type==="rent"&&x.group===g&&x.active!==false&&rentalPreferencePass(x)&&(!x.price||x.price<=state.rent)).length}
+function saleCount(g){return D.filter(x=>x.type==="sale"&&x.group===g&&x.active!==false).length}
 function schoolFor(d){return D.find(x=>x.type==="school"&&x.group===d.group)}
 function hasPrivateYard(d){return /private|fenced|yard/i.test(String(d.backyard||""))&&!/none|unknown/i.test(String(d.backyard||""))}
 function hasStrongPerk(d){return Array.isArray(d.perks)&&d.perks.length>0}
@@ -180,7 +180,7 @@ function historyHtml(d){
   if(d.daysListed)parts.push("<b>"+d.daysListed+" days</b> listed");
   if(d.lastSold)parts.push("Last sold: <b>"+d.lastSold+"</b>");
   if(d.historySummary)parts.push(d.historySummary);
-  if(d.checked)parts.push("Source checked: "+d.checked);
+  if(d.sourceStatus)parts.push("Status: <b>"+d.sourceStatus+"</b>");if(d.walkability)parts.push("Area context: "+d.walkability);if(d.checked)parts.push("Source checked: "+d.checked);
   return parts.length?"<b>Property history</b><br>"+parts.join("<br>"):"";
 }
 function textFor(d){
@@ -191,7 +191,7 @@ function textFor(d){
   p.push("Target school: "+schoolName(d.group));
   if(d.backyard)p.push("Backyard: "+d.backyard);
   if(Array.isArray(d.perks)&&d.perks.length)p.push("Perks: "+d.perks.join(", "));
-  if(d.schoolDistanceSource)p.push("Source school distance: "+d.schoolDistanceSource);if(d.walkability)p.push("Walkability: "+d.walkability);
+  if(d.schoolDistanceSource)p.push("Source school distance: "+d.schoolDistanceSource);if(d.walkability)p.push("Walkability: "+d.walkability);if(d.classificationVerified)p.push(d.classificationVerified);if(d.walkability)p.push("Walkability: "+d.walkability);
   p.push("Verify current availability and exact school assignment before committing.");
   return p.join(" · ");
 }
@@ -226,8 +226,21 @@ async function commuteHtml(d){
 }
 function renderPhotos(d){
   photoStrip.innerHTML="";
-  if(!Array.isArray(d.photos)||!d.photos.length){if((d.type==="rent"||d.type==="sale")&&d.url)photoStrip.innerHTML='<a class="photoFallback" target="_blank" rel="noopener" href="'+d.url+'">Open listing photos ↗</a>';return;}
-  d.photos.slice(0,3).forEach(src=>{const a=document.createElement("a");a.href=d.url||src;a.target="_blank";a.rel="noopener";const img=document.createElement("img");img.src=src;img.alt="Property preview";img.loading="lazy";a.appendChild(img);photoStrip.appendChild(a)});
+  if(d.type!=="rent"&&d.type!=="sale")return;
+  const pics=Array.isArray(d.photos)?d.photos.filter(Boolean).slice(0,4):[];
+  if(!pics.length){
+    const ph=document.createElement("div");ph.className="photoFallback";
+    ph.innerHTML="<b>Photo preview pending</b><br><span>Listing source is saved. This property stays on the research queue until reusable preview images are stored.</span>";
+    photoStrip.appendChild(ph);return;
+  }
+  let good=0;
+  pics.forEach((src,i)=>{
+    const a=document.createElement("a");a.href=d.url||src;a.target="_blank";a.rel="noopener";a.setAttribute("aria-label","Open full property gallery");
+    const img=document.createElement("img");img.src=src;img.alt="Property preview "+(i+1);img.loading="lazy";
+    img.onload=()=>{good++};
+    img.onerror=()=>{a.remove();if(!photoStrip.querySelector("img")){const ph=document.createElement("div");ph.className="photoFallback";ph.textContent="Preview images unavailable — listing remains in photo-research queue.";photoStrip.appendChild(ph)}};
+    a.appendChild(img);photoStrip.appendChild(a);
+  });
 }
 async function show(d){
   dtype.textContent=d.type==="home"?"CURRENT HOME":d.type==="school"?"TARGET SCHOOL":d.type==="vpk"?"MIA — VPK BRIDGE":d.type==="rent"?"RENTAL":"HOME FOR SALE";
@@ -266,7 +279,7 @@ function renderList(){
 function apply(){marks.forEach((m,d)=>{if(visible(d)){if(!map.hasLayer(m))m.addTo(map)}else if(map.hasLayer(m))map.removeLayer(m)});renderList()}
 function updateFocusLabel(){
   const active=state.filterGroup==="all"?state.focusGroup:state.filterGroup;
-  focusLabel.innerHTML=(state.filterGroup==="all"?"All schools shown · focused on ":"Filtered to ")+"<b>"+schoolName(active)+"</b> · "+rentalCount(active)+" rent / "+saleCount(active)+" sale";
+  const rc=rentalCount(active),note=rc<7?" · limited matching rental inventory right now":"";focusLabel.innerHTML=(state.filterGroup==="all"?"All schools shown · focused on ":"Filtered to ")+"<b>"+schoolName(active)+"</b> · "+rc+" rent / "+saleCount(active)+" sale"+note;
 }
 function populateSchoolOptions(){
   const current=schoolSel.value||"all";
