@@ -43,12 +43,12 @@ body{overflow:hidden}.app{height:100%;display:grid;grid-template-columns:330px 1
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script src="./school-home-map-data.js"></script>
 <script>
-const D=window.SCHOOL_HOME_MAP_DATA||[],state={group:"all",rent:4300,types:new Set(["school","vpk","rent","sale"]),pool:false},marks=new Map(),pts=[];
+const D=window.SCHOOL_HOME_MAP_DATA||[],state={group:"adh",rent:4300,types:new Set(["school","vpk","rent","sale"]),pool:false},marks=new Map(),pts=[];
 const map=L.map("map",{zoomControl:true}).setView([26.37,-80.15],11);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; OpenStreetMap"}).addTo(map);
 const cache=JSON.parse(localStorage.getItem("schoolHomeGeo")||"{}");
 const fmt=p=>p>=1000000?"$"+(p/1000000).toFixed(p%1000000?1:0)+"M":p>=100000?"$"+Math.round(p/1000)+"K":"$"+(p/1000).toFixed(1)+"K";
-const visible=d=>state.types.has(d.type)&&((state.group==="all"&&d.type==="school")||state.group===d.group)&&(d.type!=="rent"||d.price<=state.rent)&&(!state.pool||d.pool);
+const visible=d=>state.types.has(d.type)&&(d.type==="school"||state.group==="all"||state.group===d.group)&&(d.type!=="rent"||d.price<=state.rent)&&(!state.pool||d.pool);
 function icon(d){let label=d.type==="school"?"SCHOOL":d.type==="vpk"?"VPK":d.type==="rent"?"R "+fmt(d.price):"S "+fmt(d.price);return L.divIcon({className:"",html:'<div class="pin '+d.type+(d.pool?" pool":"")+'">'+label+'</div>',iconAnchor:[16,12]})}
 async function geo(a){let q=a.replace(/#\S+/g,"").trim();if(cache[q])return cache[q];let u="https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=us&q="+encodeURIComponent(q);let r=await fetch(u,{headers:{"Accept":"application/json"}});let j=await r.json();if(!j[0])throw Error("no");let v=[+j[0].lat,+j[0].lon];cache[q]=v;localStorage.setItem("schoolHomeGeo",JSON.stringify(cache));return v}
 function chips(d){let c=[];if(d.type==="school")c=[d.rating,d.grade,d.aff,d.grades,"Through 5th: Yes"];if(d.type==="vpk")c=[d.aff,"VPK"];if(d.type==="rent"||d.type==="sale")c=[d.type==="rent"?"RENT":"FOR SALE",fmt(d.price),d.beds+" bd",d.baths+" ba"];if(d.pool)c.push("POOL");return c.filter(Boolean)}
@@ -64,5 +64,5 @@ const loaded=new Set();
 async function addPoint(d){if(marks.has(d))return;try{let ll=await geo(d.address),m=L.marker(ll,{icon:icon(d)});m.on("click",async()=>{show(d);if(d.type==="school"){state.group=d.group;schoolSel.value=d.group;await loadGroup(d.group);apply();fitVisible()}});if(d.type==="school")m.bindTooltip(d.name,{permanent:true,direction:"top",offset:[0,-12],className:"school-label"});else m.bindTooltip(d.type==="rent"?"R "+fmt(d.price):d.type==="sale"?"S "+fmt(d.price):"VPK",{direction:"top"});marks.set(d,m);pts.push(ll);if(visible(d))m.addTo(map)}catch(e){}}
 async function loadGroup(g){if(loaded.has(g))return;statusEl.style.display="block";statusEl.textContent="Loading homes near "+schoolName(g)+"…";for(const d of D.filter(x=>x.group===g&&x.type!=="school")){await addPoint(d);await new Promise(r=>setTimeout(r,700))}loaded.add(g);statusEl.textContent="Homes loaded";setTimeout(()=>statusEl.style.display="none",1800)}
 function fitVisible(){let p=[];marks.forEach((m,d)=>{if(visible(d)&&map.hasLayer(m))p.push(m.getLatLng())});if(p.length)map.fitBounds(p,{padding:[35,35],maxZoom:14})}
-(async()=>{renderList();statusEl.textContent="Loading school locations…";for(const d of D.filter(x=>x.type==="school")){await addPoint(d);await new Promise(r=>setTimeout(r,700))}fitVisible();statusEl.textContent="Tap a school name to load its VPK, rentals and sale homes";setTimeout(()=>statusEl.style.display="none",5000)})();
+(async()=>{renderList();statusEl.textContent="Loading school locations…";for(const d of D.filter(x=>x.type==="school")){await addPoint(d);await new Promise(r=>setTimeout(r,500))}statusEl.textContent="Loading rentals + sale homes near A.D. Henderson…";await loadGroup("adh");apply();fitVisible();statusEl.style.display="block";statusEl.textContent="A.D. Henderson properties are shown · R = rent · S = sale";setTimeout(()=>statusEl.style.display="none",5000)})();
 </script></body></html>
