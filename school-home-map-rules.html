@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>School + Home Map Rules</title><style>
+:root{--bg:#10141c;--card:#18202c;--line:#303b4e;--text:#f7f9fc;--muted:#a6b1c1;--accent:#7dd3fc}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}.wrap{max-width:1100px;margin:auto;padding:18px}.top{display:flex;gap:10px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}.top h1{margin:0 0 5px;font-size:24px}.top p{margin:0;color:var(--muted)}a.btn{display:inline-block;text-decoration:none;background:white;color:#111827;padding:10px 12px;border-radius:10px;font-weight:800;font-size:12px}.links{display:flex;gap:7px;flex-wrap:wrap}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:12px}.card h2{font-size:17px;margin:0 0 8px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.row{border-top:1px solid var(--line);padding:8px 0;font-size:13px;line-height:1.4}.row:first-child{border-top:0}.k{font-weight:900}.muted{color:var(--muted)}.done{color:#86efac}.todo{color:#fbbf24}code{background:#0e131c;padding:2px 5px;border-radius:5px}@media(max-width:720px){.grid{grid-template-columns:1fr}.wrap{padding:12px}}</style></head><body><div class="wrap">
+<div class="top"><div><h1>School + Home Map — Rules & Pipeline</h1><p>This page is the human-readable source of truth for how the map should be updated.</p></div><div class="links"><a class="btn" href="./school-home-map.html">Back to map</a><a class="btn" target="_blank" href="https://github.com/priihigashi/ClaudeGallery/blob/main/docs/school-home-map-requirements.md">Full requirements</a><a class="btn" target="_blank" href="https://github.com/priihigashi/ClaudeGallery/blob/main/docs/school-home-map-pipeline.md">Pipeline checklist</a><a class="btn" target="_blank" href="https://github.com/priihigashi/ClaudeGallery/issues/new?template=school-home-map-update.yml">Add / correction issue</a></div></div>
+
+<div class="grid">
+<section class="card"><h2>School rules</h2>
+<div class="row"><span class="k">Secular only.</span> New schools should normally be GreatSchools <b>8/10+</b>.</div>
+<div class="row">Show score, state grade, grades served, VPK, aftercare, start/end time, admission type, and whether moving nearby helps.</div>
+<div class="row">A.D. Henderson = lab lottery; moving nearby does not guarantee admission.</div>
+<div class="row">Morikami = magnet/choice; proximity does not guarantee admission.</div>
+<div class="row">Hollywood is excluded. Coconut Creek / Wilton Manors are only added if a current 8+/10 school qualifies.</div>
+</section>
+
+<section class="card"><h2>Rental rules</h2>
+<div class="row">Minimum <b>2 bed / 2 bath</b>. Prefer houses and townhomes.</div>
+<div class="row"><b>Private backyard strongly preferred.</b> A 2/2 without a yard needs a real compensating perk or exceptional proximity/value.</div>
+<div class="row">Rent target: normally under $4,000 without pool; up to <b>$4,300</b> for a strong pool/perk option.</div>
+<div class="row">Private pool = solid pink pin. Community pool = pink pin with outer pink ring. Unknown pool = pink dashed ring. No pool = blue.</div>
+<div class="row">Research target: up to <b>10 rental candidates per school</b>, pool-focused.</div>
+</section>
+
+<section class="card"><h2>Property card rules</h2>
+<div class="row">Show price, beds/baths, sqft, property type, backyard, pool type, perks, school relationship and source-check date.</div>
+<div class="row">Add 2–3 preview photos when source URLs are available; full gallery stays linked to Zillow/source.</div>
+<div class="row">Research last sold, rent/list history, obvious price increases/drops, repeated turnover, year built and days listed when available.</div>
+<div class="row">Property → school drive and current-home → property drive are base estimates; use Google Maps link for live traffic.</div>
+</section>
+
+<section class="card"><h2>Current-home / commute rules</h2>
+<div class="row">Home base: <b>1621 NE 34th Ct, Pompano Beach</b>.</div>
+<div class="row">Map must show the home pin plus every tracked school area.</div>
+<div class="row">For each school: home distance, base drive, school start, and a planning schedule for arriving <b>60 minutes before</b> school start.</div>
+<div class="row">Also show the nearest/on-route VPK and two-dropoff impact when known.</div>
+</section>
+
+<section class="card"><h2>Future purchase reference</h2>
+<div class="row">Reference only, not an immediate purchase plan.</div>
+<div class="row">When inventory exists, target roughly two options around $300K, two around $400–500K, and two around $600–700K per school area.</div>
+<div class="row">Up to two remodel candidates; heavy remodel should usually be below ~$400K; around $500K should need lighter work.</div>
+</section>
+
+<section class="card"><h2>Map behavior</h2>
+<div class="row">Dropdown remains <b>All school areas</b> until the user changes it.</div>
+<div class="row">Clicking a school only changes the property focus; it never changes the dropdown.</div>
+<div class="row">Default view fits current home + all school areas, including Weston and Delray/Boca.</div>
+<div class="row">Desktop list scrolls vertically; mobile property strip scrolls horizontally; popups must remain inside the viewport.</div>
+<div class="row">Labels: rent <code>R · $3.5K</code>, sale <code>S · $450K</code>.</div>
+</section>
+
+<section class="card"><h2>Update pipeline</h2>
+<div class="row"><span class="done">1. Read requirements + pipeline.</span></div>
+<div class="row">2. Research current school/listing sources.</div>
+<div class="row">3. Update data and UI.</div>
+<div class="row">4. Run syntax/data audit.</div>
+<div class="row">5. Push to GitHub and wait for Pages deployment success.</div>
+<div class="row">6. Mark completed checklist items and share a cache-busted live URL.</div>
+<div class="row muted">Political context is only added from a verifiable official city/precinct result. Never guess a property's politics from nearby streets.</div>
+</section>
+</div></div></body></html>
