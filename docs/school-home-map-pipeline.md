@@ -47,7 +47,7 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Rentals | Hard minimum 2/2; default target 3/2 | DONE | Curation filter + rules |
 | Backup | Rental backup sheet | DONE | 126 rental records backed up to Google Sheet: https://docs.google.com/spreadsheets/d/1EU5jvUIVJstmfWu14PVLMP8SCehp96lyXs7J7jitm3Q/edit |
 | Rentals | Remove/demote weak small 2/2 filler | DONE | Inactive records retained for research history |
-| Rentals | 7–10 active useful rentals per target school | IN PROGRESS | Source cleanup reduced Waters Edge to 6 active candidates; other normal targets remain at 7–10, while Morikami stays capped at 5 and Calusa currently has 6. Do not refill with stale/weak inventory. |
+| Rentals | 7–10 active useful rentals per target school | IN PROGRESS | Waters Edge remains at 6 after stale-source cleanup. Addison is 8, Blue Lake 9, Del Prado 9, Weston 8, Cooper City 10, Griffin 7, Eagle Point 8, Palmview 8, A.D. Henderson 10; Morikami stays capped at 5 and Calusa currently has 6. Do not refill with stale/weak inventory. |
 | Rentals | Private-yard preference | DONE | Filter + data field |
 | Rentals | Pool-focused research | IN PROGRESS | Pool type verified on strongest listings; more normalization ongoing |
 | History | Listing/sale/rent price history | IN PROGRESS | Structured fields + pilot enrichment |
@@ -103,7 +103,7 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Final handoff audit | Home pin + Morikami present in canonical data | DONE | 1621 NE 34th Ct + Morikami school record |
 | Final handoff audit | Pool filters + R/S marker layout | DONE | Any/private/community pool + centered category circle + price pill |
 | Final handoff audit | Rental backup current | DONE | 126 canonical rental rows preserved in same Google Sheet |
-| Pool audit | Remaining active pool records source-by-source | IN PROGRESS | 44 active rentals currently have pool=true after this audit; no active unknown poolType fields, but older classifications still need direct-source verification. |
+| Pool audit | Remaining active pool records source-by-source | IN PROGRESS | 48 active rentals currently have pool=true after two audit blocks; no active unknown poolType fields, but older classifications still need direct-source verification. |
 
 
 | Rental source audit | 16-record correction block | DONE | Commit 8c19cbbfa012e78eab31e1435e6458a891adc573; corrected source URLs/status, pool type, yard, and history metadata without deleting research history. |
@@ -112,3 +112,12 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Classification | 21583 Villa Nova Dr | DONE | Current Realtor/MLS status is Pending; private screened pool + fenced yard verified. Preserved in backup but hidden from active map. |
 | Backup | Post-audit 16-row sync | DONE | Existing 126-row Google Sheet updated only for the 16 touched rentals and all 16 rows re-read successfully. |
 | Rental inventory | Waters Edge replacement after stale-source cleanup | IN PROGRESS | Active set is 6. 11606 Orange Blossom is pending and 22541 Vistawood is leased/closed, so neither was promoted merely to restore the count. |
+
+
+| School-area audit | 5387 Grand Park Pl + 948 NW 18th Ave | DONE | Current MLS school fields name Blue Lake Elementary; moved both rentals from Addison to Blue Lake instead of keeping them under the wrong school. |
+| Pool audit | 5387 Grand Park Pl + 948 NW 18th Ave | DONE | MLS confirms association/community pools; both changed from none to community. |
+| Pool audit | 9636 Tavernier Dr | DONE | Realtor direct detail explicitly says community pool / tennis / racquetball; changed from none to community and corrected direct-source sqft to 1,820. |
+| Classification | 896 SW 9th Street Cir #9 | IN PROGRESS | Zillow direct detail says available now while current Realtor indexes say Pending. Kept active under source-precedence rule, flagged status conflict, and verified Boca Terrace community pool amenities. |
+| Photos | Second preview backfill | DONE | Added 4 embedded previews each to 896 SW 9th #9, 5387 Grand Park Pl, and 9636 Tavernier Dr (12 previews total). |
+| Backup | Post-audit 5-row sync | DONE | Five touched rows synced to the canonical 126-row Google Sheet; school-group changes, pool types, direct URLs and photo columns re-read successfully. |
+| Data audit | Remaining active search-result URLs | IN PROGRESS | Reduced from 38 to 33 active search-result URLs in this block; continue replacing with direct detail pages before relying on status/pool metadata. |
