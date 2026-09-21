@@ -79,13 +79,17 @@ const homeRecord=D.find(x=>x.type==="home");
 
 function fmt(p){if(!p)return "";return p>=1000000?"$"+(p/1000000).toFixed(p%1000000?1:0)+"M":p>=100000?"$"+Math.round(p/1000)+"K":"$"+(p/1000).toFixed(1)+"K"}
 function schoolName(g){const s=D.find(x=>x.type==="school"&&x.group===g);return s?s.name:g}
+function rentalCount(g){return D.filter(x=>x.type==="rent"&&x.group===g&&rentalPreferencePass(x)).length}
 function schoolFor(d){return D.find(x=>x.type==="school"&&x.group===d.group)}
 function hasPrivateYard(d){return /private|fenced|yard/i.test(String(d.backyard||""))&&!/none|unknown/i.test(String(d.backyard||""))}
 function hasStrongPerk(d){return Array.isArray(d.perks)&&d.perks.length>0}
 function rentalPreferencePass(d){
   if(d.type!=="rent")return true;
   if((d.beds||0)<2||(d.baths||0)<2)return false;
+  const sqft=Number(d.sqft||0),price=Number(d.price||0);
+  if(price<=2300&&sqft>0&&sqft<1100&&d.poolType!=="private"&&!hasPrivateYard(d))return false;
   if((d.beds||0)<=2&&!hasPrivateYard(d)&&!d.pool&&!hasStrongPerk(d))return false;
+  if(/apartment|condo/i.test(String(d.propertyType||""))&&!d.pool&&!hasPrivateYard(d)&&!hasStrongPerk(d))return false;
   return true;
 }
 function visible(d){
@@ -164,7 +168,7 @@ function timeMinus(hhmm,mins){
 function chips(d){
   const c=[];
   if(d.type==="home")c.push("CURRENT HOME");
-  if(d.type==="school")c.push(d.rating,d.grade,d.aff,d.grades,d.admission,d.movingHelps?"Moving helps: "+d.movingHelps:"");
+  if(d.type==="school")c.push(d.rating,d.grade,d.aff,d.grades,rentalCount(d.group)+" rental candidates",d.admission,d.movingHelps?"Moving helps: "+d.movingHelps:"");
   if(d.type==="vpk")c.push(d.aff,"VPK");
   if(d.type==="rent"||d.type==="sale")c.push(d.type==="rent"?"RENT":"FOR SALE",fmt(d.price),(d.beds||"?")+" bd",(d.baths||"?")+" ba",d.sqft?d.sqft.toLocaleString()+" sqft":"",d.propertyType||"",poolLabel(d),d.backyard&&d.backyard!=="unknown"?"Yard: "+d.backyard:"",d.match||"",d.referenceOnly?"REFERENCE":"");
   return c.filter(Boolean);
@@ -180,7 +184,7 @@ function historyHtml(d){
 }
 function textFor(d){
   if(d.type==="home")return "Current home base used for school and property commute comparisons.";
-  if(d.type==="school")return [d.vpk,d.after,d.admission?"Admission: "+d.admission:"",d.movingHelps?"Moving nearby: "+d.movingHelps:"",d.note].filter(Boolean).join(" · ");
+  if(d.type==="school")return [d.vpk,d.after,d.admission?"Admission: "+d.admission:"",d.movingHelps?"Moving nearby: "+d.movingHelps:"",d.walkability?"Walkability: "+d.walkability:"",d.neighborhoodContext?"Area context: "+d.neighborhoodContext:"",d.note].filter(Boolean).join(" · ");
   if(d.type==="vpk")return d.note||"VPK option";
   const p=[];
   p.push("Target school: "+schoolName(d.group));
