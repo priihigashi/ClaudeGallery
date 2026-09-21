@@ -62,3 +62,8 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | School discovery | Near-home 9/10+ screening | IN PROGRESS | Floranada 9/10 is candidate; do not add until usable property set is ready |
 | Neighborhood | Walkability / family-area context | IN PROGRESS | Add only objective sourced context; Palmview first |
 | Rental cleanup | Remove weak/stale filler | IN PROGRESS | First Boca/Weston pruning block completed 2026-09-21 |
+
+| Weston | Eagle Point rental block | DONE | 8 preference-matched candidates including private-pool houses |
+| Boca/Delray | Morikami rental block | DONE | 8 current candidates including private-pool and private-yard houses |
+| Cleanup | Stale Cooper City rentals | DONE | Removed off-market 8950 SW 53rd and 9240 SW 56th; replacements added |
+| Photos/history | Four strong-property pilot | DONE | 3-image previews + listing history added where Zillow image URLs were verified |
