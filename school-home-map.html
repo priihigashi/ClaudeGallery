@@ -297,7 +297,7 @@ function schoolCounts(g){
 function previewScore(d){
   if(d.type!=="rent")return 0;
   let s=0;
-  if(d.poolType==="private")s+=50;
+  if(Array.isArray(d.photos)&&d.photos.length)s+=45;if(d.poolType==="private")s+=50;
   else if(d.poolType==="community")s+=30;
   else if(d.pool)s+=20;
   if(/single-family|house/i.test(String(d.propertyType||"")))s+=25;
@@ -401,7 +401,7 @@ addModal.addEventListener("click",e=>{if(e.target===addModal)addModal.classList.
   }
   apply();fitCore();
   await loadGroup(state.focusGroup);apply();enrichGroupCommutes(state.focusGroup);
-  statusEl.style.display="block";statusEl.textContent="All school areas shown · tap a school for its full property set";
+  statusEl.style.display="block";statusEl.textContent="All school areas shown · best-property previews loaded · tap a school for its full 7–10 rental set";
   setTimeout(()=>statusEl.style.display="none",2600);
 })();
 </script></body></html>
