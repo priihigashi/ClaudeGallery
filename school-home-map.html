@@ -170,7 +170,7 @@ function chips(d){
   const c=[];
   if(d.type==="home")c.push("CURRENT HOME");
   if(d.type==="school")c.push(d.rating,d.grade,d.aff,d.grades,rentalCount(d.group)+" rental candidates",d.admission,d.movingHelps?"Moving helps: "+d.movingHelps:"");
-  if(d.type==="vpk")c.push(d.aff,"VPK");
+  if(d.type==="vpk")c.push(d.aff,"VPK",d.hours||"");
   if(d.type==="rent"||d.type==="sale")c.push(d.type==="rent"?"RENT":"FOR SALE",fmt(d.price),(d.beds||"?")+" bd",(d.baths||"?")+" ba",d.sqft?d.sqft.toLocaleString()+" sqft":"",d.propertyType||"",poolLabel(d),d.backyard&&d.backyard!=="unknown"?"Yard: "+d.backyard:"",d.match||"",d.referenceOnly?"REFERENCE":"");
   return c.filter(Boolean);
 }
@@ -185,8 +185,8 @@ function historyHtml(d){
 }
 function textFor(d){
   if(d.type==="home")return "Current home base used for school and property commute comparisons.";
-  if(d.type==="school")return [d.vpk,d.after,d.admission?"Admission: "+d.admission:"",d.movingHelps?"Moving nearby: "+d.movingHelps:"",d.walkability?"Walkability: "+d.walkability:"",d.neighborhoodContext?"Area context: "+d.neighborhoodContext:"",d.rentalNote?"Rental note: "+d.rentalNote:"",d.note].filter(Boolean).join(" · ");
-  if(d.type==="vpk")return d.note||"VPK option";
+  if(d.type==="school")return [d.vpk,d.after,d.admission?"Admission: "+d.admission:"",d.movingHelps?"Moving nearby: "+d.movingHelps:"",d.walkability?"Walkability: "+d.walkability:"",d.neighborhoodContext?"Area context: "+d.neighborhoodContext:"",d.vpkDetails?"VPK detail: "+d.vpkDetails:"",d.rentalNote?"Rental note: "+d.rentalNote:"",d.note].filter(Boolean).join(" · ");
+  if(d.type==="vpk")return [d.note,d.hours?"Hours: "+d.hours:""].filter(Boolean).join(" · ")||"VPK option";
   const p=[];
   p.push("Target school: "+schoolName(d.group));
   if(d.backyard)p.push("Backyard: "+d.backyard);
