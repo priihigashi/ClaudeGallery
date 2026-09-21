@@ -30,7 +30,7 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 <div class="head"><div class="headrow"><div><h1>School + Home Map</h1><p>Schools + Mia's VPK bridge + rentals + future sale references.</p></div><div class="toolbar"><button class="mini" id="fitAllBtn">Fit all</button><a class="mini" href="./school-home-map-rules.html">Instructions</a><button class="mini" id="addBtn">Add / Update</button></div></div></div>
 <div class="controls">
 <select id="school"><option value="all">All school areas</option></select>
-<input id="rent" type="number" min="0" step="50" value="4500" aria-label="Max rent">
+<input id="rent" type="number" min="0" step="50" value="4500" aria-label="Max rent"><select id="saleBucket" aria-label="Sale price range"><option value="all">Sale: all prices</option><option value="300">Sale: ~$250–399K</option><option value="450">Sale: ~$400–550K</option><option value="675">Sale: ~$600–750K</option></select>
 <div class="legend">
 <button class="filter" data-type="school"><span class="d sc"></span>Schools</button>
 <button class="filter" data-type="vpk"><span class="d vc"></span>VPK</button>
@@ -65,12 +65,12 @@ const baseData=window.SCHOOL_HOME_MAP_DATA||[];
 let customItems=[];
 try{customItems=JSON.parse(localStorage.getItem(CUSTOM_KEY)||"[]")}catch(e){customItems=[]}
 const D=baseData.concat(customItems);
-const state={filterGroup:"all",focusGroup:"adh",rent:4500,types:new Set(["school","vpk","rent","sale"]),poolMode:"all",yardOnly:false};
+const state={filterGroup:"all",focusGroup:"adh",rent:4500,types:new Set(["school","vpk","rent","sale"]),poolMode:"all",yardOnly:false,saleBucket:"all"};
 const marks=new Map(),loaded=new Set(),loadingGroups=new Map();
 const map=L.map("map",{zoomControl:true}).setView([26.33,-80.14],10);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; OpenStreetMap"}).addTo(map);
 
-const detail=document.getElementById("detail"),dtype=document.getElementById("dtype"),dtitle=document.getElementById("dtitle"),daddr=document.getElementById("daddr"),chipsEl=document.getElementById("chips"),dtext=document.getElementById("dtext"),links=document.getElementById("links"),list=document.getElementById("list"),closeBtn=document.getElementById("close"),schoolSel=document.getElementById("school"),rentInput=document.getElementById("rent"),poolBtn=document.getElementById("poolOnly"),statusEl=document.getElementById("status"),focusLabel=document.getElementById("focusLabel"),photoStrip=document.getElementById("photoStrip"),commuteBox=document.getElementById("commuteBox"),historyBox=document.getElementById("historyBox");
+const detail=document.getElementById("detail"),dtype=document.getElementById("dtype"),dtitle=document.getElementById("dtitle"),daddr=document.getElementById("daddr"),chipsEl=document.getElementById("chips"),dtext=document.getElementById("dtext"),links=document.getElementById("links"),list=document.getElementById("list"),closeBtn=document.getElementById("close"),schoolSel=document.getElementById("school"),rentInput=document.getElementById("rent"),poolBtn=document.getElementById("poolOnly"),saleBucket=document.getElementById("saleBucket"),statusEl=document.getElementById("status"),focusLabel=document.getElementById("focusLabel"),photoStrip=document.getElementById("photoStrip"),commuteBox=document.getElementById("commuteBox"),historyBox=document.getElementById("historyBox");
 const fitAllBtn=document.getElementById("fitAllBtn"),addBtn=document.getElementById("addBtn"),addModal=document.getElementById("addModal"),cancelAdd=document.getElementById("cancelAdd"),localAdd=document.getElementById("localAdd"),pipelineAdd=document.getElementById("pipelineAdd");
 
 const geoCache=JSON.parse(localStorage.getItem(GEO_KEY)||"{}");
@@ -93,11 +93,12 @@ function rentalPreferencePass(d){
   if(/apartment|condo/i.test(String(d.propertyType||""))&&!d.pool&&!hasPrivateYard(d)&&!hasStrongPerk(d))return false;
   return true;
 }
+function saleBucketPass(d){if(d.type!=="sale"||state.saleBucket==="all")return true;const p=Number(d.price||0);if(state.saleBucket==="300")return p>=250000&&p<=399999;if(state.saleBucket==="450")return p>=400000&&p<=550000;if(state.saleBucket==="675")return p>=600000&&p<=750000;return true}
 function visible(d){
   if(d.active===false)return false;
   if(d.type==="home")return true;
   if(d.type==="school")return state.types.has("school")&&(state.filterGroup==="all"||d.group===state.filterGroup);
-  if(!state.types.has(d.type))return false;
+  if(!state.types.has(d.type))return false;if(d.type==="sale"&&!saleBucketPass(d))return false;
   const groupMatch=state.filterGroup==="all"?true:d.group===state.filterGroup;
   if(!groupMatch)return false;
   if(d.type==="rent"){
@@ -378,7 +379,7 @@ function saveLocal(item){
 }
 closeBtn.onclick=()=>detail.classList.remove("show");
 schoolSel.onchange=async e=>{state.filterGroup=e.target.value;if(state.filterGroup!=="all"){state.focusGroup=state.filterGroup;await loadGroup(state.filterGroup);apply();fitFocused();enrichGroupCommutes(state.filterGroup)}else{apply();fitCore()}updateFocusLabel()};
-rentInput.oninput=e=>{state.rent=+(e.target.value||4500);apply()};
+rentInput.oninput=e=>{state.rent=+(e.target.value||4500);apply()};saleBucket.onchange=e=>{state.saleBucket=e.target.value;apply()};
 document.querySelectorAll(".filter[data-type]").forEach(b=>{b.setAttribute("aria-pressed","true");b.onclick=()=>{const t=b.dataset.type;state.types.has(t)?state.types.delete(t):state.types.add(t);const on=state.types.has(t);b.classList.toggle("off",!on);b.setAttribute("aria-pressed",String(on));apply()}});
 poolBtn.textContent="Pool only";poolBtn.classList.add("off");poolBtn.onclick=()=>{state.poolMode=state.poolMode==="any"?"all":"any";poolBtn.classList.toggle("off",state.poolMode!=="any");const pb=document.getElementById("privatePoolOnly");if(pb)pb.classList.add("off");state.types.add("rent");const rb=document.querySelector('.filter[data-type="rent"]');if(rb)rb.classList.remove("off");apply()};
 fitAllBtn.onclick=fitCore;
