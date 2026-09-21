@@ -15,11 +15,18 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 .item.school{border-left:4px solid var(--school)}.item.vpk{border-left:4px solid var(--vpk)}.item.rent{border-left:4px solid var(--rent)}.item.sale{border-left:4px solid var(--sale)}
 .mapwrap{position:relative;min-width:0;min-height:0;overflow:hidden}#map{height:100%;width:100%;background:#dfe5ec}.status{position:absolute;top:12px;left:12px;z-index:700;background:white;color:#1c2430;padding:9px 11px;border-radius:10px;font-size:12px;box-shadow:0 5px 18px #0002}
 .detail{position:absolute;right:16px;top:16px;bottom:auto;z-index:750;width:min(390px,calc(100% - 32px));background:#111722f2;border:1px solid #354157;border-radius:16px;padding:15px;box-shadow:0 10px 35px #0008;display:none;max-height:calc(100% - 32px);overflow:auto}.detail.show{display:block}.detail h2{margin:4px 0 6px;font-size:19px}.small{font-size:12px;color:var(--muted);line-height:1.45}.chips{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}.chip{padding:5px 8px;border-radius:999px;border:1px solid #3d485d;background:#202938;font-size:11px}.photos{display:flex;gap:7px;overflow-x:auto;margin:10px 0;padding-bottom:2px}.photos:empty{display:none}.photos img{width:132px;height:92px;object-fit:cover;border-radius:10px;border:1px solid #3b465a;flex:0 0 auto}.photoFallback{min-width:100%;padding:10px;border:1px dashed #536075;border-radius:10px;background:#121925;color:#b9c4d4;font-size:11px;line-height:1.4}.photoFallback b{color:#fff}.infoBox{margin-top:9px;padding:9px;border:1px solid #344055;border-radius:10px;background:#18202c;font-size:11px;line-height:1.45;color:#d9e1ed}.infoBox:empty{display:none}.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{display:inline-block;text-decoration:none;background:white;color:#10141c;border-radius:10px;padding:10px 12px;font-weight:800;font-size:12px;border:0}.close{position:absolute;right:8px;top:7px;background:transparent;border:0;color:#aeb7c6;font-size:22px}
-.pin{white-space:nowrap;min-height:30px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;padding:5px 9px;border-radius:10px;color:#111827;border:2px solid #fff;box-shadow:0 2px 8px #0006;letter-spacing:.01em}
-.pin.school{width:30px;height:30px;min-height:30px;padding:0;border-radius:50%;background:var(--school);font-size:13px;font-weight:950}
-.pin.vpk{background:var(--vpk);color:#111827}
-.pin.rent{background:#9fc0ff;color:#0b1220}.pin.rent.pool-private{background:#ff8fc9;color:#111827;outline:none}.pin.rent.pool-community{background:#ffb3d8;color:#111827;outline:3px solid #ff4fa3;outline-offset:1px}.pin.rent.pool-unknown{background:#ffb3d8;color:#111827;outline:3px dashed #ff4fa3;outline-offset:1px}
-.pin.sale{background:#d7a8ff;color:#0b1220}.pin.home{width:36px;height:36px;min-height:36px;padding:0;border-radius:50%;background:#fff;color:#111827;font-size:18px;border:3px solid #111827}
+.pin{white-space:nowrap;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:#111827;border:2px solid #fff;box-shadow:0 2px 8px #0006}
+.pin.school{width:30px;height:30px;border-radius:50%;background:var(--school);font-size:16px}
+.pin.vpk{width:30px;height:30px;border-radius:50%;background:var(--vpk);color:#111827;font-size:11px}
+.pin.home{width:36px;height:36px;border-radius:50%;background:#fff;color:#111827;font-size:18px;border:3px solid #111827}
+.markerWrap{display:flex;align-items:center;gap:4px;white-space:nowrap}
+.markerDot{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:950;color:#101827;border:2px solid #fff;box-shadow:0 2px 8px #0006}
+.markerPrice{min-height:26px;display:flex;align-items:center;justify-content:center;padding:4px 7px;border-radius:999px;font-size:11px;font-weight:900;color:#101827;border:2px solid #fff;box-shadow:0 2px 8px #0004}
+.markerWrap.rent.no-pool .markerDot{background:#8fb7ff}.markerWrap.rent.no-pool .markerPrice{background:#dce8ff}
+.markerWrap.rent.pool-private .markerDot{background:#ff78bb}.markerWrap.rent.pool-private .markerPrice{background:#ffd2e8}
+.markerWrap.rent.pool-community .markerDot{background:#ffad55}.markerWrap.rent.pool-community .markerPrice{background:#ffe0b7}
+.markerWrap.rent.pool-unknown .markerDot{background:#ffad55;border-style:dashed}.markerWrap.rent.pool-unknown .markerPrice{background:#ffe0b7;border-style:dashed}
+.markerWrap.sale .markerDot{background:#c995ff}.markerWrap.sale .markerPrice{background:#ead7ff}
 .school-label{font-size:11px;font-weight:900;color:#102018;background:#fff;border:2px solid var(--school);border-radius:8px;padding:3px 6px;box-shadow:0 2px 6px #0003}
 .focus{padding:8px 11px;border-bottom:1px solid var(--line);font-size:11px;color:#d9e3f2;background:#121925}.focus b{color:#fff}.note{padding:8px 11px;border-top:1px solid var(--line);font-size:10px;color:var(--muted);line-height:1.35}
 .modal{position:fixed;inset:0;z-index:3000;background:#0009;display:none;align-items:center;justify-content:center;padding:16px}.modal.show{display:flex}.modalCard{width:min(620px,100%);max-height:90%;overflow:auto;background:#171d28;border:1px solid #3b465a;border-radius:16px;padding:16px}.modalCard h2{margin:0 0 10px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.formgrid label{font-size:11px;color:#cbd5e3;display:grid;gap:4px}.formgrid input,.formgrid select,.formgrid textarea{width:100%;background:#222b3a;color:#fff;border:1px solid #3b465a;border-radius:8px;padding:9px;font-size:14px}.span2{grid-column:1/-1}.modalActions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px;flex-wrap:wrap}
@@ -39,7 +46,7 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 <button class="filter off" id="poolOnly"><span class="d pc"></span>Rent + pool</button>
 </div></div>
 <div class="focus" id="focusLabel">Focused properties: <b>A.D. Henderson University School (FAU Lab School)</b> · dropdown remains All until you filter it</div><div id="list" class="list"></div>
-<div class="note">🏠 = current home. R = rent. S = sale. Pink = pool rental; outer pink ring = community/unknown pool; no outer ring = verified private pool. Route times are base estimates, not live traffic.</div>
+<div class="note">🏠 = current home. R = rent. S = sale. Pink = verified private-pool rental. Orange = community pool. Dashed orange = pool type still being verified. Blue = no pool. Route times are base estimates, not live traffic.</div>
 </aside>
 <main class="mapwrap"><div id="map"></div><div class="status" id="status">Loading map pins…</div>
 <section class="detail" id="detail"><button class="close" id="close">×</button><div class="small" id="dtype"></div><h2 id="dtitle"></h2><div class="small" id="daddr"></div><div class="chips" id="chips"></div><div id="photoStrip" class="photos"></div><div class="small" id="dtext"></div><div id="commuteBox" class="infoBox"></div><div id="historyBox" class="infoBox"></div><div class="links" id="links"></div></section>
@@ -105,7 +112,7 @@ function visible(d){
     if(!rentalPreferencePass(d))return false;
     if((d.price||0)>state.rent)return false;
     if(state.poolMode==="any"&&!d.pool)return false;
-    if(state.poolMode==="private"&&d.poolType!=="private")return false;
+    if(state.poolMode==="private"&&d.poolType!=="private")return false;\n    if(state.poolMode==="community"&&d.poolType!=="community")return false;
     if(state.yardOnly&&!hasPrivateYard(d))return false;
   }
   return true;
@@ -124,8 +131,14 @@ function pinClass(d){
   return "rent pool-unknown";
 }
 function icon(d){
-  let label=d.type==="home"?"🏠":d.type==="school"?"🏫":d.type==="vpk"?"VPK":d.type==="rent"?"R · "+fmt(d.price):"S · "+fmt(d.price);
-  return L.divIcon({className:"",html:'<div class="pin '+pinClass(d)+'">'+label+"</div>",iconAnchor:[18,15]});
+  if(d.type==="home")return L.divIcon({className:"",html:'<div class="pin home">🏠</div>',iconAnchor:[18,18]});
+  if(d.type==="school")return L.divIcon({className:"",html:'<div class="pin school">🏫</div>',iconAnchor:[15,15]});
+  if(d.type==="vpk")return L.divIcon({className:"",html:'<div class="pin vpk">VPK</div>',iconAnchor:[15,15]});
+  if(d.type==="rent"){
+    const cls=!d.pool?"no-pool":d.poolType==="private"?"pool-private":d.poolType==="community"?"pool-community":"pool-unknown";
+    return L.divIcon({className:"",html:'<div class="markerWrap rent '+cls+'"><span class="markerDot">R</span><span class="markerPrice">'+fmt(d.price)+'</span></div>',iconAnchor:[15,15]});
+  }
+  return L.divIcon({className:"",html:'<div class="markerWrap sale"><span class="markerDot">S</span><span class="markerPrice">'+fmt(d.price)+'</span></div>',iconAnchor:[15,15]});
 }
 function cleanAddress(a){return String(a||"").replace(/#\S+/g,"").replace(/APT\s*\w+/ig,"").trim()}
 async function geoRecord(d){
@@ -358,11 +371,27 @@ function fitFocused(){
   const p=[];marks.forEach((m,d)=>{if(visible(d)&&map.hasLayer(m))p.push(m.getLatLng())});
   if(p.length)map.fitBounds(p,{padding:[35,35],maxZoom:13});
 }
+function syncPoolButtons(){
+  const p=document.getElementById("privatePoolOnly"),cm=document.getElementById("communityPoolOnly");
+  poolBtn.classList.toggle("off",state.poolMode!=="any");
+  if(p)p.classList.toggle("off",state.poolMode!=="private");
+  if(cm)cm.classList.toggle("off",state.poolMode!=="community");
+}
+function setPoolMode(mode){
+  state.poolMode=state.poolMode===mode?"all":mode;
+  state.types.add("rent");
+  const rb=document.querySelector('.filter[data-type="rent"]');if(rb)rb.classList.remove("off");
+  syncPoolButtons();apply();
+}
 function addDynamicFilters(){
   const legend=document.querySelector(".legend");
   if(!document.getElementById("privatePoolOnly")){
-    const b=document.createElement("button");b.type="button";b.className="filter off";b.id="privatePoolOnly";b.innerHTML='<span class="d" style="background:#ff8fc9"></span>Private pool';legend.appendChild(b);
-    b.onclick=()=>{state.poolMode=state.poolMode==="private"?"all":"private";b.classList.toggle("off",state.poolMode!=="private");poolBtn.classList.add("off");state.types.add("rent");const rb=document.querySelector('.filter[data-type="rent"]');if(rb)rb.classList.remove("off");apply()};
+    const b=document.createElement("button");b.type="button";b.className="filter off";b.id="privatePoolOnly";b.innerHTML='<span class="d" style="background:#ff78bb"></span>Private pool';legend.appendChild(b);
+    b.onclick=()=>setPoolMode("private");
+  }
+  if(!document.getElementById("communityPoolOnly")){
+    const b=document.createElement("button");b.type="button";b.className="filter off";b.id="communityPoolOnly";b.innerHTML='<span class="d" style="background:#ffad55"></span>Community pool';legend.appendChild(b);
+    b.onclick=()=>setPoolMode("community");
   }
   if(!document.getElementById("yardOnly")){
     const b=document.createElement("button");b.type="button";b.className="filter off";b.id="yardOnly";b.innerHTML='<span class="d" style="background:#7ee787"></span>Private yard';legend.appendChild(b);
@@ -381,7 +410,7 @@ closeBtn.onclick=()=>detail.classList.remove("show");
 schoolSel.onchange=async e=>{state.filterGroup=e.target.value;if(state.filterGroup!=="all"){state.focusGroup=state.filterGroup;await loadGroup(state.filterGroup);apply();fitFocused();enrichGroupCommutes(state.filterGroup)}else{apply();fitCore()}updateFocusLabel()};
 rentInput.oninput=e=>{state.rent=+(e.target.value||4500);apply()};saleBucket.onchange=e=>{state.saleBucket=e.target.value;apply()};
 document.querySelectorAll(".filter[data-type]").forEach(b=>{b.setAttribute("aria-pressed","true");b.onclick=()=>{const t=b.dataset.type;state.types.has(t)?state.types.delete(t):state.types.add(t);const on=state.types.has(t);b.classList.toggle("off",!on);b.setAttribute("aria-pressed",String(on));apply()}});
-poolBtn.textContent="Pool only";poolBtn.classList.add("off");poolBtn.onclick=()=>{state.poolMode=state.poolMode==="any"?"all":"any";poolBtn.classList.toggle("off",state.poolMode!=="any");const pb=document.getElementById("privatePoolOnly");if(pb)pb.classList.add("off");state.types.add("rent");const rb=document.querySelector('.filter[data-type="rent"]');if(rb)rb.classList.remove("off");apply()};
+poolBtn.textContent="Any pool";poolBtn.classList.add("off");poolBtn.onclick=()=>setPoolMode("any");
 fitAllBtn.onclick=fitCore;
 addBtn.onclick=()=>addModal.classList.add("show");cancelAdd.onclick=()=>addModal.classList.remove("show");
 localAdd.onclick=e=>{e.preventDefault();const item=readAddForm();if(!item.name||!item.address)return;saveLocal(item);addModal.classList.remove("show")};
