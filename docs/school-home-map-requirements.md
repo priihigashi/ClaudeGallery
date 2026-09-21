@@ -72,7 +72,7 @@ This file is the source of truth for the School + Home Map. Do not silently drop
 - No-pool rental visual: blue.
 - Normal rent target: around **$4,000 or less**.
 - A no-pool rental should generally remain under ~$4,000 unless school proximity, yard, size, condition, or another exceptional perk justifies a modest stretch.
-- Pool homes can stretch somewhat above $4,000. The normal live-map ceiling is currently **$4,300**; listings around ~$4,400–$4,600 can be retained as clearly labeled stretch/reference options when they strongly match the brief.
+- Pool homes can stretch somewhat above $4,000. The normal live-map ceiling is currently **$4,500**; listings around ~$4,600–$5,000 are stretch/reference options only when they strongly match the brief.
 - ~$5,000 rentals are **reference-only**, not normal recommendations.
 - Research target: **7–10 useful rental candidates per school area** after quality elimination, not 7–10 filler listings.
 - When inventory is weak, show the best available near the target budget rather than filling the map with low-quality old condos/townhouses.
@@ -119,7 +119,7 @@ For each property, research the source page where possible and record:
 - backyard / lot notes
 - community / HOA perks
 - school distance shown by source
-- 2–3 preview photos when technically available, otherwise a source thumbnail/screenshot fallback
+- 4 preview photos when technically available, otherwise a source thumbnail/screenshot fallback
 - full-photo link
 
 Do not invent history when source data is unavailable.
@@ -234,3 +234,11 @@ Every future update follows:
 - Prefer 3 bedrooms. A 2-bedroom option should normally earn its place through pool, backyard, exceptional proximity, or meaningful community perks.
 - Keep no-pool homes when they are strong 3-bedroom houses with private yard, exceptional school proximity, or unusually good size/value.
 - Stale/off-market listings do not count toward the current target set.
+
+## 15. Source precedence and backup discipline
+- Direct listing detail page beats stale search/index results when they conflict about current status.
+- Do not promote a listing as current if the direct page says sold/off-market unless a newer authoritative rental source clearly supersedes it.
+- Every rental record, including inactive/pruned records, must remain in the Rental Backup Google Sheet.
+- The backup is regenerated from the canonical map data after material rental-data changes.
+- The live map may hide inactive/low-fit records, but the backup preserves them with the reason.
+- If an active school area has fewer than the target number of quality rentals, say so explicitly instead of filling the map with weak inventory.
