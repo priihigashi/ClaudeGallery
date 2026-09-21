@@ -279,7 +279,7 @@ function renderList(){
 function apply(){marks.forEach((m,d)=>{if(visible(d)){if(!map.hasLayer(m))m.addTo(map)}else if(map.hasLayer(m))map.removeLayer(m)});renderList()}
 function updateFocusLabel(){
   const active=state.filterGroup==="all"?state.focusGroup:state.filterGroup;
-  const rc=rentalCount(active),note=rc<7?" · limited matching rental inventory right now":"";focusLabel.innerHTML=(state.filterGroup==="all"?"All schools shown · focused on ":"Filtered to ")+"<b>"+schoolName(active)+"</b> · "+rc+" rent / "+saleCount(active)+" sale"+note;
+  const rc=rentalCount(active),compact=["morikami","calusa"].includes(active),note=compact&&rc>=5?" · curated 5-property set":rc<7?" · limited matching rental inventory right now":"";focusLabel.innerHTML=(state.filterGroup==="all"?"All schools shown · focused on ":"Filtered to ")+"<b>"+schoolName(active)+"</b> · "+rc+" rent / "+saleCount(active)+" sale"+note;
 }
 function populateSchoolOptions(){
   const current=schoolSel.value||"all";
