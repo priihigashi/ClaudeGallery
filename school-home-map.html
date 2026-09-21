@@ -9,7 +9,7 @@
 body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-columns:360px minmax(0,1fr)}.side{height:100%;min-height:0;background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;min-width:0;overflow:hidden;z-index:1000}
 .head{padding:14px;border-bottom:1px solid var(--line)}.headrow{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}.headrow>div:first-child{min-width:0}h1{font-size:20px;margin:0 0 5px}.head p{font-size:12px;line-height:1.4;color:var(--muted);margin:0}.toolbar{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}.mini{appearance:none;border:1px solid #3a465b;background:#202938;color:#fff;text-decoration:none;border-radius:8px;padding:7px 8px;font-size:10px;font-weight:800;cursor:pointer;white-space:nowrap}
 .controls{padding:10px;border-bottom:1px solid var(--line);display:grid;gap:8px}.controls select,.controls input{width:100%;background:#212938;border:1px solid #354157;color:#fff;padding:10px;border-radius:10px;font-size:15px}
-.legend{display:flex;flex-wrap:wrap;gap:6px}.filter{border:1px solid #354157;background:#212938;color:#fff;border-radius:999px;padding:8px 10px;font-size:12px;font-weight:700}.filter.off{opacity:.35}.d{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+.legend{display:flex;flex-wrap:wrap;gap:6px}.filter{border:1px solid #46536a;background:#293447;color:#fff;border-radius:999px;padding:8px 10px;font-size:12px;font-weight:700;cursor:pointer;transition:.12s ease}.filter.off{opacity:1;background:#141a24;color:#aab4c3;border-style:dashed}.filter:active{transform:scale(.98)}.d{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
 .sc{background:var(--school)}.vc{background:var(--vpk)}.rc{background:var(--rent)}.xc{background:var(--sale)}.pc{background:#ff79bd}
 .list{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:9px;display:grid;gap:7px}.item{border:1px solid var(--line);background:#1e2634;border-radius:12px;padding:10px;cursor:pointer}.item b{font-size:13px}.item .meta{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.35}.item .commute{font-size:10px;color:#d4dceb;margin-top:4px}
 .item.school{border-left:4px solid var(--school)}.item.vpk{border-left:4px solid var(--vpk)}.item.rent{border-left:4px solid var(--rent)}.item.sale{border-left:4px solid var(--sale)}
@@ -79,7 +79,7 @@ const homeRecord=D.find(x=>x.type==="home");
 
 function fmt(p){if(!p)return "";return p>=1000000?"$"+(p/1000000).toFixed(p%1000000?1:0)+"M":p>=100000?"$"+Math.round(p/1000)+"K":"$"+(p/1000).toFixed(1)+"K"}
 function schoolName(g){const s=D.find(x=>x.type==="school"&&x.group===g);return s?s.name:g}
-function rentalCount(g){return D.filter(x=>x.type==="rent"&&x.group===g&&rentalPreferencePass(x)).length}
+function rentalCount(g){return D.filter(x=>x.type==="rent"&&x.group===g&&rentalPreferencePass(x)&&(!x.price||x.price<=state.rent)).length}
 function saleCount(g){return D.filter(x=>x.type==="sale"&&x.group===g).length}
 function schoolFor(d){return D.find(x=>x.type==="school"&&x.group===d.group)}
 function hasPrivateYard(d){return /private|fenced|yard/i.test(String(d.backyard||""))&&!/none|unknown/i.test(String(d.backyard||""))}
@@ -185,7 +185,7 @@ function historyHtml(d){
 }
 function textFor(d){
   if(d.type==="home")return "Current home base used for school and property commute comparisons.";
-  if(d.type==="school")return [d.vpk,d.after,d.admission?"Admission: "+d.admission:"",d.movingHelps?"Moving nearby: "+d.movingHelps:"",d.walkability?"Walkability: "+d.walkability:"",d.neighborhoodContext?"Area context: "+d.neighborhoodContext:"",d.note].filter(Boolean).join(" · ");
+  if(d.type==="school")return [d.vpk,d.after,d.admission?"Admission: "+d.admission:"",d.movingHelps?"Moving nearby: "+d.movingHelps:"",d.walkability?"Walkability: "+d.walkability:"",d.neighborhoodContext?"Area context: "+d.neighborhoodContext:"",d.rentalNote?"Rental note: "+d.rentalNote:"",d.note].filter(Boolean).join(" · ");
   if(d.type==="vpk")return d.note||"VPK option";
   const p=[];
   p.push("Target school: "+schoolName(d.group));
@@ -352,7 +352,7 @@ function addDynamicFilters(){
   }
   if(!document.getElementById("yardOnly")){
     const b=document.createElement("button");b.type="button";b.className="filter off";b.id="yardOnly";b.innerHTML='<span class="d" style="background:#7ee787"></span>Private yard';legend.appendChild(b);
-    b.onclick=()=>{state.yardOnly=!state.yardOnly;b.classList.toggle("off",!state.yardOnly);apply()};
+    b.setAttribute("aria-pressed","false");b.onclick=()=>{state.yardOnly=!state.yardOnly;b.classList.toggle("off",!state.yardOnly);b.setAttribute("aria-pressed",String(state.yardOnly));apply()};
   }
 }
 function readAddForm(){
@@ -366,8 +366,8 @@ function saveLocal(item){
 closeBtn.onclick=()=>detail.classList.remove("show");
 schoolSel.onchange=async e=>{state.filterGroup=e.target.value;if(state.filterGroup!=="all"){state.focusGroup=state.filterGroup;await loadGroup(state.filterGroup);apply();fitFocused();enrichGroupCommutes(state.filterGroup)}else{apply();fitCore()}updateFocusLabel()};
 rentInput.oninput=e=>{state.rent=+(e.target.value||4500);apply()};
-document.querySelectorAll(".filter[data-type]").forEach(b=>b.onclick=()=>{const t=b.dataset.type;state.types.has(t)?state.types.delete(t):state.types.add(t);b.classList.toggle("off",!state.types.has(t));apply()});
-poolBtn.textContent="Any pool";poolBtn.classList.add("off");poolBtn.onclick=()=>{state.poolMode=state.poolMode==="any"?"all":"any";poolBtn.classList.toggle("off",state.poolMode!=="any");const pb=document.getElementById("privatePoolOnly");if(pb)pb.classList.add("off");state.types.add("rent");const rb=document.querySelector('.filter[data-type="rent"]');if(rb)rb.classList.remove("off");apply()};
+document.querySelectorAll(".filter[data-type]").forEach(b=>{b.setAttribute("aria-pressed","true");b.onclick=()=>{const t=b.dataset.type;state.types.has(t)?state.types.delete(t):state.types.add(t);const on=state.types.has(t);b.classList.toggle("off",!on);b.setAttribute("aria-pressed",String(on));apply()}});
+poolBtn.textContent="Pool only";poolBtn.classList.add("off");poolBtn.onclick=()=>{state.poolMode=state.poolMode==="any"?"all":"any";poolBtn.classList.toggle("off",state.poolMode!=="any");const pb=document.getElementById("privatePoolOnly");if(pb)pb.classList.add("off");state.types.add("rent");const rb=document.querySelector('.filter[data-type="rent"]');if(rb)rb.classList.remove("off");apply()};
 fitAllBtn.onclick=fitCore;
 addBtn.onclick=()=>addModal.classList.add("show");cancelAdd.onclick=()=>addModal.classList.remove("show");
 localAdd.onclick=e=>{e.preventDefault();const item=readAddForm();if(!item.name||!item.address)return;saveLocal(item);addModal.classList.remove("show")};
