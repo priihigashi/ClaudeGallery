@@ -20,7 +20,20 @@ Rental backup:
 - Google Sheet: https://docs.google.com/spreadsheets/d/1EU5jvUIVJstmfWu14PVLMP8SCehp96lyXs7J7jitm3Q/edit
 - Tab: `Rentals Backup`
 - It must preserve active AND inactive/pruned rental research.
-- Current canonical rental count at handoff: 126.
+- Current canonical rental count at handoff: 136.
+
+## Continuation update — access + latest audit
+
+- GitHub access is **not blocked**. Connected user `priihigashi` has admin/push access to `priihigashi/ClaudeGallery`; direct file writes and Actions/Pages reads were verified.
+- The only remaining access limitation is **interactive live-page browser QA inside the current agent runtime**. This is not a GitHub permission problem; the available public-page reader rejects the GitHub Pages URL and no usable external browser automation is exposed.
+- Repo/data work is unaffected by that limitation.
+- Rental backup is now **136 canonical rows**, exactly matching the 136 GitHub rental records (zero missing/zero extra).
+- Active inventory after school-assignment/status cleanup: A.D. Henderson 10; Waters Edge 8; Addison 8; Blue Lake 9; Del Prado 9; Weston 8; Cooper City 7; Palmview 7; Griffin 7; Eagle Point 8; Floranada 7; Calusa 6; Morikami 5.
+- Remaining active Zillow search-result URLs: **21** (down from 54 at the start of the continuation).
+- `perks` schema drift was fixed: all rental perks are arrays again.
+- Cooper City / Griffin duplicates were audited; wrong-school and stale copies were archived rather than deleted.
+- One active pool record, 8954 SW 53rd St, intentionally remains `poolType: unknown` / VERIFY because current rental sources confirm a pool but do not explicitly establish private vs community.
+- Latest relevant data commits: `e16c3706145588f1df76bae12e75d08213fb9ecd`, `489778f69625ffaaab13e6f0f9ab0e5f1872ff3a`, `3b2882fa9469e439a8aff8a6442db207619d4744`.
 
 ## Mandatory working method
 
