@@ -52,22 +52,22 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Rentals | Pool-focused research | IN PROGRESS | Pool type verified on strongest listings; more normalization ongoing |
 | History | Listing/sale/rent price history | IN PROGRESS | Structured fields + pilot enrichment |
 | Photos | 4 preview photos/slideshow | IN PROGRESS | Embedded when reusable source URLs exist; fallback opens source gallery |
-| Sales | ~$300K bucket | TODO | Future-purchase reference expansion |
-| Sales | $400–500K bucket | TODO | Future-purchase reference expansion |
-| Sales | $600–700K bucket | TODO | Future-purchase reference expansion |
+| Sales | ~$300K bucket | IN PROGRESS | Existing coverage audited; some school areas still need 2-per-bucket top-up |
+| Sales | $400–500K bucket | IN PROGRESS | Existing coverage audited; some school areas still need 2-per-bucket top-up |
+| Sales | $600–700K bucket | IN PROGRESS | Existing coverage audited; some school areas still need 2-per-bucket top-up |
 | Sales | Remodel candidates | TODO | Up to 2 where appropriate |
 | Politics | 2024 official vote context | TODO | Must use exact official scope / precinct; no guessing |
 | Audit | JS syntax + data audit | DONE | Required before each deployment |
 | Audit | GitHub Pages deployment verification | IN PROGRESS | Verify after this batch |
 
-| School discovery | Near-home 9/10+ screening | IN PROGRESS | Floranada 9/10 is candidate; do not add until usable property set is ready |
-| Neighborhood | Walkability / family-area context | IN PROGRESS | Add only objective sourced context; Palmview first |
+| School discovery | Near-home 9/10+ screening | DONE | Floranada 9/10 and Palmview 9/10 are mapped; Hollywood excluded; other close-area candidates require 9/10+ standard |
+| Neighborhood | Walkability / family-area context | IN PROGRESS | Floranada/Palmview objective context added; extend only with sourced block-level data |
 | Rental cleanup | Remove weak/stale filler | IN PROGRESS | First Boca/Weston pruning block completed 2026-09-21 |
 
 | Weston | Eagle Point rental block | DONE | 8 preference-matched candidates including private-pool houses |
-| Boca/Delray | Morikami rental block | DONE | 8 current candidates including private-pool and private-yard houses |
+| Boca/Delray | Morikami rental block | DONE | Curated to 5 best-fit active candidates per user; removed extras remain in backup |
 | Cleanup | Stale Cooper City rentals | DONE | Removed off-market 8950 SW 53rd and 9240 SW 56th; replacements added |
-| Photos/history | Four strong-property pilot | DONE | 3-image previews + listing history added where Zillow image URLs were verified |
+| Photos/history | Strong-property pilot | DONE | Up to 4 embedded previews + listing history added where reusable source URLs were verified |
 
 | Pool research | Private vs community verification | IN PROGRESS | Strongest listings re-verified; private pool only when listing explicitly supports it; unknown stays unknown |
 
@@ -77,3 +77,6 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Backup | Canonical regeneration | DONE | Google Sheet rebuilt from canonical data after rental audit |
 
 | Rentals | Blue Lake rental floor | DONE | Added current 3/3 2,180 sqft house; active set now reaches 7 |
+
+| UI | Sale price filter | DONE | All / ~$250–399K / ~$400–550K / ~$600–750K |
+| Classification | 1400 NE 54th St #102 | DONE | Direct Zillow detail verified current FOR RENT, not active sale |
