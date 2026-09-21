@@ -215,3 +215,22 @@ Every future update follows:
 8. Wait for GitHub Pages deploy success.
 9. Mark checklist rows complete.
 10. Share a cache-busted live URL.
+
+
+## 13. Near-home school and neighborhood screening
+- For new schools close to the current Pompano home, target GreatSchools **9/10+**. Do not add a nearby 8/10 merely to expand the list unless there is an exceptional reason.
+- Before adding a new school to the live map, prepare a usable rental set so the school does not appear empty.
+- For Pompano / Oakland Park / Fort Lauderdale candidates, research the immediate neighborhood/street context rather than assuming the entire city is uniform.
+- Add objective context when available: Walk Score or another published walkability measure, nearby park/playground access, gated/community amenities, sidewalks, and practical family-use destinations.
+- Do not make unsupported crime/safety claims. If official crime data is later added, identify its geography and date.
+- Hollywood remains excluded by user preference.
+- South Fort Lauderdale options are lower priority unless the school/property combination is unusually strong.
+
+## 14. Rental quality pruning
+- Do not keep weak listings just to hit a count.
+- Target **7–10 useful rentals per school** after pruning.
+- Remove or de-prioritize roughly $2,300-or-less rentals under about 1,100 sqft when they lack a private yard/private pool or exceptional compensating value.
+- Old/small condos and apartments are fallback inventory, not the default.
+- Prefer 3 bedrooms. A 2-bedroom option should normally earn its place through pool, backyard, exceptional proximity, or meaningful community perks.
+- Keep no-pool homes when they are strong 3-bedroom houses with private yard, exceptional school proximity, or unusually good size/value.
+- Stale/off-market listings do not count toward the current target set.
