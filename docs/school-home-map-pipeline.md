@@ -45,6 +45,7 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | School | Wilton Manors | DONE | Excluded for now: no researched 8+/10 target added |
 | School | Hollywood | DONE | Excluded by user preference |
 | Rentals | Hard minimum 2/2; default target 3/2 | DONE | Curation filter + rules |
+| Backup | Rental backup sheet | DONE | 115 rental records backed up to Google Sheet: https://docs.google.com/spreadsheets/d/1EU5jvUIVJstmfWu14PVLMP8SCehp96lyXs7J7jitm3Q/edit |
 | Rentals | Remove/demote weak small 2/2 filler | DONE | Inactive records retained for research history |
 | Rentals | 7–10 active useful rentals per target school | DONE | Current active counts meet target for all tracked schools |
 | Rentals | Private-yard preference | DONE | Filter + data field |
