@@ -191,7 +191,7 @@ function textFor(d){
   p.push("Target school: "+schoolName(d.group));
   if(d.backyard)p.push("Backyard: "+d.backyard);
   if(Array.isArray(d.perks)&&d.perks.length)p.push("Perks: "+d.perks.join(", "));
-  if(d.schoolDistanceSource)p.push("Source school distance: "+d.schoolDistanceSource);
+  if(d.schoolDistanceSource)p.push("Source school distance: "+d.schoolDistanceSource);if(d.walkability)p.push("Walkability: "+d.walkability);
   p.push("Verify current availability and exact school assignment before committing.");
   return p.join(" · ");
 }
