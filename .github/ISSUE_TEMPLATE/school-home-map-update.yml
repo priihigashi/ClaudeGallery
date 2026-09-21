@@ -1,0 +1,45 @@
+name: School Home Map update
+description: Add or correct a school, VPK, rental, sale property, commute field, or map rule
+title: "[School Map] "
+labels: []
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - School
+        - VPK
+        - Rental
+        - Sale
+        - Property history
+        - Commute
+        - UI / Filter
+        - Rule / Preference
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name / address
+      placeholder: School or property name/address
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source link
+      placeholder: Zillow, school site, district page, etc.
+  - type: textarea
+    id: details
+    attributes:
+      label: Details / correction
+      placeholder: Price, beds/baths, pool type, backyard, score, hours, history, or requested change
+    validations:
+      required: true
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Confirm
+      options:
+        - label: I checked the live map and this item is new or needs correction.
