@@ -47,7 +47,7 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Rentals | Hard minimum 2/2; default target 3/2 | DONE | Curation filter + rules |
 | Backup | Rental backup sheet | DONE | 126 rental records backed up to Google Sheet: https://docs.google.com/spreadsheets/d/1EU5jvUIVJstmfWu14PVLMP8SCehp96lyXs7J7jitm3Q/edit |
 | Rentals | Remove/demote weak small 2/2 filler | DONE | Inactive records retained for research history |
-| Rentals | 7–10 active useful rentals per target school | DONE | 7–10 for normal targets; Morikami/Calusa intentionally capped at 5 best-fit per user |
+| Rentals | 7–10 active useful rentals per target school | IN PROGRESS | Source cleanup reduced Waters Edge to 6 active candidates; other normal targets remain at 7–10, while Morikami stays capped at 5 and Calusa currently has 6. Do not refill with stale/weak inventory. |
 | Rentals | Private-yard preference | DONE | Filter + data field |
 | Rentals | Pool-focused research | IN PROGRESS | Pool type verified on strongest listings; more normalization ongoing |
 | History | Listing/sale/rent price history | IN PROGRESS | Structured fields + pilot enrichment |
@@ -103,4 +103,12 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Final handoff audit | Home pin + Morikami present in canonical data | DONE | 1621 NE 34th Ct + Morikami school record |
 | Final handoff audit | Pool filters + R/S marker layout | DONE | Any/private/community pool + centered category circle + price pill |
 | Final handoff audit | Rental backup current | DONE | 126 canonical rental rows preserved in same Google Sheet |
-| Pool audit | Remaining active pool records source-by-source | TODO | 35 active pool records; no unknown poolType fields, but older classifications still need source verification |
+| Pool audit | Remaining active pool records source-by-source | IN PROGRESS | 44 active rentals currently have pool=true after this audit; no active unknown poolType fields, but older classifications still need direct-source verification. |
+
+
+| Rental source audit | 16-record correction block | DONE | Commit 8c19cbbfa012e78eab31e1435e6458a891adc573; corrected source URLs/status, pool type, yard, and history metadata without deleting research history. |
+| Classification | 5765 SW 104th Ter | DONE | Exact-address Zillow page is now $25,000/mo, 5/6.5, 4,314 sqft with private pool; prior $3,850 3/3 record was an address/source mismatch. Preserved but set inactive. |
+| Classification | 22750 Pickerel Cir | DONE | Current Realtor page plus Zillow rental search show $3,500 current rental; preserved active despite older Zillow property-history removal events. |
+| Classification | 21583 Villa Nova Dr | DONE | Current Realtor/MLS status is Pending; private screened pool + fenced yard verified. Preserved in backup but hidden from active map. |
+| Backup | Post-audit 16-row sync | DONE | Existing 126-row Google Sheet updated only for the 16 touched rentals and all 16 rows re-read successfully. |
+| Rental inventory | Waters Edge replacement after stale-source cleanup | IN PROGRESS | Active set is 6. 11606 Orange Blossom is pending and 22541 Vistawood is leased/closed, so neither was promoted merely to restore the count. |
