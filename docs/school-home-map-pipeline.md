@@ -45,13 +45,13 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | School | Wilton Manors | DONE | Excluded for now: no researched 8+/10 target added |
 | School | Hollywood | DONE | Excluded by user preference |
 | Rentals | Hard minimum 2/2; default target 3/2 | DONE | Curation filter + rules |
-| Backup | Rental backup sheet | DONE | 115 rental records backed up to Google Sheet: https://docs.google.com/spreadsheets/d/1EU5jvUIVJstmfWu14PVLMP8SCehp96lyXs7J7jitm3Q/edit |
+| Backup | Rental backup sheet | DONE | 125 rental records backed up to Google Sheet: https://docs.google.com/spreadsheets/d/1EU5jvUIVJstmfWu14PVLMP8SCehp96lyXs7J7jitm3Q/edit |
 | Rentals | Remove/demote weak small 2/2 filler | DONE | Inactive records retained for research history |
-| Rentals | 7–10 active useful rentals per target school | DONE | Current active counts meet target for all tracked schools |
+| Rentals | 7–10 active useful rentals per target school | DONE | 7–10 for normal targets; Morikami/Calusa intentionally capped at 5 best-fit per user |
 | Rentals | Private-yard preference | DONE | Filter + data field |
 | Rentals | Pool-focused research | IN PROGRESS | Pool type verified on strongest listings; more normalization ongoing |
 | History | Listing/sale/rent price history | IN PROGRESS | Structured fields + pilot enrichment |
-| Photos | 2–3 preview photos/slideshow | IN PROGRESS | Embedded when reusable source URLs exist; fallback opens source gallery |
+| Photos | 4 preview photos/slideshow | IN PROGRESS | Embedded when reusable source URLs exist; fallback opens source gallery |
 | Sales | ~$300K bucket | TODO | Future-purchase reference expansion |
 | Sales | $400–500K bucket | TODO | Future-purchase reference expansion |
 | Sales | $600–700K bucket | TODO | Future-purchase reference expansion |
@@ -69,4 +69,9 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Cleanup | Stale Cooper City rentals | DONE | Removed off-market 8950 SW 53rd and 9240 SW 56th; replacements added |
 | Photos/history | Four strong-property pilot | DONE | 3-image previews + listing history added where Zillow image URLs were verified |
 
-| Pool research | Calusa / Del Prado / Everglades private-pool scarcity | DONE | No trustworthy <=$4.3K private-pool match found in quick current search; group notes added; Del Prado stretch private-pool reference at $4,950 |
+| Pool research | Private vs community verification | IN PROGRESS | Strongest listings re-verified; private pool only when listing explicitly supports it; unknown stays unknown |
+
+| Audit | Source precedence | DONE | Direct detail page wins over stale search result when status conflicts |
+| UI | Low-inventory warning | DONE | Focus bar flags fewer than 7 matching rentals |
+| UI | Default rent ceiling | DONE | $4,500; stretch to $5,000 remains manual/reference |
+| Backup | Canonical regeneration | DONE | Google Sheet rebuilt from canonical data after rental audit |
