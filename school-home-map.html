@@ -112,7 +112,8 @@ function visible(d){
     if(!rentalPreferencePass(d))return false;
     if((d.price||0)>state.rent)return false;
     if(state.poolMode==="any"&&!d.pool)return false;
-    if(state.poolMode==="private"&&d.poolType!=="private")return false;\n    if(state.poolMode==="community"&&d.poolType!=="community")return false;
+    if(state.poolMode==="private"&&d.poolType!=="private")return false;
+    if(state.poolMode==="community"&&d.poolType!=="community")return false;
     if(state.yardOnly&&!hasPrivateYard(d))return false;
   }
   return true;
