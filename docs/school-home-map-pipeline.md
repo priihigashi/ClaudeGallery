@@ -1,54 +1,60 @@
 # School + Home Map — Implementation Pipeline
 
-Updated: 2026-09-21 — post full-chat requirements audit
+Updated: 2026-09-21
 
 Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 
 | Area | Requirement | Status | Notes |
 |---|---|---|---|
 | Hosting | Public GitHub Pages URL | DONE | ClaudeGallery |
-| Core map | School/VPK/rent/sale layers | DONE | Live |
-| Core map | All dropdown must not change on pin click | DONE | Audited |
-| UI | Compact school marker + visible school name | DONE | Live |
-| UI | Rent and sale price pills readable | DONE | Dark text |
-| UI | Responsive popup in viewport | DONE | Desktop + mobile |
-| UI | Desktop list scroll | DONE | Implemented |
-| UI | Mobile property strip scroll | DONE | Implemented |
+| Core map | School/VPK/rent/sale layers | DONE | Live data model |
+| Core map | Current-home marker: 1621 NE 34th Ct | DONE | Home pin + route origin |
+| Core map | All dropdown never changes from pin clicks | DONE | Audited |
+| Core map | Initial bounds fit Pompano + Boca/Delray + Weston/Cooper City | DONE | maxZoom 9 |
+| UI | Compact school marker + visible school name | DONE | Live code |
+| UI | Rent/sale price pills readable | DONE | Dark centered text |
+| UI | Private/community/unknown pool visuals | DONE | Private solid pink; community ring; unknown dashed |
+| UI | Responsive popup stays in viewport | DONE | Desktop top-right; mobile bottom sheet |
+| UI | Desktop property list scroll | DONE | Vertical |
+| UI | Mobile property strip scroll | DONE | Horizontal |
+| UI | Filters stay clickable / pool modes mutually understandable | DONE | Any pool + private pool + private yard |
 | UI | Remove literal escaped newline artifacts | DONE | Audited |
-| Pool | Private vs community pool distinction | IN PROGRESS | Data normalization needed |
-| Pool | Private-pool rent visual | DONE | Solid pink, no outer ring |
-| Pool | Community-pool rent visual | DONE | Pink + outer pink ring; unknown uses dashed ring |
-| Home | Current-home marker at 1621 NE 34th Ct | DONE | Home record + house pin in core map |
-| Commute | Home → school distance/drive | DONE | OSRM base route + Google Maps live link engine |
-| Commute | Leave time for 60-min-early arrival | DONE | School start fields + wake/leave/arrive planner engine |
-| Commute | Property → target school drive | DONE | On-demand route + left-list enrichment |
-| VPK | On-site/nearby/on-route + 2-dropoff timing | IN PROGRESS | Engine done; VPK records still incomplete for newer schools |
-| School | A.D. Henderson | DONE | Needs commute enrichment |
-| School | Waters Edge | DONE | Needs commute enrichment |
-| School | Addison Mizner | DONE | Needs commute enrichment |
-| School | Calusa | DONE | Needs commute enrichment |
-| School | Blue Lake | DONE | Needs commute enrichment |
-| School | Del Prado | DONE | Needs commute enrichment |
-| School | Everglades Weston | DONE | 10/10 |
-| School | Eagle Point Weston | DONE | 10/10 + on-site VPK/PreK record added; housing research pending |
-| School | Morikami Park | DONE | 10/10 magnet school record added; housing research pending |
-| School | Cooper City Elementary | DONE | 10/10 school record + first verified rentals added |
-| School | Embassy Creek / Griffin comparison | IN PROGRESS | Griffin 9/10 + VPK added; Embassy Creek comparison still pending |
-| School | Palmview Pompano | DONE | 9/10 magnet record added; housing research pending |
-| School | Coconut Creek | DONE | Excluded for now: current top elementary options found are 7/10 |
-| School | Wilton Manors | DONE | Excluded for now: current elementary is 7/10 |
-| Rentals | Up to 10 / school | IN PROGRESS | Weston expanded; others need review |
-| Rentals | Private backyard preference | IN PROGRESS | Filter logic implemented; listing-by-listing yard data normalization ongoing |
-| Rentals | Pool-focused research | IN PROGRESS | Continue |
-| Sales | ~$300K bucket | TODO | 2 per school when available |
-| Sales | $400–500K bucket | TODO | 2 per school when available |
-| Sales | $600–700K bucket | TODO | 2 per school when available |
-| Sales | Remodel candidates | TODO | Up to 2 |
-| History | Listing/sale/rent price history | IN PROGRESS | Pilot enrichment stored for Weston/Addison/Blue Lake + Cooper City |
-| Photos | 2–3 image preview/slideshow | IN PROGRESS | 3-image preview renderer done; source coverage expanding listing-by-listing |
-| Manual updates | Add / Update button | DONE | Local device draft + prefilled GitHub issue workflow |
-| Documentation | Instructions button/page | DONE | Human-readable rules page + canonical GitHub docs |
-| Pipeline | GitHub issue template | DONE | Structured School Home Map update issue form |
-| Politics | 2024 official vote context | TODO | Must source exact scope |
-| Audit | JS syntax audit | DONE | Current build parses |
-| Audit | Pages deployment verification | DONE | Current deploy success |
+| Documentation | Canonical requirements file | DONE | docs/school-home-map-requirements.md |
+| Documentation | Rules / instructions page | DONE | school-home-map-rules.html |
+| Manual updates | Add / Update button | DONE | Local draft + GitHub issue handoff |
+| Manual updates | GitHub issue template | DONE | Persistent update intake |
+| Commute | Current home → school base distance/drive | DONE | OSRM base route + Google live-route link |
+| Commute | Planning leave/wake time for 60-min-early arrival | DONE | School detail card |
+| Commute | Property → target school base route | DONE | Enriched when school group is loaded |
+| Commute | Current home → property route | DONE | Enriched when school group is loaded |
+| VPK | On-site vs nearby VPK context | IN PROGRESS | On-site flags exist; route quality still school-by-school |
+| VPK | Two-dropoff drive estimate | DONE | Computed when nearby VPK record exists |
+| School | A.D. Henderson | DONE | Lab lottery warning |
+| School | Waters Edge | DONE | Boca |
+| School | Addison Mizner | DONE | Boca |
+| School | Calusa | DONE | Boca |
+| School | Blue Lake | DONE | Boca |
+| School | Del Prado | DONE | Boca |
+| School | Everglades Elementary | DONE | Weston + on-site VPK |
+| School | Eagle Point Elementary | DONE | Weston + on-site VPK |
+| School | Morikami Park Elementary | DONE | Magnet / choice |
+| School | Cooper City Elementary | DONE | Cooper City |
+| School | Griffin Elementary | DONE | Cooper City + VPK |
+| School | Palmview Elementary | DONE | Pompano / magnet |
+| School | Coconut Creek | DONE | Excluded for now: no researched 8+/10 target added |
+| School | Wilton Manors | DONE | Excluded for now: no researched 8+/10 target added |
+| School | Hollywood | DONE | Excluded by user preference |
+| Rentals | Hard minimum 2/2; default target 3/2 | DONE | Curation filter + rules |
+| Rentals | Remove/demote weak small 2/2 filler | DONE | Inactive records retained for research history |
+| Rentals | 7–10 active useful rentals per target school | DONE | Current active counts meet target for all tracked schools |
+| Rentals | Private-yard preference | DONE | Filter + data field |
+| Rentals | Pool-focused research | IN PROGRESS | Pool type verified on strongest listings; more normalization ongoing |
+| History | Listing/sale/rent price history | IN PROGRESS | Structured fields + pilot enrichment |
+| Photos | 2–3 preview photos/slideshow | IN PROGRESS | Embedded when reusable source URLs exist; fallback opens source gallery |
+| Sales | ~$300K bucket | TODO | Future-purchase reference expansion |
+| Sales | $400–500K bucket | TODO | Future-purchase reference expansion |
+| Sales | $600–700K bucket | TODO | Future-purchase reference expansion |
+| Sales | Remodel candidates | TODO | Up to 2 where appropriate |
+| Politics | 2024 official vote context | TODO | Must use exact official scope / precinct; no guessing |
+| Audit | JS syntax + data audit | DONE | Required before each deployment |
+| Audit | GitHub Pages deployment verification | IN PROGRESS | Verify after this batch |
