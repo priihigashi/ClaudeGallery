@@ -15,8 +15,13 @@ body{overflow:hidden}.app{height:100%;display:grid;grid-template-columns:330px 1
 .item.school{border-left:4px solid var(--school)}.item.vpk{border-left:4px solid var(--vpk)}.item.rent{border-left:4px solid var(--rent)}.item.sale{border-left:4px solid var(--sale)}
 .mapwrap{position:relative;min-width:0}#map{height:100%;width:100%;background:#dfe5ec}.status{position:absolute;top:12px;left:12px;z-index:700;background:white;color:#1c2430;padding:9px 11px;border-radius:10px;font-size:12px;box-shadow:0 5px 18px #0002}
 .detail{position:absolute;right:12px;bottom:12px;z-index:750;width:min(390px,calc(100% - 24px));background:#111722f2;border:1px solid #354157;border-radius:16px;padding:15px;box-shadow:0 10px 35px #0008;display:none;max-height:62%;overflow:auto}.detail.show{display:block}.detail h2{margin:4px 0 6px;font-size:19px}.small{font-size:12px;color:var(--muted);line-height:1.45}.chips{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}.chip{padding:5px 8px;border-radius:999px;border:1px solid #3d485d;background:#202938;font-size:11px}.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{display:inline-block;text-decoration:none;background:white;color:#10141c;border-radius:10px;padding:10px 12px;font-weight:800;font-size:12px;border:0}.close{position:absolute;right:8px;top:7px;background:transparent;border:0;color:#aeb7c6;font-size:22px}
-.pin{white-space:nowrap;font-size:11px;font-weight:900;padding:5px 7px;border-radius:8px;color:white;border:2px solid white;box-shadow:0 2px 8px #0007}.pin.school{background:var(--school);font-size:12px}.pin.vpk{background:var(--vpk);color:#1d1b14}.pin.rent{background:var(--rent)}.pin.sale{background:var(--sale)}.pin.pool{outline:3px solid var(--pool)}
-.school-label{font-size:12px;font-weight:900;color:#102018;background:#fff;border:2px solid var(--school);border-radius:8px;padding:4px 7px;box-shadow:0 2px 6px #0003}
+.pin{white-space:nowrap;min-height:30px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;padding:5px 9px;border-radius:10px;color:#111827;border:2px solid #fff;box-shadow:0 2px 8px #0006;letter-spacing:.01em}
+.pin.school{width:34px;height:34px;min-height:34px;padding:0;border-radius:50%;background:var(--school);font-size:18px}
+.pin.vpk{background:var(--vpk);color:#111827}
+.pin.rent{background:#9fc0ff;color:#0b1220}
+.pin.sale{background:#d7a8ff;color:#0b1220}
+.pin.pool{outline:3px solid var(--pool);outline-offset:1px}
+.school-label{font-size:11px;font-weight:900;color:#102018;background:#fff;border:2px solid var(--school);border-radius:8px;padding:3px 6px;box-shadow:0 2px 6px #0003}
 .focus{padding:8px 11px;border-bottom:1px solid var(--line);font-size:11px;color:#d9e3f2;background:#121925}.focus b{color:#fff}.note{padding:8px 11px;border-top:1px solid var(--line);font-size:10px;color:var(--muted);line-height:1.35}
 @media(max-width:760px){body{overflow:hidden}.app{grid-template-columns:1fr;grid-template-rows:auto 1fr}.side{border-right:0;border-bottom:1px solid var(--line);max-height:42vh}.head{padding:10px 12px}.head h1{font-size:17px}.head p{display:none}.controls{grid-template-columns:1fr 1fr;padding:8px}.legend{grid-column:1/-1}.focus{padding:6px 9px}.list{display:flex;overflow-x:auto;overflow-y:hidden;gap:7px;padding:6px;min-height:78px}.item{min-width:180px;max-width:210px;flex:0 0 auto;padding:8px}.note{display:none}.mapwrap{min-height:58vh}.detail{bottom:10px;right:10px;width:calc(100% - 20px);max-height:45vh}}
 </style></head>
@@ -25,7 +30,7 @@ body{overflow:hidden}.app{height:100%;display:grid;grid-template-columns:330px 1
 <div class="head"><h1>School + Home Map</h1><p>Caio's target schools + Mia's VPK bridge + rentals + homes for sale. Listings checked Sep 20, 2026.</p></div>
 <div class="controls">
 <select id="school"><option value="all">All school areas</option>
-<option value="adh">A.D. Henderson (FAU Lab)</option><option value="waters">Waters Edge</option><option value="addison">Addison Mizner</option><option value="calusa">Calusa</option><option value="blue">Blue Lake</option><option value="delprado">Del Prado</option></select>
+<option value="adh">A.D. Henderson (FAU Lab)</option><option value="weston">Everglades Elementary — Weston</option><option value="waters">Waters Edge</option><option value="addison">Addison Mizner</option><option value="calusa">Calusa</option><option value="blue">Blue Lake</option><option value="delprado">Del Prado</option></select>
 <input id="rent" type="number" min="0" step="50" value="4300" aria-label="Max rent">
 <div class="legend">
 <button class="filter" data-type="school"><span class="d sc"></span>Schools</button>
@@ -34,7 +39,7 @@ body{overflow:hidden}.app{height:100%;display:grid;grid-template-columns:330px 1
 <button class="filter" data-type="sale"><span class="d xc"></span>Sale S</button>
 <button class="filter off" id="poolOnly"><span class="d pc"></span>Pool only</button>
 </div></div>
-<div id="list" class="list"></div>
+<div class="focus" id="focusLabel">Focused properties: <b>A.D. Henderson University School (FAU Lab School)</b> · dropdown remains All until you filter it</div>\n<div id="list" class="list"></div>
 <div class="note">R = rent. S = sale. Cyan outline = pool. Nearby does not always mean zoned. A.D. Henderson is lottery admission and is not secured by moving nearby.</div>
 </aside>
 <main class="mapwrap"><div id="map"></div><div class="status" id="status">Loading map pins…</div>
@@ -78,7 +83,7 @@ rentInput.oninput=e=>{state.rent=+(e.target.value||4300);apply();fitVisible()};
 document.querySelectorAll(".filter[data-type]").forEach(b=>b.onclick=()=>{let t=b.dataset.type;state.types.has(t)?state.types.delete(t):state.types.add(t);b.classList.toggle("off",!state.types.has(t));apply()});
 poolBtn.onclick=()=>{state.pool=!state.pool;poolBtn.classList.toggle("off",!state.pool);apply();fitVisible()};
 const loaded=new Set(),loadingGroups=new Map();
-async function addPoint(d){if(marks.has(d))return;try{let ll=await geo(d.address),m=L.marker(ll,{icon:icon(d)});m.on("click",async()=>{show(d);if(d.type==="school"){state.focusGroup=d.group;updateFocusLabel();await loadGroup(d.group);apply();fitVisible()}});if(d.type==="school")m.bindTooltip(d.name,{permanent:true,direction:"top",offset:[0,-12],className:"school-label"});else m.bindTooltip(d.type==="rent"?"R "+fmt(d.price):d.type==="sale"?"S "+fmt(d.price):"VPK",{direction:"top"});marks.set(d,m);pts.push(ll);if(visible(d))m.addTo(map)}catch(e){}}
+async function addPoint(d){if(marks.has(d))return;try{let ll=await geo(d.address),m=L.marker(ll,{icon:icon(d)});m.on("click",async()=>{show(d);if(d.type==="school"){state.focusGroup=d.group;updateFocusLabel();await loadGroup(d.group);apply();fitVisible()}});if(d.type==="school")m.bindTooltip(d.name,{permanent:true,direction:"top",offset:[0,-12],className:"school-label"});else m.bindTooltip(d.type==="rent"?"R · "+fmt(d.price):d.type==="sale"?"S · "+fmt(d.price):"VPK",{direction:"top"});marks.set(d,m);pts.push(ll);if(visible(d))m.addTo(map)}catch(e){}}
 async function loadGroup(g){
   if(loaded.has(g)) return;
   if(loadingGroups.has(g)) return loadingGroups.get(g);
