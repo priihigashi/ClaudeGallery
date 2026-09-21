@@ -45,7 +45,7 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | School | Wilton Manors | DONE | Excluded for now: no researched 8+/10 target added |
 | School | Hollywood | DONE | Excluded by user preference |
 | Rentals | Hard minimum 2/2; default target 3/2 | DONE | Curation filter + rules |
-| Backup | Rental backup sheet | DONE | 125 rental records backed up to Google Sheet: https://docs.google.com/spreadsheets/d/1EU5jvUIVJstmfWu14PVLMP8SCehp96lyXs7J7jitm3Q/edit |
+| Backup | Rental backup sheet | DONE | 126 rental records backed up to Google Sheet: https://docs.google.com/spreadsheets/d/1EU5jvUIVJstmfWu14PVLMP8SCehp96lyXs7J7jitm3Q/edit |
 | Rentals | Remove/demote weak small 2/2 filler | DONE | Inactive records retained for research history |
 | Rentals | 7–10 active useful rentals per target school | DONE | 7–10 for normal targets; Morikami/Calusa intentionally capped at 5 best-fit per user |
 | Rentals | Private-yard preference | DONE | Filter + data field |
@@ -75,3 +75,5 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | UI | Low-inventory warning | DONE | Focus bar flags fewer than 7 matching rentals |
 | UI | Default rent ceiling | DONE | $4,500; stretch to $5,000 remains manual/reference |
 | Backup | Canonical regeneration | DONE | Google Sheet rebuilt from canonical data after rental audit |
+
+| Rentals | Blue Lake rental floor | DONE | Added current 3/3 2,180 sqft house; active set now reaches 7 |
