@@ -58,3 +58,7 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Politics | 2024 official vote context | TODO | Must use exact official scope / precinct; no guessing |
 | Audit | JS syntax + data audit | DONE | Required before each deployment |
 | Audit | GitHub Pages deployment verification | IN PROGRESS | Verify after this batch |
+
+| School discovery | Near-home 9/10+ screening | IN PROGRESS | Floranada 9/10 is candidate; do not add until usable property set is ready |
+| Neighborhood | Walkability / family-area context | IN PROGRESS | Add only objective sourced context; Palmview first |
+| Rental cleanup | Remove weak/stale filler | IN PROGRESS | First Boca/Weston pruning block completed 2026-09-21 |
