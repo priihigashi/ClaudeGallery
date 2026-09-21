@@ -45,9 +45,9 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | School | Wilton Manors | DONE | Excluded for now: no researched 8+/10 target added |
 | School | Hollywood | DONE | Excluded by user preference |
 | Rentals | Hard minimum 2/2; default target 3/2 | DONE | Curation filter + rules |
-| Backup | Rental backup sheet | DONE | 126 rental records backed up to Google Sheet: https://docs.google.com/spreadsheets/d/1EU5jvUIVJstmfWu14PVLMP8SCehp96lyXs7J7jitm3Q/edit |
+| Backup | Rental backup sheet | DONE | 136 rental records backed up to Google Sheet: https://docs.google.com/spreadsheets/d/1EU5jvUIVJstmfWu14PVLMP8SCehp96lyXs7J7jitm3Q/edit |
 | Rentals | Remove/demote weak small 2/2 filler | DONE | Inactive records retained for research history |
-| Rentals | 7–10 active useful rentals per target school | IN PROGRESS | Waters Edge remains at 6 after stale-source cleanup. Addison is 8, Blue Lake 9, Del Prado 9, Weston 8, Cooper City 10, Griffin 7, Eagle Point 8, Palmview 8, A.D. Henderson 10; Morikami stays capped at 5 and Calusa currently has 6. Do not refill with stale/weak inventory. |
+| Rentals | 7–10 active useful rentals per target school | DONE | A.D. Henderson 10; Waters Edge 8; Addison 8; Blue Lake 9; Del Prado 9; Weston 8; Cooper City 7; Palmview 7; Griffin 7; Eagle Point 8; Floranada 7. Morikami 5 and Calusa 6 are within the user-approved lower inventory target. Counts exclude stale/wrong-school duplicates. |
 | Rentals | Private-yard preference | DONE | Filter + data field |
 | Rentals | Pool-focused research | IN PROGRESS | Pool type verified on strongest listings; more normalization ongoing |
 | History | Listing/sale/rent price history | IN PROGRESS | Structured fields + pilot enrichment |
@@ -96,14 +96,14 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Pool audit | 9367 Lake Serena Dr | DONE | Realtor/MiamiMLS explicitly: Pool Private = Yes; current $4,700 |
 | Pool audit | Bell Boca Town Center | DONE | Community pool apartment property |
 | Pool audit | 5160 Sabal Gardens Ln #4 | DONE | Community-pool development; not private |
-| Backup | Rental backup regenerated after latest corrections | DONE | 126 canonical rental records preserved |
+| Backup | Rental backup regenerated after latest corrections | DONE | 136 canonical rental records preserved |
 | Continuity | Fresh-chat handoff prompt | DONE | docs/school-home-map-handoff-2026-09-21.md |
 
 | Final handoff audit | Page JavaScript parses | DONE | Rechecked after marker/filter fix |
 | Final handoff audit | Home pin + Morikami present in canonical data | DONE | 1621 NE 34th Ct + Morikami school record |
 | Final handoff audit | Pool filters + R/S marker layout | DONE | Any/private/community pool + centered category circle + price pill |
-| Final handoff audit | Rental backup current | DONE | 126 canonical rental rows preserved in same Google Sheet |
-| Pool audit | Remaining active pool records source-by-source | IN PROGRESS | 48 active rentals currently have pool=true after two audit blocks; no active unknown poolType fields, but older classifications still need direct-source verification. |
+| Final handoff audit | Rental backup current | DONE | 136 canonical rental rows preserved in same Google Sheet |
+| Pool audit | Remaining active pool records source-by-source | IN PROGRESS | 53 active rentals currently have pool=true. One active record (8954 SW 53rd St) intentionally remains poolType=unknown/VERIFY because the current rental source confirms a pool but does not explicitly establish private vs community. |
 
 
 | Rental source audit | 16-record correction block | DONE | Commit 8c19cbbfa012e78eab31e1435e6458a891adc573; corrected source URLs/status, pool type, yard, and history metadata without deleting research history. |
@@ -111,7 +111,7 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Classification | 22750 Pickerel Cir | DONE | Current Realtor page plus Zillow rental search show $3,500 current rental; preserved active despite older Zillow property-history removal events. |
 | Classification | 21583 Villa Nova Dr | DONE | Current Realtor/MLS status is Pending; private screened pool + fenced yard verified. Preserved in backup but hidden from active map. |
 | Backup | Post-audit 16-row sync | DONE | Existing 126-row Google Sheet updated only for the 16 touched rentals and all 16 rows re-read successfully. |
-| Rental inventory | Waters Edge replacement after stale-source cleanup | IN PROGRESS | Active set is 6. 11606 Orange Blossom is pending and 22541 Vistawood is leased/closed, so neither was promoted merely to restore the count. |
+| Rental inventory | Waters Edge replacement after stale-source cleanup | DONE | Active set restored to 8 with 11698 Timbers Way, 22274 Misty Woods Way, and 22312 Whistling Pines Ln; 10838 Winding Creek archived because MLS assigns Coral Sunset Elementary. |
 
 
 | School-area audit | 5387 Grand Park Pl + 948 NW 18th Ave | DONE | Current MLS school fields name Blue Lake Elementary; moved both rentals from Addison to Blue Lake instead of keeping them under the wrong school. |
@@ -120,4 +120,16 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Classification | 896 SW 9th Street Cir #9 | IN PROGRESS | Zillow direct detail says available now while current Realtor indexes say Pending. Kept active under source-precedence rule, flagged status conflict, and verified Boca Terrace community pool amenities. |
 | Photos | Second preview backfill | DONE | Added 4 embedded previews each to 896 SW 9th #9, 5387 Grand Park Pl, and 9636 Tavernier Dr (12 previews total). |
 | Backup | Post-audit 5-row sync | DONE | Five touched rows synced to the canonical 126-row Google Sheet; school-group changes, pool types, direct URLs and photo columns re-read successfully. |
-| Data audit | Remaining active search-result URLs | IN PROGRESS | Reduced from 38 to 33 active search-result URLs in this block; continue replacing with direct detail pages before relying on status/pool metadata. |
+| Data audit | Remaining active search-result URLs | IN PROGRESS | Reduced from 54 at the start of this continuation to 21 active search-result URLs. Continue replacing them with direct detail pages before relying on status/pool metadata. |
+
+
+| Access | GitHub connector permissions | DONE | Connected GitHub user priihigashi has admin/push access to priihigashi/ClaudeGallery. Reads, writes, Actions inspection and Pages verification work directly; no user permission change is needed. |
+| Live QA | Interactive GitHub Pages click/viewport smoke test | BLOCKED | This is not a GitHub permission issue. The available public-page reader rejects the priihigashi.github.io URL and the current runtime has no usable external browser automation. Repo/data work and Pages deployment verification are unaffected. |
+| Rental source audit | Waters Edge direct-source rebuild | DONE | Commit e16c3706145588f1df76bae12e75d08213fb9ecd restored 8 valid active candidates and archived the Coral Sunset misassignment. Pages deployment succeeded. |
+| School assignment audit | Cooper City vs Griffin duplicates | DONE | Commits 489778f69625ffaaab13e6f0f9ab0e5f1872ff3a and 3b2882fa9469e439a8aff8a6442db207619d4744 removed duplicate/wrong-school counts and restored both target schools to 7 active candidates. |
+| School assignment audit | 5009 SW 104th Ave | DONE | Current listing-agent/MLS data assigns Embassy Creek Elementary; Cooper City and Griffin copies archived, not deleted. |
+| Availability audit | 5131 SW 101st Ter | DONE | Invitation Homes direct page says no longer available; both duplicate school copies archived despite stale syndication. |
+| Data schema | Rental perks arrays | DONE | Normalized 21 string-form perks fields to arrays so strong-perk filtering and card rendering can use them correctly. |
+| Photos | Latest direct-source backfill | DONE | Added reusable 4-photo sets to 9810 SW 57th, 5313 SW 118th, and 5232 SW 122nd plus earlier Waters/Griffin additions. 28 active rentals now have embedded preview sets. |
+| Backup | Canonical 136-row reconciliation | DONE | GitHub has 136 rental records and the Google Sheet has exactly 136 corresponding rows; zero missing and zero extra after final readback. |
+| Data audit | Rental structural rules | DONE | 99 active rentals; zero active below 2/2, zero active over $5,000, zero non-array perks fields. |
