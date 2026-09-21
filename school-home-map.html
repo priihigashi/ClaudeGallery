@@ -80,6 +80,7 @@ const homeRecord=D.find(x=>x.type==="home");
 function fmt(p){if(!p)return "";return p>=1000000?"$"+(p/1000000).toFixed(p%1000000?1:0)+"M":p>=100000?"$"+Math.round(p/1000)+"K":"$"+(p/1000).toFixed(1)+"K"}
 function schoolName(g){const s=D.find(x=>x.type==="school"&&x.group===g);return s?s.name:g}
 function rentalCount(g){return D.filter(x=>x.type==="rent"&&x.group===g&&rentalPreferencePass(x)).length}
+function saleCount(g){return D.filter(x=>x.type==="sale"&&x.group===g).length}
 function schoolFor(d){return D.find(x=>x.type==="school"&&x.group===d.group)}
 function hasPrivateYard(d){return /private|fenced|yard/i.test(String(d.backyard||""))&&!/none|unknown/i.test(String(d.backyard||""))}
 function hasStrongPerk(d){return Array.isArray(d.perks)&&d.perks.length>0}
@@ -265,12 +266,12 @@ function renderList(){
 function apply(){marks.forEach((m,d)=>{if(visible(d)){if(!map.hasLayer(m))m.addTo(map)}else if(map.hasLayer(m))map.removeLayer(m)});renderList()}
 function updateFocusLabel(){
   const active=state.filterGroup==="all"?state.focusGroup:state.filterGroup;
-  focusLabel.innerHTML=(state.filterGroup==="all"?"All schools shown · properties focused on ":"Filtered to ")+"<b>"+schoolName(active)+"</b>";
+  focusLabel.innerHTML=(state.filterGroup==="all"?"All schools shown · focused on ":"Filtered to ")+"<b>"+schoolName(active)+"</b> · "+rentalCount(active)+" rent / "+saleCount(active)+" sale";
 }
 function populateSchoolOptions(){
   const current=schoolSel.value||"all";
   schoolSel.innerHTML='<option value="all">All school areas</option>';
-  D.filter(x=>x.type==="school").sort((a,b)=>a.name.localeCompare(b.name)).forEach(s=>{const o=document.createElement("option");o.value=s.group;o.textContent=s.name;schoolSel.appendChild(o)});
+  D.filter(x=>x.type==="school").sort((a,b)=>a.name.localeCompare(b.name)).forEach(s=>{const o=document.createElement("option");o.value=s.group;o.textContent=s.name+" · "+rentalCount(s.group)+" rent / "+saleCount(s.group)+" sale";schoolSel.appendChild(o)});
   schoolSel.value=[...schoolSel.options].some(o=>o.value===current)?current:"all";
 }
 function schoolCounts(g){
