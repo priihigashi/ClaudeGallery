@@ -58,78 +58,293 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script src="./school-home-map-data.js"></script>
 <script>
-const D=window.SCHOOL_HOME_MAP_DATA||[],state={filterGroup:"all",focusGroup:"adh",rent:4300,types:new Set(["school","vpk","rent","sale"]),pool:false},marks=new Map(),pts=[];
-const map=L.map("map",{zoomControl:true}).setView([26.37,-80.15],11);
+const CUSTOM_KEY="schoolHomeCustomItemsV1";
+const GEO_KEY="schoolHomeGeo";
+const ROUTE_KEY="schoolHomeRoutesV1";
+const baseData=window.SCHOOL_HOME_MAP_DATA||[];
+let customItems=[];
+try{customItems=JSON.parse(localStorage.getItem(CUSTOM_KEY)||"[]")}catch(e){customItems=[]}
+const D=baseData.concat(customItems);
+const state={filterGroup:"all",focusGroup:"adh",rent:4300,types:new Set(["school","vpk","rent","sale"]),poolMode:"all",yardOnly:false};
+const marks=new Map(),loaded=new Set(),loadingGroups=new Map();
+const map=L.map("map",{zoomControl:true}).setView([26.33,-80.14],10);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; OpenStreetMap"}).addTo(map);
-const cache=JSON.parse(localStorage.getItem("schoolHomeGeo")||"{}");
-const fmt=p=>p>=1000000?"$"+(p/1000000).toFixed(p%1000000?1:0)+"M":p>=100000?"$"+Math.round(p/1000)+"K":"$"+(p/1000).toFixed(1)+"K";
-const visible=d=>{
-  if(!state.types.has(d.type)) return false;
-  if(d.type==="school"){
-    return state.filterGroup==="all" || d.group===state.filterGroup;
-  }
-  const groupMatch=state.filterGroup==="all" ? true : d.group===state.filterGroup;
-  return groupMatch && (d.type!=="rent" || d.price<=state.rent) && (!state.pool || (d.type==="rent" && d.pool));
-};
-function icon(d){let label=d.type==="school"?"SCHOOL":d.type==="vpk"?"VPK":d.type==="rent"?"R "+fmt(d.price):"S "+fmt(d.price);return L.divIcon({className:"",html:'<div class="pin '+d.type+(d.pool?" pool":"")+'">'+label+'</div>',iconAnchor:[16,12]})}
-async function geo(a){let q=a.replace(/#\S+/g,"").trim();if(cache[q])return cache[q];let u="https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=us&q="+encodeURIComponent(q);let r=await fetch(u,{headers:{"Accept":"application/json"}});let j=await r.json();if(!j[0])throw Error("no");let v=[+j[0].lat,+j[0].lon];cache[q]=v;localStorage.setItem("schoolHomeGeo",JSON.stringify(cache));return v}
-function chips(d){let c=[];if(d.type==="school")c=[d.rating,d.grade,d.aff,d.grades,"Through 5th: Yes"];if(d.type==="vpk")c=[d.aff,"VPK"];if(d.type==="rent"||d.type==="sale")c=[d.type==="rent"?"RENT":"FOR SALE",fmt(d.price),d.beds+" bd",d.baths+" ba"];if(d.pool)c.push("POOL");return c.filter(Boolean)}
-function show(d){dtype.textContent=d.type==="school"?"TARGET SCHOOL":d.type==="vpk"?"MIA — VPK BRIDGE":d.type==="rent"?"RENTAL":"HOME FOR SALE";dtitle.textContent=d.name;daddr.textContent=d.address;chipsEl.innerHTML=chips(d).map(x=>'<span class="chip">'+x+"</span>").join("");let t=d.note||"";if(d.type==="school")t=(d.vpk||"")+" · "+(d.after||"")+" · "+t;if(d.type==="rent"||d.type==="sale")t="Nearby candidate for "+schoolName(d.group)+". Verify current availability and exact school assignment before committing.";dtext.textContent=t;links.innerHTML='<a class="btn" target="_blank" rel="noopener" href="'+d.url+'">'+(d.type==="school"?"School website":d.type==="vpk"?"Open VPK map":"Open Zillow / photos")+"</a>";detail.classList.add("show")}
-function schoolName(g){let s=D.find(x=>x.type==="school"&&x.group===g);return s?s.name:g}
-function renderList(){list.innerHTML="";D.filter(visible).forEach(d=>{let e=document.createElement("div");e.className="item "+d.type;e.innerHTML="<b>"+d.name+"</b><div class=meta>"+(d.type==="rent"||d.type==="sale"?fmt(d.price)+" · "+d.beds+" bd / "+d.baths+" ba"+(d.pool?" · POOL":""):d.type==="school"?d.rating+" · "+d.aff+" · "+d.grades:(d.aff||"VPK"))+"</div>";e.onclick=async()=>{show(d);if(d.type==="school"){state.focusGroup=d.group;updateFocusLabel();await loadGroup(d.group);apply()}let m=marks.get(d);if(m)map.setView(m.getLatLng(),13)};list.appendChild(e)})}
-function apply(){marks.forEach((m,d)=>{if(visible(d)){if(!map.hasLayer(m))m.addTo(map)}else if(map.hasLayer(m))map.removeLayer(m)});renderList()}
-const detail=document.getElementById("detail"),dtype=document.getElementById("dtype"),dtitle=document.getElementById("dtitle"),daddr=document.getElementById("daddr"),chipsEl=document.getElementById("chips"),dtext=document.getElementById("dtext"),links=document.getElementById("links"),list=document.getElementById("list"),closeBtn=document.getElementById("close"),schoolSel=document.getElementById("school"),rentInput=document.getElementById("rent"),poolBtn=document.getElementById("poolOnly"),statusEl=document.getElementById("status"),focusLabel=document.getElementById("focusLabel");
-function updateFocusLabel(){focusLabel.innerHTML=state.filterGroup==="all"?"Showing <b>all schools + all loaded properties</b> · tap a school to center it":"Filtered to <b>"+schoolName(state.filterGroup)+"</b>";}
-closeBtn.onclick=()=>detail.classList.remove("show");
-schoolSel.onchange=async e=>{
-  state.filterGroup=e.target.value;
-  if(state.filterGroup!=="all"){
-    state.focusGroup=state.filterGroup;
-    await loadGroup(state.filterGroup);
-  }
-  updateFocusLabel();apply();fitVisible();
-};
-rentInput.oninput=e=>{state.rent=+(e.target.value||4300);apply();fitVisible()};
-document.querySelectorAll(".filter[data-type]").forEach(b=>b.onclick=()=>{let t=b.dataset.type;state.types.has(t)?state.types.delete(t):state.types.add(t);b.classList.toggle("off",!state.types.has(t));apply()});
-poolBtn.onclick=()=>{state.pool=!state.pool;poolBtn.classList.toggle("off",!state.pool);if(state.pool){state.types.add("rent");const rb=document.querySelector(".filter[data-type=rent]");if(rb)rb.classList.remove("off")}apply();fitVisible()};
-const loaded=new Set(),loadingGroups=new Map();
-async function addPoint(d){if(marks.has(d))return;try{let ll=await geo(d.address),m=L.marker(ll,{icon:icon(d)});m.on("click",async()=>{show(d);if(d.type==="school"){state.focusGroup=d.group;updateFocusLabel();await loadGroup(d.group);apply()}});if(d.type==="school")m.bindTooltip(d.name,{permanent:true,direction:"top",offset:[0,-10],className:"school-label"});else m.bindTooltip(d.type==="rent"?"R · "+fmt(d.price):d.type==="sale"?"S · "+fmt(d.price):"VPK",{direction:"top"});marks.set(d,m);pts.push(ll);if(visible(d))m.addTo(map)}catch(e){}}
-async function loadGroup(g){
-  if(loaded.has(g)) return;
-  if(loadingGroups.has(g)) return loadingGroups.get(g);
-  const job=(async()=>{
-    statusEl.style.display="block";
-    statusEl.textContent="Loading homes near "+schoolName(g)+"…";
-    const items=D.filter(x=>x.group===g&&x.type!=="school");
-    for(const d of items){
-      await addPoint(d);
-      await new Promise(r=>setTimeout(r,120));
-    }
-    loaded.add(g);
-    statusEl.textContent="Homes loaded";
-    setTimeout(()=>{if(loaded.has(g)) statusEl.style.display="none"},900);
-  })().finally(()=>loadingGroups.delete(g));
-  loadingGroups.set(g,job);
-  return job;
+
+const detail=document.getElementById("detail"),dtype=document.getElementById("dtype"),dtitle=document.getElementById("dtitle"),daddr=document.getElementById("daddr"),chipsEl=document.getElementById("chips"),dtext=document.getElementById("dtext"),links=document.getElementById("links"),list=document.getElementById("list"),closeBtn=document.getElementById("close"),schoolSel=document.getElementById("school"),rentInput=document.getElementById("rent"),poolBtn=document.getElementById("poolOnly"),statusEl=document.getElementById("status"),focusLabel=document.getElementById("focusLabel"),photoStrip=document.getElementById("photoStrip"),commuteBox=document.getElementById("commuteBox"),historyBox=document.getElementById("historyBox");
+const fitAllBtn=document.getElementById("fitAllBtn"),addBtn=document.getElementById("addBtn"),addModal=document.getElementById("addModal"),cancelAdd=document.getElementById("cancelAdd"),localAdd=document.getElementById("localAdd"),pipelineAdd=document.getElementById("pipelineAdd");
+
+const geoCache=JSON.parse(localStorage.getItem(GEO_KEY)||"{}");
+const routeCache=JSON.parse(localStorage.getItem(ROUTE_KEY)||"{}");
+const homeRecord=D.find(x=>x.type==="home");
+
+function fmt(p){if(!p)return "";return p>=1000000?"$"+(p/1000000).toFixed(p%1000000?1:0)+"M":p>=100000?"$"+Math.round(p/1000)+"K":"$"+(p/1000).toFixed(1)+"K"}
+function schoolName(g){const s=D.find(x=>x.type==="school"&&x.group===g);return s?s.name:g}
+function schoolFor(d){return D.find(x=>x.type==="school"&&x.group===d.group)}
+function hasPrivateYard(d){return /private|fenced|yard/i.test(String(d.backyard||""))&&!/none|unknown/i.test(String(d.backyard||""))}
+function hasStrongPerk(d){return Array.isArray(d.perks)&&d.perks.length>0}
+function rentalPreferencePass(d){
+  if(d.type!=="rent")return true;
+  if((d.beds||0)<2||(d.baths||0)<2)return false;
+  if((d.beds||0)<=2&&!hasPrivateYard(d)&&!d.pool&&!hasStrongPerk(d))return false;
+  return true;
 }
-function fitVisible(){let p=[];marks.forEach((m,d)=>{if(visible(d)&&map.hasLayer(m))p.push(m.getLatLng())});if(p.length)map.fitBounds(p,{padding:[35,35],maxZoom:14})}
+function visible(d){
+  if(d.type==="home")return true;
+  if(d.type==="school")return state.types.has("school")&&(state.filterGroup==="all"||d.group===state.filterGroup);
+  if(!state.types.has(d.type))return false;
+  const active=state.filterGroup==="all"?state.focusGroup:state.filterGroup;
+  if(d.group!==active)return false;
+  if(d.type==="rent"){
+    if(!rentalPreferencePass(d))return false;
+    if((d.price||0)>state.rent)return false;
+    if(state.poolMode==="any"&&!d.pool)return false;
+    if(state.poolMode==="private"&&d.poolType!=="private")return false;
+    if(state.yardOnly&&!hasPrivateYard(d))return false;
+  }
+  return true;
+}
+function poolLabel(d){
+  if(!d.pool)return "";
+  if(d.poolType==="private")return "PRIVATE POOL";
+  if(d.poolType==="community")return "COMMUNITY POOL";
+  return "POOL — TYPE TO VERIFY";
+}
+function pinClass(d){
+  if(d.type!=="rent")return d.type;
+  if(!d.pool)return "rent";
+  if(d.poolType==="private")return "rent pool-private";
+  if(d.poolType==="community")return "rent pool-community";
+  return "rent pool-unknown";
+}
+function icon(d){
+  let label=d.type==="home"?"🏠":d.type==="school"?"🏫":d.type==="vpk"?"VPK":d.type==="rent"?"R · "+fmt(d.price):"S · "+fmt(d.price);
+  return L.divIcon({className:"",html:'<div class="pin '+pinClass(d)+'">'+label+"</div>",iconAnchor:[18,15]});
+}
+function cleanAddress(a){return String(a||"").replace(/#\S+/g,"").replace(/APT\s*\w+/ig,"").trim()}
+async function geoRecord(d){
+  if(d._ll)return d._ll;
+  if(Number.isFinite(d.lat)&&Number.isFinite(d.lon)){d._ll=[d.lat,d.lon];return d._ll}
+  const q=cleanAddress(d.address);
+  if(geoCache[q]){d._ll=geoCache[q];return d._ll}
+  const u="https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=us&q="+encodeURIComponent(q);
+  const r=await fetch(u,{headers:{"Accept":"application/json"}});
+  if(!r.ok)throw new Error("geocode");
+  const j=await r.json();
+  if(!j[0])throw new Error("notfound");
+  d._ll=[+j[0].lat,+j[0].lon];
+  geoCache[q]=d._ll;localStorage.setItem(GEO_KEY,JSON.stringify(geoCache));
+  return d._ll;
+}
+async function routeInfo(a,b){
+  if(!a||!b)return null;
+  const key=cleanAddress(a.address)+" -> "+cleanAddress(b.address);
+  if(routeCache[key])return routeCache[key];
+  const [aa,bb]=await Promise.all([geoRecord(a),geoRecord(b)]);
+  const u="https://router.project-osrm.org/route/v1/driving/"+aa[1]+","+aa[0]+";"+bb[1]+","+bb[0]+"?overview=false";
+  const r=await fetch(u);
+  if(!r.ok)throw new Error("route");
+  const j=await r.json();
+  if(!j.routes||!j.routes[0])throw new Error("route");
+  const out={minutes:Math.max(1,Math.round(j.routes[0].duration/60)),miles:+(j.routes[0].distance/1609.344).toFixed(1)};
+  routeCache[key]=out;localStorage.setItem(ROUTE_KEY,JSON.stringify(routeCache));
+  return out;
+}
+function directionsUrl(a,b,waypoint){
+  let u="https://www.google.com/maps/dir/?api=1&origin="+encodeURIComponent(a.address)+"&destination="+encodeURIComponent(b.address);
+  if(waypoint)u+="&waypoints="+encodeURIComponent(waypoint.address);
+  return u;
+}
+function timeMinus(hhmm,mins){
+  const p=String(hhmm||"08:00").split(":").map(Number);
+  let t=p[0]*60+p[1]-mins;while(t<0)t+=1440;t%=1440;
+  const h24=Math.floor(t/60),m=t%60,ap=h24>=12?"PM":"AM",h=h24%12||12;
+  return h+":"+String(m).padStart(2,"0")+" "+ap;
+}
+function chips(d){
+  const c=[];
+  if(d.type==="home")c.push("CURRENT HOME");
+  if(d.type==="school")c.push(d.rating,d.grade,d.aff,d.grades,d.admission,d.movingHelps?"Moving helps: "+d.movingHelps:"");
+  if(d.type==="vpk")c.push(d.aff,"VPK");
+  if(d.type==="rent"||d.type==="sale")c.push(d.type==="rent"?"RENT":"FOR SALE",fmt(d.price),(d.beds||"?")+" bd",(d.baths||"?")+" ba",d.sqft?d.sqft.toLocaleString()+" sqft":"",d.propertyType||"",poolLabel(d),d.backyard&&d.backyard!=="unknown"?"Yard: "+d.backyard:"");
+  return c.filter(Boolean);
+}
+function historyHtml(d){
+  if(d.type!=="rent"&&d.type!=="sale")return "";
+  const parts=[];
+  if(d.daysListed)parts.push("<b>"+d.daysListed+" days</b> listed");
+  if(d.lastSold)parts.push("Last sold: <b>"+d.lastSold+"</b>");
+  if(d.historySummary)parts.push(d.historySummary);
+  if(d.checked)parts.push("Source checked: "+d.checked);
+  return parts.length?"<b>Property history</b><br>"+parts.join("<br>"):"";
+}
+function textFor(d){
+  if(d.type==="home")return "Current home base used for school and property commute comparisons.";
+  if(d.type==="school")return [d.vpk,d.after,d.admission?"Admission: "+d.admission:"",d.movingHelps?"Moving nearby: "+d.movingHelps:"",d.note].filter(Boolean).join(" · ");
+  if(d.type==="vpk")return d.note||"VPK option";
+  const p=[];
+  p.push("Target school: "+schoolName(d.group));
+  if(d.backyard)p.push("Backyard: "+d.backyard);
+  if(Array.isArray(d.perks)&&d.perks.length)p.push("Perks: "+d.perks.join(", "));
+  if(d.schoolDistanceSource)p.push("Source school distance: "+d.schoolDistanceSource);
+  p.push("Verify current availability and exact school assignment before committing.");
+  return p.join(" · ");
+}
+async function commuteHtml(d){
+  try{
+    if(d.type==="school"){
+      const r=await routeInfo(homeRecord,d);
+      const start=d.start||"08:00",arrival=timeMinus(start,60),leave=timeMinus(start,60+(r?r.minutes:0)),wake=timeMinus(start,120+(r?r.minutes:0));
+      let h="<b>Morning plan from current home</b><br>";
+      if(r)h+="Base drive: <b>"+r.minutes+" min · "+r.miles+" mi</b><br>";
+      h+="School starts "+timeMinus(start,0)+". If planning to arrive 60 min early: <b>wake ~"+wake+", leave ~"+leave+", arrive "+arrival+"</b>.";
+      const vpk=d.vpkOnSite?d:D.find(x=>x.type==="vpk"&&x.group===d.group);
+      if(d.vpkOnSite)h+="<br>Mia: on-site VPK/Pre-K means no second school stop.";
+      else if(vpk){
+        const rv1=await routeInfo(homeRecord,vpk),rv2=await routeInfo(vpk,d);
+        if(rv1&&rv2)h+="<br>Two-dropoff base via "+vpk.name+": <b>~"+(rv1.minutes+rv2.minutes)+" min driving</b> before drop-off buffers.";
+      }else h+="<br>Two-dropoff VPK route: research pending.";
+      h+='<br><a target="_blank" rel="noopener" href="'+directionsUrl(homeRecord,d)+'">Open live route in Google Maps</a>';
+      return h;
+    }
+    if(d.type==="rent"||d.type==="sale"){
+      const s=schoolFor(d);
+      const [toSchool,fromHome]=await Promise.all([routeInfo(d,s),routeInfo(homeRecord,d)]);
+      let h="<b>Drive context</b><br>";
+      if(toSchool)h+="Property → "+s.name+": <b>"+toSchool.minutes+" min · "+toSchool.miles+" mi</b> base<br>";
+      if(fromHome)h+="Current home → property: <b>"+fromHome.minutes+" min · "+fromHome.miles+" mi</b> base";
+      if(s)h+='<br><a target="_blank" rel="noopener" href="'+directionsUrl(d,s)+'">Check live school route</a>';
+      return h;
+    }
+  }catch(e){return '<b>Drive context</b><br>Base route unavailable. Use Google Maps for live traffic.'}
+  return "";
+}
+function renderPhotos(d){
+  photoStrip.innerHTML="";
+  if(!Array.isArray(d.photos))return;
+  d.photos.slice(0,3).forEach(src=>{const a=document.createElement("a");a.href=d.url||src;a.target="_blank";a.rel="noopener";const img=document.createElement("img");img.src=src;img.alt="Property preview";img.loading="lazy";a.appendChild(img);photoStrip.appendChild(a)});
+}
+async function show(d){
+  dtype.textContent=d.type==="home"?"CURRENT HOME":d.type==="school"?"TARGET SCHOOL":d.type==="vpk"?"MIA — VPK BRIDGE":d.type==="rent"?"RENTAL":"HOME FOR SALE";
+  dtitle.textContent=d.name;daddr.textContent=d.address;
+  chipsEl.innerHTML=chips(d).map(x=>'<span class="chip">'+x+"</span>").join("");
+  renderPhotos(d);dtext.textContent=textFor(d);historyBox.innerHTML=historyHtml(d);commuteBox.innerHTML="Calculating base drive…";
+  let linkLabel=d.type==="school"?"School website":d.type==="vpk"?"Open VPK map":d.type==="home"?"Open home in Maps":"Open Zillow / full photos";
+  links.innerHTML='<a class="btn" target="_blank" rel="noopener" href="'+(d.url||"#")+'">'+linkLabel+"</a>";
+  detail.classList.add("show");
+  commuteBox.innerHTML=await commuteHtml(d);
+}
+function listMeta(d){
+  if(d.type==="school")return [d.rating,d.aff,d.grades,d.admission].filter(Boolean).join(" · ");
+  if(d.type==="vpk")return [d.aff,"VPK"].filter(Boolean).join(" · ");
+  if(d.type==="rent"||d.type==="sale"){
+    const bits=[fmt(d.price),(d.beds||"?")+" bd / "+(d.baths||"?")+" ba",d.sqft?d.sqft.toLocaleString()+" sqft":"",poolLabel(d),hasPrivateYard(d)?"PRIVATE YARD":"",d.propertyType||""];
+    return bits.filter(Boolean).join(" · ");
+  }
+  return d.note||"";
+}
+function listItems(){
+  const active=state.filterGroup==="all"?state.focusGroup:state.filterGroup;
+  return D.filter(d=>visible(d)&&(d.type!=="school"||d.group===active)&&d.type!=="home");
+}
+function renderList(){
+  list.innerHTML="";
+  listItems().forEach(d=>{
+    const e=document.createElement("div");e.className="item "+d.type;
+    const drive=d._schoolRoute?"🏫 "+d._schoolRoute.minutes+"m · "+d._schoolRoute.miles+"mi":"";
+    const home=d._homeRoute?"🏠 "+d._homeRoute.minutes+"m":"";
+    e.innerHTML="<b>"+d.name+"</b><div class=meta>"+listMeta(d)+"</div>"+((drive||home)?'<div class="commute">'+[drive,home].filter(Boolean).join(" · ")+"</div>":"");
+    e.onclick=async()=>{await show(d);if(d.type==="school"){state.focusGroup=d.group;updateFocusLabel();await loadGroup(d.group);apply();enrichGroupCommutes(d.group)}const m=marks.get(d);if(m)map.setView(m.getLatLng(),d.type==="school"?12:14)};
+    list.appendChild(e);
+  });
+}
+function apply(){marks.forEach((m,d)=>{if(visible(d)){if(!map.hasLayer(m))m.addTo(map)}else if(map.hasLayer(m))map.removeLayer(m)});renderList()}
+function updateFocusLabel(){
+  const active=state.filterGroup==="all"?state.focusGroup:state.filterGroup;
+  focusLabel.innerHTML=(state.filterGroup==="all"?"All schools shown · properties focused on ":"Filtered to ")+"<b>"+schoolName(active)+"</b>";
+}
+function populateSchoolOptions(){
+  const current=schoolSel.value||"all";
+  schoolSel.innerHTML='<option value="all">All school areas</option>';
+  D.filter(x=>x.type==="school").sort((a,b)=>a.name.localeCompare(b.name)).forEach(s=>{const o=document.createElement("option");o.value=s.group;o.textContent=s.name;schoolSel.appendChild(o)});
+  schoolSel.value=[...schoolSel.options].some(o=>o.value===current)?current:"all";
+}
+async function addPoint(d){
+  if(marks.has(d))return;
+  try{
+    const ll=await geoRecord(d),m=L.marker(ll,{icon:icon(d)});
+    m.on("click",async()=>{await show(d);if(d.type==="school"){state.focusGroup=d.group;updateFocusLabel();await loadGroup(d.group);apply();enrichGroupCommutes(d.group)}});
+    if(d.type==="school")m.bindTooltip(d.name,{permanent:true,direction:"top",offset:[0,-10],className:"school-label"});
+    if(d.type==="home")m.bindTooltip("Current Home",{permanent:true,direction:"top",offset:[0,-12],className:"school-label"});
+    marks.set(d,m);if(visible(d))m.addTo(map);
+  }catch(e){}
+}
+async function loadGroup(g){
+  if(loaded.has(g))return;
+  if(loadingGroups.has(g))return loadingGroups.get(g);
+  const job=(async()=>{
+    statusEl.style.display="block";statusEl.textContent="Loading "+schoolName(g)+" properties…";
+    const items=D.filter(x=>x.group===g&&x.type!=="school");
+    renderList();
+    for(const d of items){await addPoint(d);await new Promise(r=>setTimeout(r,250))}
+    loaded.add(g);apply();statusEl.textContent="Properties loaded";
+    setTimeout(()=>statusEl.style.display="none",900);
+  })().finally(()=>loadingGroups.delete(g));
+  loadingGroups.set(g,job);return job;
+}
+async function enrichGroupCommutes(g){
+  const s=D.find(x=>x.type==="school"&&x.group===g);if(!s)return;
+  const items=D.filter(x=>x.group===g&&(x.type==="rent"||x.type==="sale")&&visible(x));
+  for(const d of items){
+    try{d._schoolRoute=await routeInfo(d,s);d._homeRoute=await routeInfo(homeRecord,d);renderList()}catch(e){}
+  }
+}
+function fitCore(){
+  const core=[];
+  marks.forEach((m,d)=>{if(d.type==="school"||d.type==="home")core.push(m.getLatLng())});
+  if(core.length)map.fitBounds(core,{padding:[42,42],maxZoom:10});
+}
+function fitFocused(){
+  const p=[];marks.forEach((m,d)=>{if(visible(d)&&map.hasLayer(m))p.push(m.getLatLng())});
+  if(p.length)map.fitBounds(p,{padding:[35,35],maxZoom:13});
+}
+function addDynamicFilters(){
+  const legend=document.querySelector(".legend");
+  if(!document.getElementById("privatePoolOnly")){
+    const b=document.createElement("button");b.type="button";b.className="filter off";b.id="privatePoolOnly";b.innerHTML='<span class="d" style="background:#ff8fc9"></span>Private pool';legend.appendChild(b);
+    b.onclick=()=>{state.poolMode=state.poolMode==="private"?"all":"private";b.classList.toggle("off",state.poolMode!=="private");poolBtn.classList.add("off");apply()};
+  }
+  if(!document.getElementById("yardOnly")){
+    const b=document.createElement("button");b.type="button";b.className="filter off";b.id="yardOnly";b.innerHTML='<span class="d" style="background:#7ee787"></span>Private yard';legend.appendChild(b);
+    b.onclick=()=>{state.yardOnly=!state.yardOnly;b.classList.toggle("off",!state.yardOnly);apply()};
+  }
+}
+function readAddForm(){
+  const bb=document.getElementById("fBedsBaths").value.split("/").map(x=>parseFloat(x.trim()));
+  const poolType=document.getElementById("fPool").value;
+  return {type:document.getElementById("fType").value,group:document.getElementById("fGroup").value.trim()||"custom",name:document.getElementById("fName").value.trim(),address:document.getElementById("fAddress").value.trim(),price:+document.getElementById("fPrice").value||undefined,beds:bb[0]||undefined,baths:bb[1]||undefined,pool:poolType!=="none",poolType,backyard:document.getElementById("fBackyard").value.trim()||"unknown",url:document.getElementById("fUrl").value.trim(),note:document.getElementById("fNotes").value.trim(),custom:true};
+}
+function saveLocal(item){
+  customItems.push(item);localStorage.setItem(CUSTOM_KEY,JSON.stringify(customItems));D.push(item);populateSchoolOptions();addPoint(item).then(()=>{apply();renderList()});
+}
+closeBtn.onclick=()=>detail.classList.remove("show");
+schoolSel.onchange=async e=>{state.filterGroup=e.target.value;if(state.filterGroup!=="all"){state.focusGroup=state.filterGroup;await loadGroup(state.filterGroup);apply();fitFocused();enrichGroupCommutes(state.filterGroup)}else{apply();fitCore()}updateFocusLabel()};
+rentInput.oninput=e=>{state.rent=+(e.target.value||4300);apply()};
+document.querySelectorAll(".filter[data-type]").forEach(b=>b.onclick=()=>{const t=b.dataset.type;state.types.has(t)?state.types.delete(t):state.types.add(t);b.classList.toggle("off",!state.types.has(t));apply()});
+poolBtn.textContent="Any pool";poolBtn.classList.add("off");poolBtn.onclick=()=>{state.poolMode=state.poolMode==="any"?"all":"any";poolBtn.classList.toggle("off",state.poolMode!=="any");const pb=document.getElementById("privatePoolOnly");if(pb)pb.classList.add("off");apply()};
+fitAllBtn.onclick=fitCore;
+addBtn.onclick=()=>addModal.classList.add("show");cancelAdd.onclick=()=>addModal.classList.remove("show");
+localAdd.onclick=e=>{e.preventDefault();const item=readAddForm();if(!item.name||!item.address)return;saveLocal(item);addModal.classList.remove("show")};
+pipelineAdd.onclick=e=>{e.preventDefault();const item=readAddForm();const body=["Category: "+item.type,"Group: "+item.group,"Name/address: "+item.name+" — "+item.address,"Price: "+(item.price||""),"Beds/Baths: "+(item.beds||"")+" / "+(item.baths||""),"Pool: "+item.poolType,"Backyard: "+item.backyard,"Source: "+item.url,"Notes: "+item.note].join("\n");window.open("https://github.com/priihigashi/ClaudeGallery/issues/new?title="+encodeURIComponent("[School Map] "+item.name)+"&body="+encodeURIComponent(body),"_blank")};
+addModal.addEventListener("click",e=>{if(e.target===addModal)addModal.classList.remove("show")});
+
 (async()=>{
-  renderList();
-  schoolSel.value="all";
-  statusEl.textContent="Loading school locations…";
-  for(const d of D.filter(x=>x.type==="school")){
-    await addPoint(d);
-    await new Promise(r=>setTimeout(r,120));
-  }
-  statusEl.textContent="Loading all school-area properties…";
-  for(const g of [...new Set(D.filter(x=>x.type==="school").map(x=>x.group))]){
-    await loadGroup(g);
-  }
-  apply();
-  state.focusGroup="adh";
-  fitVisible();
-  statusEl.style.display="block";
-  statusEl.textContent="All schools + properties loaded · use dropdown only when you want to filter";
-  setTimeout(()=>statusEl.style.display="none",3000);
+  populateSchoolOptions();addDynamicFilters();updateFocusLabel();
+  statusEl.style.display="block";statusEl.textContent="Loading home + school locations…";
+  const core=D.filter(x=>x.type==="school"||x.type==="home");
+  for(const d of core){await addPoint(d);await new Promise(r=>setTimeout(r,250))}
+  fitCore();
+  await loadGroup(state.focusGroup);apply();enrichGroupCommutes(state.focusGroup);
+  statusEl.style.display="block";statusEl.textContent="All school areas shown · property focus: "+schoolName(state.focusGroup);
+  setTimeout(()=>statusEl.style.display="none",2600);
 })();
 </script></body></html>
