@@ -67,3 +67,5 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Boca/Delray | Morikami rental block | DONE | 8 current candidates including private-pool and private-yard houses |
 | Cleanup | Stale Cooper City rentals | DONE | Removed off-market 8950 SW 53rd and 9240 SW 56th; replacements added |
 | Photos/history | Four strong-property pilot | DONE | 3-image previews + listing history added where Zillow image URLs were verified |
+
+| Pool research | Calusa / Del Prado / Everglades private-pool scarcity | DONE | No trustworthy <=$4.3K private-pool match found in quick current search; group notes added; Del Prado stretch private-pool reference at $4,950 |
