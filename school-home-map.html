@@ -257,7 +257,7 @@ function renderList(){
   listItems().forEach(d=>{
     const e=document.createElement("div");e.className="item "+d.type;
     const drive=d._schoolRoute?"🏫 "+d._schoolRoute.minutes+"m · "+d._schoolRoute.miles+"mi":"";
-    const home=d._homeRoute?"🏠 "+d._homeRoute.minutes+"m":"";
+    const home=d._homeRoute?"🏠 "+d._homeRoute.minutes+"m"+(d.type==="school"?" · "+d._homeRoute.miles+"mi":""):"";
     e.innerHTML="<b>"+d.name+"</b><div class=meta>"+listMeta(d)+"</div>"+((drive||home)?'<div class="commute">'+[drive,home].filter(Boolean).join(" · ")+"</div>":"");
     e.onclick=async()=>{await show(d);if(d.type==="school"){state.focusGroup=d.group;updateFocusLabel();await loadGroup(d.group);apply();enrichGroupCommutes(d.group)}const m=marks.get(d);if(m)map.setView(m.getLatLng(),d.type==="school"?12:14)};
     list.appendChild(e);
@@ -329,6 +329,7 @@ async function enrichSchoolCommutes(){
 }
 async function enrichGroupCommutes(g){
   const s=D.find(x=>x.type==="school"&&x.group===g);if(!s)return;
+  try{s._homeRoute=await routeInfo(homeRecord,s);renderList()}catch(e){}
   const items=D.filter(x=>x.group===g&&(x.type==="rent"||x.type==="sale")&&visible(x));
   for(const d of items){
     try{d._schoolRoute=await routeInfo(d,s);d._homeRoute=await routeInfo(homeRecord,d);renderList()}catch(e){}
