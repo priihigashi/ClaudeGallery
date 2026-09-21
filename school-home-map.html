@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>School + Home Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<style>
+:root{--bg:#10141c;--panel:#171d28;--line:#2a3342;--text:#f7f9fc;--muted:#9ca8b8;--school:#25c06d;--vpk:#f3b63f;--rent:#3b82f6;--sale:#a855f7;--pool:#22d3ee}
+*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+body{overflow:hidden}.app{height:100%;display:grid;grid-template-columns:330px 1fr}.side{background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;min-width:0;z-index:1000}
+.head{padding:16px;border-bottom:1px solid var(--line)}h1{font-size:20px;margin:0 0 5px}.head p{font-size:12px;line-height:1.4;color:var(--muted);margin:0}
+.controls{padding:10px;border-bottom:1px solid var(--line);display:grid;gap:8px}.controls select,.controls input{width:100%;background:#212938;border:1px solid #354157;color:#fff;padding:10px;border-radius:10px;font-size:15px}
+.legend{display:flex;flex-wrap:wrap;gap:6px}.filter{border:1px solid #354157;background:#212938;color:#fff;border-radius:999px;padding:8px 10px;font-size:12px;font-weight:700}.filter.off{opacity:.35}.d{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+.sc{background:var(--school)}.vc{background:var(--vpk)}.rc{background:var(--rent)}.xc{background:var(--sale)}.pc{background:var(--pool)}
+.list{overflow:auto;padding:9px;display:grid;gap:7px}.item{border:1px solid var(--line);background:#1e2634;border-radius:12px;padding:10px;cursor:pointer}.item b{font-size:13px}.item .meta{font-size:11px;color:var(--muted);margin-top:3px}
+.item.school{border-left:4px solid var(--school)}.item.vpk{border-left:4px solid var(--vpk)}.item.rent{border-left:4px solid var(--rent)}.item.sale{border-left:4px solid var(--sale)}
+.mapwrap{position:relative;min-width:0}#map{height:100%;width:100%;background:#dfe5ec}.status{position:absolute;top:12px;left:12px;z-index:700;background:white;color:#1c2430;padding:9px 11px;border-radius:10px;font-size:12px;box-shadow:0 5px 18px #0002}
+.detail{position:absolute;right:12px;bottom:12px;z-index:750;width:min(390px,calc(100% - 24px));background:#111722f2;border:1px solid #354157;border-radius:16px;padding:15px;box-shadow:0 10px 35px #0008;display:none;max-height:62%;overflow:auto}.detail.show{display:block}.detail h2{margin:4px 0 6px;font-size:19px}.small{font-size:12px;color:var(--muted);line-height:1.45}.chips{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}.chip{padding:5px 8px;border-radius:999px;border:1px solid #3d485d;background:#202938;font-size:11px}.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{display:inline-block;text-decoration:none;background:white;color:#10141c;border-radius:10px;padding:10px 12px;font-weight:800;font-size:12px;border:0}.close{position:absolute;right:8px;top:7px;background:transparent;border:0;color:#aeb7c6;font-size:22px}
+.pin{white-space:nowrap;font-size:11px;font-weight:900;padding:5px 7px;border-radius:8px;color:white;border:2px solid white;box-shadow:0 2px 8px #0007}.pin.school{background:var(--school);font-size:12px}.pin.vpk{background:var(--vpk);color:#1d1b14}.pin.rent{background:var(--rent)}.pin.sale{background:var(--sale)}.pin.pool{outline:3px solid var(--pool)}
+.school-label{font-size:12px;font-weight:900;color:#102018;background:#fff;border:2px solid var(--school);border-radius:8px;padding:4px 7px;box-shadow:0 2px 6px #0003}
+.note{padding:8px 11px;border-top:1px solid var(--line);font-size:10px;color:var(--muted);line-height:1.35}
+@media(max-width:760px){body{overflow:hidden}.app{grid-template-columns:1fr;grid-template-rows:auto 1fr}.side{border-right:0;border-bottom:1px solid var(--line);max-height:35vh}.head{padding:10px 12px}.head h1{font-size:17px}.head p{display:none}.controls{grid-template-columns:1fr 1fr;padding:8px}.legend{grid-column:1/-1}.list{display:none}.mapwrap{min-height:65vh}.detail{bottom:10px;right:10px;width:calc(100% - 20px);max-height:45vh}}
+</style></head>
+<body><div class="app">
+<aside class="side">
+<div class="head"><h1>School + Home Map</h1><p>Caio's target schools + Mia's VPK bridge + rentals + homes for sale. Listings checked Sep 20, 2026.</p></div>
+<div class="controls">
+<select id="school"><option value="all">All school areas</option>
+<option value="adh">A.D. Henderson (FAU Lab)</option><option value="waters">Waters Edge</option><option value="addison">Addison Mizner</option><option value="calusa">Calusa</option><option value="blue">Blue Lake</option><option value="delprado">Del Prado</option></select>
+<input id="rent" type="number" min="0" step="50" value="4300" aria-label="Max rent">
+<div class="legend">
+<button class="filter" data-type="school"><span class="d sc"></span>Schools</button>
+<button class="filter" data-type="vpk"><span class="d vc"></span>VPK</button>
+<button class="filter" data-type="rent"><span class="d rc"></span>Rent R</button>
+<button class="filter" data-type="sale"><span class="d xc"></span>Sale S</button>
+<button class="filter" id="poolOnly"><span class="d pc"></span>Pool only</button>
+</div></div>
+<div id="list" class="list"></div>
+<div class="note">R = rent. S = sale. Cyan outline = pool. Nearby does not always mean zoned. A.D. Henderson is lottery admission and is not secured by moving nearby.</div>
+</aside>
+<main class="mapwrap"><div id="map"></div><div class="status" id="status">Loading map pins…</div>
+<section class="detail" id="detail"><button class="close" id="close">×</button><div class="small" id="dtype"></div><h2 id="dtitle"></h2><div class="small" id="daddr"></div><div class="chips" id="chips"></div><div class="small" id="dtext"></div><div class="links" id="links"></div></section>
+</main></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="./school-home-map-data.js"></script>
+<script>
+const D=window.SCHOOL_HOME_MAP_DATA||[],state={group:"all",rent:4300,types:new Set(["school","vpk","rent","sale"]),pool:false},marks=new Map(),pts=[];
+const map=L.map("map",{zoomControl:true}).setView([26.37,-80.15],11);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; OpenStreetMap"}).addTo(map);
+const cache=JSON.parse(localStorage.getItem("schoolHomeGeo")||"{}");
+const fmt=p=>p>=1000000?"$"+(p/1000000).toFixed(p%1000000?1:0)+"M":p>=100000?"$"+Math.round(p/1000)+"K":"$"+(p/1000).toFixed(1)+"K";
+const visible=d=>state.types.has(d.type)&&(state.group==="all"||d.group===state.group)&&(d.type!=="rent"||d.price<=state.rent)&&(!state.pool||d.pool);
+function icon(d){let label=d.type==="school"?"SCHOOL":d.type==="vpk"?"VPK":d.type==="rent"?"R "+fmt(d.price):"S "+fmt(d.price);return L.divIcon({className:"",html:'<div class="pin '+d.type+(d.pool?" pool":"")+'">'+label+'</div>',iconAnchor:[16,12]})}
+async function geo(a){let q=a.replace(/#\S+/g,"").trim();if(cache[q])return cache[q];let u="https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=us&q="+encodeURIComponent(q);let r=await fetch(u,{headers:{"Accept":"application/json"}});let j=await r.json();if(!j[0])throw Error("no");let v=[+j[0].lat,+j[0].lon];cache[q]=v;localStorage.setItem("schoolHomeGeo",JSON.stringify(cache));return v}
+function chips(d){let c=[];if(d.type==="school")c=[d.rating,d.grade,d.aff,d.grades,"Through 5th: Yes"];if(d.type==="vpk")c=[d.aff,"VPK"];if(d.type==="rent"||d.type==="sale")c=[d.type==="rent"?"RENT":"FOR SALE",fmt(d.price),d.beds+" bd",d.baths+" ba"];if(d.pool)c.push("POOL");return c.filter(Boolean)}
+function show(d){dtype.textContent=d.type==="school"?"TARGET SCHOOL":d.type==="vpk"?"MIA — VPK BRIDGE":d.type==="rent"?"RENTAL":"HOME FOR SALE";dtitle.textContent=d.name;daddr.textContent=d.address;chipsEl.innerHTML=chips(d).map(x=>'<span class="chip">'+x+"</span>").join("");let t=d.note||"";if(d.type==="school")t=(d.vpk||"")+" · "+(d.after||"")+" · "+t;if(d.type==="rent"||d.type==="sale")t="Nearby candidate for "+schoolName(d.group)+". Verify current availability and exact school assignment before committing.";dtext.textContent=t;links.innerHTML='<a class="btn" target="_blank" rel="noopener" href="'+d.url+'">'+(d.type==="school"?"School website":d.type==="vpk"?"Open VPK map":"Open Zillow / photos")+"</a>";detail.classList.add("show")}
+function schoolName(g){let s=D.find(x=>x.type==="school"&&x.group===g);return s?s.name:g}
+function renderList(){list.innerHTML="";D.filter(visible).forEach(d=>{let e=document.createElement("div");e.className="item "+d.type;e.innerHTML="<b>"+d.name+"</b><div class=meta>"+(d.type==="rent"||d.type==="sale"?fmt(d.price)+" · "+d.beds+" bd / "+d.baths+" ba"+(d.pool?" · POOL":""):d.type==="school"?d.rating+" · "+d.aff+" · "+d.grades:(d.aff||"VPK"))+"</div>";e.onclick=()=>{show(d);let m=marks.get(d);if(m)map.setView(m.getLatLng(),15)};list.appendChild(e)})}
+function apply(){marks.forEach((m,d)=>{if(visible(d)){if(!map.hasLayer(m))m.addTo(map)}else if(map.hasLayer(m))map.removeLayer(m)});renderList()}
+const detail=document.getElementById("detail"),dtype=document.getElementById("dtype"),dtitle=document.getElementById("dtitle"),daddr=document.getElementById("daddr"),chipsEl=document.getElementById("chips"),dtext=document.getElementById("dtext"),links=document.getElementById("links"),list=document.getElementById("list");
+close.onclick=()=>detail.classList.remove("show");school.onchange=e=>{state.group=e.target.value;apply()};rent.oninput=e=>{state.rent=+(e.target.value||4300);apply()};
+document.querySelectorAll(".filter[data-type]").forEach(b=>b.onclick=()=>{let t=b.dataset.type;state.types.has(t)?state.types.delete(t):state.types.add(t);b.classList.toggle("off",!state.types.has(t));apply()});
+poolOnly.onclick=()=>{state.pool=!state.pool;poolOnly.classList.toggle("off",!state.pool);apply()};
+(async()=>{renderList();let ok=0;for(const d of D){try{let ll=await geo(d.address),m=L.marker(ll,{icon:icon(d)}).addTo(map);m.on("click",()=>show(d));if(d.type==="school")m.bindTooltip(d.name,{permanent:true,direction:"top",offset:[0,-12],className:"school-label"});else m.bindTooltip(d.type==="rent"?"R "+fmt(d.price):d.type==="sale"?"S "+fmt(d.price):"VPK",{direction:"top"});marks.set(d,m);pts.push(ll);ok++;if(!visible(d))map.removeLayer(m)}catch(e){}await new Promise(r=>setTimeout(r,150))}if(pts.length)map.fitBounds(pts,{padding:[35,35],maxZoom:12});status.textContent=ok+" map pins loaded · tap any pin";setTimeout(()=>status.style.display="none",3500)})();
+</script></body></html>
