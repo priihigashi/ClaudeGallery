@@ -93,8 +93,8 @@ function visible(d){
   if(d.type==="home")return true;
   if(d.type==="school")return state.types.has("school")&&(state.filterGroup==="all"||d.group===state.filterGroup);
   if(!state.types.has(d.type))return false;
-  const active=state.filterGroup==="all"?state.focusGroup:state.filterGroup;
-  if(d.group!==active)return false;
+  const groupMatch=state.filterGroup==="all"?true:d.group===state.filterGroup;
+  if(!groupMatch)return false;
   if(d.type==="rent"){
     if(!rentalPreferencePass(d))return false;
     if((d.price||0)>state.rent)return false;
@@ -235,7 +235,7 @@ async function show(d){
   commuteBox.innerHTML=await commuteHtml(d);
 }
 function listMeta(d){
-  if(d.type==="school")return [d.rating,d.aff,d.grades,d.admission,d._homeRoute?"🏠 "+d._homeRoute.minutes+"m · "+d._homeRoute.miles+"mi":""].filter(Boolean).join(" · ");
+  if(d.type==="school"){const ct=schoolCounts(d.group);return [d.rating,d.aff,d.grades,ct.rentals+" rentals",ct.sales+" sales",d.admission,d._homeRoute?"🏠 "+d._homeRoute.minutes+"m · "+d._homeRoute.miles+"mi":""].filter(Boolean).join(" · ");}
   if(d.type==="vpk")return [d.aff,"VPK"].filter(Boolean).join(" · ");
   if(d.type==="rent"||d.type==="sale"){
     const bits=[fmt(d.price),(d.beds||"?")+" bd / "+(d.baths||"?")+" ba",d.sqft?d.sqft.toLocaleString()+" sqft":"",poolLabel(d),hasPrivateYard(d)?"PRIVATE YARD":"",d.propertyType||"",d.match||"",d.referenceOnly?"REFERENCE":""];
@@ -269,12 +269,36 @@ function populateSchoolOptions(){
   D.filter(x=>x.type==="school").sort((a,b)=>a.name.localeCompare(b.name)).forEach(s=>{const o=document.createElement("option");o.value=s.group;o.textContent=s.name;schoolSel.appendChild(o)});
   schoolSel.value=[...schoolSel.options].some(o=>o.value===current)?current:"all";
 }
+function schoolCounts(g){
+  return {
+    rentals:D.filter(x=>x.type==="rent"&&x.group===g&&x.active!==false).length,
+    sales:D.filter(x=>x.type==="sale"&&x.group===g&&x.active!==false).length
+  };
+}
+function previewScore(d){
+  if(d.type!=="rent")return 0;
+  let s=0;
+  if(d.poolType==="private")s+=50;
+  else if(d.poolType==="community")s+=30;
+  else if(d.pool)s+=20;
+  if(/single-family|house/i.test(String(d.propertyType||"")))s+=25;
+  if(hasPrivateYard(d))s+=20;
+  if((d.beds||0)>=3)s+=12;
+  if((d.price||99999)<=4000)s+=10;
+  return s;
+}
+async function preloadGroupPreview(g,limit=3){
+  const pool=D.filter(x=>x.group===g&&x.type==="rent"&&x.active!==false&&rentalPreferencePass(x))
+    .sort((a,b)=>previewScore(b)-previewScore(a))
+    .slice(0,limit);
+  for(const d of pool){await addPoint(d);await new Promise(r=>setTimeout(r,180))}
+}
 async function addPoint(d){
   if(marks.has(d))return;
   try{
     const ll=await geoRecord(d),m=L.marker(ll,{icon:icon(d)});
     m.on("click",async()=>{await show(d);if(d.type==="school"){state.focusGroup=d.group;updateFocusLabel();await loadGroup(d.group);apply();enrichGroupCommutes(d.group)}});
-    if(d.type==="school")m.bindTooltip(d.name,{permanent:true,direction:"top",offset:[0,-10],className:"school-label"});
+    if(d.type==="school"){const ct=schoolCounts(d.group);m.bindTooltip(d.name+" · "+ct.rentals+"R/"+ct.sales+"S",{permanent:true,direction:"top",offset:[0,-10],className:"school-label"});}
     if(d.type==="home")m.bindTooltip("Current Home",{permanent:true,direction:"top",offset:[0,-12],className:"school-label"});
     marks.set(d,m);if(visible(d))m.addTo(map);
   }catch(e){}
@@ -351,8 +375,13 @@ addModal.addEventListener("click",e=>{if(e.target===addModal)addModal.classList.
   for(const d of core){await addPoint(d);await new Promise(r=>setTimeout(r,250))}
   fitCore();
   enrichSchoolCommutes();
+  statusEl.textContent="Loading a few best properties around each school…";
+  for(const s of D.filter(x=>x.type==="school")){
+    await preloadGroupPreview(s.group,3);
+  }
+  apply();fitCore();
   await loadGroup(state.focusGroup);apply();enrichGroupCommutes(state.focusGroup);
-  statusEl.style.display="block";statusEl.textContent="All school areas shown · property focus: "+schoolName(state.focusGroup);
+  statusEl.style.display="block";statusEl.textContent="All school areas shown · tap a school for its full property set";
   setTimeout(()=>statusEl.style.display="none",2600);
 })();
 </script></body></html>
