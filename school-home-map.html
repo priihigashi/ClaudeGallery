@@ -340,7 +340,7 @@ function salePreviewForGroup(g,limit=3){
   }
   return out.slice(0,limit);
 }
-async function preloadGroupPreview(g,rentLimit=7,saleLimit=3){
+async function preloadGroupPreview(g,rentLimit=10,saleLimit=3){
   const rents=D.filter(x=>x.group===g&&x.type==="rent"&&x.active!==false&&rentalPreferencePass(x)&&(!x.price||x.price<=state.rent))
     .sort((a,b)=>previewScore(b)-previewScore(a))
     .slice(0,rentLimit);
@@ -352,7 +352,7 @@ async function addPoint(d){
   try{
     const ll=await geoRecord(d),m=L.marker(ll,{icon:icon(d)});
     m.on("click",async()=>{await show(d);if(d.type==="school"){state.focusGroup=d.group;updateFocusLabel();await loadGroup(d.group);apply();enrichGroupCommutes(d.group)}});
-    if(d.type==="school"){const ct=schoolCounts(d.group);m.bindTooltip(d.name+" · "+ct.rentals+"R/"+ct.sales+"S",{permanent:true,direction:"top",offset:[0,-10],className:"school-label"});}
+    if(d.type==="school"){const ct=schoolCounts(d.group);m.bindTooltip(d.name+" · "+ct.rentals+"R + "+Math.min(ct.sales,3)+"S preview",{permanent:true,direction:"top",offset:[0,-10],className:"school-label"});}
     if(d.type==="home")m.bindTooltip("Current Home",{permanent:true,direction:"top",offset:[0,-12],className:"school-label"});
     marks.set(d,m);if(visible(d))m.addTo(map);
   }catch(e){}
@@ -448,7 +448,7 @@ addModal.addEventListener("click",e=>{if(e.target===addModal)addModal.classList.
   enrichSchoolCommutes();
   statusEl.textContent="Loading a few best properties around each school…";
   for(const s of D.filter(x=>x.type==="school")){
-    await preloadGroupPreview(s.group,7,3);
+    await preloadGroupPreview(s.group,10,3);
   }
   apply();fitCore();
   await loadGroup(state.focusGroup);apply();enrichGroupCommutes(state.focusGroup);
