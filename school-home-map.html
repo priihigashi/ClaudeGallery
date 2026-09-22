@@ -320,11 +320,32 @@ function previewScore(d){
   if((d.price||99999)<=4000)s+=10;
   return s;
 }
-async function preloadGroupPreview(g,limit=3){
-  const pool=D.filter(x=>x.group===g&&x.type==="rent"&&x.active!==false&&rentalPreferencePass(x))
+function salePreviewForGroup(g,limit=3){
+  const sales=D.filter(x=>x.group===g&&x.type==="sale"&&x.active!==false);
+  const buckets=[
+    sales.filter(x=>(x.price||0)>=250000&&(x.price||0)<=399999),
+    sales.filter(x=>(x.price||0)>=400000&&(x.price||0)<=550000),
+    sales.filter(x=>(x.price||0)>=600000&&(x.price||0)<=750000)
+  ];
+  const out=[];
+  for(const b of buckets){
+    b.sort((a,z)=>(a.price||0)-(z.price||0));
+    if(b[0])out.push(b[0]);
+  }
+  if(out.length<limit){
+    for(const d of sales.sort((a,b)=>(a.price||0)-(b.price||0))){
+      if(!out.includes(d))out.push(d);
+      if(out.length>=limit)break;
+    }
+  }
+  return out.slice(0,limit);
+}
+async function preloadGroupPreview(g,rentLimit=7,saleLimit=3){
+  const rents=D.filter(x=>x.group===g&&x.type==="rent"&&x.active!==false&&rentalPreferencePass(x)&&(!x.price||x.price<=state.rent))
     .sort((a,b)=>previewScore(b)-previewScore(a))
-    .slice(0,limit);
-  for(const d of pool){await addPoint(d);await new Promise(r=>setTimeout(r,180))}
+    .slice(0,rentLimit);
+  const sales=salePreviewForGroup(g,saleLimit);
+  for(const d of rents.concat(sales)){await addPoint(d);await new Promise(r=>setTimeout(r,120))}
 }
 async function addPoint(d){
   if(marks.has(d))return;
@@ -427,7 +448,7 @@ addModal.addEventListener("click",e=>{if(e.target===addModal)addModal.classList.
   enrichSchoolCommutes();
   statusEl.textContent="Loading a few best properties around each school…";
   for(const s of D.filter(x=>x.type==="school")){
-    await preloadGroupPreview(s.group,3);
+    await preloadGroupPreview(s.group,7,3);
   }
   apply();fitCore();
   await loadGroup(state.focusGroup);apply();enrichGroupCommutes(state.focusGroup);
