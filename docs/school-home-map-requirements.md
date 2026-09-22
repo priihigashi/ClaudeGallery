@@ -59,7 +59,7 @@ This file is the source of truth for the School + Home Map. Do not silently drop
 - Property-type priority: **single-family house first**, then a strong townhouse; condo/apartment inventory is low priority and should only survive as a clearly labeled fallback.
 - Strong preference: **private backyard**.
 - A 2/2 without a private backyard should normally be excluded unless it has a meaningful compensating feature: verified pool, exceptional gated/resort-style amenities, unusually strong condition/value, or exceptional proximity to the target school.
-- A 2/2 under roughly **1,100 sqft** should normally be excluded even if cheap unless there is an unusually strong reason to retain it.
+- A 2/2 under roughly **1,100 sqft** should normally be excluded even if cheap unless there is an unusually strong reason to retain it. A verified private/community pool, private yard, exceptional proximity, or unusually low price with useful amenities can qualify as that exception.
 - Pool hierarchy: **private pool preferred**, then community pool, then no pool.
 - Pool classification must be exact where the listing supports it:
   - private pool
