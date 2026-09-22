@@ -133,3 +133,12 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Photos | Latest direct-source backfill | DONE | Added reusable 4-photo sets to 9810 SW 57th, 5313 SW 118th, and 5232 SW 122nd plus earlier Waters/Griffin additions. 28 active rentals now have embedded preview sets. |
 | Backup | Canonical 136-row reconciliation | DONE | GitHub has 136 rental records and the Google Sheet has exactly 136 corresponding rows; zero missing and zero extra after final readback. |
 | Data audit | Rental structural rules | DONE | 99 active rentals; zero active below 2/2, zero active over $5,000, zero non-array perks fields. |
+
+
+| UI audit | School count vs visible pins | DONE | Root cause found: default all-schools preload was hard-coded to 3 rentals per school. Updated to show every counted active rental (up to 10) plus 3 sale-reference previews per school. |
+| Rental availability | South-area refresh | IN PROGRESS | Rechecked Cooper City/Griffin/Weston/Eagle/Palmview/Floranada current inventory. Direct/current sources take precedence over removed or stale search cards. |
+| Rental inventory | Cheaper Weston / Eagle options | DONE | Reactivated 4297 Pine Ridge ($3,000, Everglades) and added 16219 Emerald Cove (~$3,350, Everglades), 52 Simonton ($2,399, Eagle Point), and 103 Riviera ($2,799, Eagle Point). Weston now 10 active; Eagle Point 10 active. |
+| Classification | 1448 NE 27th Ct | DONE | Reconciled September removal/relist conflict using current direct Realtor rental page; updated active record to $3,100, 3/2, 1,329 sqft and noted relist history. |
+| Search radius | School-area expansion cap | DONE | Canonical rule now limits expansion to roughly 10 minutes' drive from the target school; do not keep widening just to hit a count. |
+| Sale visibility | 3 default sale previews per school | DONE | Existing data already has at least 5 active sale references per mapped school area; default map now exposes 3 sale pins per school for buy-vs-rent comparison. |
+| Backup | Post-review reconciliation | DONE | Canonical rental set increased to 139 records; Google Sheet readback matches 139/139 with zero missing and zero extra. |
