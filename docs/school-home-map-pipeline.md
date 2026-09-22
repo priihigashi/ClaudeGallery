@@ -142,3 +142,16 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Search radius | School-area expansion cap | DONE | Canonical rule now limits expansion to roughly 10 minutes' drive from the target school; do not keep widening just to hit a count. |
 | Sale visibility | 3 default sale previews per school | DONE | Existing data already has at least 5 active sale references per mapped school area; default map now exposes 3 sale pins per school for buy-vs-rent comparison. |
 | Backup | Post-review reconciliation | DONE | Canonical rental set increased to 139 records; Google Sheet readback matches 139/139 with zero missing and zero extra. |
+
+
+| Review 2026-09-21 | Visible rental counts after live-filter audit | DONE | Exact default-filter counts: ADH 8; Waters Edge 7; Addison 7; Blue Lake 9; Del Prado 8; Weston/Everglades 9; Eagle Point 10; Cooper City 7; Griffin 7; Palmview 7; Floranada 7; Calusa 5; Morikami 5. |
+| Review 2026-09-21 | Default all-school pin visibility | DONE | Fixed hard-coded 3-rental preview. Default map now preloads all counted rentals up to 10 plus 3 sale-reference previews per school. |
+| Review 2026-09-21 | Cheap useful fallback rule | DONE | Small/cheap 2/2 may remain when verified pool, private yard, exceptional proximity, or strong amenities compensate. Addison now has 7 default-visible rentals below/equal $4,500. |
+| Review 2026-09-21 | Unavailable / pending cleanup | DONE | Archived 4498 NW 2nd, 11600 Timbers #37A, 1741 NE 39th, 1410 NE 56th, 896 SW 9th #9, plus additional wrong-school/conflicted records. Research preserved in backup. |
+| Review 2026-09-21 | Cooper City school-assignment repair | DONE | Archived 39 Forest (Embassy Creek) and 3931 SW 82nd (Silver Ridge); replaced with 9469 SW 53rd ($2,800) and 9240 SW 56th ($4,150), restoring 7 valid default-visible candidates. |
+| Review 2026-09-21 | Floranada school-assignment repair | DONE | Archived 3640 NE 16th because current school info points to Oakland Park Elementary; added 1738 NE 52nd ($3,150) with Floranada explicitly listed, keeping 7. |
+| Review 2026-09-21 | Direct rental source links | DONE | Active generic Zillow /homes/ search-result URLs reduced to 0. Active rental pins now use direct property/listing/manager/MLS pages. |
+| Review 2026-09-21 | Rental backup reconciliation | DONE | GitHub canonical rental records = 146; Google Sheet backup rows = 146; zero missing and zero extra. |
+| Review 2026-09-21 | Rental structural audit | DONE | 102 active rentals; zero active below 2/2; zero active above $5,000. |
+| Review 2026-09-21 | Sale comparison visibility | DONE | Default map exposes 3 sale-reference pins per school; canonical data contains at least 5 active sale records per mapped school group. |
+| Review 2026-09-21 | Sale current-status audit | IN PROGRESS | Sale inventory exists in sufficient quantity, but each default sale preview still needs a direct-source current-status recheck before calling purchase references fully audited. |
