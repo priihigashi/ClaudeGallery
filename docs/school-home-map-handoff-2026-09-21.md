@@ -20,20 +20,31 @@ Rental backup:
 - Google Sheet: https://docs.google.com/spreadsheets/d/1EU5jvUIVJstmfWu14PVLMP8SCehp96lyXs7J7jitm3Q/edit
 - Tab: `Rentals Backup`
 - It must preserve active AND inactive/pruned rental research.
-- Current canonical rental count at handoff: 136.
+- Current canonical rental count at handoff: 146.
 
 ## Continuation update — access + latest audit
 
 - GitHub access is **not blocked**. Connected user `priihigashi` has admin/push access to `priihigashi/ClaudeGallery`; direct file writes and Actions/Pages reads were verified.
 - The only remaining access limitation is **interactive live-page browser QA inside the current agent runtime**. This is not a GitHub permission problem; the available public-page reader rejects the GitHub Pages URL and no usable external browser automation is exposed.
 - Repo/data work is unaffected by that limitation.
-- Rental backup is now **136 canonical rows**, exactly matching the 136 GitHub rental records (zero missing/zero extra).
+- Rental backup is now **146 canonical rows**, exactly matching the 146 GitHub rental records (zero missing/zero extra).
 - Active inventory after school-assignment/status cleanup: A.D. Henderson 10; Waters Edge 8; Addison 8; Blue Lake 9; Del Prado 9; Weston 8; Cooper City 7; Palmview 7; Griffin 7; Eagle Point 8; Floranada 7; Calusa 6; Morikami 5.
-- Remaining active Zillow search-result URLs: **21** (down from 54 at the start of the continuation).
+- Remaining active Zillow search-result URLs: **0**. Every active rental uses a direct property/listing/manager/MLS page.
 - `perks` schema drift was fixed: all rental perks are arrays again.
 - Cooper City / Griffin duplicates were audited; wrong-school and stale copies were archived rather than deleted.
 - One active pool record, 8954 SW 53rd St, intentionally remains `poolType: unknown` / VERIFY because current rental sources confirm a pool but do not explicitly establish private vs community.
 - Latest relevant data commits: `e16c3706145588f1df76bae12e75d08213fb9ecd`, `489778f69625ffaaab13e6f0f9ab0e5f1872ff3a`, `3b2882fa9469e439a8aff8a6442db207619d4744`.
+
+## Latest review correction — visible counts / availability
+
+- The former default all-schools map only preloaded 3 rental pins per school, which made a school label such as 7 rentals visually show only ~3. Fixed: default preview now shows all counted rentals up to 10 plus 3 sale-reference previews.
+- Exact default-filter rental counts after availability/school-assignment cleanup: ADH 8; Waters Edge 7; Addison 7; Blue Lake 9; Del Prado 8; Weston/Everglades 9; Eagle Point 10; Cooper City 7; Griffin 7; Palmview 7; Floranada 7; Calusa 5; Morikami 5.
+- Search radius is capped at roughly 10 minutes' drive from the target school.
+- Cheaper no-pool or community-pool options are valid when they still meet 2/2 and offer useful value/proximity/amenities.
+- Pending, off-market, stale, wrong-school, or direct-source-conflict listings are archived with inactiveReason instead of counted active.
+- Active generic Zillow `/homes/` search-result URLs: 0.
+- Rental backup: 146/146 exact.
+- Sale UI now shows 3 reference pins per school, but direct current-status auditing of sale previews remains IN PROGRESS.
 
 ## Mandatory working method
 
