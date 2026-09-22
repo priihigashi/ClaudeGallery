@@ -75,7 +75,7 @@ This file is the source of truth for the School + Home Map. Do not silently drop
 - A no-pool rental should generally remain under ~$4,000 unless school proximity, yard, size, condition, or another exceptional perk justifies a modest stretch.
 - Pool homes can stretch somewhat above $4,000. The normal live-map ceiling is currently **$4,500**; listings around ~$4,600–$5,000 are stretch/reference options only when they strongly match the brief.
 - ~$5,000 rentals are **reference-only**, not normal recommendations.
-- Research target: **7–10 useful rental candidates per school area** after quality elimination, not 7–10 filler listings.
+- Research target: **7–10 useful rental candidates per school area** after quality elimination, not 7–10 filler listings.\n- Search expansion may go only as far as roughly **10 minutes' drive from the target school**; do not keep widening beyond that just to hit a count.\n- Cheaper no-pool homes are valuable and should be included when they meet the 2/2 minimum and are otherwise useful; pool preference must not hide good lower-cost options.\n- Default all-schools map preview must show up to **7 current rental pins + 3 active sale-reference pins per school area** so the visible map does not contradict the school count.
 - When inventory is weak, show the best available near the target budget rather than filling the map with low-quality old condos/townhouses.
 - Every rental card should show:
   - price
@@ -94,7 +94,7 @@ This file is the source of truth for the School + Home Map. Do not silently drop
 
 ## 5. Future purchase reference rules
 This is reference only; no immediate purchase is assumed.
-- Include future sale references near each target school.
+- Include future sale references near each target school.\n- At least **2–3 active sale references per school area** should be visible in the normal map experience when current inventory exists.
 - Prefer houses / townhomes.
 - Target comparison buckets when inventory exists:
   - about 2 properties in the ~$300K range
