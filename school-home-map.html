@@ -303,10 +303,7 @@ function populateSchoolOptions(){
   schoolSel.value=[...schoolSel.options].some(o=>o.value===current)?current:"all";
 }
 function schoolCounts(g){
-  return {
-    rentals:D.filter(x=>x.type==="rent"&&x.group===g&&x.active!==false).length,
-    sales:D.filter(x=>x.type==="sale"&&x.group===g&&x.active!==false).length
-  };
+  return {rentals:rentalCount(g),sales:saleCount(g)};
 }
 function previewScore(d){
   if(d.type!=="rent")return 0;
@@ -340,12 +337,29 @@ function salePreviewForGroup(g,limit=3){
   }
   return out.slice(0,limit);
 }
-async function preloadGroupPreview(g,rentLimit=10,saleLimit=3){
+function previewItemsForGroup(g,rentLimit=10,saleLimit=3){
   const rents=D.filter(x=>x.group===g&&x.type==="rent"&&x.active!==false&&rentalPreferencePass(x)&&(!x.price||x.price<=state.rent))
     .sort((a,b)=>previewScore(b)-previewScore(a))
     .slice(0,rentLimit);
-  const sales=salePreviewForGroup(g,saleLimit);
-  for(const d of rents.concat(sales)){await addPoint(d);await new Promise(r=>setTimeout(r,120))}
+  return rents.concat(salePreviewForGroup(g,saleLimit));
+}
+async function preloadAllGroupPreviews(rentLimit=10,saleLimit=3){
+  const groups=D.filter(x=>x.type==="school").map(s=>s.group);
+  const queues=groups.map(g=>({g,items:previewItemsForGroup(g,rentLimit,saleLimit)}));
+  const rounds=Math.max(...queues.map(q=>q.items.length),0);
+  let loadedPins=0,totalPins=queues.reduce((n,q)=>n+q.items.length,0);
+  for(let round=0;round<rounds;round++){
+    for(const q of queues){
+      const d=q.items[round];
+      if(!d)continue;
+      statusEl.style.display="block";
+      statusEl.textContent="Loading properties across all school areas… "+loadedPins+"/"+totalPins;
+      await addPoint(d);
+      loadedPins++;
+      await new Promise(r=>setTimeout(r,140));
+    }
+    apply();
+  }
 }
 async function addPoint(d){
   if(marks.has(d))return;
@@ -446,13 +460,11 @@ addModal.addEventListener("click",e=>{if(e.target===addModal)addModal.classList.
   for(const d of core){await addPoint(d);await new Promise(r=>setTimeout(r,250))}
   fitCore();
   enrichSchoolCommutes();
-  statusEl.textContent="Loading a few best properties around each school…";
-  for(const s of D.filter(x=>x.type==="school")){
-    await preloadGroupPreview(s.group,10,3);
-  }
+  statusEl.textContent="Loading properties across all school areas…";
+  await preloadAllGroupPreviews(10,3);
   apply();fitCore();
   await loadGroup(state.focusGroup);apply();enrichGroupCommutes(state.focusGroup);
-  statusEl.style.display="block";statusEl.textContent="All school areas shown · best-property previews loaded · tap a school for its full 7–10 rental set";
+  statusEl.style.display="block";statusEl.textContent="All school areas loaded · counted rentals + 3 sale previews shown";
   setTimeout(()=>statusEl.style.display="none",2600);
 })();
 </script></body></html>
