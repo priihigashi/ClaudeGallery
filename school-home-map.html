@@ -95,7 +95,7 @@ function rentalPreferencePass(d){
   if(d.type!=="rent")return true;
   if((d.beds||0)<2||(d.baths||0)<2)return false;
   const sqft=Number(d.sqft||0),price=Number(d.price||0);
-  if(price<=2300&&sqft>0&&sqft<1100&&d.poolType!=="private"&&!hasPrivateYard(d))return false;
+  if(price<=2300&&sqft>0&&sqft<1100&&!d.pool&&!hasPrivateYard(d)&&!hasStrongPerk(d))return false;
   if((d.beds||0)<=2&&!hasPrivateYard(d)&&!d.pool&&!hasStrongPerk(d))return false;
   if(/apartment|condo/i.test(String(d.propertyType||""))&&!d.pool&&!hasPrivateYard(d)&&!hasStrongPerk(d))return false;
   return true;
