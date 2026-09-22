@@ -294,7 +294,7 @@ function renderList(){
 function apply(){marks.forEach((m,d)=>{if(visible(d)){if(!map.hasLayer(m))m.addTo(map)}else if(map.hasLayer(m))map.removeLayer(m)});renderList()}
 function updateFocusLabel(){
   const active=state.filterGroup==="all"?state.focusGroup:state.filterGroup;
-  const rc=rentalCount(active),compact=["morikami","calusa"].includes(active),note=compact&&rc>=5?" · curated 5-property set":rc<7?" · limited matching rental inventory right now":"";focusLabel.innerHTML=(state.filterGroup==="all"?"All schools shown · focused on ":"Filtered to ")+"<b>"+schoolName(active)+"</b> · "+rc+" rent / "+saleCount(active)+" sale"+note;
+  const rc=rentalCount(active),note=rc<7?" · limited matching rental inventory right now":"";focusLabel.innerHTML=(state.filterGroup==="all"?"All schools shown · focused on ":"Filtered to ")+"<b>"+schoolName(active)+"</b> · "+rc+" rent / "+saleCount(active)+" sale"+note;
 }
 function populateSchoolOptions(){
   const current=schoolSel.value||"all";
@@ -338,10 +338,21 @@ function salePreviewForGroup(g,limit=3){
   return out.slice(0,limit);
 }
 function previewItemsForGroup(g,rentLimit=10,saleLimit=3){
-  const rents=D.filter(x=>x.group===g&&x.type==="rent"&&x.active!==false&&rentalPreferencePass(x)&&(!x.price||x.price<=state.rent))
-    .sort((a,b)=>previewScore(b)-previewScore(a))
-    .slice(0,rentLimit);
-  return rents.concat(salePreviewForGroup(g,saleLimit));
+  const eligible=D.filter(x=>x.group===g&&x.type==="rent"&&x.active!==false&&rentalPreferencePass(x)&&(!x.price||x.price<=state.rent));
+  const ranked=a=>a.slice().sort((x,y)=>previewScore(y)-previewScore(x)||(x.price||99999)-(y.price||99999));
+  const isHouse=x=>/single-family|single family|house/i.test(String(x.propertyType||""));
+  const isTown=x=>/townhouse|townhome/i.test(String(x.propertyType||""));
+  const isPrivatePoolHouse=x=>isHouse(x)&&x.poolType==="private";
+  const targetPrivate=Math.ceil(rentLimit*.60);
+  const maxTown=Math.floor(rentLimit*.30);
+  const out=[];
+  const take=(arr,max)=>{for(const x of ranked(arr)){if(out.length>=rentLimit||max<=0)break;if(!out.includes(x)){out.push(x);max--}}};
+  take(eligible.filter(isPrivatePoolHouse),targetPrivate);
+  take(eligible.filter(x=>isHouse(x)&&!isPrivatePoolHouse(x)),rentLimit-out.length);
+  take(eligible.filter(isTown),Math.min(maxTown,rentLimit-out.length));
+  take(eligible.filter(x=>!isHouse(x)&&!isTown(x)),rentLimit-out.length);
+  if(out.length<rentLimit)take(eligible,rentLimit-out.length);
+  return out.slice(0,rentLimit).concat(salePreviewForGroup(g,saleLimit));
 }
 async function preloadAllGroupPreviews(rentLimit=10,saleLimit=3){
   const groups=D.filter(x=>x.type==="school").map(s=>s.group);
