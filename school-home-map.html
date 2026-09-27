@@ -15,6 +15,7 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 .item.school{border-left:4px solid var(--school)}.item.vpk{border-left:4px solid var(--vpk)}.item.rent{border-left:4px solid var(--rent)}.item.sale{border-left:4px solid var(--sale)}
 .mapwrap{position:relative;min-width:0;min-height:0;overflow:hidden}#map{height:100%;width:100%;background:#dfe5ec}.status{position:absolute;top:12px;left:12px;z-index:700;background:white;color:#1c2430;padding:9px 11px;border-radius:10px;font-size:12px;box-shadow:0 5px 18px #0002}
 .detail{position:absolute;right:16px;top:16px;bottom:auto;z-index:750;width:min(390px,calc(100% - 32px));background:#111722f2;border:1px solid #354157;border-radius:16px;padding:15px;box-shadow:0 10px 35px #0008;display:none;max-height:calc(100% - 32px);overflow:auto}.detail.show{display:block}.detail h2{margin:4px 0 6px;font-size:19px}.small{font-size:12px;color:var(--muted);line-height:1.45}.chips{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}.chip{padding:5px 8px;border-radius:999px;border:1px solid #3d485d;background:#202938;font-size:11px}.photos{display:flex;gap:7px;overflow-x:auto;margin:10px 0;padding-bottom:2px}.photos:empty{display:none}.photos img{width:132px;height:92px;object-fit:cover;border-radius:10px;border:1px solid #3b465a;flex:0 0 auto}.photoFallback{min-width:100%;padding:10px;border:1px dashed #536075;border-radius:10px;background:#121925;color:#b9c4d4;font-size:11px;line-height:1.4}.photoFallback b{color:#fff}.infoBox{margin-top:9px;padding:9px;border:1px solid #344055;border-radius:10px;background:#18202c;font-size:11px;line-height:1.45;color:#d9e1ed}.infoBox:empty{display:none}.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{display:inline-block;text-decoration:none;background:white;color:#10141c;border-radius:10px;padding:10px 12px;font-weight:800;font-size:12px;border:0}.close{position:absolute;right:8px;top:7px;background:transparent;border:0;color:#aeb7c6;font-size:22px}
+.schoolPage{position:fixed;inset:0;z-index:2500;background:#10141c;color:#f7f9fc;display:none;overflow:auto;padding:18px max(18px,calc((100vw - 900px)/2)) 50px}.schoolPage.show{display:block}.schoolPage h2{font-size:26px;margin:16px 0 5px}.schoolPage h3{font-size:16px;margin:0 0 9px}.schoolPage p,.schoolPage li{font-size:14px;line-height:1.55;color:#d9e1ed}.schoolPage section{background:#192230;border:1px solid #354157;border-radius:14px;padding:16px;margin:14px 0}.schoolPage .topbar{display:flex;gap:10px;align-items:center;justify-content:space-between}.schoolPage .topbar select{max-width:65%;background:#212938;color:white;border:1px solid #46536a;border-radius:8px;padding:9px}.schoolPage .commuteGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:8px}.schoolPage .commuteGrid div{background:#101925;padding:11px;border-radius:9px}.schoolPage a{color:#9bc8ff}.schoolPage .rentalSearch{display:flex;gap:8px;flex-wrap:wrap}.schoolPage .rentalSearch a{border:1px solid #546a89;border-radius:8px;padding:9px 11px;text-decoration:none}
 .pin{white-space:nowrap;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:#111827;border:2px solid #fff;box-shadow:0 2px 8px #0006}
 .pin.school{width:30px;height:30px;border-radius:50%;background:var(--school);font-size:16px}
 .pin.vpk{width:30px;height:30px;border-radius:50%;background:var(--vpk);color:#111827;font-size:11px}
@@ -34,7 +35,7 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 </style></head>
 <body><div class="app">
 <aside class="side">
-<div class="head"><div class="headrow"><div><h1>School + Home Map</h1><p>Schools + Mia's VPK bridge + rentals + future sale references.</p></div><div class="toolbar"><button class="mini" id="fitAllBtn">Fit all</button><a class="mini" href="./school-home-map-rules.html">Instructions</a><button class="mini" id="addBtn">Add / Update</button></div></div></div>
+<div class="head"><div class="headrow"><div><h1>School + Home Map</h1><p>Schools + Mia's VPK bridge + rentals + future sale references.</p></div><div class="toolbar"><button class="mini" id="fitAllBtn">Fit all</button><button class="mini" id="schoolMenuBtn">School details</button><a class="mini" href="./school-home-map-rules.html">Instructions</a><button class="mini" id="addBtn">Add / Update</button></div></div></div>
 <div class="controls">
 <select id="school"><option value="all">All school areas</option></select>
 <input id="rent" type="number" min="0" step="50" value="4500" aria-label="Max rent"><select id="saleBucket" aria-label="Sale price range"><option value="all">Sale: all prices</option><option value="300">Sale: ~$250–399K</option><option value="450">Sale: ~$400–550K</option><option value="675">Sale: ~$600–750K</option></select>
@@ -51,6 +52,7 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 <main class="mapwrap"><div id="map"></div><div class="status" id="status">Loading map pins…</div>
 <section class="detail" id="detail"><button class="close" id="close">×</button><div class="small" id="dtype"></div><h2 id="dtitle"></h2><div class="small" id="daddr"></div><div class="chips" id="chips"></div><div id="photoStrip" class="photos"></div><div class="small" id="dtext"></div><div id="commuteBox" class="infoBox"></div><div id="historyBox" class="infoBox"></div><div class="links" id="links"></div></section>
 </main></div>
+<article class="schoolPage" id="schoolPage" aria-label="School details"><div class="topbar"><button class="mini" id="backToMap">← Map</button><select id="schoolDetailMenu" aria-label="Choose school detail page"></select></div><h2 id="schoolPageTitle"></h2><p id="schoolPageAddress"></p><section><h3>Travel from this school area</h3><div id="schoolPageCommutes" class="commuteGrid">Calculating road-route estimates…</div><p class="small">Destinations are representative civic-center points, not a workplace. Current-area comparison starts at the saved Pompano home. OSRM road-route times exclude morning traffic, school queues and drop-off time; open the live route to check a weekday arrival. A 10–13 minute school drive needs a real morning check before deciding, and a routine 20-minute drive does not meet the family’s stated preference.</p></section><section id="schoolPageQuality"></section><section id="schoolPageAdmission"></section><section id="schoolPageVpk"></section><section id="schoolPageRentals"></section><section id="schoolPageLinks"></section></article>
 <div class="modal" id="addModal"><div class="modalCard"><h2>Add / Update Map Item</h2><div class="small">Save a local draft on this device, or send it into the GitHub update pipeline for persistent review.</div><form id="addForm" class="formgrid">
 <label>Category<select id="fType"><option value="rent">Rental</option><option value="sale">Sale</option><option value="school">School</option><option value="vpk">VPK</option></select></label>
 <label>School area / group<input id="fGroup" placeholder="e.g. weston"></label>
@@ -264,7 +266,9 @@ async function show(d){
   renderPhotos(d);dtext.textContent=textFor(d);historyBox.innerHTML=historyHtml(d);commuteBox.innerHTML="Calculating base drive…";
   let linkLabel=d.type==="school"?"School website":d.type==="vpk"?"Open VPK map":d.type==="home"?"Open home in Maps":"Open Zillow / full photos";
   links.innerHTML='<a class="btn" target="_blank" rel="noopener" href="'+(d.url||"#")+'">'+linkLabel+"</a>";
+  if(d.type==="school")links.innerHTML+='<button class="btn" type="button" id="moreSchool">More about this school →</button>';
   detail.classList.add("show");
+  if(d.type==="school")document.getElementById("moreSchool").onclick=()=>openSchoolPage(d.group);
   commuteBox.innerHTML=await commuteHtml(d);
 }
 function listMeta(d){
@@ -463,6 +467,72 @@ addBtn.onclick=()=>addModal.classList.add("show");cancelAdd.onclick=()=>addModal
 localAdd.onclick=e=>{e.preventDefault();const item=readAddForm();if(!item.name||!item.address)return;saveLocal(item);addModal.classList.remove("show")};
 pipelineAdd.onclick=e=>{e.preventDefault();const item=readAddForm();const body=["Category: "+item.type,"Group: "+item.group,"Name/address: "+item.name+" — "+item.address,"Price: "+(item.price||""),"Beds/Baths: "+(item.beds||"")+" / "+(item.baths||""),"Pool: "+item.poolType,"Backyard: "+item.backyard,"Source: "+item.url,"Notes: "+item.note].join("\n");window.open("https://github.com/priihigashi/ClaudeGallery/issues/new?title="+encodeURIComponent("[School Map] "+item.name)+"&body="+encodeURIComponent(body),"_blank")};
 addModal.addEventListener("click",e=>{if(e.target===addModal)addModal.classList.remove("show")});
+
+const schoolPage=document.getElementById("schoolPage"), schoolDetailMenu=document.getElementById("schoolDetailMenu");
+const workDestinations=[
+  {name:"Fort Lauderdale",address:"100 N Andrews Ave, Fort Lauderdale, FL 33301",lat:26.123255411276,lon:-80.143468620837},
+  {name:"Miami",address:"111 NW 1st St, Miami, FL 33128",lat:25.775080963346,lon:-80.196332054722},
+  {name:"Boca Raton",address:"201 W Palmetto Park Rd, Boca Raton, FL 33432",lat:26.350526588683,lon:-80.089843683144},
+  {name:"Weston",address:"17200 Royal Palm Blvd, Weston, FL 33326",lat:26.090113489424,lon:-80.378213838528}
+];
+function setDetailText(id,heading,body){
+  const box=document.getElementById(id);box.replaceChildren();
+  const h=document.createElement("h3");h.textContent=heading;box.appendChild(h);
+  const p=document.createElement("p");p.textContent=body;box.appendChild(p);
+  return box;
+}
+function detailLink(box,label,url){
+  if(!url)return;const a=document.createElement("a");a.href=url;a.target="_blank";a.rel="noopener";a.textContent=label;box.appendChild(a);
+}
+async function renderSchoolPageCommutes(s){
+  const box=document.getElementById("schoolPageCommutes");box.replaceChildren();
+  const places=[{name:"Current area",address:homeRecord.address},...workDestinations];
+  await Promise.all(places.map(async destination=>{
+    const card=document.createElement("div"),title=document.createElement("b"),line=document.createElement("p");
+    title.textContent=destination.name;line.textContent="Road estimate unavailable";card.append(title,line);box.appendChild(card);
+    try{
+      const route=await routeInfo(s,destination);
+      if(destination.name==="Current area")line.textContent=route.minutes+" min · "+route.miles+" mi (school → saved home; no traffic)";
+      else{
+        const baseline=await routeInfo(homeRecord,destination),delta=route.minutes-baseline.minutes;
+        line.textContent=route.minutes+" min ("+(delta>0?"+":"")+delta+" min vs current area) · no traffic";
+      }
+    }catch(e){}
+    detailLink(card,"Check live weekday route",directionsUrl(s,destination));
+  }));
+}
+function openSchoolPage(group){
+  const s=D.find(x=>x.type==="school"&&x.group===group);if(!s)return;
+  schoolDetailMenu.value=group;schoolPage.classList.add("show");schoolPage.scrollTop=0;
+  document.getElementById("schoolPageTitle").textContent=s.name;
+  document.getElementById("schoolPageAddress").textContent=s.address;
+  document.querySelector("#schoolPage .commuteGrid + p").textContent="Comparison origin: "+homeRecord.address+". Destinations are civic-center reference points in Fort Lauderdale, Miami, Boca Raton and Weston, not a workplace. OSRM road-route times exclude morning traffic, school queues and drop-off time; open a live route to check a weekday arrival. The preferred school drive is 10–13 minutes; a routine 20-minute drive does not meet the family’s stated limit.";
+  const quality=setDetailText("schoolPageQuality","School snapshot",[s.rating,s.grade,s.aff,s.grades,s.start?"Start "+s.start:"",s.end?"End "+s.end:"",s.after].filter(Boolean).join(" · "));
+  detailLink(quality,"GreatSchools rating source",s.ratingSource);
+  const admission=setDetailText("schoolPageAdmission","Admission and timing",[s.admission,s.movingHelps?"Moving nearby: "+s.movingHelps:"",s.applicationTiming,s.note].filter(Boolean).join(" · "));
+  detailLink(admission,"Official admission / boundary information",s.admissionsSource);
+  const vpk=D.filter(x=>x.type==="vpk"&&x.group===group);
+  const vpkBox=setDetailText("schoolPageVpk","Mia’s VPK bridge",[s.vpk,s.vpkDetails,vpk.length?"Mapped options: "+vpk.map(x=>x.name).join(", "):(s.vpkOnSite?"On-site program advertised; seat unconfirmed.":"No specific VPK provider verified for this school area yet."),"Confirm VPK eligibility, seat, hours and a two-drop-off morning route for 2027–28."].filter(Boolean).join(" · "));
+  detailLink(vpkBox,"School Pre-K/VPK program",s.vpkSource);
+  const rentals=D.filter(x=>x.type==="rent"&&x.group===group&&x.active!==false&&rentalPreferencePass(x));
+  const rentalBox=setDetailText("schoolPageRentals","Nearby rental research",rentals.length?"Current map research: "+rentals.length+" candidates. Listings are examples of area feasibility, not 2027–28 inventory. Verify availability, pool/yard and exact school assignment before applying.":"No individual rental listing in this area has been verified for this update. Search for 3+/2+ houses with a private pool first, then a private yard; consider an exceptionally spacious 2/2 pool house. Target about $4,000, usual stretch $4,500. Verify exact school assignment for each address.");
+  if(rentals.length){const ul=document.createElement("ul");rentals.slice(0,8).forEach(r=>{const li=document.createElement("li"),a=document.createElement("a");a.href=r.url;a.target="_blank";a.rel="noopener";a.textContent=r.name+" · "+fmt(r.price)+" · "+r.beds+"/"+r.baths+" · "+(r.poolType||"pool unknown")+" · checked "+(r.checked||"date unknown");li.appendChild(a);ul.appendChild(li)});rentalBox.appendChild(ul)}
+  if(Array.isArray(s.areaExamples)){const h=document.createElement("h3");h.textContent="Recent area examples (school assignment unverified)";rentalBox.appendChild(h);const ul=document.createElement("ul");s.areaExamples.forEach(r=>{const li=document.createElement("li"),a=document.createElement("a");a.href=r.url;a.target="_blank";a.rel="noopener";a.textContent=r.name;li.append(a,document.createTextNode(" — "+r.summary));ul.appendChild(li)});rentalBox.appendChild(ul)}
+  const searches=document.createElement("div");searches.className="rentalSearch";rentalBox.appendChild(searches);
+  const city=s.schoolCity||s.address.split(",").at(-2)?.trim()||s.address;
+  detailLink(searches,"Search current houses near "+city,"https://www.realtor.com/apartments/"+encodeURIComponent(city.replaceAll(" ","-"))+"_FL/type-single-family-home/beds-3-3");
+  const linksBox=setDetailText("schoolPageLinks","Sources and next check","School facts and addresses should be reconfirmed for the 2027–28 year. Road-route numbers are planning estimates only.");
+  detailLink(linksBox,"School website",s.url);
+  renderSchoolPageCommutes(s);
+  history.replaceState(null,"","#school="+encodeURIComponent(group));
+}
+function closeSchoolPage(){schoolPage.classList.remove("show");history.replaceState(null,"",location.pathname+location.search)}
+document.getElementById("schoolMenuBtn").onclick=()=>openSchoolPage(schoolDetailMenu.value||"adh");
+document.getElementById("backToMap").onclick=closeSchoolPage;
+schoolDetailMenu.onchange=e=>openSchoolPage(e.target.value);
+D.filter(x=>x.type==="school").sort((a,b)=>a.name.localeCompare(b.name)).forEach(s=>{const o=document.createElement("option");o.value=s.group;o.textContent=s.name;schoolDetailMenu.appendChild(o)});
+window.addEventListener("hashchange",()=>{const g=new URLSearchParams(location.hash.slice(1)).get("school");if(g)openSchoolPage(g);else schoolPage.classList.remove("show")});
+const initialSchool=new URLSearchParams(location.hash.slice(1)).get("school");if(initialSchool)openSchoolPage(initialSchool);
 
 (async()=>{
   populateSchoolOptions();addDynamicFilters();updateFocusLabel();

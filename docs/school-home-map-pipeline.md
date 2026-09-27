@@ -155,3 +155,10 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Review 2026-09-21 | Rental structural audit | DONE | 102 active rentals; zero active below 2/2; zero active above $5,000. |
 | Review 2026-09-21 | Sale comparison visibility | DONE | Default map exposes 3 sale-reference pins per school; canonical data contains at least 5 active sale records per mapped school group. |
 | Review 2026-09-21 | Sale current-status audit | IN PROGRESS | Sale inventory exists in sufficient quantity, but each default sale preview still needs a direct-source current-status recheck before calling purchase references fully audited. |
+
+| 2026-09-27 school expansion | Six requested Broward schools | DONE | Added Manatee Bay, Gator Run, Embassy Creek, Heron Heights, Park Trails, and Riverglades with official school addresses and geocoded school pins. Quality scores, 2027–28 hours and VPK seats remain explicitly unverified. |
+| 2026-09-27 detail navigation | More action and school menu | DONE | Full-screen, linkable school details available from map card and school menu; existing 13 schools retained. |
+| 2026-09-27 commute comparison | Saved Pompano home versus four civic-center endpoints | DONE, BASE-ROUTE ONLY | Shows traffic-free road-route estimates and signed differences; school-hour traffic and exact workplace locations require later live-route checks. |
+| 2026-09-27 Parkland assignment | Heron Heights / Park Trails / Riverglades | DONE | District combined-area School Choice rules linked. Exact rental address and seat assignment must be confirmed before a lease. |
+| 2026-09-27 Morikami | No attendance area | DONE | Choice application required; renting nearby does not secure a seat. |
+| 2026-09-27 rental expansion | New school areas | RESEARCH IN PROGRESS | Added source-linked area examples in school details without counting them as school-assigned pins. Individual listing status, exact assignment and 2027–28 availability are not yet verified; no canonical rental row or backup-sheet change was made. |
