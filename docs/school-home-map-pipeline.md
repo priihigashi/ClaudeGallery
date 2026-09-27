@@ -1,6 +1,6 @@
 # School + Home Map — Implementation Pipeline
 
-Updated: 2026-09-21
+Updated: 2026-09-27
 
 Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 
@@ -162,3 +162,5 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | 2026-09-27 Parkland assignment | Heron Heights / Park Trails / Riverglades | DONE | District combined-area School Choice rules linked. Exact rental address and seat assignment must be confirmed before a lease. |
 | 2026-09-27 Morikami | No attendance area | DONE | Choice application required; renting nearby does not secure a seat. |
 | 2026-09-27 rental expansion | New school areas | RESEARCH IN PROGRESS | Added source-linked area examples in school details without counting them as school-assigned pins. Individual listing status, exact assignment and 2027–28 availability are not yet verified; no canonical rental row or backup-sheet change was made. |
+| 2026-09-27 story-design pass | School detail hierarchy | DONE | Leads with a traffic-free current-home school-drive estimate and compares it against the user's preferred 10–13 minutes and 20-minute hard limit; work-trip references, admissions, VPK, rentals, and sources follow. Focus is moved into the detail view and restored on close; Escape and Tab remain contained in the modal. |
+| 2026-09-27 detail completeness | School hours | IN PROGRESS | Added published 2026–27 first-bell/dismissal details and source links for Manatee Bay, Embassy Creek, Heron Heights, and Park Trails. Gator Run’s source gives class-by 8:00 AM and 2:00 PM dismissal but no first bell; Riverglades’ first-bell schedule and several schools’ 2027–28 schedules still need confirmation. Missing hours show as “confirm for 2027–28.” Routes clearly say traffic-free and civic-center endpoints are not workplaces. |
