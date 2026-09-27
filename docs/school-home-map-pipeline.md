@@ -23,11 +23,11 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | Documentation | Rules / instructions page | DONE | school-home-map-rules.html |
 | Manual updates | Add / Update button | DONE | Local draft + GitHub issue handoff |
 | Manual updates | GitHub issue template | DONE | Persistent update intake |
-| Commute | Current home → school base distance/drive | DONE | OSRM base route + Google live-route link |
+| Commute | Current home → school base distance/drive | DONE | OSRM base route + Google live-route link; detail view refreshes OSRM routes after 30 days and shows each route-check date |
 | Commute | Planning leave/wake time for 60-min-early arrival | DONE | School detail card |
 | Commute | Property → target school base route | DONE | Enriched when school group is loaded |
 | Commute | Current home → property route | DONE | Enriched when school group is loaded |
-| VPK | On-site vs nearby VPK context | IN PROGRESS | On-site flags exist; route quality still school-by-school |
+| VPK | On-site vs nearby VPK context | IN PROGRESS | Manatee Bay, Park Trails, and Riverglades advertise on-site VPK/Pre-K; 2027–28 eligibility, seats, and hours remain unconfirmed. Do not infer on-site VPK for Gator Run, Embassy Creek, or Heron Heights. |
 | VPK | Two-dropoff drive estimate | DONE | Computed when nearby VPK record exists |
 | School | A.D. Henderson | DONE | Lab lottery warning |
 | School | Waters Edge | DONE | Boca |
@@ -161,6 +161,6 @@ Status values: DONE / IN PROGRESS / TODO / BLOCKED.
 | 2026-09-27 commute comparison | Saved Pompano home versus four civic-center endpoints | DONE, BASE-ROUTE ONLY | Shows traffic-free road-route estimates and signed differences; school-hour traffic and exact workplace locations require later live-route checks. |
 | 2026-09-27 Parkland assignment | Heron Heights / Park Trails / Riverglades | DONE | District combined-area School Choice rules linked. Exact rental address and seat assignment must be confirmed before a lease. |
 | 2026-09-27 Morikami | No attendance area | DONE | Choice application required; renting nearby does not secure a seat. |
-| 2026-09-27 rental expansion | New school areas | RESEARCH IN PROGRESS | Added source-linked area examples in school details without counting them as school-assigned pins. Individual listing status, exact assignment and 2027–28 availability are not yet verified; no canonical rental row or backup-sheet change was made. |
+| 2026-09-27 rental expansion | New school areas | RESEARCH IN PROGRESS | Added source-linked area examples in school details without counting them as school-assigned pins. Rechecked current area examples and corrected their school-group labels; listing school fields are distinguished from verified district assignments. Current availability can change and 2027–28 availability is not knowable yet; no canonical rental row or backup-sheet change was made. |
 | 2026-09-27 story-design pass | School detail hierarchy | DONE | Leads with a traffic-free current-home school-drive estimate and compares it against the user's preferred 10–13 minutes and 20-minute hard limit; work-trip references, admissions, VPK, rentals, and sources follow. Focus is moved into the detail view and restored on close; Escape and Tab remain contained in the modal. |
-| 2026-09-27 detail completeness | School hours | IN PROGRESS | Added published 2026–27 first-bell/dismissal details and source links for Manatee Bay, Embassy Creek, Heron Heights, and Park Trails. Gator Run’s source gives class-by 8:00 AM and 2:00 PM dismissal but no first bell; Riverglades’ first-bell schedule and several schools’ 2027–28 schedules still need confirmation. Missing hours show as “confirm for 2027–28.” Routes clearly say traffic-free and civic-center endpoints are not workplaces. |
+| 2026-09-27 detail completeness | School hours and state grades | IN PROGRESS | Added published 2026–27 arrival/dismissal details and source links for Manatee Bay, Embassy Creek, Heron Heights, and Park Trails. Gator Run’s source gives class-by 8:00 AM and 2:00 PM dismissal but no first bell; Riverglades’ arrival/dismissal schedule and 2027–28 schedules still need confirmation. The Florida Department of Education source verifies a 2024–25 A grade for all six new schools. Missing hours show as “confirm for 2027–28.” Routes clearly say traffic-free and civic-center endpoints are not workplaces. |

@@ -69,7 +69,8 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 <script>
 const CUSTOM_KEY="schoolHomeCustomItemsV1";
 const GEO_KEY="schoolHomeGeo";
-const ROUTE_KEY="schoolHomeRoutesV1";
+const ROUTE_KEY="schoolHomeRoutesV2";
+const ROUTE_CACHE_TTL=30*24*60*60*1000;
 const baseData=window.SCHOOL_HOME_MAP_DATA||[];
 let customItems=[];
 try{customItems=JSON.parse(localStorage.getItem(CUSTOM_KEY)||"[]")}catch(e){customItems=[]}
@@ -161,16 +162,22 @@ async function geoRecord(d){
 async function routeInfo(a,b){
   if(!a||!b)return null;
   const key=cleanAddress(a.address)+" -> "+cleanAddress(b.address);
-  if(routeCache[key])return routeCache[key];
-  const [aa,bb]=await Promise.all([geoRecord(a),geoRecord(b)]);
-  const u="https://router.project-osrm.org/route/v1/driving/"+aa[1]+","+aa[0]+";"+bb[1]+","+bb[0]+"?overview=false";
-  const r=await fetch(u);
-  if(!r.ok)throw new Error("route");
-  const j=await r.json();
-  if(!j.routes||!j.routes[0])throw new Error("route");
-  const out={minutes:Math.max(1,Math.round(j.routes[0].duration/60)),miles:+(j.routes[0].distance/1609.344).toFixed(1)};
-  routeCache[key]=out;localStorage.setItem(ROUTE_KEY,JSON.stringify(routeCache));
-  return out;
+  if(routeCache[key]?.checkedAt&&Date.now()-routeCache[key].checkedAt<ROUTE_CACHE_TTL)return routeCache[key];
+  const cached=routeCache[key];
+  try{
+    const [aa,bb]=await Promise.all([geoRecord(a),geoRecord(b)]);
+    const u="https://router.project-osrm.org/route/v1/driving/"+aa[1]+","+aa[0]+";"+bb[1]+","+bb[0]+"?overview=false";
+    const r=await fetch(u);
+    if(!r.ok)throw new Error("route");
+    const j=await r.json();
+    if(!j.routes||!j.routes[0])throw new Error("route");
+    const out={minutes:Math.max(1,Math.round(j.routes[0].duration/60)),miles:+(j.routes[0].distance/1609.344).toFixed(1),checkedAt:Date.now()};
+    routeCache[key]=out;localStorage.setItem(ROUTE_KEY,JSON.stringify(routeCache));
+    return out;
+  }catch(e){
+    if(cached)return {...cached,stale:true};
+    throw e;
+  }
 }
 function directionsUrl(a,b,waypoint){
   let u="https://www.google.com/maps/dir/?api=1&origin="+encodeURIComponent(a.address)+"&destination="+encodeURIComponent(b.address);
@@ -484,6 +491,7 @@ function setDetailText(id,heading,body){
 function detailLink(box,label,url){
   if(!url)return;const a=document.createElement("a");a.href=url;a.target="_blank";a.rel="noopener";a.textContent=label;box.appendChild(a);
 }
+function routeFreshness(route){return route?.stale?"cached estimate from "+new Date(route.checkedAt).toLocaleDateString()+"; refresh failed":"checked "+(route?.checkedAt?new Date(route.checkedAt).toLocaleDateString():"date unavailable")}
 async function renderSchoolPageCommutes(s){
   const box=document.getElementById("schoolPageCommutes");box.replaceChildren();
   const places=[{name:"Current area",address:homeRecord.address},...workDestinations];
@@ -492,10 +500,10 @@ async function renderSchoolPageCommutes(s){
     title.textContent=destination.name;line.textContent="Road estimate unavailable";card.append(title,line);box.appendChild(card);
     try{
       const route=await routeInfo(s,destination);
-      if(destination.name==="Current area")line.textContent=route.minutes+" min · "+route.miles+" mi (school → saved home; no traffic)";
+      if(destination.name==="Current area")line.textContent=route.minutes+" min · "+route.miles+" mi (school → saved home; no traffic; "+routeFreshness(route)+")";
       else{
         const baseline=await routeInfo(homeRecord,destination),delta=route.minutes-baseline.minutes;
-        line.textContent=route.minutes+" min ("+(delta>0?"+":"")+delta+" min vs current area) · no traffic";
+        line.textContent=route.minutes+" min ("+(delta>0?"+":"")+delta+" min vs current area) · no traffic · "+routeFreshness(route);
       }
     }catch(e){}
     detailLink(card,"Check live weekday route",directionsUrl(s,destination));
@@ -510,9 +518,10 @@ function openSchoolPage(group){
   document.getElementById("schoolPageAddress").textContent=s.address;
   document.querySelector("#schoolPage .commuteGrid + p").textContent="Destinations are civic-center reference points in Fort Lauderdale, Miami, Boca Raton and Weston, not a workplace. OSRM road-route times exclude morning traffic and school queues; open a live weekday route before deciding.";
   const fitText=document.getElementById("schoolPageFitText");fitText.textContent="Calculating a base route from "+homeRecord.address+"…";
-  routeInfo(homeRecord,s).then(r=>{if(!schoolPage.classList.contains("show")||schoolDetailMenu.value!==s.group)return;fitText.textContent="Base estimate: "+r.minutes+" min one way · "+r.miles+" mi. "+(r.minutes>20?"This is already beyond the stated 20-minute hard limit before morning traffic.":r.minutes>13?"This is already above the preferred 10–13 minute range before morning traffic.":"This is within the preferred 10–13 minute range before morning traffic.")+" This is a traffic-free route estimate, not a school-hour commute."}).catch(()=>{fitText.textContent="Base route unavailable. Use the live route link below and check the trip during school drop-off hours."});
-  const quality=setDetailText("schoolPageQuality","School snapshot",[s.rating,s.grade,s.aff,s.grades,"School hours: "+(s.start&&s.end?s.start+"–"+s.end:"confirm for 2027–28"),s.after].filter(Boolean).join(" · "));
+  routeInfo(homeRecord,s).then(r=>{if(!schoolPage.classList.contains("show")||schoolDetailMenu.value!==s.group)return;fitText.textContent="Base estimate: "+r.minutes+" min one way · "+r.miles+" mi. "+(r.minutes>20?"This is already beyond the stated 20-minute hard limit before morning traffic.":r.minutes>13?"This is already above the preferred 10–13 minute range before morning traffic.":"This is within the preferred 10–13 minute range before morning traffic.")+" "+routeFreshness(r)+". This is a traffic-free route estimate, not a school-hour commute."}).catch(()=>{fitText.textContent="Base route unavailable. Use the live route link below and check the trip during school drop-off hours."});
+  const quality=setDetailText("schoolPageQuality","School snapshot",[s.rating,s.grade,s.aff,s.grades,"School schedule: "+(s.hours||(s.start&&s.end?s.start+"–"+s.end:"confirm for 2027–28")),s.after].filter(Boolean).join(" · "));
   detailLink(quality,"GreatSchools rating source",s.ratingSource);
+  detailLink(quality,"Florida school-grade source",s.gradeSource);
   detailLink(quality,"School arrival / dismissal schedule",s.scheduleSource);
   const admission=setDetailText("schoolPageAdmission","Admission and timing",[s.admission,s.movingHelps?"Moving nearby: "+s.movingHelps:"",s.applicationTiming,s.note].filter(Boolean).join(" · "));
   detailLink(admission,"Official admission / boundary information",s.admissionsSource);
