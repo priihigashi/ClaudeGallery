@@ -69,7 +69,7 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 <label class="span2">Notes<textarea id="fNotes" rows="3"></textarea></label>
 </form><div class="modalActions"><button class="mini" id="cancelAdd">Cancel</button><button class="mini" id="localAdd">Save local draft</button><button class="btn" id="pipelineAdd">Send to GitHub pipeline</button></div></div></div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-<script src="./school-home-map-data.js?v=2026-09-29-vpk-nearest"></script>
+<script src="./school-home-map-data.js?v=2026-09-29-vpk-nearby-recheck"></script>
 <script>
 const CUSTOM_KEY="schoolHomeCustomItemsV1";
 const GEO_KEY="schoolHomeGeo";
@@ -246,6 +246,7 @@ async function commuteHtml(d){
   try{
     if(d.type==="school"){
       const destinations=workDestinations.filter(x=>["Fort Lauderdale","Boca Raton","Miami"].includes(x.name));
+      const nearestVpkPromise=closestMappedVpk(d);
       const routes=await Promise.allSettled([routeWithin(homeRecord,d),...destinations.map(x=>routeWithin(d,x))]);
       const result=i=>routes[i].status==="fulfilled"?routes[i].value:null;
       const home=result(0),start=d.start||"08:00";
@@ -254,7 +255,7 @@ async function commuteHtml(d){
       destinations.forEach((city,i)=>{const r=result(i+1);h+="<br>"+city.name+": <b>"+(r?r.minutes+" min · "+r.miles+" mi":"Road estimate unavailable")+'</b> · <a target="_blank" rel="noopener" href="'+directionsUrl(d,city)+'">live route</a>'});
       h+="<br><span class=\"small\">Planning estimates without traffic; city centers are reference points. Use live routes for school-hour traffic.</span>";
       if(home){const arrival=timeMinus(start,60),leave=timeMinus(start,60+home.minutes),wake=timeMinus(start,120+home.minutes);h+="<br><br><b>Morning plan</b><br>School starts "+timeMinus(start,0)+". For arrival 60 min early: wake ~"+wake+", leave ~"+leave+", arrive "+arrival+"."}
-      const vpk=await closestMappedVpk(d);
+      const vpk=await nearestVpkPromise;
       h+="<br><br><b>Closest VPK to school</b><br>"+vpk.label;
       if(vpk.url)h+=' · <a target="_blank" rel="noopener" href="'+vpk.url+'">'+(vpk.onSite?"program source":"route")+"</a>";
       if(!vpk.onSite)h+="<br><span class=\"small\">Closest among "+vpk.checkedCount+" mapped candidate(s), not a complete provider search. Confirm VPK eligibility, seat and hours.</span>";
