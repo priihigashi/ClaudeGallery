@@ -197,6 +197,7 @@ function directionsUrl(a,b,waypoint){
   if(waypoint)u+="&waypoints="+encodeURIComponent(waypoint.address);
   return u;
 }
+function routeWithin(a,b,ms=8000){return Promise.race([routeInfo(a,b),new Promise((_,reject)=>setTimeout(()=>reject(new Error("route timeout")),ms))])}
 function timeMinus(hhmm,mins){
   const p=String(hhmm||"08:00").split(":").map(Number);
   let t=p[0]*60+p[1]-mins;while(t<0)t+=1440;t%=1440;
@@ -235,18 +236,16 @@ function textFor(d){
 async function commuteHtml(d){
   try{
     if(d.type==="school"){
-      const r=await routeInfo(homeRecord,d);
-      const start=d.start||"08:00",arrival=timeMinus(start,60),leave=timeMinus(start,60+(r?r.minutes:0)),wake=timeMinus(start,120+(r?r.minutes:0));
-      let h="<b>Morning plan from current home</b><br>";
-      if(r)h+="Base drive: <b>"+r.minutes+" min · "+r.miles+" mi</b><br>";
-      h+="School starts "+timeMinus(start,0)+". If planning to arrive 60 min early: <b>wake ~"+wake+", leave ~"+leave+", arrive "+arrival+"</b>.";
-      const vpk=d.vpkOnSite?d:D.find(x=>x.type==="vpk"&&x.group===d.group);
-      if(d.vpkOnSite)h+="<br>Mia: on-site VPK/Pre-K means no second school stop.";
-      else if(vpk){
-        const rv1=await routeInfo(homeRecord,vpk),rv2=await routeInfo(vpk,d);
-        if(rv1&&rv2)h+="<br>Two-dropoff base via "+vpk.name+": <b>~"+(rv1.minutes+rv2.minutes)+" min driving</b> before drop-off buffers.";
-      }else h+="<br>Two-dropoff VPK route: research pending.";
-      h+='<br><a target="_blank" rel="noopener" href="'+directionsUrl(homeRecord,d)+'">Open live route in Google Maps</a>';
+      const destinations=workDestinations.filter(x=>["Fort Lauderdale","Boca Raton","Miami"].includes(x.name));
+      const routes=await Promise.allSettled([routeWithin(homeRecord,d),...destinations.map(x=>routeWithin(d,x))]);
+      const result=i=>routes[i].status==="fulfilled"?routes[i].value:null;
+      const home=result(0),start=d.start||"08:00";
+      let h="<b>Drive from current home</b><br>"+(home?home.minutes+" min · "+home.miles+" mi":"Road estimate unavailable")+' · <a target="_blank" rel="noopener" href="'+directionsUrl(homeRecord,d)+'">live route</a>';
+      h+="<br><br><b>School → nearby cities</b>";
+      destinations.forEach((city,i)=>{const r=result(i+1);h+="<br>"+city.name+": <b>"+(r?r.minutes+" min · "+r.miles+" mi":"Road estimate unavailable")+'</b> · <a target="_blank" rel="noopener" href="'+directionsUrl(d,city)+'">live route</a>'});
+      h+="<br><span class=\"small\">Planning estimates without traffic; city centers are reference points. Use live routes for school-hour traffic.</span>";
+      if(home){const arrival=timeMinus(start,60),leave=timeMinus(start,60+home.minutes),wake=timeMinus(start,120+home.minutes);h+="<br><br><b>Morning plan</b><br>School starts "+timeMinus(start,0)+". For arrival 60 min early: wake ~"+wake+", leave ~"+leave+", arrive "+arrival+"."}
+      h+="<br>Mia: "+(d.vpkOnSite?"on-site VPK/Pre-K advertised; confirm her seat and hours.":"VPK location and second drop-off still need confirmation.");
       return h;
     }
     if(d.type==="rent"||d.type==="sale"){
@@ -279,7 +278,9 @@ function renderPhotos(d){
     a.appendChild(img);photoStrip.appendChild(a);
   });
 }
+let detailRequest=0;
 async function show(d){
+  const request=++detailRequest;
   dtype.textContent=d.type==="home"?"CURRENT HOME":d.type==="school"?"TARGET SCHOOL":d.type==="vpk"?"MIA — VPK BRIDGE":d.type==="rent"?"RENTAL":"HOME FOR SALE";
   dtitle.textContent=d.name;daddr.textContent=d.address;
   chipsEl.innerHTML=chips(d).map(x=>'<span class="chip">'+x+"</span>").join("");
@@ -289,7 +290,7 @@ async function show(d){
   if(d.type==="school")links.innerHTML+='<button class="btn" type="button" id="moreSchool">More about this school →</button>';
   detail.classList.add("show");
   if(d.type==="school")document.getElementById("moreSchool").onclick=()=>openSchoolPage(d.group);
-  commuteBox.innerHTML=await commuteHtml(d);
+  const drive=await commuteHtml(d);if(request===detailRequest)commuteBox.innerHTML=drive;
 }
 function listMeta(d){
   if(d.type==="school"){const ct=schoolCounts(d.group);return [schoolRatingLabel(d),d.aff,d.grades,ct.rentals+" rentals",ct.sales+" sales",d.admission,d._homeRoute?"🏠 "+d._homeRoute.minutes+"m · "+d._homeRoute.miles+"mi":""].filter(Boolean).join(" · ");}
