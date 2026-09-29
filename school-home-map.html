@@ -49,7 +49,7 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 <button class="filter off" id="poolOnly"><span class="d pc"></span>Rent + pool</button>
 </div></div>
 <div class="focus" id="focusLabel">Focused properties: <b>A.D. Henderson University School (FAU Lab School)</b> · dropdown remains All until you filter it</div><div id="listingNotice" class="listingNotice" role="status" aria-live="polite"></div><div id="list" class="list"></div>
-<div class="note">🏠 = current home. R = rent. S = sale. Pink = verified private-pool rental. Orange = community pool. Dashed orange = pool type still being verified. Blue = no pool. Route times are base estimates, not live traffic.</div>
+<div class="note">🏠 = current home. Green 🏫 = school, whether or not it has on-site VPK. Yellow VPK = a separate VPK location. R = rent. S = sale. Pink = verified private-pool rental. Orange = community pool. Dashed orange = pool type still being verified. Blue = no pool. Route times are base estimates, not live traffic.</div>
 </aside>
 <main class="mapwrap"><div id="map"></div><div class="status" id="status">Loading map pins…</div>
 <section class="detail" id="detail"><button class="close" id="close">×</button><div class="small" id="dtype"></div><h2 id="dtitle"></h2><div class="small" id="daddr"></div><div class="chips" id="chips"></div><div id="photoStrip" class="photos"></div><div class="small" id="dtext"></div><div id="commuteBox" class="infoBox"></div><div id="historyBox" class="infoBox"></div><div class="links" id="links"></div></section>
@@ -70,7 +70,7 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 <label class="span2">Notes<textarea id="fNotes" rows="3"></textarea></label>
 </form><div class="modalActions"><button class="mini" id="cancelAdd">Cancel</button><button class="mini" id="localAdd">Save local draft</button><button class="btn" id="pipelineAdd">Send to GitHub pipeline</button></div></div></div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-<script src="./school-home-map-data.js?v=2026-09-29-vpk-nearby-recheck"></script>
+<script src="./school-home-map-data.js?v=2026-09-29-zillow-rentals"></script>
 <script>
 const CUSTOM_KEY="schoolHomeCustomItemsV1";
 const GEO_KEY="schoolHomeGeo";
