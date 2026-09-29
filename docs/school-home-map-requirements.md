@@ -51,6 +51,7 @@ This file is the source of truth for the School + Home Map. Do not silently drop
 - If not, show best nearby or on-route VPK options.
 - Label secular / religious affiliation clearly.
 - Show hours, full-day/aftercare when known, and two-dropoff impact.
+- For ratings, state grades, bell times, aftercare, and admission claims, show the source, school year or checked date in the school detail. When those fields are missing, label the claim as unverified in that same card.
 - Prefer VPK that minimizes total morning drive.
 
 ## 4. Rental rules
@@ -255,6 +256,8 @@ Every future update follows:
 - A review pass must never silently shrink the research set. Any hidden/pruned record needs an explicit reason.
 - Push work in coherent blocks (UI rules, data corrections, research additions, backup refresh) so a later interruption does not lose completed work.
 - Before calling a Zillow record rent or sale, check the direct listing page when possible. If a user reports a mismatch, re-open that exact URL and record the check date/status.
+- A property may appear in current counts, previews, pins, or school detail lists only when `active:true`, `directStatusVerified:true`, and `checked` is a valid date no more than 3 days old. `directStatusVerified` means the linked direct listing page was opened and showed the current status. Aggregator/search cards alone do not qualify. Missing/old/future check dates, missing verification fields, and missing `active` values fail closed; preserve the record in research history and recheck before showing it as current.
+- Property status copy must use a calendar date; do not save relative phrases such as “available today” as enduring status text. When no properties pass the current check gate, state that availability needs rechecking; do not describe that as low market inventory.
 - Current example: 1400 NE 54th St APT 102, Fort Lauderdale, FL 33334 is currently a **rental** on Zillow as of 2026-09-21; keep its direct-source status in the data.
 - For listings with image URLs already researched, show up to **4 embedded preview photos** in the detail card. Do not regress those records to link-only.
 - Photo backfill remains a required research task for active rentals without embedded previews.

@@ -52,13 +52,15 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 <main class="mapwrap"><div id="map"></div><div class="status" id="status">Loading map pins…</div>
 <section class="detail" id="detail"><button class="close" id="close">×</button><div class="small" id="dtype"></div><h2 id="dtitle"></h2><div class="small" id="daddr"></div><div class="chips" id="chips"></div><div id="photoStrip" class="photos"></div><div class="small" id="dtext"></div><div id="commuteBox" class="infoBox"></div><div id="historyBox" class="infoBox"></div><div class="links" id="links"></div></section>
 </main></div>
-<article class="schoolPage" id="schoolPage" role="dialog" aria-modal="true" aria-label="School details" aria-labelledby="schoolPageTitle"><div class="topbar"><button class="mini" id="backToMap">← Map</button><select id="schoolDetailMenu" aria-label="Choose school detail page"></select></div><h2 id="schoolPageTitle" tabindex="-1"></h2><p id="schoolPageAddress"></p><section class="fit" id="schoolPageFit" aria-live="polite"><h3>School drive from your current area</h3><p id="schoolPageFitText">Calculating a base route from the saved Pompano address…</p></section><section><h3>Work-trip comparison</h3><div id="schoolPageCommutes" class="commuteGrid" aria-live="polite">Calculating road-route estimates…</div><p class="small">Comparisons use civic-center reference points, not a workplace. OSRM road-route times exclude morning traffic and school queues. Open a live weekday route before deciding. Your preferred school drive is 10–13 minutes; a routine 20-minute drive is unacceptable.</p></section><section id="schoolPageQuality"></section><section id="schoolPageAdmission"></section><section id="schoolPageVpk"></section><section id="schoolPageRentals"></section><section id="schoolPageLinks"></section></article>
-<div class="modal" id="addModal"><div class="modalCard"><h2>Add / Update Map Item</h2><div class="small">Save a local draft on this device, or send it into the GitHub update pipeline for persistent review.</div><form id="addForm" class="formgrid">
+<article class="schoolPage" id="schoolPage" role="dialog" aria-modal="true" aria-label="School details" aria-labelledby="schoolPageTitle"><div class="topbar"><button class="mini" id="backToMap">← Map</button><select id="schoolDetailMenu" aria-label="Choose school detail page"></select></div><h2 id="schoolPageTitle" tabindex="-1"></h2><p id="schoolPageAddress"></p><section id="schoolPageAdmission"></section><section id="schoolPageVpk"></section><section class="fit" id="schoolPageFit" aria-live="polite"><h3>School drive from your current area</h3><p id="schoolPageFitText">Calculating a base route…</p></section><section><h3>Work-trip comparison</h3><div id="schoolPageCommutes" class="commuteGrid" aria-live="polite">Calculating road-route estimates…</div><p class="small">Destinations are civic-center reference points, not workplaces. Added commute is home → school → destination compared with home → destination, using traffic-free OSRM estimates. School-hour traffic and queues are excluded. Open a live weekday route before deciding. Your preferred school drive is 10–13 minutes; a routine 20-minute drive is unacceptable.</p></section><section id="schoolPageQuality"></section><section id="schoolPageRentals"></section><section id="schoolPageLinks"></section></article>
+<div class="modal" id="addModal"><div class="modalCard"><h2>Add / Update Map Item</h2><div class="small">Property pins count as current only with an available status on the direct listing page, its URL, and a check date no more than 3 days old. Save a local draft on this device, or send it into the GitHub update pipeline for persistent review.</div><form id="addForm" class="formgrid">
 <label>Category<select id="fType"><option value="rent">Rental</option><option value="sale">Sale</option><option value="school">School</option><option value="vpk">VPK</option></select></label>
 <label>School area / group<input id="fGroup" placeholder="e.g. weston"></label>
 <label class="span2">Name<input id="fName" required></label>
 <label class="span2">Address<input id="fAddress" required></label>
 <label>Price<input id="fPrice" type="number"></label><label>Beds / Baths<input id="fBedsBaths" placeholder="3 / 2"></label>
+<label>Listing status<select id="fListingStatus"><option value="unverified">Not verified — keep off map</option><option value="current">Available on direct listing page</option><option value="inactive">Unavailable / pending / sold</option></select></label>
+<label>Direct page checked<input id="fChecked" type="date" aria-label="Direct listing page check date"></label>
 <label>Pool type<select id="fPool"><option value="none">None</option><option value="private">Private</option><option value="community">Community</option><option value="unknown">Unknown pool</option></select></label>
 <label>Backyard<input id="fBackyard" placeholder="private / none / unknown"></label>
 <label class="span2">Source link<input id="fUrl" type="url"></label>
@@ -71,6 +73,7 @@ const CUSTOM_KEY="schoolHomeCustomItemsV1";
 const GEO_KEY="schoolHomeGeo";
 const ROUTE_KEY="schoolHomeRoutesV2";
 const ROUTE_CACHE_TTL=30*24*60*60*1000;
+const LISTING_MAX_AGE_DAYS=3;
 const baseData=window.SCHOOL_HOME_MAP_DATA||[];
 let customItems=[];
 try{customItems=JSON.parse(localStorage.getItem(CUSTOM_KEY)||"[]")}catch(e){customItems=[]}
@@ -89,8 +92,16 @@ const homeRecord=D.find(x=>x.type==="home");
 
 function fmt(p){if(!p)return "";return p>=1000000?"$"+(p/1000000).toFixed(p%1000000?1:0)+"M":p>=100000?"$"+Math.round(p/1000)+"K":"$"+(p/1000).toFixed(1)+"K"}
 function schoolName(g){const s=D.find(x=>x.type==="school"&&x.group===g);return s?s.name:g}
-function rentalCount(g){return D.filter(x=>x.type==="rent"&&x.group===g&&x.active!==false&&rentalPreferencePass(x)&&(!x.price||x.price<=state.rent)).length}
-function saleCount(g){return D.filter(x=>x.type==="sale"&&x.group===g&&x.active!==false).length}
+function schoolRatingLabel(s){return s.rating?(s.ratingSource&&/(checked|verified).{0,12}20\d\d/i.test(s.rating)?s.rating:s.rating+" · source/date unverified"):"Rating unverified"}
+function schoolGradeLabel(s){return s.grade?(s.gradeSource&&/20\d\d/.test(s.grade)&&s.gradeChecked?s.grade:s.grade+" · source/year unverified"):"State grade unverified"}
+function listingIsCurrent(d){
+  if((d.type!=="rent"&&d.type!=="sale")||d.active!==true||d.directStatusVerified!==true||!/^\d{4}-\d{2}-\d{2}$/.test(String(d.checked||"")))return false;
+  const checkedAt=Date.parse(d.checked+"T00:00:00");
+  const age=Date.now()-checkedAt;
+  return Number.isFinite(checkedAt)&&age>=0&&age<=LISTING_MAX_AGE_DAYS*24*60*60*1000;
+}
+function rentalCount(g){return D.filter(x=>x.type==="rent"&&x.group===g&&listingIsCurrent(x)&&rentalPreferencePass(x)&&(!x.price||x.price<=state.rent)).length}
+function saleCount(g){return D.filter(x=>x.type==="sale"&&x.group===g&&listingIsCurrent(x)).length}
 function schoolFor(d){return D.find(x=>x.type==="school"&&x.group===d.group)}
 function hasPrivateYard(d){return /private|fenced|yard/i.test(String(d.backyard||""))&&!/none|unknown/i.test(String(d.backyard||""))}
 function hasStrongPerk(d){return Array.isArray(d.perks)&&d.perks.length>0}
@@ -105,7 +116,7 @@ function rentalPreferencePass(d){
 }
 function saleBucketPass(d){if(d.type!=="sale"||state.saleBucket==="all")return true;const p=Number(d.price||0);if(state.saleBucket==="300")return p>=250000&&p<=399999;if(state.saleBucket==="450")return p>=400000&&p<=550000;if(state.saleBucket==="675")return p>=600000&&p<=750000;return true}
 function visible(d){
-  if(d.active===false)return false;
+  if((d.type==="rent"||d.type==="sale")&&!listingIsCurrent(d))return false;
   if(d.type==="home")return true;
   if(d.type==="school")return state.types.has("school")&&(state.filterGroup==="all"||d.group===state.filterGroup);
   if(!state.types.has(d.type))return false;if(d.type==="sale"&&!saleBucketPass(d))return false;
@@ -193,7 +204,7 @@ function timeMinus(hhmm,mins){
 function chips(d){
   const c=[];
   if(d.type==="home")c.push("CURRENT HOME");
-  if(d.type==="school")c.push(d.rating,d.grade,d.aff,d.grades,rentalCount(d.group)+" rental candidates",d.admission,d.movingHelps?"Moving helps: "+d.movingHelps:"");
+  if(d.type==="school")c.push(schoolRatingLabel(d),schoolGradeLabel(d),d.aff,d.grades,rentalCount(d.group)+" rental candidates",d.admission,d.movingHelps?"Moving helps: "+d.movingHelps:"");
   if(d.type==="vpk")c.push(d.aff,"VPK",d.hours||"");
   if(d.type==="rent"||d.type==="sale")c.push(d.type==="rent"?"RENT":"FOR SALE",fmt(d.price),(d.beds||"?")+" bd",(d.baths||"?")+" ba",d.sqft?d.sqft.toLocaleString()+" sqft":"",d.propertyType||"",poolLabel(d),d.backyard&&d.backyard!=="unknown"?"Yard: "+d.backyard:"",d.match||"",d.referenceOnly?"REFERENCE":"");
   return c.filter(Boolean);
@@ -279,7 +290,7 @@ async function show(d){
   commuteBox.innerHTML=await commuteHtml(d);
 }
 function listMeta(d){
-  if(d.type==="school"){const ct=schoolCounts(d.group);return [d.rating,d.aff,d.grades,ct.rentals+" rentals",ct.sales+" sales",d.admission,d._homeRoute?"🏠 "+d._homeRoute.minutes+"m · "+d._homeRoute.miles+"mi":""].filter(Boolean).join(" · ");}
+  if(d.type==="school"){const ct=schoolCounts(d.group);return [schoolRatingLabel(d),d.aff,d.grades,ct.rentals+" rentals",ct.sales+" sales",d.admission,d._homeRoute?"🏠 "+d._homeRoute.minutes+"m · "+d._homeRoute.miles+"mi":""].filter(Boolean).join(" · ");}
   if(d.type==="vpk")return [d.aff,"VPK"].filter(Boolean).join(" · ");
   if(d.type==="rent"||d.type==="sale"){
     const bits=[fmt(d.price),(d.beds||"?")+" bd / "+(d.baths||"?")+" ba",d.sqft?d.sqft.toLocaleString()+" sqft":"",poolLabel(d),hasPrivateYard(d)?"PRIVATE YARD":"",d.propertyType||"",d.match||"",d.referenceOnly?"REFERENCE":""];
@@ -305,7 +316,7 @@ function renderList(){
 function apply(){marks.forEach((m,d)=>{if(visible(d)){if(!map.hasLayer(m))m.addTo(map)}else if(map.hasLayer(m))map.removeLayer(m)});renderList()}
 function updateFocusLabel(){
   const active=state.filterGroup==="all"?state.focusGroup:state.filterGroup;
-  const rc=rentalCount(active),note=rc<7?" · limited matching rental inventory right now":"";focusLabel.innerHTML=(state.filterGroup==="all"?"All schools shown · focused on ":"Filtered to ")+"<b>"+schoolName(active)+"</b> · "+rc+" rent / "+saleCount(active)+" sale"+note;
+  const rc=rentalCount(active),sc=saleCount(active),note=rc===0&&sc===0?" · rental and sale status need rechecking":rc===0?" · rental availability needs rechecking":rc<7?" · fewer than 7 recently verified rentals":"";focusLabel.innerHTML=(state.filterGroup==="all"?"All schools shown · focused on ":"Filtered to ")+"<b>"+schoolName(active)+"</b> · "+rc+" rent / "+sc+" sale"+note;
 }
 function populateSchoolOptions(){
   const current=schoolSel.value||"all";
@@ -329,7 +340,7 @@ function previewScore(d){
   return s;
 }
 function salePreviewForGroup(g,limit=3){
-  const sales=D.filter(x=>x.group===g&&x.type==="sale"&&x.active!==false);
+  const sales=D.filter(x=>x.group===g&&x.type==="sale"&&listingIsCurrent(x));
   const buckets=[
     sales.filter(x=>(x.price||0)>=250000&&(x.price||0)<=399999),
     sales.filter(x=>(x.price||0)>=400000&&(x.price||0)<=550000),
@@ -349,7 +360,7 @@ function salePreviewForGroup(g,limit=3){
   return out.slice(0,limit);
 }
 function previewItemsForGroup(g,rentLimit=10,saleLimit=3){
-  const eligible=D.filter(x=>x.group===g&&x.type==="rent"&&x.active!==false&&rentalPreferencePass(x)&&(!x.price||x.price<=state.rent));
+  const eligible=D.filter(x=>x.group===g&&x.type==="rent"&&listingIsCurrent(x)&&rentalPreferencePass(x)&&(!x.price||x.price<=state.rent));
   const ranked=a=>a.slice().sort((x,y)=>previewScore(y)-previewScore(x)||(x.price||99999)-(y.price||99999));
   const isHouse=x=>/single-family|single family|house/i.test(String(x.propertyType||""));
   const isTown=x=>/townhouse|townhome/i.test(String(x.propertyType||""));
@@ -459,7 +470,16 @@ function addDynamicFilters(){
 function readAddForm(){
   const bb=document.getElementById("fBedsBaths").value.split("/").map(x=>parseFloat(x.trim()));
   const poolType=document.getElementById("fPool").value;
-  return {type:document.getElementById("fType").value,group:document.getElementById("fGroup").value.trim()||"custom",name:document.getElementById("fName").value.trim(),address:document.getElementById("fAddress").value.trim(),price:+document.getElementById("fPrice").value||undefined,beds:bb[0]||undefined,baths:bb[1]||undefined,pool:poolType!=="none",poolType,backyard:document.getElementById("fBackyard").value.trim()||"unknown",url:document.getElementById("fUrl").value.trim(),note:document.getElementById("fNotes").value.trim(),custom:true};
+  const type=document.getElementById("fType").value,status=document.getElementById("fListingStatus").value,checked=document.getElementById("fChecked").value,url=document.getElementById("fUrl").value.trim();
+  const item={type,group:document.getElementById("fGroup").value.trim()||"custom",name:document.getElementById("fName").value.trim(),address:document.getElementById("fAddress").value.trim(),price:+document.getElementById("fPrice").value||undefined,beds:bb[0]||undefined,baths:bb[1]||undefined,pool:poolType!=="none",poolType,backyard:document.getElementById("fBackyard").value.trim()||"unknown",url,note:document.getElementById("fNotes").value.trim(),custom:true};
+  if(type==="rent"||type==="sale"){
+    const verifiedCurrent=status==="current"&&Boolean(checked)&&/^https?:\/\//i.test(url);
+    item.active=verifiedCurrent;
+    item.directStatusVerified=verifiedCurrent;
+    item.checked=checked||undefined;
+    if(!verifiedCurrent)item.inactiveReason=status==="inactive"?"Marked unavailable in Add / Update form.":"Enter the direct listing URL and check date to include this property as current.";
+  }
+  return item;
 }
 function saveLocal(item){
   customItems.push(item);localStorage.setItem(CUSTOM_KEY,JSON.stringify(customItems));D.push(item);populateSchoolOptions();addPoint(item).then(()=>{apply();renderList()});
@@ -494,19 +514,21 @@ function detailLink(box,label,url){
 function routeFreshness(route){return route?.stale?"cached estimate from "+new Date(route.checkedAt).toLocaleDateString()+"; refresh failed":"checked "+(route?.checkedAt?new Date(route.checkedAt).toLocaleDateString():"date unavailable")}
 async function renderSchoolPageCommutes(s){
   const box=document.getElementById("schoolPageCommutes");box.replaceChildren();
-  const places=[{name:"Current area",address:homeRecord.address},...workDestinations];
+  const places=[{name:"School drive",address:homeRecord.address,currentArea:true},...workDestinations];
   await Promise.all(places.map(async destination=>{
     const card=document.createElement("div"),title=document.createElement("b"),line=document.createElement("p");
     title.textContent=destination.name;line.textContent="Road estimate unavailable";card.append(title,line);box.appendChild(card);
     try{
-      const route=await routeInfo(s,destination);
-      if(destination.name==="Current area")line.textContent=route.minutes+" min · "+route.miles+" mi (school → saved home; no traffic; "+routeFreshness(route)+")";
+      const homeSchool=await routeInfo(homeRecord,s);
+      if(destination.currentArea)line.textContent=homeSchool.minutes+" min · "+homeSchool.miles+" mi one way from current area; traffic-free estimate · "+routeFreshness(homeSchool);
       else{
-        const baseline=await routeInfo(homeRecord,destination),delta=route.minutes-baseline.minutes;
-        line.textContent=route.minutes+" min ("+(delta>0?"+":"")+delta+" min vs current area) · no traffic · "+routeFreshness(route);
+        const [schoolCity,direct]=await Promise.all([routeInfo(s,destination),routeInfo(homeRecord,destination)]);
+        const totalMinutes=homeSchool.minutes+schoolCity.minutes,delta=totalMinutes-direct.minutes;
+        const totalMiles=+(homeSchool.miles+schoolCity.miles).toFixed(1);
+        line.textContent="Via school: "+totalMinutes+" min · "+totalMiles+" mi ("+(delta>0?"+":"")+delta+" min vs direct home trip) · traffic-free estimate · "+routeFreshness(homeSchool)+"; "+routeFreshness(schoolCity);
       }
     }catch(e){}
-    detailLink(card,"Check live weekday route",directionsUrl(s,destination));
+    detailLink(card,destination.currentArea?"Check live school drive":"Check live weekday route",destination.currentArea?directionsUrl(homeRecord,s):directionsUrl(homeRecord,destination,s));
   }));
 }
 function openSchoolPage(group){
@@ -516,23 +538,35 @@ function openSchoolPage(group){
   schoolDetailMenu.value=group;schoolPage.classList.add("show");schoolPage.scrollTop=0;
   document.getElementById("schoolPageTitle").textContent=s.name;
   document.getElementById("schoolPageAddress").textContent=s.address;
-  document.querySelector("#schoolPage .commuteGrid + p").textContent="Destinations are civic-center reference points in Fort Lauderdale, Miami, Boca Raton and Weston, not a workplace. OSRM road-route times exclude morning traffic and school queues; open a live weekday route before deciding.";
+  document.querySelector("#schoolPage .commuteGrid + p").textContent="Destinations are civic-center reference points in Fort Lauderdale, Miami, Boca Raton and Weston, not a workplace. Added commute is home → school → destination compared with home → destination. OSRM estimates exclude morning traffic and school queues; open a live weekday route before deciding.";
   const fitText=document.getElementById("schoolPageFitText");fitText.textContent="Calculating a base route from "+homeRecord.address+"…";
   routeInfo(homeRecord,s).then(r=>{if(!schoolPage.classList.contains("show")||schoolDetailMenu.value!==s.group)return;fitText.textContent="Base estimate: "+r.minutes+" min one way · "+r.miles+" mi. "+(r.minutes>20?"This is already beyond the stated 20-minute hard limit before morning traffic.":r.minutes>13?"This is already above the preferred 10–13 minute range before morning traffic.":"This is within the preferred 10–13 minute range before morning traffic.")+" "+routeFreshness(r)+". This is a traffic-free route estimate, not a school-hour commute."}).catch(()=>{fitText.textContent="Base route unavailable. Use the live route link below and check the trip during school drop-off hours."});
-  const quality=setDetailText("schoolPageQuality","School snapshot",[s.rating,s.grade,s.aff,s.grades,"School schedule: "+(s.hours||(s.start&&s.end?s.start+"–"+s.end:"confirm for 2027–28")),s.after].filter(Boolean).join(" · "));
+  const admission=setDetailText("schoolPageAdmission","Can Caio attend?",[s.admission,s.movingHelps?"Current-address / move impact: "+s.movingHelps:"",s.applicationTiming,s.admissionsChecked?"Admission details checked "+s.admissionsChecked:"",s.note,"Next: "+(s.admission==="Lab school lottery"?"Track the submitted application and wait for the decision.":s.movingHelps&&/Only if exact address/i.test(s.movingHelps)?"Check the exact address with the district before committing to a lease.":"Confirm the school's current admission route and exact address assignment.")].filter(Boolean).join(" · "));
+  detailLink(admission,"Official admission / boundary information",s.admissionsSource);
+  detailLink(admission,"Choice admission policy",s.admissionsPolicySource);
+  const qualityFacts=[s.rating,s.grade,s.aff,s.grades,"School schedule: "+(s.hours||(s.start&&s.end?s.start+"–"+s.end:"confirm for 2027–28")),s.after].filter(Boolean);
+  const evidenceGaps=[];
+  if(s.rating&&(!s.ratingSource||!/(checked|verified).{0,12}20\d\d/i.test(s.rating)))evidenceGaps.push("rating source or check date missing");
+  if(s.grade&&(!s.gradeSource||!/20\d\d/.test(s.grade)||!s.gradeChecked))evidenceGaps.push("grade source, school year, or check date missing");
+  if((s.start||s.end||s.hours)&&(!s.scheduleSource||!/(20\d\d)/.test(s.hours||"")||!s.scheduleChecked))evidenceGaps.push("bell-time source, school year, or check date missing");
+  if(s.after&&(!s.afterSource||!s.afterChecked))evidenceGaps.push("aftercare source or check date missing");
+  if(s.admission&&(!s.admissionsSource&&!s.admissionsPolicySource||!s.admissionsChecked))evidenceGaps.push("admission source or check date missing");
+  const checkedDates=[s.rating&&/(checked|verified).{0,12}20\d\d/i.test(s.rating)?"rating "+(s.rating.match(/20\d\d-\d\d-\d\d/)||[])[0]:"",s.gradeChecked?"state grade "+s.gradeChecked:"",s.scheduleChecked?"schedule "+s.scheduleChecked:"",s.afterChecked?"aftercare "+s.afterChecked:""].filter(Boolean);
+  if(checkedDates.length)qualityFacts.push("Evidence checked: "+checkedDates.join("; "));
+  if(evidenceGaps.length)qualityFacts.push("Evidence gaps: "+evidenceGaps.join("; "));
+  const quality=setDetailText("schoolPageQuality","School snapshot",qualityFacts.join(" · "));
   detailLink(quality,"GreatSchools rating source",s.ratingSource);
   detailLink(quality,"Florida school-grade source",s.gradeSource);
   detailLink(quality,"School arrival / dismissal schedule",s.scheduleSource);
-  const admission=setDetailText("schoolPageAdmission","Admission and timing",[s.admission,s.movingHelps?"Moving nearby: "+s.movingHelps:"",s.applicationTiming,s.note].filter(Boolean).join(" · "));
-  detailLink(admission,"Official admission / boundary information",s.admissionsSource);
-  detailLink(admission,"Choice admission policy",s.admissionsPolicySource);
+  detailLink(quality,"Before/aftercare provider directory",s.afterSource);
   const vpk=D.filter(x=>x.type==="vpk"&&x.group===group);
-  const vpkBox=setDetailText("schoolPageVpk","Mia’s VPK bridge",[s.vpk,s.vpkDetails,vpk.length?"Mapped options: "+vpk.map(x=>x.name).join(", "):(s.vpkOnSite?"On-site program advertised; seat unconfirmed.":"No specific VPK provider verified for this school area yet."),"Confirm VPK eligibility, seat, hours and a two-drop-off morning route for 2027–28."].filter(Boolean).join(" · "));
+  const vpkBox=setDetailText("schoolPageVpk","Mia’s VPK plan",[s.vpk,s.vpkDetails,"Confirm eligibility, actual seat, free instructional hours, paid wraparound care and the second-drop-off route for 2027–28.","Status: "+(s.vpkOnSite?"Program advertised; seat and hours unconfirmed.":"Provider/seat not confirmed.")].filter(Boolean).join(" · "));
   detailLink(vpkBox,"School Pre-K/VPK program",s.vpkSource);
-  const rentals=D.filter(x=>x.type==="rent"&&x.group===group&&x.active!==false&&rentalPreferencePass(x));
-  const rentalBox=setDetailText("schoolPageRentals","Nearby rental research",rentals.length?"Current map research: "+rentals.length+" candidates. Listings are examples of area feasibility, not 2027–28 inventory. Verify availability, pool/yard and exact school assignment before applying.":"No individual rental listing in this area has been verified for this update. Search for 3+/2+ houses with a private pool first, then a private yard; consider an exceptionally spacious 2/2 pool house. Target about $4,000, usual stretch $4,500. Verify exact school assignment for each address.");
+  if(vpk.length){const ul=document.createElement("ul");vpk.forEach(provider=>{const li=document.createElement("li"),a=document.createElement("a");a.href=provider.url;a.target="_blank";a.rel="noopener";a.textContent=provider.name;li.appendChild(a);li.appendChild(document.createTextNode(" — "+(provider.note||"seat and hours unconfirmed")));ul.appendChild(li)});vpkBox.appendChild(ul)}
+  const rentals=D.filter(x=>x.type==="rent"&&x.group===group&&listingIsCurrent(x)&&rentalPreferencePass(x));
+  const rentalBox=setDetailText("schoolPageRentals","Nearby rental research",rentals.length?"Current map research: "+rentals.length+" recently verified candidates. Listings are examples of area feasibility, not 2027–28 inventory. Verify availability, pool/yard and exact school assignment before applying.":"No recently verified individual rental listings in this area. This is a research-status gap, not evidence that rental inventory is limited. Search for 3+/2+ houses with a private pool first, then a private yard; consider an exceptionally spacious 2/2 pool house. Target about $4,000, usual stretch $4,500. Verify exact school assignment for each address.");
   if(rentals.length){const ul=document.createElement("ul");rentals.slice(0,8).forEach(r=>{const li=document.createElement("li"),a=document.createElement("a");a.href=r.url;a.target="_blank";a.rel="noopener";a.textContent=r.name+" · "+fmt(r.price)+" · "+r.beds+"/"+r.baths+" · "+(r.poolType||"pool unknown")+" · checked "+(r.checked||"date unknown");li.appendChild(a);ul.appendChild(li)});rentalBox.appendChild(ul)}
-  if(Array.isArray(s.areaExamples)){const h=document.createElement("h3");h.textContent="Recent area examples (school assignment unverified)";rentalBox.appendChild(h);const ul=document.createElement("ul");s.areaExamples.forEach(r=>{const li=document.createElement("li"),a=document.createElement("a");a.href=r.url;a.target="_blank";a.rel="noopener";a.textContent=r.name;li.append(a,document.createTextNode(" — "+r.summary));ul.appendChild(li)});rentalBox.appendChild(ul)}
+  if(Array.isArray(s.areaExamples)){const h=document.createElement("h3");h.textContent="Historical area examples — availability and assignment unverified";rentalBox.appendChild(h);const ul=document.createElement("ul");s.areaExamples.forEach(r=>{const li=document.createElement("li"),a=document.createElement("a");a.href=r.url;a.target="_blank";a.rel="noopener";a.textContent=r.name;li.append(a,document.createTextNode(" — "+r.summary));ul.appendChild(li)});rentalBox.appendChild(ul)}
   const searches=document.createElement("div");searches.className="rentalSearch";rentalBox.appendChild(searches);
   const city=s.schoolCity||s.address.split(",").at(-2)?.trim()||s.address;
   detailLink(searches,"Search current houses near "+city,"https://www.realtor.com/apartments/"+encodeURIComponent(city.replaceAll(" ","-"))+"_FL/type-single-family-home/beds-3-3");
@@ -572,7 +606,7 @@ const initialSchool=new URLSearchParams(location.hash.slice(1)).get("school");if
   await preloadAllGroupPreviews(10,3);
   apply();fitCore();
   await loadGroup(state.focusGroup);apply();enrichGroupCommutes(state.focusGroup);
-  statusEl.style.display="block";statusEl.textContent="All school areas loaded · counted rentals + 3 sale previews shown";
+  statusEl.style.display="block";statusEl.textContent="School areas loaded · property pins appear after a recent direct status check";
   setTimeout(()=>statusEl.style.display="none",2600);
 })();
 </script></body></html>
