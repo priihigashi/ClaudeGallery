@@ -105,6 +105,15 @@ function listingIsCurrent(d){
 function rentalCount(g){return D.filter(x=>x.type==="rent"&&x.group===g&&listingIsCurrent(x)&&rentalPreferencePass(x)&&(!x.price||x.price<=state.rent)).length}
 function saleCount(g){return D.filter(x=>x.type==="sale"&&x.group===g&&listingIsCurrent(x)).length}
 function schoolFor(d){return D.find(x=>x.type==="school"&&x.group===d.group)}
+function mappedVpkFor(s){return D.filter(x=>x.type==="vpk"&&x.group===s.group)}
+async function closestMappedVpk(s){
+  if(s.vpkOnSite)return {label:s.name+" — on the school campus (0 mi)",url:s.vpkSource||s.url,onSite:true};
+  const providers=mappedVpkFor(s);
+  const routes=await Promise.allSettled(providers.map(p=>routeWithin(s,p)));
+  const measured=providers.map((p,i)=>({provider:p,route:routes[i].status==="fulfilled"?routes[i].value:null})).filter(x=>x.route).sort((a,b)=>a.route.miles-b.route.miles);
+  if(measured.length){const x=measured[0];return {label:x.provider.name+" — "+x.route.minutes+" min · "+x.route.miles+" mi from school",url:directionsUrl(s,x.provider),onSite:false,checkedCount:providers.length}}
+  return {label:providers.length?"Mapped VPK distance unavailable; closest provider not verified.":"Closest VPK provider has not been researched for this school.",url:null,onSite:false,checkedCount:providers.length};
+}
 function hasPrivateYard(d){return /private|fenced|yard/i.test(String(d.backyard||""))&&!/none|unknown/i.test(String(d.backyard||""))}
 function hasStrongPerk(d){return Array.isArray(d.perks)&&d.perks.length>0}
 function rentalPreferencePass(d){
@@ -223,7 +232,7 @@ function historyHtml(d){
 }
 function textFor(d){
   if(d.type==="home")return "Current home base used for school and property commute comparisons.";
-  if(d.type==="school")return [d.vpk,d.after,d.admission?"Admission: "+d.admission:"",d.movingHelps?"Moving nearby: "+d.movingHelps:"",d.walkability?"Walkability: "+d.walkability:"",d.neighborhoodContext?"Area context: "+d.neighborhoodContext:"",d.vpkDetails?"VPK detail: "+d.vpkDetails:"",d.rentalNote?"Rental note: "+d.rentalNote:"",d.note].filter(Boolean).join(" · ");
+  if(d.type==="school")return [d.after,d.admission?"Admission: "+d.admission:"",d.movingHelps?"Moving nearby: "+d.movingHelps:"",d.walkability?"Walkability: "+d.walkability:"",d.neighborhoodContext?"Area context: "+d.neighborhoodContext:"",d.rentalNote?"Rental note: "+d.rentalNote:"",d.note].filter(Boolean).join(" · ");
   if(d.type==="vpk")return [d.note,d.hours?"Hours: "+d.hours:""].filter(Boolean).join(" · ")||"VPK option";
   const p=[];
   p.push("Target school: "+schoolName(d.group));
@@ -245,7 +254,11 @@ async function commuteHtml(d){
       destinations.forEach((city,i)=>{const r=result(i+1);h+="<br>"+city.name+": <b>"+(r?r.minutes+" min · "+r.miles+" mi":"Road estimate unavailable")+'</b> · <a target="_blank" rel="noopener" href="'+directionsUrl(d,city)+'">live route</a>'});
       h+="<br><span class=\"small\">Planning estimates without traffic; city centers are reference points. Use live routes for school-hour traffic.</span>";
       if(home){const arrival=timeMinus(start,60),leave=timeMinus(start,60+home.minutes),wake=timeMinus(start,120+home.minutes);h+="<br><br><b>Morning plan</b><br>School starts "+timeMinus(start,0)+". For arrival 60 min early: wake ~"+wake+", leave ~"+leave+", arrive "+arrival+"."}
-      h+="<br>Mia: "+(d.vpkOnSite?"on-site VPK/Pre-K advertised; confirm her seat and hours.":"VPK location and second drop-off still need confirmation.");
+      const vpk=await closestMappedVpk(d);
+      h+="<br><br><b>Closest VPK to school</b><br>"+vpk.label;
+      if(vpk.url)h+=' · <a target="_blank" rel="noopener" href="'+vpk.url+'">'+(vpk.onSite?"program source":"route")+"</a>";
+      if(!vpk.onSite)h+="<br><span class=\"small\">Closest among "+vpk.checkedCount+" mapped candidate(s), not a complete provider search. Confirm VPK eligibility, seat and hours.</span>";
+      else h+="<br><span class=\"small\">Confirm Mia’s seat, hours and free VPK schedule for the coming term.</span>";
       return h;
     }
     if(d.type==="rent"||d.type==="sale"){
@@ -581,8 +594,14 @@ function openSchoolPage(group){
   detailLink(quality,"Florida school-grade source",s.gradeSource);
   detailLink(quality,"School arrival / dismissal schedule",s.scheduleSource);
   detailLink(quality,"Before/aftercare provider directory",s.afterSource);
-  const vpk=D.filter(x=>x.type==="vpk"&&x.group===group);
-  const vpkBox=setDetailText("schoolPageVpk","Mia’s VPK plan",[s.vpk,s.vpkDetails,"Confirm eligibility, actual seat, free instructional hours, paid wraparound care and the second-drop-off route for 2027–28.","Status: "+(s.vpkOnSite?"Program advertised; seat and hours unconfirmed.":"Provider/seat not confirmed.")].filter(Boolean).join(" · "));
+  const vpk=mappedVpkFor(s);
+  const vpkBox=setDetailText("schoolPageVpk","Closest VPK to this school","Checking mapped VPK locations…");
+  const vpkSummary=vpkBox.querySelector("p");
+  closestMappedVpk(s).then(result=>{
+    if(schoolDetailMenu.value!==group)return;
+    vpkSummary.textContent=result.label+". "+(result.onSite?"Confirm Mia’s seat, hours and free VPK schedule for the coming term.":"This compares mapped candidates only; confirm the nearest operating provider, Mia’s seat, free hours and any paid wraparound care.");
+    if(result.url)detailLink(vpkBox,result.onSite?"Program source":"School → VPK route",result.url);
+  });
   detailLink(vpkBox,"School Pre-K/VPK program",s.vpkSource);
   if(vpk.length){const ul=document.createElement("ul");vpk.forEach(provider=>{const li=document.createElement("li"),a=document.createElement("a");a.href=provider.url;a.target="_blank";a.rel="noopener";a.textContent=provider.name;li.appendChild(a);li.appendChild(document.createTextNode(" — "+(provider.note||"seat and hours unconfirmed")));ul.appendChild(li)});vpkBox.appendChild(ul)}
   const rentals=D.filter(x=>x.type==="rent"&&x.group===group&&listingIsCurrent(x)&&rentalPreferencePass(x));
