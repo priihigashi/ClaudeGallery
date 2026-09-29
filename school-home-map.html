@@ -13,6 +13,7 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 .sc{background:var(--school)}.vc{background:var(--vpk)}.rc{background:var(--rent)}.xc{background:var(--sale)}.pc{background:#ff79bd}
 .list{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:9px;display:grid;gap:7px}.item{border:1px solid var(--line);background:#1e2634;border-radius:12px;padding:10px;cursor:pointer}.item b{font-size:13px}.item .meta{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.35}.item .commute{font-size:10px;color:#d4dceb;margin-top:4px}
 .item.school{border-left:4px solid var(--school)}.item.vpk{border-left:4px solid var(--vpk)}.item.rent{border-left:4px solid var(--rent)}.item.sale{border-left:4px solid var(--sale)}
+.listingNotice{padding:9px 11px;background:#273444;border-bottom:1px solid #53647a;font-size:12px;line-height:1.4}.listingNotice a{color:#b9ddff}.listingNotice:empty{display:none}.item.property{display:flex;gap:9px;align-items:flex-start}.item.property img{width:72px;height:64px;object-fit:cover;border-radius:7px;flex:none}.item.property .itemBody{min-width:0}
 .mapwrap{position:relative;min-width:0;min-height:0;overflow:hidden}#map{height:100%;width:100%;background:#dfe5ec}.status{position:absolute;top:12px;left:12px;z-index:700;background:white;color:#1c2430;padding:9px 11px;border-radius:10px;font-size:12px;box-shadow:0 5px 18px #0002}
 .detail{position:absolute;right:16px;top:16px;bottom:auto;z-index:750;width:min(390px,calc(100% - 32px));background:#111722f2;border:1px solid #354157;border-radius:16px;padding:15px;box-shadow:0 10px 35px #0008;display:none;max-height:calc(100% - 32px);overflow:auto}.detail.show{display:block}.detail h2{margin:4px 0 6px;font-size:19px}.small{font-size:12px;color:var(--muted);line-height:1.45}.chips{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}.chip{padding:5px 8px;border-radius:999px;border:1px solid #3d485d;background:#202938;font-size:11px}.photos{display:flex;gap:7px;overflow-x:auto;margin:10px 0;padding-bottom:2px}.photos:empty{display:none}.photos img{width:132px;height:92px;object-fit:cover;border-radius:10px;border:1px solid #3b465a;flex:0 0 auto}.photoFallback{min-width:100%;padding:10px;border:1px dashed #536075;border-radius:10px;background:#121925;color:#b9c4d4;font-size:11px;line-height:1.4}.photoFallback b{color:#fff}.infoBox{margin-top:9px;padding:9px;border:1px solid #344055;border-radius:10px;background:#18202c;font-size:11px;line-height:1.45;color:#d9e1ed}.infoBox:empty{display:none}.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{display:inline-block;text-decoration:none;background:white;color:#10141c;border-radius:10px;padding:10px 12px;font-weight:800;font-size:12px;border:0}.close{position:absolute;right:8px;top:7px;background:transparent;border:0;color:#aeb7c6;font-size:22px}
 .schoolPage{position:fixed;inset:0;z-index:2500;background:#10141c;color:#f7f9fc;display:none;overflow:auto;padding:18px max(18px,calc((100vw - 900px)/2)) 50px}.schoolPage.show{display:block}.schoolPage h2{font-size:26px;margin:16px 0 5px}.schoolPage h3{font-size:16px;margin:0 0 9px}.schoolPage p,.schoolPage li{font-size:14px;line-height:1.55;color:#d9e1ed}.schoolPage section{background:#192230;border:1px solid #354157;border-radius:14px;padding:16px;margin:14px 0}.schoolPage section.fit{background:linear-gradient(120deg,#1d3342,#192230 70%);border-color:#387f8c}.schoolPage .topbar{display:flex;gap:10px;align-items:center;justify-content:space-between}.schoolPage .topbar select{max-width:65%;background:#212938;color:white;border:1px solid #46536a;border-radius:8px;padding:9px}.schoolPage .commuteGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:8px}.schoolPage .commuteGrid div{background:#101925;padding:11px;border-radius:9px}.schoolPage a{color:#9bc8ff}.schoolPage .rentalSearch{display:flex;gap:8px;flex-wrap:wrap}.schoolPage .rentalSearch a{border:1px solid #546a89;border-radius:8px;padding:9px 11px;text-decoration:none}.schoolPage button:focus-visible,.schoolPage a:focus-visible,.schoolPage select:focus-visible{outline:3px solid #7dd3fc;outline-offset:3px}
@@ -46,14 +47,14 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 <button class="filter" data-type="sale"><span class="d xc"></span>Sale S</button>
 <button class="filter off" id="poolOnly"><span class="d pc"></span>Rent + pool</button>
 </div></div>
-<div class="focus" id="focusLabel">Focused properties: <b>A.D. Henderson University School (FAU Lab School)</b> · dropdown remains All until you filter it</div><div id="list" class="list"></div>
+<div class="focus" id="focusLabel">Focused properties: <b>A.D. Henderson University School (FAU Lab School)</b> · dropdown remains All until you filter it</div><div id="listingNotice" class="listingNotice" role="status" aria-live="polite"></div><div id="list" class="list"></div>
 <div class="note">🏠 = current home. R = rent. S = sale. Pink = verified private-pool rental. Orange = community pool. Dashed orange = pool type still being verified. Blue = no pool. Route times are base estimates, not live traffic.</div>
 </aside>
 <main class="mapwrap"><div id="map"></div><div class="status" id="status">Loading map pins…</div>
 <section class="detail" id="detail"><button class="close" id="close">×</button><div class="small" id="dtype"></div><h2 id="dtitle"></h2><div class="small" id="daddr"></div><div class="chips" id="chips"></div><div id="photoStrip" class="photos"></div><div class="small" id="dtext"></div><div id="commuteBox" class="infoBox"></div><div id="historyBox" class="infoBox"></div><div class="links" id="links"></div></section>
 </main></div>
 <article class="schoolPage" id="schoolPage" role="dialog" aria-modal="true" aria-label="School details" aria-labelledby="schoolPageTitle"><div class="topbar"><button class="mini" id="backToMap">← Map</button><select id="schoolDetailMenu" aria-label="Choose school detail page"></select></div><h2 id="schoolPageTitle" tabindex="-1"></h2><p id="schoolPageAddress"></p><section id="schoolPageAdmission"></section><section id="schoolPageVpk"></section><section class="fit" id="schoolPageFit" aria-live="polite"><h3>School drive from your current area</h3><p id="schoolPageFitText">Calculating a base route…</p></section><section><h3>Work-trip comparison</h3><div id="schoolPageCommutes" class="commuteGrid" aria-live="polite">Calculating road-route estimates…</div><p class="small">Destinations are civic-center reference points, not workplaces. Added commute is home → school → destination compared with home → destination, using traffic-free OSRM estimates. School-hour traffic and queues are excluded. Open a live weekday route before deciding. Your preferred school drive is 10–13 minutes; a routine 20-minute drive is unacceptable.</p></section><section id="schoolPageQuality"></section><section id="schoolPageRentals"></section><section id="schoolPageLinks"></section></article>
-<div class="modal" id="addModal"><div class="modalCard"><h2>Add / Update Map Item</h2><div class="small">Property pins count as current only with an available status on the direct listing page, its URL, and a check date no more than 3 days old. Save a local draft on this device, or send it into the GitHub update pipeline for persistent review.</div><form id="addForm" class="formgrid">
+<div class="modal" id="addModal"><div class="modalCard"><h2>Add / Update Map Item</h2><div class="small">Property pins count as current only with an available status on the direct listing page, its URL, a photo URL, and a check date no more than 3 days old. Save a local draft on this device, or send it into the GitHub update pipeline for persistent review.</div><form id="addForm" class="formgrid">
 <label>Category<select id="fType"><option value="rent">Rental</option><option value="sale">Sale</option><option value="school">School</option><option value="vpk">VPK</option></select></label>
 <label>School area / group<input id="fGroup" placeholder="e.g. weston"></label>
 <label class="span2">Name<input id="fName" required></label>
@@ -64,6 +65,7 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 <label>Pool type<select id="fPool"><option value="none">None</option><option value="private">Private</option><option value="community">Community</option><option value="unknown">Unknown pool</option></select></label>
 <label>Backyard<input id="fBackyard" placeholder="private / none / unknown"></label>
 <label class="span2">Source link<input id="fUrl" type="url"></label>
+<label class="span2">Property photo URL<input id="fPhoto" type="url" placeholder="Direct image URL from the listing"></label>
 <label class="span2">Notes<textarea id="fNotes" rows="3"></textarea></label>
 </form><div class="modalActions"><button class="mini" id="cancelAdd">Cancel</button><button class="mini" id="localAdd">Save local draft</button><button class="btn" id="pipelineAdd">Send to GitHub pipeline</button></div></div></div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
@@ -83,7 +85,7 @@ const marks=new Map(),loaded=new Set(),loadingGroups=new Map();
 const map=L.map("map",{zoomControl:true}).setView([26.33,-80.14],10);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; OpenStreetMap"}).addTo(map);
 
-const detail=document.getElementById("detail"),dtype=document.getElementById("dtype"),dtitle=document.getElementById("dtitle"),daddr=document.getElementById("daddr"),chipsEl=document.getElementById("chips"),dtext=document.getElementById("dtext"),links=document.getElementById("links"),list=document.getElementById("list"),closeBtn=document.getElementById("close"),schoolSel=document.getElementById("school"),rentInput=document.getElementById("rent"),poolBtn=document.getElementById("poolOnly"),saleBucket=document.getElementById("saleBucket"),statusEl=document.getElementById("status"),focusLabel=document.getElementById("focusLabel"),photoStrip=document.getElementById("photoStrip"),commuteBox=document.getElementById("commuteBox"),historyBox=document.getElementById("historyBox");
+const detail=document.getElementById("detail"),dtype=document.getElementById("dtype"),dtitle=document.getElementById("dtitle"),daddr=document.getElementById("daddr"),chipsEl=document.getElementById("chips"),dtext=document.getElementById("dtext"),links=document.getElementById("links"),list=document.getElementById("list"),listingNotice=document.getElementById("listingNotice"),closeBtn=document.getElementById("close"),schoolSel=document.getElementById("school"),rentInput=document.getElementById("rent"),poolBtn=document.getElementById("poolOnly"),saleBucket=document.getElementById("saleBucket"),statusEl=document.getElementById("status"),focusLabel=document.getElementById("focusLabel"),photoStrip=document.getElementById("photoStrip"),commuteBox=document.getElementById("commuteBox"),historyBox=document.getElementById("historyBox");
 const fitAllBtn=document.getElementById("fitAllBtn"),addBtn=document.getElementById("addBtn"),addModal=document.getElementById("addModal"),cancelAdd=document.getElementById("cancelAdd"),localAdd=document.getElementById("localAdd"),pipelineAdd=document.getElementById("pipelineAdd");
 
 const geoCache=JSON.parse(localStorage.getItem(GEO_KEY)||"{}");
@@ -95,7 +97,7 @@ function schoolName(g){const s=D.find(x=>x.type==="school"&&x.group===g);return 
 function schoolRatingLabel(s){return s.rating?(s.ratingSource&&/(checked|verified).{0,12}20\d\d/i.test(s.rating)?s.rating:s.rating+" · source/date unverified"):"Rating unverified"}
 function schoolGradeLabel(s){return s.grade?(s.gradeSource&&/20\d\d/.test(s.grade)&&s.gradeChecked?s.grade:s.grade+" · source/year unverified"):"State grade unverified"}
 function listingIsCurrent(d){
-  if((d.type!=="rent"&&d.type!=="sale")||d.active!==true||d.directStatusVerified!==true||!/^\d{4}-\d{2}-\d{2}$/.test(String(d.checked||"")))return false;
+  if((d.type!=="rent"&&d.type!=="sale")||d.active!==true||d.directStatusVerified!==true||!Array.isArray(d.photos)||!d.photos.some(src=>/^https?:\/\//i.test(src))||!/^\d{4}-\d{2}-\d{2}$/.test(String(d.checked||"")))return false;
   const checkedAt=Date.parse(d.checked+"T00:00:00");
   const age=Date.now()-checkedAt;
   return Number.isFinite(checkedAt)&&age>=0&&age<=LISTING_MAX_AGE_DAYS*24*60*60*1000;
@@ -305,13 +307,32 @@ function listItems(){
 function renderList(){
   list.innerHTML="";
   listItems().forEach(d=>{
-    const e=document.createElement("div");e.className="item "+d.type;
+    const e=document.createElement("div");e.className="item "+d.type+((d.type==="rent"||d.type==="sale")?" property":"");
     const drive=d._schoolRoute?"🏫 "+d._schoolRoute.minutes+"m · "+d._schoolRoute.miles+"mi":"";
     const home=d._homeRoute?"🏠 "+d._homeRoute.minutes+"m"+(d.type==="school"?" · "+d._homeRoute.miles+"mi":""):"";
-    e.innerHTML="<b>"+d.name+"</b><div class=meta>"+listMeta(d)+"</div>"+((drive||home)?'<div class="commute">'+[drive,home].filter(Boolean).join(" · ")+"</div>":"");
+    const body=document.createElement("div");body.className="itemBody";body.innerHTML="<b>"+d.name+"</b><div class=meta>"+listMeta(d)+"</div>"+((drive||home)?'<div class="commute">'+[drive,home].filter(Boolean).join(" · ")+"</div>":"");
+    if(d.type==="rent"||d.type==="sale"){
+      const img=document.createElement("img");img.src=d.photos[0];img.alt="Photo of "+d.address;img.loading="lazy";
+      img.onerror=()=>{img.replaceWith(document.createTextNode("Photo unavailable — open listing gallery"))};
+      e.appendChild(img);
+    }
+    e.appendChild(body);
     e.onclick=async()=>{await show(d);if(d.type==="school"){state.focusGroup=d.group;updateFocusLabel();await loadGroup(d.group);apply();enrichGroupCommutes(d.group)}const m=marks.get(d);if(m)map.setView(m.getLatLng(),d.type==="school"?12:14)};
     list.appendChild(e);
   });
+  updateListingNotice();
+}
+function updateListingNotice(){
+  listingNotice.replaceChildren();
+  const group=state.filterGroup==="all"?null:state.filterGroup;
+  const verified=D.filter(d=>d.type==="rent"&&listingIsCurrent(d)&&rentalPreferencePass(d)&&(!group||d.group===group)&&(!d.price||d.price<=state.rent));
+  const selected=verified.filter(d=>state.poolMode==="all"||state.poolMode==="any"&&d.pool||d.poolType===state.poolMode);
+  if(selected.length&&state.types.has("rent"))return;
+  const label=state.poolMode==="private"?"private-pool rentals":state.poolMode==="community"?"community-pool rentals":state.poolMode==="any"?"pool rentals":"rentals";
+  const p=document.createElement("span");p.textContent=state.types.has("rent")?"No recently verified active "+label+" under $"+state.rent.toLocaleString()+(group?" for this school area":" across the map")+". This does not mean none exist. Older listings are hidden until availability and a photo are checked again.":"Rental pins are turned off. Turn on Rent R to see verified listings.";listingNotice.appendChild(p);
+  if(state.poolMode!=="all"){
+    const b=document.createElement("button");b.type="button";b.className="mini";b.textContent="Clear pool filter";b.style.marginLeft="8px";b.onclick=()=>{state.poolMode="all";syncPoolButtons();apply()};listingNotice.appendChild(b);
+  }
 }
 function apply(){marks.forEach((m,d)=>{if(visible(d)){if(!map.hasLayer(m))m.addTo(map)}else if(map.hasLayer(m))map.removeLayer(m)});renderList()}
 function updateFocusLabel(){
@@ -470,14 +491,14 @@ function addDynamicFilters(){
 function readAddForm(){
   const bb=document.getElementById("fBedsBaths").value.split("/").map(x=>parseFloat(x.trim()));
   const poolType=document.getElementById("fPool").value;
-  const type=document.getElementById("fType").value,status=document.getElementById("fListingStatus").value,checked=document.getElementById("fChecked").value,url=document.getElementById("fUrl").value.trim();
-  const item={type,group:document.getElementById("fGroup").value.trim()||"custom",name:document.getElementById("fName").value.trim(),address:document.getElementById("fAddress").value.trim(),price:+document.getElementById("fPrice").value||undefined,beds:bb[0]||undefined,baths:bb[1]||undefined,pool:poolType!=="none",poolType,backyard:document.getElementById("fBackyard").value.trim()||"unknown",url,note:document.getElementById("fNotes").value.trim(),custom:true};
+  const type=document.getElementById("fType").value,status=document.getElementById("fListingStatus").value,checked=document.getElementById("fChecked").value,url=document.getElementById("fUrl").value.trim(),photo=document.getElementById("fPhoto").value.trim();
+  const item={type,group:document.getElementById("fGroup").value.trim()||"custom",name:document.getElementById("fName").value.trim(),address:document.getElementById("fAddress").value.trim(),price:+document.getElementById("fPrice").value||undefined,beds:bb[0]||undefined,baths:bb[1]||undefined,pool:poolType!=="none",poolType,backyard:document.getElementById("fBackyard").value.trim()||"unknown",url,photos:photo?[photo]:[],note:document.getElementById("fNotes").value.trim(),custom:true};
   if(type==="rent"||type==="sale"){
-    const verifiedCurrent=status==="current"&&Boolean(checked)&&/^https?:\/\//i.test(url);
+    const verifiedCurrent=status==="current"&&Boolean(checked)&&/^https?:\/\//i.test(url)&&/^https?:\/\//i.test(photo);
     item.active=verifiedCurrent;
     item.directStatusVerified=verifiedCurrent;
     item.checked=checked||undefined;
-    if(!verifiedCurrent)item.inactiveReason=status==="inactive"?"Marked unavailable in Add / Update form.":"Enter the direct listing URL and check date to include this property as current.";
+    if(!verifiedCurrent)item.inactiveReason=status==="inactive"?"Marked unavailable in Add / Update form.":"Enter the direct listing URL, photo URL and check date to include this property as current.";
   }
   return item;
 }
@@ -492,7 +513,7 @@ poolBtn.textContent="Any pool";poolBtn.classList.add("off");poolBtn.onclick=()=>
 fitAllBtn.onclick=fitCore;
 addBtn.onclick=()=>addModal.classList.add("show");cancelAdd.onclick=()=>addModal.classList.remove("show");
 localAdd.onclick=e=>{e.preventDefault();const item=readAddForm();if(!item.name||!item.address)return;saveLocal(item);addModal.classList.remove("show")};
-pipelineAdd.onclick=e=>{e.preventDefault();const item=readAddForm();const body=["Category: "+item.type,"Group: "+item.group,"Name/address: "+item.name+" — "+item.address,"Price: "+(item.price||""),"Beds/Baths: "+(item.beds||"")+" / "+(item.baths||""),"Pool: "+item.poolType,"Backyard: "+item.backyard,"Source: "+item.url,"Notes: "+item.note].join("\n");window.open("https://github.com/priihigashi/ClaudeGallery/issues/new?title="+encodeURIComponent("[School Map] "+item.name)+"&body="+encodeURIComponent(body),"_blank")};
+pipelineAdd.onclick=e=>{e.preventDefault();const item=readAddForm();const body=["Category: "+item.type,"Group: "+item.group,"Name/address: "+item.name+" — "+item.address,"Price: "+(item.price||""),"Beds/Baths: "+(item.beds||"")+" / "+(item.baths||""),"Pool: "+item.poolType,"Backyard: "+item.backyard,"Source: "+item.url,"Photo: "+(item.photos?.[0]||""),"Notes: "+item.note].join("\n");window.open("https://github.com/priihigashi/ClaudeGallery/issues/new?title="+encodeURIComponent("[School Map] "+item.name)+"&body="+encodeURIComponent(body),"_blank")};
 addModal.addEventListener("click",e=>{if(e.target===addModal)addModal.classList.remove("show")});
 
 const schoolPage=document.getElementById("schoolPage"), schoolDetailMenu=document.getElementById("schoolDetailMenu");
