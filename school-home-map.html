@@ -9,6 +9,7 @@
 body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-columns:360px minmax(0,1fr)}.side{height:100%;min-height:0;background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;min-width:0;overflow:hidden;z-index:1000}
 .head{padding:14px;border-bottom:1px solid var(--line)}.headrow{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}.headrow>div:first-child{min-width:0}h1{font-size:20px;margin:0 0 5px}.head p{font-size:12px;line-height:1.4;color:var(--muted);margin:0}.toolbar{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}.mini{appearance:none;border:1px solid #3a465b;background:#202938;color:#fff;text-decoration:none;border-radius:8px;padding:7px 8px;font-size:10px;font-weight:800;cursor:pointer;white-space:nowrap}
 .controls{padding:10px;border-bottom:1px solid var(--line);display:grid;gap:8px}.controls select,.controls input{width:100%;background:#212938;border:1px solid #354157;color:#fff;padding:10px;border-radius:10px;font-size:15px}
+.schoolFilter{border:1px solid #354157;border-radius:10px;background:#212938}.schoolFilter summary{padding:10px;cursor:pointer;font-size:14px;font-weight:700}.schoolChoices{max-height:220px;overflow:auto;padding:6px 10px 10px;border-top:1px solid #354157;display:grid;gap:6px}.schoolChoices label{display:flex;gap:8px;align-items:center;font-size:12px;line-height:1.3}.schoolChoices input{width:auto;flex:none}.schoolChoices .allSchools{font-weight:800;border-bottom:1px solid #354157;padding-bottom:7px}
 .legend{display:flex;flex-wrap:wrap;gap:6px}.filter{border:1px solid #46536a;background:#293447;color:#fff;border-radius:999px;padding:8px 10px;font-size:12px;font-weight:700;cursor:pointer;transition:.12s ease}.filter.off{opacity:1;background:#141a24;color:#aab4c3;border-style:dashed}.filter:active{transform:scale(.98)}.d{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
 .sc{background:var(--school)}.vc{background:var(--vpk)}.rc{background:var(--rent)}.xc{background:var(--sale)}.pc{background:#ff79bd}
 .list{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:9px;display:grid;gap:7px}.item{border:1px solid var(--line);background:#1e2634;border-radius:12px;padding:10px;cursor:pointer}.item b{font-size:13px}.item .meta{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.35}.item .commute{font-size:10px;color:#d4dceb;margin-top:4px}
@@ -38,7 +39,7 @@ body{overflow:hidden}.app{height:100%;min-height:0;display:grid;grid-template-co
 <aside class="side">
 <div class="head"><div class="headrow"><div><h1>School + Home Map</h1><p>Schools + Mia's VPK bridge + rentals + future sale references.</p></div><div class="toolbar"><button class="mini" id="fitAllBtn">Fit all</button><button class="mini" id="schoolMenuBtn">School details</button><a class="mini" href="./school-home-map-rules.html">Instructions</a><button class="mini" id="addBtn">Add / Update</button></div></div></div>
 <div class="controls">
-<select id="school"><option value="all">All school areas</option></select>
+<details id="schoolFilter" class="schoolFilter"><summary id="schoolFilterSummary">School areas: all shown</summary><div id="schoolChoices" class="schoolChoices"></div></details>
 <input id="rent" type="number" min="0" step="50" value="4500" aria-label="Max rent"><select id="saleBucket" aria-label="Sale price range"><option value="all">Sale: all prices</option><option value="300">Sale: ~$250–399K</option><option value="450">Sale: ~$400–550K</option><option value="675">Sale: ~$600–750K</option></select>
 <div class="legend">
 <button class="filter" data-type="school"><span class="d sc"></span>Schools</button>
@@ -80,12 +81,12 @@ const baseData=window.SCHOOL_HOME_MAP_DATA||[];
 let customItems=[];
 try{customItems=JSON.parse(localStorage.getItem(CUSTOM_KEY)||"[]")}catch(e){customItems=[]}
 const D=baseData.concat(customItems);
-const state={filterGroup:"all",focusGroup:"adh",rent:4500,types:new Set(["school","vpk","rent","sale"]),poolMode:"all",yardOnly:false,saleBucket:"all"};
+const state={selectedGroups:new Set(baseData.filter(x=>x.type==="school").map(x=>x.group)),focusGroup:"adh",rent:4500,types:new Set(["school","vpk","rent","sale"]),poolMode:"all",yardOnly:false,saleBucket:"all"};
 const marks=new Map(),loaded=new Set(),loadingGroups=new Map();
 const map=L.map("map",{zoomControl:true}).setView([26.33,-80.14],10);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; OpenStreetMap"}).addTo(map);
 
-const detail=document.getElementById("detail"),dtype=document.getElementById("dtype"),dtitle=document.getElementById("dtitle"),daddr=document.getElementById("daddr"),chipsEl=document.getElementById("chips"),dtext=document.getElementById("dtext"),links=document.getElementById("links"),list=document.getElementById("list"),listingNotice=document.getElementById("listingNotice"),closeBtn=document.getElementById("close"),schoolSel=document.getElementById("school"),rentInput=document.getElementById("rent"),poolBtn=document.getElementById("poolOnly"),saleBucket=document.getElementById("saleBucket"),statusEl=document.getElementById("status"),focusLabel=document.getElementById("focusLabel"),photoStrip=document.getElementById("photoStrip"),commuteBox=document.getElementById("commuteBox"),historyBox=document.getElementById("historyBox");
+const detail=document.getElementById("detail"),dtype=document.getElementById("dtype"),dtitle=document.getElementById("dtitle"),daddr=document.getElementById("daddr"),chipsEl=document.getElementById("chips"),dtext=document.getElementById("dtext"),links=document.getElementById("links"),list=document.getElementById("list"),listingNotice=document.getElementById("listingNotice"),closeBtn=document.getElementById("close"),schoolChoices=document.getElementById("schoolChoices"),schoolFilterSummary=document.getElementById("schoolFilterSummary"),rentInput=document.getElementById("rent"),poolBtn=document.getElementById("poolOnly"),saleBucket=document.getElementById("saleBucket"),statusEl=document.getElementById("status"),focusLabel=document.getElementById("focusLabel"),photoStrip=document.getElementById("photoStrip"),commuteBox=document.getElementById("commuteBox"),historyBox=document.getElementById("historyBox");
 const fitAllBtn=document.getElementById("fitAllBtn"),addBtn=document.getElementById("addBtn"),addModal=document.getElementById("addModal"),cancelAdd=document.getElementById("cancelAdd"),localAdd=document.getElementById("localAdd"),pipelineAdd=document.getElementById("pipelineAdd");
 
 const geoCache=JSON.parse(localStorage.getItem(GEO_KEY)||"{}");
@@ -129,10 +130,9 @@ function saleBucketPass(d){if(d.type!=="sale"||state.saleBucket==="all")return t
 function visible(d){
   if((d.type==="rent"||d.type==="sale")&&!listingIsCurrent(d))return false;
   if(d.type==="home")return true;
-  if(d.type==="school")return state.types.has("school")&&(state.filterGroup==="all"||d.group===state.filterGroup);
+  if(d.type==="school")return state.types.has("school")&&state.selectedGroups.has(d.group);
   if(!state.types.has(d.type))return false;if(d.type==="sale"&&!saleBucketPass(d))return false;
-  const groupMatch=state.filterGroup==="all"?true:d.group===state.filterGroup;
-  if(!groupMatch)return false;
+  if(!state.selectedGroups.has(d.group))return false;
   if(d.type==="rent"){
     if(!rentalPreferencePass(d))return false;
     if((d.price||0)>state.rent)return false;
@@ -316,8 +316,7 @@ function listMeta(d){
   return d.note||"";
 }
 function listItems(){
-  const active=state.filterGroup==="all"?state.focusGroup:state.filterGroup;
-  return D.filter(d=>visible(d)&&(d.type!=="school"||d.group===active)&&d.type!=="home");
+  return D.filter(d=>visible(d)&&d.type!=="home");
 }
 function renderList(){
   list.innerHTML="";
@@ -339,26 +338,31 @@ function renderList(){
 }
 function updateListingNotice(){
   listingNotice.replaceChildren();
-  const group=state.filterGroup==="all"?null:state.filterGroup;
-  const verified=D.filter(d=>d.type==="rent"&&listingIsCurrent(d)&&rentalPreferencePass(d)&&(!group||d.group===group)&&(!d.price||d.price<=state.rent));
+  if(!state.selectedGroups.size){listingNotice.textContent="No school areas selected. Open School areas and check the ones you want to show.";return}
+  const verified=D.filter(d=>d.type==="rent"&&listingIsCurrent(d)&&rentalPreferencePass(d)&&state.selectedGroups.has(d.group)&&(!d.price||d.price<=state.rent));
   const selected=verified.filter(d=>state.poolMode==="all"||state.poolMode==="any"&&d.pool||d.poolType===state.poolMode);
   if(selected.length&&state.types.has("rent"))return;
   const label=state.poolMode==="private"?"private-pool rentals":state.poolMode==="community"?"community-pool rentals":state.poolMode==="any"?"pool rentals":"rentals";
-  const p=document.createElement("span");p.textContent=state.types.has("rent")?"No recently verified active "+label+" under $"+state.rent.toLocaleString()+(group?" for this school area":" across the map")+". This does not mean none exist. Older listings are hidden until availability and a photo are checked again.":"Rental pins are turned off. Turn on Rent R to see verified listings.";listingNotice.appendChild(p);
+  const p=document.createElement("span");p.textContent=state.types.has("rent")?"No recently verified active "+label+" under $"+state.rent.toLocaleString()+" in the selected school areas. This does not mean none exist. Older listings are hidden until availability and a photo are checked again.":"Rental pins are turned off. Turn on Rent R to see verified listings.";listingNotice.appendChild(p);
   if(state.poolMode!=="all"){
     const b=document.createElement("button");b.type="button";b.className="mini";b.textContent="Clear pool filter";b.style.marginLeft="8px";b.onclick=()=>{state.poolMode="all";syncPoolButtons();apply()};listingNotice.appendChild(b);
   }
 }
 function apply(){marks.forEach((m,d)=>{if(visible(d)){if(!map.hasLayer(m))m.addTo(map)}else if(map.hasLayer(m))map.removeLayer(m)});renderList()}
 function updateFocusLabel(){
-  const active=state.filterGroup==="all"?state.focusGroup:state.filterGroup;
-  const rc=rentalCount(active),sc=saleCount(active),note=rc===0&&sc===0?" · rental and sale status need rechecking":rc===0?" · rental availability needs rechecking":rc<7?" · fewer than 7 recently verified rentals":"";focusLabel.innerHTML=(state.filterGroup==="all"?"All schools shown · focused on ":"Filtered to ")+"<b>"+schoolName(active)+"</b> · "+rc+" rent / "+sc+" sale"+note;
+  const total=D.filter(x=>x.type==="school").length,shown=state.selectedGroups.size;
+  const rc=D.filter(x=>x.type==="rent"&&state.selectedGroups.has(x.group)&&listingIsCurrent(x)&&rentalPreferencePass(x)).length;
+  focusLabel.textContent=shown+" of "+total+" school areas shown · "+rc+" verified rentals · Tap a school for details";
 }
 function populateSchoolOptions(){
-  const current=schoolSel.value||"all";
-  schoolSel.innerHTML='<option value="all">All school areas</option>';
-  D.filter(x=>x.type==="school").sort((a,b)=>a.name.localeCompare(b.name)).forEach(s=>{const o=document.createElement("option");o.value=s.group;o.textContent=s.name+" · "+rentalCount(s.group)+" rent / "+saleCount(s.group)+" sale";schoolSel.appendChild(o)});
-  schoolSel.value=[...schoolSel.options].some(o=>o.value===current)?current:"all";
+  const schools=D.filter(x=>x.type==="school").sort((a,b)=>a.name.localeCompare(b.name));
+  schoolChoices.replaceChildren();
+  const allLabel=document.createElement("label");allLabel.className="allSchools";
+  const all=document.createElement("input");all.type="checkbox";all.checked=schools.every(s=>state.selectedGroups.has(s.group));all.indeterminate=!all.checked&&schools.some(s=>state.selectedGroups.has(s.group));
+  allLabel.append(all,document.createTextNode("Select all school areas"));schoolChoices.appendChild(allLabel);
+  all.onchange=()=>{if(all.checked)schools.forEach(s=>state.selectedGroups.add(s.group));else state.selectedGroups.clear();populateSchoolOptions();apply();updateFocusLabel();fitCore()};
+  schools.forEach(s=>{const label=document.createElement("label"),input=document.createElement("input");input.type="checkbox";input.checked=state.selectedGroups.has(s.group);input.setAttribute("aria-label",s.name);label.append(input,document.createTextNode(s.name));schoolChoices.appendChild(label);input.onchange=()=>{if(input.checked)state.selectedGroups.add(s.group);else state.selectedGroups.delete(s.group);populateSchoolOptions();apply();updateFocusLabel();fitCore()}});
+  schoolFilterSummary.textContent="School areas: "+state.selectedGroups.size+" of "+schools.length+" shown";
 }
 function schoolCounts(g){
   return {rentals:rentalCount(g),sales:saleCount(g)};
@@ -430,6 +434,11 @@ async function preloadAllGroupPreviews(rentLimit=10,saleLimit=3){
     apply();
   }
 }
+async function preloadVpkPins(){
+  const providers=D.filter(x=>x.type==="vpk");
+  for(const provider of providers){await addPoint(provider);await new Promise(r=>setTimeout(r,150))}
+  apply();
+}
 async function addPoint(d){
   if(marks.has(d))return;
   try{
@@ -445,7 +454,7 @@ async function loadGroup(g){
   if(loadingGroups.has(g))return loadingGroups.get(g);
   const job=(async()=>{
     statusEl.style.display="block";statusEl.textContent="Loading "+schoolName(g)+" properties…";
-    const items=D.filter(x=>x.group===g&&x.type!=="school");
+    const items=D.filter(x=>x.group===g&&(x.type==="vpk"||((x.type==="rent"||x.type==="sale")&&listingIsCurrent(x))));
     renderList();
     for(const d of items){await addPoint(d);await new Promise(r=>setTimeout(r,250))}
     loaded.add(g);apply();statusEl.textContent="Properties loaded";
@@ -456,7 +465,7 @@ async function loadGroup(g){
 async function enrichSchoolCommutes(){
   const schools=D.filter(x=>x.type==="school");
   for(const s of schools){
-    try{s._homeRoute=await routeInfo(homeRecord,s);if((state.filterGroup==="all"?state.focusGroup:state.filterGroup)===s.group)renderList()}catch(e){}
+    try{s._homeRoute=await routeInfo(homeRecord,s);if(state.selectedGroups.has(s.group))renderList()}catch(e){}
   }
 }
 async function enrichGroupCommutes(g){
@@ -469,7 +478,7 @@ async function enrichGroupCommutes(g){
 }
 function fitCore(){
   const core=[];
-  marks.forEach((m,d)=>{if(d.type==="school"||d.type==="home")core.push(m.getLatLng())});
+  marks.forEach((m,d)=>{if(d.type==="home"||d.type==="school"&&visible(d))core.push(m.getLatLng())});
   if(core.length)map.fitBounds(core,{padding:[34,34],maxZoom:9});
 }
 function fitFocused(){
@@ -518,10 +527,9 @@ function readAddForm(){
   return item;
 }
 function saveLocal(item){
-  customItems.push(item);localStorage.setItem(CUSTOM_KEY,JSON.stringify(customItems));D.push(item);populateSchoolOptions();addPoint(item).then(()=>{apply();renderList()});
+  customItems.push(item);localStorage.setItem(CUSTOM_KEY,JSON.stringify(customItems));D.push(item);if(item.type==="school")state.selectedGroups.add(item.group);populateSchoolOptions();addPoint(item).then(()=>{apply();renderList()});
 }
 closeBtn.onclick=()=>detail.classList.remove("show");
-schoolSel.onchange=async e=>{state.filterGroup=e.target.value;if(state.filterGroup!=="all"){state.focusGroup=state.filterGroup;await loadGroup(state.filterGroup);apply();fitFocused();enrichGroupCommutes(state.filterGroup)}else{apply();fitCore()}updateFocusLabel()};
 rentInput.oninput=e=>{state.rent=+(e.target.value||4500);apply()};saleBucket.onchange=e=>{state.saleBucket=e.target.value;apply()};
 document.querySelectorAll(".filter[data-type]").forEach(b=>{b.setAttribute("aria-pressed","true");b.onclick=()=>{const t=b.dataset.type;state.types.has(t)?state.types.delete(t):state.types.add(t);const on=state.types.has(t);b.classList.toggle("off",!on);b.setAttribute("aria-pressed",String(on));apply()}});
 poolBtn.textContent="Any pool";poolBtn.classList.add("off");poolBtn.onclick=()=>setPoolMode("any");
@@ -644,6 +652,8 @@ const initialSchool=new URLSearchParams(location.hash.slice(1)).get("school");if
   for(const d of core){await addPoint(d);await new Promise(r=>setTimeout(r,250))}
   fitCore();
   enrichSchoolCommutes();
+  statusEl.textContent="Loading nearby VPK locations…";
+  await preloadVpkPins();
   statusEl.textContent="Loading properties across all school areas…";
   await preloadAllGroupPreviews(10,3);
   apply();fitCore();
