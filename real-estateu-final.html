@@ -1,0 +1,105 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><title>RealEstateU — Final Quiz</title><style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#19314f;background:#f4f6fa}
+*{box-sizing:border-box}body{margin:0;padding:22px}main{max-width:850px;margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+a{color:#1558a6}h1{margin:14px 0 5px;font-size:clamp(26px,5vw,38px)}
+.note{padding:12px 15px;background:#fff6dd;border:1px solid #ecd68e;border-radius:12px;color:#4d4323}
+.card{background:white;border:1px solid #dce3ed;border-radius:16px;padding:22px;margin:16px 0;box-shadow:0 3px 12px #172f4a0b}
+.progress{height:8px;background:#e5ebf2;border-radius:9px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;background:#1565c0;width:0}
+.meta{display:flex;justify-content:space-between;gap:8px;color:#596c81;font-size:14px}
+.choice{display:flex;gap:12px;align-items:flex-start;border:1px solid #d7e0eb;border-radius:12px;padding:13px;margin:10px 0;cursor:pointer;background:white}
+.choice:has(input:checked){border-color:#1565c0;background:#f2f7ff}.choice input{margin-top:5px;accent-color:#1565c0}
+button{font:inherit;cursor:pointer;border:1px solid #bac8d8;border-radius:10px;padding:10px 15px;background:#fff;color:#164e8a;font-weight:650}
+button.primary{background:#1565c0;color:white;border-color:#1565c0}button:disabled{opacity:.5;cursor:default}
+.controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between}.controls div{display:flex;gap:10px}
+.result{font-weight:700;padding:12px;border-radius:10px}.good{color:#155c28;background:#eaf7ed}.review{color:#853b00;background:#fff2e4}
+.small{font-size:14px;color:#596c81}.error{color:#a12020}input[type=password]{font:inherit;padding:10px;width:min(100%,450px);border:1px solid #aebdce;border-radius:8px}
+@media(max-width:600px){body{padding:12px}.card{padding:16px}.controls{display:block}.controls>div{margin-top:10px}}
+</style></head><body><main><div class="top"><a href="real-estate-study.html">← Florida Real Estate Study</a><span class="small">RealEstateU · Separate question set</span></div><h1>RealEstateU Final Quiz</h1><p class="note">This is a private study copy of the course quiz. Answers are saved recommendations with confidence notes; the course did not return an official score or answer key. Some question wording was paraphrased.</p><section id="unlockForm" class="card"><h2>Open your private question set</h2><p>Use your personal study link. If you opened this from the study home, enter the access key from that link.</p><form id="unlockFormInner"><input id="accessKey" type="password" autocomplete="off" aria-label="RealEstateU access key" required><button class="primary" type="submit">Unlock quiz</button></form><p id="accessStatus" class="small" role="status" aria-live="polite"></p></section><section id="app" hidden><div id="summary" class="card" hidden><h2>Study round complete</h2><p id="summaryText"></p></div><section class="card"><div class="meta"><span id="qnum"></span><span id="answered"></span></div><div class="progress"><span id="bar"></span></div><h2 id="stem"></h2><div id="choices"></div><p id="notice" class="small" role="status"></p><div id="feedback" class="card" hidden><p id="result" class="result"></p><p id="confidence" class="small"></p><p id="caveat" class="small"></p></div><div class="controls"><div><button id="prev" type="button">Previous</button><button id="next" type="button">Next</button></div><div><button id="check" type="button" class="primary">Check recommendation</button><button id="reset" type="button">Reset</button></div></div></section></section></main><script>
+function startApp(data){
+ if(!data||data.version!==1||data.school!=='realestateu'||!Array.isArray(data.questions)||data.questions.length!==100)throw Error('This RealEstateU collection could not be verified.');
+ const questions=data.questions, storageKey='reu_final_progress_v1';
+ let state={index:0,answers:{}};
+ try{state=Object.assign(state,JSON.parse(localStorage.getItem(storageKey)||'{}'));}catch(_){}
+ if(!Number.isInteger(state.index)||state.index<0||state.index>=questions.length)state.index=0;
+ if(!state.answers||typeof state.answers!=='object')state.answers={};
+ const $=id=>document.getElementById(id);
+ const save=()=>{try{localStorage.setItem(storageKey,JSON.stringify(state));}catch(_){}};
+ const count=()=>Object.keys(state.answers).length;
+ function render(){
+  const q=questions[state.index], saved=state.answers[q.id]||{};
+  $('qnum').textContent='Question '+(state.index+1)+' of '+questions.length;
+  $('answered').textContent=count()+' answered';
+  $('bar').style.width=((state.index+1)/questions.length*100)+'%';
+  $('stem').textContent=q.question;
+  const choices=$('choices');choices.replaceChildren();
+  for(const k of ['a','b','c','d']){
+   const label=document.createElement('label');label.className='choice';
+   const radio=document.createElement('input');radio.type='radio';radio.name='choice';radio.value=k;radio.checked=saved.choice===k;
+   const text=document.createElement('span');text.textContent=k.toUpperCase()+'. '+q.options[k];
+   label.append(radio,text);choices.append(label);
+  }
+  $('feedback').hidden=!saved.checked;
+  if(saved.checked){
+   const right=q.finalAnswer, match=saved.choice===right;
+   $('result').textContent=match?'Matches the recommended answer.':'Recommended answer: '+right.toUpperCase()+'. '+q.options[right];
+   $('result').className=match?'result good':'result review';
+   $('confidence').textContent='Confidence: '+q.confidence+'. Selection on the quiz site: '+q.selectionStatus+'.';
+   $('caveat').textContent=[q.caveat,q.sourceTextStatus].filter(Boolean).join(' ');
+  }
+  $('prev').disabled=state.index===0;$('next').textContent=state.index===questions.length-1?'Finish':'Next';
+ }
+ $('check').onclick=()=>{
+  const q=questions[state.index], selected=document.querySelector('input[name="choice"]:checked');
+  if(!selected){$('notice').textContent='Choose an answer first.';return;}
+  state.answers[q.id]={choice:selected.value,checked:true};save();$('notice').textContent='';render();
+ };
+ $('prev').onclick=()=>{if(state.index>0){state.index--;save();render();}};
+ $('next').onclick=()=>{
+  if(state.index<questions.length-1){state.index++;save();render();return;}
+  const answered=count(),matches=Object.entries(state.answers).filter(([id,a])=>a.checked&&questions.find(q=>q.id===id)?.finalAnswer===a.choice).length;
+  $('summary').hidden=false;$('summaryText').textContent=matches+' of '+answered+' answers match the saved recommendations. This is study practice only, not an official score.';
+  window.scrollTo({top:0,behavior:'smooth'});
+ };
+ $('reset').onclick=()=>{if(confirm('Clear this device’s RealEstateU quiz progress?')){state={index:0,answers:{}};save();$('summary').hidden=true;render();}};
+ render();
+}
+
+
+(async function(){
+ const status=document.getElementById('accessStatus');
+ const panel=document.getElementById('unlockForm');
+ const form=document.getElementById('unlockFormInner');
+ const app=document.getElementById('app');
+ const keyStore='reu_final_access_key_v1';
+ const decode=s=>Uint8Array.from(atob(s.replace(/-/g,'+').replace(/_/g,'/')+'='.repeat((4-s.length%4)%4)),c=>c.charCodeAt(0));
+ async function unlock(key){
+  if(!/^[A-Za-z0-9_-]{43}$/.test(key))throw Error('Use the private RealEstateU study link or enter its access key.');
+  status.textContent='Opening RealEstateU…';status.className='small';
+  const response=await fetch('realestateu-final.enc.json',{cache:'no-store',referrerPolicy:'no-referrer'});
+  if(!response.ok)throw Error('The RealEstateU collection could not be loaded. Try again later.');
+  const env=await response.json();
+  if(env.version!==1||env.algorithm!=='AES-GCM'||env.compression!=='gzip')throw Error('Unsupported RealEstateU collection format.');
+  let plain;
+  try{
+   const cryptoKey=await crypto.subtle.importKey('raw',decode(key),{name:'AES-GCM'},false,['decrypt']);
+   plain=await crypto.subtle.decrypt({name:'AES-GCM',iv:decode(env.iv)},cryptoKey,decode(env.ciphertext));
+  }catch(_){throw Error('This access key did not open the RealEstateU collection. Check the private link.');}
+  const text=await new Response(new Blob([plain]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
+  const data=JSON.parse(text);
+  if(data.version!==1||data.school!=='realestateu'||!Array.isArray(data.questions)||data.questions.length!==100)throw Error('The RealEstateU collection failed its integrity check.');
+  try{localStorage.setItem(keyStore,key);}catch(_){}
+  history.replaceState(null,'',location.pathname+location.search);
+  panel.hidden=true;app.hidden=false;status.textContent='';
+  startApp(data);
+ }
+ const params=new URLSearchParams(location.hash.slice(1));
+ const fromLink=params.get('key');
+ let key=fromLink;
+ if(!key){try{key=localStorage.getItem(keyStore)||'';}catch(_){}}
+ if(key){
+  try{await unlock(key);}catch(e){status.textContent=e.message;status.className='small error';}
+ }
+ form.onsubmit=async e=>{e.preventDefault();const input=document.getElementById('accessKey');try{await unlock(input.value.trim());input.value='';}catch(err){status.textContent=err.message;status.className='small error';}};
+})().catch(e=>{const s=document.getElementById('accessStatus');if(s){s.textContent=e.message||'Could not open the quiz.';s.className='small error';}});
+</script></body></html>
