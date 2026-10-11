@@ -1,35 +1,35 @@
 {
-  "date": "2026-10-10",
+  "date": "2026-10-11",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "🚨 Fraude",
-      "t": "Chamada suspeita na OPC — caller pediu dados bancários do Mike",
-      "why": "Email de ontem registra 3 chamadas seguidas de número desconhecido. Um dos callers pediu explicitamente informações bancárias do Michael — engenharia social clássica. Avise o Mike e oriente o agente a nunca fornecer dados financeiros por telefone.",
-      "go": "ads"
-    },
-    {
-      "tag": "🧾 Payroll",
-      "t": "Payroll vence AMANHÃ (11/out) — confirmar parte do Mike hoje",
-      "why": "Calendário recorrente: rodar QBO em qbo.intuit.com/app/payroll amanhã às 10h15. Confirme hoje se Mike enviou a parte dele — dois dias de antecedência é o tempo de resolver se ele não mandou.",
-      "go": "iafim"
-    },
-    {
-      "tag": "🤖 Agentes",
-      "t": "Weekly Agents Review — segunda 12/out, 9h",
-      "why": "Revisão semanal de ferramentas IA na agenda de segunda. Boa hora para avaliar Letta (memória persistente) e OpusClip vistos hoje no boletim, além de limpar itens do Weekly Intake do Agents Tracker.",
-      "go": "iafim"
-    },
-    {
-      "tag": "🔐 Segurança",
-      "t": "Higgsfield AI: novo dispositivo logou na sua conta — verificar",
-      "why": "Email de hoje: novo device logado na conta Higgsfield AI. Se não foi você, acesse a conta e revogue o acesso. Senhas reutilizadas em ferramentas de IA são alvo fácil — verifique se este email/senha coincide com outra conta comprometida.",
+      "tag": "obra",
+      "t": "Retell AI na linha da OPC — Agente de Voz Ativo e Pago",
+      "why": "Recibo do Retell AI chegou ontem + conta bancária conectada. O agente de voz está atendendo chamadas da Oak Park. Cheque os logs: o que ainda chega para o Michael? Que respostas precisam de ajuste?",
       "go": "obra"
+    },
+    {
+      "tag": "conteudo",
+      "t": "338 conteúdos OPC aguardando aprovação — fila crítica",
+      "why": "Email de aprovação pendente com 338 posts. Use um sistema de batch-review: agrupe por tipo (antes/depois, dica, depoimento) e aprove em blocos. Metricool já tem login ativo para programar o que sair da fila.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "tip",
+      "t": "Payroll mensal está marcado para hoje às 10:25 — faça primeiro",
+      "why": "Com TDAH, tarefas administrativas com data certa somem da memória se não forem a primeira coisa. Execute antes de abrir qualquer projeto criativo.",
+      "go": "tip"
+    },
+    {
+      "tag": "iafim",
+      "t": "Real Estate Exam é o item 1 do seu dia — todo dia",
+      "why": "Calendar diário: 📚 REAL ESTATE — FIRST THING às 8h. Agentes de IA podem gerar quiz, flashcards e simulados para acelerar preparação — leia o card de iafim de hoje para uma ideia de como montar isso.",
+      "go": "iafim"
     }
   ],
   "history": [
     {
-      "date": "2026-10-10",
+      "date": "2026-10-11",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,130 +37,154 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-10-10",
+        "id": "tip-2026-10-11",
         "top": true,
-        "t": "MIT para TDAH: Antes de Abrir Qualquer App, Escreva UMA Tarefa Mais Importante — O Método que Corta uma Lista de 50 Itens para 1",
-        "resumo": "MIT (Most Important Task) é simples: antes de abrir e-mail, Slack ou qualquer app, escreva em papel ou bloco a sua 1 tarefa mais importante do dia. Uma só. Quando você a termina, o dia 'ganhou' — tudo mais é bônus. Para o cérebro com TDAH, uma lista de 50 itens é paralisante porque exige priorizar em tempo real o dia inteiro. O MIT faz essa decisão UMA vez, pela manhã, quando o executivo ainda está fresco.",
-        "porque": "TDAH com lista longa = decisão distribuída ao longo do dia = esgotamento da função executiva. O MIT concentra o custo de priorizar em 60 segundos de manhã e livra você de reprocessar 'o que fazer agora' a cada troca de app ou tarefa. Se a tarefa MIT fica pronta, você terminou a meta do dia — independentemente de tudo mais que aparecer.",
-        "aplicar": "Antes de abrir o Mac ou o celular, pergunte: 'Se eu só fizesse UMA coisa hoje, qual tornaria o resto menos importante ou desnecessário?' Escreva essa resposta. Comprometa-se a fazer ESSA tarefa primeiro, antes de entrar em inbox, DMs ou qualquer notificação.",
-        "plano": "1) Pegue um post-it agora — escreva 1 tarefa mais importante para hoje (RE, aprovação de posts OPC, email urgente de negócio) · 2) Cole na tela do computador ou defina como alarme com o nome da tarefa · 3) Abra APENAS o app ou arquivo que essa tarefa precisa — não abra mais nada · 4) Só vai para inbox/DMs/outros apps depois que completar ao menos 25 minutos nessa tarefa",
+        "t": "Menu de Dopamina para TDAH: Monte um Cardápio de Recompensas Antes de Precisar Delas",
+        "resumo": "O Menu de Dopamina é uma lista pré-montada de atividades que ativam recompensa no cérebro, dividida em categorias: Entradas (1–5 min, impulso rápido), Pratos Principais (prazer profundo, mais tempo), Acompanhamentos (o que você faz junto à tarefa chata — música, podcast), Sobremesas (scroll, 10 min max) e Especiais (saídas, planos). Você monta ANTES de precisar, quando o cérebro não está em crise.",
+        "porque": "Com TDAH o problema não é falta de vontade — é que o cérebro em crise de dopamina paralisa na decisão. Ter o menu pronto remove a fricção: em vez de rolar TikTok por padrão, você escolhe uma opção que realmente recarrega. A CHADD valida o conceito como ferramenta para momentos de busca de estímulo.",
+        "aplicar": "Monte o menu agora, quando está descansada. Coloque visível — papel na mesa ou widget no celular. Use antes de cada bloco de trabalho e depois de completar uma tarefa pesada como o payroll.",
+        "plano": "1) Abra uma nota e escreva os 5 títulos: Entradas, Pratos, Acompanhamentos, Sobremesas, Especiais · 2) Liste 2–3 opções em cada categoria que realmente te animam (não o que 'você acha que devia') · 3) Prepare os 'ingredientes': se a opção é pintar, deixe os materiais à vista agora · 4) Toda vez que sentir impulso de abrir redes sem intenção, abra o menu primeiro e escolha",
         "fonte": {
-          "t": "ADHD Productivity: 12 Strategies for Getting Things Done — Psych Central",
-          "u": "https://psychcentral.com/adhd/adhd-productivity-strategies-for-getting-things-done"
+          "t": "CHADD — Dopamine menus: the science behind the trend",
+          "u": "https://chadd.org/?p=55662"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-10-10",
+        "id": "receita-2026-10-11",
         "top": true,
-        "t": "Lasanha Vegana de Berinjela e Espinafre com Molho Branco de Castanha — Elaborada, Sem Leite, Kid-Friendly",
-        "resumo": "Camadas de berinjela grelhada, espinafre refogado, molho branco cremoso de castanha-de-caju e molho de tomate caseiro. Queijo vegano (FL) derretido por cima gratinado no forno. Rende 6 porções, guarda 4 dias na geladeira e congela por 3 meses. Berinjela fatiada fina some no recheio — as crianças nem percebem. Elaborada, mas vale o esforço de domingo.",
-        "porque": "Última receita elaborada foi há 4 dias (chili de feijões, 06/out). Timing certo para uma receita que dá trabalho mas alimenta a semana toda. Não repete nenhum ingrediente principal dos últimos 7 dias (quinoa, lentilha, portobello, feijões, grão-de-bico, tofu, macarrão de arroz) — berinjela + castanha é categoria nova. Sem leite de vaca, sem peixe, sem frutos do mar.",
-        "aplicar": "Fatie a berinjela fina (3mm), salgue e deixe 20 minutos para soltar o amargor — enxágue e seque com papel toalha. O molho branco de castanha fica mais suave e agrada crianças muito mais que bechamel. Monte as camadas e asse tampado 25 min + 15 min aberto para gratinar.",
-        "plano": "1) Molho branco: bata 1 xíc castanha de caju crua (embebida 4h) + 2 xíc água + 1 dente alho + sal + noz-moscada no liquidificador até liso — reserve · 2) Molho de tomate: refogue cebola + alho + 2 latas tomate pelado + orégano por 20 min · 3) Grelhe fatias de berinjela temperadas; refogue espinafre baby com alho 3 min · 4) Monte: tomate → massa → espinafre → berinjela → molho branco; repita camadas; cubra com queijo vegano ralado FL e asse 200°C 40 min",
+        "t": "Macarrão com Pesto de Rúcula e Tomate Cherry Salteado — 20 Min, Vegano, Kid-Friendly",
+        "resumo": "Pesto de rúcula fresca batida com castanha-de-caju demolhada, azeite, alho e levedura nutricional — cremoso e levemente picante. Tomate cherry salteado em azeite por 5 min até caramelizar. Massa curta (fusilli ou penne) misturada ao pesto quente. Uma panela + liquidificador, pronto em 20 minutos.",
+        "porque": "Rúcula é mais fácil de achar que manjericão, o pesto não vai ao fogo e mantém as vitaminas. Sem leite de vaca, sem queijo animal. As crianças aceitam bem — sabor suave e o tomate cherry caramelizado fica docinho. Pode dobrar a receita e guardar o pesto por 3 dias.",
+        "aplicar": "Substituto rápido para dias sem inspiração. O pesto fica ainda melhor no dia seguinte, então vale fazer a mais no jantar para o almoço do dia seguinte.",
+        "plano": "1) Ferva a massa conforme a embalagem · 2) Bata no liquidificador: 2 xícaras de rúcula, ½ xícara castanha-de-caju crua demolhada (1h de molho), 2 col. sopa azeite, 1 dente alho, 2 col. sopa levedura nutricional, sal e limão a gosto · 3) Salteie tomate cherry cortado ao meio em azeite quente por 5 min até dourar · 4) Misture massa + pesto + tomate e sirva com rúcula fresca por cima",
         "fonte": {
-          "t": "7 Receitas de Lasanha Vegana para o Jantar — TNH1",
-          "u": "https://www.tnh1.com.br/noticia/nid/7-receitas-de-lasanha-vegana-para-o-jantar-4632/"
+          "t": "Loving It Vegan — Vegan Pesto Pasta with Pan-Roasted Cherry Tomatoes",
+          "u": "https://lovingitvegan.com/vegan-pesto-pasta-pan-roasted-cherry-tomatoes/"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-10-10",
+        "id": "merch-2026-10-11",
         "top": true,
-        "t": "CustomCat 2026: POD 100% Americano com Bordado Digisoft, Fulfillment em 48–72h e Sem Mensalidade no Plano Básico",
-        "resumo": "CustomCat é sediada em Michigan: todas as peças produzidas nos EUA, fulfillment médio de 48–72h. Oferece bordado via tecnologia Digisoft (digitização profissional), sublimação e DTG. Sem mensalidade no plano básico. Plano Pro ($30/mês) dá desconto em todos os produtos. 4.3 de 5 estrelas no Shopify (105 reviews). Entrega doméstica em 5–7 dias úteis.",
-        "porque": "Das 7 plataformas da semana (Printful, Yoycol, SPOD, Apliiq, Gooten, Teemill, Printify), nenhuma combina: americana + bordado real + sem mensalidade + entrega rápida EUA. CustomCat preenche essa lacuna — para uma marca que quer entrega rápida nos EUA sem pagar assinatura antes de escalar, é o candidato mais direto. Ponto de atenção: reviews indicam suporte abaixo do Printful.",
-        "aplicar": "CustomCat é ideal para: longlines femininas com bordado entregues rapidamente nos EUA, testes de volume médio-alto sem custo fixo mensal. Estratégia: use como alternativa americana ao Printful para pedidos de alto volume, comparando custo/qualidade de bordado com sample físico antes de publicar.",
-        "plano": "1) Crie conta gratuita em customcat.com — plano básico sem mensalidade · 2) No catálogo, filtre por 'Women's Tee' com bordado (Embroidery) e selecione o modelo mais próximo de uma longline · 3) Configure o bordado via Digisoft: faça upload do arquivo vetorial (formato .dst ou .pes, ou JPG de alta res para digitização) · 4) Peça 1 sample ($15–25 + frete) e compare bordado e prazo com o Printful que você usa como referência",
+        "t": "Gelato 2026: POD Global com 140+ Hubs Locais — Frete Mais Rápido Porque Fabrica Perto do Cliente",
+        "resumo": "Gelato tem 140+ parceiros de produção em 32 países: seu pedido é fabricado no hub mais próximo do cliente final, reduzindo frete e prazo. Oferece t-shirts, hoodies, canecas, arte impressa e produtos personalizados. Integra com Shopify, Etsy e WooCommerce. Plano pago ~$24/mês libera descontos extras e acesso a catálogo ampliado.",
+        "porque": "Produzindo localmente no país do comprador, o frete médio cai e o prazo é mais curto que plataformas que fabricam só nos EUA ou Ásia. Avaliações 2026 no Trustpilot elogiam qualidade de impressão. Alternativa real ao Printful para quem vende globalmente — sem estoque.",
+        "aplicar": "Ideal se você quer vender para EUA e Brasil ao mesmo tempo sem pagar frete internacional. Peça um sample de t-shirt feminina antes de lançar para checar qualidade do tecido e bordado disponível.",
+        "plano": "1) Acesse gelato.com e crie conta gratuita · 2) Conecte sua loja Shopify ou Etsy · 3) Vá em 'Apparel' > 'Women' e adicione um produto teste · 4) Peça um sample para seu endereço e compare qualidade com o CustomCat ou Printful que você já usa",
         "fonte": {
-          "t": "CustomCat Review 2026: How Does This POD Platform Differ? — Ecommerce Platforms",
-          "u": "https://ecommerce-platforms.com/articles/customcat-review"
+          "t": "Ecommerce Platforms — Gelato Print on Demand Review 2026",
+          "u": "https://ecommerce-platforms.com/articles/gelato-review"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-10-10",
+        "id": "conteudo-2026-10-11",
         "top": true,
-        "t": "OpusClip 2026: IA Escolhe os Melhores Momentos do Seu Vídeo Longo, Recorta, Reformata e Adiciona Legenda — 94% de Precisão, 60 Min Grátis",
-        "resumo": "OpusClip analisa o vídeo inteiro, pontua cada trecho por 'viralidade' (gancho, tom, conteúdo), corta os melhores momentos e entrega versões 9:16 com legenda animada e reframing automático (rosto sempre centrado). Plano grátis com 60 minutos de processamento sem cartão. Starter $15/mês, Pro $19.43/mês. Precisão de legenda ~94% em 2026. AI co-pilot para edições por chat incluído.",
-        "porque": "Diferente das ferramentas recentes (Pictory transforma texto em vídeo, Canva cria do zero, CapCut exige edição manual, Descript edita por texto, Veed.io age como co-editor): o OpusClip faz uma só coisa muito bem — pega seu vídeo longo (tour de obra, depoimento, Q&A) e extrai os Reels mais fortes automaticamente. Zero timeline manual.",
-        "aplicar": "Para o backlog OPC: suba qualquer vídeo de tour de reforma, reunião de briefing ou depoimento de cliente. O OpusClip encontra os trechos mais fortes, reformata para 9:16 e adiciona legenda. Em 15 minutos você tem 3–5 Reels prontos para revisar e publicar.",
-        "plano": "1) Acesse opus.pro — plano gratuito com 60 min de processamento, sem cartão · 2) Faça upload ou cole o link do vídeo (YouTube, Drive ou arquivo local) · 3) Aguarde o processamento — a IA gera até 10 clips ranqueados por score de viralidade · 4) Revise o top 3, ajuste legendas se necessário, exporte em 1080p 9:16 e publique nos Reels",
+        "t": "Captions.ai 2026: IA para Talking-Head Reels — Correção de Olhar, Legendas Animadas e Dublagem em 30+ Idiomas",
+        "resumo": "Captions.ai é focado em criadores que aparecem na câmera. Funcionalidades em 2026: corte automático de silêncios, legendas animadas estilizadas, correção de direção do olhar (eye contact correction), B-roll gerado por IA, dublagem em 30+ idiomas preservando sotaque, e avatares personalizados. Avaliado 8.6/10 (NeuronFeed) e 9.12/10 em 37k+ avaliações verificadas.",
+        "porque": "A diferença do CapCut e OpusClip: foco em rosto na câmera, não em clipes longos. Se você grava stories, reels de serviço ou apresentações (OPC), a IA corrige a postura do olhar e adiciona legendas com sincronização perfeita — sem pós-edição manual. Suporta arquivos de até 30 min.",
+        "aplicar": "Use para os reels da OPC onde você ou o Mike aparecem falando. A eye contact correction é especialmente útil em vídeos gravados olhando para roteiro. Teste no próximo vídeo antes de pós-produzir manualmente.",
+        "plano": "1) Acesse captions.ai e crie conta (plano gratuito disponível) · 2) Faça upload de um vídeo falando para câmera — pode ser um teste de 1 minuto · 3) Ative 'Eye Contact Correction' + 'Auto Captions' com estilo animado · 4) Exporte e compare com e sem correção — a diferença de engajamento costuma ser significativa",
         "fonte": {
-          "t": "Opus Clip Review 2026: AI Video Shorts Tool Tested — Marc Andrews",
-          "u": "https://marcandrews.com/opus-clip-review-2026-ai-video-shorts-tool-tested/"
+          "t": "NeuronFeed — Captions Review 2026",
+          "u": "https://neuronfeed.com/reviews/captions-review-2026"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-10-10",
+        "id": "obra-2026-10-11",
         "top": true,
-        "t": "Immersity AI 2026: Foto Plana da Obra → Clip Parallax 3D em Segundos — Profundidade Cinemática Sem Gravar Vídeo",
-        "resumo": "Immersity AI (ex-LeiaPix, da Leia Inc.) converte qualquer foto 2D em clip com efeito parallax 3D: o fundo se move numa velocidade diferente do primeiro plano, criando profundidade cinética. App mobile gratuito (iOS/Android) gera clips em segundos direto do celular. Versão web paga (~$4.99–9.99/mês) sem marca d'água e mais controles de movimento. Funciona com foto comum do iPhone — sem prompt, sem créditos de IA generativa.",
-        "porque": "Todas as ferramentas de obra desta semana (Pika, Luma, Hailuo, ElevenLabs, Firefly, Veo, Kling) geram ou animam vídeo a partir de prompts de texto. Immersity faz algo completamente diferente: transforma suas fotos reais de obra em conteúdo visual impressionante com efeito de profundidade, sem IA generativa pesada. Não precisa de setup, não consome créditos — só uma foto e 5 segundos.",
-        "aplicar": "Abra o app no celular, carregue uma foto de fachada ou cômodo reformado, aguarde 5 segundos e exporte o clip parallax. O efeito de 'câmera que se move dentro da foto' para o scroll no feed antes que qualquer legenda seja lida — ideal para os primeiros 1–2 segundos de um Reel.",
-        "plano": "1) Baixe o app Immersity AI (iOS ou Android) — gratuito · 2) Selecione uma foto com profundidade natural: fachada com porta na frente, cozinha com ilha no centro, banheiro com espelho no fundo · 3) Escolha o estilo de movimento (circular, horizontal, dolly) e gere o clip · 4) Teste a versão gratuita (com marca d'água) para verificar engajamento — se funcionar, assine o plano web e exporte sem marca d'água; adicione legenda no CapCut e publique como primeiro Reel parallax da OPC",
+        "t": "Higgsfield AI 2026: Prompt + Foto da Obra → Vídeo Cinemático com Efeitos Embutidos — Você Já Tem Conta",
+        "resumo": "Higgsfield AI gera vídeos curtos para redes sociais a partir de texto e imagens, com efeitos visuais pré-configurados em Cinema Studio e Marketing Studio. Suporta Start/End Frames — upload da foto antes e depois da reforma gera transição fluida. Output nativo para Reels e TikTok. Você se logou ontem, a conta já está ativa.",
+        "porque": "Diferente de Kling ou Immersity, o Higgsfield tem presets cinematográficos que não exigem pós-produção em After Effects ou CapCut. Você sobe a foto final da reforma, descreve o ambiente, e o vídeo gera movimento cinemático em segundos — pronto para postar.",
+        "aplicar": "Use Start Frame = foto antes da reforma e End Frame = foto depois. O modelo interpola o antes e depois em um clip fluido. Ideal para o feed da OPC mostrar transformações de cozinha, banheiro ou fachada em menos de 60 segundos.",
+        "plano": "1) Acesse higgsfield.ai com a conta que você criou ontem · 2) Escolha 'Cinema Studio' no menu de modos · 3) Faça upload de uma foto de antes e uma de depois de um projeto da OPC · 4) Use Start/End Frames e descreva no prompt: 'cinematic renovation reveal, warm lighting, smooth camera move' — exporte em 9:16 para Reels",
         "fonte": {
-          "t": "Immersity AI Platform Adds New 2D-to-3D Video Conversion Tool — Immersity Newsroom",
-          "u": "https://immersity.ai/newsroom/immersity-ai-platform-adds-new-2d-to-3d-video-conversion-tool"
+          "t": "Higgsfield AI — Visual Effects Presets Guide",
+          "u": "https://geo.higgsfield.ai/blog/higgsfield-ai-video-platform-visual-effects-presets"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-10-10",
+        "id": "geo-2026-10-11",
         "top": true,
-        "t": "Ártico 2026: Gelo Derretendo Abre Rota do Mar do Norte — Rússia Controla o Atalho entre Europa e Ásia e Isso Muda o Mapa do Poder Global",
-        "resumo": "O Ártico registrou em março/2026 o menor extensão de gelo invernal em 48 anos de satélite (empatado com 2025). A Rota do Mar do Norte (controlada pela Rússia via Rosatom e seus 50 quebra-gelos, 6 deles nucleares) torna-se navegável por mais meses a cada ano. Em 2026, 7 navios chineses já transitaram pela rota com autorização russa, transportando ~6 milhões de barris de petróleo para a Ásia — metade do volume de todo 2025. Trump fez declarações sobre 'adquirir' a Groenlândia (minerais de terras raras + base militar ártica). Os EUA têm apenas 2 quebra-gelos operacionais.",
-        "porque": "A Rota do Mar do Norte conecta Europa a Ásia com 40% menos milhas que Suez — se se tornar confiável, redistribui rotas de comércio, influência portuária e poder militar. E o gelo derrete mais rápido do que os modelos projetavam. Diferente de todos os temas anteriores da semana (litio, Ormuz, Caxemira, Taiwan, Mar Vermelho, Nilo, Sahel): aqui o recurso disputado é uma ROTA, não uma substância ou território.",
-        "aplicar": "Para pauta de geopolítica aplicada: '5 países que ganham com o fim do gelo ártico — e por que a Rússia saiu na frente'. Conecte à competição por rotas de comércio: quanto mais o Ártico derrete, mais a Rússia lucra com pedágios e escolta de quebra-gelo, enquanto EUA e Europa se mobilizam às pressas.",
-        "plano": "1) Identifique no mapa as 3 rotas marítimas contestadas de 2026: Suez/Mar Vermelho (Houthis), Estreito de Ormuz (Irã) e Ártico/NSR (Rússia) — cada uma com um ator diferente de controle · 2) Entenda o diferencial russo: 50 quebra-gelos vs 2 americanos — infraestrutura construída em décadas de planejamento soviético · 3) Aprenda o que está em jogo na Groenlândia: bases militares + passagem para o Ártico + minerais de terras raras (não só localização geográfica) · 4) Monitore o Carnegie Endowment for International Peace — publicou relatório em set/2026 sobre a Rota Ártica e as ambições russas",
+        "t": "Corredor Médio 2026: A Rota Trans-Cáspia que Quer Substituir a Rede Russa — Cazaquistão Vira Hub da Eurásia",
+        "resumo": "O Corredor Médio (TITR) liga China a Europa pelo Cazaquistão → Mar Cáspio → Azerbaijão → Geórgia → Turquia, sem passar pela Rússia. Em 2026 ganhou urgência: sanções à Rússia + perturbação de rotas iranianas forçaram países a buscar alternativas. EUA enviaram senadores à região. Cazaquistão agora tem poder de barganha com China, Europa e EUA ao mesmo tempo.",
+        "porque": "A geopolítica das rotas de transporte move bilhões em comércio global. Quem controla o corredor tem poder de negociação regional. Tema direto para pauta de notícias: por que o que você compra da China pode começar a chegar por uma rota diferente.",
+        "aplicar": "Monte um carrossel educativo explicando as 3 rotas (Norte via Rússia, Sul via Irã, Médio via Cáspio) e por que a do meio ficou mais atraente em 2026. Conecta ao tema de preços de importação e cadeias de suprimento.",
+        "plano": "1) Abra o Google Maps e trace a rota China → Cazaquistão → Mar Cáspio → Azerbaijão → Georgia → Turquia → Europa · 2) Compare com a rota do Norte (Rússia) e Sul (Irã) — entenda por que a do meio ganhou peso · 3) Leia o artigo da Eurasianet sobre a visita do senador americano · 4) Escreva 5 slides: O que é, Por que agora, Quem ganha, Quem perde, O que muda no comércio global",
         "fonte": {
-          "t": "The Arctic Reopens as a Geopolitical Theatre (set/2026) — Modern Diplomacy",
-          "u": "https://moderndiplomacy.eu/2026/09/12/the-arctic-reopens-as-a-geopolitical-theatre/"
+          "t": "Eurasianet — US Senator holds talks on Trans-Caspian route 2026",
+          "u": "https://eurasianet.org/influential-us-senator-holds-talks-with-leaders-of-azerbaijan-kazakhstan-and-turkmenistan"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-10-10",
+        "id": "ads-2026-10-11",
         "top": true,
-        "t": "Image Assets Google Ads 2026: Fotos de Obra nos Anúncios de Busca — Sem Custo Extra, Lançamento Global Concluído, até +25% de CTR",
-        "resumo": "Image Assets (antes Image Extensions) permitem anexar fotos reais ao anúncio de texto de busca — a foto aparece ao lado do título e descrição nos resultados do Google. Sem custo adicional: você paga só o clique normal. Lançamento global concluído em 2026 (contas com menos de 90 dias ainda sem acesso). Agências reportam 10–25% de aumento em CTR. Formato: quadrado (1:1) ou paisagem (1.91:1), mínimo 300×300px, máximo 5MB. Google rejeita imagens com mais de 20% de área coberta por texto.",
-        "porque": "Até agora a OPC competia em texto puro nas buscas. Um anúncio 'Oak Park Construction — Kitchen Remodel in Weston' com foto real de reforma transforma um resultado genérico em vitrine visual. Para nicho de construção, uma foto de antes/depois ao lado do anúncio é imediatamente mais convincente que qualquer headline — e não custa nada extra.",
-        "aplicar": "Suba 3–4 fotos das melhores obras da OPC (antes/depois, detalhe de acabamento, fachada reformada). Prefira fotos sem texto sobreposto. Formate em quadrado E paisagem — o Google usa ambas dependendo do dispositivo. Não há garantia de exibição, mas contas com mais assets têm mais oportunidades.",
-        "plano": "1) No Google Ads: vá em 'Assets' na barra lateral → clique em + → selecione 'Image' · 2) Faça upload de 3 fotos de obra da OPC: 1 fachada, 1 cozinha ou banheiro reformado, 1 detalhe de acabamento premium · 3) Salve em ambas as proporções: 1:1 (quadrado) e 1.91:1 (paisagem) para cada foto · 4) Aguarde 1–2 semanas e monitore CTR por campanha: compare campanhas com Image Assets vs sem para quantificar o impacto",
+        "t": "Broad Match + Smart Bidding 2026: O Combo que o Google Empurra — e Funciona Se Você Controlar os Negativos",
+        "resumo": "Broad Match expandido + tCPA ou tROAS é o padrão recomendado pelo Google em 2026. O Broad Match usa IA para capturar buscas com intenção similar (não só palavras exatas). Smart Bidding filtra quem vale o clique. O segredo: negative keywords pesadas (até 10.000 por campanha), dados de conversão suficientes antes de ativar, e metas de CPA realistas — não 40% abaixo do mercado.",
+        "porque": "Antes de 2023 Broad Match era arriscado. Com Smart Bidding maduro, o Google aprendeu a não jogar dinheiro em termos irrelevantes — mas só com histórico de conversão. Para Oak Park Construction, pode capturar buscas como 'reformar cozinha Naperville' sem ter exatamente essas palavras na campanha.",
+        "aplicar": "Não substitua tudo de uma vez. Teste uma campanha nova com Broad + tCPA ao lado da sua campanha atual de exact/phrase. Compare CPL em 30 dias. Se o custo por lead for igual ou menor, expanda gradualmente.",
+        "plano": "1) Escolha uma campanha de serviços (não brand) e duplique · 2) Na cópia, mude todas as keywords para Broad Match · 3) Ative tCPA com meta igual ao seu custo atual por lead (não menor que isso) · 4) Revise os search terms semanalmente e adicione negativos — o Google suporta até 10.000 negativos por campanha",
         "fonte": {
-          "t": "Google Ads Assets Explained — LovesData",
-          "u": "https://www.lovesdata.com/blog/google-ads-assets/"
+          "t": "Benly AI — Google Ads Broad Match 2026 Guide",
+          "u": "https://benly.ai/learn/google-ads/google-ads-broad-match-2026"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-10-10",
+        "id": "iafim-2026-10-11",
         "top": true,
-        "t": "Letta (ex-MemGPT) 2026: Agente de IA com Memória Persistente — Lembra de Tudo Entre Sessões, Open-Source Apache 2.0, Self-Host Grátis",
-        "resumo": "Letta (UC Berkeley, Apache 2.0) organiza a memória do agente em 3 níveis: Core Memory (no contexto — o agente lê e escreve diretamente), Recall Memory (histórico pesquisável fora do contexto) e Archival Memory (longo prazo, buscado por ferramenta). O agente lembra de conversas passadas, preferências e contexto de projetos entre sessões — sem você repetir o briefing. Cloud gerenciada disponível; self-host via Docker em ~10 minutos.",
-        "porque": "Todos os agentes da semana (Flowise, n8n, AutoGen, Zapier, Dify, Coze, LangGraph) resolvem orquestração e automação, mas reiniciam sem memória a cada sessão. Letta resolve o problema oposto: um agente que cresce com você. Ideal para construir um 'assistente de negócio' da OPC que acumula contexto de clientes, projetos e histórico — sem repetir o briefing todo dia.",
-        "aplicar": "Monte um agente Letta para a OPC: ao processar um lead, salva nome + serviço + localização na Core Memory. Na sessão seguinte, quando o cliente entrar em contato de novo, o agente já sabe quem é e o histórico do pedido. Substitui a memória efêmera que vai embora no final de cada sessão com Claude ou GPT.",
-        "plano": "1) Acesse letta.ai — conta cloud gratuita disponível, ou clone o repositório GitHub para self-host via Docker · 2) Crie um agente com system prompt em português: 'Você é o assistente de vendas da Oak Park Construction. Registre e atualize dados de cada cliente e projeto na sua memória.' · 3) Configure blocos de Core Memory com campos: Nome do cliente, Serviço pedido, Status do projeto, Histórico de contato · 4) Teste com 3 leads reais da OPC — veja o agente atualizar a memória automaticamente e recuperar o contexto na sessão seguinte sem nenhuma instrução sua",
+        "t": "CrewAI 2026: Monte uma Equipe de Agentes IA — Pesquisador, Escritor e Revisor Trabalhando em Sequência",
+        "resumo": "CrewAI é um framework open-source Python para criar 'crews' — equipes de agentes IA onde cada um tem papel, objetivo e ferramentas específicas. Modos: sequencial (um passa para o próximo) ou hierárquico (um manager distribui tarefas). Funciona com qualquer LLM (Claude, GPT, Gemini). 100k+ desenvolvedores usando em 2026.",
+        "porque": "Diferente de n8n (workflows sem agência), AutoGen (dois agentes conversando) ou Zapier (triggers), o CrewAI simula uma equipe profissional: um pesquisa, um filtra, um redige. Para automatizar o pipeline de conteúdo da OPC — buscar tendências, criar roteiro, gerar legenda — seria uma crew de 3 agentes rodando a cada semana.",
+        "aplicar": "Comece com um caso simples: agente 1 pesquisa tendências de renovação da semana, agente 2 cria roteiro de 60 segundos, agente 3 formata para carrossel. Depois expanda para incluir aprovação automática por email.",
+        "plano": "1) Instale: pip install crewai crewai-tools · 2) Defina 3 agentes: Researcher (com search tool), Writer (sem tool), Reviewer (com critérios da OPC) · 3) Crie tasks para cada agente e monte a crew em modo sequencial · 4) Teste com: 'Quais são as 3 tendências de renovação mais virais desta semana?' — veja o resultado passar pelos 3 agentes",
         "fonte": {
-          "t": "Mem0 vs Letta (MemGPT): AI Agent Memory Compared (2026) — Vectorize",
-          "u": "https://vectorize.io/articles/mem0-vs-letta"
+          "t": "CrewAI Tutorial 2026 — Build Multi-Agent AI Systems in Python",
+          "u": "https://tutorials.technology/tutorials/crewai-multi-agent-python-2026.html"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ]
   }

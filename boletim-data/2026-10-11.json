@@ -1,0 +1,191 @@
+{
+  "date": "2026-10-11",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "obra",
+      "t": "Retell AI na linha da OPC — Agente de Voz Ativo e Pago",
+      "why": "Recibo do Retell AI chegou ontem + conta bancária conectada. O agente de voz está atendendo chamadas da Oak Park. Cheque os logs: o que ainda chega para o Michael? Que respostas precisam de ajuste?",
+      "go": "obra"
+    },
+    {
+      "tag": "conteudo",
+      "t": "338 conteúdos OPC aguardando aprovação — fila crítica",
+      "why": "Email de aprovação pendente com 338 posts. Use um sistema de batch-review: agrupe por tipo (antes/depois, dica, depoimento) e aprove em blocos. Metricool já tem login ativo para programar o que sair da fila.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "tip",
+      "t": "Payroll mensal está marcado para hoje às 10:25 — faça primeiro",
+      "why": "Com TDAH, tarefas administrativas com data certa somem da memória se não forem a primeira coisa. Execute antes de abrir qualquer projeto criativo.",
+      "go": "tip"
+    },
+    {
+      "tag": "iafim",
+      "t": "Real Estate Exam é o item 1 do seu dia — todo dia",
+      "why": "Calendar diário: 📚 REAL ESTATE — FIRST THING às 8h. Agentes de IA podem gerar quiz, flashcards e simulados para acelerar preparação — leia o card de iafim de hoje para uma ideia de como montar isso.",
+      "go": "iafim"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-11",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-10-11",
+        "top": true,
+        "t": "Menu de Dopamina para TDAH: Monte um Cardápio de Recompensas Antes de Precisar Delas",
+        "resumo": "O Menu de Dopamina é uma lista pré-montada de atividades que ativam recompensa no cérebro, dividida em categorias: Entradas (1–5 min, impulso rápido), Pratos Principais (prazer profundo, mais tempo), Acompanhamentos (o que você faz junto à tarefa chata — música, podcast), Sobremesas (scroll, 10 min max) e Especiais (saídas, planos). Você monta ANTES de precisar, quando o cérebro não está em crise.",
+        "porque": "Com TDAH o problema não é falta de vontade — é que o cérebro em crise de dopamina paralisa na decisão. Ter o menu pronto remove a fricção: em vez de rolar TikTok por padrão, você escolhe uma opção que realmente recarrega. A CHADD valida o conceito como ferramenta para momentos de busca de estímulo.",
+        "aplicar": "Monte o menu agora, quando está descansada. Coloque visível — papel na mesa ou widget no celular. Use antes de cada bloco de trabalho e depois de completar uma tarefa pesada como o payroll.",
+        "plano": "1) Abra uma nota e escreva os 5 títulos: Entradas, Pratos, Acompanhamentos, Sobremesas, Especiais · 2) Liste 2–3 opções em cada categoria que realmente te animam (não o que 'você acha que devia') · 3) Prepare os 'ingredientes': se a opção é pintar, deixe os materiais à vista agora · 4) Toda vez que sentir impulso de abrir redes sem intenção, abra o menu primeiro e escolha",
+        "fonte": {
+          "t": "CHADD — Dopamine menus: the science behind the trend",
+          "u": "https://chadd.org/?p=55662"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-10-11",
+        "top": true,
+        "t": "Macarrão com Pesto de Rúcula e Tomate Cherry Salteado — 20 Min, Vegano, Kid-Friendly",
+        "resumo": "Pesto de rúcula fresca batida com castanha-de-caju demolhada, azeite, alho e levedura nutricional — cremoso e levemente picante. Tomate cherry salteado em azeite por 5 min até caramelizar. Massa curta (fusilli ou penne) misturada ao pesto quente. Uma panela + liquidificador, pronto em 20 minutos.",
+        "porque": "Rúcula é mais fácil de achar que manjericão, o pesto não vai ao fogo e mantém as vitaminas. Sem leite de vaca, sem queijo animal. As crianças aceitam bem — sabor suave e o tomate cherry caramelizado fica docinho. Pode dobrar a receita e guardar o pesto por 3 dias.",
+        "aplicar": "Substituto rápido para dias sem inspiração. O pesto fica ainda melhor no dia seguinte, então vale fazer a mais no jantar para o almoço do dia seguinte.",
+        "plano": "1) Ferva a massa conforme a embalagem · 2) Bata no liquidificador: 2 xícaras de rúcula, ½ xícara castanha-de-caju crua demolhada (1h de molho), 2 col. sopa azeite, 1 dente alho, 2 col. sopa levedura nutricional, sal e limão a gosto · 3) Salteie tomate cherry cortado ao meio em azeite quente por 5 min até dourar · 4) Misture massa + pesto + tomate e sirva com rúcula fresca por cima",
+        "fonte": {
+          "t": "Loving It Vegan — Vegan Pesto Pasta with Pan-Roasted Cherry Tomatoes",
+          "u": "https://lovingitvegan.com/vegan-pesto-pasta-pan-roasted-cherry-tomatoes/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-10-11",
+        "top": true,
+        "t": "Gelato 2026: POD Global com 140+ Hubs Locais — Frete Mais Rápido Porque Fabrica Perto do Cliente",
+        "resumo": "Gelato tem 140+ parceiros de produção em 32 países: seu pedido é fabricado no hub mais próximo do cliente final, reduzindo frete e prazo. Oferece t-shirts, hoodies, canecas, arte impressa e produtos personalizados. Integra com Shopify, Etsy e WooCommerce. Plano pago ~$24/mês libera descontos extras e acesso a catálogo ampliado.",
+        "porque": "Produzindo localmente no país do comprador, o frete médio cai e o prazo é mais curto que plataformas que fabricam só nos EUA ou Ásia. Avaliações 2026 no Trustpilot elogiam qualidade de impressão. Alternativa real ao Printful para quem vende globalmente — sem estoque.",
+        "aplicar": "Ideal se você quer vender para EUA e Brasil ao mesmo tempo sem pagar frete internacional. Peça um sample de t-shirt feminina antes de lançar para checar qualidade do tecido e bordado disponível.",
+        "plano": "1) Acesse gelato.com e crie conta gratuita · 2) Conecte sua loja Shopify ou Etsy · 3) Vá em 'Apparel' > 'Women' e adicione um produto teste · 4) Peça um sample para seu endereço e compare qualidade com o CustomCat ou Printful que você já usa",
+        "fonte": {
+          "t": "Ecommerce Platforms — Gelato Print on Demand Review 2026",
+          "u": "https://ecommerce-platforms.com/articles/gelato-review"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-10-11",
+        "top": true,
+        "t": "Captions.ai 2026: IA para Talking-Head Reels — Correção de Olhar, Legendas Animadas e Dublagem em 30+ Idiomas",
+        "resumo": "Captions.ai é focado em criadores que aparecem na câmera. Funcionalidades em 2026: corte automático de silêncios, legendas animadas estilizadas, correção de direção do olhar (eye contact correction), B-roll gerado por IA, dublagem em 30+ idiomas preservando sotaque, e avatares personalizados. Avaliado 8.6/10 (NeuronFeed) e 9.12/10 em 37k+ avaliações verificadas.",
+        "porque": "A diferença do CapCut e OpusClip: foco em rosto na câmera, não em clipes longos. Se você grava stories, reels de serviço ou apresentações (OPC), a IA corrige a postura do olhar e adiciona legendas com sincronização perfeita — sem pós-edição manual. Suporta arquivos de até 30 min.",
+        "aplicar": "Use para os reels da OPC onde você ou o Mike aparecem falando. A eye contact correction é especialmente útil em vídeos gravados olhando para roteiro. Teste no próximo vídeo antes de pós-produzir manualmente.",
+        "plano": "1) Acesse captions.ai e crie conta (plano gratuito disponível) · 2) Faça upload de um vídeo falando para câmera — pode ser um teste de 1 minuto · 3) Ative 'Eye Contact Correction' + 'Auto Captions' com estilo animado · 4) Exporte e compare com e sem correção — a diferença de engajamento costuma ser significativa",
+        "fonte": {
+          "t": "NeuronFeed — Captions Review 2026",
+          "u": "https://neuronfeed.com/reviews/captions-review-2026"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-10-11",
+        "top": true,
+        "t": "Higgsfield AI 2026: Prompt + Foto da Obra → Vídeo Cinemático com Efeitos Embutidos — Você Já Tem Conta",
+        "resumo": "Higgsfield AI gera vídeos curtos para redes sociais a partir de texto e imagens, com efeitos visuais pré-configurados em Cinema Studio e Marketing Studio. Suporta Start/End Frames — upload da foto antes e depois da reforma gera transição fluida. Output nativo para Reels e TikTok. Você se logou ontem, a conta já está ativa.",
+        "porque": "Diferente de Kling ou Immersity, o Higgsfield tem presets cinematográficos que não exigem pós-produção em After Effects ou CapCut. Você sobe a foto final da reforma, descreve o ambiente, e o vídeo gera movimento cinemático em segundos — pronto para postar.",
+        "aplicar": "Use Start Frame = foto antes da reforma e End Frame = foto depois. O modelo interpola o antes e depois em um clip fluido. Ideal para o feed da OPC mostrar transformações de cozinha, banheiro ou fachada em menos de 60 segundos.",
+        "plano": "1) Acesse higgsfield.ai com a conta que você criou ontem · 2) Escolha 'Cinema Studio' no menu de modos · 3) Faça upload de uma foto de antes e uma de depois de um projeto da OPC · 4) Use Start/End Frames e descreva no prompt: 'cinematic renovation reveal, warm lighting, smooth camera move' — exporte em 9:16 para Reels",
+        "fonte": {
+          "t": "Higgsfield AI — Visual Effects Presets Guide",
+          "u": "https://geo.higgsfield.ai/blog/higgsfield-ai-video-platform-visual-effects-presets"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-10-11",
+        "top": true,
+        "t": "Corredor Médio 2026: A Rota Trans-Cáspia que Quer Substituir a Rede Russa — Cazaquistão Vira Hub da Eurásia",
+        "resumo": "O Corredor Médio (TITR) liga China a Europa pelo Cazaquistão → Mar Cáspio → Azerbaijão → Geórgia → Turquia, sem passar pela Rússia. Em 2026 ganhou urgência: sanções à Rússia + perturbação de rotas iranianas forçaram países a buscar alternativas. EUA enviaram senadores à região. Cazaquistão agora tem poder de barganha com China, Europa e EUA ao mesmo tempo.",
+        "porque": "A geopolítica das rotas de transporte move bilhões em comércio global. Quem controla o corredor tem poder de negociação regional. Tema direto para pauta de notícias: por que o que você compra da China pode começar a chegar por uma rota diferente.",
+        "aplicar": "Monte um carrossel educativo explicando as 3 rotas (Norte via Rússia, Sul via Irã, Médio via Cáspio) e por que a do meio ficou mais atraente em 2026. Conecta ao tema de preços de importação e cadeias de suprimento.",
+        "plano": "1) Abra o Google Maps e trace a rota China → Cazaquistão → Mar Cáspio → Azerbaijão → Georgia → Turquia → Europa · 2) Compare com a rota do Norte (Rússia) e Sul (Irã) — entenda por que a do meio ganhou peso · 3) Leia o artigo da Eurasianet sobre a visita do senador americano · 4) Escreva 5 slides: O que é, Por que agora, Quem ganha, Quem perde, O que muda no comércio global",
+        "fonte": {
+          "t": "Eurasianet — US Senator holds talks on Trans-Caspian route 2026",
+          "u": "https://eurasianet.org/influential-us-senator-holds-talks-with-leaders-of-azerbaijan-kazakhstan-and-turkmenistan"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-10-11",
+        "top": true,
+        "t": "Broad Match + Smart Bidding 2026: O Combo que o Google Empurra — e Funciona Se Você Controlar os Negativos",
+        "resumo": "Broad Match expandido + tCPA ou tROAS é o padrão recomendado pelo Google em 2026. O Broad Match usa IA para capturar buscas com intenção similar (não só palavras exatas). Smart Bidding filtra quem vale o clique. O segredo: negative keywords pesadas (até 10.000 por campanha), dados de conversão suficientes antes de ativar, e metas de CPA realistas — não 40% abaixo do mercado.",
+        "porque": "Antes de 2023 Broad Match era arriscado. Com Smart Bidding maduro, o Google aprendeu a não jogar dinheiro em termos irrelevantes — mas só com histórico de conversão. Para Oak Park Construction, pode capturar buscas como 'reformar cozinha Naperville' sem ter exatamente essas palavras na campanha.",
+        "aplicar": "Não substitua tudo de uma vez. Teste uma campanha nova com Broad + tCPA ao lado da sua campanha atual de exact/phrase. Compare CPL em 30 dias. Se o custo por lead for igual ou menor, expanda gradualmente.",
+        "plano": "1) Escolha uma campanha de serviços (não brand) e duplique · 2) Na cópia, mude todas as keywords para Broad Match · 3) Ative tCPA com meta igual ao seu custo atual por lead (não menor que isso) · 4) Revise os search terms semanalmente e adicione negativos — o Google suporta até 10.000 negativos por campanha",
+        "fonte": {
+          "t": "Benly AI — Google Ads Broad Match 2026 Guide",
+          "u": "https://benly.ai/learn/google-ads/google-ads-broad-match-2026"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-10-11",
+        "top": true,
+        "t": "CrewAI 2026: Monte uma Equipe de Agentes IA — Pesquisador, Escritor e Revisor Trabalhando em Sequência",
+        "resumo": "CrewAI é um framework open-source Python para criar 'crews' — equipes de agentes IA onde cada um tem papel, objetivo e ferramentas específicas. Modos: sequencial (um passa para o próximo) ou hierárquico (um manager distribui tarefas). Funciona com qualquer LLM (Claude, GPT, Gemini). 100k+ desenvolvedores usando em 2026.",
+        "porque": "Diferente de n8n (workflows sem agência), AutoGen (dois agentes conversando) ou Zapier (triggers), o CrewAI simula uma equipe profissional: um pesquisa, um filtra, um redige. Para automatizar o pipeline de conteúdo da OPC — buscar tendências, criar roteiro, gerar legenda — seria uma crew de 3 agentes rodando a cada semana.",
+        "aplicar": "Comece com um caso simples: agente 1 pesquisa tendências de renovação da semana, agente 2 cria roteiro de 60 segundos, agente 3 formata para carrossel. Depois expanda para incluir aprovação automática por email.",
+        "plano": "1) Instale: pip install crewai crewai-tools · 2) Defina 3 agentes: Researcher (com search tool), Writer (sem tool), Reviewer (com critérios da OPC) · 3) Crie tasks para cada agente e monte a crew em modo sequencial · 4) Teste com: 'Quais são as 3 tendências de renovação mais virais desta semana?' — veja o resultado passar pelos 3 agentes",
+        "fonte": {
+          "t": "CrewAI Tutorial 2026 — Build Multi-Agent AI Systems in Python",
+          "u": "https://tutorials.technology/tutorials/crewai-multi-agent-python-2026.html"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ]
+  }
+}
