@@ -1,0 +1,191 @@
+{
+  "date": "2026-10-12",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "📵 Metricool",
+      "t": "@tryingtoreach.you desconectado do Metricool — reconectar antes de agendar posts",
+      "why": "Email de hoje (04:56 NY): Instagram Business tryingtoreach.you revogou as permissões. Qualquer post agendado para essa conta vai falhar silenciosamente até reconectar. Leva 2 minutos: Metricool → Settings → Social Accounts → reconectar Instagram.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "⚡ Anthropic",
+      "t": "Créditos Anthropic zerados — fallback ativo pelo 7º dia consecutivo",
+      "why": "Email de hoje (08:33 NY) confirma: Anthropic low_credit, fallback ativo. Pipeline de captura de conteúdo comprometida há 7 dias. Recarregar em console.anthropic.com/settings/billing para restaurar a pipeline completa.",
+      "go": "iafim"
+    },
+    {
+      "tag": "🤖 Agents Review",
+      "t": "Weekly Agents Review hoje às 9h — hora de avaliar Relevance AI, Sora e Predis.ai",
+      "why": "Evento recorrente no calendário de segunda-feira. Três ferramentas do boletim de hoje (Relevance AI, Sora no ChatGPT, Predis.ai carrossel) são candidatas diretas para o intake desta semana no Agents Tracker.",
+      "go": "iafim"
+    },
+    {
+      "tag": "🧾 Finance",
+      "t": "Finance check + AI charges hoje às 10h — verificar cobranças novas desta semana",
+      "why": "Evento recorrente no calendário. Com Anthropic degradada e plataformas novas testadas esta semana (Spring, Predis.ai, Sora), vale checar se alguma cobrou sem uso esperado no Tiller.",
+      "go": "ads"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-12",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-10-12",
+        "top": true,
+        "t": "Temptation Bundling para TDAH: Pare com o Esforço Puro — Amarre a Tarefa Chata à Coisa que Você MAIS Quer Fazer",
+        "resumo": "Técnica criada por Katherine Milkman (Wharton): você só pode fazer a atividade prazerosa enquanto executa a tarefa de alta resistência. Exemplo: só ouve o podcast favorito enquanto processa posts OPC, só assiste a série enquanto preenche planilha financeira. A recompensa não vem depois — vem durante. Diferente de todas as técnicas desta semana (timers, se-então, body doubling, regra dos 2 min, MIT, menu de dopamina): o bundling não exige força de vontade — ele reconfigura a equação de recompensa da tarefa.",
+        "porque": "O TDAH tem déficit no sistema de recompensa dopaminérgico — o cérebro não consegue sentir que a tarefa 'vale a pena' até ter evidência imediata de prazer. Postergar a recompensa para depois de terminar nunca funciona: o 'depois' não existe para o cérebro com TDAH. O bundling injeta a recompensa no momento exato da execução, tornando a tarefa atrativa no presente.",
+        "aplicar": "Reserve 1-2 prazeres exclusivamente para tarefas de alta resistência. Nunca escute o podcast favorito no carro ou descansando — só durante a tarefa chata. A escassez artificial aumenta o poder da recompensa. Se terminou a tarefa no meio do episódio, pare o podcast e continue só quando retomar.",
+        "plano": "1) Liste 2-3 prazeres que você adia por 'ainda não mereceu': podcast específico, playlist de trabalho, série nova — escolha algo que dure 30-60 min e seja absorvente · 2) Identifique 2-3 tarefas de alta resistência desta semana: estudo de RE, aprovação de posts OPC, planilha de leads · 3) Amarre: 'Só ouço o podcast X enquanto processo os posts OPC — pausa junto quando pauso a tarefa' · 4) Teste por 3 dias e compare a resistência ao início dessas tarefas com e sem o bundle — o efeito é imediato na maioria das pessoas",
+        "fonte": {
+          "t": "Temptation bundling: how to stop procrastinating by boosting your willpower — Ness Labs",
+          "u": "https://nesslabs.com/temptation-bundling"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-10-12",
+        "top": true,
+        "t": "Curry de Lentilha Vermelha com Batata-Doce e Leite de Coco — 40 Min, 1 Panela, Vegano, Kid-Friendly",
+        "resumo": "Lentilha vermelha (sem demolho) + batata-doce em cubos cozidos em leite de coco com cúrcuma, cominho, coentro em pó e garam masala. Cremoso, levemente adocicado, proteico. Pronto em 40 minutos em uma panela. Crianças aprovam o sabor suave com leve dulçor da batata-doce — sem leite de vaca, sem frutos do mar. Serve com arroz integral ou pita. Guarda 4 dias na geladeira.",
+        "porque": "Ingredientes completamente novos nesta semana (lentilha vermelha + batata-doce — nenhum dos dois apareceu nos últimos 7 dias). A lentilha vermelha dissolve parcialmente no cozimento, engrossando o molho sem amido — textura cremosa que dispensa espessantes. Proteína vegetal completa (18g por porção). Leite de coco substitui qualquer laticínio.",
+        "aplicar": "A lentilha vermelha não precisa demolho — vai direto na panela. O segredo é refogar o tempero seco antes de adicionar o líquido para ativar os óleos essenciais das especiarias (30 seg). O curry melhora no dia seguinte — vale dobrar a receita.",
+        "plano": "1) Refogue: cebola + 3 dentes alho + 1 col chá gengibre fresco em azeite por 5 min até amolecer · 2) Adicione especiarias secas: 1 col chá cúrcuma + 1 col chá cominho + 1 col chá coentro em pó + 1 col chá garam masala — mexa 30 seg até perfumar · 3) Entre com: 1 xíc lentilha vermelha seca + 1 batata-doce grande em cubos de 2cm + 400ml leite de coco + 500ml caldo de legumes — simmer 25-30 min até batata macia e molho encorpado · 4) Ajuste sal e adicione suco de ½ limão; sirva com arroz integral e coentro fresco; opcional: queijo vegano FL derretido por cima",
+        "fonte": {
+          "t": "Coconut Sweet Potato Red Lentil Curry (Vegan) — Running on Real Food",
+          "u": "https://runningonrealfood.com/sweet-potato-lentil-curry"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-10-12",
+        "top": true,
+        "t": "Spring (Teespring) 2026: POD com YouTube Merch Shelf e TikTok Shop — Venda Direto Onde Seu Público Assiste, Zero Custo Fixo",
+        "resumo": "Spring tem integração nativa com YouTube Merch Shelf (seu merch aparece abaixo dos vídeos), TikTok Shopping e Twitch — sem taxas mensais. Você cria produtos, Spring fabrica e envia sob demanda, o cliente compra sem sair da plataforma de conteúdo. Zero custo de entrada. Para criadores com audiência engajada em vídeo, é o caminho mais direto entre conteúdo e venda. Avaliado 3.5/5 em reviews recentes — funciona bem para volume baixo-médio de teste.",
+        "porque": "Nenhuma das 7 plataformas desta semana (SPOD, Apliiq, Gooten, Teemill, Printify, CustomCat, Gelato) integra nativamente com YouTube Shelf e TikTok Shop. Para criadora de conteúdo, ter o merch visível enquanto o vídeo está rolando é uma janela de compra por impulso que plataformas de fabricação pura não oferecem. Ângulo de social commerce — diferente de todas as plataformas cobertas.",
+        "aplicar": "Use Spring para lançamentos rápidos ligados a conteúdo (coleção especial para série de vídeos, merch de episódio viral). Para a linha principal de longlines com bordado e qualidade premium, mantenha Printful ou Apliiq para o site principal — Spring cobre a descoberta no canal.",
+        "plano": "1) Crie conta gratuita em spring.com — conecta via OAuth com YouTube, TikTok ou Twitch · 2) Suba 2-3 designs de tee e configure as margens de lucro · 3) No YouTube Studio: ative o Merch Shelf nas configurações do canal — seus produtos Spring aparecem automaticamente abaixo de cada vídeo · 4) Antes de escalar: peça sample para verificar qualidade atual de impressão e bordado; leia reviews de 2026 sobre prazo de entrega — a plataforma passou por mudanças de gestão em 2024 e qualidade pode variar por produto",
+        "fonte": {
+          "t": "Teespring Print on Demand: Honest Review 2026 — EComposer",
+          "u": "https://ecomposer.io/blogs/pod/teespring-print-on-demand"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-10-12",
+        "top": true,
+        "t": "Predis.ai 2026: Cole o Tema do Post → IA Gera Carrossel Completo com Copy, Imagens e Hashtags em 1 Clique",
+        "resumo": "Predis.ai gera carrosséis para Instagram a partir de texto, URL de produto ou prompt livre: a IA cria os slides, escreve a copy de cada frame e sugere hashtags. Plano grátis com 15 posts/mês (com marca d'água); Solo $32/mês sem marca. 6,4 milhões de usuários, 200M+ posts gerados (mai/2026). Avaliação: 4.2/5 (AI So Tools, jun/2026). Diferencial vs todas as ferramentas desta semana (CapCut, OpusClip, Veed, Descript, Pictory, Captions): foco exclusivo em carrossel e posts estáticos — você não edita vídeo, você gera a sequência de slides já pronta.",
+        "porque": "Para o backlog de 338 posts OPC e 32 posts de news: em vez de criar cada carrossel no Canva do zero, cole o tema no Predis e ajuste os slides gerados. O ganho de tempo é real mesmo quando você precisa reescrever 2-3 slides — o layout, as imagens e a estrutura já estão lá. A conta Instagram @tryingtoreach.you está desconectada hoje (ver highlight): bom momento para pre-produzir carrosséis enquanto reconecta.",
+        "aplicar": "Para cada post da fila OPC, escreva 1 frase resumo do tema (ex: 'Como escolher porcelanato para banheiro pequeno — 3 dicas') e deixe o Predis gerar o carrossel. Revise a copy, troque imagens genéricas por fotos reais da OPC e agende no Metricool.",
+        "plano": "1) Acesse predis.ai e crie conta gratuita (15 posts/mês sem cartão) · 2) No dashboard, clique em 'Create Post' → 'Carousel' → Cole o tema do post OPC em texto livre · 3) A IA gera 5-8 slides com copy e imagens de stock — revise cada slide e substitua imagens genéricas por fotos reais de obras · 4) Ajuste a copy no slide de gancho (slide 1) e no CTA final — são os dois que mais impactam saves e compartilhamentos; exporte e agende no Metricool",
+        "fonte": {
+          "t": "Predis.ai Review 2026 — AI So Tools",
+          "u": "https://aisotools.com/blog/predis-ai-review-2026"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-10-12",
+        "top": true,
+        "t": "Sora no ChatGPT 2026: Gere B-Roll de Reforma por Texto — Disponível para Plus e Pro Sem Abrir Outra Plataforma",
+        "resumo": "O Sora (OpenAI) foi integrado ao ChatGPT — assinantes Plus ($20/mês) e Pro ($200/mês) acessam geração de vídeo diretamente no chat. Você descreve a cena em texto e recebe um clip de até 20 segundos. Diferente de Kling e Hailuo (que partem de foto), o Sora parte de texto puro — ideal para gerar B-roll de cenas que você não tem footage real: timelapse de obra, drone pullback de fachada, close de detalhe de acabamento.",
+        "porque": "Todas as 7 ferramentas desta semana (Hailuo, ElevenLabs, Firefly, Veo, Kling, Immersity, Higgsfield) são plataformas separadas com login e créditos próprios. O Sora via ChatGPT é uma ferramenta que você provavelmente já paga — sem abrir outra conta, sem créditos extras, sem prompt de upload de foto. Ângulo completamente diferente: geração a partir de descrição pura.",
+        "aplicar": "Use para gerar B-roll de cenas difíceis de filmar: 'timelapse de cozinha sendo renovada, câmera fixa no canto, 15 segundos', 'close em detalhe de granito cinza com luz natural incidindo em ângulo'. Combine com footage real da OPC no CapCut para dar contexto cinematográfico aos Reels.",
+        "plano": "1) Acesse chat.openai.com e confirme plano Plus ou Pro ativo — ou acesse sora.com separadamente · 2) No chat, descreva a cena de reforma com detalhe: tipo de cômodo, material, movimento de câmera, iluminação, duração (máx 20 seg) · 3) Baixe o clip (1080p) e importe no CapCut como B-roll de abertura ou transição entre fotos reais · 4) Teste 3 prompts de alta conversão para construção: slow motion de detalhe de acabamento premium, timelapse de montagem, drone pullback de fachada renovada ao entardecer — veja qual prende o scroll nos primeiros 2 segundos",
+        "fonte": {
+          "t": "OpenAI plans to bring Sora's video generator to ChatGPT — TechCrunch",
+          "u": "https://techcrunch.com/2025/02/28/openai-plans-to-bring-soras-video-generator-to-chatgpt"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-10-12",
+        "top": true,
+        "t": "Essequibo 2026: Venezuela Reivindica 2/3 da Guiana — 11 Bilhões de Barris de Petróleo e a Maior Corte do Mundo no Meio",
+        "resumo": "A Venezuela reivindica Essequibo — 160 mil km² equivalentes a 2/3 do território atual da Guiana. Em maio/2026, a Guiana abriu audiências finais no Tribunal Internacional de Justiça (TIJ), pedindo que o laudo de Paris de 1899 seja declarado definitivo. Em jogo: os 11 bilhões de barris do Bloco Stabroek (ExxonMobil), descobertos a partir de 2015. A Guiana passou de zero produção de petróleo para 700 mil barris/dia em 5 anos — uma das maiores transformações econômicas do hemisfério. Trump enviou apoio naval americano à Guiana, escalando a tensão.",
+        "porque": "Região diferente de todos os temas desta semana (Caxemira, Taiwan, Mar Vermelho, Nilo, Sahel, Ártico, Corredor Médio). É o único conflito territorial ativo na América do Sul com petróleo, uma potência regional recuada e uma decisão judicial iminente. Pauta que conecta diretamente ao contexto brasileiro — e à política americana com Trump.",
+        "aplicar": "Para pauta de notícias: 'O país que era um dos mais pobres da América do Sul tem agora mais petróleo per capita que a Arábia Saudita — e o vizinho quer a parte de trás'. Carrossel simples: mapa + linha do tempo das descobertas + o que o TIJ pode decidir.",
+        "plano": "1) Localize no mapa: Essequibo fica no oeste da Guiana, faz fronteira com Venezuela — área maior que o Uruguai (160 mil km²) · 2) Linha do tempo: 1899 (laudo de Paris, Venezuela perdeu), 2015 (ExxonMobil descobre petróleo no Stabroek Block), 2023 (referendo venezuelano aprova 'incorporar Essequibo'), mai/2026 (audiências finais no TIJ) · 3) Entenda o poder real: a Guiana recebe ~30% do PIB em royalties de petróleo — suficiente para manter Maduro interessado mesmo sem capacidade militar · 4) Monitore o TIJ: uma decisão final pode vir em 2027, mas qualquer declaração parcial vira manchete imediata — e Trump com gunboat diplomacy mantém o tema aquecido",
+        "fonte": {
+          "t": "Guyana takes Venezuela to World Court as Caricom fractures — Caribbean360",
+          "u": "https://caribbean360.com/guyana-is-at-the-hague-venezuela-is-wearing-a-brooch-caricom-is-fracturing"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-10-12",
+        "top": true,
+        "t": "Local Services Ads (LSA) 2026: O Único Anúncio do Google que Cobra por Lead — E Aparece ANTES dos Search Ads",
+        "resumo": "LSA aparece acima dos anúncios de Search regulares e do mapa local nas buscas de serviços contratistas. Em outubro/2025, o Google unificou os badges 'Guaranteed' e 'Screened' em um único badge 'Google Verified'. Você paga só por lead (chamada ou mensagem real) — não por clique. Ranking é determinado por volume de reviews, velocidade de resposta (< 5 min) e status de verificação — não por lance. Benchmarks de construção: $50-$130 por lead, 43.9% de taxa de agendamento.",
+        "porque": "Todas as estratégias desta semana focaram em Search, PMax, Demand Gen, Customer Match e Image Assets. LSA é um canal diferente: ocupa posição premium sem concorrer em lances, cobra por lead real, e o badge de verificação aumenta conversão porque o cliente sabe que a empresa passou por checagem de licença e antecedentes. Para 'kitchen remodel Weston' ou 'contractor Broward', aparecer ACIMA dos Search ads com badge verificado é o diferencial que fecha orçamentos.",
+        "aplicar": "Para OPC (CBC1263425): o badge de verificação requer licença de contractor ativa (já existe) + seguro general liability de $100k-$1M + background check no dono e cada funcionário de campo. A licença CBC acelera a aprovação. Uma vez ativo, aparece antes dos Search ads para buscas de reforma em Broward.",
+        "plano": "1) Acesse ads.google.com/local-services-ads — confirme que 'General Contracting' ou 'Flooring/Painting' está disponível na Flórida · 2) Crie o perfil e submeta documentos: licença CBC1263425 + apólice de general liability ($100k-$1M mínimo) + CPF/background do owner · 3) Configure orçamento por lead ($75-100/lead para começar) e defina horário de atendimento real — response time < 5 min é fator de ranking · 4) Após aprovação, monitore 'disputable leads' (< 15% é saudável) e compare CPL do LSA vs Search regular nas primeiras 4 semanas",
+        "fonte": {
+          "t": "Google Local Service Ads in 2026 — The Complete Setup and Optimization Guide for Contractors — PushLeads",
+          "u": "https://pushleads.com/google-local-service-ads-in-2026-the-complete-setup-and-optimization-guide-for-contractors/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-10-12",
+        "top": true,
+        "t": "Relevance AI 2026: Monte um Agente que Qualifica Leads e Preenche Planilhas Sozinho — No-Code, Multi-LLM, Grátis para Testar",
+        "resumo": "Relevance AI é uma plataforma no-code para criar agentes orientados a negócio: você arrasta blocos (buscar info, gerar texto com LLM, escrever em planilha, enviar email) e configura o agente sem código. Suporta Claude, GPT-4 e Gemini — escolha o modelo por tarefa. Plano gratuito com 100 créditos/dia; Pro $19/mês. Rating: 7.3/10 (Automation Atlas, 2026). Fundada 2020, Series A 2023. Focada em equipes de vendas e marketing — não em desenvolvedores.",
+        "porque": "Diferente das 7 ferramentas desta semana (AutoGen, Zapier, Dify, Coze, LangGraph, Letta, CrewAI): Relevance AI foi construída para usuários de negócio sem código, com casos de uso pré-configurados de qualificação de leads e automação de marketing. Sem dependência de créditos Anthropic (usa múltiplos LLMs), sem Python, sem servidor para subir. Ideal para resolver a triagem manual de leads OPC enquanto os créditos Anthropic estão baixos.",
+        "aplicar": "Monte um agente de qualificação: quando novo lead chega por email, o agente extrai serviço + localização + urgência, classifica (kitchen remodel > general inquiry), e popula uma linha no Google Sheets com status — sem você abrir o email.",
+        "plano": "1) Acesse relevanceai.com → crie conta gratuita (100 créditos/dia sem cartão) · 2) No builder, crie uma nova 'Tool' com blocos: Input (email raw) → Extract Info com LLM (Claude ou GPT-4) → Classify Priority → Write to Google Sheets · 3) Conecte ao Gmail via integração OAuth e defina o trigger: quando email com 'quote' ou 'estimate' no assunto chegar, rodar o agente · 4) Teste com 3 emails reais de lead da OPC — veja o agente classificar e preencher a planilha sem intervenção; revise os campos extraídos e ajuste o prompt de extração se necessário",
+        "fonte": {
+          "t": "Is Relevance AI worth it in 2026? A detailed review — Automation Atlas",
+          "u": "https://automationatlas.io/answers/relevance-ai-review-2026/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ]
+  }
+}
