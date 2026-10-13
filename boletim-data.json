@@ -1,35 +1,35 @@
 {
-  "date": "2026-10-12",
+  "date": "2026-10-13",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "📵 Metricool",
-      "t": "@tryingtoreach.you desconectado do Metricool — reconectar antes de agendar posts",
-      "why": "Email de hoje (04:56 NY): Instagram Business tryingtoreach.you revogou as permissões. Qualquer post agendado para essa conta vai falhar silenciosamente até reconectar. Leva 2 minutos: Metricool → Settings → Social Accounts → reconectar Instagram.",
-      "go": "conteudo"
-    },
-    {
-      "tag": "⚡ Anthropic",
-      "t": "Créditos Anthropic zerados — fallback ativo pelo 7º dia consecutivo",
-      "why": "Email de hoje (08:33 NY) confirma: Anthropic low_credit, fallback ativo. Pipeline de captura de conteúdo comprometida há 7 dias. Recarregar em console.anthropic.com/settings/billing para restaurar a pipeline completa.",
-      "go": "iafim"
-    },
-    {
-      "tag": "🤖 Agents Review",
-      "t": "Weekly Agents Review hoje às 9h — hora de avaliar Relevance AI, Sora e Predis.ai",
-      "why": "Evento recorrente no calendário de segunda-feira. Três ferramentas do boletim de hoje (Relevance AI, Sora no ChatGPT, Predis.ai carrossel) são candidatas diretas para o intake desta semana no Agents Tracker.",
-      "go": "iafim"
-    },
-    {
-      "tag": "🧾 Finance",
-      "t": "Finance check + AI charges hoje às 10h — verificar cobranças novas desta semana",
-      "why": "Evento recorrente no calendário. Com Anthropic degradada e plataformas novas testadas esta semana (Spring, Predis.ai, Sora), vale checar se alguma cobrou sem uso esperado no Tiller.",
+      "tag": "🚨 Pipeline",
+      "t": "ads_pulse.yml falhou — pipeline de monitoramento de ads parado",
+      "why": "GitHub Actions run 38305677738 falhou ontem (12/out). Com $658 de spend e apenas 5 conversões no mês, o pipeline de monitoramento precisa funcionar para checar anomalias.",
       "go": "ads"
+    },
+    {
+      "tag": "⚠️ API",
+      "t": "Anthropic API com crédito baixo — fallback ativo hoje",
+      "why": "Alerta chegou hoje às 12h18. Verificar billing e recarregar antes de rodar pipelines pesados de IA.",
+      "go": "iafim"
+    },
+    {
+      "tag": "📚 Real Estate",
+      "t": "Florida RE — Regra 1 ativa: estudo 8h-10h todo dia (não pular)",
+      "why": "Calendário bloqueia toda manhã. Quiz disponível em real-estate-quiz.html. Upgrade para Livestream ($146 a mais) só vale antes de fazer a prova final.",
+      "go": "tip"
+    },
+    {
+      "tag": "📋 Prazo Nov/11",
+      "t": "Google Workspace MCP: marcar OAuth clients como 'agentic' até 11/11/2026",
+      "why": "Email com [Action Required] recebido ontem. Sem a marcação, os MCP servers perdem acesso à conta Workspace após o prazo.",
+      "go": "conteudo"
     }
   ],
   "history": [
     {
-      "date": "2026-10-12",
+      "date": "2026-10-13",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,16 +37,16 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-10-12",
+        "id": "tip-2026-10-13",
         "top": true,
-        "t": "Temptation Bundling para TDAH: Pare com o Esforço Puro — Amarre a Tarefa Chata à Coisa que Você MAIS Quer Fazer",
-        "resumo": "Técnica criada por Katherine Milkman (Wharton): você só pode fazer a atividade prazerosa enquanto executa a tarefa de alta resistência. Exemplo: só ouve o podcast favorito enquanto processa posts OPC, só assiste a série enquanto preenche planilha financeira. A recompensa não vem depois — vem durante. Diferente de todas as técnicas desta semana (timers, se-então, body doubling, regra dos 2 min, MIT, menu de dopamina): o bundling não exige força de vontade — ele reconfigura a equação de recompensa da tarefa.",
-        "porque": "O TDAH tem déficit no sistema de recompensa dopaminérgico — o cérebro não consegue sentir que a tarefa 'vale a pena' até ter evidência imediata de prazer. Postergar a recompensa para depois de terminar nunca funciona: o 'depois' não existe para o cérebro com TDAH. O bundling injeta a recompensa no momento exato da execução, tornando a tarefa atrativa no presente.",
-        "aplicar": "Reserve 1-2 prazeres exclusivamente para tarefas de alta resistência. Nunca escute o podcast favorito no carro ou descansando — só durante a tarefa chata. A escassez artificial aumenta o poder da recompensa. Se terminou a tarefa no meio do episódio, pare o podcast e continue só quando retomar.",
-        "plano": "1) Liste 2-3 prazeres que você adia por 'ainda não mereceu': podcast específico, playlist de trabalho, série nova — escolha algo que dure 30-60 min e seja absorvente · 2) Identifique 2-3 tarefas de alta resistência desta semana: estudo de RE, aprovação de posts OPC, planilha de leads · 3) Amarre: 'Só ouço o podcast X enquanto processo os posts OPC — pausa junto quando pauso a tarefa' · 4) Teste por 3 dias e compare a resistência ao início dessas tarefas com e sem o bundle — o efeito é imediato na maioria das pessoas",
+        "t": "Ritual de Fechamento do Dia para TDAH: 5 Minutos que Silenciam os Loops Abertos e Permitem Descanso Real",
+        "resumo": "Cérebros com TDAH não desligam naturalmente ao fim do dia — os loops abertos ficam rodando, sabotando o descanso e o sono. O Shutdown Ritual é uma rotina de 5 a 10 minutos que fecha o dia de propósito: captura pensamentos soltos, define o primeiro passo do amanhã e manda um sinal físico ao cérebro de que o trabalho acabou.",
+        "porque": "Sem o ritual, o cérebro TDAH continua em modo de trabalho — você pensa nas tarefas no banho, na janta, antes de dormir. Isso consome dopamina e impede o descanso real. O ritual cria uma transição clara entre os modos de trabalho e descanso.",
+        "aplicar": "Para a Oak Park Construction: fechar o dia com as obras registradas no sistema, o próximo passo da manhã anotado e o laptop fechado com uma frase dita em voz alta. Para o estudo de RE: anotar o capítulo e o número da questão onde parou antes de fechar.",
+        "plano": "1) Às 16h30 (junto com o evento de notas do calendário), abrir um bloco de notas em branco · 2) Escrever tudo que ficou na cabeça sem organizar — só despejar por 2 minutos · 3) Escolher UMA ação concreta para amanhã de manhã e escrever 'Amanhã começo com: ___' · 4) Fechar o laptop e dizer em voz alta 'Trabalho encerrado' — o ritual está completo",
         "fonte": {
-          "t": "Temptation bundling: how to stop procrastinating by boosting your willpower — Ness Labs",
-          "u": "https://nesslabs.com/temptation-bundling"
+          "t": "Simply Psychology — Shutdown Ritual: A Practice for Productivity",
+          "u": "https://www.simplypsychology.org/shutdown-ritual.html"
         },
         "video": {
           "t": "",
@@ -56,16 +56,16 @@
     ],
     "receita": [
       {
-        "id": "receita-2026-10-12",
+        "id": "receita-2026-10-13",
         "top": true,
-        "t": "Curry de Lentilha Vermelha com Batata-Doce e Leite de Coco — 40 Min, 1 Panela, Vegano, Kid-Friendly",
-        "resumo": "Lentilha vermelha (sem demolho) + batata-doce em cubos cozidos em leite de coco com cúrcuma, cominho, coentro em pó e garam masala. Cremoso, levemente adocicado, proteico. Pronto em 40 minutos em uma panela. Crianças aprovam o sabor suave com leve dulçor da batata-doce — sem leite de vaca, sem frutos do mar. Serve com arroz integral ou pita. Guarda 4 dias na geladeira.",
-        "porque": "Ingredientes completamente novos nesta semana (lentilha vermelha + batata-doce — nenhum dos dois apareceu nos últimos 7 dias). A lentilha vermelha dissolve parcialmente no cozimento, engrossando o molho sem amido — textura cremosa que dispensa espessantes. Proteína vegetal completa (18g por porção). Leite de coco substitui qualquer laticínio.",
-        "aplicar": "A lentilha vermelha não precisa demolho — vai direto na panela. O segredo é refogar o tempero seco antes de adicionar o líquido para ativar os óleos essenciais das especiarias (30 seg). O curry melhora no dia seguinte — vale dobrar a receita.",
-        "plano": "1) Refogue: cebola + 3 dentes alho + 1 col chá gengibre fresco em azeite por 5 min até amolecer · 2) Adicione especiarias secas: 1 col chá cúrcuma + 1 col chá cominho + 1 col chá coentro em pó + 1 col chá garam masala — mexa 30 seg até perfumar · 3) Entre com: 1 xíc lentilha vermelha seca + 1 batata-doce grande em cubos de 2cm + 400ml leite de coco + 500ml caldo de legumes — simmer 25-30 min até batata macia e molho encorpado · 4) Ajuste sal e adicione suco de ½ limão; sirva com arroz integral e coentro fresco; opcional: queijo vegano FL derretido por cima",
+        "t": "Tacos de Cogumelo Portobello Desfiado ao Barbecue Vegano — 45 Min, 1 Frigideira, Kid-Friendly",
+        "resumo": "Cogumelos portobello desfiados com dois garfos, refogados com cebola caramelizada e molho barbecue vegano. Textura de 'carne puxada' que crianças adoram, sem leite de vaca, sem peixe. Rende 4 a 6 porções e o recheio fica ainda melhor no dia seguinte.",
+        "porque": "Portobello tem umami natural e absorve tempero como carne. A textura desfiada é familiar e satisfatória. Proteína + fibra com ingredientes simples — ótimo para a semana.",
+        "aplicar": "Fazer o recheio em quantidade na segunda-feira e usar em tacos, bowl ou wrap durante a semana. O recheio congela por até 2 meses. Trocar molho barbecue por shoyu + melado para versão asiática.",
+        "plano": "1) Fatie 4 portobellos grandes e refogue em fogo alto sem óleo por 8 min até dourar · 2) Desfie com dois garfos dentro da frigideira ainda quente · 3) Adicione 1 cebola caramelizada + 3 colheres de barbecue vegano + sal defumado a gosto · 4) Sirva em tortilhas de milho com guacamole, coentro fresco e gotas de limão",
         "fonte": {
-          "t": "Coconut Sweet Potato Red Lentil Curry (Vegan) — Running on Real Food",
-          "u": "https://runningonrealfood.com/sweet-potato-lentil-curry"
+          "t": "Elephantastic Vegan — Vegan Pulled Portobello Tacos",
+          "u": "https://www.elephantasticvegan.com/vegan-pulled-portobello-tacos"
         },
         "video": {
           "t": "",
@@ -75,16 +75,16 @@
     ],
     "merch": [
       {
-        "id": "merch-2026-10-12",
+        "id": "merch-2026-10-13",
         "top": true,
-        "t": "Spring (Teespring) 2026: POD com YouTube Merch Shelf e TikTok Shop — Venda Direto Onde Seu Público Assiste, Zero Custo Fixo",
-        "resumo": "Spring tem integração nativa com YouTube Merch Shelf (seu merch aparece abaixo dos vídeos), TikTok Shopping e Twitch — sem taxas mensais. Você cria produtos, Spring fabrica e envia sob demanda, o cliente compra sem sair da plataforma de conteúdo. Zero custo de entrada. Para criadores com audiência engajada em vídeo, é o caminho mais direto entre conteúdo e venda. Avaliado 3.5/5 em reviews recentes — funciona bem para volume baixo-médio de teste.",
-        "porque": "Nenhuma das 7 plataformas desta semana (SPOD, Apliiq, Gooten, Teemill, Printify, CustomCat, Gelato) integra nativamente com YouTube Shelf e TikTok Shop. Para criadora de conteúdo, ter o merch visível enquanto o vídeo está rolando é uma janela de compra por impulso que plataformas de fabricação pura não oferecem. Ângulo de social commerce — diferente de todas as plataformas cobertas.",
-        "aplicar": "Use Spring para lançamentos rápidos ligados a conteúdo (coleção especial para série de vídeos, merch de episódio viral). Para a linha principal de longlines com bordado e qualidade premium, mantenha Printful ou Apliiq para o site principal — Spring cobre a descoberta no canal.",
-        "plano": "1) Crie conta gratuita em spring.com — conecta via OAuth com YouTube, TikTok ou Twitch · 2) Suba 2-3 designs de tee e configure as margens de lucro · 3) No YouTube Studio: ative o Merch Shelf nas configurações do canal — seus produtos Spring aparecem automaticamente abaixo de cada vídeo · 4) Antes de escalar: peça sample para verificar qualidade atual de impressão e bordado; leia reviews de 2026 sobre prazo de entrega — a plataforma passou por mudanças de gestão em 2024 e qualidade pode variar por produto",
+        "t": "Printful 2026: Bordado com 0,24% de Taxa de Defeito e Longlines Femininas — O POD com Mais Dados de Qualidade Documentados",
+        "resumo": "Printful é o POD com a base de qualidade mais documentada: taxa de reenvio (defeitos) de 0,24% segundo análise de pedidos verificados. Oferece bordado convencional e digital (Digisoft), longlines femininas com label privado, e integração nativa com Etsy, Shopify e WooCommerce. Fulfillment na Europa e nos EUA. Base de $3–$8 a mais que DTG no bordado.",
+        "porque": "Para uma linha de merch com bordado real em longlines femininas, Printful tem o catálogo feminino mais amplo entre PODs e qualidade consistente documentada em revisões independentes. Label privado diferencia a marca.",
+        "aplicar": "Pedir 1 amostra da longline feminina com bordado antes de lançar. Precificar com margem mínima de 40% sobre o custo de produção + shipping. Fotografar a amostra e usar como proof-of-quality nos primeiros posts.",
+        "plano": "1) Criar conta grátis em printful.com e conectar ao Etsy ou Shopify · 2) Filtrar o catálogo por 'Women' + 'longline' + 'embroidery' · 3) Pedir 1 amostra (20% de desconto na primeira amostra) · 4) Fotografar a amostra com boa iluminação e usar a foto como base do primeiro post de lançamento",
         "fonte": {
-          "t": "Teespring Print on Demand: Honest Review 2026 — EComposer",
-          "u": "https://ecomposer.io/blogs/pod/teespring-print-on-demand"
+          "t": "Podvector — Printful Embroidery Review 2026",
+          "u": "https://podvector.ai/articles/printful/reviews/printful-embroidery-review-honest-breakdown-for-pod-sellers"
         },
         "video": {
           "t": "",
@@ -94,16 +94,16 @@
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-10-12",
+        "id": "conteudo-2026-10-13",
         "top": true,
-        "t": "Predis.ai 2026: Cole o Tema do Post → IA Gera Carrossel Completo com Copy, Imagens e Hashtags em 1 Clique",
-        "resumo": "Predis.ai gera carrosséis para Instagram a partir de texto, URL de produto ou prompt livre: a IA cria os slides, escreve a copy de cada frame e sugere hashtags. Plano grátis com 15 posts/mês (com marca d'água); Solo $32/mês sem marca. 6,4 milhões de usuários, 200M+ posts gerados (mai/2026). Avaliação: 4.2/5 (AI So Tools, jun/2026). Diferencial vs todas as ferramentas desta semana (CapCut, OpusClip, Veed, Descript, Pictory, Captions): foco exclusivo em carrossel e posts estáticos — você não edita vídeo, você gera a sequência de slides já pronta.",
-        "porque": "Para o backlog de 338 posts OPC e 32 posts de news: em vez de criar cada carrossel no Canva do zero, cole o tema no Predis e ajuste os slides gerados. O ganho de tempo é real mesmo quando você precisa reescrever 2-3 slides — o layout, as imagens e a estrutura já estão lá. A conta Instagram @tryingtoreach.you está desconectada hoje (ver highlight): bom momento para pre-produzir carrosséis enquanto reconecta.",
-        "aplicar": "Para cada post da fila OPC, escreva 1 frase resumo do tema (ex: 'Como escolher porcelanato para banheiro pequeno — 3 dicas') e deixe o Predis gerar o carrossel. Revise a copy, troque imagens genéricas por fotos reais da OPC e agende no Metricool.",
-        "plano": "1) Acesse predis.ai e crie conta gratuita (15 posts/mês sem cartão) · 2) No dashboard, clique em 'Create Post' → 'Carousel' → Cole o tema do post OPC em texto livre · 3) A IA gera 5-8 slides com copy e imagens de stock — revise cada slide e substitua imagens genéricas por fotos reais de obras · 4) Ajuste a copy no slide de gancho (slide 1) e no CTA final — são os dois que mais impactam saves e compartilhamentos; exporte e agende no Metricool",
+        "t": "InVideo AI 2026: Cole o Tema → IA Gera Script, Escolhe B-Roll, Adiciona Voz e Legendas — Vídeo Completo Sem Gravar Nada",
+        "resumo": "InVideo AI transforma um prompt de texto em vídeo completo: gera o roteiro, seleciona clipes de stock footage, adiciona narração em voz AI e legendas — tudo editável por chat. Plano Plus a $17/mês (anual) com 750 créditos. 4,5/5 no Capterra com 410+ avaliações. Edição conversacional: você digita 'encurte 10 segundos' e a IA executa.",
+        "porque": "Diferente de OpusClip (que corta vídeos existentes) e Predis.ai (carrosséis), InVideo AI cria vídeos do zero a partir de texto. Útil para explicações de serviço, antes/depois de obra e conteúdo educativo sobre construção sem precisar gravar.",
+        "aplicar": "Para a Oak Park Construction: gerar 1 vídeo por semana explicando um serviço (ex: 'como funciona uma reforma de banheiro') usando a descrição de serviço já existente no site como prompt.",
+        "plano": "1) Criar conta grátis em invideo.io (10 exports/semana em 720p sem custo) · 2) Testar: 'Explique em 60 segundos por que contratar Oak Park Construction para reforma de cozinha em Pompano Beach' · 3) Editar por chat: pedir para trocar cenas, ajustar o tom, encurtar · 4) Exportar e postar como Reel no Instagram",
         "fonte": {
-          "t": "Predis.ai Review 2026 — AI So Tools",
-          "u": "https://aisotools.com/blog/predis-ai-review-2026"
+          "t": "Marc Andrews — Is InVideo AI Worth It for YouTube Creators in 2026",
+          "u": "https://marcandrews.com/is-invideo-ai-worth-it-for-youtube-creators-in-2026/"
         },
         "video": {
           "t": "",
@@ -113,16 +113,16 @@
     ],
     "obra": [
       {
-        "id": "obra-2026-10-12",
+        "id": "obra-2026-10-13",
         "top": true,
-        "t": "Sora no ChatGPT 2026: Gere B-Roll de Reforma por Texto — Disponível para Plus e Pro Sem Abrir Outra Plataforma",
-        "resumo": "O Sora (OpenAI) foi integrado ao ChatGPT — assinantes Plus ($20/mês) e Pro ($200/mês) acessam geração de vídeo diretamente no chat. Você descreve a cena em texto e recebe um clip de até 20 segundos. Diferente de Kling e Hailuo (que partem de foto), o Sora parte de texto puro — ideal para gerar B-roll de cenas que você não tem footage real: timelapse de obra, drone pullback de fachada, close de detalhe de acabamento.",
-        "porque": "Todas as 7 ferramentas desta semana (Hailuo, ElevenLabs, Firefly, Veo, Kling, Immersity, Higgsfield) são plataformas separadas com login e créditos próprios. O Sora via ChatGPT é uma ferramenta que você provavelmente já paga — sem abrir outra conta, sem créditos extras, sem prompt de upload de foto. Ângulo completamente diferente: geração a partir de descrição pura.",
-        "aplicar": "Use para gerar B-roll de cenas difíceis de filmar: 'timelapse de cozinha sendo renovada, câmera fixa no canto, 15 segundos', 'close em detalhe de granito cinza com luz natural incidindo em ângulo'. Combine com footage real da OPC no CapCut para dar contexto cinematográfico aos Reels.",
-        "plano": "1) Acesse chat.openai.com e confirme plano Plus ou Pro ativo — ou acesse sora.com separadamente · 2) No chat, descreva a cena de reforma com detalhe: tipo de cômodo, material, movimento de câmera, iluminação, duração (máx 20 seg) · 3) Baixe o clip (1080p) e importe no CapCut como B-roll de abertura ou transição entre fotos reais · 4) Teste 3 prompts de alta conversão para construção: slow motion de detalhe de acabamento premium, timelapse de montagem, drone pullback de fachada renovada ao entardecer — veja qual prende o scroll nos primeiros 2 segundos",
+        "t": "Runway Gen-4.5 com Motion Brush: Pinte o Movimento em Qualquer Parte da Foto de Obra — Resultado Cinemático Sem Gravar Vídeo",
+        "resumo": "Runway Gen-4.5 é o modelo atual mais forte da Runway para imagem→vídeo. O Motion Brush permite pintar sobre um elemento específico da foto e definir a direção do movimento — a câmera ou o objeto se move enquanto o restante fica estático. Para reforma: a fumaça do café na cozinha renovada se move, o ventilador gira, a água escorre. Clips de 5 a 10 segundos, 5 créditos por segundo (Turbo).",
+        "porque": "Diferente de ferramentas que movem a cena inteira, o Motion Brush dá controle cirúrgico sobre qual elemento se anima — resultado mais limpo e profissional para conteúdo de obra no Instagram.",
+        "aplicar": "Tirar 1 foto de alta qualidade de um ambiente reformado, fazer upload no Runway e pintar os elementos que devem ter movimento (torneira, luminária, plantas, vapor). Montar 3 clips em sequência para um Reel de 15 segundos.",
+        "plano": "1) Criar conta em runwayml.com (plano Standard a $15/mês ou testar com créditos grátis do cadastro) · 2) Fazer upload da foto do ambiente reformado · 3) Selecionar Gen-4 Turbo e abrir o Motion Brush · 4) Pintar 1-2 elementos, definir direção do movimento e gerar o clip",
         "fonte": {
-          "t": "OpenAI plans to bring Sora's video generator to ChatGPT — TechCrunch",
-          "u": "https://techcrunch.com/2025/02/28/openai-plans-to-bring-soras-video-generator-to-chatgpt"
+          "t": "SimilarLabs — Runway Review 2026: Professional AI Video Production",
+          "u": "https://similarlabs.com/blog/runway-review"
         },
         "video": {
           "t": "",
@@ -132,16 +132,16 @@
     ],
     "geo": [
       {
-        "id": "geo-2026-10-12",
+        "id": "geo-2026-10-13",
         "top": true,
-        "t": "Essequibo 2026: Venezuela Reivindica 2/3 da Guiana — 11 Bilhões de Barris de Petróleo e a Maior Corte do Mundo no Meio",
-        "resumo": "A Venezuela reivindica Essequibo — 160 mil km² equivalentes a 2/3 do território atual da Guiana. Em maio/2026, a Guiana abriu audiências finais no Tribunal Internacional de Justiça (TIJ), pedindo que o laudo de Paris de 1899 seja declarado definitivo. Em jogo: os 11 bilhões de barris do Bloco Stabroek (ExxonMobil), descobertos a partir de 2015. A Guiana passou de zero produção de petróleo para 700 mil barris/dia em 5 anos — uma das maiores transformações econômicas do hemisfério. Trump enviou apoio naval americano à Guiana, escalando a tensão.",
-        "porque": "Região diferente de todos os temas desta semana (Caxemira, Taiwan, Mar Vermelho, Nilo, Sahel, Ártico, Corredor Médio). É o único conflito territorial ativo na América do Sul com petróleo, uma potência regional recuada e uma decisão judicial iminente. Pauta que conecta diretamente ao contexto brasileiro — e à política americana com Trump.",
-        "aplicar": "Para pauta de notícias: 'O país que era um dos mais pobres da América do Sul tem agora mais petróleo per capita que a Arábia Saudita — e o vizinho quer a parte de trás'. Carrossel simples: mapa + linha do tempo das descobertas + o que o TIJ pode decidir.",
-        "plano": "1) Localize no mapa: Essequibo fica no oeste da Guiana, faz fronteira com Venezuela — área maior que o Uruguai (160 mil km²) · 2) Linha do tempo: 1899 (laudo de Paris, Venezuela perdeu), 2015 (ExxonMobil descobre petróleo no Stabroek Block), 2023 (referendo venezuelano aprova 'incorporar Essequibo'), mai/2026 (audiências finais no TIJ) · 3) Entenda o poder real: a Guiana recebe ~30% do PIB em royalties de petróleo — suficiente para manter Maduro interessado mesmo sem capacidade militar · 4) Monitore o TIJ: uma decisão final pode vir em 2027, mas qualquer declaração parcial vira manchete imediata — e Trump com gunboat diplomacy mantém o tema aquecido",
+        "t": "Filipinas vs. China 2026: Marinheiro Agredido no Recife de Thomas — Como um Navio Enferrujado Vira o Epicentro da Guerra Fria do Indo-Pacífico",
+        "resumo": "Em julho e setembro de 2026, forças chinesas e filipinas se chocaram fisicamente no Second Thomas Shoal (Mar do Sul da China), onde as Filipinas mantêm propositalmente um navio enferrujado encalhado como afirmação de soberania. Em julho, um marinheiro filipino foi agredido com um bastão de madeira por guardas costeiros chineses. Os EUA condenaram a ação como 'perigosa e agressiva'. Em setembro, navios chineses bloquearam uma missão de reabastecimento filipina.",
+        "porque": "O conflito envolve os EUA (aliança de defesa com as Filipinas), a China (rota de US$3,4 trilhões em comércio marítimo anual) e afeta o fornecimento global de chips, petróleo e produtos. Vira pauta toda vez que há escalada.",
+        "aplicar": "Ao ler sobre guerras tarifárias EUA-China ou tensões no Indo-Pacífico, o contexto do Recife de Thomas explica por que qualquer incidente ali acende o estopim com tão poucos atores envolvidos.",
+        "plano": "1) Entender o mapa: Second Thomas Shoal fica a 105 km das Filipinas e ~1.000 km da China — dentro da ZEE filipina pela UNCLOS · 2) Saber que o navio BRP Sierra Madre encalhado ali é um posto militar permanente · 3) Acompanhar manchetes de incidentes navais como termômetro da tensão · 4) Cruzar com notícias de tarifas e semicondutores — os conflitos estão ligados",
         "fonte": {
-          "t": "Guyana takes Venezuela to World Court as Caricom fractures — Caribbean360",
-          "u": "https://caribbean360.com/guyana-is-at-the-hague-venezuela-is-wearing-a-brooch-caricom-is-fracturing"
+          "t": "Gulf News — US slams 'dangerous' China action in sea clash with Philippines navy",
+          "u": "https://gulfnews.com/world/asia/us-slams-dangerous-china-action-in-sea-clash-with-philippines-navy-2-1.500614675"
         },
         "video": {
           "t": "",
@@ -151,16 +151,16 @@
     ],
     "ads": [
       {
-        "id": "ads-2026-10-12",
+        "id": "ads-2026-10-13",
         "top": true,
-        "t": "Local Services Ads (LSA) 2026: O Único Anúncio do Google que Cobra por Lead — E Aparece ANTES dos Search Ads",
-        "resumo": "LSA aparece acima dos anúncios de Search regulares e do mapa local nas buscas de serviços contratistas. Em outubro/2025, o Google unificou os badges 'Guaranteed' e 'Screened' em um único badge 'Google Verified'. Você paga só por lead (chamada ou mensagem real) — não por clique. Ranking é determinado por volume de reviews, velocidade de resposta (< 5 min) e status de verificação — não por lance. Benchmarks de construção: $50-$130 por lead, 43.9% de taxa de agendamento.",
-        "porque": "Todas as estratégias desta semana focaram em Search, PMax, Demand Gen, Customer Match e Image Assets. LSA é um canal diferente: ocupa posição premium sem concorrer em lances, cobra por lead real, e o badge de verificação aumenta conversão porque o cliente sabe que a empresa passou por checagem de licença e antecedentes. Para 'kitchen remodel Weston' ou 'contractor Broward', aparecer ACIMA dos Search ads com badge verificado é o diferencial que fecha orçamentos.",
-        "aplicar": "Para OPC (CBC1263425): o badge de verificação requer licença de contractor ativa (já existe) + seguro general liability de $100k-$1M + background check no dono e cada funcionário de campo. A licença CBC acelera a aprovação. Uma vez ativo, aparece antes dos Search ads para buscas de reforma em Broward.",
-        "plano": "1) Acesse ads.google.com/local-services-ads — confirme que 'General Contracting' ou 'Flooring/Painting' está disponível na Flórida · 2) Crie o perfil e submeta documentos: licença CBC1263425 + apólice de general liability ($100k-$1M mínimo) + CPF/background do owner · 3) Configure orçamento por lead ($75-100/lead para começar) e defina horário de atendimento real — response time < 5 min é fator de ranking · 4) Após aprovação, monitore 'disputable leads' (< 15% é saudável) e compare CPL do LSA vs Search regular nas primeiras 4 semanas",
+        "t": "Google Ads Customer Match 2026: Faça Upload da Lista de Clientes para Excluir Quem Já Contratou e Encontrar Cópias dos Seus Melhores Clientes",
+        "resumo": "Customer Match permite subir uma lista de emails de clientes direto no Google Ads. O Google faz hash dos dados e localiza as contas correspondentes — taxa de match entre 29% e 62%. Com a lista ativa você exclui clientes existentes das campanhas (para de gastar com quem já comprou) e cria uma 'Similar Audience' baseada nos seus 10% melhores clientes para encontrar perfis parecidos.",
+        "porque": "Para a Oak Park Construction, excluir clientes já convertidos evita desperdício de budget. A Similar Audience construída a partir dos clientes de maior valor direciona o Google para perfis mais rentáveis — em vez de prospectar no escuro.",
+        "aplicar": "Exportar a lista de clientes do CRM (nome, email, telefone) em CSV. Quanto mais identificadores por contato, maior o match rate. Criar um segmento separado com os top 10% em valor do projeto para usar como semente da Similar Audience.",
+        "plano": "1) Ir em Google Ads → Tools → Audience Manager → Customer Lists · 2) Upload do CSV com emails (o Google hasheia automaticamente com SHA-256) · 3) Criar campanha de exclusão: adicionar a lista como 'Exclude' nas campanhas ativas para não desperdiçar budget · 4) Criar Similar Audience a partir dos top clientes e adicionar como targeting em nova campanha de prospecção",
         "fonte": {
-          "t": "Google Local Service Ads in 2026 — The Complete Setup and Optimization Guide for Contractors — PushLeads",
-          "u": "https://pushleads.com/google-local-service-ads-in-2026-the-complete-setup-and-optimization-guide-for-contractors/"
+          "t": "Store Growers — Google Customer Match Guide",
+          "u": "https://www.storegrowers.com/google-customer-match/"
         },
         "video": {
           "t": "",
@@ -170,16 +170,16 @@
     ],
     "iafim": [
       {
-        "id": "iafim-2026-10-12",
+        "id": "iafim-2026-10-13",
         "top": true,
-        "t": "Relevance AI 2026: Monte um Agente que Qualifica Leads e Preenche Planilhas Sozinho — No-Code, Multi-LLM, Grátis para Testar",
-        "resumo": "Relevance AI é uma plataforma no-code para criar agentes orientados a negócio: você arrasta blocos (buscar info, gerar texto com LLM, escrever em planilha, enviar email) e configura o agente sem código. Suporta Claude, GPT-4 e Gemini — escolha o modelo por tarefa. Plano gratuito com 100 créditos/dia; Pro $19/mês. Rating: 7.3/10 (Automation Atlas, 2026). Fundada 2020, Series A 2023. Focada em equipes de vendas e marketing — não em desenvolvedores.",
-        "porque": "Diferente das 7 ferramentas desta semana (AutoGen, Zapier, Dify, Coze, LangGraph, Letta, CrewAI): Relevance AI foi construída para usuários de negócio sem código, com casos de uso pré-configurados de qualificação de leads e automação de marketing. Sem dependência de créditos Anthropic (usa múltiplos LLMs), sem Python, sem servidor para subir. Ideal para resolver a triagem manual de leads OPC enquanto os créditos Anthropic estão baixos.",
-        "aplicar": "Monte um agente de qualificação: quando novo lead chega por email, o agente extrai serviço + localização + urgência, classifica (kitchen remodel > general inquiry), e popula uma linha no Google Sheets com status — sem você abrir o email.",
-        "plano": "1) Acesse relevanceai.com → crie conta gratuita (100 créditos/dia sem cartão) · 2) No builder, crie uma nova 'Tool' com blocos: Input (email raw) → Extract Info com LLM (Claude ou GPT-4) → Classify Priority → Write to Google Sheets · 3) Conecte ao Gmail via integração OAuth e defina o trigger: quando email com 'quote' ou 'estimate' no assunto chegar, rodar o agente · 4) Teste com 3 emails reais de lead da OPC — veja o agente classificar e preencher a planilha sem intervenção; revise os campos extraídos e ajuste o prompt de extração se necessário",
+        "t": "n8n AI Nodes 2026: Agente de IA Open-Source com Human-in-the-Loop — Self-Host Grátis, Sem Depender de Zapier",
+        "resumo": "n8n é automação de workflow open-source com um AI Agent node nativo. O agente combina três camadas: LLM (OpenAI, Anthropic), memória vetorial e ferramentas (400+ integrações). O Wait node pausa o fluxo e aguarda aprovação humana antes de continuar — ideal para automações que precisam de checagem antes de agir. Community Edition gratuita, roda em Docker na sua própria infra.",
+        "porque": "Diferente de Zapier (por task, caro em escala) e Relevance AI (SaaS), n8n roda na sua infraestrutura sem custo variável. Para pipelines como o ads_pulse.yml, ter o agente no n8n permite depurar e modificar sem pagar por cada execução.",
+        "aplicar": "Para a Oak Park Construction: montar um agente n8n que lê o relatório semanal de ads (já gerado), identifica anomalias de spend e envia um resumo por email — com botão de aprovação antes de qualquer ação no Google Ads.",
+        "plano": "1) Instalar n8n via Docker: docker run -it --rm -p 5678:5678 n8nio/n8n · 2) Criar workflow com o AI Agent node conectado ao Gmail · 3) Configurar o LLM (Anthropic funciona nativamente) como cérebro do agente · 4) Adicionar Wait node para revisar o output antes de enviar resposta automática",
         "fonte": {
-          "t": "Is Relevance AI worth it in 2026? A detailed review — Automation Atlas",
-          "u": "https://automationatlas.io/answers/relevance-ai-review-2026/"
+          "t": "Beginners in AI — n8n Review 2026: Open-Source Zapier With AI Agents and MCP",
+          "u": "https://beginnersinai.org/n8n-review/"
         },
         "video": {
           "t": "",

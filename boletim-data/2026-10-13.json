@@ -1,0 +1,167 @@
+{
+  "date": "2026-10-13",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "🚨 Pipeline",
+      "t": "ads_pulse.yml falhou — pipeline de monitoramento de ads parado",
+      "why": "GitHub Actions run 38305677738 falhou ontem (12/out). Com $658 de spend e apenas 5 conversões no mês, o pipeline de monitoramento precisa funcionar para checar anomalias.",
+      "go": "ads"
+    },
+    {
+      "tag": "⚠️ API",
+      "t": "Anthropic API com crédito baixo — fallback ativo hoje",
+      "why": "Alerta chegou hoje às 12h18. Verificar billing e recarregar antes de rodar pipelines pesados de IA.",
+      "go": "iafim"
+    },
+    {
+      "tag": "📚 Real Estate",
+      "t": "Florida RE — Regra 1 ativa: estudo 8h-10h todo dia (não pular)",
+      "why": "Calendário bloqueia toda manhã. Quiz disponível em real-estate-quiz.html. Upgrade para Livestream ($146 a mais) só vale antes de fazer a prova final.",
+      "go": "tip"
+    },
+    {
+      "tag": "📋 Prazo Nov/11",
+      "t": "Google Workspace MCP: marcar OAuth clients como 'agentic' até 11/11/2026",
+      "why": "Email com [Action Required] recebido ontem. Sem a marcação, os MCP servers perdem acesso à conta Workspace após o prazo.",
+      "go": "conteudo"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-13",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-10-13",
+        "top": true,
+        "t": "Ritual de Fechamento do Dia para TDAH: 5 Minutos que Silenciam os Loops Abertos e Permitem Descanso Real",
+        "resumo": "Cérebros com TDAH não desligam naturalmente ao fim do dia — os loops abertos ficam rodando, sabotando o descanso e o sono. O Shutdown Ritual é uma rotina de 5 a 10 minutos que fecha o dia de propósito: captura pensamentos soltos, define o primeiro passo do amanhã e manda um sinal físico ao cérebro de que o trabalho acabou.",
+        "porque": "Sem o ritual, o cérebro TDAH continua em modo de trabalho — você pensa nas tarefas no banho, na janta, antes de dormir. Isso consome dopamina e impede o descanso real. O ritual cria uma transição clara entre os modos de trabalho e descanso.",
+        "aplicar": "Para a Oak Park Construction: fechar o dia com as obras registradas no sistema, o próximo passo da manhã anotado e o laptop fechado com uma frase dita em voz alta. Para o estudo de RE: anotar o capítulo e o número da questão onde parou antes de fechar.",
+        "plano": "1) Às 16h30 (junto com o evento de notas do calendário), abrir um bloco de notas em branco · 2) Escrever tudo que ficou na cabeça sem organizar — só despejar por 2 minutos · 3) Escolher UMA ação concreta para amanhã de manhã e escrever 'Amanhã começo com: ___' · 4) Fechar o laptop e dizer em voz alta 'Trabalho encerrado' — o ritual está completo",
+        "fonte": {
+          "t": "Simply Psychology — Shutdown Ritual: A Practice for Productivity",
+          "u": "https://www.simplypsychology.org/shutdown-ritual.html"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-10-13",
+        "top": true,
+        "t": "Tacos de Cogumelo Portobello Desfiado ao Barbecue Vegano — 45 Min, 1 Frigideira, Kid-Friendly",
+        "resumo": "Cogumelos portobello desfiados com dois garfos, refogados com cebola caramelizada e molho barbecue vegano. Textura de 'carne puxada' que crianças adoram, sem leite de vaca, sem peixe. Rende 4 a 6 porções e o recheio fica ainda melhor no dia seguinte.",
+        "porque": "Portobello tem umami natural e absorve tempero como carne. A textura desfiada é familiar e satisfatória. Proteína + fibra com ingredientes simples — ótimo para a semana.",
+        "aplicar": "Fazer o recheio em quantidade na segunda-feira e usar em tacos, bowl ou wrap durante a semana. O recheio congela por até 2 meses. Trocar molho barbecue por shoyu + melado para versão asiática.",
+        "plano": "1) Fatie 4 portobellos grandes e refogue em fogo alto sem óleo por 8 min até dourar · 2) Desfie com dois garfos dentro da frigideira ainda quente · 3) Adicione 1 cebola caramelizada + 3 colheres de barbecue vegano + sal defumado a gosto · 4) Sirva em tortilhas de milho com guacamole, coentro fresco e gotas de limão",
+        "fonte": {
+          "t": "Elephantastic Vegan — Vegan Pulled Portobello Tacos",
+          "u": "https://www.elephantasticvegan.com/vegan-pulled-portobello-tacos"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-10-13",
+        "top": true,
+        "t": "Printful 2026: Bordado com 0,24% de Taxa de Defeito e Longlines Femininas — O POD com Mais Dados de Qualidade Documentados",
+        "resumo": "Printful é o POD com a base de qualidade mais documentada: taxa de reenvio (defeitos) de 0,24% segundo análise de pedidos verificados. Oferece bordado convencional e digital (Digisoft), longlines femininas com label privado, e integração nativa com Etsy, Shopify e WooCommerce. Fulfillment na Europa e nos EUA. Base de $3–$8 a mais que DTG no bordado.",
+        "porque": "Para uma linha de merch com bordado real em longlines femininas, Printful tem o catálogo feminino mais amplo entre PODs e qualidade consistente documentada em revisões independentes. Label privado diferencia a marca.",
+        "aplicar": "Pedir 1 amostra da longline feminina com bordado antes de lançar. Precificar com margem mínima de 40% sobre o custo de produção + shipping. Fotografar a amostra e usar como proof-of-quality nos primeiros posts.",
+        "plano": "1) Criar conta grátis em printful.com e conectar ao Etsy ou Shopify · 2) Filtrar o catálogo por 'Women' + 'longline' + 'embroidery' · 3) Pedir 1 amostra (20% de desconto na primeira amostra) · 4) Fotografar a amostra com boa iluminação e usar a foto como base do primeiro post de lançamento",
+        "fonte": {
+          "t": "Podvector — Printful Embroidery Review 2026",
+          "u": "https://podvector.ai/articles/printful/reviews/printful-embroidery-review-honest-breakdown-for-pod-sellers"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-10-13",
+        "top": true,
+        "t": "InVideo AI 2026: Cole o Tema → IA Gera Script, Escolhe B-Roll, Adiciona Voz e Legendas — Vídeo Completo Sem Gravar Nada",
+        "resumo": "InVideo AI transforma um prompt de texto em vídeo completo: gera o roteiro, seleciona clipes de stock footage, adiciona narração em voz AI e legendas — tudo editável por chat. Plano Plus a $17/mês (anual) com 750 créditos. 4,5/5 no Capterra com 410+ avaliações. Edição conversacional: você digita 'encurte 10 segundos' e a IA executa.",
+        "porque": "Diferente de OpusClip (que corta vídeos existentes) e Predis.ai (carrosséis), InVideo AI cria vídeos do zero a partir de texto. Útil para explicações de serviço, antes/depois de obra e conteúdo educativo sobre construção sem precisar gravar.",
+        "aplicar": "Para a Oak Park Construction: gerar 1 vídeo por semana explicando um serviço (ex: 'como funciona uma reforma de banheiro') usando a descrição de serviço já existente no site como prompt.",
+        "plano": "1) Criar conta grátis em invideo.io (10 exports/semana em 720p sem custo) · 2) Testar: 'Explique em 60 segundos por que contratar Oak Park Construction para reforma de cozinha em Pompano Beach' · 3) Editar por chat: pedir para trocar cenas, ajustar o tom, encurtar · 4) Exportar e postar como Reel no Instagram",
+        "fonte": {
+          "t": "Marc Andrews — Is InVideo AI Worth It for YouTube Creators in 2026",
+          "u": "https://marcandrews.com/is-invideo-ai-worth-it-for-youtube-creators-in-2026/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-10-13",
+        "top": true,
+        "t": "Runway Gen-4.5 com Motion Brush: Pinte o Movimento em Qualquer Parte da Foto de Obra — Resultado Cinemático Sem Gravar Vídeo",
+        "resumo": "Runway Gen-4.5 é o modelo atual mais forte da Runway para imagem→vídeo. O Motion Brush permite pintar sobre um elemento específico da foto e definir a direção do movimento — a câmera ou o objeto se move enquanto o restante fica estático. Para reforma: a fumaça do café na cozinha renovada se move, o ventilador gira, a água escorre. Clips de 5 a 10 segundos, 5 créditos por segundo (Turbo).",
+        "porque": "Diferente de ferramentas que movem a cena inteira, o Motion Brush dá controle cirúrgico sobre qual elemento se anima — resultado mais limpo e profissional para conteúdo de obra no Instagram.",
+        "aplicar": "Tirar 1 foto de alta qualidade de um ambiente reformado, fazer upload no Runway e pintar os elementos que devem ter movimento (torneira, luminária, plantas, vapor). Montar 3 clips em sequência para um Reel de 15 segundos.",
+        "plano": "1) Criar conta em runwayml.com (plano Standard a $15/mês ou testar com créditos grátis do cadastro) · 2) Fazer upload da foto do ambiente reformado · 3) Selecionar Gen-4 Turbo e abrir o Motion Brush · 4) Pintar 1-2 elementos, definir direção do movimento e gerar o clip",
+        "fonte": {
+          "t": "SimilarLabs — Runway Review 2026: Professional AI Video Production",
+          "u": "https://similarlabs.com/blog/runway-review"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-10-13",
+        "top": true,
+        "t": "Filipinas vs. China 2026: Marinheiro Agredido no Recife de Thomas — Como um Navio Enferrujado Vira o Epicentro da Guerra Fria do Indo-Pacífico",
+        "resumo": "Em julho e setembro de 2026, forças chinesas e filipinas se chocaram fisicamente no Second Thomas Shoal (Mar do Sul da China), onde as Filipinas mantêm propositalmente um navio enferrujado encalhado como afirmação de soberania. Em julho, um marinheiro filipino foi agredido com um bastão de madeira por guardas costeiros chineses. Os EUA condenaram a ação como 'perigosa e agressiva'. Em setembro, navios chineses bloquearam uma missão de reabastecimento filipina.",
+        "porque": "O conflito envolve os EUA (aliança de defesa com as Filipinas), a China (rota de US$3,4 trilhões em comércio marítimo anual) e afeta o fornecimento global de chips, petróleo e produtos. Vira pauta toda vez que há escalada.",
+        "aplicar": "Ao ler sobre guerras tarifárias EUA-China ou tensões no Indo-Pacífico, o contexto do Recife de Thomas explica por que qualquer incidente ali acende o estopim com tão poucos atores envolvidos.",
+        "plano": "1) Entender o mapa: Second Thomas Shoal fica a 105 km das Filipinas e ~1.000 km da China — dentro da ZEE filipina pela UNCLOS · 2) Saber que o navio BRP Sierra Madre encalhado ali é um posto militar permanente · 3) Acompanhar manchetes de incidentes navais como termômetro da tensão · 4) Cruzar com notícias de tarifas e semicondutores — os conflitos estão ligados",
+        "fonte": {
+          "t": "Gulf News — US slams 'dangerous' China action in sea clash with Philippines navy",
+          "u": "https://gulfnews.com/world/asia/us-slams-dangerous-china-action-in-sea-clash-with-philippines-navy-2-1.500614675"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-10-13",
+        "top": true,
+        "t": "Google Ads Customer Match 2026: Faça Upload da Lista de Clientes para Excluir Quem Já Contratou e Encontrar Cópias dos Seus Melhores Clientes",
+        "resumo": "Customer Match permite subir uma lista de emails de clientes direto no Google Ads. O Google faz hash dos dados e localiza as contas correspondentes — taxa de match entre 29% e 62%. Com a lista ativa você exclui clientes existentes das campanhas (para de gastar com quem já comprou) e cria uma 'Similar Audience' baseada nos seus 10% melhores clientes para encontrar perfis parecidos.",
+        "porque": "Para a Oak Park Construction, excluir clientes já convertidos evita desperdício de budget. A Similar Audience construída a partir dos clientes de maior valor direciona o Google para perfis mais rentáveis — em vez de prospectar no escuro.",
+        "aplicar": "Exportar a lista de clientes do CRM (nome, email, telefone) em CSV. Quanto mais identificadores por contato, maior o match rate. Criar um segmento separado com os top 10% em valor do projeto para usar como semente da Similar Audience.",
+        "plano": "1) Ir em Google Ads → Tools → Audience Manager → Customer Lists · 2) Upload do CSV com emails (o Google hasheia automaticamente com SHA-256) · 3) Criar campanha de exclusão: adicionar a lista como 'Exclude' nas campanhas ativas para não desperdiçar budget · 4) Criar Similar Audience a partir dos top clientes e adicionar como targeting em nova campanha de prospecção",
+        "fonte": {
+          "t": "Store Growers — Google Customer Match Guide",
+          "u": "https://www.storegrowers.com/google-customer-match/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-10-13",
+        "top": true,
+        "t": "n8n AI Nodes 2026: Agente de IA Open-Source com Human-in-the-Loop — Self-Host Grátis, Sem Depender de Zapier",
+        "resumo": "n8n é automação de workflow open-source com um AI Agent node nativo. O agente combina três camadas: LLM (OpenAI, Anthropic), memória vetorial e ferramentas (400+ integrações). O Wait node pausa o fluxo e aguarda aprovação humana antes de continuar — ideal para automações que precisam de checagem antes de agir. Community Edition gratuita, roda em Docker na sua própria infra.",
+        "porque": "Diferente de Zapier (por task, caro em escala) e Relevance AI (SaaS), n8n roda na sua infraestrutura sem custo variável. Para pipelines como o ads_pulse.yml, ter o agente no n8n permite depurar e modificar sem pagar por cada execução.",
+        "aplicar": "Para a Oak Park Construction: montar um agente n8n que lê o relatório semanal de ads (já gerado), identifica anomalias de spend e envia um resumo por email — com botão de aprovação antes de qualquer ação no Google Ads.",
+        "plano": "1) Instalar n8n via Docker: docker run -it --rm -p 5678:5678 n8nio/n8n · 2) Criar workflow com o AI Agent node conectado ao Gmail · 3) Configurar o LLM (Anthropic funciona nativamente) como cérebro do agente · 4) Adicionar Wait node para revisar o output antes de enviar resposta automática",
+        "fonte": {
+          "t": "Beginners in AI — n8n Review 2026: Open-Source Zapier With AI Agents and MCP",
+          "u": "https://beginnersinai.org/n8n-review/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ]
+  }
+}
