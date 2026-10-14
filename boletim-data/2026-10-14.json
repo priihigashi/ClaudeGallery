@@ -1,0 +1,191 @@
+{
+  "date": "2026-10-14",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "OPC Pipeline",
+      "t": "338 posts OPC esperando aprovação no pipeline",
+      "why": "Backlog alto no pipeline de conteúdo — revisar fluxo de aprovação antes de criar mais",
+      "go": "conteudo"
+    },
+    {
+      "tag": "Real Estate FL",
+      "t": "Sessão Cameron Academy no cronograma de hoje (8h)",
+      "why": "Aula diária ativa — o parking lot mental de hoje ajuda a não perder o fio durante 2h de estudo com TDAH",
+      "go": "tip"
+    },
+    {
+      "tag": "ElevenLabs",
+      "t": "Fatura ElevenLabs chegou — assinatura ativa",
+      "why": "Você está pagando pela ferramenta; vale integrar voz num agente Langflow para automatizar narração dos reels OPC",
+      "go": "iafim"
+    },
+    {
+      "tag": "Metricool",
+      "t": "Erro de publicação no tentandochegaratevoce",
+      "why": "Post publicado com configurações incompletas — verificar conta no Metricool antes de agendar mais conteúdo",
+      "go": "obra"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-14",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-10-14",
+        "top": true,
+        "t": "Parking Lot Mental para TDAH: Capture Pensamentos Intrusos sem Perder o Fio",
+        "resumo": "Quando um pensamento aleatório aparecer no meio do trabalho, escreva numa folha (o 'estacionamento') e volte imediatamente à tarefa. Externalizar o pensamento libera a memória de trabalho.",
+        "porque": "O cérebro TDAH trata tudo como urgente. Lutar contra o pensamento intruso consome mais foco do que registrá-lo rapidamente. Estudos sobre escrita e ansiedade confirmam o alívio cognitivo ao colocar pensamentos no papel.",
+        "aplicar": "Deixe um bloco de papel físico ao lado do computador. Quando vier um pensamento 'tenho que...', escreva 3 palavras e risque de volta à tarefa. Revise o bloco só no final do dia.",
+        "plano": "1) Coloque um bloco A5 e caneta na mesa agora — deixe visível, não dentro de gaveta · 2) No próximo bloco de foco, escreva TODO pensamento intruso que aparecer, sem filtrar · 3) Ao final do bloco, leia o parking lot: algum virou tarefa real? Mova para o sistema de tarefas · 4) Esvazie o bloco no fim do dia — o que importa vai pro sistema; o resto vai ao lixo sem culpa",
+        "fonte": {
+          "t": "Parking Lot Method for Distractions — Affine",
+          "u": "https://affine.pro/blog/parking-lot-method-for-distractions"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-10-14",
+        "top": true,
+        "t": "Risoto Cremoso de Abóbora Cabotiá com Castanha-de-Caju — Elaborado, Vegano, Kid-Friendly",
+        "resumo": "Abóbora cabotiá assada, arroz arbório, vinho branco seco, caldo de legumes, creme de castanha-de-caju e levedura nutricional. Cremoso, sem laticínios, aprovado por crianças. ~40 min.",
+        "porque": "Castanha-de-caju hidratada batida com caldo quente vira creme liso que imita parmesão — dá cremosidade real ao risoto sem leite de vaca nem queijo animal. A abóbora assada intensifica o sabor naturalmente.",
+        "aplicar": "Prepare o creme de castanha na véspera (4h de molho). No dia, 35–40 min e o jantar está pronto. Serve 4 pessoas generosamente.",
+        "plano": "1) Deixe 100g de castanha-de-caju crua de molho em água fria por 4h (ou 1h em água frivente); bata com ½ xíc de água quente + sal até virar creme liso · 2) Asse ½ abóbora cabotiá com azeite, sal e alecrim a 200°C por 25 min até amolecer; amasse grosseiramente e reserve · 3) Refogue 1 cebola + 3 dentes de alho em azeite, adicione 1 xíc de arbório, toste 2 min, acrescente ½ xíc de vinho branco seco e deixe evaporar · 4) Adicione caldo de legumes quente aos poucos (mexendo); na última concha incorpore a abóbora + creme de castanha + 2 col sopa de levedura nutricional + pimenta; sirva com sálvia frita em azeite",
+        "fonte": {
+          "t": "Risoto de Abóbora — Receiteria",
+          "u": "https://www.receiteria.com.br/receita/risoto-de-abobora/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-10-14",
+        "top": true,
+        "t": "SPOD (Spreadshirt POD) 2026: Produção em 48h, Zero Taxa Mensal — Frete dos EUA e Europa",
+        "resumo": "POD da Spreadshirt com produção garantida em 48h, hubs de envio nos EUA e Europa, sem mensalidade. Boa velocidade de entrega; qualidade de impressão boa mas inconsistente segundo reviews.",
+        "porque": "Para testar estampas novas sem custo fixo mensal, o SPOD é uma das opções mais rápidas. Pedir amostra antes de escalar confirma a qualidade sem arriscar a reputação da loja.",
+        "aplicar": "Conecta ao Shopify pelo app Spreadconnect (3.7★ de 156 reviews). Use como fornecedor de teste de velocidade ao lado do fornecedor principal para pedidos urgentes.",
+        "plano": "1) Cadastre em spod.com (gratuito, sem mensalidade) e explore o catálogo de tees longline femininas · 2) Faça upload de 1 arte que já existe — não precisa criar do zero · 3) Peça amostra do modelo escolhido (2–5 dias úteis ao custo de base) · 4) Se aprovado, integre ao Shopify e ative o SPOD como opção para pedidos de entrega rápida",
+        "fonte": {
+          "t": "SPOD Print on Demand Review 2026 — Merch Titans",
+          "u": "https://merchtitans.com/blog/spod-print-on-demand-review-2026"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-10-14",
+        "top": true,
+        "t": "Munch AI 2026: Sobe o Vídeo Longo → IA Pontua Cada Trecho por Potencial Viral e Corta os Melhores Clips",
+        "resumo": "Munch analisa vídeos longos e pontua cada segmento por viralidade, relevância e engajamento cruzando com tendências de redes. Exporta clips verticais 9:16 com legendas automáticas em 10+ idiomas.",
+        "porque": "Diferente de ferramentas que cortam por silêncio ou fala, o Munch usa critérios de performance para selecionar os momentos — mais próximo do raciocínio de um editor humano que escolhe para viralizar.",
+        "aplicar": "Sobe qualquer vídeo longo da OPC ou do canal (tour de obra, tutorial, bastidores), deixa o Munch selecionar os clips, revisa os 3 melhores e agenda no Metricool ou Later.",
+        "plano": "1) Acesse getmunch.com — trial 14 dias sem cartão, plano Essential ~$38/mês anual · 2) Suba 1 vídeo longo (até 4GB) ou cole link do YouTube/Google Drive · 3) Revise os clips com score de viralidade — selecione os top 3 · 4) Exporte em 9:16 com legendas e programe para Reels — bom para reduzir o backlog dos 338 posts",
+        "fonte": {
+          "t": "Munch Studio Review — WBOC",
+          "u": "https://www.wboc.com/online_features/press_releases/munch-studio-reviewed-why-ai-powered-content-repurposing-is-becoming-every-creators-secret-weapon/article_11ac9196-cb12-5dd5-8a22-ba5c810ef6ac.html"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-10-14",
+        "top": true,
+        "t": "Luma Ray 2 para Reels de Reforma: Foto da Obra → Clipe 9:16 com Movimento Realista em Segundos",
+        "resumo": "Ray 2 transforma uma foto estática da obra num clip de 5–9 segundos com física natural e movimento realista, formato 9:16 pronto para Reels. Disponível em lumalabs.ai e Amazon Bedrock.",
+        "porque": "Para reels de antes/depois ou bastidores, um clip com movimento gerado de uma foto de obra atrai mais atenção do que a foto estática — sem câmera extra, sem equipe de vídeo.",
+        "aplicar": "Acesse lumalabs.ai, faça upload de uma foto de projeto concluído ou em andamento, descreva o movimento (ex: câmera se afastando, luz natural), baixe em 9:16.",
+        "plano": "1) Acesse lumalabs.ai e crie conta (plano gratuito disponível) · 2) Escolha uma foto de reforma acabada com boa iluminação natural · 3) Escreva prompt de movimento: 'câmera se afasta lentamente, luz da tarde, realista' · 4) Baixe em 9:16 e monte o Reel com o clip antes da foto final — capa forte para o feed OPC",
+        "fonte": {
+          "t": "What Is Luma Ray 2? — MindStudio",
+          "u": "https://www.mindstudio.ai/blog/what-is-luma-ray-2-video"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-10-14",
+        "top": true,
+        "t": "Transnístria 2026: UE Pediu Saída dos Soldados Russos — Moldávia Quer Entrar na Europa até 2029",
+        "resumo": "Em fevereiro/2026, a UE exigiu formalmente a retirada das tropas russas da Transnístria, enclave pró-Moscou dentro da Moldávia. 76,9% das exportações da região vão para a UE, mas 1.500 militares russos ainda estão lá.",
+        "porque": "A Moldávia mira adesão à UE em 2029. A Transnístria é o maior obstáculo — território que depende economicamente da Europa mas é politicamente controlado por Moscou. Exemplo claro de 'conflito congelado' como alavanca geopolítica.",
+        "aplicar": "Mesmo padrão da Ossétia do Sul na Geórgia e do Donbas na Ucrânia: Rússia usa minoria pró-russa + tropas como freio à integração europeia de vizinhos. Conceito: 'sharp power' russo.",
+        "plano": "1) Leia sobre a crise de gás na Transnístria — Rússia cortou o gás em jan/2025, forçando a região a depender mais da UE · 2) Compare com o modelo Ossétia do Sul (Geórgia) e Donbas (Ucrânia) — padrão repetido · 3) Acompanhe o processo de adesão da Moldávia à UE (2026: capítulos abertos) · 4) Conecte ao conceito de 'frozen conflicts' como instrumento de política externa russa nos países ex-soviéticos",
+        "fonte": {
+          "t": "Romania salutes EU request for withdrawal of Russian troops from Transnistria — Romania Insider",
+          "u": "https://www.romania-insider.com/eu-romania-russian-troops-transnistria-feb-2026"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-10-14",
+        "top": true,
+        "t": "Google Ads Demand Gen 2026: Alcance Quem Ainda Não Pesquisou — YouTube + Gmail + Discover com IA",
+        "resumo": "Demand Gen exibe anúncios visuais no YouTube, Gmail e Discover antes de o cliente pesquisar. 68% das conversões vieram de usuários que não tinham visto anúncios de Search nos 30 dias anteriores.",
+        "porque": "Para construção e reforma, a decisão começa com inspiração, não com pesquisa. Demand Gen planta a marca quando o cliente ainda está sonhando com a reforma — antes de comparar preços no Google.",
+        "aplicar": "Monte 1 campanha Demand Gen com fotos de obras concluídas + vídeo curto (pode usar clip do Ray 2), segmentação por interesses em 'home improvement' + geolocalização Oak Park / Chicago.",
+        "plano": "1) No Google Ads, crie campanha Demand Gen (distinto de Performance Max — é campanha separada) · 2) Suba pelo menos 3 formatos de imagem (quadrado, paisagem, retrato) + 1 vídeo vertical 9:16 · 3) Ative 'Novos Clientes' como meta principal para não desperdiçar verba em quem já conhece a OPC · 4) Defina $20/dia por 2 semanas, analise CPL e compare com campanhas de Search ativas",
+        "fonte": {
+          "t": "Demand Gen Drop December 2025 — Google Blog",
+          "u": "https://blog.google/products/ads-commerce/demand-gen-drop-december-2025/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-10-14",
+        "top": true,
+        "t": "Langflow 2026: Builder Visual de Agentes IA que Substituiu o Flowise — Open Source, Mantido, Grátis",
+        "resumo": "Langflow é um builder drag-and-drop de agentes LangChain, open source (MIT), ativamente mantido. O Flowise — concorrente direto — foi arquivado em ago/2026 após aquisição pela Workday. Langflow é a alternativa viva.",
+        "porque": "Se você estava de olho no Flowise, ele parou de receber atualizações em julho/2026. Langflow faz o mesmo (visual, sem código, agentes com memória, integração com 100+ LLMs) e está ativo.",
+        "aplicar": "Monte um agente que lê e-mails do Gmail, filtra aprovações pendentes da OPC e posta um resumo num webhook — tudo arrastando blocos no canvas sem escrever código.",
+        "plano": "1) Acesse langflow.org — gratuito no cloud ou self-host · 2) Crie um fluxo simples: entrada de texto → agente LLM → saída para webhook (Slack, Notion ou planilha) · 3) Primeiro caso de uso: 'dado um e-mail, extraia assunto e categorize como OPC, News ou Outros' · 4) Adicione memória de conversa e ferramentas externas (Gmail API, Google Sheets) conforme precisar",
+        "fonte": {
+          "t": "Dify vs Flowise vs Langflow 2026 — FutureAGI",
+          "u": "https://futureagi.com/blog/dify-vs-flowise-vs-langflow-2026/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ]
+  }
+}

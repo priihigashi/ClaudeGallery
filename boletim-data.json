@@ -1,35 +1,35 @@
 {
-  "date": "2026-10-13",
+  "date": "2026-10-14",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "🚨 Pipeline",
-      "t": "ads_pulse.yml falhou — pipeline de monitoramento de ads parado",
-      "why": "GitHub Actions run 38305677738 falhou ontem (12/out). Com $658 de spend e apenas 5 conversões no mês, o pipeline de monitoramento precisa funcionar para checar anomalias.",
-      "go": "ads"
+      "tag": "OPC Pipeline",
+      "t": "338 posts OPC esperando aprovação no pipeline",
+      "why": "Backlog alto no pipeline de conteúdo — revisar fluxo de aprovação antes de criar mais",
+      "go": "conteudo"
     },
     {
-      "tag": "⚠️ API",
-      "t": "Anthropic API com crédito baixo — fallback ativo hoje",
-      "why": "Alerta chegou hoje às 12h18. Verificar billing e recarregar antes de rodar pipelines pesados de IA.",
-      "go": "iafim"
-    },
-    {
-      "tag": "📚 Real Estate",
-      "t": "Florida RE — Regra 1 ativa: estudo 8h-10h todo dia (não pular)",
-      "why": "Calendário bloqueia toda manhã. Quiz disponível em real-estate-quiz.html. Upgrade para Livestream ($146 a mais) só vale antes de fazer a prova final.",
+      "tag": "Real Estate FL",
+      "t": "Sessão Cameron Academy no cronograma de hoje (8h)",
+      "why": "Aula diária ativa — o parking lot mental de hoje ajuda a não perder o fio durante 2h de estudo com TDAH",
       "go": "tip"
     },
     {
-      "tag": "📋 Prazo Nov/11",
-      "t": "Google Workspace MCP: marcar OAuth clients como 'agentic' até 11/11/2026",
-      "why": "Email com [Action Required] recebido ontem. Sem a marcação, os MCP servers perdem acesso à conta Workspace após o prazo.",
-      "go": "conteudo"
+      "tag": "ElevenLabs",
+      "t": "Fatura ElevenLabs chegou — assinatura ativa",
+      "why": "Você está pagando pela ferramenta; vale integrar voz num agente Langflow para automatizar narração dos reels OPC",
+      "go": "iafim"
+    },
+    {
+      "tag": "Metricool",
+      "t": "Erro de publicação no tentandochegaratevoce",
+      "why": "Post publicado com configurações incompletas — verificar conta no Metricool antes de agendar mais conteúdo",
+      "go": "obra"
     }
   ],
   "history": [
     {
-      "date": "2026-10-13",
+      "date": "2026-10-14",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,16 +37,16 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-10-13",
+        "id": "tip-2026-10-14",
         "top": true,
-        "t": "Ritual de Fechamento do Dia para TDAH: 5 Minutos que Silenciam os Loops Abertos e Permitem Descanso Real",
-        "resumo": "Cérebros com TDAH não desligam naturalmente ao fim do dia — os loops abertos ficam rodando, sabotando o descanso e o sono. O Shutdown Ritual é uma rotina de 5 a 10 minutos que fecha o dia de propósito: captura pensamentos soltos, define o primeiro passo do amanhã e manda um sinal físico ao cérebro de que o trabalho acabou.",
-        "porque": "Sem o ritual, o cérebro TDAH continua em modo de trabalho — você pensa nas tarefas no banho, na janta, antes de dormir. Isso consome dopamina e impede o descanso real. O ritual cria uma transição clara entre os modos de trabalho e descanso.",
-        "aplicar": "Para a Oak Park Construction: fechar o dia com as obras registradas no sistema, o próximo passo da manhã anotado e o laptop fechado com uma frase dita em voz alta. Para o estudo de RE: anotar o capítulo e o número da questão onde parou antes de fechar.",
-        "plano": "1) Às 16h30 (junto com o evento de notas do calendário), abrir um bloco de notas em branco · 2) Escrever tudo que ficou na cabeça sem organizar — só despejar por 2 minutos · 3) Escolher UMA ação concreta para amanhã de manhã e escrever 'Amanhã começo com: ___' · 4) Fechar o laptop e dizer em voz alta 'Trabalho encerrado' — o ritual está completo",
+        "t": "Parking Lot Mental para TDAH: Capture Pensamentos Intrusos sem Perder o Fio",
+        "resumo": "Quando um pensamento aleatório aparecer no meio do trabalho, escreva numa folha (o 'estacionamento') e volte imediatamente à tarefa. Externalizar o pensamento libera a memória de trabalho.",
+        "porque": "O cérebro TDAH trata tudo como urgente. Lutar contra o pensamento intruso consome mais foco do que registrá-lo rapidamente. Estudos sobre escrita e ansiedade confirmam o alívio cognitivo ao colocar pensamentos no papel.",
+        "aplicar": "Deixe um bloco de papel físico ao lado do computador. Quando vier um pensamento 'tenho que...', escreva 3 palavras e risque de volta à tarefa. Revise o bloco só no final do dia.",
+        "plano": "1) Coloque um bloco A5 e caneta na mesa agora — deixe visível, não dentro de gaveta · 2) No próximo bloco de foco, escreva TODO pensamento intruso que aparecer, sem filtrar · 3) Ao final do bloco, leia o parking lot: algum virou tarefa real? Mova para o sistema de tarefas · 4) Esvazie o bloco no fim do dia — o que importa vai pro sistema; o resto vai ao lixo sem culpa",
         "fonte": {
-          "t": "Simply Psychology — Shutdown Ritual: A Practice for Productivity",
-          "u": "https://www.simplypsychology.org/shutdown-ritual.html"
+          "t": "Parking Lot Method for Distractions — Affine",
+          "u": "https://affine.pro/blog/parking-lot-method-for-distractions"
         },
         "video": {
           "t": "",
@@ -56,16 +56,16 @@
     ],
     "receita": [
       {
-        "id": "receita-2026-10-13",
+        "id": "receita-2026-10-14",
         "top": true,
-        "t": "Tacos de Cogumelo Portobello Desfiado ao Barbecue Vegano — 45 Min, 1 Frigideira, Kid-Friendly",
-        "resumo": "Cogumelos portobello desfiados com dois garfos, refogados com cebola caramelizada e molho barbecue vegano. Textura de 'carne puxada' que crianças adoram, sem leite de vaca, sem peixe. Rende 4 a 6 porções e o recheio fica ainda melhor no dia seguinte.",
-        "porque": "Portobello tem umami natural e absorve tempero como carne. A textura desfiada é familiar e satisfatória. Proteína + fibra com ingredientes simples — ótimo para a semana.",
-        "aplicar": "Fazer o recheio em quantidade na segunda-feira e usar em tacos, bowl ou wrap durante a semana. O recheio congela por até 2 meses. Trocar molho barbecue por shoyu + melado para versão asiática.",
-        "plano": "1) Fatie 4 portobellos grandes e refogue em fogo alto sem óleo por 8 min até dourar · 2) Desfie com dois garfos dentro da frigideira ainda quente · 3) Adicione 1 cebola caramelizada + 3 colheres de barbecue vegano + sal defumado a gosto · 4) Sirva em tortilhas de milho com guacamole, coentro fresco e gotas de limão",
+        "t": "Risoto Cremoso de Abóbora Cabotiá com Castanha-de-Caju — Elaborado, Vegano, Kid-Friendly",
+        "resumo": "Abóbora cabotiá assada, arroz arbório, vinho branco seco, caldo de legumes, creme de castanha-de-caju e levedura nutricional. Cremoso, sem laticínios, aprovado por crianças. ~40 min.",
+        "porque": "Castanha-de-caju hidratada batida com caldo quente vira creme liso que imita parmesão — dá cremosidade real ao risoto sem leite de vaca nem queijo animal. A abóbora assada intensifica o sabor naturalmente.",
+        "aplicar": "Prepare o creme de castanha na véspera (4h de molho). No dia, 35–40 min e o jantar está pronto. Serve 4 pessoas generosamente.",
+        "plano": "1) Deixe 100g de castanha-de-caju crua de molho em água fria por 4h (ou 1h em água fervente); bata com ½ xíc de água quente + sal até virar creme liso · 2) Asse ½ abóbora cabotiá com azeite, sal e alecrim a 200°C por 25 min até amolecer; amasse grosseiramente e reserve · 3) Refogue 1 cebola + 3 dentes de alho em azeite, adicione 1 xíc de arbório, toste 2 min, acrescente ½ xíc de vinho branco seco e deixe evaporar · 4) Adicione caldo de legumes quente aos poucos (mexendo); na última concha incorpore a abóbora + creme de castanha + 2 col sopa de levedura nutricional + pimenta; sirva com sálvia frita em azeite",
         "fonte": {
-          "t": "Elephantastic Vegan — Vegan Pulled Portobello Tacos",
-          "u": "https://www.elephantasticvegan.com/vegan-pulled-portobello-tacos"
+          "t": "Risoto de Abóbora — Receiteria",
+          "u": "https://www.receiteria.com.br/receita/risoto-de-abobora/"
         },
         "video": {
           "t": "",
@@ -75,16 +75,16 @@
     ],
     "merch": [
       {
-        "id": "merch-2026-10-13",
+        "id": "merch-2026-10-14",
         "top": true,
-        "t": "Printful 2026: Bordado com 0,24% de Taxa de Defeito e Longlines Femininas — O POD com Mais Dados de Qualidade Documentados",
-        "resumo": "Printful é o POD com a base de qualidade mais documentada: taxa de reenvio (defeitos) de 0,24% segundo análise de pedidos verificados. Oferece bordado convencional e digital (Digisoft), longlines femininas com label privado, e integração nativa com Etsy, Shopify e WooCommerce. Fulfillment na Europa e nos EUA. Base de $3–$8 a mais que DTG no bordado.",
-        "porque": "Para uma linha de merch com bordado real em longlines femininas, Printful tem o catálogo feminino mais amplo entre PODs e qualidade consistente documentada em revisões independentes. Label privado diferencia a marca.",
-        "aplicar": "Pedir 1 amostra da longline feminina com bordado antes de lançar. Precificar com margem mínima de 40% sobre o custo de produção + shipping. Fotografar a amostra e usar como proof-of-quality nos primeiros posts.",
-        "plano": "1) Criar conta grátis em printful.com e conectar ao Etsy ou Shopify · 2) Filtrar o catálogo por 'Women' + 'longline' + 'embroidery' · 3) Pedir 1 amostra (20% de desconto na primeira amostra) · 4) Fotografar a amostra com boa iluminação e usar a foto como base do primeiro post de lançamento",
+        "t": "SPOD (Spreadshirt POD) 2026: Produção em 48h, Zero Taxa Mensal — Frete dos EUA e Europa",
+        "resumo": "POD da Spreadshirt com produção garantida em 48h, hubs de envio nos EUA e Europa, sem mensalidade. Boa velocidade de entrega; qualidade de impressão boa mas inconsistente segundo reviews.",
+        "porque": "Para testar estampas novas sem custo fixo mensal, o SPOD é uma das opções mais rápidas. Pedir amostra antes de escalar confirma a qualidade sem arriscar a reputação da loja.",
+        "aplicar": "Conecta ao Shopify pelo app Spreadconnect (3.7★ de 156 reviews). Use como fornecedor de teste de velocidade ao lado do fornecedor principal para pedidos urgentes.",
+        "plano": "1) Cadastre em spod.com (gratuito, sem mensalidade) e explore o catálogo de tees longline femininas · 2) Faça upload de 1 arte que já existe — não precisa criar do zero · 3) Peça amostra do modelo escolhido (2–5 dias úteis ao custo de base) · 4) Se aprovado, integre ao Shopify e ative o SPOD como opção para pedidos de entrega rápida",
         "fonte": {
-          "t": "Podvector — Printful Embroidery Review 2026",
-          "u": "https://podvector.ai/articles/printful/reviews/printful-embroidery-review-honest-breakdown-for-pod-sellers"
+          "t": "SPOD Print on Demand Review 2026 — Merch Titans",
+          "u": "https://merchtitans.com/blog/spod-print-on-demand-review-2026"
         },
         "video": {
           "t": "",
@@ -94,16 +94,16 @@
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-10-13",
+        "id": "conteudo-2026-10-14",
         "top": true,
-        "t": "InVideo AI 2026: Cole o Tema → IA Gera Script, Escolhe B-Roll, Adiciona Voz e Legendas — Vídeo Completo Sem Gravar Nada",
-        "resumo": "InVideo AI transforma um prompt de texto em vídeo completo: gera o roteiro, seleciona clipes de stock footage, adiciona narração em voz AI e legendas — tudo editável por chat. Plano Plus a $17/mês (anual) com 750 créditos. 4,5/5 no Capterra com 410+ avaliações. Edição conversacional: você digita 'encurte 10 segundos' e a IA executa.",
-        "porque": "Diferente de OpusClip (que corta vídeos existentes) e Predis.ai (carrosséis), InVideo AI cria vídeos do zero a partir de texto. Útil para explicações de serviço, antes/depois de obra e conteúdo educativo sobre construção sem precisar gravar.",
-        "aplicar": "Para a Oak Park Construction: gerar 1 vídeo por semana explicando um serviço (ex: 'como funciona uma reforma de banheiro') usando a descrição de serviço já existente no site como prompt.",
-        "plano": "1) Criar conta grátis em invideo.io (10 exports/semana em 720p sem custo) · 2) Testar: 'Explique em 60 segundos por que contratar Oak Park Construction para reforma de cozinha em Pompano Beach' · 3) Editar por chat: pedir para trocar cenas, ajustar o tom, encurtar · 4) Exportar e postar como Reel no Instagram",
+        "t": "Munch AI 2026: Sobe o Vídeo Longo → IA Pontua Cada Trecho por Potencial Viral e Corta os Melhores Clips",
+        "resumo": "Munch analisa vídeos longos e pontua cada segmento por viralidade, relevância e engajamento cruzando com tendências de redes. Exporta clips verticais 9:16 com legendas automáticas em 10+ idiomas.",
+        "porque": "Diferente de ferramentas que cortam por silêncio ou fala, o Munch usa critérios de performance para selecionar os momentos — mais próximo do raciocínio de um editor humano que escolhe para viralizar.",
+        "aplicar": "Sobe qualquer vídeo longo da OPC ou do canal (tour de obra, tutorial, bastidores), deixa o Munch selecionar os clips, revisa os 3 melhores e agenda no Metricool ou Later.",
+        "plano": "1) Acesse getmunch.com — trial 14 dias sem cartão, plano Essential ~$38/mês anual · 2) Suba 1 vídeo longo (até 4GB) ou cole link do YouTube/Google Drive · 3) Revise os clips com score de viralidade — selecione os top 3 · 4) Exporte em 9:16 com legendas e programe para Reels — bom para reduzir o backlog dos 338 posts",
         "fonte": {
-          "t": "Marc Andrews — Is InVideo AI Worth It for YouTube Creators in 2026",
-          "u": "https://marcandrews.com/is-invideo-ai-worth-it-for-youtube-creators-in-2026/"
+          "t": "Munch Studio Review — WBOC",
+          "u": "https://www.wboc.com/online_features/press_releases/munch-studio-reviewed-why-ai-powered-content-repurposing-is-becoming-every-creators-secret-weapon/article_11ac9196-cb12-5dd5-8a22-ba5c810ef6ac.html"
         },
         "video": {
           "t": "",
@@ -113,16 +113,16 @@
     ],
     "obra": [
       {
-        "id": "obra-2026-10-13",
+        "id": "obra-2026-10-14",
         "top": true,
-        "t": "Runway Gen-4.5 com Motion Brush: Pinte o Movimento em Qualquer Parte da Foto de Obra — Resultado Cinemático Sem Gravar Vídeo",
-        "resumo": "Runway Gen-4.5 é o modelo atual mais forte da Runway para imagem→vídeo. O Motion Brush permite pintar sobre um elemento específico da foto e definir a direção do movimento — a câmera ou o objeto se move enquanto o restante fica estático. Para reforma: a fumaça do café na cozinha renovada se move, o ventilador gira, a água escorre. Clips de 5 a 10 segundos, 5 créditos por segundo (Turbo).",
-        "porque": "Diferente de ferramentas que movem a cena inteira, o Motion Brush dá controle cirúrgico sobre qual elemento se anima — resultado mais limpo e profissional para conteúdo de obra no Instagram.",
-        "aplicar": "Tirar 1 foto de alta qualidade de um ambiente reformado, fazer upload no Runway e pintar os elementos que devem ter movimento (torneira, luminária, plantas, vapor). Montar 3 clips em sequência para um Reel de 15 segundos.",
-        "plano": "1) Criar conta em runwayml.com (plano Standard a $15/mês ou testar com créditos grátis do cadastro) · 2) Fazer upload da foto do ambiente reformado · 3) Selecionar Gen-4 Turbo e abrir o Motion Brush · 4) Pintar 1-2 elementos, definir direção do movimento e gerar o clip",
+        "t": "Luma Ray 2 para Reels de Reforma: Foto da Obra → Clipe 9:16 com Movimento Realista em Segundos",
+        "resumo": "Ray 2 transforma uma foto estática da obra num clip de 5–9 segundos com física natural e movimento realista, formato 9:16 pronto para Reels. Disponível em lumalabs.ai e Amazon Bedrock.",
+        "porque": "Para reels de antes/depois ou bastidores, um clip com movimento gerado de uma foto de obra atrai mais atenção do que a foto estática — sem câmera extra, sem equipe de vídeo.",
+        "aplicar": "Acesse lumalabs.ai, faça upload de uma foto de projeto concluído ou em andamento, descreva o movimento (ex: câmera se afastando, luz natural), baixe em 9:16.",
+        "plano": "1) Acesse lumalabs.ai e crie conta (plano gratuito disponível) · 2) Escolha uma foto de reforma acabada com boa iluminação natural · 3) Escreva prompt de movimento: 'câmera se afasta lentamente, luz da tarde, realista' · 4) Baixe em 9:16 e monte o Reel com o clip antes da foto final — capa forte para o feed OPC",
         "fonte": {
-          "t": "SimilarLabs — Runway Review 2026: Professional AI Video Production",
-          "u": "https://similarlabs.com/blog/runway-review"
+          "t": "What Is Luma Ray 2? — MindStudio",
+          "u": "https://www.mindstudio.ai/blog/what-is-luma-ray-2-video"
         },
         "video": {
           "t": "",
@@ -132,16 +132,16 @@
     ],
     "geo": [
       {
-        "id": "geo-2026-10-13",
+        "id": "geo-2026-10-14",
         "top": true,
-        "t": "Filipinas vs. China 2026: Marinheiro Agredido no Recife de Thomas — Como um Navio Enferrujado Vira o Epicentro da Guerra Fria do Indo-Pacífico",
-        "resumo": "Em julho e setembro de 2026, forças chinesas e filipinas se chocaram fisicamente no Second Thomas Shoal (Mar do Sul da China), onde as Filipinas mantêm propositalmente um navio enferrujado encalhado como afirmação de soberania. Em julho, um marinheiro filipino foi agredido com um bastão de madeira por guardas costeiros chineses. Os EUA condenaram a ação como 'perigosa e agressiva'. Em setembro, navios chineses bloquearam uma missão de reabastecimento filipina.",
-        "porque": "O conflito envolve os EUA (aliança de defesa com as Filipinas), a China (rota de US$3,4 trilhões em comércio marítimo anual) e afeta o fornecimento global de chips, petróleo e produtos. Vira pauta toda vez que há escalada.",
-        "aplicar": "Ao ler sobre guerras tarifárias EUA-China ou tensões no Indo-Pacífico, o contexto do Recife de Thomas explica por que qualquer incidente ali acende o estopim com tão poucos atores envolvidos.",
-        "plano": "1) Entender o mapa: Second Thomas Shoal fica a 105 km das Filipinas e ~1.000 km da China — dentro da ZEE filipina pela UNCLOS · 2) Saber que o navio BRP Sierra Madre encalhado ali é um posto militar permanente · 3) Acompanhar manchetes de incidentes navais como termômetro da tensão · 4) Cruzar com notícias de tarifas e semicondutores — os conflitos estão ligados",
+        "t": "Transnístria 2026: UE Pediu Saída dos Soldados Russos — Moldávia Quer Entrar na Europa até 2029",
+        "resumo": "Em fevereiro/2026, a UE exigiu formalmente a retirada das tropas russas da Transnístria, enclave pró-Moscou dentro da Moldávia. 76,9% das exportações da região vão para a UE, mas 1.500 militares russos ainda estão lá.",
+        "porque": "A Moldávia mira adesão à UE em 2029. A Transnístria é o maior obstáculo — território que depende economicamente da Europa mas é politicamente controlado por Moscou. Exemplo claro de 'conflito congelado' como alavanca geopolítica.",
+        "aplicar": "Mesmo padrão da Ossétia do Sul na Geórgia e do Donbas na Ucrânia: Rússia usa minoria pró-russa + tropas como freio à integração europeia de vizinhos. Conceito: 'sharp power' russo.",
+        "plano": "1) Leia sobre a crise de gás na Transnístria — Rússia cortou o gás em jan/2025, forçando a região a depender mais da UE · 2) Compare com o modelo Ossétia do Sul (Geórgia) e Donbas (Ucrânia) — padrão repetido · 3) Acompanhe o processo de adesão da Moldávia à UE (2026: capítulos abertos) · 4) Conecte ao conceito de 'frozen conflicts' como instrumento de política externa russa nos países ex-soviéticos",
         "fonte": {
-          "t": "Gulf News — US slams 'dangerous' China action in sea clash with Philippines navy",
-          "u": "https://gulfnews.com/world/asia/us-slams-dangerous-china-action-in-sea-clash-with-philippines-navy-2-1.500614675"
+          "t": "Romania salutes EU request for withdrawal of Russian troops from Transnistria — Romania Insider",
+          "u": "https://www.romania-insider.com/eu-romania-russian-troops-transnistria-feb-2026"
         },
         "video": {
           "t": "",
@@ -151,16 +151,16 @@
     ],
     "ads": [
       {
-        "id": "ads-2026-10-13",
+        "id": "ads-2026-10-14",
         "top": true,
-        "t": "Google Ads Customer Match 2026: Faça Upload da Lista de Clientes para Excluir Quem Já Contratou e Encontrar Cópias dos Seus Melhores Clientes",
-        "resumo": "Customer Match permite subir uma lista de emails de clientes direto no Google Ads. O Google faz hash dos dados e localiza as contas correspondentes — taxa de match entre 29% e 62%. Com a lista ativa você exclui clientes existentes das campanhas (para de gastar com quem já comprou) e cria uma 'Similar Audience' baseada nos seus 10% melhores clientes para encontrar perfis parecidos.",
-        "porque": "Para a Oak Park Construction, excluir clientes já convertidos evita desperdício de budget. A Similar Audience construída a partir dos clientes de maior valor direciona o Google para perfis mais rentáveis — em vez de prospectar no escuro.",
-        "aplicar": "Exportar a lista de clientes do CRM (nome, email, telefone) em CSV. Quanto mais identificadores por contato, maior o match rate. Criar um segmento separado com os top 10% em valor do projeto para usar como semente da Similar Audience.",
-        "plano": "1) Ir em Google Ads → Tools → Audience Manager → Customer Lists · 2) Upload do CSV com emails (o Google hasheia automaticamente com SHA-256) · 3) Criar campanha de exclusão: adicionar a lista como 'Exclude' nas campanhas ativas para não desperdiçar budget · 4) Criar Similar Audience a partir dos top clientes e adicionar como targeting em nova campanha de prospecção",
+        "t": "Google Ads Demand Gen 2026: Alcance Quem Ainda Não Pesquisou — YouTube + Gmail + Discover com IA",
+        "resumo": "Demand Gen exibe anúncios visuais no YouTube, Gmail e Discover antes de o cliente pesquisar. 68% das conversões vieram de usuários que não tinham visto anúncios de Search nos 30 dias anteriores.",
+        "porque": "Para construção e reforma, a decisão começa com inspiração, não com pesquisa. Demand Gen planta a marca quando o cliente ainda está sonhando com a reforma — antes de comparar preços no Google.",
+        "aplicar": "Monte 1 campanha Demand Gen com fotos de obras concluídas + vídeo curto (pode usar clip do Ray 2), segmentação por interesses em 'home improvement' + geolocalização Oak Park / Chicago.",
+        "plano": "1) No Google Ads, crie campanha Demand Gen (distinto de Performance Max — é campanha separada) · 2) Suba pelo menos 3 formatos de imagem (quadrado, paisagem, retrato) + 1 vídeo vertical 9:16 · 3) Ative 'Novos Clientes' como meta principal para não desperdiçar verba em quem já conhece a OPC · 4) Defina $20/dia por 2 semanas, analise CPL e compare com campanhas de Search ativas",
         "fonte": {
-          "t": "Store Growers — Google Customer Match Guide",
-          "u": "https://www.storegrowers.com/google-customer-match/"
+          "t": "Demand Gen Drop December 2025 — Google Blog",
+          "u": "https://blog.google/products/ads-commerce/demand-gen-drop-december-2025/"
         },
         "video": {
           "t": "",
@@ -170,16 +170,16 @@
     ],
     "iafim": [
       {
-        "id": "iafim-2026-10-13",
+        "id": "iafim-2026-10-14",
         "top": true,
-        "t": "n8n AI Nodes 2026: Agente de IA Open-Source com Human-in-the-Loop — Self-Host Grátis, Sem Depender de Zapier",
-        "resumo": "n8n é automação de workflow open-source com um AI Agent node nativo. O agente combina três camadas: LLM (OpenAI, Anthropic), memória vetorial e ferramentas (400+ integrações). O Wait node pausa o fluxo e aguarda aprovação humana antes de continuar — ideal para automações que precisam de checagem antes de agir. Community Edition gratuita, roda em Docker na sua própria infra.",
-        "porque": "Diferente de Zapier (por task, caro em escala) e Relevance AI (SaaS), n8n roda na sua infraestrutura sem custo variável. Para pipelines como o ads_pulse.yml, ter o agente no n8n permite depurar e modificar sem pagar por cada execução.",
-        "aplicar": "Para a Oak Park Construction: montar um agente n8n que lê o relatório semanal de ads (já gerado), identifica anomalias de spend e envia um resumo por email — com botão de aprovação antes de qualquer ação no Google Ads.",
-        "plano": "1) Instalar n8n via Docker: docker run -it --rm -p 5678:5678 n8nio/n8n · 2) Criar workflow com o AI Agent node conectado ao Gmail · 3) Configurar o LLM (Anthropic funciona nativamente) como cérebro do agente · 4) Adicionar Wait node para revisar o output antes de enviar resposta automática",
+        "t": "Langflow 2026: Builder Visual de Agentes IA que Substituiu o Flowise — Open Source, Mantido, Grátis",
+        "resumo": "Langflow é um builder drag-and-drop de agentes LangChain, open source (MIT), ativamente mantido. O Flowise — concorrente direto — foi arquivado em ago/2026 após aquisição pela Workday. Langflow é a alternativa viva.",
+        "porque": "Se você estava de olho no Flowise, ele parou de receber atualizações em julho/2026. Langflow faz o mesmo (visual, sem código, agentes com memória, integração com 100+ LLMs) e está ativo.",
+        "aplicar": "Monte um agente que lê e-mails do Gmail, filtra aprovações pendentes da OPC e posta um resumo num webhook — tudo arrastando blocos no canvas sem escrever código.",
+        "plano": "1) Acesse langflow.org — gratuito no cloud ou self-host · 2) Crie um fluxo simples: entrada de texto → agente LLM → saída para webhook (Slack, Notion ou planilha) · 3) Primeiro caso de uso: 'dado um e-mail, extraia assunto e categorize como OPC, News ou Outros' · 4) Adicione memória de conversa e ferramentas externas (Gmail API, Google Sheets) conforme precisar",
         "fonte": {
-          "t": "Beginners in AI — n8n Review 2026: Open-Source Zapier With AI Agents and MCP",
-          "u": "https://beginnersinai.org/n8n-review/"
+          "t": "Dify vs Flowise vs Langflow 2026 — FutureAGI",
+          "u": "https://futureagi.com/blog/dify-vs-flowise-vs-langflow-2026/"
         },
         "video": {
           "t": "",
