@@ -1,35 +1,35 @@
 {
-  "date": "2026-10-14",
+  "date": "2026-10-15",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "OPC Pipeline",
-      "t": "338 posts OPC esperando aprovação no pipeline",
-      "why": "Backlog alto no pipeline de conteúdo — revisar fluxo de aprovação antes de criar mais",
+      "tag": "OPC Reviews",
+      "t": "Evento de review às 11h30 — 15 templates prontos para enviar a clientes",
+      "why": "O evento 'Ask someone to Review ⭐️' está no calendário às 11h30 com 15 mensagens pré-redigidas. Aproveite enquanto o trabalho está fresco — taxa de conversão de review é maior nos primeiros 3 dias após a entrega.",
+      "go": "obra"
+    },
+    {
+      "tag": "Reels Curadoria",
+      "t": "6 reels chegaram por SMS esta manhã — referências frescas para OPC",
+      "why": "Seis Instagram reels foram enviados ao seu email via SMS entre 3h e 11h08. Revisar agora enquanto estão frescos pode gerar 1–2 ideias de post OPC antes de fechar o dia.",
       "go": "conteudo"
     },
     {
-      "tag": "Real Estate FL",
-      "t": "Sessão Cameron Academy no cronograma de hoje (8h)",
-      "why": "Aula diária ativa — o parking lot mental de hoje ajuda a não perder o fio durante 2h de estudo com TDAH",
-      "go": "tip"
+      "tag": "OPC Video",
+      "t": "SALA_ESCURA_FINAL_v4_DUBLADO.mp4 + 3 slides prontos — verificar status no Metricool",
+      "why": "Email de ontem às 20h confirma vídeo + slide_01 (manchas) e slide_02 (vermelho) prontos. O post parece ter virado rascunho após cancelamento às 16h17 — checar no Metricool se ainda está como rascunho antes de criar conteúdo novo.",
+      "go": "conteudo"
     },
     {
-      "tag": "ElevenLabs",
-      "t": "Fatura ElevenLabs chegou — assinatura ativa",
-      "why": "Você está pagando pela ferramenta; vale integrar voz num agente Langflow para automatizar narração dos reels OPC",
+      "tag": "Anthropic API",
+      "t": "Crédito Anthropic baixo de novo (9h30) — recarregar antes de escalar agentes",
+      "why": "Email automático de 9h30 confirma mais um dia de fallback ativo na Anthropic. Com Lindy e outros agentes sendo avaliados esta semana, recarregar créditos antes de testar evita interrupções no meio do fluxo.",
       "go": "iafim"
-    },
-    {
-      "tag": "Metricool",
-      "t": "Erro de publicação no tentandochegaratevoce",
-      "why": "Post publicado com configurações incompletas — verificar conta no Metricool antes de agendar mais conteúdo",
-      "go": "obra"
     }
   ],
   "history": [
     {
-      "date": "2026-10-14",
+      "date": "2026-10-15",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,16 +37,16 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-10-14",
+        "id": "tip-2026-10-15",
         "top": true,
-        "t": "Parking Lot Mental para TDAH: Capture Pensamentos Intrusos sem Perder o Fio",
-        "resumo": "Quando um pensamento aleatório aparecer no meio do trabalho, escreva numa folha (o 'estacionamento') e volte imediatamente à tarefa. Externalizar o pensamento libera a memória de trabalho.",
-        "porque": "O cérebro TDAH trata tudo como urgente. Lutar contra o pensamento intruso consome mais foco do que registrá-lo rapidamente. Estudos sobre escrita e ansiedade confirmam o alívio cognitivo ao colocar pensamentos no papel.",
-        "aplicar": "Deixe um bloco de papel físico ao lado do computador. Quando vier um pensamento 'tenho que...', escreva 3 palavras e risque de volta à tarefa. Revise o bloco só no final do dia.",
-        "plano": "1) Coloque um bloco A5 e caneta na mesa agora — deixe visível, não dentro de gaveta · 2) No próximo bloco de foco, escreva TODO pensamento intruso que aparecer, sem filtrar · 3) Ao final do bloco, leia o parking lot: algum virou tarefa real? Mova para o sistema de tarefas · 4) Esvazie o bloco no fim do dia — o que importa vai pro sistema; o resto vai ao lixo sem culpa",
+        "t": "Intenções de Implementação para TDAH: Troque 'Preciso Fazer X' por 'Se Y Acontecer, Então Faço X' — e Cumpra de Verdade",
+        "resumo": "Intenções de implementação (se-então) são frases condicionais que ligam um gatilho a uma ação: 'Se o alarme das 8h tocar, então abro o curso antes de tocar no celular.' Estudos com crianças com TDAH mostram que a técnica reduz erros de perseveração e melhora inibição ao nível de quem não tem TDAH — a diferença está na automatização do início.",
+        "porque": "O TDAH falha na intenção prospectiva: lembrar de executar um plano quando o momento certo aparecer. Uma intenção vaga ('vou estudar hoje') falha porque o cérebro precisa reconstruir o plano no momento de agir. O 'Se-Então' automatiza essa reconstrução — quando Y ocorre, X dispara sem custo extra de decisão ou força de vontade.",
+        "aplicar": "Para RE: 'Se o alarme das 8h tocar, então abro o Cameron Academy antes de tocar no celular.' Para posts OPC: 'Se eu abrir o Metricool, então primeiro reviso os drafts pendentes antes de criar conteúdo novo.' Para leads: 'Se chegar e-mail com as palavras orçamento ou estimate, então respondo antes de fechar o Gmail.'",
+        "plano": "1) Escolha 3 tarefas de alta resistência desta semana (RE, posts OPC, resposta de lead) · 2) Para cada uma, escreva um 'Se [gatilho específico], então [ação concreta]' — quanto mais específico o gatilho, mais forte o efeito · 3) Anote as 3 frases num post-it na tela do computador — a escrita em si já aumenta a chance de execução · 4) Após 48h, revise: qual funcionou? Qual gatilho precisa ser mais específico ou mais próximo da tarefa?",
         "fonte": {
-          "t": "Parking Lot Method for Distractions — Affine",
-          "u": "https://affine.pro/blog/parking-lot-method-for-distractions"
+          "t": "If-then plans benefit executive functions in children with ADHD — IFP NYU",
+          "u": "https://ifp.nyu.edu/2011/journal-article-abstracts/if-then-plans-benefit-executive-functions-in-children-with-adhd/"
         },
         "video": {
           "t": "",
@@ -56,16 +56,16 @@
     ],
     "receita": [
       {
-        "id": "receita-2026-10-14",
+        "id": "receita-2026-10-15",
         "top": true,
-        "t": "Risoto Cremoso de Abóbora Cabotiá com Castanha-de-Caju — Elaborado, Vegano, Kid-Friendly",
-        "resumo": "Abóbora cabotiá assada, arroz arbório, vinho branco seco, caldo de legumes, creme de castanha-de-caju e levedura nutricional. Cremoso, sem laticínios, aprovado por crianças. ~40 min.",
-        "porque": "Castanha-de-caju hidratada batida com caldo quente vira creme liso que imita parmesão — dá cremosidade real ao risoto sem leite de vaca nem queijo animal. A abóbora assada intensifica o sabor naturalmente.",
-        "aplicar": "Prepare o creme de castanha na véspera (4h de molho). No dia, 35–40 min e o jantar está pronto. Serve 4 pessoas generosamente.",
-        "plano": "1) Deixe 100g de castanha-de-caju crua de molho em água fria por 4h (ou 1h em água fervente); bata com ½ xíc de água quente + sal até virar creme liso · 2) Asse ½ abóbora cabotiá com azeite, sal e alecrim a 200°C por 25 min até amolecer; amasse grosseiramente e reserve · 3) Refogue 1 cebola + 3 dentes de alho em azeite, adicione 1 xíc de arbório, toste 2 min, acrescente ½ xíc de vinho branco seco e deixe evaporar · 4) Adicione caldo de legumes quente aos poucos (mexendo); na última concha incorpore a abóbora + creme de castanha + 2 col sopa de levedura nutricional + pimenta; sirva com sálvia frita em azeite",
+        "t": "Falafel Assado no Forno com Homus Caseiro e Pita — 45 Min, Vegano, Kid-Friendly",
+        "resumo": "Falafel de grão-de-bico processado cru com alho, coentro e especiarias, assado a 200°C (não frito), servido em pão pita com homus de tahine caseiro. Proteína completa, crocante por fora, macio por dentro. Crianças adoram o formato de bolinha. Sem leite de vaca, sem frutos do mar. Ingredientes completamente novos vs. a semana (grão-de-bico, coentro, tahine, pita).",
+        "porque": "Grão-de-bico hidratado processado CRU — não cozido — é o segredo do falafel crocante. A versão com grão enlatado (já cozido) fica pastosa e não crocante. Assar em vez de fritar reduz o óleo sem perder a textura — basta pincelar com azeite antes do forno. O homus caseiro leva menos de 5 minutos no liquidificador.",
+        "aplicar": "O homus pode ser feito na véspera (guarda 5 dias na geladeira). O falafel cru pode ser congelado — tire 10 min antes e asse direto. O grão-de-bico de molho (12h) é fundamental para a textura; se usar o enlatado, seque bem e adicione menos farinha.",
+        "plano": "1) Deixe 1 xíc de grão-de-bico seco de molho em água por 12h — escorra e seque bem; processe cru (não cozinhe) com ½ cebola + 4 alhos + 1 xíc de coentro/salsinha + 1 col chá cominho + 1 col chá cúrcuma + sal + 2 col sopa farinha de grão-de-bico — textura deve ser granulada, não pasta · 2) Modele em bolinhas de 3 cm (umas 18–20 unidades), disponha em assadeira com azeite e pincele cada bolinha · 3) Asse a 200°C por 25–30 min virando na metade até dourar dos dois lados · 4) Homus: bata 400 ml de grão-de-bico cozido + 3 col sopa tahine + 1 dente alho + suco de 1 limão + sal + 3 col sopa azeite + ½ xíc água gelada; sirva com pita, pepino em rodelas e tomate cereja",
         "fonte": {
-          "t": "Risoto de Abóbora — Receiteria",
-          "u": "https://www.receiteria.com.br/receita/risoto-de-abobora/"
+          "t": "Aprenda a fazer falafel caseiro com ingredientes simples — Catraca Livre",
+          "u": "https://catracalivre.com.br/gastronomia/aprenda-a-fazer-falafel-caseiro-com-ingredientes-simples/"
         },
         "video": {
           "t": "",
@@ -75,16 +75,16 @@
     ],
     "merch": [
       {
-        "id": "merch-2026-10-14",
+        "id": "merch-2026-10-15",
         "top": true,
-        "t": "SPOD (Spreadshirt POD) 2026: Produção em 48h, Zero Taxa Mensal — Frete dos EUA e Europa",
-        "resumo": "POD da Spreadshirt com produção garantida em 48h, hubs de envio nos EUA e Europa, sem mensalidade. Boa velocidade de entrega; qualidade de impressão boa mas inconsistente segundo reviews.",
-        "porque": "Para testar estampas novas sem custo fixo mensal, o SPOD é uma das opções mais rápidas. Pedir amostra antes de escalar confirma a qualidade sem arriscar a reputação da loja.",
-        "aplicar": "Conecta ao Shopify pelo app Spreadconnect (3.7★ de 156 reviews). Use como fornecedor de teste de velocidade ao lado do fornecedor principal para pedidos urgentes.",
-        "plano": "1) Cadastre em spod.com (gratuito, sem mensalidade) e explore o catálogo de tees longline femininas · 2) Faça upload de 1 arte que já existe — não precisa criar do zero · 3) Peça amostra do modelo escolhido (2–5 dias úteis ao custo de base) · 4) Se aprovado, integre ao Shopify e ative o SPOD como opção para pedidos de entrega rápida",
+        "t": "Gelato 2026: POD com Gráficas Locais em 32 Países — Entrega em 2–5 Dias nos EUA e Europa Sem Taxa Mensal",
+        "resumo": "Gelato conecta com 140+ gráficas em 32 países e imprime perto do cliente final — não num hub central. Resultado: frete mais barato e entrega mais rápida para pedidos internacionais. Sem taxa mensal no plano básico. Plano Gelato+ a ~$23.99/mês com mockup generator IA e descontos em produtos. Integração nativa com Shopify, WooCommerce e Etsy. Reviews 2026 apontam boa qualidade de impressão flat e interface simples.",
+        "porque": "Diferente de Printful (hub único, envia para o mundo) e SPOD (hubs EUA+Europa apenas): o Gelato imprime na cidade mais próxima do comprador. Para uma loja com clientes nos EUA, a entrega é 2× mais rápida e o frete cai — vantagem real em conversão. Reviews independentes de 2026 chamam de 'um dos PODs mais fáceis de usar e com preços competitivos'.",
+        "aplicar": "Use o Gelato para a linha principal de tees femininas voltada ao mercado americano — velocidade e custo de frete compensam. Para produtos com bordado real, compare com Printful primeiro: Gelato tem catálogo menor de apparel bordado. Peça sample antes de escalar — desconto de 30% para primeiras amostras.",
+        "plano": "1) Crie conta gratuita em gelato.com — sem cartão de crédito necessário para explorar o catálogo · 2) Filtre por 'apparel' → 'women' → veja as opções de tee e confirme se há longline no catálogo atual · 3) Compare o custo de produção + frete para um CEP específico nos EUA (ex: Pompano Beach 33060) entre Gelato e Printful para o mesmo produto · 4) Peça 1 sample antes de conectar ao Shopify — foco em avaliar qualidade de cor, toque do tecido e acabamento das costuras",
         "fonte": {
-          "t": "SPOD Print on Demand Review 2026 — Merch Titans",
-          "u": "https://merchtitans.com/blog/spod-print-on-demand-review-2026"
+          "t": "Gelato Review (2026) — All the Key Pros and Cons of a Popular POD Solution — Style Factory",
+          "u": "https://www.stylefactoryproductions.com/blog/gelato-review"
         },
         "video": {
           "t": "",
@@ -94,16 +94,16 @@
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-10-14",
+        "id": "conteudo-2026-10-15",
         "top": true,
-        "t": "Munch AI 2026: Sobe o Vídeo Longo → IA Pontua Cada Trecho por Potencial Viral e Corta os Melhores Clips",
-        "resumo": "Munch analisa vídeos longos e pontua cada segmento por viralidade, relevância e engajamento cruzando com tendências de redes. Exporta clips verticais 9:16 com legendas automáticas em 10+ idiomas.",
-        "porque": "Diferente de ferramentas que cortam por silêncio ou fala, o Munch usa critérios de performance para selecionar os momentos — mais próximo do raciocínio de um editor humano que escolhe para viralizar.",
-        "aplicar": "Sobe qualquer vídeo longo da OPC ou do canal (tour de obra, tutorial, bastidores), deixa o Munch selecionar os clips, revisa os 3 melhores e agenda no Metricool ou Later.",
-        "plano": "1) Acesse getmunch.com — trial 14 dias sem cartão, plano Essential ~$38/mês anual · 2) Suba 1 vídeo longo (até 4GB) ou cole link do YouTube/Google Drive · 3) Revise os clips com score de viralidade — selecione os top 3 · 4) Exporte em 9:16 com legendas e programe para Reels — bom para reduzir o backlog dos 338 posts",
+        "t": "CapCut AI 2026: Descreva o Reel → IA Sugere o Hook, Gera Script, Adiciona Legendas em 54 Estilos — De Graça no App que Você Já Tem",
+        "resumo": "O fluxo AI do CapCut é conversacional: você descreve o tema, a IA sugere um hook baseado em algoritmos de performance, gera o script, seleciona B-roll e adiciona legendas automáticas com animação (97% de acurácia para pt-BR). 54 estilos de arte para B-roll. Gratuito com marca d'água; CapCut Pro para exportar sem. Diferente das ferramentas desta semana: já está no celular, sem novo login.",
+        "porque": "InVideo cria vídeo do zero a partir de texto, Predis gera carrossel, Munch corta vídeos longos. O CapCut faz tudo no celular que você já usa para gravar — sem trocar de app. O hook gerado pela IA analisa padrões do que está performando no TikTok e Reels no momento — não é fórmula genérica.",
+        "aplicar": "Para OPC: abra o CapCut → AI Video → descreva: 'reforma de banheiro completa em Pompano Beach, antes e depois, 30 segundos.' Deixe a IA estruturar. Substitua o B-roll genérico por fotos reais de obra. Use auto-legenda para capturar audiência em modo silencioso (60–80% dos Reels assistidos sem som).",
+        "plano": "1) Abra o CapCut app → ícone AI (varinha) → AI Video → escreva o tema do post em português · 2) Revise o hook no primeiro segundo do vídeo gerado — é o que decide se o usuário para de rolar; edite até sentir que 'prende' · 3) Substitua B-roll de stock por fotos e vídeos reais de obras nos momentos-chave do script · 4) Ative Auto Captions → escolha estilo com letra grossa e contraste alto (funciona bem em ambientes de obra); exporte e programe no Metricool",
         "fonte": {
-          "t": "Munch Studio Review — WBOC",
-          "u": "https://www.wboc.com/online_features/press_releases/munch-studio-reviewed-why-ai-powered-content-repurposing-is-becoming-every-creators-secret-weapon/article_11ac9196-cb12-5dd5-8a22-ba5c810ef6ac.html"
+          "t": "Best AI Tools for TikTok Content Creation in 2026 — Marc Andrews",
+          "u": "https://marcandrews.com/best-ai-tools-for-tiktok-content-creation-in-2026/"
         },
         "video": {
           "t": "",
@@ -113,16 +113,16 @@
     ],
     "obra": [
       {
-        "id": "obra-2026-10-14",
+        "id": "obra-2026-10-15",
         "top": true,
-        "t": "Luma Ray 2 para Reels de Reforma: Foto da Obra → Clipe 9:16 com Movimento Realista em Segundos",
-        "resumo": "Ray 2 transforma uma foto estática da obra num clip de 5–9 segundos com física natural e movimento realista, formato 9:16 pronto para Reels. Disponível em lumalabs.ai e Amazon Bedrock.",
-        "porque": "Para reels de antes/depois ou bastidores, um clip com movimento gerado de uma foto de obra atrai mais atenção do que a foto estática — sem câmera extra, sem equipe de vídeo.",
-        "aplicar": "Acesse lumalabs.ai, faça upload de uma foto de projeto concluído ou em andamento, descreva o movimento (ex: câmera se afastando, luz natural), baixe em 9:16.",
-        "plano": "1) Acesse lumalabs.ai e crie conta (plano gratuito disponível) · 2) Escolha uma foto de reforma acabada com boa iluminação natural · 3) Escreva prompt de movimento: 'câmera se afasta lentamente, luz da tarde, realista' · 4) Baixe em 9:16 e monte o Reel com o clip antes da foto final — capa forte para o feed OPC",
+        "t": "Adobe Firefly Generative Fill: Pinte a Área Que Será Reformada → IA Visualiza o Acabamento Final com Luz e Perspectiva Reais",
+        "resumo": "O Generative Fill do Adobe Firefly (disponível em firefly.adobe.com — gratuito com conta Adobe) permite selecionar qualquer área de uma foto e descrever o novo acabamento em texto. Ex: foto do banheiro atual → selecione o piso → 'large format marble tile, matte finish, dark grout' → IA renderiza o novo piso com iluminação e perspectiva consistentes com a foto. Ideal para mostrar ao cliente como ficará ANTES de começar.",
+        "porque": "Diferente de Sora, Runway e Luma (que animam ou geram vídeo): o Firefly edita a foto estática para visualizar o resultado final. Para OPC, transformar foto atual do imóvel do cliente em prévia do projeto é argumento de venda direto — mais convincente que descrição verbal e mais barato que renderização 3D. Reviewers de real estate chamam de 'uma das aplicações mais práticas de IA em conteúdo visual'.",
+        "aplicar": "Tire uma foto de boa qualidade do ambiente atual do cliente (antes da obra). No Firefly Web, use Generative Fill para visualizar novo piso, tinta de parede, armários ou bancada descrito em texto. Exporte como 'depois digital' para usar no antes/depois do Reel ou da proposta comercial.",
+        "plano": "1) Acesse firefly.adobe.com → login com conta Adobe gratuita → selecione 'Generative Fill' · 2) Faça upload da foto do ambiente atual — quanto mais nítida e bem iluminada, melhor o resultado · 3) Pinte (selecione) a área que será reformada (piso, parede, bancada, armários) e descreva em inglês o acabamento: 'white subway tiles, matte finish, modern grouting' ou 'dark wood cabinets, gold hardware' · 4) Gere 3–4 variações → coloque ao lado da foto original → mostre ao cliente: o antes/depois visual fecha mais propostas do que qualquer texto descritivo",
         "fonte": {
-          "t": "What Is Luma Ray 2? — MindStudio",
-          "u": "https://www.mindstudio.ai/blog/what-is-luma-ray-2-video"
+          "t": "Generative Fill: How Adobe's AI Tool Works and When to Use It — Virtual Staging Art",
+          "u": "https://www.virtualstaging.art/blog-posts/photoshopgenerativefill"
         },
         "video": {
           "t": "",
@@ -132,16 +132,16 @@
     ],
     "geo": [
       {
-        "id": "geo-2026-10-14",
+        "id": "geo-2026-10-15",
         "top": true,
-        "t": "Transnístria 2026: UE Pediu Saída dos Soldados Russos — Moldávia Quer Entrar na Europa até 2029",
-        "resumo": "Em fevereiro/2026, a UE exigiu formalmente a retirada das tropas russas da Transnístria, enclave pró-Moscou dentro da Moldávia. 76,9% das exportações da região vão para a UE, mas 1.500 militares russos ainda estão lá.",
-        "porque": "A Moldávia mira adesão à UE em 2029. A Transnístria é o maior obstáculo — território que depende economicamente da Europa mas é politicamente controlado por Moscou. Exemplo claro de 'conflito congelado' como alavanca geopolítica.",
-        "aplicar": "Mesmo padrão da Ossétia do Sul na Geórgia e do Donbas na Ucrânia: Rússia usa minoria pró-russa + tropas como freio à integração europeia de vizinhos. Conceito: 'sharp power' russo.",
-        "plano": "1) Leia sobre a crise de gás na Transnístria — Rússia cortou o gás em jan/2025, forçando a região a depender mais da UE · 2) Compare com o modelo Ossétia do Sul (Geórgia) e Donbas (Ucrânia) — padrão repetido · 3) Acompanhe o processo de adesão da Moldávia à UE (2026: capítulos abertos) · 4) Conecte ao conceito de 'frozen conflicts' como instrumento de política externa russa nos países ex-soviéticos",
+        "t": "Sudão 2026: A Pior Crise Humanitária do Planeta Que o Mundo Parou de Acompanhar — 25 Milhões com Fome, 9 Milhões Deslocados",
+        "resumo": "A guerra civil no Sudão entre as Forças Armadas Sudanesas (SAF) e as Forças de Apoio Rápido (RSF) começou em abril de 2023 e não parou. A ONU e o UNICEF classificam como a maior crise humanitária do mundo: 25 milhões de pessoas (metade da população) com fome extrema, 9,3 milhões deslocados. Mais de 16 acordos de cessar-fogo fracassaram. Em março de 2025, a ONU alertou que a ajuda humanitária podia ser suspensa por falta de financiamento.",
+        "porque": "A guerra no Sudão envolve Rússia/Wagner (apoiaram as RSF), Emirados Árabes (suporte financeiro às RSF), Egito (apoia o exército regular) e os EUA como mediador falho — é proxy war disfarçada de conflito interno, pelo controle do ouro e petróleo sudaneses. Região diferente de todos os temas desta semana: é o único conflito ativo no continente africano com impacto direto no Corno da África e na rota do Mar Vermelho.",
+        "aplicar": "Ao ler sobre guerras por procuração (proxy wars), o Sudão é o caso mais extremo e menos coberto do momento. O mesmo padrão se repete: potência externa usa conflito interno para projetar influência sem envolvimento direto — Transnístria (Rússia via Moldávia), Iêmen (Irã via Huthis), Sudão (EAU via RSF). Angle para pauta: 'A pior guerra do mundo não aparece no feed porque não tem petróleo com bandeira ocidental.'",
+        "plano": "1) Entenda os dois lados: SAF (exército do estado, General Al-Burhan) vs RSF (milícia paramilitar, General Hemeti — ex-aliados que se tornaram inimigos em abril de 2023) · 2) Mapeie os apoiadores externos: Rússia/Wagner + EAU (RSF) vs Egito + China (SAF) — recursos em jogo: ouro, petróleo do Sudão do Sul e posição estratégica no Corno da África · 3) Conecte ao Corno da África: o conflito desestabiliza Etiópia, Chade e Líbia e pressiona a rota do Mar Vermelho · 4) Para pauta de geopolítica: compare cobertura midiática do Sudão vs Ucrânia vs Gaza — o contraste de atenção é uma história por si só",
         "fonte": {
-          "t": "Romania salutes EU request for withdrawal of Russian troops from Transnistria — Romania Insider",
-          "u": "https://www.romania-insider.com/eu-romania-russian-troops-transnistria-feb-2026"
+          "t": "Sudan war is world's worst humanitarian crisis with 30 million needing aid, UNICEF head says — New Arab",
+          "u": "https://www.newarab.com/news/sudan-war-worlds-worst-humanitarian-crisis-unicef-head-says"
         },
         "video": {
           "t": "",
@@ -151,16 +151,16 @@
     ],
     "ads": [
       {
-        "id": "ads-2026-10-14",
+        "id": "ads-2026-10-15",
         "top": true,
-        "t": "Google Ads Demand Gen 2026: Alcance Quem Ainda Não Pesquisou — YouTube + Gmail + Discover com IA",
-        "resumo": "Demand Gen exibe anúncios visuais no YouTube, Gmail e Discover antes de o cliente pesquisar. 68% das conversões vieram de usuários que não tinham visto anúncios de Search nos 30 dias anteriores.",
-        "porque": "Para construção e reforma, a decisão começa com inspiração, não com pesquisa. Demand Gen planta a marca quando o cliente ainda está sonhando com a reforma — antes de comparar preços no Google.",
-        "aplicar": "Monte 1 campanha Demand Gen com fotos de obras concluídas + vídeo curto (pode usar clip do Ray 2), segmentação por interesses em 'home improvement' + geolocalização Oak Park / Chicago.",
-        "plano": "1) No Google Ads, crie campanha Demand Gen (distinto de Performance Max — é campanha separada) · 2) Suba pelo menos 3 formatos de imagem (quadrado, paisagem, retrato) + 1 vídeo vertical 9:16 · 3) Ative 'Novos Clientes' como meta principal para não desperdiçar verba em quem já conhece a OPC · 4) Defina $20/dia por 2 semanas, analise CPL e compare com campanhas de Search ativas",
+        "t": "RLSA para Construtoras: Lance 50% a Mais em Quem Visitou Seu Site e Não Pediu Orçamento — Essa Pessoa Já Sabe Quem Você É",
+        "resumo": "RLSA (Remarketing Lists for Search Ads) ajusta os lances nas campanhas de busca existentes para usuários que já visitaram o site — sem criar campanha separada. Modo Observation: você continua alcançando todos, mas paga mais por quem já te conhece. Modo Targeting: anúncio só aparece para quem está na lista. Para OPC: visitantes que pesquisaram 'kitchen remodel Broward' depois de visitar o site têm taxa de fechamento 2–3× maior do que visitantes frios.",
+        "porque": "LSA, Customer Match e Demand Gen (cobertos esta semana) são sobre prospecção. RLSA é sobre conversão: atacar quem já sinalizou interesse — custo menor porque a intenção já existe. Um guia de 2026 recomenda começar com +20–50% de bid para visitantes gerais e subir conforme a intenção da página visitada (contato > serviços > home).",
+        "aplicar": "Para OPC: crie uma lista de todos os visitantes do site (30 dias) e uma lista filtrada de 'visitou a página de Serviços ou Contato'. Lance +20% para visitantes gerais e +50% para quem foi à página de contato — são os leads mais quentes que saíram sem converter.",
+        "plano": "1) Google Ads → Tools → Audience Manager → Website Visitors → criar segmento 'Todos os visitantes OPC — 30 dias' (requer tag do Google instalada no site) · 2) Criar segundo segmento: 'Visitou /contact ou /services nos últimos 60 dias' (maior intenção) · 3) Adicionar as duas listas em TODAS as campanhas de Search ativas no modo Observation com modificadores: +20% para visitantes gerais, +50% para página de contato · 4) Aguardar 30 dias para acumular dados (mínimo 1.000 usuários na lista para ativar), comparar CPC e taxa de conversão dos segmentos vs audiência fria — ajustar bid conforme retorno real",
         "fonte": {
-          "t": "Demand Gen Drop December 2025 — Google Blog",
-          "u": "https://blog.google/products/ads-commerce/demand-gen-drop-december-2025/"
+          "t": "Remarketing Lists for Search Ads: The Ultimate Budget Saver — Mega Digital",
+          "u": "https://megadigital.ai/en/blog/remarketing-lists-for-search-ads-rlsa/"
         },
         "video": {
           "t": "",
@@ -170,16 +170,16 @@
     ],
     "iafim": [
       {
-        "id": "iafim-2026-10-14",
+        "id": "iafim-2026-10-15",
         "top": true,
-        "t": "Langflow 2026: Builder Visual de Agentes IA que Substituiu o Flowise — Open Source, Mantido, Grátis",
-        "resumo": "Langflow é um builder drag-and-drop de agentes LangChain, open source (MIT), ativamente mantido. O Flowise — concorrente direto — foi arquivado em ago/2026 após aquisição pela Workday. Langflow é a alternativa viva.",
-        "porque": "Se você estava de olho no Flowise, ele parou de receber atualizações em julho/2026. Langflow faz o mesmo (visual, sem código, agentes com memória, integração com 100+ LLMs) e está ativo.",
-        "aplicar": "Monte um agente que lê e-mails do Gmail, filtra aprovações pendentes da OPC e posta um resumo num webhook — tudo arrastando blocos no canvas sem escrever código.",
-        "plano": "1) Acesse langflow.org — gratuito no cloud ou self-host · 2) Crie um fluxo simples: entrada de texto → agente LLM → saída para webhook (Slack, Notion ou planilha) · 3) Primeiro caso de uso: 'dado um e-mail, extraia assunto e categorize como OPC, News ou Outros' · 4) Adicione memória de conversa e ferramentas externas (Gmail API, Google Sheets) conforme precisar",
+        "t": "Lindy AI 2026: Agente Pessoal que Lê Seus E-mails, Prioriza, Redige Rascunhos e Bloqueia Agenda — Sem Código, em 15 Minutos",
+        "resumo": "Lindy é um agente de IA pessoal no-code que conecta ao Gmail e Google Calendar via OAuth. Ele lê e-mails de entrada, classifica por prioridade, escreve rascunhos de resposta e bloqueia slots na agenda para tarefas urgentes. Funciona por instrução em linguagem natural. Plano Starter a ~$19.99/mês (verificar no site — fontes conflitam). Reviews 2026 descrevem resumo matinal com prioridades e sinalização de conflitos de agenda.",
+        "porque": "Diferente de n8n (dev/Docker), Langflow (builder técnico) e Relevance AI (vendas/marketing): o Lindy foi construído para triagem de inbox de uma pessoa física — especialmente útil para quem usa o e-mail como segunda memória e tem TDAH. Sem servidor para subir, sem código, sem crédito da Anthropic: usa o próprio LLM da plataforma.",
+        "aplicar": "Para OPC: configure o Lindy para classificar leads (serviço + localização + urgência) e gerar rascunho de resposta. Para a rotina matinal: peça o resumo de e-mails + agenda antes de abrir o Gmail — você processa o dia em 5 min em vez de 30. Atenção: o modelo de créditos pode gerar custos variáveis — monitore na primeira semana.",
+        "plano": "1) Acesse lindy.ai → crie conta e conecte Gmail + Google Calendar via OAuth (leva 3 min) · 2) Configure o primeiro agente: 'Quando um novo e-mail chegar, classifique como: Lead OPC / Financeiro / Pessoal / Newsletter / Ignorar e escreva um rascunho de resposta para as duas primeiras categorias' · 3) Ative o Daily Summary: às 8h30 o Lindy envia um resumo com os 5 e-mails mais importantes + conflitos de agenda do dia · 4) Monitore o consumo de créditos na primeira semana antes de escalar — o plano correto depende do volume de e-mails diários da OPC",
         "fonte": {
-          "t": "Dify vs Flowise vs Langflow 2026 — FutureAGI",
-          "u": "https://futureagi.com/blog/dify-vs-flowise-vs-langflow-2026/"
+          "t": "Lindy Review 2026 — AI Executive Assistant — AI Agent Rank",
+          "u": "https://aiagentrank.io/blog/lindy-review-2026"
         },
         "video": {
           "t": "",
