@@ -17,12 +17,29 @@ h1{font-size:clamp(28px,5vw,52px);line-height:1.03;margin:0 0 10px}.sub{color:va
 textarea{width:100%;min-height:100px;border-radius:12px;border:1px solid var(--line);background:#0b1224;color:var(--text);padding:12px;resize:vertical}
 .cards-placeholder{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}.ph{aspect-ratio:4/5;border:1px dashed #3b4f7a;border-radius:14px;display:grid;place-items:center;color:var(--muted);background:#0b1224}
 footer{margin-top:38px;color:var(--muted);font-size:13px}
+.preview-wrap{margin-top:16px;background:linear-gradient(180deg,#0c1325,#10172a);border:1px solid var(--line);border-radius:20px;padding:18px}
+.preview-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;flex-wrap:wrap;margin-bottom:14px}
+.preview-head h3{margin:0;font-size:24px}.preview-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;color:var(--text);text-decoration:none;background:#17213a;font-weight:650;font-size:13px}
+.deck-strip{display:flex;gap:12px;overflow-x:auto;padding:4px 2px 14px;scroll-snap-type:x mandatory}
+.mini{flex:0 0 205px;aspect-ratio:4/5;border-radius:15px;background:#101720;border:1px solid #2b3853;padding:16px;position:relative;overflow:hidden;scroll-snap-align:start;box-shadow:0 12px 28px rgba(0,0,0,.22)}
+.mini .num{font-size:11px;color:#8d9aa8;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.mini .ey{font-size:10px;color:#d4a15e;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-top:14px}
+.mini h4{font-size:21px;line-height:1.06;margin:7px 0 10px}
+.mini p{font-size:12px;line-height:1.35;color:#c7d0df;margin:0}
+.mini .metric{display:grid;grid-template-columns:1fr auto auto;gap:7px;border-top:1px solid #2b3853;padding-top:7px;margin-top:7px;font-size:11px;align-items:baseline}
+.mini .metric b{font-size:16px}.mini .a{color:#87a8c2}.mini .b{color:#e0aa6d}
+.mini .footline{position:absolute;left:16px;right:16px;bottom:14px;border-top:1px solid #2b3853;padding-top:8px;color:#77879f;font-size:9px}
+.card-index{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px;margin-top:14px}
+.card-index div{background:#0e1528;border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:13px}
+.notice{border-left:3px solid var(--warn);padding:10px 12px;background:rgba(255,210,122,.07);border-radius:8px;color:#e7d6ae;margin:12px 0 0}
+
 </style>
 </head>
 <body><main>
 <div class="top">
   <div><h1>News Brazil · Revisão Factual</h1><div class="sub">Painel de conferência dos carrosséis políticos e eleitorais já produzidos. O objetivo desta página é registrar cards, transcrição, fontes, correções e evidência disponível antes de qualquer decisão editorial.</div></div>
-  <div class="pill">Atualizado: 03/10/2026</div>
+  <div class="pill">Atualizado: 15/10/2026</div>
 </div>
 
 <section>
@@ -40,17 +57,68 @@ footer{margin-top:38px;color:var(--muted);font-size:13px}
 </section>
 
 <section>
-<h2>Modelo de revisão</h2>
-<div class="review-card">
-<h2>Primeiro carrossel — revisão em andamento</h2>
-<div class="cards-placeholder"><div class="ph">Card 1</div><div class="ph">Card 2</div><div class="ph">Card 3</div><div class="ph">Card 4</div></div>
-<div class="row" style="margin-top:14px">
-<div class="box"><h3>Transcrição</h3><p>A preencher depois de abrir a versão final localizada.</p></div>
-<div class="box"><h3>Fontes</h3><p>A preencher com links, datas e trechos relevantes.</p></div>
-<div class="box"><h3>Status factual</h3><p>Verificado / precisa correção / evidência insuficiente.</p></div>
-<div class="box"><h3>Correções por card</h3><p>Observações específicas serão adicionadas card por card.</p></div>
-</div>
-<div class="box" style="margin-top:14px"><h3>Seu feedback</h3><textarea data-save="feedback-first" placeholder="Escreva aqui o que quer ajustar..."></textarea><small style="color:var(--muted)">O texto fica salvo neste navegador.</small></div>
+<h2>Exemplo real — agora dá para ver o carrossel</h2>
+<div class="preview-wrap">
+  <div class="preview-head">
+    <div>
+      <div class="meta">CARROSSEL LOCALIZADO · 15 CARDS · VERSÃO DE 18/09/2026</div>
+      <h3>Refizemos a Conta — Bolsonaro x Lula</h3>
+      <div class="sub">Esse é o arquivo real que estava por trás do item “Lula x Bolsonaro”. Abaixo estão miniaturas editoriais dos cards para você entender a sequência antes de começarmos a checagem atual.</div>
+    </div>
+    <div class="preview-actions">
+      <a class="btn" href="https://drive.google.com/file/d/1-fKh1Te5A10h90vrDuUVH6BEH1h3k_tP/view" target="_blank" rel="noopener">Abrir arquivo original</a>
+    </div>
+  </div>
+  <div class="notice"><b>Importante:</b> estes números reproduzem a versão salva em 18/09. Eles ainda não estão marcados como “validados hoje”; a revisão factual atual vem depois.</div>
+  <div class="deck-strip" aria-label="Prévia dos 15 cards">
+    <article class="mini"><div class="num">CARD 1</div><div class="ey">comparação</div><h4>Bolsonaro x Lula<br>a economia em cinco números</h4>
+      <div class="metric"><span>PIB</span><b class="a">1,4%</b><b class="b">3,0%</b></div>
+      <div class="metric"><span>Inflação</span><b class="a">6,2%</b><b class="b">4,6%</b></div>
+      <div class="metric"><span>Alimentos</span><b class="a">10,0%</b><b class="b">3,9%</b></div>
+      <div class="metric"><span>Gasolina</span><b class="a">+3,3%</b><b class="b">+7,8%</b></div>
+      <div class="footline">IBGE + Banco Central · mesma base anual</div></article>
+
+    <article class="mini"><div class="num">CARD 2</div><div class="ey">método</div><h4>De onde tiramos estes números</h4><p>Explica as fontes oficiais e por que comparar tudo na mesma base: período, medida e anos equivalentes.</p><div class="footline">IBGE SIDRA + BCB SGS</div></article>
+
+    <article class="mini"><div class="num">CARD 3</div><div class="ey">leitura crítica</div><h4>Como saber se uma comparação é justa</h4><p>Três perguntas: o número está certo? A base é a mesma? Foi o presidente que causou?</p><div class="footline">Contexto antes de concluir</div></article>
+
+    <article class="mini"><div class="num">CARD 4</div><div class="ey">desemprego</div><h4>9,6% × 5,6%</h4><p>Compara o último ano de cada mandato e separa taxa anual de trimestre isolado.</p><div class="footline">PNAD Contínua</div></article>
+
+    <article class="mini"><div class="num">CARD 5</div><div class="ey">série histórica</div><h4>Desemprego, ano a ano</h4><p>2019 → 2026 em uma sequência única para evitar comparar pontos escolhidos.</p><div class="footline">Mesma série, ano a ano</div></article>
+
+    <article class="mini"><div class="num">CARD 6</div><div class="ey">PIB</div><h4>PIB — confere, com contexto</h4><p>Mostra a média anual e explica o efeito da pandemia e do rebote de 2021.</p><div class="footline">Contas Nacionais + BCB</div></article>
+
+    <article class="mini"><div class="num">CARD 7</div><div class="ey">série histórica</div><h4>PIB, ano a ano</h4><p>Coloca 2019–2026 na mesma linha para mostrar variações dentro de cada governo.</p><div class="footline">Crescimento anual</div></article>
+
+    <article class="mini"><div class="num">CARD 8</div><div class="ey">gasolina</div><h4>Gasolina, ano a ano</h4><p>Mostra altas e quedas anuais, incluindo a forte queda de 2022.</p><div class="footline">IPCA gasolina</div></article>
+
+    <article class="mini"><div class="num">CARD 9</div><div class="ey">contexto</div><h4>Gasolina: guerra e imposto</h4><p>Separa fatores externos, tributação e preço do petróleo do efeito direto do governo.</p><div class="footline">Contexto de preço</div></article>
+
+    <article class="mini"><div class="num">CARD 10</div><div class="ey">contexto</div><h4>A gasolina foi boa por causa de Bolsonaro?</h4><p>Revisa PPI, petróleo internacional e a refinaria da Bahia.</p><div class="footline">Política de preços</div></article>
+
+    <article class="mini"><div class="num">CARD 11</div><div class="ey">alimentos</div><h4>Alimentos, ano a ano</h4><p>Compara a inflação de alimentação e bebidas em cada ano.</p><div class="footline">IPCA alimentos</div></article>
+
+    <article class="mini"><div class="num">CARD 12</div><div class="ey">agro</div><h4>Agro e PIB</h4><p>Mostra quanto o agro puxou o crescimento e separa clima de política pública.</p><div class="footline">IBGE + Plano Safra</div></article>
+
+    <article class="mini"><div class="num">CARD 13</div><div class="ey">Banco Central</div><h4>Juros e caso Master</h4><p>Explica mandato do BC, Selic e o status de testemunhas no caso Master.</p><div class="footline">LC 179/2021 + fontes do caso</div></article>
+
+    <article class="mini"><div class="num">CARD 14</div><div class="ey">resumo</div><h4>Governo anterior × atual</h4><p>Reúne PIB, desemprego, inflação, alimentos e gasolina numa tabela final.</p><div class="footline">Resumo comparativo</div></article>
+
+    <article class="mini"><div class="num">CARD 15</div><div class="ey">conclusão</div><h4>Números reais, comparação com contexto</h4><p>Fecha separando o que os dados mostram do que depende de pandemia, guerra, clima e juros.</p><div class="footline">Conclusão da versão salva</div></article>
+  </div>
+
+  <div class="card-index">
+    <div><b>O que ele tenta fazer:</b> refazer uma comparação viral usando séries oficiais.</div>
+    <div><b>Por que escolhi esse:</b> tem estrutura forte e fontes identificadas, mas precisa revalidação antes de qualquer decisão.</div>
+    <div><b>Formato:</b> 15 cards, começando pelo comparativo e depois abrindo cada indicador.</div>
+    <div><b>Próxima etapa:</b> conferir card por card contra as fontes atuais e marcar o que permanece, muda ou sai.</div>
+  </div>
+
+  <div class="row" style="margin-top:14px">
+    <div class="box"><h3>Status agora</h3><p><b>Localizado e visualizado.</b> Ainda não classificado como pronto para uso.</p></div>
+    <div class="box"><h3>Fonte do arquivo</h3><p>Drive · <code>bolsonaro-x-lula-refeito-v3.html</code> · salvo em 19/09/2026.</p></div>
+  </div>
+  <div class="box" style="margin-top:14px"><h3>Seu feedback</h3><textarea data-save="feedback-first" placeholder="Agora que você consegue ver o carrossel: gostou desse? O que mudaria?"></textarea><small style="color:var(--muted)">O texto fica salvo neste navegador.</small></div>
 </div>
 </section>
 
