@@ -1,35 +1,35 @@
 {
-  "date": "2026-10-15",
+  "date": "2026-10-16",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "OPC Reviews",
-      "t": "Evento de review às 11h30 — 15 templates prontos para enviar a clientes",
-      "why": "O evento 'Ask someone to Review ⭐️' está no calendário às 11h30 com 15 mensagens pré-redigidas. Aproveite enquanto o trabalho está fresco — taxa de conversão de review é maior nos primeiros 3 dias após a entrega.",
+      "tag": "Alerta Crítico",
+      "t": "Crédito Anthropic em zero — pipeline rodando em fallback desde ontem",
+      "why": "O monitor disparou 'low_credit' hoje às 09:23 e ontem às 09:30. O content_creator e o boletim estão usando modelos de fallback, o que pode degradar qualidade e causar falhas silenciosas. Resolver antes de amanhã.",
+      "go": "iafim"
+    },
+    {
+      "tag": "OPC Aprovações",
+      "t": "338 posts da OPC esperando aprovação — backlog crescendo",
+      "why": "Email de 23:08 de ontem: 338 posts do Instagram da Oak Park Construction aguardam sua aprovação no Drive. Quanto mais tempo parado, mais difícil curar o que ainda é relevante.",
       "go": "obra"
     },
     {
-      "tag": "Reels Curadoria",
-      "t": "6 reels chegaram por SMS esta manhã — referências frescas para OPC",
-      "why": "Seis Instagram reels foram enviados ao seu email via SMS entre 3h e 11h08. Revisar agora enquanto estão frescos pode gerar 1–2 ideias de post OPC antes de fechar o dia.",
+      "tag": "Metricool Falha",
+      "t": "@tentandochegaratevoce: 3 erros de publicação consecutivos ontem",
+      "why": "Metricool tentou publicar 3 vezes (às 16:17, 20:14 e 01:41) e falhou — o post virou rascunho e não saiu. Checar se é problema de permissão, token ou limite de conta.",
       "go": "conteudo"
     },
     {
-      "tag": "OPC Video",
-      "t": "SALA_ESCURA_FINAL_v4_DUBLADO.mp4 + 3 slides prontos — verificar status no Metricool",
-      "why": "Email de ontem às 20h confirma vídeo + slide_01 (manchas) e slide_02 (vermelho) prontos. O post parece ter virado rascunho após cancelamento às 16h17 — checar no Metricool se ainda está como rascunho antes de criar conteúdo novo.",
-      "go": "conteudo"
-    },
-    {
-      "tag": "Anthropic API",
-      "t": "Crédito Anthropic baixo de novo (9h30) — recarregar antes de escalar agentes",
-      "why": "Email automático de 9h30 confirma mais um dia de fallback ativo na Anthropic. Com Lindy e outros agentes sendo avaliados esta semana, recarregar créditos antes de testar evita interrupções no meio do fluxo.",
-      "go": "iafim"
+      "tag": "Prazo Caio / FAU",
+      "t": "46 dias para subir documentos de Caio no portal da FAU (prazo 1/dez)",
+      "why": "Faltam boletim escolar (1º período letivo) e provas estaduais de math + ELA. Sem esses documentos, a candidatura é excluída da loteria. Confirmar com a Education Station quando o boletim do 1º período fica pronto.",
+      "go": "tip"
     }
   ],
   "history": [
     {
-      "date": "2026-10-15",
+      "date": "2026-10-16",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,16 +37,16 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-10-15",
+        "id": "tip-2026-10-16",
         "top": true,
-        "t": "Intenções de Implementação para TDAH: Troque 'Preciso Fazer X' por 'Se Y Acontecer, Então Faço X' — e Cumpra de Verdade",
-        "resumo": "Intenções de implementação (se-então) são frases condicionais que ligam um gatilho a uma ação: 'Se o alarme das 8h tocar, então abro o curso antes de tocar no celular.' Estudos com crianças com TDAH mostram que a técnica reduz erros de perseveração e melhora inibição ao nível de quem não tem TDAH — a diferença está na automatização do início.",
-        "porque": "O TDAH falha na intenção prospectiva: lembrar de executar um plano quando o momento certo aparecer. Uma intenção vaga ('vou estudar hoje') falha porque o cérebro precisa reconstruir o plano no momento de agir. O 'Se-Então' automatiza essa reconstrução — quando Y ocorre, X dispara sem custo extra de decisão ou força de vontade.",
-        "aplicar": "Para RE: 'Se o alarme das 8h tocar, então abro o Cameron Academy antes de tocar no celular.' Para posts OPC: 'Se eu abrir o Metricool, então primeiro reviso os drafts pendentes antes de criar conteúdo novo.' Para leads: 'Se chegar e-mail com as palavras orçamento ou estimate, então respondo antes de fechar o Gmail.'",
-        "plano": "1) Escolha 3 tarefas de alta resistência desta semana (RE, posts OPC, resposta de lead) · 2) Para cada uma, escreva um 'Se [gatilho específico], então [ação concreta]' — quanto mais específico o gatilho, mais forte o efeito · 3) Anote as 3 frases num post-it na tela do computador — a escrita em si já aumenta a chance de execução · 4) Após 48h, revise: qual funcionou? Qual gatilho precisa ser mais específico ou mais próximo da tarefa?",
+        "t": "Cegueira Temporal no TDAH: Seu Relógio Interno Não Funciona — Construa um Externo",
+        "resumo": "TDAH causa 'time blindness': você genuinamente não sente o tempo passar, não é falta de esforço. A solução não é 'tentar mais' — é substituir o relógio interno por âncoras externas visíveis e audíveis.",
+        "porque": "O problema é perceptual, não motivacional. Sem âncoras externas, tarefas de 20 minutos parecem 5, reuniões aparecem do nada, e a transição entre blocos nunca acontece.",
+        "aplicar": "Para a Oak Park: timer de cozinha físico na mesa ao responder emails de clientes, alarme de '15 min antes' de cada reunião, e blocos coloridos no Google Calendar com duração real (não estimativa otimista).",
+        "plano": "1) Coloque um timer visual (Time Timer ou similar) na mesa — visível o tempo todo · 2) No Google Calendar, adicione um bloco de 'buffer de 15 min' antes de cada compromisso · 3) Ao iniciar qualquer tarefa, diga em voz alta: 'Tenho X minutos para isso' e acione o timer · 4) No fim do dia, compare o previsto vs. real para calibrar suas estimativas ao longo de 1 semana",
         "fonte": {
-          "t": "If-then plans benefit executive functions in children with ADHD — IFP NYU",
-          "u": "https://ifp.nyu.edu/2011/journal-article-abstracts/if-then-plans-benefit-executive-functions-in-children-with-adhd/"
+          "t": "ADHD Time Blindness: Why Timers Fail and What Works",
+          "u": "https://super-productivity.com/blog/adhd-time-blindness-strategies/"
         },
         "video": {
           "t": "",
@@ -56,16 +56,16 @@
     ],
     "receita": [
       {
-        "id": "receita-2026-10-15",
+        "id": "receita-2026-10-16",
         "top": true,
-        "t": "Falafel Assado no Forno com Homus Caseiro e Pita — 45 Min, Vegano, Kid-Friendly",
-        "resumo": "Falafel de grão-de-bico processado cru com alho, coentro e especiarias, assado a 200°C (não frito), servido em pão pita com homus de tahine caseiro. Proteína completa, crocante por fora, macio por dentro. Crianças adoram o formato de bolinha. Sem leite de vaca, sem frutos do mar. Ingredientes completamente novos vs. a semana (grão-de-bico, coentro, tahine, pita).",
-        "porque": "Grão-de-bico hidratado processado CRU — não cozido — é o segredo do falafel crocante. A versão com grão enlatado (já cozido) fica pastosa e não crocante. Assar em vez de fritar reduz o óleo sem perder a textura — basta pincelar com azeite antes do forno. O homus caseiro leva menos de 5 minutos no liquidificador.",
-        "aplicar": "O homus pode ser feito na véspera (guarda 5 dias na geladeira). O falafel cru pode ser congelado — tire 10 min antes e asse direto. O grão-de-bico de molho (12h) é fundamental para a textura; se usar o enlatado, seque bem e adicione menos farinha.",
-        "plano": "1) Deixe 1 xíc de grão-de-bico seco de molho em água por 12h — escorra e seque bem; processe cru (não cozinhe) com ½ cebola + 4 alhos + 1 xíc de coentro/salsinha + 1 col chá cominho + 1 col chá cúrcuma + sal + 2 col sopa farinha de grão-de-bico — textura deve ser granulada, não pasta · 2) Modele em bolinhas de 3 cm (umas 18–20 unidades), disponha em assadeira com azeite e pincele cada bolinha · 3) Asse a 200°C por 25–30 min virando na metade até dourar dos dois lados · 4) Homus: bata 400 ml de grão-de-bico cozido + 3 col sopa tahine + 1 dente alho + suco de 1 limão + sal + 3 col sopa azeite + ½ xíc água gelada; sirva com pita, pepino em rodelas e tomate cereja",
+        "t": "Bol de Quinoa com Grão-de-Bico Assado Crocante e Molho Tahine Caseiro — 30 Min, Vegano, Kid-Friendly",
+        "resumo": "Quinoa cozida no fundo, grão-de-bico assado com azeite, cominho e páprica até crocante, vegetais frescos (tomate, pepino, cenoura ralada) e molho de tahine com limão e alho. Proteico, sem leite de vaca, fácil de montar.",
+        "porque": "O grão-de-bico assado vira a 'estrela' do prato — crocante por fora, macio por dentro — e crianças adoram pegar com a mão. Tahine substitui o queijo dando cremosidade sem laticínios.",
+        "aplicar": "Asse o grão-de-bico no domingo e guarde na geladeira por até 4 dias — o bol fica pronto em 10 min em qualquer dia da semana.",
+        "plano": "1) Cozinhe 1 xícara de quinoa em 2 de água com sal por 15 min e deixe esfriar · 2) Drene 1 lata de grão-de-bico, seque bem, tempere com azeite + cominho + páprica defumada + sal, asse a 220°C por 20-25 min até dourar · 3) Misture molho: 3 colheres de tahine + suco de 1 limão + 1 dente de alho amassado + 3 colheres de água fria + sal · 4) Monte o bol: quinoa → grão-de-bico → tomate cereja + pepino + cenoura ralada → molho tahine por cima",
         "fonte": {
-          "t": "Aprenda a fazer falafel caseiro com ingredientes simples — Catraca Livre",
-          "u": "https://catracalivre.com.br/gastronomia/aprenda-a-fazer-falafel-caseiro-com-ingredientes-simples/"
+          "t": "",
+          "u": ""
         },
         "video": {
           "t": "",
@@ -75,16 +75,16 @@
     ],
     "merch": [
       {
-        "id": "merch-2026-10-15",
+        "id": "merch-2026-10-16",
         "top": true,
-        "t": "Gelato 2026: POD com Gráficas Locais em 32 Países — Entrega em 2–5 Dias nos EUA e Europa Sem Taxa Mensal",
-        "resumo": "Gelato conecta com 140+ gráficas em 32 países e imprime perto do cliente final — não num hub central. Resultado: frete mais barato e entrega mais rápida para pedidos internacionais. Sem taxa mensal no plano básico. Plano Gelato+ a ~$23.99/mês com mockup generator IA e descontos em produtos. Integração nativa com Shopify, WooCommerce e Etsy. Reviews 2026 apontam boa qualidade de impressão flat e interface simples.",
-        "porque": "Diferente de Printful (hub único, envia para o mundo) e SPOD (hubs EUA+Europa apenas): o Gelato imprime na cidade mais próxima do comprador. Para uma loja com clientes nos EUA, a entrega é 2× mais rápida e o frete cai — vantagem real em conversão. Reviews independentes de 2026 chamam de 'um dos PODs mais fáceis de usar e com preços competitivos'.",
-        "aplicar": "Use o Gelato para a linha principal de tees femininas voltada ao mercado americano — velocidade e custo de frete compensam. Para produtos com bordado real, compare com Printful primeiro: Gelato tem catálogo menor de apparel bordado. Peça sample antes de escalar — desconto de 30% para primeiras amostras.",
-        "plano": "1) Crie conta gratuita em gelato.com — sem cartão de crédito necessário para explorar o catálogo · 2) Filtre por 'apparel' → 'women' → veja as opções de tee e confirme se há longline no catálogo atual · 3) Compare o custo de produção + frete para um CEP específico nos EUA (ex: Pompano Beach 33060) entre Gelato e Printful para o mesmo produto · 4) Peça 1 sample antes de conectar ao Shopify — foco em avaliar qualidade de cor, toque do tecido e acabamento das costuras",
+        "t": "Apliiq 2026: POD Americano Especializado em Cut & Sew e Bordado Real — Produção em LA e Philadelphia",
+        "resumo": "Apliiq faz POD com foco em marcas de roupas: cut & sew (costuras customizadas), bordado real (não transfer), etiquetas tecidas e longlines. Produção 100% nos EUA, 4.9 estrelas no Shopify App Store.",
+        "porque": "Diferente de Printful/Printify, Apliiq é especializado em construção de marca de vestuário — não é só estampar. Para quem quer longlines femininas com bordado e identidade de marca real, é a plataforma mais alinhada.",
+        "aplicar": "Peça um sample de women's tee com patch bordado antes de escalar. Custo de bordado ~$2.28–$4.50 por patch, produção em 7–10 dias. Verifique medidas da longline antes de fotografar.",
+        "plano": "1) Crie conta em apliiq.com e explore a seção Women's (Heavy Tee + longline options) · 2) Configure 1 design com patch bordado no peito + etiqueta com sua marca · 3) Peça 1 sample (~$30–40 total) para avaliar qualidade real do bordado e comprimento · 4) Se aprovado, suba ao Shopify via app e configure fulfillment automático",
         "fonte": {
-          "t": "Gelato Review (2026) — All the Key Pros and Cons of a Popular POD Solution — Style Factory",
-          "u": "https://www.stylefactoryproductions.com/blog/gelato-review"
+          "t": "Apliiq Review 2026 — Do Dropshipping",
+          "u": "https://dodropshipping.com/apliiq-review/"
         },
         "video": {
           "t": "",
@@ -94,16 +94,16 @@
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-10-15",
+        "id": "conteudo-2026-10-16",
         "top": true,
-        "t": "CapCut AI 2026: Descreva o Reel → IA Sugere o Hook, Gera Script, Adiciona Legendas em 54 Estilos — De Graça no App que Você Já Tem",
-        "resumo": "O fluxo AI do CapCut é conversacional: você descreve o tema, a IA sugere um hook baseado em algoritmos de performance, gera o script, seleciona B-roll e adiciona legendas automáticas com animação (97% de acurácia para pt-BR). 54 estilos de arte para B-roll. Gratuito com marca d'água; CapCut Pro para exportar sem. Diferente das ferramentas desta semana: já está no celular, sem novo login.",
-        "porque": "InVideo cria vídeo do zero a partir de texto, Predis gera carrossel, Munch corta vídeos longos. O CapCut faz tudo no celular que você já usa para gravar — sem trocar de app. O hook gerado pela IA analisa padrões do que está performando no TikTok e Reels no momento — não é fórmula genérica.",
-        "aplicar": "Para OPC: abra o CapCut → AI Video → descreva: 'reforma de banheiro completa em Pompano Beach, antes e depois, 30 segundos.' Deixe a IA estruturar. Substitua o B-roll genérico por fotos reais de obra. Use auto-legenda para capturar audiência em modo silencioso (60–80% dos Reels assistidos sem som).",
-        "plano": "1) Abra o CapCut app → ícone AI (varinha) → AI Video → escreva o tema do post em português · 2) Revise o hook no primeiro segundo do vídeo gerado — é o que decide se o usuário para de rolar; edite até sentir que 'prende' · 3) Substitua B-roll de stock por fotos e vídeos reais de obras nos momentos-chave do script · 4) Ative Auto Captions → escolha estilo com letra grossa e contraste alto (funciona bem em ambientes de obra); exporte e programe no Metricool",
+        "t": "Vizard AI 2026: Sobe 1 Vídeo Longo → IA Seleciona +10 Reels com Hook Forte, Legenda Automática e Agenda no Instagram",
+        "resumo": "Vizard analisa seu vídeo, detecta picos emocionais e insights-chave, corta os melhores momentos já no formato 9:16, adiciona legenda animada e permite agendar direto no Instagram — tudo no mesmo painel.",
+        "porque": "Diferente de OpusClip (score de viralidade) e Munch (pontuação de segmento), Vizard foca na jornada completa: corta → formata → legenda → agenda. Menos troca de ferramenta, mais posts saindo.",
+        "aplicar": "Para a OPC: suba um vídeo longo de reforma (tour de obra, before/after, reunião de projeto) e deixe Vizard cortar os melhores momentos. Cada clip já sai pronto para o @oakparkconstruction.",
+        "plano": "1) Acesse vizard.ai e faça upload do seu próximo vídeo de obra ou tour de projeto · 2) Clique em 'Get Clips' e deixe a IA selecionar os 10 melhores momentos · 3) Ajuste títulos, legenda e adicione sua identidade visual antes de publicar · 4) Agende diretamente pelo Vizard ou exporte os clips para o Metricool",
         "fonte": {
-          "t": "Best AI Tools for TikTok Content Creation in 2026 — Marc Andrews",
-          "u": "https://marcandrews.com/best-ai-tools-for-tiktok-content-creation-in-2026/"
+          "t": "Vizard AI — Instagram Reels Clip Generator",
+          "u": "https://vizard.ai/tools/instagram-reels-clip-generator"
         },
         "video": {
           "t": "",
@@ -113,16 +113,16 @@
     ],
     "obra": [
       {
-        "id": "obra-2026-10-15",
+        "id": "obra-2026-10-16",
         "top": true,
-        "t": "Adobe Firefly Generative Fill: Pinte a Área Que Será Reformada → IA Visualiza o Acabamento Final com Luz e Perspectiva Reais",
-        "resumo": "O Generative Fill do Adobe Firefly (disponível em firefly.adobe.com — gratuito com conta Adobe) permite selecionar qualquer área de uma foto e descrever o novo acabamento em texto. Ex: foto do banheiro atual → selecione o piso → 'large format marble tile, matte finish, dark grout' → IA renderiza o novo piso com iluminação e perspectiva consistentes com a foto. Ideal para mostrar ao cliente como ficará ANTES de começar.",
-        "porque": "Diferente de Sora, Runway e Luma (que animam ou geram vídeo): o Firefly edita a foto estática para visualizar o resultado final. Para OPC, transformar foto atual do imóvel do cliente em prévia do projeto é argumento de venda direto — mais convincente que descrição verbal e mais barato que renderização 3D. Reviewers de real estate chamam de 'uma das aplicações mais práticas de IA em conteúdo visual'.",
-        "aplicar": "Tire uma foto de boa qualidade do ambiente atual do cliente (antes da obra). No Firefly Web, use Generative Fill para visualizar novo piso, tinta de parede, armários ou bancada descrito em texto. Exporte como 'depois digital' para usar no antes/depois do Reel ou da proposta comercial.",
-        "plano": "1) Acesse firefly.adobe.com → login com conta Adobe gratuita → selecione 'Generative Fill' · 2) Faça upload da foto do ambiente atual — quanto mais nítida e bem iluminada, melhor o resultado · 3) Pinte (selecione) a área que será reformada (piso, parede, bancada, armários) e descreva em inglês o acabamento: 'white subway tiles, matte finish, modern grouting' ou 'dark wood cabinets, gold hardware' · 4) Gere 3–4 variações → coloque ao lado da foto original → mostre ao cliente: o antes/depois visual fecha mais propostas do que qualquer texto descritivo",
+        "t": "REimagineHome AI 2026: Foto do Cômodo Atual → IA Gera Staging Virtual do Projeto Pronto — Apresente o Antes/Depois Antes de Começar a Obra",
+        "resumo": "REimagineHome transforma uma foto do ambiente a ser reformado no resultado final: móveis novos, acabamentos, paleta de cor. Ideal para apresentar visualmente o projeto ao cliente antes da assinatura do contrato.",
+        "porque": "Clientes assinam mais rápido quando veem o resultado. Com REimagineHome, a OPC pode mostrar 3 versões do mesmo cômodo (estilo moderno, clássico, minimalista) numa reunião, sem pagar um renderizador.",
+        "aplicar": "Use numa apresentação comercial: tire foto do cômodo atual do cliente, gere 2–3 versões no REimagineHome durante a reunião, mostre no tablet. Transforma conversa de orçamento em conversa de visão.",
+        "plano": "1) Acesse reimaginehome.com e faça upload da foto do cômodo a reformar (cozinha, banheiro, sala) · 2) Selecione estilo: moderno, escandinavo, contemporâneo etc. · 3) Gere 3 variações e salve as melhores · 4) Monte um carrossel Instagram com 'Antes' + 3 versões 'Depois' — sem gravar nenhum vídeo",
         "fonte": {
-          "t": "Generative Fill: How Adobe's AI Tool Works and When to Use It — Virtual Staging Art",
-          "u": "https://www.virtualstaging.art/blog-posts/photoshopgenerativefill"
+          "t": "REimagineHome — Tool Directory (revisado set 2026)",
+          "u": "https://tooldirectory.ai/tools/reimaginehome"
         },
         "video": {
           "t": "",
@@ -132,16 +132,16 @@
     ],
     "geo": [
       {
-        "id": "geo-2026-10-15",
+        "id": "geo-2026-10-16",
         "top": true,
-        "t": "Sudão 2026: A Pior Crise Humanitária do Planeta Que o Mundo Parou de Acompanhar — 25 Milhões com Fome, 9 Milhões Deslocados",
-        "resumo": "A guerra civil no Sudão entre as Forças Armadas Sudanesas (SAF) e as Forças de Apoio Rápido (RSF) começou em abril de 2023 e não parou. A ONU e o UNICEF classificam como a maior crise humanitária do mundo: 25 milhões de pessoas (metade da população) com fome extrema, 9,3 milhões deslocados. Mais de 16 acordos de cessar-fogo fracassaram. Em março de 2025, a ONU alertou que a ajuda humanitária podia ser suspensa por falta de financiamento.",
-        "porque": "A guerra no Sudão envolve Rússia/Wagner (apoiaram as RSF), Emirados Árabes (suporte financeiro às RSF), Egito (apoia o exército regular) e os EUA como mediador falho — é proxy war disfarçada de conflito interno, pelo controle do ouro e petróleo sudaneses. Região diferente de todos os temas desta semana: é o único conflito ativo no continente africano com impacto direto no Corno da África e na rota do Mar Vermelho.",
-        "aplicar": "Ao ler sobre guerras por procuração (proxy wars), o Sudão é o caso mais extremo e menos coberto do momento. O mesmo padrão se repete: potência externa usa conflito interno para projetar influência sem envolvimento direto — Transnístria (Rússia via Moldávia), Iêmen (Irã via Huthis), Sudão (EAU via RSF). Angle para pauta: 'A pior guerra do mundo não aparece no feed porque não tem petróleo com bandeira ocidental.'",
-        "plano": "1) Entenda os dois lados: SAF (exército do estado, General Al-Burhan) vs RSF (milícia paramilitar, General Hemeti — ex-aliados que se tornaram inimigos em abril de 2023) · 2) Mapeie os apoiadores externos: Rússia/Wagner + EAU (RSF) vs Egito + China (SAF) — recursos em jogo: ouro, petróleo do Sudão do Sul e posição estratégica no Corno da África · 3) Conecte ao Corno da África: o conflito desestabiliza Etiópia, Chade e Líbia e pressiona a rota do Mar Vermelho · 4) Para pauta de geopolítica: compare cobertura midiática do Sudão vs Ucrânia vs Gaza — o contraste de atenção é uma história por si só",
+        "t": "Minerais Críticos 2026: China Controla +60% do Refino de Lítio e Cobalto — e Isso É o Risco Geopolítico #1 do Mundo Segundo o WEF",
+        "resumo": "Lítio, cobalto, terras raras e grafite são os petróleo da era dos carros elétricos e da IA. A China refina +60% do lítio e cobalto e +90% das terras raras. O 15° Plano Quinquenal (2026–2030) aprofunda esse controle.",
+        "porque": "O Relatório de Riscos Globais 2026 do Fórum Econômico Mundial classificou a disputa por minerais críticos como o gatilho mais provável de crise geopolítica — acima de clima e ataques cibernéticos. Entender isso é entender onde as guerras econômicas vão acontecer.",
+        "aplicar": "Pauta de conteúdo: 'Por que o iPhone e o Tesla dependem de um minério controlado pela China?' é um gancho acessível para qualquer público. Conecte com notícias sobre tensões EUA-China para dar urgência.",
+        "plano": "1) Conceito central: quem controla o refino de minerais controla a transição energética e a infraestrutura de IA · 2) Mapa de dependência: lítio (Chile/Argentina para mineração, China para refino), cobalto (RDC para mineração, China para refino) · 3) A resposta ocidental: EUA investiu +$30 bilhões, 54 países assinaram acordos em fev/2026 · 4) A aposta geopolítica: se a China restringir exportações (como fez com grafite), o Ocidente não tem alternativa de curto prazo",
         "fonte": {
-          "t": "Sudan war is world's worst humanitarian crisis with 30 million needing aid, UNICEF head says — New Arab",
-          "u": "https://www.newarab.com/news/sudan-war-worlds-worst-humanitarian-crisis-unicef-head-says"
+          "t": "Confronto Geoeconômico 2026: Guia de Minerais Críticos",
+          "u": "https://informedclearly.com/pt/geopolitica/62007/confronto-geoeconomico-minerais-criticos-2026"
         },
         "video": {
           "t": "",
@@ -151,16 +151,16 @@
     ],
     "ads": [
       {
-        "id": "ads-2026-10-15",
+        "id": "ads-2026-10-16",
         "top": true,
-        "t": "RLSA para Construtoras: Lance 50% a Mais em Quem Visitou Seu Site e Não Pediu Orçamento — Essa Pessoa Já Sabe Quem Você É",
-        "resumo": "RLSA (Remarketing Lists for Search Ads) ajusta os lances nas campanhas de busca existentes para usuários que já visitaram o site — sem criar campanha separada. Modo Observation: você continua alcançando todos, mas paga mais por quem já te conhece. Modo Targeting: anúncio só aparece para quem está na lista. Para OPC: visitantes que pesquisaram 'kitchen remodel Broward' depois de visitar o site têm taxa de fechamento 2–3× maior do que visitantes frios.",
-        "porque": "LSA, Customer Match e Demand Gen (cobertos esta semana) são sobre prospecção. RLSA é sobre conversão: atacar quem já sinalizou interesse — custo menor porque a intenção já existe. Um guia de 2026 recomenda começar com +20–50% de bid para visitantes gerais e subir conforme a intenção da página visitada (contato > serviços > home).",
-        "aplicar": "Para OPC: crie uma lista de todos os visitantes do site (30 dias) e uma lista filtrada de 'visitou a página de Serviços ou Contato'. Lance +20% para visitantes gerais e +50% para quem foi à página de contato — são os leads mais quentes que saíram sem converter.",
-        "plano": "1) Google Ads → Tools → Audience Manager → Website Visitors → criar segmento 'Todos os visitantes OPC — 30 dias' (requer tag do Google instalada no site) · 2) Criar segundo segmento: 'Visitou /contact ou /services nos últimos 60 dias' (maior intenção) · 3) Adicionar as duas listas em TODAS as campanhas de Search ativas no modo Observation com modificadores: +20% para visitantes gerais, +50% para página de contato · 4) Aguardar 30 dias para acumular dados (mínimo 1.000 usuários na lista para ativar), comparar CPC e taxa de conversão dos segmentos vs audiência fria — ajustar bid conforme retorno real",
+        "t": "Google Ads Conversion Value Rules 2026: Dê Lance 2x Maior em Leads de Bairros Premium — Smart Bidding Passa a Priorizar Seus Melhores Clientes",
+        "resumo": "Conversion Value Rules permitem multiplicar o valor de uma conversão com base em localização, dispositivo ou público. Para construtoras como a OPC, leads de bairros de alto padrão valem mais — e o algoritmo do Google precisa saber disso.",
+        "porque": "Se todos os leads valem $1 (padrão), o Smart Bidding trata um lead de Weston igual a um de qualquer outro lugar. Com regras de valor, você ensina o algoritmo a investir mais onde os projetos são maiores.",
+        "aplicar": "Calcule o valor real de um lead OPC: taxa de fechamento ~20% × ticket médio de projeto = valor real. Depois, crie uma regra que multiplica por 1.5x leads de códigos ZIP dos bairros premium que você quer atender.",
+        "plano": "1) No Google Ads: Ferramentas → Conversões → Regras de Valor de Conversão · 2) Crie uma regra de Localização: selecione os ZIP codes dos bairros-alvo (ex: Weston, Fort Lauderdale premium) e defina multiplicador 1.5–2x · 3) Verifique que sua ação de conversão tem valor real ($400–600) e não o padrão de $1 · 4) Aguarde 2–4 semanas de dados e compare CPA e qualidade de leads entre bairros",
         "fonte": {
-          "t": "Remarketing Lists for Search Ads: The Ultimate Budget Saver — Mega Digital",
-          "u": "https://megadigital.ai/en/blog/remarketing-lists-for-search-ads-rlsa/"
+          "t": "Google Ads Conversion Value Rules: Conditions, Add vs Multiply",
+          "u": "https://www.relevantaudience.com/google-ads-en/google-ads-conversion-value-rules/"
         },
         "video": {
           "t": "",
@@ -170,16 +170,16 @@
     ],
     "iafim": [
       {
-        "id": "iafim-2026-10-15",
+        "id": "iafim-2026-10-16",
         "top": true,
-        "t": "Lindy AI 2026: Agente Pessoal que Lê Seus E-mails, Prioriza, Redige Rascunhos e Bloqueia Agenda — Sem Código, em 15 Minutos",
-        "resumo": "Lindy é um agente de IA pessoal no-code que conecta ao Gmail e Google Calendar via OAuth. Ele lê e-mails de entrada, classifica por prioridade, escreve rascunhos de resposta e bloqueia slots na agenda para tarefas urgentes. Funciona por instrução em linguagem natural. Plano Starter a ~$19.99/mês (verificar no site — fontes conflitam). Reviews 2026 descrevem resumo matinal com prioridades e sinalização de conflitos de agenda.",
-        "porque": "Diferente de n8n (dev/Docker), Langflow (builder técnico) e Relevance AI (vendas/marketing): o Lindy foi construído para triagem de inbox de uma pessoa física — especialmente útil para quem usa o e-mail como segunda memória e tem TDAH. Sem servidor para subir, sem código, sem crédito da Anthropic: usa o próprio LLM da plataforma.",
-        "aplicar": "Para OPC: configure o Lindy para classificar leads (serviço + localização + urgência) e gerar rascunho de resposta. Para a rotina matinal: peça o resumo de e-mails + agenda antes de abrir o Gmail — você processa o dia em 5 min em vez de 30. Atenção: o modelo de créditos pode gerar custos variáveis — monitore na primeira semana.",
-        "plano": "1) Acesse lindy.ai → crie conta e conecte Gmail + Google Calendar via OAuth (leva 3 min) · 2) Configure o primeiro agente: 'Quando um novo e-mail chegar, classifique como: Lead OPC / Financeiro / Pessoal / Newsletter / Ignorar e escreva um rascunho de resposta para as duas primeiras categorias' · 3) Ative o Daily Summary: às 8h30 o Lindy envia um resumo com os 5 e-mails mais importantes + conflitos de agenda do dia · 4) Monitore o consumo de créditos na primeira semana antes de escalar — o plano correto depende do volume de e-mails diários da OPC",
+        "t": "Dify.ai 2026: Plataforma Open-Source que Une RAG + Agentes + Workflows Visuais + LLMOps — 117k Stars, Deploy Grátis com Docker",
+        "resumo": "Dify é uma plataforma open-source (Apache 2.0) para construir aplicações com LLM: fluxos visuais no estilo n8n, RAG para conectar documentos, agentes com memória e suporte nativo ao protocolo MCP. Deploy local com Docker Compose.",
+        "porque": "Diferente de Langflow (foco em agentes) ou n8n (foco em automação), Dify cobre o ciclo completo: build + RAG + deploy + monitoramento (LLMOps). É a plataforma mais completa para quem quer um chatbot com base de conhecimento própria.",
+        "aplicar": "Para a OPC: monte um chatbot que responde perguntas sobre projetos usando seus próprios PDFs e briefings como base de conhecimento. Integra via MCP com o resto da sua stack.",
+        "plano": "1) Instale com Docker: 'docker compose up -d' no repositório langgenius/dify do GitHub · 2) Suba seus PDFs de projetos, briefings e processos no módulo de Knowledge Base (RAG) · 3) Crie um workflow: usuário pergunta → Dify busca na base → LLM responde com contexto real · 4) Ative o monitoramento LLMOps para ver quais perguntas o agente erra e melhorar a base",
         "fonte": {
-          "t": "Lindy Review 2026 — AI Executive Assistant — AI Agent Rank",
-          "u": "https://aiagentrank.io/blog/lindy-review-2026"
+          "t": "Dify — GitHub (langgenius/dify)",
+          "u": "https://github.com/langgenius/dify"
         },
         "video": {
           "t": "",

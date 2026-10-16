@@ -1,0 +1,191 @@
+{
+  "date": "2026-10-16",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "Alerta Crítico",
+      "t": "Crédito Anthropic em zero — pipeline rodando em fallback desde ontem",
+      "why": "O monitor disparou 'low_credit' hoje às 09:23 e ontem às 09:30. O content_creator e o boletim estão usando modelos de fallback, o que pode degradar qualidade e causar falhas silenciosas. Resolver antes de amanhã.",
+      "go": "iafim"
+    },
+    {
+      "tag": "OPC Aprovações",
+      "t": "338 posts da OPC esperando aprovação — backlog crescendo",
+      "why": "Email de 23:08 de ontem: 338 posts do Instagram da Oak Park Construction aguardam sua aprovação no Drive. Quanto mais tempo parado, mais difícil curar o que ainda é relevante.",
+      "go": "obra"
+    },
+    {
+      "tag": "Metricool Falha",
+      "t": "@tentandochegaratevoce: 3 erros de publicação consecutivos ontem",
+      "why": "Metricool tentou publicar 3 vezes (às 16:17, 20:14 e 01:41) e falhou — o post virou rascunho e não saiu. Checar se é problema de permissão, token ou limite de conta.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "Prazo Caio / FAU",
+      "t": "46 dias para subir documentos de Caio no portal da FAU (prazo 1/dez)",
+      "why": "Faltam boletim escolar (1º período letivo) e provas estaduais de math + ELA. Sem esses documentos, a candidatura é excluída da loteria. Confirmar com a Education Station quando o boletim do 1º período fica pronto.",
+      "go": "tip"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-16",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-10-16",
+        "top": true,
+        "t": "Cegueira Temporal no TDAH: Seu Relógio Interno Não Funciona — Construa um Externo",
+        "resumo": "TDAH causa 'time blindness': você genuinamente não sente o tempo passar, não é falta de esforço. A solução não é 'tentar mais' — é substituir o relógio interno por âncoras externas visíveis e audíveis.",
+        "porque": "O problema é perceptual, não motivacional. Sem âncoras externas, tarefas de 20 minutos parecem 5, reuniões aparecem do nada, e a transição entre blocos nunca acontece.",
+        "aplicar": "Para a Oak Park: timer de cozinha físico na mesa ao responder emails de clientes, alarme de '15 min antes' de cada reunião, e blocos coloridos no Google Calendar com duração real (não estimativa otimista).",
+        "plano": "1) Coloque um timer visual (Time Timer ou similar) na mesa — visível o tempo todo · 2) No Google Calendar, adicione um bloco de 'buffer de 15 min' antes de cada compromisso · 3) Ao iniciar qualquer tarefa, diga em voz alta: 'Tenho X minutos para isso' e acione o timer · 4) No fim do dia, compare o previsto vs. real para calibrar suas estimativas ao longo de 1 semana",
+        "fonte": {
+          "t": "ADHD Time Blindness: Why Timers Fail and What Works",
+          "u": "https://super-productivity.com/blog/adhd-time-blindness-strategies/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-10-16",
+        "top": true,
+        "t": "Bol de Quinoa com Grão-de-Bico Assado Crocante e Molho Tahine Caseiro — 30 Min, Vegano, Kid-Friendly",
+        "resumo": "Quinoa cozida no fundo, grão-de-bico assado com azeite, cominho e páprica até crocante, vegetais frescos (tomate, pepino, cenoura ralada) e molho de tahine com limão e alho. Proteico, sem leite de vaca, fácil de montar.",
+        "porque": "O grão-de-bico assado vira a 'estrela' do prato — crocante por fora, macio por dentro — e crianças adoram pegar com a mão. Tahine substitui o queijo dando cremosidade sem laticínios.",
+        "aplicar": "Asse o grão-de-bico no domingo e guarde na geladeira por até 4 dias — o bol fica pronto em 10 min em qualquer dia da semana.",
+        "plano": "1) Cozinhe 1 xícara de quinoa em 2 de água com sal por 15 min e deixe esfriar · 2) Drene 1 lata de grão-de-bico, seque bem, tempere com azeite + cominho + páprica defumada + sal, asse a 220°C por 20-25 min até dourar · 3) Misture molho: 3 colheres de tahine + suco de 1 limão + 1 dente de alho amassado + 3 colheres de água fria + sal · 4) Monte o bol: quinoa → grão-de-bico → tomate cereja + pepino + cenoura ralada → molho tahine por cima",
+        "fonte": {
+          "t": "",
+          "u": ""
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-10-16",
+        "top": true,
+        "t": "Apliiq 2026: POD Americano Especializado em Cut & Sew e Bordado Real — Produção em LA e Philadelphia",
+        "resumo": "Apliiq faz POD com foco em marcas de roupas: cut & sew (costuras customizadas), bordado real (não transfer), etiquetas tecidas e longlines. Produção 100% nos EUA, 4.9 estrelas no Shopify App Store.",
+        "porque": "Diferente de Printful/Printify, Apliiq é especializado em construção de marca de vestuário — não é só estampar. Para quem quer longlines femininas com bordado e identidade de marca real, é a plataforma mais alinhada.",
+        "aplicar": "Peça um sample de women's tee com patch bordado antes de escalar. Custo de bordado ~$2.28–$4.50 por patch, produção em 7–10 dias. Verifique medidas da longline antes de fotografar.",
+        "plano": "1) Crie conta em apliiq.com e explore a seção Women's (Heavy Tee + longline options) · 2) Configure 1 design com patch bordado no peito + etiqueta com sua marca · 3) Peça 1 sample (~$30–40 total) para avaliar qualidade real do bordado e comprimento · 4) Se aprovado, suba ao Shopify via app e configure fulfillment automático",
+        "fonte": {
+          "t": "Apliiq Review 2026 — Do Dropshipping",
+          "u": "https://dodropshipping.com/apliiq-review/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-10-16",
+        "top": true,
+        "t": "Vizard AI 2026: Sobe 1 Vídeo Longo → IA Seleciona +10 Reels com Hook Forte, Legenda Automática e Agenda no Instagram",
+        "resumo": "Vizard analisa seu vídeo, detecta picos emocionais e insights-chave, corta os melhores momentos já no formato 9:16, adiciona legenda animada e permite agendar direto no Instagram — tudo no mesmo painel.",
+        "porque": "Diferente de OpusClip (score de viralidade) e Munch (pontuação de segmento), Vizard foca na jornada completa: corta → formata → legenda → agenda. Menos troca de ferramenta, mais posts saindo.",
+        "aplicar": "Para a OPC: suba um vídeo longo de reforma (tour de obra, before/after, reunião de projeto) e deixe Vizard cortar os melhores momentos. Cada clip já sai pronto para o @oakparkconstruction.",
+        "plano": "1) Acesse vizard.ai e faça upload do seu próximo vídeo de obra ou tour de projeto · 2) Clique em 'Get Clips' e deixe a IA selecionar os 10 melhores momentos · 3) Ajuste títulos, legenda e adicione sua identidade visual antes de publicar · 4) Agende diretamente pelo Vizard ou exporte os clips para o Metricool",
+        "fonte": {
+          "t": "Vizard AI — Instagram Reels Clip Generator",
+          "u": "https://vizard.ai/tools/instagram-reels-clip-generator"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-10-16",
+        "top": true,
+        "t": "REimagineHome AI 2026: Foto do Cômodo Atual → IA Gera Staging Virtual do Projeto Pronto — Apresente o Antes/Depois Antes de Começar a Obra",
+        "resumo": "REimagineHome transforma uma foto do ambiente a ser reformado no resultado final: móveis novos, acabamentos, paleta de cor. Ideal para apresentar visualmente o projeto ao cliente antes da assinatura do contrato.",
+        "porque": "Clientes assinam mais rápido quando veem o resultado. Com REimagineHome, a OPC pode mostrar 3 versões do mesmo cômodo (estilo moderno, clássico, minimalista) numa reunião, sem pagar um renderizador.",
+        "aplicar": "Use numa apresentação comercial: tire foto do cômodo atual do cliente, gere 2–3 versões no REimagineHome durante a reunião, mostre no tablet. Transforma conversa de orçamento em conversa de visão.",
+        "plano": "1) Acesse reimaginehome.com e faça upload da foto do cômodo a reformar (cozinha, banheiro, sala) · 2) Selecione estilo: moderno, escandinavo, contemporâneo etc. · 3) Gere 3 variações e salve as melhores · 4) Monte um carrossel Instagram com 'Antes' + 3 versões 'Depois' — sem gravar nenhum vídeo",
+        "fonte": {
+          "t": "REimagineHome — Tool Directory (revisado set 2026)",
+          "u": "https://tooldirectory.ai/tools/reimaginehome"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-10-16",
+        "top": true,
+        "t": "Minerais Críticos 2026: China Controla +60% do Refino de Lítio e Cobalto — e Isso É o Risco Geopolítico #1 do Mundo Segundo o WEF",
+        "resumo": "Lítio, cobalto, terras raras e grafite são os petróleo da era dos carros elétricos e da IA. A China refina +60% do lítio e cobalto e +90% das terras raras. O 15° Plano Quinquenal (2026–2030) aprofunda esse controle.",
+        "porque": "O Relatório de Riscos Globais 2026 do Fórum Econômico Mundial classificou a disputa por minerais críticos como o gatilho mais provável de crise geopolítica — acima de clima e ataques cibernéticos. Entender isso é entender onde as guerras econômicas vão acontecer.",
+        "aplicar": "Pauta de conteúdo: 'Por que o iPhone e o Tesla dependem de um minério controlado pela China?' é um gancho acessível para qualquer público. Conecte com notícias sobre tensões EUA-China para dar urgência.",
+        "plano": "1) Conceito central: quem controla o refino de minerais controla a transição energética e a infraestrutura de IA · 2) Mapa de dependência: lítio (Chile/Argentina para mineração, China para refino), cobalto (RDC para mineração, China para refino) · 3) A resposta ocidental: EUA investiu +$30 bilhões, 54 países assinaram acordos em fev/2026 · 4) A aposta geopolítica: se a China restringir exportações (como fez com grafite), o Ocidente não tem alternativa de curto prazo",
+        "fonte": {
+          "t": "Confronto Geoeconômico 2026: Guia de Minerais Críticos",
+          "u": "https://informedclearly.com/pt/geopolitica/62007/confronto-geoeconomico-minerais-criticos-2026"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-10-16",
+        "top": true,
+        "t": "Google Ads Conversion Value Rules 2026: Dê Lance 2x Maior em Leads de Bairros Premium — Smart Bidding Passa a Priorizar Seus Melhores Clientes",
+        "resumo": "Conversion Value Rules permitem multiplicar o valor de uma conversão com base em localização, dispositivo ou público. Para construtoras como a OPC, leads de bairros de alto padrão valem mais — e o algoritmo do Google precisa saber disso.",
+        "porque": "Se todos os leads valem $1 (padrão), o Smart Bidding trata um lead de Weston igual a um de qualquer outro lugar. Com regras de valor, você ensina o algoritmo a investir mais onde os projetos são maiores.",
+        "aplicar": "Calcule o valor real de um lead OPC: taxa de fechamento ~20% × ticket médio de projeto = valor real. Depois, crie uma regra que multiplica por 1.5x leads de códigos ZIP dos bairros premium que você quer atender.",
+        "plano": "1) No Google Ads: Ferramentas → Conversões → Regras de Valor de Conversão · 2) Crie uma regra de Localização: selecione os ZIP codes dos bairros-alvo (ex: Weston, Fort Lauderdale premium) e defina multiplicador 1.5–2x · 3) Verifique que sua ação de conversão tem valor real ($400–600) e não o padrão de $1 · 4) Aguarde 2–4 semanas de dados e compare CPA e qualidade de leads entre bairros",
+        "fonte": {
+          "t": "Google Ads Conversion Value Rules: Conditions, Add vs Multiply",
+          "u": "https://www.relevantaudience.com/google-ads-en/google-ads-conversion-value-rules/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-10-16",
+        "top": true,
+        "t": "Dify.ai 2026: Plataforma Open-Source que Une RAG + Agentes + Workflows Visuais + LLMOps — 117k Stars, Deploy Grátis com Docker",
+        "resumo": "Dify é uma plataforma open-source (Apache 2.0) para construir aplicações com LLM: fluxos visuais no estilo n8n, RAG para conectar documentos, agentes com memória e suporte nativo ao protocolo MCP. Deploy local com Docker Compose.",
+        "porque": "Diferente de Langflow (foco em agentes) ou n8n (foco em automação), Dify cobre o ciclo completo: build + RAG + deploy + monitoramento (LLMOps). É a plataforma mais completa para quem quer um chatbot com base de conhecimento própria.",
+        "aplicar": "Para a OPC: monte um chatbot que responde perguntas sobre projetos usando seus próprios PDFs e briefings como base de conhecimento. Integra via MCP com o resto da sua stack.",
+        "plano": "1) Instale com Docker: 'docker compose up -d' no repositório langgenius/dify do GitHub · 2) Suba seus PDFs de projetos, briefings e processos no módulo de Knowledge Base (RAG) · 3) Crie um workflow: usuário pergunta → Dify busca na base → LLM responde com contexto real · 4) Ative o monitoramento LLMOps para ver quais perguntas o agente erra e melhorar a base",
+        "fonte": {
+          "t": "Dify — GitHub (langgenius/dify)",
+          "u": "https://github.com/langgenius/dify"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ]
+  }
+}
