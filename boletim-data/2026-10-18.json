@@ -1,0 +1,191 @@
+{
+  "date": "2026-10-18",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "URGENTE",
+      "t": "Anthropic API sem créditos — pipeline travada pelo 2º dia consecutivo",
+      "why": "Erro quota_exceeded chegou às 17h23 de ontem e novamente às 9h de hoje. Cada hora de atraso acumula backlog nas capturas automáticas de OPC e notícias. Top-up em console.anthropic.com/settings/billing.",
+      "go": "iafim"
+    },
+    {
+      "tag": "CONTEÚDO",
+      "t": "2 novos reels políticos capturados hoje para @tentandochegaratevoce",
+      "why": "Reel sobre Flávio Bolsonaro (risco do 2º mandato) e Trump rally com mulher agredida. Briefs no Drive prontos para produção — janela de engajamento ainda aberta.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "ROTINA",
+      "t": "Weekly Plugins & Agent Tools Review — amanhã 19/10 às 9h",
+      "why": "Semana trouxe Make.com AI Agents (fev/2026), Descript e Kling AI — ótimo intake para revisar, testar e documentar no Agents Tracker antes de instalar.",
+      "go": "iafim"
+    },
+    {
+      "tag": "CURADORIA",
+      "t": "6+ reels chegaram via SMS esta manhã — referências OPC e news",
+      "why": "Links de Instagram chegando por SMS desde 2h da madrugada. Capturar os mais fortes para o pipeline antes de perderem timing de engajamento.",
+      "go": "obra"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-18",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-10-18",
+        "top": true,
+        "t": "Mapeamento de Energia para TDAH: Descubra Quando Seu Cérebro Funciona Melhor e Reserve Isso para o Trabalho Real",
+        "resumo": "Pessoas com TDAH têm picos de foco mais intensos — e quedas mais bruscas — do que neurotípicos. Mapear seus ciclos de energia (não de tempo) e alocar as tarefas cognitivas mais pesadas nesses picos reduz drasticamente a fricção de início.",
+        "porque": "Gerenciar energia é mais eficaz que gerenciar tempo para quem tem TDAH. Forçar uma tarefa difícil num momento de baixa energia é luta garantida; a mesma tarefa num pico vira tração. O truque é não desperdiçar os picos com e-mail.",
+        "aplicar": "Por 3 dias, anote seu nível de energia a cada 2h (🔥 alto / 😐 neutro / 🥱 baixo). Identifique o padrão — manhã cedo, tarde ou noite? Reserve o seu bloco 🔥 exclusivamente para a 1 tarefa mais importante do dia.",
+        "plano": "1) Por 3 dias, registre energia de 2 em 2 horas no celular (🔥/😐/🥱) · 2) Identifique em que horário o 🔥 aparece com mais frequência · 3) Bloqueie esse horário na agenda com evento 'FOCO — [tarefa do dia]' · 4) Empurre emails, reuniões e tarefas operacionais para os blocos 😐 e 🥱",
+        "fonte": {
+          "t": "ClickUp: Bloqueio de Tempo para TDAH (PT-BR)",
+          "u": "https://clickup.com/pt-BR/blog/445701/bloqueio-de-tempo-para-tdah"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-10-18",
+        "top": true,
+        "t": "Strogonoff Vegano de Dois Cogumelos com Creme de Castanha — 55 Min, Cremoso, Kid-Friendly",
+        "resumo": "Shiitake e cremini dourados em fogo alto, molho cremoso de castanha-de-caju batida com mostarda Dijon e shoyu. Sem leite de vaca. Serve 4. A chave é dourar os cogumelos em duas levas sem mexer — cria sabor que o creme de leite vegetal sozinho não consegue.",
+        "porque": "O creme de castanha imita a textura e a gordura do creme de leite convencional. Shiitake traz umami profundo; cremini traz corpo. O resultado é indistinguível da versão com carne para crianças.",
+        "aplicar": "Faça o creme de castanha com 24h de antecedência (guarda 5 dias na geladeira). Para versão mais kids: substitua o shoyu por sal e aumente um pouco o ketchup. Sirva com batata palha para a crocância.",
+        "plano": "1) Deixe 1 xícara de castanhas de caju de molho por 4h, bata com ½ xícara de água até ficar completamente liso · 2) Aqueça frigideira grande até fumegar, doure os cogumelos em 2 levas por 3 min sem mexer (não amontoe) · 3) Na mesma frigideira, refogue cebola e alho, adicione 3 col. sopa ketchup, 1 col. mostarda, 2 col. shoyu e o creme de castanha · 4) Junte os cogumelos, cozinhe 5 min em fogo baixo, sirva com arroz e batata palha",
+        "fonte": {
+          "t": "TudoGostoso: Strogonoff Vegano de Cogumelo",
+          "u": "https://www.tudogostoso.com.br/receita/320413-strogonoff-vegano-de-cogumelo-na-textura-certa-com-molho-cremoso.html"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-10-18",
+        "top": true,
+        "t": "Printify 2026: Rede de 90+ Gráficas com Plano Gratuito — Como Escolher o Fornecedor Certo para Bordado e Longlines",
+        "resumo": "Diferente de Printful ou Gelato (produção própria), Printify é um marketplace de gráficas: você escolhe qual fabrica. 90+ fornecedores globais, preço base mais baixo, mas qualidade varia por fornecedor. Sem mensalidade no plano básico.",
+        "porque": "Printify permite acessar fornecedores especializados — alguns com bordado digisoft de alta qualidade, outros com longlines femininas específicas. A customização de fornecedor é o que diferencia quem vende produto genérico de quem vende qualidade.",
+        "aplicar": "Para bordado: procure Monster Digital ou SPOD dentro do catálogo. Para longlines femininas: filtre por 'women's long body tee' no catálogo e compare custo base. Margem mínima recomendada: 40% sobre o base cost.",
+        "plano": "1) Crie conta grátis em printify.com (sem cartão, sem mensalidade) · 2) No catálogo, filtre por 'Embroidery' e 'Long Body Tees' para ver fornecedores disponíveis · 3) Peça 1 amostra de 2–3 fornecedores diferentes antes de publicar qualquer produto · 4) Após comparar amostras, configure margem mínima de 40% e conecte à sua loja Shopify ou Etsy",
+        "fonte": {
+          "t": "Style Factory: Printify Review 2026",
+          "u": "https://www.stylefactoryproductions.com/blog/printify-review"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-10-18",
+        "top": true,
+        "t": "Descript 2026: Edite Vídeo Cortando Palavras no Texto — Eye Contact, Studio Sound e Voz IA Num Só App",
+        "resumo": "Descript transcreve o vídeo automaticamente e permite editar deletando palavras do texto — o clipe segue. Recursos extras: Studio Sound (remove ruído de fundo), Eye Contact (corrige olhar para a câmera), Overdub (corrige falas com voz clonada). Gratuito: 1h de transcrição/mês.",
+        "porque": "Para talking-head e reels de câmera frontal, Descript é mais rápido que CapCut para remover pausas, 'ãs' e cacoetes — porque você edita como documento Word, não quadro a quadro. O Eye Contact transforma gravação com olhar para anotações em vídeo com contato visual direto.",
+        "aplicar": "Grave 1 take de 3–5 min sem se preocupar com erros. No Descript, delete os trechos ruins pelo texto. Ative Eye Contact e Studio Sound antes de exportar. Resultado: vídeo limpo sem horas de edição manual.",
+        "plano": "1) Crie conta grátis em descript.com (sem cartão, 1h de transcrição grátis/mês) · 2) Importe ou grave diretamente no app — transcrição automática em 2–3 min · 3) Selecione e delete palavras/pausas indesejadas pelo transcript — o vídeo edita junto · 4) Antes de exportar: ative 'Eye Contact' e 'Studio Sound' nas configurações de IA",
+        "fonte": {
+          "t": "SkillsCouter: Descript Review 2026",
+          "u": "https://skillscouter.com/descript-review/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-10-18",
+        "top": true,
+        "t": "Kling AI 2026: Foto da Reforma → Vídeo com Câmera em Movimento — 66 Créditos Gratuitos por Dia, Alternativa Acessível ao Runway",
+        "resumo": "Kling AI (da Kuaishou) gera vídeos de 5–10s a partir de imagens. Para obra/construção: sobe foto do projeto concluído, descreve o movimento de câmera, e recebe um clipe cinematográfico. Plano grátis: 66 créditos/dia (com marca d'água). Pago: a partir de ~$7/mês sem marca d'água.",
+        "porque": "É a alternativa mais acessível ao Runway Gen-4 para quem quer criar volume alto de conteúdo de teste. Os 66 créditos gratuitos diários permitem criar múltiplos clips sem custo — ideal para Oak Park Construction testar hooks de reels antes/depois.",
+        "aplicar": "Use fotos de projetos concluídos. Prompt eficiente: 'Camera slowly moves forward into the renovated [room], warm lighting, cinematic, 4K'. Para remover marca d'água e clipes até 3 min: plano Standard a ~$7/mês.",
+        "plano": "1) Crie conta grátis em klingai.com (sem cartão para o plano free) · 2) Acesse 'Image to Video' e faça upload de uma foto de projeto OPC concluído · 3) Escreva o prompt de movimento: 'slow push-in, warm natural lighting, cinematic' · 4) Para uso profissional sem marca d'água: assine Standard (~$7/mês) e exporte os melhores clips para reels OPC",
+        "fonte": {
+          "t": "CostBench: Kling AI Free Plan 2026",
+          "u": "https://costbench.com/software/ai-video-generators/kling/free-plan/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-10-18",
+        "top": true,
+        "t": "Sahel 2026: Mali, Níger e Burkina Faso Formam Aliança Anti-Ocidente — Como 3 Golpes Militares Expulsaram a França da África",
+        "resumo": "Entre 2021 e 2023, três golpes militares no Sahel criaram a AES (Aliança dos Estados do Sahel): expulsaram tropas francesas, abandonaram a CEDEAO e acolheram forças russas (Wagner/Africa Corps). A França perdeu sua maior zona de influência na África numa questão de 24 meses.",
+        "porque": "O redesenho do Sahel é o maior reposicionamento geopolítico africano desde a descolonização. China e Rússia avançam enquanto Europa e EUA perdem acesso a urânio do Níger, ouro de Mali e rotas estratégicas — e a violência jihadista piorou após os golpes, contrariando a promessa dos militares.",
+        "aplicar": "Como pauta de conteúdo: conecte os 3 golpes ao mapa de recursos (urânio, ouro, manganês), à entrada russa e ao fracasso da promessa de segurança. É uma narrativa completa de causa e efeito em 3 atos.",
+        "plano": "1) Estude os 3 golpes em sequência: Mali (ago/2021), Burkina Faso (set/2022), Níger (jul/2023) · 2) Identifique o padrão: crise de segurança → golpe → expulsão da França → entrada russa · 3) Mapeie os recursos em jogo: urânio do Níger abastecia 15% da energia nuclear francesa · 4) Conecte à atualidade: Niger tentou contra-golpe em ago/2026 — o que isso sinaliza para a AES?",
+        "fonte": {
+          "t": "Polity: Niger's failed coup — warning to Sahel's military rulers (set/2026)",
+          "u": "https://polity.org.za/article/nigers-failed-coup-is-a-warning-to-the-sahels-military-rulers-those-with-power-must-keep-their-promises-2026-09-03"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-10-18",
+        "top": true,
+        "t": "Google Performance Max 2026: 1 Campanha em Todos os Canais — O Que Controlar Para Não Queimar Orçamento",
+        "resumo": "Performance Max (PMax) roda Search, Display, YouTube, Gmail e Discover numa campanha só, e a IA decide onde mostrar. Sem configuração correta, ela otimiza para métricas erradas. As alavancas de controle: negativos, customer lists, sinais de audiência e relatório de canais.",
+        "porque": "PMax já é obrigatório em muitas contas Google Ads. Entender os controles disponíveis é a diferença entre escalar lucro ou queimar budget em Display irrelevante. O relatório de canais (lançado em 2025/2026) mostra onde o dinheiro foi — mas visibilidade de keywords ainda é limitada.",
+        "aplicar": "Para Oak Park Construction: configure PMax com lista de clientes atuais como sinal negativo, use fotos de projetos concluídos nos assets, defina orçamento mínimo de $50/dia e não mexa em nada nas primeiras 2–4 semanas (fase de aprendizado).",
+        "plano": "1) Nas primeiras 2–4 semanas, não altere nada — a fase de aprendizado exige estabilidade (orçamento mín. $50/dia) · 2) Suba customer list para excluir clientes atuais e criar lookalike de quem já contratou · 3) Adicione lista de palavras negativas para filtrar buscas irrelevantes para construção · 4) Monitore o relatório de canais semanalmente — se YouTube consumir sem converter, ajuste os sinais de audiência",
+        "fonte": {
+          "t": "JumpFly: Mastering Google Performance Max 2026",
+          "u": "https://www.jumpfly.com/blog/mastering-google-performance-max-a-2026-strategy-guide"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-10-18",
+        "top": true,
+        "t": "Make.com 2026: AI Agents Lançados em Fevereiro — 1 Módulo com LLM + Instruções + Ferramentas, Sem Sair da Plataforma",
+        "resumo": "Make.com lançou AI Agents em open beta (fev/2026): um módulo único que embute o modelo de IA, o system prompt e as ferramentas numa só peça visual. Compatível com OpenAI, Claude e DeepSeek. Plano grátis: 1.000 operações/mês. Pago: a partir de $9/mês.",
+        "porque": "Make.com já tinha 11 milhões de usuários para automações visuais. Com AI Agents, quem já usa Make pode embutir raciocínio de IA sem aprender n8n ou código — e conectar diretamente com Gmail, Google Sheets, Slack e 1.000+ outros módulos já disponíveis.",
+        "aplicar": "Para OPC/McFolling: construa um agente que monitora emails de leads, extrai nome/telefone/tipo de projeto e preenche planilha automaticamente — setup de ~30 min sem código. Modelo sugerido para dev: Claude Sonnet (depois teste versão mais barata).",
+        "plano": "1) Crie conta grátis em make.com (sem cartão, 1.000 ops/mês) · 2) Novo Scenario → arraste o módulo 'AI Agent' (disponível em todos os planos com Make AI provider) · 3) Configure: escolha o modelo, escreva system prompt com a tarefa específica · 4) Conecte ao módulo Gmail (trigger) e Google Sheets (ação) — teste com 1 email real antes de ativar",
+        "fonte": {
+          "t": "Growwstacks: Make.com New AI Agents 2026",
+          "u": "https://growwstacks.com/blog/make-com-new-ai-agents-2026"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ]
+  }
+}
