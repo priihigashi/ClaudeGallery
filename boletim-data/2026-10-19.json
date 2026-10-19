@@ -1,0 +1,164 @@
+{
+  "date": "2026-10-19",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "📋 Aprovações",
+      "t": "338 posts OPC + 32 posts de News aguardando aprovação",
+      "why": "Pipeline de conteúdo travada — aprovar agora libera semanas de agendamento automático no Metricool",
+      "go": "conteudo"
+    },
+    {
+      "tag": "🚨 Erro TikTok",
+      "t": "Metricool falhou ao publicar em @tentandochegaratevoce",
+      "why": "Post publicado com configurações incompletas — verificar e republicar antes de perder a janela de alcance",
+      "go": "obra"
+    },
+    {
+      "tag": "📚 Imóveis FL",
+      "t": "Estudo pré-licença Cameron Academy — Regra 1 (primeira coisa do dia)",
+      "why": "O clock de 90 dias está correndo; cada dia sem estudar é dinheiro deixado na mesa",
+      "go": "tip"
+    },
+    {
+      "tag": "🔌 Revisão de Plugins",
+      "t": "Weekly Plugins & Agent Tools Review acontece hoje (9h)",
+      "why": "Hora de auditar novas ferramentas IA: CrewAI e Opus Clip são candidatos frescos para o stack desta semana",
+      "go": "iafim"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-19",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-10-19",
+        "top": true,
+        "t": "Body Doubling para TDAH: Trabalhe ao Lado de Alguém (Mesmo Remoto) e Dobre o que Você Entrega",
+        "resumo": "Ter outra pessoa presente — física ou por vídeo — ativa responsabilidade social e reduz procrastinação no TDAH. O parceiro não precisa ajudar na tarefa: só estar lá já basta.",
+        "porque": "O cérebro TDAH ignora recompensas internas mas reage à presença humana. Isso não é fraqueza — é neurobiologia. Usar isso a seu favor é estratégia, não trapaça.",
+        "aplicar": "Use o Focusmate (gratuito, 3 sessões/semana) ou convide alguém por vídeo. Anuncie sua meta no início, trabalhe em silêncio por 25-50 min e relate o resultado. A Oak Park pode adaptar isso para reuniões 'side-by-side' onde cada pessoa trabalha na própria tarefa.",
+        "plano": "1) Crie conta em focusmate.com (gratuito até 3 sessões/semana) · 2) Agende uma sessão para hoje com a tarefa que você mais está evitando · 3) Anuncie a meta em voz alta no início ('vou terminar X em 40 min') · 4) Registre o que concluiu na Focus Partner Sheet",
+        "fonte": {
+          "t": "Simply Psychology — ADHD Body Doubling",
+          "u": "https://www.simplypsychology.org/adhd-body-doubling.html"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-10-19",
+        "top": true,
+        "t": "Udon Frio com Molho de Amendoim e Edamame — 15 Min, Vegano, Kid-Friendly",
+        "resumo": "Macarrão udon servido frio com molho cremoso de amendoim, tamari, suco de limão e gengibre, com edamame e cenoura ralada. Sem leite, sem peixe — e as crianças adoram o molho de amendoim.",
+        "porque": "Proteína vegetal do edamame + carboidrato do udon = energia estável por horas. Monte o molho no domingo (dura 5 dias na geladeira) e tenha almoço pronto em 5 minutos em dias de obra.",
+        "aplicar": "Prepare o molho de amendoim com antecedência. Na hora de servir: só cozinha o udon, resfria em água fria e mistura — ideal para dias com pouco tempo para cozinhar.",
+        "plano": "1) Ingredientes: udon (1 pacote), manteiga de amendoim (3 col sopa), tamari (2 col sopa), suco de limão (1 col sopa), agave (1 col chá), gengibre ralado, edamame descongelado, cenoura ralada · 2) Cozinhe o udon conforme embalagem (~5 min), escorra e resfrie em água fria · 3) Misture amendoim + tamari + limão + agave + gengibre; dilua com 1-2 col sopa de água quente se ficar espesso · 4) Sirva o udon com molho, edamame e cenoura por cima",
+        "fonte": {
+          "t": "eCycle — Udon Noodles Vegano",
+          "u": "https://www.ecycle.com.br/udon-noodles/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-10-19",
+        "top": true,
+        "t": "CustomCat 2026: POD Americano com Bordado Real e Longlines Femininas — Produção Própria em Detroit, Sem Taxa Mensal",
+        "resumo": "CustomCat é plataforma POD dos EUA com produção própria (não terceirizada na Ásia), especializada em bordado (embroidery) e sublimação. Plano gratuito, integração nativa com Shopify e WooCommerce, sem pedido mínimo.",
+        "porque": "Produção doméstica americana = prazos mais previsíveis e controle de qualidade maior do que plataformas com gráficas terceirizadas. Boa alternativa ao Printful para bordado em longlines femininas.",
+        "aplicar": "Crie conta gratuita em customcat.com, navegue até Women's → Long Line Tee, suba arte vetorial para bordado e peça 1 sample antes de publicar na loja.",
+        "plano": "1) Crie conta gratuita em customcat.com (sem taxa mensal) · 2) Vá em Products → Women's → procure longline ou extended length tee · 3) Escolha bordado (embroidery) como técnica e suba a arte em vetor ou PNG de alta resolução · 4) Faça pedido de sample (~$10-15 + frete) antes de lançar — compare o resultado com Printful no mesmo produto",
+        "fonte": {"t": "", "u": ""},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-10-19",
+        "top": true,
+        "t": "Opus Clip 2026: Cole o Link do Vídeo Longo → IA Gera 10-30 Cortes com Score de Viralidade, Legendas e Reframe 9:16 Automático",
+        "resumo": "Opus Clip analisa vídeos longos com IA multimodal, identifica os momentos mais engajadores e gera cortes curtos prontos para Reels e TikTok — cada um com pontuação de viralidade e reframe automático para 9:16.",
+        "porque": "O recurso ClipAnything 2.0 permite busca por prompt em linguagem natural: 'encontre todas as vezes que menciono antes e depois'. Para a Oak Park: 1 filmagem de reforma vira semanas de conteúdo.",
+        "aplicar": "Suba o próximo vídeo de obra ou reforma e deixe o Opus Clip gerar os cortes. Revise o score de viralidade, escolha os top 5 e agende via Metricool — sem editar cada clipe manualmente.",
+        "plano": "1) Acesse opus.pro (plano gratuito: 90 min de upload/mês) · 2) Cole o link do YouTube ou suba o vídeo diretamente · 3) Aguarde análise (~5-10 min) · 4) Exporte os clips de maior score, revise as legendas se necessário e agende no Metricool",
+        "fonte": {
+          "t": "Tooliverse — OpusClip Review 2026",
+          "u": "https://tooliverse.ai/tools/opusclip"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-10-19",
+        "top": true,
+        "t": "Pika 2.5 para Reels de Reforma: Foto do Cômodo Atual → Clipe 9:16 com Câmera em Movimento e Voz em Português",
+        "resumo": "Pika 2.5 gera clipes de até 8 seg a partir de uma imagem, com câmera animada, voiceover multilíngue e formato 9:16 pronto para Reels. Considerado o ponto de entrada mais rápido em criação de vídeo com IA em 2026.",
+        "porque": "Diferente do Kling (créditos caros) e do Runway (curva de aprendizado maior), o Pika tem a menor barreira de entrada — ideal para postar conteúdo de reforma sem parar a obra. Tem lip sync, expand canvas e modify region.",
+        "aplicar": "Tire uma foto da obra com bom ângulo, faça upload em pika.art, descreva o movimento ('câmera se afasta revelando a cozinha reformada') e adicione voz em português. Exporte em 9:16 direto para o Reels da Oak Park.",
+        "plano": "1) Acesse pika.art e crie conta (plano gratuito disponível) · 2) Faça upload da melhor foto da reforma atual · 3) Use prompt: 'slow camera pull-back revealing renovated space, warm natural light, clean modern finish' · 4) Ative voiceover em português com a feature de áudio do Pika e exporte em 9:16",
+        "fonte": {
+          "t": "RobotDyn — Pika Labs Desafia Sora e Runway com Vídeo + Voz Integrados",
+          "u": "https://robotdyn.com/?p=42787"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-10-19",
+        "top": true,
+        "t": "Mar Vermelho 2026: Houthis Controlam 12% do Comércio Global — Como a Guerra no Iêmen Encarece o Frete e a Construção Civil",
+        "resumo": "Maersk, Hapag-Lloyd e CMA CGM desviaram pelo Cabo da Boa Esperança após ataques Houthi. Em jun/2026, nova proibição à navegação israelense. Travessias mensais caíram de 2.000+ para 1.034. Petróleo acima de US$100.",
+        "porque": "Construtoras importam materiais com cadeias que passam por essa rota (aço, cerâmica, eletrodomésticos). Saber do bloqueio antes do cliente é argumento de precificação e diferencial de credibilidade.",
+        "aplicar": "Ao cotar materiais importados, adicione cláusula de ajuste por variação de frete. Mostre ao cliente que a Oak Park acompanha o mercado global — isso justifica margens e constrói confiança.",
+        "plano": "1) Liste os 3 materiais que a Oak Park mais importa (direta ou via fornecedor) · 2) Verifique com o fornecedor se usa rota Suez ou alternativa pelo Cabo da Boa Esperança · 3) Adicione buffer de +5-10% em orçamentos com entrega acima de 60 dias · 4) Crie alerta no Google News: 'Bab el-Mandeb frete' para acompanhar semanalmente",
+        "fonte": {
+          "t": "Breakbulk News — Houthis Ban Israeli Ships, 12% of Global Trade at Risk",
+          "u": "https://breakbulk.news/houthis-ban-israeli-ships-from-red-sea-as-dual-chokepoint-crisis-threatens-to-cut-off-12-of-global-trade/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-10-19",
+        "top": true,
+        "t": "AI Max para Google Ads 2026: Deixe a IA Expandir Suas Keywords e Aparecer em Perguntas que Você Nunca Teria Pesquisado",
+        "resumo": "AI Max for Search Campaigns usa IA para expandir correspondência de keywords, personalizar o texto do anúncio por intenção e escolher a landing page mais relevante automaticamente — dentro de campanhas de pesquisa já existentes.",
+        "porque": "Construtoras perdem leads porque buscas por reforma usam linguagem muito variada. AI Max cobre essa cauda longa sem duplicar campanhas ou explodir o orçamento — diferente de ampliar o match type manualmente.",
+        "aplicar": "Ative o AI Max em uma campanha de pesquisa existente da Oak Park, deixe rodar 2-3 semanas e compare o CPL (custo por lead). Monitore os novos termos que o Google está cobrindo e ajuste as negative keywords.",
+        "plano": "1) Abra Google Ads → selecione campanha de pesquisa ativa → Configurações → AI Max · 2) Ative 'Expansão de URL' e 'Personalização de texto' · 3) Adicione negative keywords para termos irrelevantes ('DIY', 'curso de reforma', 'como fazer') · 4) Após 2-3 semanas, compare CPL antes e depois e revise os novos search terms gerados",
+        "fonte": {
+          "t": "Google Blog — AI Max for Shopping Campaigns",
+          "u": "https://blog.google/products/ads-commerce/ai-max-for-shopping/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-10-19",
+        "top": true,
+        "t": "CrewAI 2026: Monte uma Equipe de Agentes IA em Python — Cada Agente Tem Role e Goal, e Eles Colaboram Sem Você",
+        "resumo": "CrewAI é um framework open-source Python para orquestrar múltiplos agentes IA em equipe. Um agente pesquisa, outro escreve, outro revisa — de forma automática. 55k+ estrelas no GitHub, mais simples que LangGraph.",
+        "porque": "Diferente do Make.com (visual mas limitado em lógica) e do LangGraph (baixo nível demais), o CrewAI equilibra facilidade e poder: você define o papel de cada agente em linguagem natural e ele executa a tarefa completa.",
+        "aplicar": "Para Oak Park: crie um crew com agente pesquisador (busca tendências de reforma), agente de conteúdo (escreve o post) e agente revisor (checa o tom). O resultado entra direto no pipeline de aprovação no Drive.",
+        "plano": "1) Instale: pip install crewai crewai-tools (requer Python 3.10+) · 2) Crie 2 agentes com role e goal em texto natural (ex: 'Senior Researcher' e 'Content Writer') · 3) Defina 2 tasks e associe a cada agente com expected_output claro · 4) Rode o crew e veja o resultado — depois integre ao GitHub Actions ou n8n para automação completa",
+        "fonte": {
+          "t": "Tech Insider — How to Build Multi-Agent AI with CrewAI Python [2026]",
+          "u": "https://tech-insider.org/crewai-tutorial-multi-agent-ai-python-2026/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ]
+  }
+}

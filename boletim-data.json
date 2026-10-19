@@ -1,35 +1,35 @@
 {
-  "date": "2026-10-18",
+  "date": "2026-10-19",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "URGENTE",
-      "t": "Anthropic API sem créditos — pipeline travada pelo 2º dia consecutivo",
-      "why": "Erro quota_exceeded chegou às 17h23 de ontem e novamente às 9h de hoje. Cada hora de atraso acumula backlog nas capturas automáticas de OPC e notícias. Top-up em console.anthropic.com/settings/billing.",
-      "go": "iafim"
-    },
-    {
-      "tag": "CONTEÚDO",
-      "t": "2 novos reels políticos capturados hoje para @tentandochegaratevoce",
-      "why": "Reel sobre Flávio Bolsonaro (risco do 2º mandato) e Trump rally com mulher agredida. Briefs no Drive prontos para produção — janela de engajamento ainda aberta.",
+      "tag": "📋 Aprovações",
+      "t": "338 posts OPC + 32 posts de News aguardando aprovação",
+      "why": "Pipeline de conteúdo travada — aprovar agora libera semanas de agendamento automático no Metricool",
       "go": "conteudo"
     },
     {
-      "tag": "ROTINA",
-      "t": "Weekly Plugins & Agent Tools Review — amanhã 19/10 às 9h",
-      "why": "Semana trouxe Make.com AI Agents (fev/2026), Descript e Kling AI — ótimo intake para revisar, testar e documentar no Agents Tracker antes de instalar.",
-      "go": "iafim"
+      "tag": "🚨 Erro TikTok",
+      "t": "Metricool falhou ao publicar em @tentandochegaratevoce",
+      "why": "Post publicado com configurações incompletas — verificar e republicar antes de perder a janela de alcance",
+      "go": "obra"
     },
     {
-      "tag": "CURADORIA",
-      "t": "6+ reels chegaram via SMS esta manhã — referências OPC e news",
-      "why": "Links de Instagram chegando por SMS desde 2h da madrugada. Capturar os mais fortes para o pipeline antes de perderem timing de engajamento.",
-      "go": "obra"
+      "tag": "📚 Imóveis FL",
+      "t": "Estudo pré-licença Cameron Academy — Regra 1 (primeira coisa do dia)",
+      "why": "O clock de 90 dias está correndo; cada dia sem estudar é dinheiro deixado na mesa",
+      "go": "tip"
+    },
+    {
+      "tag": "🔌 Revisão de Plugins",
+      "t": "Weekly Plugins & Agent Tools Review acontece hoje (9h)",
+      "why": "Hora de auditar novas ferramentas IA: CrewAI e Opus Clip são candidatos frescos para o stack desta semana",
+      "go": "iafim"
     }
   ],
   "history": [
     {
-      "date": "2026-10-18",
+      "date": "2026-10-19",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,16 +37,16 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-10-18",
+        "id": "tip-2026-10-19",
         "top": true,
-        "t": "Mapeamento de Energia para TDAH: Descubra Quando Seu Cérebro Funciona Melhor e Reserve Isso para o Trabalho Real",
-        "resumo": "Pessoas com TDAH têm picos de foco mais intensos — e quedas mais bruscas — do que neurotípicos. Mapear seus ciclos de energia (não de tempo) e alocar as tarefas cognitivas mais pesadas nesses picos reduz drasticamente a fricção de início.",
-        "porque": "Gerenciar energia é mais eficaz que gerenciar tempo para quem tem TDAH. Forçar uma tarefa difícil num momento de baixa energia é luta garantida; a mesma tarefa num pico vira tração. O truque é não desperdiçar os picos com e-mail.",
-        "aplicar": "Por 3 dias, anote seu nível de energia a cada 2h (🔥 alto / 😐 neutro / 🥱 baixo). Identifique o padrão — manhã cedo, tarde ou noite? Reserve o seu bloco 🔥 exclusivamente para a 1 tarefa mais importante do dia.",
-        "plano": "1) Por 3 dias, registre energia de 2 em 2 horas no celular (🔥/😐/🥱) · 2) Identifique em que horário o 🔥 aparece com mais frequência · 3) Bloqueie esse horário na agenda com evento 'FOCO — [tarefa do dia]' · 4) Empurre emails, reuniões e tarefas operacionais para os blocos 😐 e 🥱",
+        "t": "Body Doubling para TDAH: Trabalhe ao Lado de Alguém (Mesmo Remoto) e Dobre o que Você Entrega",
+        "resumo": "Ter outra pessoa presente — física ou por vídeo — ativa responsabilidade social e reduz procrastinação no TDAH. O parceiro não precisa ajudar na tarefa: só estar lá já basta.",
+        "porque": "O cérebro TDAH ignora recompensas internas mas reage à presença humana. Isso não é fraqueza — é neurobiologia. Usar isso a seu favor é estratégia, não trapaça.",
+        "aplicar": "Use o Focusmate (gratuito, 3 sessões/semana) ou convide alguém por vídeo. Anuncie sua meta no início, trabalhe em silêncio por 25-50 min e relate o resultado. A Oak Park pode adaptar isso para reuniões 'side-by-side' onde cada pessoa trabalha na própria tarefa.",
+        "plano": "1) Crie conta em focusmate.com (gratuito até 3 sessões/semana) · 2) Agende uma sessão para hoje com a tarefa que você mais está evitando · 3) Anuncie a meta em voz alta no início ('vou terminar X em 40 min') · 4) Registre o que concluiu na Focus Partner Sheet",
         "fonte": {
-          "t": "ClickUp: Bloqueio de Tempo para TDAH (PT-BR)",
-          "u": "https://clickup.com/pt-BR/blog/445701/bloqueio-de-tempo-para-tdah"
+          "t": "Simply Psychology — ADHD Body Doubling",
+          "u": "https://www.simplypsychology.org/adhd-body-doubling.html"
         },
         "video": {
           "t": "",
@@ -56,16 +56,16 @@
     ],
     "receita": [
       {
-        "id": "receita-2026-10-18",
+        "id": "receita-2026-10-19",
         "top": true,
-        "t": "Strogonoff Vegano de Dois Cogumelos com Creme de Castanha — 55 Min, Cremoso, Kid-Friendly",
-        "resumo": "Shiitake e cremini dourados em fogo alto, molho cremoso de castanha-de-caju batida com mostarda Dijon e shoyu. Sem leite de vaca. Serve 4. A chave é dourar os cogumelos em duas levas sem mexer — cria sabor que o creme de leite vegetal sozinho não consegue.",
-        "porque": "O creme de castanha imita a textura e a gordura do creme de leite convencional. Shiitake traz umami profundo; cremini traz corpo. O resultado é indistinguível da versão com carne para crianças.",
-        "aplicar": "Faça o creme de castanha com 24h de antecedência (guarda 5 dias na geladeira). Para versão mais kids: substitua o shoyu por sal e aumente um pouco o ketchup. Sirva com batata palha para a crocância.",
-        "plano": "1) Deixe 1 xícara de castanhas de caju de molho por 4h, bata com ½ xícara de água até ficar completamente liso · 2) Aqueça frigideira grande até fumegar, doure os cogumelos em 2 levas por 3 min sem mexer (não amontoe) · 3) Na mesma frigideira, refogue cebola e alho, adicione 3 col. sopa ketchup, 1 col. mostarda, 2 col. shoyu e o creme de castanha · 4) Junte os cogumelos, cozinhe 5 min em fogo baixo, sirva com arroz e batata palha",
+        "t": "Udon Frio com Molho de Amendoim e Edamame — 15 Min, Vegano, Kid-Friendly",
+        "resumo": "Macarrão udon servido frio com molho cremoso de amendoim, tamari, suco de limão e gengibre, com edamame e cenoura ralada. Sem leite, sem peixe — e as crianças adoram o molho de amendoim.",
+        "porque": "Proteína vegetal do edamame + carboidrato do udon = energia estável por horas. Monte o molho no domingo (dura 5 dias na geladeira) e tenha almoço pronto em 5 minutos em dias de obra.",
+        "aplicar": "Prepare o molho de amendoim com antecedência. Na hora de servir: só cozinha o udon, resfria em água fria e mistura — ideal para dias com pouco tempo para cozinhar.",
+        "plano": "1) Ingredientes: udon (1 pacote), manteiga de amendoim (3 col sopa), tamari (2 col sopa), suco de limão (1 col sopa), agave (1 col chá), gengibre ralado, edamame descongelado, cenoura ralada · 2) Cozinhe o udon conforme embalagem (~5 min), escorra e resfrie em água fria · 3) Misture amendoim + tamari + limão + agave + gengibre; dilua com 1-2 col sopa de água quente se ficar espesso · 4) Sirva o udon com molho, edamame e cenoura por cima",
         "fonte": {
-          "t": "TudoGostoso: Strogonoff Vegano de Cogumelo",
-          "u": "https://www.tudogostoso.com.br/receita/320413-strogonoff-vegano-de-cogumelo-na-textura-certa-com-molho-cremoso.html"
+          "t": "eCycle — Udon Noodles Vegano",
+          "u": "https://www.ecycle.com.br/udon-noodles/"
         },
         "video": {
           "t": "",
@@ -75,16 +75,16 @@
     ],
     "merch": [
       {
-        "id": "merch-2026-10-18",
+        "id": "merch-2026-10-19",
         "top": true,
-        "t": "Printify 2026: Rede de 90+ Gráficas com Plano Gratuito — Como Escolher o Fornecedor Certo para Bordado e Longlines",
-        "resumo": "Diferente de Printful ou Gelato (produção própria), Printify é um marketplace de gráficas: você escolhe qual fabrica. 90+ fornecedores globais, preço base mais baixo, mas qualidade varia por fornecedor. Sem mensalidade no plano básico.",
-        "porque": "Printify permite acessar fornecedores especializados — alguns com bordado digisoft de alta qualidade, outros com longlines femininas específicas. A customização de fornecedor é o que diferencia quem vende produto genérico de quem vende qualidade.",
-        "aplicar": "Para bordado: procure Monster Digital ou SPOD dentro do catálogo. Para longlines femininas: filtre por 'women's long body tee' no catálogo e compare custo base. Margem mínima recomendada: 40% sobre o base cost.",
-        "plano": "1) Crie conta grátis em printify.com (sem cartão, sem mensalidade) · 2) No catálogo, filtre por 'Embroidery' e 'Long Body Tees' para ver fornecedores disponíveis · 3) Peça 1 amostra de 2–3 fornecedores diferentes antes de publicar qualquer produto · 4) Após comparar amostras, configure margem mínima de 40% e conecte à sua loja Shopify ou Etsy",
+        "t": "CustomCat 2026: POD Americano com Bordado Real e Longlines Femininas — Produção Própria em Detroit, Sem Taxa Mensal",
+        "resumo": "CustomCat é plataforma POD dos EUA com produção própria (não terceirizada na Ásia), especializada em bordado (embroidery) e sublimação. Plano gratuito, integração nativa com Shopify e WooCommerce, sem pedido mínimo.",
+        "porque": "Produção doméstica americana = prazos mais previsíveis e controle de qualidade maior do que plataformas com gráficas terceirizadas. Boa alternativa ao Printful para bordado em longlines femininas.",
+        "aplicar": "Crie conta gratuita em customcat.com, navegue até Women's → Long Line Tee, suba arte vetorial para bordado e peça 1 sample antes de publicar na loja.",
+        "plano": "1) Crie conta gratuita em customcat.com (sem taxa mensal) · 2) Vá em Products → Women's → procure longline ou extended length tee · 3) Escolha bordado (embroidery) como técnica e suba a arte em vetor ou PNG de alta resolução · 4) Faça pedido de sample (~$10-15 + frete) antes de lançar — compare o resultado com Printful no mesmo produto",
         "fonte": {
-          "t": "Style Factory: Printify Review 2026",
-          "u": "https://www.stylefactoryproductions.com/blog/printify-review"
+          "t": "",
+          "u": ""
         },
         "video": {
           "t": "",
@@ -94,16 +94,16 @@
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-10-18",
+        "id": "conteudo-2026-10-19",
         "top": true,
-        "t": "Descript 2026: Edite Vídeo Cortando Palavras no Texto — Eye Contact, Studio Sound e Voz IA Num Só App",
-        "resumo": "Descript transcreve o vídeo automaticamente e permite editar deletando palavras do texto — o clipe segue. Recursos extras: Studio Sound (remove ruído de fundo), Eye Contact (corrige olhar para a câmera), Overdub (corrige falas com voz clonada). Gratuito: 1h de transcrição/mês.",
-        "porque": "Para talking-head e reels de câmera frontal, Descript é mais rápido que CapCut para remover pausas, 'ãs' e cacoetes — porque você edita como documento Word, não quadro a quadro. O Eye Contact transforma gravação com olhar para anotações em vídeo com contato visual direto.",
-        "aplicar": "Grave 1 take de 3–5 min sem se preocupar com erros. No Descript, delete os trechos ruins pelo texto. Ative Eye Contact e Studio Sound antes de exportar. Resultado: vídeo limpo sem horas de edição manual.",
-        "plano": "1) Crie conta grátis em descript.com (sem cartão, 1h de transcrição grátis/mês) · 2) Importe ou grave diretamente no app — transcrição automática em 2–3 min · 3) Selecione e delete palavras/pausas indesejadas pelo transcript — o vídeo edita junto · 4) Antes de exportar: ative 'Eye Contact' e 'Studio Sound' nas configurações de IA",
+        "t": "Opus Clip 2026: Cole o Link do Vídeo Longo → IA Gera 10-30 Cortes com Score de Viralidade, Legendas e Reframe 9:16 Automático",
+        "resumo": "Opus Clip analisa vídeos longos com IA multimodal, identifica os momentos mais engajadores e gera cortes curtos prontos para Reels e TikTok — cada um com pontuação de viralidade e reframe automático para 9:16.",
+        "porque": "O recurso ClipAnything 2.0 permite busca por prompt em linguagem natural: 'encontre todas as vezes que menciono antes e depois'. Para a Oak Park: 1 filmagem de reforma vira semanas de conteúdo.",
+        "aplicar": "Suba o próximo vídeo de obra ou reforma e deixe o Opus Clip gerar os cortes. Revise o score de viralidade, escolha os top 5 e agende via Metricool — sem editar cada clipe manualmente.",
+        "plano": "1) Acesse opus.pro (plano gratuito: 90 min de upload/mês) · 2) Cole o link do YouTube ou suba o vídeo diretamente · 3) Aguarde análise (~5-10 min) · 4) Exporte os clips de maior score, revise as legendas se necessário e agende no Metricool",
         "fonte": {
-          "t": "SkillsCouter: Descript Review 2026",
-          "u": "https://skillscouter.com/descript-review/"
+          "t": "Tooliverse — OpusClip Review 2026",
+          "u": "https://tooliverse.ai/tools/opusclip"
         },
         "video": {
           "t": "",
@@ -113,16 +113,16 @@
     ],
     "obra": [
       {
-        "id": "obra-2026-10-18",
+        "id": "obra-2026-10-19",
         "top": true,
-        "t": "Kling AI 2026: Foto da Reforma → Vídeo com Câmera em Movimento — 66 Créditos Gratuitos por Dia, Alternativa Acessível ao Runway",
-        "resumo": "Kling AI (da Kuaishou) gera vídeos de 5–10s a partir de imagens. Para obra/construção: sobe foto do projeto concluído, descreve o movimento de câmera, e recebe um clipe cinematográfico. Plano grátis: 66 créditos/dia (com marca d'água). Pago: a partir de ~$7/mês sem marca d'água.",
-        "porque": "É a alternativa mais acessível ao Runway Gen-4 para quem quer criar volume alto de conteúdo de teste. Os 66 créditos gratuitos diários permitem criar múltiplos clips sem custo — ideal para Oak Park Construction testar hooks de reels antes/depois.",
-        "aplicar": "Use fotos de projetos concluídos. Prompt eficiente: 'Camera slowly moves forward into the renovated [room], warm lighting, cinematic, 4K'. Para remover marca d'água e clipes até 3 min: plano Standard a ~$7/mês.",
-        "plano": "1) Crie conta grátis em klingai.com (sem cartão para o plano free) · 2) Acesse 'Image to Video' e faça upload de uma foto de projeto OPC concluído · 3) Escreva o prompt de movimento: 'slow push-in, warm natural lighting, cinematic' · 4) Para uso profissional sem marca d'água: assine Standard (~$7/mês) e exporte os melhores clips para reels OPC",
+        "t": "Pika 2.5 para Reels de Reforma: Foto do Cômodo Atual → Clipe 9:16 com Câmera em Movimento e Voz em Português",
+        "resumo": "Pika 2.5 gera clipes de até 8 seg a partir de uma imagem, com câmera animada, voiceover multilíngue e formato 9:16 pronto para Reels. Considerado o ponto de entrada mais rápido em criação de vídeo com IA em 2026.",
+        "porque": "Diferente do Kling (créditos caros) e do Runway (curva de aprendizado maior), o Pika tem a menor barreira de entrada — ideal para postar conteúdo de reforma sem parar a obra. Tem lip sync, expand canvas e modify region.",
+        "aplicar": "Tire uma foto da obra com bom ângulo, faça upload em pika.art, descreva o movimento ('câmera se afasta revelando a cozinha reformada') e adicione voz em português. Exporte em 9:16 direto para o Reels da Oak Park.",
+        "plano": "1) Acesse pika.art e crie conta (plano gratuito disponível) · 2) Faça upload da melhor foto da reforma atual · 3) Use prompt: 'slow camera pull-back revealing renovated space, warm natural light, clean modern finish' · 4) Ative voiceover em português com a feature de áudio do Pika e exporte em 9:16",
         "fonte": {
-          "t": "CostBench: Kling AI Free Plan 2026",
-          "u": "https://costbench.com/software/ai-video-generators/kling/free-plan/"
+          "t": "RobotDyn — Pika Labs Desafia Sora e Runway com Vídeo + Voz Integrados",
+          "u": "https://robotdyn.com/?p=42787"
         },
         "video": {
           "t": "",
@@ -132,16 +132,16 @@
     ],
     "geo": [
       {
-        "id": "geo-2026-10-18",
+        "id": "geo-2026-10-19",
         "top": true,
-        "t": "Sahel 2026: Mali, Níger e Burkina Faso Formam Aliança Anti-Ocidente — Como 3 Golpes Militares Expulsaram a França da África",
-        "resumo": "Entre 2021 e 2023, três golpes militares no Sahel criaram a AES (Aliança dos Estados do Sahel): expulsaram tropas francesas, abandonaram a CEDEAO e acolheram forças russas (Wagner/Africa Corps). A França perdeu sua maior zona de influência na África numa questão de 24 meses.",
-        "porque": "O redesenho do Sahel é o maior reposicionamento geopolítico africano desde a descolonização. China e Rússia avançam enquanto Europa e EUA perdem acesso a urânio do Níger, ouro de Mali e rotas estratégicas — e a violência jihadista piorou após os golpes, contrariando a promessa dos militares.",
-        "aplicar": "Como pauta de conteúdo: conecte os 3 golpes ao mapa de recursos (urânio, ouro, manganês), à entrada russa e ao fracasso da promessa de segurança. É uma narrativa completa de causa e efeito em 3 atos.",
-        "plano": "1) Estude os 3 golpes em sequência: Mali (ago/2021), Burkina Faso (set/2022), Níger (jul/2023) · 2) Identifique o padrão: crise de segurança → golpe → expulsão da França → entrada russa · 3) Mapeie os recursos em jogo: urânio do Níger abastecia 15% da energia nuclear francesa · 4) Conecte à atualidade: Niger tentou contra-golpe em ago/2026 — o que isso sinaliza para a AES?",
+        "t": "Mar Vermelho 2026: Houthis Controlam 12% do Comércio Global — Como a Guerra no Iêmen Encarece o Frete e a Construção Civil",
+        "resumo": "Maersk, Hapag-Lloyd e CMA CGM desviaram pelo Cabo da Boa Esperança após ataques Houthi. Em jun/2026, nova proibição à navegação israelense. Travessias mensais caíram de 2.000+ para 1.034. Petróleo acima de US$100.",
+        "porque": "Construtoras importam materiais com cadeias que passam por essa rota (aço, cerâmica, eletrodomésticos). Saber do bloqueio antes do cliente é argumento de precificação e diferencial de credibilidade.",
+        "aplicar": "Ao cotar materiais importados, adicione cláusula de ajuste por variação de frete. Mostre ao cliente que a Oak Park acompanha o mercado global — isso justifica margens e constrói confiança.",
+        "plano": "1) Liste os 3 materiais que a Oak Park mais importa (direta ou via fornecedor) · 2) Verifique com o fornecedor se usa rota Suez ou alternativa pelo Cabo da Boa Esperança · 3) Adicione buffer de +5-10% em orçamentos com entrega acima de 60 dias · 4) Crie alerta no Google News: 'Bab el-Mandeb frete' para acompanhar semanalmente",
         "fonte": {
-          "t": "Polity: Niger's failed coup — warning to Sahel's military rulers (set/2026)",
-          "u": "https://polity.org.za/article/nigers-failed-coup-is-a-warning-to-the-sahels-military-rulers-those-with-power-must-keep-their-promises-2026-09-03"
+          "t": "Breakbulk News — Houthis Ban Israeli Ships, 12% of Global Trade at Risk",
+          "u": "https://breakbulk.news/houthis-ban-israeli-ships-from-red-sea-as-dual-chokepoint-crisis-threatens-to-cut-off-12-of-global-trade/"
         },
         "video": {
           "t": "",
@@ -151,16 +151,16 @@
     ],
     "ads": [
       {
-        "id": "ads-2026-10-18",
+        "id": "ads-2026-10-19",
         "top": true,
-        "t": "Google Performance Max 2026: 1 Campanha em Todos os Canais — O Que Controlar Para Não Queimar Orçamento",
-        "resumo": "Performance Max (PMax) roda Search, Display, YouTube, Gmail e Discover numa campanha só, e a IA decide onde mostrar. Sem configuração correta, ela otimiza para métricas erradas. As alavancas de controle: negativos, customer lists, sinais de audiência e relatório de canais.",
-        "porque": "PMax já é obrigatório em muitas contas Google Ads. Entender os controles disponíveis é a diferença entre escalar lucro ou queimar budget em Display irrelevante. O relatório de canais (lançado em 2025/2026) mostra onde o dinheiro foi — mas visibilidade de keywords ainda é limitada.",
-        "aplicar": "Para Oak Park Construction: configure PMax com lista de clientes atuais como sinal negativo, use fotos de projetos concluídos nos assets, defina orçamento mínimo de $50/dia e não mexa em nada nas primeiras 2–4 semanas (fase de aprendizado).",
-        "plano": "1) Nas primeiras 2–4 semanas, não altere nada — a fase de aprendizado exige estabilidade (orçamento mín. $50/dia) · 2) Suba customer list para excluir clientes atuais e criar lookalike de quem já contratou · 3) Adicione lista de palavras negativas para filtrar buscas irrelevantes para construção · 4) Monitore o relatório de canais semanalmente — se YouTube consumir sem converter, ajuste os sinais de audiência",
+        "t": "AI Max para Google Ads 2026: Deixe a IA Expandir Suas Keywords e Aparecer em Perguntas que Você Nunca Teria Pesquisado",
+        "resumo": "AI Max for Search Campaigns usa IA para expandir correspondência de keywords, personalizar o texto do anúncio por intenção e escolher a landing page mais relevante automaticamente — dentro de campanhas de pesquisa já existentes.",
+        "porque": "Construtoras perdem leads porque buscas por reforma usam linguagem muito variada. AI Max cobre essa cauda longa sem duplicar campanhas ou explodir o orçamento — diferente de ampliar o match type manualmente.",
+        "aplicar": "Ative o AI Max em uma campanha de pesquisa existente da Oak Park, deixe rodar 2-3 semanas e compare o CPL (custo por lead). Monitore os novos termos que o Google está cobrindo e ajuste as negative keywords.",
+        "plano": "1) Abra Google Ads → selecione campanha de pesquisa ativa → Configurações → AI Max · 2) Ative 'Expansão de URL' e 'Personalização de texto' · 3) Adicione negative keywords para termos irrelevantes ('DIY', 'curso de reforma', 'como fazer') · 4) Após 2-3 semanas, compare CPL antes e depois e revise os novos search terms gerados",
         "fonte": {
-          "t": "JumpFly: Mastering Google Performance Max 2026",
-          "u": "https://www.jumpfly.com/blog/mastering-google-performance-max-a-2026-strategy-guide"
+          "t": "Google Blog — AI Max for Shopping Campaigns",
+          "u": "https://blog.google/products/ads-commerce/ai-max-for-shopping/"
         },
         "video": {
           "t": "",
@@ -170,16 +170,16 @@
     ],
     "iafim": [
       {
-        "id": "iafim-2026-10-18",
+        "id": "iafim-2026-10-19",
         "top": true,
-        "t": "Make.com 2026: AI Agents Lançados em Fevereiro — 1 Módulo com LLM + Instruções + Ferramentas, Sem Sair da Plataforma",
-        "resumo": "Make.com lançou AI Agents em open beta (fev/2026): um módulo único que embute o modelo de IA, o system prompt e as ferramentas numa só peça visual. Compatível com OpenAI, Claude e DeepSeek. Plano grátis: 1.000 operações/mês. Pago: a partir de $9/mês.",
-        "porque": "Make.com já tinha 11 milhões de usuários para automações visuais. Com AI Agents, quem já usa Make pode embutir raciocínio de IA sem aprender n8n ou código — e conectar diretamente com Gmail, Google Sheets, Slack e 1.000+ outros módulos já disponíveis.",
-        "aplicar": "Para OPC/McFolling: construa um agente que monitora emails de leads, extrai nome/telefone/tipo de projeto e preenche planilha automaticamente — setup de ~30 min sem código. Modelo sugerido para dev: Claude Sonnet (depois teste versão mais barata).",
-        "plano": "1) Crie conta grátis em make.com (sem cartão, 1.000 ops/mês) · 2) Novo Scenario → arraste o módulo 'AI Agent' (disponível em todos os planos com Make AI provider) · 3) Configure: escolha o modelo, escreva system prompt com a tarefa específica · 4) Conecte ao módulo Gmail (trigger) e Google Sheets (ação) — teste com 1 email real antes de ativar",
+        "t": "CrewAI 2026: Monte uma Equipe de Agentes IA em Python — Cada Agente Tem Role e Goal, e Eles Colaboram Sem Você",
+        "resumo": "CrewAI é um framework open-source Python para orquestrar múltiplos agentes IA em equipe. Um agente pesquisa, outro escreve, outro revisa — de forma automática. 55k+ estrelas no GitHub, mais simples que LangGraph.",
+        "porque": "Diferente do Make.com (visual mas limitado em lógica) e do LangGraph (baixo nível demais), o CrewAI equilibra facilidade e poder: você define o papel de cada agente em linguagem natural e ele executa a tarefa completa.",
+        "aplicar": "Para Oak Park: crie um crew com agente pesquisador (busca tendências de reforma), agente de conteúdo (escreve o post) e agente revisor (checa o tom). O resultado entra direto no pipeline de aprovação no Drive.",
+        "plano": "1) Instale: pip install crewai crewai-tools (requer Python 3.10+) · 2) Crie 2 agentes com role e goal em texto natural (ex: 'Senior Researcher' e 'Content Writer') · 3) Defina 2 tasks e associe a cada agente com expected_output claro · 4) Rode o crew e veja o resultado — depois integre ao GitHub Actions ou n8n para automação completa",
         "fonte": {
-          "t": "Growwstacks: Make.com New AI Agents 2026",
-          "u": "https://growwstacks.com/blog/make-com-new-ai-agents-2026"
+          "t": "Tech Insider — How to Build Multi-Agent AI with CrewAI Python [2026]",
+          "u": "https://tech-insider.org/crewai-tutorial-multi-agent-ai-python-2026/"
         },
         "video": {
           "t": "",
