@@ -1,0 +1,167 @@
+{
+  "date": "2026-10-20",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "⏰ Conteúdo OPC",
+      "t": "338 posts OPC aguardando sua aprovação",
+      "why": "Backlog grande no pipeline de conteúdo da Oak Park Construction — vale priorizar uma sessão de revisão hoje",
+      "go": "conteudo"
+    },
+    {
+      "tag": "📊 Google Ads",
+      "t": "OPC Ads semana: 9 ligações, 2 conversões, $283 gastos",
+      "why": "CTR de 4,96% é bom, mas custo por conversão de ~$141 merece análise — veja o card de LSA de hoje",
+      "go": "ads"
+    },
+    {
+      "tag": "🚨 Pipeline",
+      "t": "ads_pulse.yml falhou no GitHub Actions (run 39299376798)",
+      "why": "Automação de monitoramento de ads está quebrada — sem dados sendo coletados enquanto estiver down",
+      "go": "iafim"
+    },
+    {
+      "tag": "⚠️ IA",
+      "t": "Anthropic API com crédito baixo — fallbacks ativos nos pipelines",
+      "why": "Alertas de 'low_credit' chegaram hoje às 9h e ontem às 10h — verificar saldo antes de rodar automações pesadas",
+      "go": "tip"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-20",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-10-20",
+        "top": true,
+        "t": "Dopamine Menu para TDAH: Monte um Cardápio de Recompensas que Ativa o Cérebro Sem Culpa",
+        "resumo": "Um Dopamine Menu é uma lista pessoal de atividades agrupadas por nível de energia (baixa, média, alta) que você consulta quando precisa de foco ou regulação — ao invés de abrir o Instagram no automático.",
+        "porque": "O cérebro TDAH precisa de dopamina para iniciar e sustentar tarefas. Sem um cardápio pré-definido, qualquer estímulo fácil (scroll, notificação) vira a escolha padrão — e a tarefa real fica pra depois.",
+        "aplicar": "Monte seu menu esta semana: 3 opções de baixa energia (respiração, água, alongamento de 2 min), 3 de média (caminhada curta, arrumar uma gaveta, música), 3 de alta (treino, projeto criativo). Cole num Post-it visível no seu espaço de trabalho.",
+        "plano": "1) Liste 9 atividades que genuinamente te dão energia — sem julgamento · 2) Classifique cada uma: baixa, média ou alta energia · 3) Cole o menu visível na mesa ou na tela inicial do celular · 4) Combine com blocos de foco: ao fim de cada bloco, escolha uma opção do menu em vez de abrir redes sociais",
+        "fonte": {
+          "t": "The Dopamine Menu — A Personal Toolkit for ADHD Motivation (30 Secs Rule)",
+          "u": "https://30rule.beehiiv.com/p/the-dopamine-menu-create-a-personal-toolkit-for-adhd-motivation"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-10-20",
+        "top": true,
+        "t": "Curry de Grão-de-Bico com Espinafre e Leite de Coco — 30 Min, 1 Panela, Vegano, Kid-Friendly",
+        "resumo": "Refogue cebola, alho e gengibre, adicione curry em pó, cúrcuma e garam masala. Junte tomate picado, leite de coco, grão-de-bico e caldo de legumes. Cozinhe 15 min e finalize com espinafre baby. Sirva com arroz basmati.",
+        "porque": "Grão-de-bico traz proteína e fibra, espinafre tem ferro e o leite de coco cria cremosidade sem leite de vaca. O sabor adocicado do coco torna o prato naturalmente suave — kids geralmente adoram.",
+        "aplicar": "Para crianças: use menos curry em pó e um pouco mais de leite de coco. O prato aguenta 3 dias na geladeira — faça porção dupla e use no almoço da semana.",
+        "plano": "1) Refogue 1 cebola + 3 dentes de alho + 1 cm de gengibre em azeite por 5 min · 2) Adicione 1½ col chá curry + ½ col chá cúrcuma + ½ col chá garam masala, mexa 1 min · 3) Adicione 1 lata tomate picado + 1 lata leite de coco + 2 latas grão-de-bico escorrido + ½ xíc caldo de legumes · 4) Cozinhe 15 min em fogo médio, finalize com 2 xíc espinafre baby e sal a gosto",
+        "fonte": {
+          "t": "Easy Chickpea Spinach Curry — One Pot, Vegan, 30 Minutes (Veggie Chick)",
+          "u": "https://veggiechick.com/chickpea-spinach-curry-one-pot-vegan-30-minutes"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-10-20",
+        "top": true,
+        "t": "Gooten POD 2026: Grande Rede de Fornecedores, Mas Peça Amostra Antes — O Que as Reviews Revelam",
+        "resumo": "Gooten conecta sua loja Shopify a gráficas com marcas como Bella+Canvas, Next Level e Gildan. A opção mais próxima de longline é a Next Level 3602 (unissex long body, DTG). Problema documentado: sellers relatam 20% dos pedidos com erro de impressão ou peça errada.",
+        "porque": "Antes de escalar qualquer POD, saber onde a plataforma falha poupa prejuízo e devoluções. Gooten tem variedade, mas controle de qualidade inconsistente é o gargalo mais citado nas reviews recentes.",
+        "aplicar": "Para bordado, Gooten não lista opção nativa — nesse caso, Printful ou Apliiq são melhores. Se quiser testar Gooten para tee estampada, peça sample de 2 peças do fornecedor específico antes de ativar na loja.",
+        "plano": "1) Acesse gooten.com → filtre por Women's + Long Body para ver a Next Level 3602 · 2) Leia reviews recentes no Shopify App Store antes de ativar · 3) Peça sample de 1-2 peças do modelo escolhido · 4) Compare impressão e qualidade com Printful no mesmo design — use o resultado para decidir",
+        "fonte": {
+          "t": "Gooten Review 2025/2026 — Bootstrapping Ecommerce",
+          "u": "https://bootstrappingecommerce.com/gooten-review/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-10-20",
+        "top": true,
+        "t": "Submagic 2026: Cole o Vídeo → IA Gera Legendas Animadas com Destaque Visual em 60 Segundos — Direto do Celular",
+        "resumo": "Submagic transcreve seu vídeo automaticamente, formata legendas com animação e destaca a palavra-chave em negrito colorido, e exporta pronto para Reels ou TikTok. É focado em short-form creators que editam no celular.",
+        "porque": "Vídeos com legendas retêm até 40% mais audiência (muitos assistem no mudo). O algoritmo do Reels favorece vídeos com alto watch time — e uma legenda animada bem posicionada vira um elemento de retenção visual.",
+        "aplicar": "Ideal para vídeos de obra, antes/depois, tutoriais rápidos de renovação. Sobe o vídeo, escolhe o estilo de fonte (Bold Highlight funciona bem para construção), ajusta a cor da marca e exporta.",
+        "plano": "1) Acesse submagic.co — plano gratuito disponível · 2) Sobe um Reel seu que não tenha legenda · 3) Escolha o estilo 'Bold Highlight' com cor de contraste · 4) Exporte e poste — compare o watch time desse Reel com o seu último sem legenda",
+        "fonte": {
+          "t": "Best AI Captioning Tools 2026 — Magic Hour",
+          "u": "https://magichour.ai/blog/best-ai-captioning-tools-2026"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-10-20",
+        "top": true,
+        "t": "Hailuo AI H3 (MiniMax) 2026: Foto da Obra → Vídeo com Física Realista e Câmera em Movimento — Grátis para Testar",
+        "resumo": "O modelo H3 da MiniMax (lançado julho 2026) transforma uma foto em clipe com câmera em movimento e simulação física realista — poeira, água, materiais em ação. Você pode referenciar o movimento de outro clipe como guia.",
+        "porque": "A simulação de física do H3 é o diferencial: materiais se comportam de forma realista no vídeo. Para reforma, significa mostrar tinta secando, piso sendo assentado, concreto em ação — cinematograficamente, sem gravar.",
+        "aplicar": "Acesse hailuoai.com, sobe uma foto de before da obra ou de cômodo reformado, descreve o movimento ('câmera avança lentamente, luz natural entra pela janela') e gera em 9:16 para Reels.",
+        "plano": "1) Acesse hailuoai.com — plano gratuito disponível · 2) Selecione 'Image to Video' com o modelo H3 · 3) Sobe uma foto de before de algum projeto OPC · 4) Prompt sugerido: 'camera slowly moves forward, natural light fills the room, modern renovation reveal' — compare o resultado com o Kling que você já testou",
+        "fonte": {
+          "t": "Hailuo AI Review 2026 — Anijam",
+          "u": "https://www.anijam.ai/blog/hailuo-ai-review/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-10-20",
+        "top": true,
+        "t": "Estreito de Taiwan 2026: Por Que um Discurso do Dia Nacional Desencadeia Exercícios Militares Chineses",
+        "resumo": "Em 10 de outubro, o presidente Lai Ching-te fez o discurso do Dia Nacional — Pequim chamou de 'imprudente'. Em 16 de outubro (4 dias atrás), Taiwan detectou 15 aeronaves e 10 navios de guerra chineses ao redor da ilha em 12 horas. O PLA realizou tiros reais no Estreito.",
+        "porque": "Conceito geopolítico do dia: 'escalada calibrada'. Pequim usa discursos políticos como gatilho formal para demonstrações de força — transformando palavras em eventos militares rastreáveis. É o padrão desde 2022: discurso → reação → exercício → normalização.",
+        "aplicar": "Para conteúdo de notícias: Taiwan é termômetro da relação EUA-China. Quando sobe a tensão no Estreito, mercado de chips e eletrônicos reage — o que afeta indiretamente custos de equipamentos importados para construção civil.",
+        "plano": "1) Conceito do dia: 'escalada calibrada' — pressão máxima sem declarar guerra · 2) Leia o padrão: discurso → Beijing reage → exercício militar → volta ao normal · 3) Fontes diárias: Taipei Times e SCMP cobrem bem o Estreito · 4) Conecte à pauta: quando Taiwan esquenta, fique de olho em commodities e logística global",
+        "fonte": {
+          "t": "PLA conducts live-fire drills in Taiwan Strait after Beijing calls Lai speech 'reckless' — SCMP",
+          "u": "https://www.scmp.com/news/china/military/article/3361554/pla-conducts-2-days-live-fire-drills-taiwan-strait-fujian-island"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-10-20",
+        "top": true,
+        "t": "Google Local Services Ads (LSA) para Construtoras 2026: Apareça Acima de Todos os Anúncios e Pague Só por Lead Real",
+        "resumo": "LSA aparece ACIMA dos anúncios normais do Google, com o selo 'Google Verificado'. Você paga por lead (chamada ou mensagem real confirmada), não por clique. Para contractors em FL, o custo médio fica entre $20 e $90 por lead qualificado.",
+        "porque": "Diferente do Google Ads convencional, LSA exige verificação de licença e seguro — o que filtra automaticamente concorrentes informais. O selo 'Google Verificado' gera mais confiança do que qualquer texto de anúncio.",
+        "aplicar": "Atenção: em agosto de 2026, o Google começou a migrar LSAs para dentro de campanhas Performance Max com meta pay-per-lead em algumas categorias nos EUA. Verifique se 'General Contractor' no seu ZIP já foi incluído.",
+        "plano": "1) Acesse ads.google.com/local-services-ads e verifique disponibilidade para Fort Lauderdale/seu ZIP · 2) Prepare: licença de contractor FL, certificado de seguro (COI) e reviews no Google Business Profile · 3) Configure geolocalização por cidade e CEP exatos que você atende · 4) Integre com CRM para rastrear quais leads viraram orçamentos e conversões reais",
+        "fonte": {
+          "t": "Google Local Services Ads in 2026 — Complete Setup Guide for Contractors",
+          "u": "https://pushleads.com/google-local-service-ads-in-2026-the-complete-setup-and-optimization-guide-for-contractors/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-10-20",
+        "top": true,
+        "t": "Relevance AI 2026: Plataforma Low-Code para Criar Agentes que Terminam Tarefas por Você — Free Tier com 200 Ações/mês",
+        "resumo": "Relevance AI permite criar agentes que executam workflows complexos: pesquisar, redigir, aprovar e enviar. Diferente do Make ou n8n que conectam apps, aqui o agente toma decisões — lê um brief, pesquisa, escreve rascunho e pede aprovação antes de enviar.",
+        "porque": "Para quem tem TDAH e pipelines como os seus (ads, conteúdo, leads), um agente que completa a tarefa do início ao fim — sem você precisar lembrar de cada passo — vale mais do que qualquer ferramenta de automação passiva.",
+        "aplicar": "Caso de uso OPC: agente que monitora novos leads do Google Ads, pesquisa o endereço, gera um e-mail personalizado de boas-vindas e salva o contato no Google Sheets. Custo: zero no plano gratuito até 200 ações/mês.",
+        "plano": "1) Acesse relevanceai.com — crie conta gratuita · 2) Explore os templates prontos: 'Lead Follow-up Agent' ou 'Research Agent' · 3) Conecte Gmail e Google Sheets como ferramentas do agente · 4) Defina a tarefa em linguagem natural e teste com dados dos últimos 5 leads OPC — ajuste até funcionar",
+        "fonte": {
+          "t": "Is Relevance AI worth it in 2026? A detailed review",
+          "u": "https://automationatlas.io/answers/relevance-ai-review-2026/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ]
+  }
+}
