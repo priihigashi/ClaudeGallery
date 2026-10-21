@@ -1,35 +1,35 @@
 {
-  "date": "2026-10-20",
+  "date": "2026-10-21",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "⏰ Conteúdo OPC",
-      "t": "338 posts OPC aguardando sua aprovação",
-      "why": "Backlog grande no pipeline de conteúdo da Oak Park Construction — vale priorizar uma sessão de revisão hoje",
-      "go": "conteudo"
+      "tag": "🎬 HeyGen",
+      "t": "HeyGen Primeira Semana — Chegou o E-mail de Onboarding: 3 Tutoriais para Vídeos Profissionais",
+      "why": "E-mail de boas-vindas chegou hoje de manhã — aproveite para completar a configuração do avatar antes que a janela de onboarding feche",
+      "go": "obra"
     },
     {
-      "tag": "📊 Google Ads",
-      "t": "OPC Ads semana: 9 ligações, 2 conversões, $283 gastos",
-      "why": "CTR de 4,96% é bom, mas custo por conversão de ~$141 merece análise — veja o card de LSA de hoje",
+      "tag": "📊 Ads OPC",
+      "t": "OPC Ads Semana: $283 Gastos, 4.96% CTR — Mas Só 2 Conversões em 9 Ligações",
+      "why": "Report de 19/10: CTR está bom, mas taxa ligação→projeto está baixa. Customer Match pode direcionar verba para leads com perfil de cliente real",
       "go": "ads"
     },
     {
-      "tag": "🚨 Pipeline",
-      "t": "ads_pulse.yml falhou no GitHub Actions (run 39299376798)",
-      "why": "Automação de monitoramento de ads está quebrada — sem dados sendo coletados enquanto estiver down",
+      "tag": "💳 Custos IA",
+      "t": "Finance Check de IA Hoje às 10h — Revise Cobranças de Anthropic, OpenAI e Subscriptions",
+      "why": "Calendário marca revisão de cobranças de IA para hoje. Anthropic esteve com crédito baixo esta semana — momento certo para reabastecer e auditar o que está rodando",
       "go": "iafim"
     },
     {
-      "tag": "⚠️ IA",
-      "t": "Anthropic API com crédito baixo — fallbacks ativos nos pipelines",
-      "why": "Alertas de 'low_credit' chegaram hoje às 9h e ontem às 10h — verificar saldo antes de rodar automações pesadas",
-      "go": "tip"
+      "tag": "📱 TikTok",
+      "t": "Post @tentandochegaratevoce Agendado para Hoje 12h30 — Confirme se Publicou",
+      "why": "Metricool agendou novo post no TikTok para hoje às 12h30. Na semana passada houve falha de publicação — verifique manualmente no app às 12h35",
+      "go": "conteudo"
     }
   ],
   "history": [
     {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,129 +37,105 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-10-20",
+        "id": "tip-2026-10-21",
         "top": true,
-        "t": "Dopamine Menu para TDAH: Monte um Cardápio de Recompensas que Ativa o Cérebro Sem Culpa",
-        "resumo": "Um Dopamine Menu é uma lista pessoal de atividades agrupadas por nível de energia (baixa, média, alta) que você consulta quando precisa de foco ou regulação — ao invés de abrir o Instagram no automático.",
-        "porque": "O cérebro TDAH precisa de dopamina para iniciar e sustentar tarefas. Sem um cardápio pré-definido, qualquer estímulo fácil (scroll, notificação) vira a escolha padrão — e a tarefa real fica pra depois.",
-        "aplicar": "Monte seu menu esta semana: 3 opções de baixa energia (respiração, água, alongamento de 2 min), 3 de média (caminhada curta, arrumar uma gaveta, música), 3 de alta (treino, projeto criativo). Cole num Post-it visível no seu espaço de trabalho.",
-        "plano": "1) Liste 9 atividades que genuinamente te dão energia — sem julgamento · 2) Classifique cada uma: baixa, média ou alta energia · 3) Cole o menu visível na mesa ou na tela inicial do celular · 4) Combine com blocos de foco: ao fim de cada bloco, escolha uma opção do menu em vez de abrir redes sociais",
-        "fonte": {
-          "t": "The Dopamine Menu — A Personal Toolkit for ADHD Motivation (30 Secs Rule)",
-          "u": "https://30rule.beehiiv.com/p/the-dopamine-menu-create-a-personal-toolkit-for-adhd-motivation"
-        },
+        "t": "Temptation Bundling para TDAH: Emparelhe a Tarefa Chata com o Que Você Ama — e o Cérebro Para de Resistir",
+        "resumo": "Criado por Katy Milkman (Wharton), Temptation Bundling é simples: você só pode fazer a atividade prazerosa enquanto faz a tarefa difícil. No estudo original, frequência na academia subiu quando participantes recebiam audiobooks acessíveis só lá. Para TDAH, é poderoso porque entrega dopamina imediata — a moeda que o cérebro TDAH precisa para agir.",
+        "porque": "Cérebros TDAH respondem mal a recompensas atrasadas. Temptation Bundling cria recompensa no exato momento da tarefa, alinhando motivação e obrigação sem forçar willpower.",
+        "aplicar": "Revisão de posts OPC → só com podcast favorito. Fazer planilha financeira → só com café especial. Organizar e-mails → só enquanto assiste a algo no segundo monitor.",
+        "plano": "1) Liste 3 tarefas que você empurra toda semana · 2) Liste 3 atividades prazerosas que cabem nesse tempo · 3) Crie 3 'bundles': tarefa + prazer inseparáveis · 4) Regra rígida: o prazer só ativa na tarefa e para quando a tarefa para",
+        "fonte": {"t": "Temptation Bundling — NessLabs", "u": "https://nesslabs.com/temptation-bundling"},
         "video": {"t": "", "u": ""}
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-10-20",
+        "id": "receita-2026-10-21",
         "top": true,
-        "t": "Curry de Grão-de-Bico com Espinafre e Leite de Coco — 30 Min, 1 Panela, Vegano, Kid-Friendly",
-        "resumo": "Refogue cebola, alho e gengibre, adicione curry em pó, cúrcuma e garam masala. Junte tomate picado, leite de coco, grão-de-bico e caldo de legumes. Cozinhe 15 min e finalize com espinafre baby. Sirva com arroz basmati.",
-        "porque": "Grão-de-bico traz proteína e fibra, espinafre tem ferro e o leite de coco cria cremosidade sem leite de vaca. O sabor adocicado do coco torna o prato naturalmente suave — kids geralmente adoram.",
-        "aplicar": "Para crianças: use menos curry em pó e um pouco mais de leite de coco. O prato aguenta 3 dias na geladeira — faça porção dupla e use no almoço da semana.",
-        "plano": "1) Refogue 1 cebola + 3 dentes de alho + 1 cm de gengibre em azeite por 5 min · 2) Adicione 1½ col chá curry + ½ col chá cúrcuma + ½ col chá garam masala, mexa 1 min · 3) Adicione 1 lata tomate picado + 1 lata leite de coco + 2 latas grão-de-bico escorrido + ½ xíc caldo de legumes · 4) Cozinhe 15 min em fogo médio, finalize com 2 xíc espinafre baby e sal a gosto",
-        "fonte": {
-          "t": "Easy Chickpea Spinach Curry — One Pot, Vegan, 30 Minutes (Veggie Chick)",
-          "u": "https://veggiechick.com/chickpea-spinach-curry-one-pot-vegan-30-minutes"
-        },
+        "t": "Tacos de Jackfruit Desfiado com Guacamole e Salsa — 20 Min, Vegano, Kid-Friendly",
+        "resumo": "Jackfruit verde em lata vira 'carne' desfiada que engana carnívoros. Tempere com cominho e páprica defumada, sirva em tortilha de milho com guacamole. Cada um monta o seu na mesa — as crianças adoram a dinâmica.",
+        "porque": "Jackfruit verde absorve temperos como esponja e tem textura de pulled pork. Receita de montagem coletiva = zero briga na hora do jantar.",
+        "aplicar": "Compre jackfruit verde em água ou salmoura (não em calda de açúcar). Um pacote de tempero tex-mex encurta o preparo nos dias corridos.",
+        "plano": "1) Escorra 1 lata de jackfruit verde (400g), desfie com dois garfos · 2) Refogue com azeite, ½ cebola, 2 dentes de alho, 1 col. chá de cominho e páprica defumada por 15 min · 3) Aqueça tortilhas de milho na frigideira seca · 4) Monte a 'taco bar' na mesa: jackfruit, guacamole (abacate + limão + sal), salsa, coentro — cada um monta o seu",
+        "fonte": {"t": "Vegan Jackfruit Tacos — Alphafoodie", "u": "https://www.alphafoodie.com/rainbow-vegan-tacos/"},
         "video": {"t": "", "u": ""}
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-10-20",
+        "id": "merch-2026-10-21",
         "top": true,
-        "t": "Gooten POD 2026: Grande Rede de Fornecedores, Mas Peça Amostra Antes — O Que as Reviews Revelam",
-        "resumo": "Gooten conecta sua loja Shopify a gráficas com marcas como Bella+Canvas, Next Level e Gildan. A opção mais próxima de longline é a Next Level 3602 (unissex long body, DTG). Problema documentado: sellers relatam 20% dos pedidos com erro de impressão ou peça errada.",
-        "porque": "Antes de escalar qualquer POD, saber onde a plataforma falha poupa prejuízo e devoluções. Gooten tem variedade, mas controle de qualidade inconsistente é o gargalo mais citado nas reviews recentes.",
-        "aplicar": "Para bordado, Gooten não lista opção nativa — nesse caso, Printful ou Apliiq são melhores. Se quiser testar Gooten para tee estampada, peça sample de 2 peças do fornecedor específico antes de ativar na loja.",
-        "plano": "1) Acesse gooten.com → filtre por Women's + Long Body para ver a Next Level 3602 · 2) Leia reviews recentes no Shopify App Store antes de ativar · 3) Peça sample de 1-2 peças do modelo escolhido · 4) Compare impressão e qualidade com Printful no mesmo design — use o resultado para decidir",
-        "fonte": {
-          "t": "Gooten Review 2025/2026 — Bootstrapping Ecommerce",
-          "u": "https://bootstrappingecommerce.com/gooten-review/"
-        },
+        "t": "Contrado POD 2026: Qualidade Premium do Reino Unido, Produção em 24h e 4.7★ na Shopify — Diferente das Gráficas de Massa",
+        "resumo": "Contrado é um POD britânico especializado em tecidos premium com produção em 1-2 dias e envio expresso de ~5 dias para EUA e Europa. Avaliação 4.7 estrelas na Shopify, sem mensalidade. Diferente de Printify e Gelato — foco em qualidade de material e acabamento, não volume.",
+        "porque": "Para longlines femininas e peças premium, a qualidade do tecido é o diferencial que justifica preço maior. Contrado seleciona materiais acima da média do mercado POD.",
+        "aplicar": "Peça amostras físicas antes de qualquer lançamento — a plataforma incentiva isso. Ideal para coleções pequenas com margem maior por peça.",
+        "plano": "1) Crie conta grátis em contrado.com · 2) Filtre por 'Women's Tops' e 'Long Sleeve' no catálogo · 3) Escolha 2 opções e peça amostras com seu design · 4) Compare textura, cor e prazo com Printify/CustomCat — só então decida",
+        "fonte": {"t": "Contrado Print on Demand — contrado.com", "u": ""},
         "video": {"t": "", "u": ""}
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-10-20",
+        "id": "conteudo-2026-10-21",
         "top": true,
-        "t": "Submagic 2026: Cole o Vídeo → IA Gera Legendas Animadas com Destaque Visual em 60 Segundos — Direto do Celular",
-        "resumo": "Submagic transcreve seu vídeo automaticamente, formata legendas com animação e destaca a palavra-chave em negrito colorido, e exporta pronto para Reels ou TikTok. É focado em short-form creators que editam no celular.",
-        "porque": "Vídeos com legendas retêm até 40% mais audiência (muitos assistem no mudo). O algoritmo do Reels favorece vídeos com alto watch time — e uma legenda animada bem posicionada vira um elemento de retenção visual.",
-        "aplicar": "Ideal para vídeos de obra, antes/depois, tutoriais rápidos de renovação. Sobe o vídeo, escolhe o estilo de fonte (Bold Highlight funciona bem para construção), ajusta a cor da marca e exporta.",
-        "plano": "1) Acesse submagic.co — plano gratuito disponível · 2) Sobe um Reel seu que não tenha legenda · 3) Escolha o estilo 'Bold Highlight' com cor de contraste · 4) Exporte e poste — compare o watch time desse Reel com o seu último sem legenda",
-        "fonte": {
-          "t": "Best AI Captioning Tools 2026 — Magic Hour",
-          "u": "https://magichour.ai/blog/best-ai-captioning-tools-2026"
-        },
+        "t": "Pictory AI 2026: Cole a URL do Blog ou Roteiro → IA Monta Vídeo com B-Roll, Legenda e Narração em Menos de 5 Minutos",
+        "resumo": "Pictory lê qualquer texto (URL de blog, roteiro, newsletter) e monta um vídeo com imagens de stock relevantes, legenda automática e narração de IA. Sem edição manual — você aprova e exporta. Perfeito para transformar posts da Oak Park Construction em Reels e YouTube Shorts.",
+        "porque": "Você já tem o texto — posts do blog, legendas do Instagram, roteiros. Pictory transforma esse conteúdo escrito em vídeo sem precisar gravar nada, desbloqueando conteúdo represado.",
+        "aplicar": "Cole a URL de um post do blog da OPC → Pictory monta vídeo de 60s com imagens de reforma, legenda e narração. Exporte em 9:16 direto para Reels.",
+        "plano": "1) Acesse pictory.ai e crie conta (plano gratuito disponível) · 2) Escolha 'Article to Video' e cole a URL de um post do blog da OPC · 3) Ajuste o visual e troque imagens que não ficaram boas · 4) Exporte em 9:16 e poste como Reel da Oak Park",
+        "fonte": {"t": "Pictory AI Review 2026 — Firebear Studio", "u": "https://firebearstudio.com/blog/pictory-ai-review.html"},
         "video": {"t": "", "u": ""}
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-10-20",
+        "id": "obra-2026-10-21",
         "top": true,
-        "t": "Hailuo AI H3 (MiniMax) 2026: Foto da Obra → Vídeo com Física Realista e Câmera em Movimento — Grátis para Testar",
-        "resumo": "O modelo H3 da MiniMax (lançado julho 2026) transforma uma foto em clipe com câmera em movimento e simulação física realista — poeira, água, materiais em ação. Você pode referenciar o movimento de outro clipe como guia.",
-        "porque": "A simulação de física do H3 é o diferencial: materiais se comportam de forma realista no vídeo. Para reforma, significa mostrar tinta secando, piso sendo assentado, concreto em ação — cinematograficamente, sem gravar.",
-        "aplicar": "Acesse hailuoai.com, sobe uma foto de before da obra ou de cômodo reformado, descreve o movimento ('câmera avança lentamente, luz natural entra pela janela') e gera em 9:16 para Reels.",
-        "plano": "1) Acesse hailuoai.com — plano gratuito disponível · 2) Selecione 'Image to Video' com o modelo H3 · 3) Sobe uma foto de before de algum projeto OPC · 4) Prompt sugerido: 'camera slowly moves forward, natural light fills the room, modern renovation reveal' — compare o resultado com o Kling que você já testou",
-        "fonte": {
-          "t": "Hailuo AI Review 2026 — Anijam",
-          "u": "https://www.anijam.ai/blog/hailuo-ai-review/"
-        },
+        "t": "Sora 2 (OpenAI) 2026: Foto da Reforma → Vídeo 1080p com Câmera em Movimento — O Mais Realista do Mercado, no ChatGPT Plus",
+        "resumo": "OpenAI lançou Sora 2 em setembro de 2025: gera vídeos de 15-25 segundos em 1080p a partir de texto ou foto, com câmera em movimento fluido. Disponível para ChatGPT Plus e Pro. Diferente de Kling, Pika e Hailuo — parceria com Disney garante realismo de luz e física superior.",
+        "porque": "Para mostrar uma reforma com luz natural e câmera percorrendo o cômodo renovado, Sora 2 entrega o resultado mais próximo de um vídeo filmado de verdade — sem câmera, sem set.",
+        "aplicar": "Foto do antes/depois de uma reforma OPC → clipe com câmera se movendo pelo cômodo. Use como hook visual nos primeiros 3 segundos do Reel.",
+        "plano": "1) Acesse chat.openai.com (requer ChatGPT Plus) ou entre na lista de espera em openai.com/sora · 2) Faça upload da foto do cômodo reformado · 3) Descreva o movimento: ex. 'slow push in, warm natural light, modern kitchen remodel' · 4) Gere 2-3 variações e use o melhor como hook do Reel",
+        "fonte": {"t": "OpenAI Sora 2 vs Instagram Reels — Analytics India Mag", "u": "https://analyticsindiamag.com/ai-news-updates/openai-to-challenge-tiktok-and-instagram-with-sora-2"},
         "video": {"t": "", "u": ""}
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-10-20",
+        "id": "geo-2026-10-21",
         "top": true,
-        "t": "Estreito de Taiwan 2026: Por Que um Discurso do Dia Nacional Desencadeia Exercícios Militares Chineses",
-        "resumo": "Em 10 de outubro, o presidente Lai Ching-te fez o discurso do Dia Nacional — Pequim chamou de 'imprudente'. Em 16 de outubro (4 dias atrás), Taiwan detectou 15 aeronaves e 10 navios de guerra chineses ao redor da ilha em 12 horas. O PLA realizou tiros reais no Estreito.",
-        "porque": "Conceito geopolítico do dia: 'escalada calibrada'. Pequim usa discursos políticos como gatilho formal para demonstrações de força — transformando palavras em eventos militares rastreáveis. É o padrão desde 2022: discurso → reação → exercício → normalização.",
-        "aplicar": "Para conteúdo de notícias: Taiwan é termômetro da relação EUA-China. Quando sobe a tensão no Estreito, mercado de chips e eletrônicos reage — o que afeta indiretamente custos de equipamentos importados para construção civil.",
-        "plano": "1) Conceito do dia: 'escalada calibrada' — pressão máxima sem declarar guerra · 2) Leia o padrão: discurso → Beijing reage → exercício militar → volta ao normal · 3) Fontes diárias: Taipei Times e SCMP cobrem bem o Estreito · 4) Conecte à pauta: quando Taiwan esquenta, fique de olho em commodities e logística global",
-        "fonte": {
-          "t": "PLA conducts live-fire drills in Taiwan Strait after Beijing calls Lai speech 'reckless' — SCMP",
-          "u": "https://www.scmp.com/news/china/military/article/3361554/pla-conducts-2-days-live-fire-drills-taiwan-strait-fujian-island"
-        },
+        "t": "Triângulo do Lítio 2026: Argentina, Chile e Bolívia Têm 50% das Reservas Globais — EUA vs China Disputam Quem Controla",
+        "resumo": "Argentina, Chile e Bolívia concentram ~50% das reservas conhecidas de lítio — o mineral das baterias de carros elétricos. Com novos governos pró-EUA no Chile e na Bolívia após eleições 2025, o equilíbrio de quem refina e exporta está mudando. A China, que controla +60% do refino global, não quer perder esse mercado.",
+        "porque": "Quem controla o lítio controla os carros elétricos do futuro. EUA e China travam uma guerra não declarada na América do Sul — e isso afeta preço de EV e geopolítica global nos próximos 20 anos.",
+        "aplicar": "Pauta para @tentandochegaratevoce: 'Por que o lítio da América do Sul pode encarecer ou baratear o seu carro elétrico?' — conecta geopolítica + América Latina + cotidiano.",
+        "plano": "1) Salve 1 artigo de referência sobre o Triângulo do Lítio · 2) Roteiro em 4 blocos: 'O que é lítio → onde está → quem quer → o que muda para o Brasil' · 3) Grave Reel explicativo de 60s · 4) Agende via Metricool quando o tema aparecer nas notícias (ex: novo acordo de mineração)",
+        "fonte": {"t": "Triângulo do Lítio — The Logistics World", "u": "https://thelogisticsworld.com/manufactura/que-es-el-triangulo-del-litio-y-cual-es-su-relevancia-economica-y-geopolitica"},
         "video": {"t": "", "u": ""}
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-10-20",
+        "id": "ads-2026-10-21",
         "top": true,
-        "t": "Google Local Services Ads (LSA) para Construtoras 2026: Apareça Acima de Todos os Anúncios e Pague Só por Lead Real",
-        "resumo": "LSA aparece ACIMA dos anúncios normais do Google, com o selo 'Google Verificado'. Você paga por lead (chamada ou mensagem real confirmada), não por clique. Para contractors em FL, o custo médio fica entre $20 e $90 por lead qualificado.",
-        "porque": "Diferente do Google Ads convencional, LSA exige verificação de licença e seguro — o que filtra automaticamente concorrentes informais. O selo 'Google Verificado' gera mais confiança do que qualquer texto de anúncio.",
-        "aplicar": "Atenção: em agosto de 2026, o Google começou a migrar LSAs para dentro de campanhas Performance Max com meta pay-per-lead em algumas categorias nos EUA. Verifique se 'General Contractor' no seu ZIP já foi incluído.",
-        "plano": "1) Acesse ads.google.com/local-services-ads e verifique disponibilidade para Fort Lauderdale/seu ZIP · 2) Prepare: licença de contractor FL, certificado de seguro (COI) e reviews no Google Business Profile · 3) Configure geolocalização por cidade e CEP exatos que você atende · 4) Integre com CRM para rastrear quais leads viraram orçamentos e conversões reais",
-        "fonte": {
-          "t": "Google Local Services Ads in 2026 — Complete Setup Guide for Contractors",
-          "u": "https://pushleads.com/google-local-service-ads-in-2026-the-complete-setup-and-optimization-guide-for-contractors/"
-        },
+        "t": "Google Customer Match 2026: Sobe Sua Lista de Clientes da OPC → Google Encontra Quem É Igual — Público Proprietário que Ninguém Pode Copiar",
+        "resumo": "Customer Match permite carregar e-mails de clientes reais da Oak Park Construction no Google Ads. A plataforma faz o match com contas Google e cria um público proprietário — impossível de comprar. Use para excluir clientes atuais de prospecção e criar audiências similares de projetos fechados com o perfil certo.",
+        "porque": "Com CPC alto em construção ($15-50), cada clique conta. Seu relatório semanal mostra 9 ligações mas só 2 conversões — Customer Match foca verba em leads com perfil de projeto real.",
+        "aplicar": "Exporte e-mails de clientes fechados do CRM da OPC → carregue no Google Ads como Customer Match → ative Similar Audiences em campanhas de prospecção.",
+        "plano": "1) Exporte lista de e-mails de clientes fechados do CRM da Oak Park · 2) No Google Ads: Ferramentas → Biblioteca de Públicos → Segmentos de Dados → Adicionar → Carregar arquivo · 3) Ative primeiro como 'Observação' nas campanhas Search e monitore CTR e conversão · 4) Quando confirmar melhora, suba para 'Segmentação' e aumente lances 30-50% para esse público",
+        "fonte": {"t": "Google Customer Match — Store Growers", "u": "https://www.storegrowers.com/google-customer-match/"},
         "video": {"t": "", "u": ""}
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-10-20",
+        "id": "iafim-2026-10-21",
         "top": true,
-        "t": "Relevance AI 2026: Plataforma Low-Code para Criar Agentes que Terminam Tarefas por Você — Free Tier com 200 Ações/mês",
-        "resumo": "Relevance AI permite criar agentes que executam workflows complexos: pesquisar, redigir, aprovar e enviar. Diferente do Make ou n8n que conectam apps, aqui o agente toma decisões — lê um brief, pesquisa, escreve rascunho e pede aprovação antes de enviar.",
-        "porque": "Para quem tem TDAH e pipelines como os seus (ads, conteúdo, leads), um agente que completa a tarefa do início ao fim — sem você precisar lembrar de cada passo — vale mais do que qualquer ferramenta de automação passiva.",
-        "aplicar": "Caso de uso OPC: agente que monitora novos leads do Google Ads, pesquisa o endereço, gera um e-mail personalizado de boas-vindas e salva o contato no Google Sheets. Custo: zero no plano gratuito até 200 ações/mês.",
-        "plano": "1) Acesse relevanceai.com — crie conta gratuita · 2) Explore os templates prontos: 'Lead Follow-up Agent' ou 'Research Agent' · 3) Conecte Gmail e Google Sheets como ferramentas do agente · 4) Defina a tarefa em linguagem natural e teste com dados dos últimos 5 leads OPC — ajuste até funcionar",
-        "fonte": {
-          "t": "Is Relevance AI worth it in 2026? A detailed review",
-          "u": "https://automationatlas.io/answers/relevance-ai-review-2026/"
-        },
+        "t": "Gumloop 2026: $50M Captados — Agentes IA Visuais que Rodam no Seu E-mail e Slack, Sem Uma Linha de Código",
+        "resumo": "Gumloop captou $50M em março de 2026 (Series B). Agentes criados num canvas visual — conecta nós, define modelo de IA e instruções em linguagem natural. Clientes incluem Shopify, Ramp e Gusto. Agentes nativos para Gmail, Slack e Teams. Antes chamado AgentHub.",
+        "porque": "A maioria das plataformas de agentes exige Python ou n8n. Gumloop foi construído para operadores de negócio que querem automatizar sem engenheiro — exatamente o gap da OPC.",
+        "aplicar": "Crie um agente que lê e-mails de pedido de orçamento da OPC, extrai nome/projeto/bairro e atualiza automaticamente uma planilha de leads — sem código.",
+        "plano": "1) Acesse gumloop.com e crie conta (free tier disponível) · 2) Abra o canvas e explore os conectores de Gmail e Google Sheets · 3) Monte o workflow: Gatilho = novo e-mail da OPC → Extrai informações do pedido → Adiciona linha na planilha CRM · 4) Teste com 5 e-mails reais e refine as instruções",
+        "fonte": {"t": "Gumloop $50M Series B — SiliconAngle", "u": "https://siliconangle.com/2026/03/13/gumloop-reels-50m-ai-automation-platform/"},
         "video": {"t": "", "u": ""}
       }
     ]

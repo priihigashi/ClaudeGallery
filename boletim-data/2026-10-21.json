@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-21",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "🎬 HeyGen",
+      "t": "HeyGen Primeira Semana — Chegou o E-mail de Onboarding: 3 Tutoriais para Vídeos Profissionais",
+      "why": "E-mail de boas-vindas chegou hoje de manhã — aproveite para completar a configuração do avatar antes que a janela de onboarding feche",
+      "go": "obra"
+    },
+    {
+      "tag": "📊 Ads OPC",
+      "t": "OPC Ads Semana: $283 Gastos, 4.96% CTR — Mas Só 2 Conversões em 9 Ligações",
+      "why": "Report de 19/10: CTR está bom, mas taxa ligação→projeto está baixa. Customer Match pode direcionar verba para leads com perfil de cliente real",
+      "go": "ads"
+    },
+    {
+      "tag": "💳 Custos IA",
+      "t": "Finance Check de IA Hoje às 10h — Revise Cobranças de Anthropic, OpenAI e Subscriptions",
+      "why": "Calendário marca revisão de cobranças de IA para hoje. Anthropic esteve com crédito baixo esta semana — momento certo para reabastecer e auditar o que está rodando",
+      "go": "iafim"
+    },
+    {
+      "tag": "📱 TikTok",
+      "t": "Post @tentandochegaratevoce Agendado para Hoje 12h30 — Confirme se Publicou",
+      "why": "Metricool agendou novo post no TikTok para hoje às 12h30. Na semana passada houve falha de publicação — verifique manualmente no app às 12h35",
+      "go": "conteudo"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-21",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-10-21",
+        "top": true,
+        "t": "Temptation Bundling para TDAH: Emparelhe a Tarefa Chata com o Que Você Ama — e o Cérebro Para de Resistir",
+        "resumo": "Criado por Katy Milkman (Wharton), Temptation Bundling é simples: você só pode fazer a atividade prazerosa enquanto faz a tarefa difícil. No estudo original, frequência na academia subiu quando participantes recebiam audiobooks acessíveis só lá. Para TDAH, é poderoso porque entrega dopamina imediata — a moeda que o cérebro TDAH precisa para agir.",
+        "porque": "Cérebros TDAH respondem mal a recompensas atrasadas. Temptation Bundling cria recompensa no exato momento da tarefa, alinhando motivação e obrigação sem forçar willpower.",
+        "aplicar": "Revisão de posts OPC → só com podcast favorito. Fazer planilha financeira → só com café especial. Organizar e-mails → só enquanto assiste a algo no segundo monitor.",
+        "plano": "1) Liste 3 tarefas que você empurra toda semana · 2) Liste 3 atividades prazerosas que cabem nesse tempo · 3) Crie 3 'bundles': tarefa + prazer inseparáveis · 4) Regra rígida: o prazer só ativa na tarefa e para quando a tarefa para",
+        "fonte": {"t": "Temptation Bundling — NessLabs", "u": "https://nesslabs.com/temptation-bundling"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-10-21",
+        "top": true,
+        "t": "Tacos de Jackfruit Desfiado com Guacamole e Salsa — 20 Min, Vegano, Kid-Friendly",
+        "resumo": "Jackfruit verde em lata vira 'carne' desfiada que engana carnívoros. Tempere com cominho e páprica defumada, sirva em tortilha de milho com guacamole. Cada um monta o seu na mesa — as crianças adoram a dinâmica.",
+        "porque": "Jackfruit verde absorve temperos como esponja e tem textura de pulled pork. Receita de montagem coletiva = zero briga na hora do jantar.",
+        "aplicar": "Compre jackfruit verde em água ou salmoura (não em calda de açúcar). Um pacote de tempero tex-mex encurta o preparo nos dias corridos.",
+        "plano": "1) Escorra 1 lata de jackfruit verde (400g), desfie com dois garfos · 2) Refogue com azeite, ½ cebola, 2 dentes de alho, 1 col. chá de cominho e páprica defumada por 15 min · 3) Aqueça tortilhas de milho na frigideira seca · 4) Monte a 'taco bar' na mesa: jackfruit, guacamole (abacate + limão + sal), salsa, coentro — cada um monta o seu",
+        "fonte": {"t": "Vegan Jackfruit Tacos — Alphafoodie", "u": "https://www.alphafoodie.com/rainbow-vegan-tacos/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-10-21",
+        "top": true,
+        "t": "Contrado POD 2026: Qualidade Premium do Reino Unido, Produção em 24h e 4.7★ na Shopify — Diferente das Gráficas de Massa",
+        "resumo": "Contrado é um POD britânico especializado em tecidos premium com produção em 1-2 dias e envio expresso de ~5 dias para EUA e Europa. Avaliação 4.7 estrelas na Shopify, sem mensalidade. Diferente de Printify e Gelato — foco em qualidade de material e acabamento, não volume.",
+        "porque": "Para longlines femininas e peças premium, a qualidade do tecido é o diferencial que justifica preço maior. Contrado seleciona materiais acima da média do mercado POD.",
+        "aplicar": "Peça amostras físicas antes de qualquer lançamento — a plataforma incentiva isso. Ideal para coleções pequenas com margem maior por peça.",
+        "plano": "1) Crie conta grátis em contrado.com · 2) Filtre por 'Women's Tops' e 'Long Sleeve' no catálogo · 3) Escolha 2 opções e peça amostras com seu design · 4) Compare textura, cor e prazo com Printify/CustomCat — só então decida",
+        "fonte": {"t": "Contrado Print on Demand — contrado.com", "u": ""},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-10-21",
+        "top": true,
+        "t": "Pictory AI 2026: Cole a URL do Blog ou Roteiro → IA Monta Vídeo com B-Roll, Legenda e Narração em Menos de 5 Minutos",
+        "resumo": "Pictory lê qualquer texto (URL de blog, roteiro, newsletter) e monta um vídeo com imagens de stock relevantes, legenda automática e narração de IA. Sem edição manual — você aprova e exporta. Perfeito para transformar posts da Oak Park Construction em Reels e YouTube Shorts.",
+        "porque": "Você já tem o texto — posts do blog, legendas do Instagram, roteiros. Pictory transforma esse conteúdo escrito em vídeo sem precisar gravar nada, desbloqueando conteúdo represado.",
+        "aplicar": "Cole a URL de um post do blog da OPC → Pictory monta vídeo de 60s com imagens de reforma, legenda e narração. Exporte em 9:16 direto para Reels.",
+        "plano": "1) Acesse pictory.ai e crie conta (plano gratuito disponível) · 2) Escolha 'Article to Video' e cole a URL de um post do blog da OPC · 3) Ajuste o visual e troque imagens que não ficaram boas · 4) Exporte em 9:16 e poste como Reel da Oak Park",
+        "fonte": {"t": "Pictory AI Review 2026 — Firebear Studio", "u": "https://firebearstudio.com/blog/pictory-ai-review.html"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-10-21",
+        "top": true,
+        "t": "Sora 2 (OpenAI) 2026: Foto da Reforma → Vídeo 1080p com Câmera em Movimento — O Mais Realista do Mercado, no ChatGPT Plus",
+        "resumo": "OpenAI lançou Sora 2 em setembro de 2025: gera vídeos de 15-25 segundos em 1080p a partir de texto ou foto, com câmera em movimento fluido. Disponível para ChatGPT Plus e Pro. Diferente de Kling, Pika e Hailuo — parceria com Disney garante realismo de luz e física superior.",
+        "porque": "Para mostrar uma reforma com luz natural e câmera percorrendo o cômodo renovado, Sora 2 entrega o resultado mais próximo de um vídeo filmado de verdade — sem câmera, sem set.",
+        "aplicar": "Foto do antes/depois de uma reforma OPC → clipe com câmera se movendo pelo cômodo. Use como hook visual nos primeiros 3 segundos do Reel.",
+        "plano": "1) Acesse chat.openai.com (requer ChatGPT Plus) ou entre na lista de espera em openai.com/sora · 2) Faça upload da foto do cômodo reformado · 3) Descreva o movimento: ex. 'slow push in, warm natural light, modern kitchen remodel' · 4) Gere 2-3 variações e use o melhor como hook do Reel",
+        "fonte": {"t": "OpenAI Sora 2 vs Instagram Reels — Analytics India Mag", "u": "https://analyticsindiamag.com/ai-news-updates/openai-to-challenge-tiktok-and-instagram-with-sora-2"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-10-21",
+        "top": true,
+        "t": "Triângulo do Lítio 2026: Argentina, Chile e Bolívia Têm 50% das Reservas Globais — EUA vs China Disputam Quem Controla",
+        "resumo": "Argentina, Chile e Bolívia concentram ~50% das reservas conhecidas de lítio — o mineral das baterias de carros elétricos. Com novos governos pró-EUA no Chile e na Bolívia após eleições 2025, o equilíbrio de quem refina e exporta está mudando. A China, que controla +60% do refino global, não quer perder esse mercado.",
+        "porque": "Quem controla o lítio controla os carros elétricos do futuro. EUA e China travam uma guerra não declarada na América do Sul — e isso afeta preço de EV e geopolítica global nos próximos 20 anos.",
+        "aplicar": "Pauta para @tentandochegaratevoce: 'Por que o lítio da América do Sul pode encarecer ou baratear o seu carro elétrico?' — conecta geopolítica + América Latina + cotidiano.",
+        "plano": "1) Salve 1 artigo de referência sobre o Triângulo do Lítio · 2) Roteiro em 4 blocos: 'O que é lítio → onde está → quem quer → o que muda para o Brasil' · 3) Grave Reel explicativo de 60s · 4) Agende via Metricool quando o tema aparecer nas notícias (ex: novo acordo de mineração)",
+        "fonte": {"t": "Triângulo do Lítio — The Logistics World", "u": "https://thelogisticsworld.com/manufactura/que-es-el-triangulo-del-litio-y-cual-es-su-relevancia-economica-y-geopolitica"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-10-21",
+        "top": true,
+        "t": "Google Customer Match 2026: Sobe Sua Lista de Clientes da OPC → Google Encontra Quem É Igual — Público Proprietário que Ninguém Pode Copiar",
+        "resumo": "Customer Match permite carregar e-mails de clientes reais da Oak Park Construction no Google Ads. A plataforma faz o match com contas Google e cria um público proprietário — impossível de comprar. Use para excluir clientes atuais de prospecção e criar audiências similares de projetos fechados com o perfil certo.",
+        "porque": "Com CPC alto em construção ($15-50), cada clique conta. Seu relatório semanal mostra 9 ligações mas só 2 conversões — Customer Match foca verba em leads com perfil de projeto real.",
+        "aplicar": "Exporte e-mails de clientes fechados do CRM da OPC → carregue no Google Ads como Customer Match → ative Similar Audiences em campanhas de prospecção.",
+        "plano": "1) Exporte lista de e-mails de clientes fechados do CRM da Oak Park · 2) No Google Ads: Ferramentas → Biblioteca de Públicos → Segmentos de Dados → Adicionar → Carregar arquivo · 3) Ative primeiro como 'Observação' nas campanhas Search e monitore CTR e conversão · 4) Quando confirmar melhora, suba para 'Segmentação' e aumente lances 30-50% para esse público",
+        "fonte": {"t": "Google Customer Match — Store Growers", "u": "https://www.storegrowers.com/google-customer-match/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-10-21",
+        "top": true,
+        "t": "Gumloop 2026: $50M Captados — Agentes IA Visuais que Rodam no Seu E-mail e Slack, Sem Uma Linha de Código",
+        "resumo": "Gumloop captou $50M em março de 2026 (Series B). Agentes criados num canvas visual — conecta nós, define modelo de IA e instruções em linguagem natural. Clientes incluem Shopify, Ramp e Gusto. Agentes nativos para Gmail, Slack e Teams. Antes chamado AgentHub.",
+        "porque": "A maioria das plataformas de agentes exige Python ou n8n. Gumloop foi construído para operadores de negócio que querem automatizar sem engenheiro — exatamente o gap da OPC.",
+        "aplicar": "Crie um agente que lê e-mails de pedido de orçamento da OPC, extrai nome/projeto/bairro e atualiza automaticamente uma planilha de leads — sem código.",
+        "plano": "1) Acesse gumloop.com e crie conta (free tier disponível) · 2) Abra o canvas e explore os conectores de Gmail e Google Sheets · 3) Monte o workflow: Gatilho = novo e-mail da OPC → Extrai informações do pedido → Adiciona linha na planilha CRM · 4) Teste com 5 e-mails reais e refine as instruções",
+        "fonte": {"t": "Gumloop $50M Series B — SiliconAngle", "u": "https://siliconangle.com/2026/03/13/gumloop-reels-50m-ai-automation-platform/"},
+        "video": {"t": "", "u": ""}
+      }
+    ]
+  }
+}
