@@ -1,35 +1,35 @@
 {
-  "date": "2026-10-21",
+  "date": "2026-10-22",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "🎬 HeyGen",
-      "t": "HeyGen Primeira Semana — Chegou o E-mail de Onboarding: 3 Tutoriais para Vídeos Profissionais",
-      "why": "E-mail de boas-vindas chegou hoje de manhã — aproveite para completar a configuração do avatar antes que a janela de onboarding feche",
-      "go": "obra"
+      "tag": "📚 Real Estate",
+      "t": "Estudos de imóveis: bloco matinal inegociável",
+      "why": "Calendário mostra 'REAL ESTATE — FIRST THING (Rule 1, do not skip)' todos os dias — sinal claro de prioridade ativa.",
+      "go": "tip"
     },
     {
-      "tag": "📊 Ads OPC",
-      "t": "OPC Ads Semana: $283 Gastos, 4.96% CTR — Mas Só 2 Conversões em 9 Ligações",
-      "why": "Report de 19/10: CTR está bom, mas taxa ligação→projeto está baixa. Customer Match pode direcionar verba para leads com perfil de cliente real",
-      "go": "ads"
+      "tag": "📸 OPC Conteúdo",
+      "t": "338 posts da Oak Park esperando aprovação",
+      "why": "E-mail de aprovações pendentes com 338 posts na fila — momento ideal para usar IA e agilizar o fluxo de revisão.",
+      "go": "conteudo"
     },
     {
-      "tag": "💳 Custos IA",
-      "t": "Finance Check de IA Hoje às 10h — Revise Cobranças de Anthropic, OpenAI e Subscriptions",
-      "why": "Calendário marca revisão de cobranças de IA para hoje. Anthropic esteve com crédito baixo esta semana — momento certo para reabastecer e auditar o que está rodando",
+      "tag": "💳 Créditos Anthropic",
+      "t": "Pipeline bloqueada: créditos Anthropic esgotados",
+      "why": "Dois alertas de quota_exceeded no e-mail hoje — automações paradas. Recarregar em console.anthropic.com/settings/billing.",
       "go": "iafim"
     },
     {
-      "tag": "📱 TikTok",
-      "t": "Post @tentandochegaratevoce Agendado para Hoje 12h30 — Confirme se Publicou",
-      "why": "Metricool agendou novo post no TikTok para hoje às 12h30. Na semana passada houve falha de publicação — verifique manualmente no app às 12h35",
-      "go": "conteudo"
+      "tag": "📊 Ads Pipeline",
+      "t": "ads_pulse.yml falhou no GitHub Actions",
+      "why": "E-mail de falha no workflow de monitoramento de ads — pode estar perdendo dados de performance da OPC.",
+      "go": "ads"
     }
   ],
   "history": [
     {
-      "date": "2026-10-21",
+      "date": "2026-10-22",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,106 +37,154 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-10-21",
+        "id": "tip-2026-10-22",
         "top": true,
-        "t": "Temptation Bundling para TDAH: Emparelhe a Tarefa Chata com o Que Você Ama — e o Cérebro Para de Resistir",
-        "resumo": "Criado por Katy Milkman (Wharton), Temptation Bundling é simples: você só pode fazer a atividade prazerosa enquanto faz a tarefa difícil. No estudo original, frequência na academia subiu quando participantes recebiam audiobooks acessíveis só lá. Para TDAH, é poderoso porque entrega dopamina imediata — a moeda que o cérebro TDAH precisa para agir.",
-        "porque": "Cérebros TDAH respondem mal a recompensas atrasadas. Temptation Bundling cria recompensa no exato momento da tarefa, alinhando motivação e obrigação sem forçar willpower.",
-        "aplicar": "Revisão de posts OPC → só com podcast favorito. Fazer planilha financeira → só com café especial. Organizar e-mails → só enquanto assiste a algo no segundo monitor.",
-        "plano": "1) Liste 3 tarefas que você empurra toda semana · 2) Liste 3 atividades prazerosas que cabem nesse tempo · 3) Crie 3 'bundles': tarefa + prazer inseparáveis · 4) Regra rígida: o prazer só ativa na tarefa e para quando a tarefa para",
-        "fonte": {"t": "Temptation Bundling — NessLabs", "u": "https://nesslabs.com/temptation-bundling"},
-        "video": {"t": "", "u": ""}
+        "t": "MIT para TDAH: Defina a 1 Tarefa Mais Importante na Noite Anterior — e Faça Ela Antes de Abrir Qualquer Tela",
+        "resumo": "MIT (Most Important Task): antes de dormir, anote 1 tarefa que, se concluída amanhã, fará o dia valer a pena. De manhã execute ela primeiro — a decisão já está tomada. O gatilho externo elimina a paralisia decisória matinal que esgota o TDAH antes de começar.",
+        "porque": "Sem MIT definida, o TDAH responde ao que aparece primeiro na tela — e-mail, Instagram, notificação — não ao que mais importa. A energia cognitiva vai para decidir o que fazer, não para fazer.",
+        "aplicar": "Combine com o bloco de Real Estate matinal: defina o MIT junto com o Real Estate da manhã na noite anterior. Bloqueie os primeiros 90 min do dia para MIT + estudo, sem abrir e-mail.",
+        "plano": "1) Às 21h de hoje: anote 1 MIT + 2 tarefas de apoio em papel ou app · 2) Bloqueie 90 min no calendário como 'Modo Foco — MIT' · 3) Amanhã: execute a MIT antes de abrir e-mail ou Instagram · 4) Após 21 dias, revise: quais MITs você mais concluiu — isso revela o que realmente importa",
+        "fonte": {
+          "t": "MIT Method — Ellie Planner",
+          "u": ""
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-10-21",
+        "id": "receita-2026-10-22",
         "top": true,
-        "t": "Tacos de Jackfruit Desfiado com Guacamole e Salsa — 20 Min, Vegano, Kid-Friendly",
-        "resumo": "Jackfruit verde em lata vira 'carne' desfiada que engana carnívoros. Tempere com cominho e páprica defumada, sirva em tortilha de milho com guacamole. Cada um monta o seu na mesa — as crianças adoram a dinâmica.",
-        "porque": "Jackfruit verde absorve temperos como esponja e tem textura de pulled pork. Receita de montagem coletiva = zero briga na hora do jantar.",
-        "aplicar": "Compre jackfruit verde em água ou salmoura (não em calda de açúcar). Um pacote de tempero tex-mex encurta o preparo nos dias corridos.",
-        "plano": "1) Escorra 1 lata de jackfruit verde (400g), desfie com dois garfos · 2) Refogue com azeite, ½ cebola, 2 dentes de alho, 1 col. chá de cominho e páprica defumada por 15 min · 3) Aqueça tortilhas de milho na frigideira seca · 4) Monte a 'taco bar' na mesa: jackfruit, guacamole (abacate + limão + sal), salsa, coentro — cada um monta o seu",
-        "fonte": {"t": "Vegan Jackfruit Tacos — Alphafoodie", "u": "https://www.alphafoodie.com/rainbow-vegan-tacos/"},
-        "video": {"t": "", "u": ""}
+        "t": "Pad Thai Vegano com Tofu Crocante e Amendoim — 20 Min, Sem Glúten, Kid-Friendly",
+        "resumo": "Macarrão de arroz refogado com tofu dourado, cenoura, brócolis, broto de feijão e molho de amendoim + shoyu + limão. Colorido, proteico e rápido. As crianças adoram sem perceber que é vegano.",
+        "porque": "Macarrão de arroz é naturalmente sem glúten, o tofu absorve o molho e fica com textura de frango frito. Nenhum ingrediente de peixe ou frutos do mar. Ingredientes fáceis em qualquer mercado.",
+        "aplicar": "Sirva o molho de pimenta à parte para as crianças. Troque tofu por grão-de-bico crocante se preferir. O molho (amendoim + shoyu + limão + açúcar) dura 2 semanas na geladeira — faça em dobro.",
+        "plano": "1) Deixe macarrão de arroz de molho em água fria por 20 min · 2) Frite tofu em cubos no azeite até dourar (8 min, sem mexer) · 3) Refogue cenoura e brócolis, junte o macarrão escorrido · 4) Misture molho e sirva com brotos e amendoim moído",
+        "fonte": {
+          "t": "Vegan Pad Thai — Minimalist Baker",
+          "u": ""
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-10-21",
+        "id": "merch-2026-10-22",
         "top": true,
-        "t": "Contrado POD 2026: Qualidade Premium do Reino Unido, Produção em 24h e 4.7★ na Shopify — Diferente das Gráficas de Massa",
-        "resumo": "Contrado é um POD britânico especializado em tecidos premium com produção em 1-2 dias e envio expresso de ~5 dias para EUA e Europa. Avaliação 4.7 estrelas na Shopify, sem mensalidade. Diferente de Printify e Gelato — foco em qualidade de material e acabamento, não volume.",
-        "porque": "Para longlines femininas e peças premium, a qualidade do tecido é o diferencial que justifica preço maior. Contrado seleciona materiais acima da média do mercado POD.",
-        "aplicar": "Peça amostras físicas antes de qualquer lançamento — a plataforma incentiva isso. Ideal para coleções pequenas com margem maior por peça.",
-        "plano": "1) Crie conta grátis em contrado.com · 2) Filtre por 'Women's Tops' e 'Long Sleeve' no catálogo · 3) Escolha 2 opções e peça amostras com seu design · 4) Compare textura, cor e prazo com Printify/CustomCat — só então decida",
-        "fonte": {"t": "Contrado Print on Demand — contrado.com", "u": ""},
-        "video": {"t": "", "u": ""}
+        "t": "Printful 2026: Bordado Real em Longlines Femininas — Produção Própria nos EUA e Europa, Sem Taxa Mensal, Mas Peça Amostra Antes",
+        "resumo": "Printful opera suas próprias gráficas (não terceiriza), garantindo consistência entre pedidos. Bordado real disponível, longlines femininas em algodão 100%. Sem taxa mensal — você paga só quando vende. Reviews elogiam durabilidade do bordado, mas designs complexos têm variação — prefira ≤5 cores.",
+        "porque": "Diferente de Printify (marketplace de fornecedores variados), Printful controla a produção internamente. Menor variação de qualidade, embalagem premium e mockup generator gratuito para fotos profissionais sem produto físico.",
+        "aplicar": "Ideal para lançar coleção pequena (10–20 designs) sem risco de estoque. Peça amostras com desconto antes de colocar à venda. Designs simples e vetorizados em ≤5 cores têm resultado mais consistente no bordado.",
+        "plano": "1) Crie conta gratuita em printful.com e explore catálogo de longlines + bordados · 2) Desenvolva design vetorizado ≤5 cores, sem detalhes finos · 3) Peça amostra física antes de ativar a loja · 4) Leia reviews de compradores reais no Shopify App Store antes de escalar",
+        "fonte": {
+          "t": "Printful — Products & Pricing",
+          "u": "https://www.printful.com/products"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-10-21",
+        "id": "conteudo-2026-10-22",
         "top": true,
-        "t": "Pictory AI 2026: Cole a URL do Blog ou Roteiro → IA Monta Vídeo com B-Roll, Legenda e Narração em Menos de 5 Minutos",
-        "resumo": "Pictory lê qualquer texto (URL de blog, roteiro, newsletter) e monta um vídeo com imagens de stock relevantes, legenda automática e narração de IA. Sem edição manual — você aprova e exporta. Perfeito para transformar posts da Oak Park Construction em Reels e YouTube Shorts.",
-        "porque": "Você já tem o texto — posts do blog, legendas do Instagram, roteiros. Pictory transforma esse conteúdo escrito em vídeo sem precisar gravar nada, desbloqueando conteúdo represado.",
-        "aplicar": "Cole a URL de um post do blog da OPC → Pictory monta vídeo de 60s com imagens de reforma, legenda e narração. Exporte em 9:16 direto para Reels.",
-        "plano": "1) Acesse pictory.ai e crie conta (plano gratuito disponível) · 2) Escolha 'Article to Video' e cole a URL de um post do blog da OPC · 3) Ajuste o visual e troque imagens que não ficaram boas · 4) Exporte em 9:16 e poste como Reel da Oak Park",
-        "fonte": {"t": "Pictory AI Review 2026 — Firebear Studio", "u": "https://firebearstudio.com/blog/pictory-ai-review.html"},
-        "video": {"t": "", "u": ""}
+        "t": "InVideo AI 2026: Escreva o Prompt → IA Monta Roteiro, Escolhe B-Roll, Narra e Exporta — Sem Timeline, 2000 Vídeos/Mês no Plano Grátis",
+        "resumo": "InVideo AI parte de um prompt de texto e gera vídeo completo: cenas de stock relevantes, narração com voz IA, legendas animadas e música de fundo. Você edita via chat — 'mude o tom para descontraído' ou 'troque essa cena' funcionam. Diferente de Opus Clip (recorta vídeos existentes), InVideo cria do zero.",
+        "porque": "Com 338 posts OPC na fila de aprovação, o InVideo AI pode gerar vídeos de antes/depois de reforma a partir de uma descrição simples — sem gravar, sem editar timeline. Cada vídeo leva 5 min vs horas de edição manual.",
+        "aplicar": "Revise o roteiro antes de renderizar: a IA erra nomes de produtos e @ do seu perfil. Use para temas de reforma que já tem aprovados — o volume alto da fila é o caso de uso ideal.",
+        "plano": "1) Crie conta em invideo.io e escolha template Reels 9:16 · 2) Escreva prompt: 'Reel de 45s reforma de banheiro antes/depois, tom profissional, PT-BR' · 3) Edite via chat: ajuste narração, troque clipes, corrija marcas · 4) Exporte 1080p, agende no Instagram — teste com 5 posts antes de escalar",
+        "fonte": {
+          "t": "InVideo AI — Text to Video",
+          "u": "https://invideo.io/ai"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-10-21",
+        "id": "obra-2026-10-22",
         "top": true,
-        "t": "Sora 2 (OpenAI) 2026: Foto da Reforma → Vídeo 1080p com Câmera em Movimento — O Mais Realista do Mercado, no ChatGPT Plus",
-        "resumo": "OpenAI lançou Sora 2 em setembro de 2025: gera vídeos de 15-25 segundos em 1080p a partir de texto ou foto, com câmera em movimento fluido. Disponível para ChatGPT Plus e Pro. Diferente de Kling, Pika e Hailuo — parceria com Disney garante realismo de luz e física superior.",
-        "porque": "Para mostrar uma reforma com luz natural e câmera percorrendo o cômodo renovado, Sora 2 entrega o resultado mais próximo de um vídeo filmado de verdade — sem câmera, sem set.",
-        "aplicar": "Foto do antes/depois de uma reforma OPC → clipe com câmera se movendo pelo cômodo. Use como hook visual nos primeiros 3 segundos do Reel.",
-        "plano": "1) Acesse chat.openai.com (requer ChatGPT Plus) ou entre na lista de espera em openai.com/sora · 2) Faça upload da foto do cômodo reformado · 3) Descreva o movimento: ex. 'slow push in, warm natural light, modern kitchen remodel' · 4) Gere 2-3 variações e use o melhor como hook do Reel",
-        "fonte": {"t": "OpenAI Sora 2 vs Instagram Reels — Analytics India Mag", "u": "https://analyticsindiamag.com/ai-news-updates/openai-to-challenge-tiktok-and-instagram-with-sora-2"},
-        "video": {"t": "", "u": ""}
+        "t": "Runway Gen-3 Alpha 2026: Foto da Reforma → Clipe com Câmera em Movimento para Reels — 25 Créditos Grátis por Mês, Sem Baixar Nada",
+        "resumo": "Runway Gen-3 Alpha converte 1 foto em clipe de até 10 s com câmera em movimento realista. Para reforma: 'câmera pan suave da esquerda para a direita revelando a cozinha reformada' vira um Reel cinematográfico. 25 créditos gratuitos por mês — suficiente para ~5–8 clipes.",
+        "porque": "Reels com câmera em movimento têm até 2× mais retenção que fotos estáticas. Runway tem a melhor preservação de textura de materiais (porcelanato, madeira) em ambientes internos — essencial para antes/depois de reforma.",
+        "aplicar": "Descreva o movimento no prompt para resultado controlado. Combine com o ElevenLabs (que você acabou de acessar) para adicionar narração profissional ao clipe gerado.",
+        "plano": "1) Acesse app.runwayml.com (25 créditos grátis) e escolha Gen-3 Alpha > Image to Video · 2) Suba foto da reforma concluída · 3) Descreva: 'slow pan left to right, warm interior lighting, modern kitchen reveal' · 4) Exporte e adicione narração com ElevenLabs — Reel pronto em 15 min",
+        "fonte": {
+          "t": "Runway — Gen-3 Alpha",
+          "u": "https://runwayml.com"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-10-21",
+        "id": "geo-2026-10-22",
         "top": true,
-        "t": "Triângulo do Lítio 2026: Argentina, Chile e Bolívia Têm 50% das Reservas Globais — EUA vs China Disputam Quem Controla",
-        "resumo": "Argentina, Chile e Bolívia concentram ~50% das reservas conhecidas de lítio — o mineral das baterias de carros elétricos. Com novos governos pró-EUA no Chile e na Bolívia após eleições 2025, o equilíbrio de quem refina e exporta está mudando. A China, que controla +60% do refino global, não quer perder esse mercado.",
-        "porque": "Quem controla o lítio controla os carros elétricos do futuro. EUA e China travam uma guerra não declarada na América do Sul — e isso afeta preço de EV e geopolítica global nos próximos 20 anos.",
-        "aplicar": "Pauta para @tentandochegaratevoce: 'Por que o lítio da América do Sul pode encarecer ou baratear o seu carro elétrico?' — conecta geopolítica + América Latina + cotidiano.",
-        "plano": "1) Salve 1 artigo de referência sobre o Triângulo do Lítio · 2) Roteiro em 4 blocos: 'O que é lítio → onde está → quem quer → o que muda para o Brasil' · 3) Grave Reel explicativo de 60s · 4) Agende via Metricool quando o tema aparecer nas notícias (ex: novo acordo de mineração)",
-        "fonte": {"t": "Triângulo do Lítio — The Logistics World", "u": "https://thelogisticsworld.com/manufactura/que-es-el-triangulo-del-litio-y-cual-es-su-relevancia-economica-y-geopolitica"},
-        "video": {"t": "", "u": ""}
+        "t": "Ártico 2026: Rota Polar da Seda — China e Rússia Aceleram Corrida pelo Gelo que Vira Poder e Encurta em 40% o Caminho Europa-Ásia",
+        "resumo": "O degelo abre a Rota Marítima do Norte (costa russa), 40% mais curta que Suez. China investiu $90bi na infraestrutura ártica russa e faz patrulhas navais conjuntas. O Ártico concentra ~20% das reservas mundiais de petróleo não descoberto. EUA reforçou presença na Groenlândia em 2025.",
+        "porque": "Quem controlar o Ártico controla a rota comercial e energética estratégica do século XXI. Fretes mais baratos por essa rota afetam preço de commodities (aço, alumínio) que impactam diretamente a construção civil.",
+        "aplicar": "Pauta para conteúdo OPC: 'Por que o Ártico afeta o preço dos seus materiais de construção?' — conecta geopolítica ao cotidiano de forma única e gera engajamento diferenciado.",
+        "plano": "1) Explique a Rota Marítima do Norte — 40% mais curta que Suez, já operacional · 2) Compare atores: Rússia (território), China ($90bi investidos), EUA/OTAN (Groenlândia) · 3) Cite os recursos: ~20% do petróleo não descoberto do mundo · 4) Conecte ao impacto local: fretes afetam importações de materiais de construção",
+        "fonte": {
+          "t": "Arctic Council — State of the Arctic",
+          "u": ""
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-10-21",
+        "id": "ads-2026-10-22",
         "top": true,
-        "t": "Google Customer Match 2026: Sobe Sua Lista de Clientes da OPC → Google Encontra Quem É Igual — Público Proprietário que Ninguém Pode Copiar",
-        "resumo": "Customer Match permite carregar e-mails de clientes reais da Oak Park Construction no Google Ads. A plataforma faz o match com contas Google e cria um público proprietário — impossível de comprar. Use para excluir clientes atuais de prospecção e criar audiências similares de projetos fechados com o perfil certo.",
-        "porque": "Com CPC alto em construção ($15-50), cada clique conta. Seu relatório semanal mostra 9 ligações mas só 2 conversões — Customer Match foca verba em leads com perfil de projeto real.",
-        "aplicar": "Exporte e-mails de clientes fechados do CRM da OPC → carregue no Google Ads como Customer Match → ative Similar Audiences em campanhas de prospecção.",
-        "plano": "1) Exporte lista de e-mails de clientes fechados do CRM da Oak Park · 2) No Google Ads: Ferramentas → Biblioteca de Públicos → Segmentos de Dados → Adicionar → Carregar arquivo · 3) Ative primeiro como 'Observação' nas campanhas Search e monitore CTR e conversão · 4) Quando confirmar melhora, suba para 'Segmentação' e aumente lances 30-50% para esse público",
-        "fonte": {"t": "Google Customer Match — Store Growers", "u": "https://www.storegrowers.com/google-customer-match/"},
-        "video": {"t": "", "u": ""}
+        "t": "Google Demand Gen 2026: Apareça no YouTube Shorts, Discover e Gmail Antes de Alguém Buscar Reforma — Topo de Funil que Construtoras Ignoram",
+        "resumo": "Demand Gen (substituto do Discovery em 2024) exibe anúncios visuais no YouTube Shorts, feed do YouTube, Gmail e Discover. A IA do Google identifica quem se comporta como quem vai pesquisar reforma — e mostra seu anúncio antes da busca acontecer. CPC médio 40–60% menor que Search.",
+        "porque": "LSA e Search capturam quem JÁ quer reformar. Demand Gen cria desejo antes — mostra o projeto antes da dor surgir. Com os vídeos gerados por Runway e InVideo AI, você tem criativos prontos para essa campanha sem custo extra de produção.",
+        "aplicar": "Use os vídeos de reforma que você já gera para OPC como criativos. Segmente por interesse em home improvement + renda familiar + ZIP codes dos bairros onde a Oak Park opera. Lance com $15–20/dia para validar.",
+        "plano": "1) No Google Ads, crie campanha Demand Gen (objetivo: leads) · 2) Suba vídeo 9:16 de antes/depois da OPC + imagem estática de alta qualidade · 3) Segmente: interests 'home remodeling + kitchen/bath' + household income top 40% + bairros da OPC · 4) Ative Smart Bidding por CPL e avalie em 2 semanas",
+        "fonte": {
+          "t": "Google Ads — Demand Gen campaigns",
+          "u": "https://support.google.com/google-ads/answer/13695777"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-10-21",
+        "id": "iafim-2026-10-22",
         "top": true,
-        "t": "Gumloop 2026: $50M Captados — Agentes IA Visuais que Rodam no Seu E-mail e Slack, Sem Uma Linha de Código",
-        "resumo": "Gumloop captou $50M em março de 2026 (Series B). Agentes criados num canvas visual — conecta nós, define modelo de IA e instruções em linguagem natural. Clientes incluem Shopify, Ramp e Gusto. Agentes nativos para Gmail, Slack e Teams. Antes chamado AgentHub.",
-        "porque": "A maioria das plataformas de agentes exige Python ou n8n. Gumloop foi construído para operadores de negócio que querem automatizar sem engenheiro — exatamente o gap da OPC.",
-        "aplicar": "Crie um agente que lê e-mails de pedido de orçamento da OPC, extrai nome/projeto/bairro e atualiza automaticamente uma planilha de leads — sem código.",
-        "plano": "1) Acesse gumloop.com e crie conta (free tier disponível) · 2) Abra o canvas e explore os conectores de Gmail e Google Sheets · 3) Monte o workflow: Gatilho = novo e-mail da OPC → Extrai informações do pedido → Adiciona linha na planilha CRM · 4) Teste com 5 e-mails reais e refine as instruções",
-        "fonte": {"t": "Gumloop $50M Series B — SiliconAngle", "u": "https://siliconangle.com/2026/03/13/gumloop-reels-50m-ai-automation-platform/"},
-        "video": {"t": "", "u": ""}
+        "t": "n8n + Agentes IA 2026: Fluxo Visual Open Source que Lê E-mails, Consulta Planilhas e Age Sozinho — Self-Hosted Grátis, 90k+ Stars",
+        "resumo": "n8n v1.x tem nós de AI Agent com LangChain nativos: conecta LLM (OpenAI, Anthropic, Gemini) com ferramentas (Gmail, Google Sheets, HTTP) e o agente decide qual usar para completar a tarefa — com memória entre execuções. Self-hosted é grátis; n8n.cloud tem trial generoso.",
+        "porque": "Com os créditos Anthropic esgotando, n8n permite roteamento inteligente: usa Claude quando necessário, Gemini como fallback barato. Pode automatizar a fila de aprovação dos 338 posts OPC — lê e-mail, classifica por tema, organiza em planilha.",
+        "aplicar": "Substitua automações Make.com por n8n para fluxos de alto volume. Custo fixo de self-host ($5–10/mês no Railway) vs execuções cobradas por uso no Make — n8n ganha com >1000 execuções/mês.",
+        "plano": "1) Crie conta gratuita em n8n.io ou faça deploy no Railway.app ($5/mês) · 2) Explore templates de 'AI Agent' no marketplace (500+ prontos) · 3) Crie agente que lê e-mails de aprovação OPC e organiza por tema numa planilha · 4) Configure roteamento de LLM: Claude para tarefas complexas, Gemini para volume",
+        "fonte": {
+          "t": "n8n — AI Agents",
+          "u": "https://n8n.io/ai"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ]
   }
