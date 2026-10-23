@@ -1,0 +1,167 @@
+{
+  "date": "2026-10-23",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "📚 Real Estate",
+      "t": "Blocos diários de Real Estate na agenda — rotina de estudo ativa todo dia de manhã",
+      "why": "Estuda o exam todo dia antes de tudo; qualquer técnica de foco ou memorização ativa cai bem hoje",
+      "go": "tip"
+    },
+    {
+      "tag": "🏗️ OPC Pipeline",
+      "t": "338 posts OPC esperando aprovação — pipeline de conteúdo sobrecarregada",
+      "why": "Volume enorme acumulado; hora de avaliar automação de revisão ou batch approval com IA",
+      "go": "conteudo"
+    },
+    {
+      "tag": "⚡ Créditos IA",
+      "t": "Créditos Anthropic zerados: pipeline de captura bloqueada desde hoje cedo",
+      "why": "Alertas repetidos de quota_exceeded — automações param até repor saldo em console.anthropic.com/settings/billing",
+      "go": "iafim"
+    },
+    {
+      "tag": "📱 Metricool",
+      "t": "Facebook desconectado no Metricool — posts do @tentandochegaratevoce falhando",
+      "why": "Facebook revogou permissão; reconectar em Settings > Connections do Metricool antes do próximo agendamento",
+      "go": "conteudo"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-23",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-10-23",
+        "top": true,
+        "t": "Efeito Zeigarnik para TDAH: Pare no Meio da Tarefa de Propósito e o Cérebro Puxa Você de Volta",
+        "resumo": "Parar uma tarefa inacabada — no meio de uma frase, linha de código ou to-do — cria uma tensão cognitiva que o cérebro quer resolver. Para quem tem TDAH, isso elimina o pior obstáculo: reiniciar.",
+        "porque": "Iniciar é o maior gargalo do TDAH. Uma tarefa em aberto ativa o córtex pré-frontal automaticamente no retorno — você não precisa de força de vontade para começar de novo, o cérebro já está puxando.",
+        "aplicar": "Antes de fechar qualquer sessão de trabalho, escreva a próxima ação pela metade. Exemplo: Próximo: editar o par... ou deixe um comentário: continua aqui com X. No retorno, o fragmento funciona como âncora.",
+        "plano": "1) Nos últimos 2 min de cada bloco de foco, escreva a próxima frase incompleta no documento · 2) Feche sem terminar o pensamento (intencional) · 3) Ao retornar, leia o fragmento em voz alta — o cérebro fecha o loop · 4) Mantenha um arquivo de fragmentos abertos para projetos maiores",
+        "fonte": {
+          "t": "FocusBear: How ADHDers Can Leverage the Zeigarnik Effect",
+          "u": "https://www.focusbear.io/blog-post/how-adhders-can-leverage-the-zeigarnik-effect-for-enhanced-productivity"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-10-23",
+        "top": true,
+        "t": "Omelete de Farinha de Grão-de-Bico com Legumes e Queijo Vegano — 25 Min, Vegana, Kid-Friendly",
+        "resumo": "A farinata italiana vira omelete de frigideira: farinha de grão-de-bico + água + azeite formam uma base cremosa e proteica. Recheie com legumes coloridos e queijo vegano derretido. Sem ovo, sem leite de vaca, sem glúten.",
+        "porque": "A farinha de grão-de-bico tem 6g de proteína por 30g e vira textura de omelete ao fritar. Perfeita para crianças que não gostam de texturas estranhas — parece omelete de verdade. Queijo vegano FL derrete e completa.",
+        "aplicar": "Sirva cortada em triângulos para crianças (finger food). Funciona como lanche da tarde com legumes escondidos, ou jantar rápido com salada. Guarda bem na geladeira por 2 dias.",
+        "plano": "1) Misture 100g de farinha de grão-de-bico + 250ml de água + 1 col. sopa de azeite + sal (deixe 10 min descansar) · 2) Refogue abobrinha ou espinafre picados em frigideira antiaderente com fio de azeite · 3) Despeje a massa por cima dos legumes em fogo médio-baixo, tampe e cozinhe 10-12 min · 4) Cubra com queijo vegano, tampe mais 2 min até derreter, corte em fatias e sirva",
+        "fonte": {
+          "t": "The Mediterranean Dish: Farinata Recipe",
+          "u": "https://www.themediterraneandish.com/farinata-recipe/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-10-23",
+        "top": true,
+        "t": "Gelato POD 2026: Rede Global com Produção Local nos EUA — Entrega Mais Rápida e Plano Gratuito para Testar",
+        "resumo": "Gelato tem gráficas parceiras em 32 países incluindo os EUA, o que significa produção local = entrega em 3-5 dias. Review independente de 2025 confirma qualidade de impressão acima da média. Plano gratuito disponível.",
+        "porque": "Para vender longlines femininas nos EUA, produção local encurta o prazo e reduz frete. O Gelato+ ($24/mês) dá 20% de desconto em produtos premium e acesso a fornecedores com bordado real.",
+        "aplicar": "Teste com um produto: crie sua longline feminina no Gelato, peça uma amostra e compare com o que você já usa. Bordado funciona melhor para logos simples (até 15 cores de linha, sem gradientes).",
+        "plano": "1) Crie conta gratuita em gelato.com e navegue em Apparel > Women's T-Shirts · 2) Filtre por modelos longline e leia os reviews · 3) Faça upload de um logo simples e configure o produto · 4) Peça 1 sample antes de listar — avalie o toque do tecido e o acabamento do bordado",
+        "fonte": {
+          "t": "TopBubbleIndex: Gelato Print on Demand — A Global Review",
+          "u": "https://www.topbubbleindex.com/blog/gelato-print-on-demand-a-global-review"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-10-23",
+        "top": true,
+        "t": "Captions AI (Mirage) 2026: Legendas + B-Roll + Avatar IA em Minutos — 9.1/10 em 37 Mil Reviews",
+        "resumo": "Captions (rebatizado Mirage em março 2026 após captar $75M da General Catalyst) automatiza o fluxo completo: cortes automáticos, B-roll, legendas animadas, correção de eye contact e dublagem em 30+ idiomas. Avaliação 9.1/10 baseada em 37k reviews verificados.",
+        "porque": "Para o @tentandochegaratevoce e a OPC, Captions reduz edição de horas para minutos. O Avatar AI gera vídeos sem aparecer em câmera — útil para criar conteúdo em escala e liberar o backlog de 338 posts pendentes da OPC.",
+        "aplicar": "Teste com um Reel do @tentandochegaratevoce: faça upload do vídeo bruto, deixe a IA cortar, adicionar legendas e B-roll. Compare o tempo gasto vs edição manual no CapCut.",
+        "plano": "1) Baixe o app Captions (iOS/Android) ou acesse captions.ai no desktop · 2) Faça upload de um vídeo de 1-2 min sem edição · 3) Revise os cortes automáticos e ajuste o estilo das legendas animadas · 4) Exporte em 9:16 para Reels/TikTok e registre quanto tempo economizou",
+        "fonte": {
+          "t": "NeuronFeed: Captions Review 2026 — AI Video Editing",
+          "u": "https://neuronfeed.com/reviews/captions-review-2026"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-10-23",
+        "top": true,
+        "t": "Veo 3.1 (Google) para Reels de Reforma: Foto da Obra → Vídeo Vertical 9:16 Nativo — Sem Reframing",
+        "resumo": "A atualização Veo 3.1 de janeiro 2026 adicionou geração nativa em formato 9:16 (vertical), aceita até 3 fotos de referência e mantém maior fidelidade às imagens originais. Resultado: clipes de reforma prontos para Instagram sem precisar recortar.",
+        "porque": "A OPC tem 338 posts esperando aprovação. Automatizar a criação do vídeo de transformação com Veo 3.1 pode acelerar o pipeline — você dá as fotos, a IA gera o clipe animado já no formato certo para Reel.",
+        "aplicar": "Acesse pelo Google AI Studio (aistudio.google.com). Use 2-3 fotos de um projeto OPC recente. Prompt sugerido: slow camera reveal across a renovated room, warm golden light, professional interior, cinematic movement.",
+        "plano": "1) Selecione 1 projeto OPC com fotos de boa qualidade · 2) Acesse aistudio.google.com > Veo 3 e selecione modo vertical · 3) Faça upload das fotos de referência e escreva o prompt · 4) Exporte o vídeo 9:16 e publique como Reel ou salve para edição posterior",
+        "fonte": {
+          "t": "Frameo: Google Veo 3.1 Enhances AI Video Feature for Social Media",
+          "u": "https://frameo.ai/blog/google-veo-3-1-news/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-10-23",
+        "top": true,
+        "t": "Estreito de Ormuz 2026: O Corredor de 33km por Onde Passa 20% do Petróleo Global — e Por Que o Irã Usa Isso como Arma",
+        "resumo": "O Estreito de Ormuz, entre Irã e Omã, tem apenas 33km de largura navegável. Por ele passam cerca de 20 milhões de barris de petróleo por dia — quase 20% do consumo global. Em 2026, após ataques EUA/Israel ao Irã, o Estreito virou o principal choke point geopolítico do mundo.",
+        "porque": "Quando o Irã ameaça fechar o Estreito, o petróleo sobe 6% ou mais em horas. Aconteceu em maio de 2026. Entender esse mecanismo explica manchetes de energia, preço de gasolina nos EUA e tensão global sem precisar acompanhar notícias complexas.",
+        "aplicar": "Na próxima vez que ver petróleo sobe nas notícias, a primeira pergunta é: qual choke point está ameaçado? Hormuz (Golfo Pérsico) e Bab-el-Mandeb (Mar Vermelho/Houthis) são os dois mais críticos de 2026.",
+        "plano": "1) Mapa mental: Estreito de Ormuz = Irã + Omã, 33km, 20% do petróleo global · 2) Maiores dependentes: Japão, China, Índia, Coreia do Sul · 3) Alternativas parciais: Oleoduto IPSA pela Arábia Saudita (capacidade limitada) · 4) Próxima pauta: como a crise do Hormuz afeta o preço do diesel e do transporte nos EUA",
+        "fonte": {
+          "t": "CryptoBriefing: Iran shifts focus to Strait of Hormuz amid 2026 war",
+          "u": "https://cryptobriefing.com/iran-shifts-focus-to-strait-of-hormuz-amid-2026-war-impacting-global-oil-supply/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-10-23",
+        "top": true,
+        "t": "Google Ads Scripts + IA 2026: Use Claude ou ChatGPT para Escrever Automações em Segundos — Sem Saber Programar",
+        "resumo": "Google Ads Scripts permitem automatizar relatórios, alertas e ajustes via JavaScript. Em 2026, com Claude/ChatGPT/Gemini gerando scripts sob demanda, você não precisa saber programar. Uma fonte especializada cita Claude como ferramenta favorita para criar scripts de Google Ads.",
+        "porque": "Para a OPC, scripts resolvem problemas práticos: alerta quando uma campanha fica sem impressão por 24h, relatório semanal de performance por e-mail, pause automático de anúncios com CTR baixo.",
+        "aplicar": "Prompt para testar agora: Escreva um Google Ads Script em JavaScript que me envie um e-mail se qualquer campanha ativa ficar com zero impressões por 24 horas — cole a resposta no editor de Scripts do Google Ads e clique em Visualizar.",
+        "plano": "1) Google Ads > Ferramentas > Ações em Massa > Scripts > clique em + · 2) Peça à Claude: Google Ads Script para alertar por e-mail quando campanha tiver zero impressões · 3) Cole o código gerado, clique em Visualizar (modo seguro, sem executar) · 4) Revise os logs do preview e agende para rodar diariamente",
+        "fonte": {
+          "t": "Stackmatix: Google Ads Scripts — The Complete PPC Automation Guide 2026",
+          "u": "https://www.stackmatix.com/blog/google-ads-scripts-guide"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-10-23",
+        "top": true,
+        "t": "Flowise 2026: Construa Agentes LLM com Visual Drag-and-Drop — Open Source, Self-Host Grátis, Adquirido pela Workday",
+        "resumo": "Flowise (adquirido pela Workday em agosto 2025) é um builder visual open-source que simplifica o LangChain em blocos arrastáveis. Você monta agentes com memória, RAG pipelines e fluxos multi-agente no canvas. Self-host grátis via Docker, cloud a $35/mês.",
+        "porque": "Para quem já usa n8n para automação de fluxos, Flowise complementa focando especificamente em agentes LLM com memória e RAG. É a escolha para quem quer controle sobre como os agentes pensam — sem depender de plataformas proprietárias como Relevance AI.",
+        "aplicar": "Caso de uso prático imediato: monte um agente Flowise que lê e-mails de alerta (como os de quota_exceeded) e gera um resumo diário do status das suas automações. Conecte ao Gmail via nó de API.",
+        "plano": "1) Acesse flowiseai.com e escolha entre deploy Docker (grátis) ou cloud trial · 2) Crie um Chatflow novo e arraste: LLM Node (Claude ou GPT) + Memory Node + Output Parser · 3) Teste com prompt simples: Resuma o status das minhas pipelines de automação · 4) Para RAG: adicione Document Loader + Vector Store para o agente consultar seus dados internos",
+        "fonte": {
+          "t": "Flowise Review 2026: Open-Source No-Code LLM App Builder",
+          "u": "https://baeseokjae.github.io/posts/flowise-review-2026/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ]
+  }
+}
