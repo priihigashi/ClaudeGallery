@@ -1,35 +1,35 @@
 {
-  "date": "2026-10-23",
+  "date": "2026-10-24",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "📚 Real Estate",
-      "t": "Blocos diários de Real Estate na agenda — rotina de estudo ativa todo dia de manhã",
-      "why": "Estuda o exam todo dia antes de tudo; qualquer técnica de foco ou memorização ativa cai bem hoje",
+      "tag": "🚨 Fila enorme",
+      "t": "338 posts OPC aguardando aprovação",
+      "why": "Email de hoje: 338 conteúdos acumulados precisam de revisão antes de publicar — incluindo o 'Vanity Contrast Trend'. A fila cresce todo dia.",
+      "go": "obra"
+    },
+    {
+      "tag": "📚 Rule 1",
+      "t": "Imobiliário FL — FIRST THING ativo hoje",
+      "why": "Bloco 8h na agenda: Curso Cameron Academy 63h. Proteção de $146 válida enquanto não fizer prova final. Quiz app disponível.",
       "go": "tip"
     },
     {
-      "tag": "🏗️ OPC Pipeline",
-      "t": "338 posts OPC esperando aprovação — pipeline de conteúdo sobrecarregada",
-      "why": "Volume enorme acumulado; hora de avaliar automação de revisão ou batch approval com IA",
-      "go": "conteudo"
-    },
-    {
-      "tag": "⚡ Créditos IA",
-      "t": "Créditos Anthropic zerados: pipeline de captura bloqueada desde hoje cedo",
-      "why": "Alertas repetidos de quota_exceeded — automações param até repor saldo em console.anthropic.com/settings/billing",
+      "tag": "⚠️ API Bloqueada",
+      "t": "Anthropic com crédito baixo — captura de reels pausada",
+      "why": "Email 07:06h: quota_exceeded na Anthropic bloqueou o pipeline de captura. Recarregar créditos em console.anthropic.com/settings/billing.",
       "go": "iafim"
     },
     {
-      "tag": "📱 Metricool",
-      "t": "Facebook desconectado no Metricool — posts do @tentandochegaratevoce falhando",
-      "why": "Facebook revogou permissão; reconectar em Settings > Connections do Metricool antes do próximo agendamento",
+      "tag": "🔌 Revisão seg",
+      "t": "Weekly Plugins Review na segunda (10-26 às 9h)",
+      "why": "Revisar novas ferramentas de IA antes da reunião — boa oportunidade para incluir AutoGen Studio e Gling AI no Agents Tracker.",
       "go": "conteudo"
     }
   ],
   "history": [
     {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,130 +37,154 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-10-23",
+        "id": "tip-2026-10-24",
         "top": true,
-        "t": "Efeito Zeigarnik para TDAH: Pare no Meio da Tarefa de Propósito e o Cérebro Puxa Você de Volta",
-        "resumo": "Parar uma tarefa inacabada — no meio de uma frase, linha de código ou to-do — cria uma tensão cognitiva que o cérebro quer resolver. Para quem tem TDAH, isso elimina o pior obstáculo: reiniciar.",
-        "porque": "Iniciar é o maior gargalo do TDAH. Uma tarefa em aberto ativa o córtex pré-frontal automaticamente no retorno — você não precisa de força de vontade para começar de novo, o cérebro já está puxando.",
-        "aplicar": "Antes de fechar qualquer sessão de trabalho, escreva a próxima ação pela metade. Exemplo: Próximo: editar o par... ou deixe um comentário: continua aqui com X. No retorno, o fragmento funciona como âncora.",
-        "plano": "1) Nos últimos 2 min de cada bloco de foco, escreva a próxima frase incompleta no documento · 2) Feche sem terminar o pensamento (intencional) · 3) Ao retornar, leia o fragmento em voz alta — o cérebro fecha o loop · 4) Mantenha um arquivo de fragmentos abertos para projetos maiores",
+        "t": "Cegueira Temporal no TDAH: Externalize o Tempo e Pare de Chegar Atrasada em Tudo",
+        "resumo": "TDAH quebra o relógio interno. O cérebro literalmente não sente o tempo passar — não é preguiça nem falta de vontade. A solução não é 'se esforçar mais', é colocar o tempo fora da cabeça: visível, audível, físico.",
+        "porque": "Pesquisa de Russell Barkley mostra que o TDAH é um distúrbio de regulação do tempo, não só de atenção. Você não esquece o horário — você nunca o sentiu. Tornar o tempo visível reduz atrasos, quebra de prazos e a sensação de 'sumir o dia'.",
+        "aplicar": "Na Oak Park Construction e no estudo de imobiliária: coloque um timer analógico de 25 min na mesa (Time Timer ou relógio de areia), use barra de progresso no Focus Partner, e defina alarmes com rótulo ('Fim do bloco imobiliário') em vez de apenas bip.",
+        "plano": "1) Baixe o app Time Timer (gratuito) e use no próximo bloco de estudo RE · 2) No Focus Partner Sheet, anote a hora de início de cada tarefa — escrever ativa a percepção temporal · 3) Para compromissos: set alarme 10 min antes com o nome do próximo evento · 4) Escreva no papel os blocos do dia com duração real (não otimista) e deixe visível na mesa",
         "fonte": {
-          "t": "FocusBear: How ADHDers Can Leverage the Zeigarnik Effect",
-          "u": "https://www.focusbear.io/blog-post/how-adhders-can-leverage-the-zeigarnik-effect-for-enhanced-productivity"
+          "t": "ClickUp: Como gerenciar a cegueira de tempo no TDAH",
+          "u": "https://clickup.com/pt-BR/blog/211615/como-gerenciar-a-cegueira-de-tempo"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-10-23",
+        "id": "receita-2026-10-24",
         "top": true,
-        "t": "Omelete de Farinha de Grão-de-Bico com Legumes e Queijo Vegano — 25 Min, Vegana, Kid-Friendly",
-        "resumo": "A farinata italiana vira omelete de frigideira: farinha de grão-de-bico + água + azeite formam uma base cremosa e proteica. Recheie com legumes coloridos e queijo vegano derretido. Sem ovo, sem leite de vaca, sem glúten.",
-        "porque": "A farinha de grão-de-bico tem 6g de proteína por 30g e vira textura de omelete ao fritar. Perfeita para crianças que não gostam de texturas estranhas — parece omelete de verdade. Queijo vegano FL derrete e completa.",
-        "aplicar": "Sirva cortada em triângulos para crianças (finger food). Funciona como lanche da tarde com legumes escondidos, ou jantar rápido com salada. Guarda bem na geladeira por 2 dias.",
-        "plano": "1) Misture 100g de farinha de grão-de-bico + 250ml de água + 1 col. sopa de azeite + sal (deixe 10 min descansar) · 2) Refogue abobrinha ou espinafre picados em frigideira antiaderente com fio de azeite · 3) Despeje a massa por cima dos legumes em fogo médio-baixo, tampe e cozinhe 10-12 min · 4) Cubra com queijo vegano, tampe mais 2 min até derreter, corte em fatias e sirva",
+        "t": "Wrap de Falafel Assado com Homus e Salada Fresca — 25 Min, Vegano, Kid-Friendly",
+        "resumo": "Falafel assado (não frito!) enrolado em tortilha integral com homus cremoso, alface, tomate e cebola roxa. Sem leite de vaca, sem ovo, alto em proteína vegetal. As crianças adoram montar o próprio wrap.",
+        "porque": "Falafel de grão-de-bico é proteína completa vegana. Assar em vez de fritar corta calorias e sujeira. A montagem livre torna o jantar interativo — crianças comem mais quando escolhem o recheio.",
+        "aplicar": "Prepare o falafel no domingo em lote (assa e congela) e nos dias de semana o jantar fica pronto em 10 min. Perfeito para noites corridas com conteúdo da OPC rodando.",
+        "plano": "1) Misture 1 lata de grão-de-bico escorrido, ½ cebola, 2 alhos, salsinha, cominho, sal e 3 col sopa de farinha de trigo · 2) Forme bolinhos e asse a 200°C por 20 min (vire na metade) · 3) Aqueça tortilha integral, passe homus, adicione falafel + alface + tomate + cebola roxa · 4) Opcional: queijo vegano ralado por cima (Violife ou similar FL)",
         "fonte": {
-          "t": "The Mediterranean Dish: Farinata Recipe",
-          "u": "https://www.themediterraneandish.com/farinata-recipe/"
+          "t": "Haute & Healthy Living: Vegan Falafel Wrap with Hummus",
+          "u": "https://www.hauteandhealthyliving.com/?p=96060"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-10-23",
+        "id": "merch-2026-10-24",
         "top": true,
-        "t": "Gelato POD 2026: Rede Global com Produção Local nos EUA — Entrega Mais Rápida e Plano Gratuito para Testar",
-        "resumo": "Gelato tem gráficas parceiras em 32 países incluindo os EUA, o que significa produção local = entrega em 3-5 dias (vs 10 dias do modelo centralizado). Review independente de 2025 confirma qualidade de impressão acima da média. Plano gratuito disponível.",
-        "porque": "Para vender longlines femininas nos EUA, produção local encurta o prazo e reduz frete. O Gelato+ ($24/mês) dá 20% de desconto em produtos premium e acesso a fornecedores com bordado real — diferencial importante frente a Printify básico.",
-        "aplicar": "Teste com um produto: crie sua longline feminina no Gelato, peça uma amostra e compare com o que você já usa. Bordado funciona melhor para logos simples (até 15 cores de linha, sem gradientes).",
-        "plano": "1) Crie conta gratuita em gelato.com e navegue em Apparel > Women's T-Shirts · 2) Filtre por modelos longline e leia os reviews de outros vendedores · 3) Faça upload de um logo simples e configure o produto · 4) Peça 1 sample antes de listar — avalie o toque do tecido e o acabamento do bordado",
+        "t": "Apliiq 2026: POD com Etiqueta Privada e Bordado Real — Crie uma Marca de Roupas de Verdade",
+        "resumo": "Apliiq é o POD para quem quer marca própria de verdade, não só camisetas genéricas. Etiqueta tecida customizada, bordado, patch e private label — em peça única, sem mínimo. App Shopify com 4.9★ em 268 avaliações reais.",
+        "porque": "A maioria dos PODs entrega produto commodity. Apliiq entrega produto de marca: a etiqueta de costura customizada muda a percepção de valor instantaneamente. Ideal para criar linha feminina premium com tees longas bordadas.",
+        "aplicar": "Para uma linha de longlines femininas com bordado no peito: crie conta grátis no Apliiq, solicite amostra antes de vender, configure etiqueta tecida com sua marca e integre ao Shopify.",
+        "plano": "1) Acesse apliiq.com, crie conta gratuita e instale o app no Shopify · 2) Configure a etiqueta de costura personalizada (woven label) com sua marca · 3) Selecione a tee feminina longa e crie mock-up com bordado no peito esquerdo · 4) Peça 1 amostra antes de listar (bordado: 7-10 dias úteis)",
         "fonte": {
-          "t": "TopBubbleIndex: Gelato Print on Demand — A Global Review",
-          "u": "https://www.topbubbleindex.com/blog/gelato-print-on-demand-a-global-review"
+          "t": "DoDropshipping: Apliiq Print on Demand Review",
+          "u": "https://dodropshipping.com/apliiq-review/"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-10-23",
+        "id": "conteudo-2026-10-24",
         "top": true,
-        "t": "Captions AI (Mirage) 2026: Legendas + B-Roll + Avatar IA em Minutos — 9.1/10 em 37 Mil Reviews",
-        "resumo": "Captions (rebatizado Mirage em março 2026 após captar $75M da General Catalyst) automatiza o fluxo completo: cortes automáticos, B-roll, legendas animadas, correção de eye contact e dublagem em 30+ idiomas. Avaliação 9.1/10 baseada em 37k reviews verificados.",
-        "porque": "Para o @tentandochegaratevoce e a OPC, Captions reduz edição de horas para minutos. O Avatar AI gera vídeos sem aparecer em câmera — útil para criar conteúdo em escala e liberar o backlog de 338 posts pendentes da OPC.",
-        "aplicar": "Teste com um Reel do @tentandochegaratevoce: faça upload do vídeo bruto, deixe a IA cortar, adicionar legendas e B-roll. Compare o tempo gasto vs edição manual no CapCut.",
-        "plano": "1) Baixe o app Captions (iOS/Android) ou acesse captions.ai no desktop · 2) Faça upload de um vídeo de 1-2 min sem edição · 3) Revise os cortes automáticos e ajuste o estilo das legendas animadas · 4) Exporte em 9:16 para Reels/TikTok e registre quanto tempo economizou",
+        "t": "Gling AI 2026: Edite Vídeos Removendo Silêncios Automaticamente — Sem Abrir o Editor",
+        "resumo": "Gling detecta e remove automaticamente silêncios, pausas longas e takes ruins do vídeo bruto. Você recebe o arquivo editado sem tocar na linha do tempo. Plano gratuito: 1h/mês; Pro $20/mês com 30h de processamento.",
+        "porque": "Edição manual é o gargalo número 1 de criadores. Para a OPC, que grava vídeos de obra e captura reels, Gling pode cortar 60-70% do tempo de pós-produção — você só abre o editor para legendas e cortes criativos.",
+        "aplicar": "Use Gling para a primeira passada nos vídeos de obra: suba o raw footage, a IA remove os silêncios, depois passe o resultado pelo CapCut ou Premiere só para ajustes finais e legendas.",
+        "plano": "1) Acesse gling.ai e crie conta gratuita · 2) Suba um vídeo de obra bruto (raw footage) para testar a detecção de silêncios · 3) Exporte o arquivo editado e compare com o original — calcule tempo economizado · 4) Se aprovado, integre ao fluxo antes do CapCut para todos os vídeos OPC",
         "fonte": {
-          "t": "NeuronFeed: Captions Review 2026 — AI Video Editing",
-          "u": "https://neuronfeed.com/reviews/captions-review-2026"
+          "t": "Gling AI: AI Podcast & Video Editor",
+          "u": "https://www.gling.ai/ai-podcast-editor"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-10-23",
+        "id": "obra-2026-10-24",
         "top": true,
-        "t": "Veo 3.1 (Google) para Reels de Reforma: Foto da Obra → Vídeo Vertical 9:16 Nativo — Sem Reframing",
-        "resumo": "A atualização Veo 3.1 de janeiro 2026 adicionou geração nativa em formato 9:16 (vertical), aceita até 3 fotos de referência e mantém maior fidelidade às imagens originais. Resultado: clipes de reforma prontos para Instagram sem precisar recortar.",
-        "porque": "A OPC tem 338 posts esperando aprovação. Automatizar a criação do vídeo de transformação com Veo 3.1 pode acelerar o pipeline — você dá as fotos, a IA gera o clipe animado já no formato certo para Reel.",
-        "aplicar": "Acesse pelo Google AI Studio (aistudio.google.com). Use 2-3 fotos de um projeto OPC recente. Prompt sugerido: slow camera reveal across a renovated room, warm golden light, professional interior, cinematic movement.",
-        "plano": "1) Selecione 1 projeto OPC com fotos de boa qualidade · 2) Acesse aistudio.google.com > Veo 3 e selecione modo vertical · 3) Faça upload das fotos de referência e escreva o prompt · 4) Exporte o vídeo 9:16 e publique como Reel ou salve para edição posterior",
+        "t": "Luma Dream Machine (Ray 2) para Reels de Reforma: Foto da Obra → Vídeo com Câmera Cinematográfica",
+        "resumo": "Luma AI Dream Machine gera clipes de 5 segundos a partir de foto + prompt de texto. Ray 2 (modelo atual) produz movimento de câmera realista — dolly, pan, zoom — ideal para mostrar antes/depois de reforma em movimento. Sem assinatura obrigatória; paga por segundo gerado.",
+        "porque": "Alternativa menos conhecida ao Veo e Runway, com preço por segundo ($0.15/s em 720p) e conta gratuita disponível. Para a OPC, que precisa de conteúdo visual de obras, permite criar clipes profissionais a partir de fotos do canteiro sem assinatura mensal.",
+        "aplicar": "Tire uma foto de boa qualidade do cômodo reformado e use o prompt: 'slow cinematic dolly forward revealing a newly renovated kitchen, warm lighting, ultra realistic, vertical 9:16'. Gera clipe em menos de 2 minutos.",
+        "plano": "1) Acesse lumalabs.ai/dream-machine (conta gratuita disponível) · 2) Suba foto de obra + escreva prompt com movimento de câmera desejado · 3) Opcional: adicione End Frame (foto do depois) para mostrar a transformação · 4) Exporte em 720p e adicione legenda no CapCut antes de postar no Insta",
         "fonte": {
-          "t": "Frameo: Google Veo 3.1 Enhances AI Video Feature for Social Media",
-          "u": "https://frameo.ai/blog/google-veo-3-1-news/"
+          "t": "Tom's Guide: Luma Labs Dream Machine Upgrade",
+          "u": "https://www.tomsguide.com/ai/ai-image-video/luma-labs-gives-dream-machine-a-huge-upgrade-alongside-new-image-model-creating-ai-video-just-got-easier"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-10-23",
+        "id": "geo-2026-10-24",
         "top": true,
-        "t": "Estreito de Ormuz 2026: O Corredor de 33km por Onde Passa 20% do Petróleo Global — e Por Que o Irã Usa Isso como Arma",
-        "resumo": "O Estreito de Ormuz, entre Irã e Omã, tem apenas 33km de largura navegável. Por ele passam cerca de 20 milhões de barris de petróleo por dia — quase 20% do consumo global. Em 2026, após ataques EUA/Israel ao Irã, o Estreito virou o principal choke point geopolítico do mundo.",
-        "porque": "Quando o Irã ameaça fechar o Estreito, o petróleo sobe 6% ou mais em horas. Aconteceu em maio de 2026. Entender esse mecanismo explica manchetes de energia, preço de gasolina nos EUA e tensão global sem precisar acompanhar notícias complexas.",
-        "aplicar": "Na próxima vez que ver petróleo sobe nas notícias, a primeira pergunta é: qual choke point está ameaçado? Hormuz (Golfo Pérsico) e Bab-el-Mandeb (Mar Vermelho/Houthis) são os dois mais críticos de 2026.",
-        "plano": "1) Mapa mental: Estreito de Ormuz = Irã + Omã, 33km, 20% do petróleo global · 2) Maiores dependentes: Japão, China, Índia, Coreia do Sul · 3) Alternativas parciais: Oleoduto IPSA pela Arábia Saudita (capacidade limitada) · 4) Próxima pauta: como a crise do Hormuz afeta o preço do diesel e do transporte nos EUA",
+        "t": "IMEC: O Corredor Índia–Oriente Médio–Europa que Compete com a Nova Rota da Seda Chinesa",
+        "resumo": "O IMEC (India-Middle East-Europe Economic Corridor) foi assinado no G20 de 2023 como alternativa ocidental ao Belt and Road da China. Liga Índia → Emirados → Arábia Saudita → Jordânia → Israel → Europa por ferrovia e porto. Em 2026, ainda mais no papel do que nos trilhos — mas é a maior disputa geopolítica de rota comercial do momento.",
+        "porque": "Quem controla as rotas de comércio terrestre e marítimo entre Ásia e Europa controla os preços do frete global e a influência diplomática. A guerra no Oriente Médio travou o cronograma do IMEC — entender isso é entender o que move os mercados financeiros e as notícias de geopolítica.",
+        "aplicar": "Para conteúdo e notícias: quando surgir pauta sobre conflito no Oriente Médio, aumento de frete ou relações Índia-UE, o IMEC é o pano de fundo geopolítico. Use como contexto em carrosséis de news Brazil para dar profundidade à análise.",
+        "plano": "1) Leia o guia IMEC 2026 (fonte abaixo) para entender o status atual · 2) Anote os 3 bloqueios: conflito Israel/Gaza, ausência de secretariado permanente, falta de financiamento firme · 3) Siga o Fórum IMEC em Trieste (março 2026) como marco a observar · 4) Quando o corredor avançar, será pauta global — você estará à frente",
         "fonte": {
-          "t": "CryptoBriefing: Iran shifts focus to Strait of Hormuz amid 2026 war",
-          "u": "https://cryptobriefing.com/iran-shifts-focus-to-strait-of-hormuz-amid-2026-war-impacting-global-oil-supply/"
+          "t": "GetTransport: IMEC Corridor 2026 Shipper Guide",
+          "u": "https://blog.gettransport.com/trends-in-logistic/imec-india-middle-east-europe-corridor-2026-shipper-guide/"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-10-23",
+        "id": "ads-2026-10-24",
         "top": true,
-        "t": "Google Ads Scripts + IA 2026: Use Claude ou ChatGPT para Escrever Automações em Segundos — Sem Saber Programar",
-        "resumo": "Google Ads Scripts permitem automatizar relatórios, alertas e ajustes via JavaScript. Em 2026, com Claude/ChatGPT/Gemini gerando scripts sob demanda, você não precisa saber programar. Uma fonte especializada cita Claude como ferramenta favorita para criar scripts de Google Ads.",
-        "porque": "Para a OPC, scripts resolvem problemas práticos: alerta quando uma campanha fica sem impressão por 24h, relatório semanal de performance por e-mail, pause automático de anúncios com CTR baixo. São automações que o Google Ads nativo não entrega.",
-        "aplicar": "Prompt para testar agora: Escreva um Google Ads Script em JavaScript que me envie um e-mail se qualquer campanha ativa ficar com zero impressões por 24 horas — cole a resposta no editor de Scripts do Google Ads e clique em Visualizar.",
-        "plano": "1) Google Ads > Ferramentas > Ações em Massa > Scripts > clique em + · 2) Peça à Claude: Google Ads Script para alertar por e-mail quando campanha tiver zero impressões · 3) Cole o código gerado, clique em Visualizar (modo seguro, sem executar) · 4) Revise os logs do preview, corrija se necessário e agende para rodar diariamente",
+        "t": "Google Enhanced Conversions 2026: Recupere 15-20% das Conversões Perdidas com Hash do E-mail",
+        "resumo": "Com bloqueio de cookies e iOS tracking off por padrão, campanhas perdem até 20% das conversões rastreadas. Enhanced Conversions envia o e-mail do cliente com hash SHA-256 para o Google, que cruza com contas Google logadas e recupera conversões que o cookie perdeu — sem violar privacidade.",
+        "porque": "Para a Oak Park Construction, que captura leads por formulário, cada conversão não rastreada é dinheiro perdido em otimização. Enhanced Conversions for Leads importa o e-mail do CRM quando o lead vira cliente — o Google aprende quais anúncios realmente funcionam.",
+        "aplicar": "Ative Enhanced Conversions no Google Ads → Configurações de conversão. Implemente via Google Tag Manager enviando o e-mail hasheado com SHA-256 no evento de conversão do formulário de contato OPC.",
+        "plano": "1) No Google Ads: Ferramentas → Conversões → Configurações → ative Conversões Avançadas para web · 2) No GTM, configure o campo 'email' na tag de conversão com hash SHA-256 (minúsculas, sem espaços) · 3) Valide com o Tag Assistant — procure campo em_sha256 sendo enviado · 4) Após 2-3 semanas, compare relatório de conversões antes/depois para ver a recuperação",
         "fonte": {
-          "t": "Stackmatix: Google Ads Scripts — The Complete PPC Automation Guide 2026",
-          "u": "https://www.stackmatix.com/blog/google-ads-scripts-guide"
+          "t": "Google Ads Help: Set up enhanced conversions for web",
+          "u": "https://support.google.com/google-ads/answer/13258081"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-10-23",
+        "id": "iafim-2026-10-24",
         "top": true,
-        "t": "Flowise 2026: Construa Agentes LLM com Visual Drag-and-Drop — Open Source, Self-Host Grátis, Adquirido pela Workday",
-        "resumo": "Flowise (adquirido pela Workday em agosto 2025) é um builder visual open-source que simplifica o LangChain em blocos arrastáveis. Você monta agentes com memória, RAG pipelines e fluxos multi-agente no canvas. Self-host grátis via Docker, cloud a $35/mês.",
-        "porque": "Para quem já usa n8n para automação de fluxos, Flowise complementa focando especificamente em agentes LLM com memória e RAG. É a escolha para quem quer controle sobre como os agentes pensam — sem depender de plataformas proprietárias como Relevance AI.",
-        "aplicar": "Caso de uso prático imediato: monte um agente Flowise que lê e-mails de alerta (como os de quota_exceeded) e gera um resumo diário do status das suas automações. Conecte ao Gmail via nó de API.",
-        "plano": "1) Acesse flowiseai.com e escolha entre deploy Docker (grátis) ou cloud trial · 2) Crie um Chatflow novo e arraste: LLM Node (Claude ou GPT) + Memory Node + Output Parser · 3) Teste com prompt simples: Resuma o status das minhas pipelines de automação · 4) Para RAG: adicione Document Loader + Vector Store para o agente consultar seus dados internos",
+        "t": "AutoGen Studio (Microsoft) 2026: Crie Times de Agentes IA com Interface Visual — Sem Escrever Código",
+        "resumo": "AutoGen Studio é uma interface low-code da Microsoft Research para criar, testar e depurar fluxos de múltiplos agentes IA com drag-and-drop. Um agente pesquisa, outro escreve, outro revisa — cada um com papel definido. Versão 0.4 (2025) com arquitetura escalável para agentes em paralelo.",
+        "porque": "Para automatizar tarefas complexas da OPC — capturar reel, analisar, escrever legenda, postar — você precisa de agentes especializados que conversam entre si. AutoGen Studio permite montar esse fluxo visualmente sem programar cada interação manualmente.",
+        "aplicar": "Monte um time de 3 agentes para o pipeline OPC: Agente 1 (Pesquisador) analisa o reel capturado, Agente 2 (Escritor) gera a legenda seguindo diretrizes de marca, Agente 3 (Revisor) verifica tom e hashtags.",
+        "plano": "1) Instale via pip: pip install autogenstudio e abra a interface local · 2) Crie os 3 agentes com prompts de sistema específicos para OPC · 3) Monte o fluxo conectando na ordem Pesquisador → Escritor → Revisor · 4) Teste com um reel capturado hoje e avalie a saída antes do Weekly Plugins Review de segunda",
         "fonte": {
-          "t": "Flowise Review 2026: Open-Source No-Code LLM App Builder",
-          "u": "https://baeseokjae.github.io/posts/flowise-review-2026/"
+          "t": "Microsoft Research: Introducing AutoGen Studio",
+          "u": "https://www.microsoft.com/en-us/research/blog/introducing-autogen-studio-a-low-code-interface-for-building-multi-agent-workflows/"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ]
   }
