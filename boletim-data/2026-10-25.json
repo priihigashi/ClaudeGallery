@@ -1,0 +1,191 @@
+{
+  "date": "2026-10-25",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "📚 Real Estate",
+      "t": "Curso RE Cameron Academy — janela de 90 dias ativa",
+      "why": "Calendário confirma o bloco diário de 2h às 8h. Atenção: não faça a prova final online enquanto quiser a opção do Livestream — upgrade só funciona antes da prova ($146 de diferença).",
+      "go": "tip"
+    },
+    {
+      "tag": "🔌 Plugins",
+      "t": "Weekly AI Tools Review amanhã (26/10 às 9h)",
+      "why": "Dify.ai (hoje no Boletim) é candidato forte para a Inbox: visual workflow, open source, 50+ LLMs, self-hosted via Docker. Vale adicionar antes da review.",
+      "go": "iafim"
+    },
+    {
+      "tag": "📱 Conteúdo OPC",
+      "t": "Pipeline com 15 GitHub Actions ativo — oportunidade de B-roll sem copyright",
+      "why": "Adobe Firefly Video (hoje em Obra) é a única ferramenta de IA que garante uso comercial seguro por contrato. Para reels de clientes, isso importa.",
+      "go": "obra"
+    },
+    {
+      "tag": "💰 Google Ads OPC",
+      "t": "Check de AI charges diário — momento de revisar estratégia de lance",
+      "why": "Smart Bidding tROAS (hoje em Ads) mudou comportamento em ago/2026. Se você tem campanhas com Target ROAS ativo, confira se os targets ainda fazem sentido.",
+      "go": "ads"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-25",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-10-25",
+        "top": true,
+        "t": "Intenções de Implementação para TDAH: Planos Se/Então Que Neutralizam a Distração Antes de Ela Ganhar Tração",
+        "resumo": "Em vez de 'vou terminar o relatório', escreva: 'SE abrir o Instagram, ENTÃO fecho e abro o doc de trabalho.' Essa estrutura se/então usa automatismo pra bypassar a tomada de decisão no momento crítico — exatamente onde o TDAH sabota.",
+        "porque": "Pesquisa da NYU (Gollwitzer et al.) mostra que crianças com TDAH cometem menos erros em tarefas de atenção quando usam planos se/então. O efeito aparece também em controle de impulsos e adiamento de recompensa — os dois pontos mais fracos no TDAH.",
+        "aplicar": "Pegue a tarefa mais evitada do dia. Liste 3 gatilhos reais de fuga (Slack, celular, YouTube). Para cada um, defina a resposta automática: 'SE [gatilho], ENTÃO [ação de volta]'. Cole num Post-it no monitor antes de começar.",
+        "plano": "1) Identifique a 1 tarefa mais evitada de hoje · 2) Escreva seus 3 gatilhos de fuga mais comuns do dia · 3) Crie 1 plano se/então para cada gatilho (ex: 'SE sentir vontade de checar o Slack, ENTÃO fecho a aba e boto o timer por mais 10 min') · 4) Execute a tarefa com os planos visíveis durante 25 min",
+        "fonte": {
+          "t": "NYU — If-Then Plans Benefit Executive Functions in Children with ADHD",
+          "u": "https://ifp.nyu.edu/2011/journal-article-abstracts/if-then-plans-benefit-executive-functions-in-children-with-adhd/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-10-25",
+        "top": true,
+        "t": "Espaguete de Abobrinha com Pesto de Manjericão e Nozes — 15 Min, Vegano, Kid-Friendly, Zero Fogão",
+        "resumo": "Abobrinha cortada em tiras finas no descascador vira o 'macarrão'. Pesto: manjericão fresco, nozes, alho, azeite e levedura nutricional (no lugar do parmesão). Fresquinho, sem cozimento, sem leite de vaca.",
+        "porque": "Pronto em 15 min sem fogão, alimenta crianças sem reclamação e é nutricionalmente denso. Pesto caseiro sai 3x mais barato que o de pote e sem conservantes. A levedura nutricional dá o sabor umami/salgado que o queijo daria.",
+        "aplicar": "Use 2 col. sopa de levedura nutricional para reproduzir o sabor do parmesão sem laticínios. Crianças podem montar o próprio prato com o pesto e os toppings — elas comem mais quando participam.",
+        "plano": "1) Corte 2 abobrinhas médias em espaguete com descascador ou espiralizador · 2) Bata no processador: 1 xíc. de manjericão, ¼ xíc. de nozes, 1 dente de alho, 4 col. de azeite, 2 col. de levedura nutricional, sal e pimenta · 3) Misture o pesto cru na abobrinha · 4) Sirva imediatamente com tomate-cereja cortado ao meio e mais nozes por cima",
+        "fonte": {
+          "t": "Receiteria — Espaguete de Abobrinha ao Molho Pesto",
+          "u": "https://www.receiteria.com.br/receita/espaguete-de-abobrinha-ao-molho-pesto/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-10-25",
+        "top": true,
+        "t": "TeeLaunch POD 2026: Catálogo de Nicho Fora da Printful/Printify — Vale como Plataforma Secundária?",
+        "resumo": "TeeLaunch integra direto ao Shopify e tem produtos de nicho fora do catálogo das grandes (almofadas, tumblers, tapetes, products específicos). Para tees longas com bordado, avaliações de 2026 são divididas — qualidade inconsistente vs Printful.",
+        "porque": "A estratégia mais segura em POD é ter 1 plataforma principal (Printful/Printify) + 1 secundária para SKUs que a principal não cobre. TeeLaunch resolve esse gap de catálogo sem trocar de ecossistema Shopify.",
+        "aplicar": "Antes de ativar: peça 1 amostra do item específico que você quer. Para bordado em tees longas femininas, Printful ainda tem reviews mais consistentes em 2026. TeeLaunch brilha nos produtos fora do padrão.",
+        "plano": "1) Liste os 3 produtos que você não acha na Printful/Printify · 2) Cheque se TeeLaunch os tem em teelaunch.com/products · 3) Peça 1 amostra de cada item crítico antes de vender · 4) Se qualidade OK: adicione como plataforma secundária no Shopify, mantendo Printful/Printify como primária",
+        "fonte": {
+          "t": "MerchTitans — TeeLaunch Print on Demand Review 2026",
+          "u": "https://merchtitans.com/blog/teelaunch-print-on-demand-review"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-10-25",
+        "top": true,
+        "t": "Fliki AI 2026: Cole o Roteiro → IA Monta Vídeo com Narração em 77+ Idiomas — 4.7★ (345 avaliações)",
+        "resumo": "Fliki converte texto (roteiro, post de blog, URL) em vídeo com B-roll, narração IA e legendas automáticas. 850+ vozes em 77 idiomas. Diferencial: clonagem de voz e avatares IA no plano pago (~$21/mês). Ideal para produzir em PT-BR sem aparecer na câmera.",
+        "porque": "Para quem produz conteúdo em PT-BR e EN, Fliki elimina a etapa de gravação e edição de voz. Diferente do Descript (foca em editar áudio/vídeo existente) e do Opus Clip (cortes de vídeo longo), Fliki parte do zero com texto.",
+        "aplicar": "Plano gratuito existe para testar. Teste com 1 roteiro de post da OPC ('5 sinais de que sua reforma precisa de um contratante') e compare a qualidade com o que você já usa.",
+        "plano": "1) Crie conta gratuita em fliki.ai · 2) Cole um roteiro de post da OPC ou do Instagram · 3) Escolha voz PT-BR e estilo de vídeo (talking head, B-roll, slideshow) · 4) Exporte e compare qualidade e velocidade com sua ferramenta atual",
+        "fonte": {
+          "t": "Tools for Humans — Fliki Review e Preços 2026",
+          "u": "https://www.toolsforhumans.ai/ai-tools/fliki"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-10-25",
+        "top": true,
+        "t": "Adobe Firefly Video 2026: Foto da Obra → Clipe B-Roll Comercialmente Seguro — Sem Risco de Copyright para Clientes",
+        "resumo": "Firefly Video usa só conteúdo licenciado para treinar — uso comercial garantido por contrato. Desde dez/2025: edite vídeo por prompts de texto (muda ângulos, cores, elementos). Gerações ilimitadas para assinantes Creative Cloud em 2026.",
+        "porque": "Diferente de Kling, Runway ou Sora (treinados em conteúdo da internet sem licença clara), o Firefly garante que você pode usar os clipes em projetos de clientes. Para a OPC, isso significa zero risco legal nos reels de reforma.",
+        "aplicar": "Acesse firefly.adobe.com (incluso no Creative Cloud) ou direto pelo Premiere/After Effects. Use para gerar B-roll de reforma (tijolos, ferramentas, acabamentos) quando não tiver filmagem própria.",
+        "plano": "1) Acesse firefly.adobe.com com sua conta Adobe · 2) Teste 'Image to Video' com uma foto de antes/depois de reforma da OPC · 3) Edite por texto: 'adiciona câmera deslizando lentamente para a direita' · 4) Exporte em 9:16 para Reels e compare com Kling e Luma que você já usa",
+        "fonte": {
+          "t": "TechCrunch — Adobe Firefly suporta edição de vídeo por prompt (dez/2025)",
+          "u": "https://techcrunch.com/2025/12/16/adobe-firefly-now-supports-prompt-based-video-editing-adds-more-third-party-models"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-10-25",
+        "top": true,
+        "t": "Filipinas vs China no Mar do Sul: Por Que Manila Enfrenta Pequim Sozinha — e o Que Está em Jogo nos Chips e no Comércio Global",
+        "resumo": "China reivindica ~90% do Mar do Sul da China (Linha dos Nove Traços). Filipinas resistem com apoio dos EUA e acionam o Tratado de Defesa Mútua. Desde 2023: colisões, canhões d'água e bloqueios a missões de reabastecimento em recifes contestados como o Segundo Recife Thomas.",
+        "porque": "Essa rota movimenta >$3 trilhões em comércio anual e fica próxima a Taiwan, maior produtor de semicondutores do mundo. Qualquer escalada afeta supply chain global de chips, eletrônicos — e, por extensão, equipamentos e materiais de construção.",
+        "aplicar": "Siga o noticiário via World Politics Review (worldpoliticsreview.com) — cobre a disputa com contexto estratégico, não só os incidentes isolados.",
+        "plano": "1) Leia 1 artigo sobre o que a Linha dos Nove Traços reivindica vs o que a lei do mar (UNCLOS) diz · 2) Entenda o papel do Segundo Recife Thomas (BRP Sierra Madre) como ponto de atrito principal · 3) Relacione: se Taiwan for bloqueada, quais chips e eletrônicos deixariam de ser produzidos? · 4) Registre no seu diário de geopolítica",
+        "fonte": {
+          "t": "World Politics Review — Philippines, US, China South China Sea",
+          "u": "https://www.worldpoliticsreview.com/daily-review-philippines-us-china/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-10-25",
+        "top": true,
+        "t": "Google Smart Bidding tROAS 2026: Quando Usar — e Por Que Construção Precisa de Target CPA Primeiro",
+        "resumo": "tROAS pede que a IA maximize o valor das conversões mantendo um retorno alvo. Para construção (lead gen, ticket alto, ciclo longo), o caminho certo é começar com Target CPA — e migrar para tROAS só quando você consegue passar o valor real do job para o Google.",
+        "porque": "Mudança de agosto 2026: campanhas limitadas por orçamento agora entregam mais próximas do tROAS declarado (não mais acima). Se você nunca revisou seus targets, pode estar restringindo entrega sem perceber. Mínimo recomendado: 68 conversões em 30 dias para o tROAS funcionar bem.",
+        "aplicar": "Para OPC: ative Target CPA primeiro. Quando chegar a 50+ conversões mensais, comece a passar o valor estimado de cada job (ex: $8.000 por reforma de banheiro) e experimente o tROAS com meta conservadora.",
+        "plano": "1) Abra o Google Ads e veja qual estratégia de lance está ativa em cada campanha da OPC · 2) Para campanhas com <50 conv./mês: mude para Maximize Conversions (sem meta) · 3) Com 50+ conv.: ative Target CPA com o valor real de lead da OPC · 4) Com histórico de valor por job: migre para tROAS gradualmente, começando 20% abaixo da sua ROAS atual",
+        "fonte": {
+          "t": "Google Ads Help — Target ROAS bidding",
+          "u": "https://support.google.com/google-ads/answer/6268637"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-10-25",
+        "top": true,
+        "t": "Dify.ai 2026: $30M Captados — Plataforma Open Source que Monta Agentes LLM com Visual Workflow, RAG e Self-Hosted",
+        "resumo": "Dify combina workflow visual drag-and-drop, RAG pipelines, gerenciamento de prompts e runtime de agente em um stack. Roda na nuvem ou self-hosted via Docker. Integra com 50+ LLMs (Claude, GPT, Llama, Mistral). Publica como app web, API, embed ou ferramenta MCP.",
+        "porque": "Em março 2026 a Dify captou $30M Series Pre-A ($180M valuation) com 1,4M instâncias ativas. É a alternativa open source mais madura ao n8n/Flowise para quem quer controle total dos agentes sem depender de plataformas fechadas. Bonus: sai como MCP — integra direto com Claude Code.",
+        "aplicar": "Ótima candidata para a Weekly Review de amanhã (26/10 às 9h): avalie se substitui ou complementa o n8n e o Flowise que você já conhece. Destaque: você pode self-hospedar para não pagar por chamadas de API externas.",
+        "plano": "1) Acesse dify.ai e crie conta free (ou instale via Docker: docker compose up dify) · 2) Crie um agente simples: input de e-mail → resumo com Claude → saída em planilha · 3) Compare a UX com n8n e Flowise · 4) Adicione à Inbox da Weekly Review de amanhã antes de dormir",
+        "fonte": {
+          "t": "VentureBeat — Dify capta $30M para escalar workflows de IA agentica (mar/2026)",
+          "u": "https://venturebeat.com/business/dify-raises-30-million-series-pre-a-to-power-enterprise-grade-agentic-workflows"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ]
+  }
+}
