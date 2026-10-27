@@ -1,0 +1,167 @@
+{
+  "date": "2026-10-27",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "⚠️ Crédito",
+      "t": "Anthropic sem crédito — pipeline de captura bloqueada",
+      "why": "Alertas repetidos desde ontem: quota_exceeded e low_credit. Pipelines de captura e conteúdo estão com fallback ou paradas. Recarregue em console.anthropic.com.",
+      "go": "iafim"
+    },
+    {
+      "tag": "📋 Fila",
+      "t": "338 posts OPC aguardando sua aprovação",
+      "why": "Acumulou — posts prontos parados sem aprovação. Abra o e-mail '⏰ OPC content approvals pending' e despache em lote.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "🎙️ ElevenLabs",
+      "t": "ElevenLabs a 80% do limite de voz neste ciclo",
+      "why": "97.391 de 121.074 créditos usados. Se zerar antes do reset, narrações de vídeo param.",
+      "go": "obra"
+    },
+    {
+      "tag": "🏫 Caio",
+      "t": "Checar portal FAU de Caio amanhã (28/out)",
+      "why": "A escola adiciona itens no checklist sem notificar. Documento faltante até 1/dez = exclusão automática da loteria. Login: faulabschools.myschoolapp.com.",
+      "go": "tip"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-27",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-10-27",
+        "top": true,
+        "t": "Body Doubling para TDAH: Trabalhe com Presença Virtual e Ative o Foco que Trabalhar Sozinha Não Consegue",
+        "resumo": "Trabalhar ao lado de outra pessoa — no mesmo espaço ou por vídeo — ativa o circuito de atenção do TDAH de forma que trabalhar sozinha raramente consegue. A presença, mesmo silenciosa, funciona como âncora.",
+        "porque": "O cérebro com TDAH responde a pistas sociais: a presença de alguém (real ou virtual) reduz a deriva mental e aumenta responsabilidade sem precisar conversar ou ser monitorada. Psychiatrist Edward Hallowell, que tem TDAH, diz que o efeito é quase mágico.",
+        "aplicar": "Use FocusMate (sessões gratuitas de 25/50/75 min com parceiro virtual), YouTube 'study with me' ou simplesmente ligue o vídeo com uma amiga enquanto cada uma trabalha na sua própria tarefa.",
+        "plano": "1) Identifique 1 tarefa que você procrastina há dias · 2) Abra focusmate.com e reserve uma sessão para hoje · 3) Declare a tarefa no chat do parceiro antes de começar · 4) Trabalhe 50 min; ao final, relate o que terminou — a prestação de contas fecha o loop",
+        "fonte": {
+          "t": "Life Skills Advocate — Body Doubling para Neurodivergentes",
+          "u": "https://lifeskillsadvocate.com/blog/neurodivergent-toolbox-how-to-use-body-doubling/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-10-27",
+        "top": true,
+        "t": "Panqueca de Aveia e Banana Vegana em 15 Min — 4 Ingredientes, Sem Leite de Vaca, Kid-Friendly",
+        "resumo": "Banana amassada + aveia + chia + fermento = massa pronta em 5 minutos. Doura na frigideira sem gordura adicionada. Acompanha geleia, pasta de amendoim ou frutas frescas.",
+        "porque": "Sem laticínios, sem glúten de trigo, sem ovo. O doce natural da banana elimina o açúcar da receita e as crianças adoram. Fácil de dobrar e guardar na geladeira por até 2 dias.",
+        "aplicar": "Café da manhã ou lanche em menos de 20 min. Varia o recheio conforme o que tem na geladeira — funciona frio também.",
+        "plano": "1) Amasse 1 banana madura com garfo · 2) Misture 4 col. sopa de aveia em flocos, 1 col. chá de chia e 1 col. chá de fermento · 3) Deixe descansar 3 min (a chia engrossa a massa) · 4) Doure na frigideira antiaderente em fogo baixo, 2 min de cada lado",
+        "fonte": {
+          "t": "Receiteria — Panqueca de Banana Vegana",
+          "u": "https://www.receiteria.com.br/receita/panqueca-de-banana-vegana/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-10-27",
+        "top": true,
+        "t": "PODpartner 2026: A Alternativa Premium para Bordado Real em POD — Awkward Styles Fechou, Este É o Substituto Apontado pelos Reviewers",
+        "resumo": "PODpartner é destacado como a opção de alta qualidade para quem quer bordado de verdade em POD. Não tem a escala da Printful, mas reviewers da ecommerce-platforms.com elogiam o acabamento e posicionamento de marca.",
+        "porque": "Awkward Styles encerrou as atividades em 2026. PODpartner surge como a referência indicada pelos próprios sites de review para quem quer bordado POD premium e fugir das gráficas de massa.",
+        "aplicar": "Avalie para tees longline femininas com bordado. Custo por peça mais alto, mas a diferenciação é real. Peça amostra antes de colocar no catálogo.",
+        "plano": "1) Leia o review completo em ecommerce-platforms.com (link abaixo) · 2) Compare custo por peça de longline com bordado vs Printful · 3) Solicite uma amostra de 1-2 peças · 4) Decida se o posicionamento premium justifica para a sua marca",
+        "fonte": {
+          "t": "Ecommerce Platforms — PODpartner Review 2026",
+          "u": "https://ecommerce-platforms.com/articles/podpartner-review"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-10-27",
+        "top": true,
+        "t": "OpusClip 2026: Cole o Link do Vídeo Longo → IA Detecta os Melhores Momentos e Gera Shorts com Score de Viralidade",
+        "resumo": "OpusClip analisa o transcript, identifica os trechos mais engajantes e gera clipes curtos prontos para TikTok, Reels e YouTube Shorts — com legendas, reframing automático e pontuação de viralidade por clipe.",
+        "porque": "Em vez de assistir o vídeo inteiro e editar na mão, a IA seleciona o ouro. O 'virality score' ajuda a priorizar qual clipe postar primeiro — especialmente útil quando você tem horas de material gravado.",
+        "aplicar": "Funciona com vídeos de obras, reviews de projetos, time-lapses longos ou qualquer conteúdo da OPC. Cole o link e a IA trabalha.",
+        "plano": "1) Acesse opus.pro (plano gratuito: 60 créditos/mês) · 2) Cole o link de um vídeo longo da OPC ou YouTube · 3) Escolha os clipes com maior virality score · 4) Revise, adicione branding OPC e publique",
+        "fonte": {
+          "t": "Marc Andrews — Opus Clip Review 2026",
+          "u": "https://marcandrews.com/opus-clip-review-2026-ai-video-shorts-tool-tested/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-10-27",
+        "top": true,
+        "t": "IACrea 2026: Foto do Cômodo Atual → IA Redesenha em Múltiplos Estilos e Gera Vídeo Comparativo Antes/Depois em 5 Segundos",
+        "resumo": "IACrea tem modos de mobiliário, decoração e reforma. No modo 'Renovate', suba a foto do cômodo existente e a IA gera o redesign em estilos diferentes mais um vídeo de comparação antes/depois automaticamente.",
+        "porque": "Diferente dos geradores de vídeo puros, o IACrea entrega o antes/depois visual pronto para mostrar ao cliente antes de assinar o orçamento. Menos pós-produção, mais impacto comercial.",
+        "aplicar": "Mostre ao cliente como o espaço vai ficar antes de fechar o contrato. Poste o vídeo comparativo nos Stories da OPC como prova de conceito do trabalho.",
+        "plano": "1) Acesse iacrea.com e crie conta (plano gratuito disponível) · 2) Selecione modo 'Renovate' ou 'Furnish' · 3) Suba a foto do cômodo de um projeto atual · 4) Baixe o vídeo antes/depois e poste nos Stories da OPC",
+        "fonte": {
+          "t": "AI Home Design — Melhores Ferramentas de Staging Virtual 2026",
+          "u": "https://aihomedesign.com/blog/?p=12080"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-10-27",
+        "top": true,
+        "t": "Turquia como Estado Pivô 2026: Membro da OTAN que Negocia com a Rússia e Controla o Acesso ao Mar Negro",
+        "resumo": "A Turquia não é nem aliada total do Ocidente nem parceira da Rússia — é um 'estado pivô' que maximiza liberdade de ação jogando dos dois lados. Controla o Bósforo, borda zonas de conflito e vende drones para múltiplos atores.",
+        "porque": "Com a cúpula da OTAN em Ancara em julho de 2026, Erdoğan negociou mais influência na defesa europeia enquanto mantém laços comerciais com Moscou. O Atlantic Council chama de 'flexibilidade calculada' — a pauta virou manchete geopolítica.",
+        "aplicar": "Para conteúdo de news: o conceito de 'estado pivô' explica por que certos países recusam sanções, mediam conflitos e saem fortalecidos de guerras que devastam outros. Vira série.",
+        "plano": "1) Leia o relatório do Atlantic Council sobre relações EUA-Turquia em 2026 · 2) Pesquise 'pivot state geopolitics' para o conceito teórico · 3) Monte a pauta: 'Por que a Turquia nunca escolhe um lado — e como isso funciona' · 4) Conecte ao conceito de estado pivô para uma série geopolítica",
+        "fonte": {
+          "t": "Atlantic Council — Relações EUA-Turquia em 2026",
+          "u": "https://www.atlanticcouncil.org/content-series/ac-turkey-defense-journal/navigating-change-us-turkish-defense-relations-in-2026/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-10-27",
+        "top": true,
+        "t": "Google Ads Atribuição 2026: Data-Driven vs Last Click — Qual Modelo Revela Onde Seus Leads Realmente Começam",
+        "resumo": "Em 2026, o Google Ads tem apenas 2 modelos: Last Click (todo crédito ao último clique) e Data-Driven (IA distribui crédito por todos os pontos de contato). O DDA é o padrão agora — e muda toda a leitura de performance.",
+        "porque": "Com Last Click, sua campanha de awareness parece não funcionar — mas ela pode estar gerando o lead que outro anúncio 'fecha'. O DDA revela o caminho real do cliente e evita que você corte campanhas que estão trabalhando no topo do funil.",
+        "aplicar": "Para a OPC: verifique qual modelo está ativo. Se for Last Click, migre para Data-Driven e compare a atribuição por 30 dias antes de cortar qualquer campanha.",
+        "plano": "1) Abra Google Ads → Configurações da Conta → Atribuição · 2) Veja qual modelo está ativo · 3) Se for Last Click, mude para Data-Driven Attribution · 4) Aguarde 30 dias e compare: quais campanhas ganharam crédito que não aparecia antes?",
+        "fonte": {
+          "t": "Analyzify — Data-Driven Attribution no Google Ads",
+          "u": "https://analyzify.com/hub/data-driven-attribution-model-in-google-ads"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-10-27",
+        "top": true,
+        "t": "Lindy AI 2026: Relançada como Assistente Executiva Pessoal — Triagem de E-mail, Agenda e Briefing Diário via iMessage",
+        "resumo": "Em fevereiro de 2026, Lindy foi relançada como assistente executiva individual. Triia sua caixa de entrada, rascunha respostas, organiza agenda e envia um briefing diário por iMessage — sem você abrir o Gmail.",
+        "porque": "Para quem tem TDAH e 338 e-mails pendentes de aprovação, ter um agente que lê, filtra e rascunha respostas é um multiplicador real de tempo. Diferente de Zapier (plataforma) ou n8n (técnico) — o Lindy age como uma pessoa.",
+        "aplicar": "Avalie o plano pago para triagem da OPC. Mas leia reviews independentes antes: Trustpilot mostra 1.7/5 com reclamações de cobrança — verifique no seu contexto antes de pagar.",
+        "plano": "1) Acesse lindy.ai e teste o plano gratuito (400 créditos) · 2) Conecte Gmail e teste a triagem por 1 semana · 3) Avalie se o briefing diário por iMessage funciona para seu fluxo · 4) Compare com Zapier AI Agents (testado ontem) antes de escolher",
+        "fonte": {
+          "t": "CloudTalk — Lindy AI Review 2026",
+          "u": "https://www.cloudtalk.io/blog/lindy-ai-review/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ]
+  }
+}

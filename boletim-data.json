@@ -1,35 +1,35 @@
 {
-  "date": "2026-10-26",
+  "date": "2026-10-27",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "🚨 URGENTE",
-      "t": "Anthropic quota excedida — pipeline de captura bloqueada",
-      "why": "E-mail de hoje: a pipeline de captura de conteúdo bateu no limite da API Anthropic (quota_exceeded). Fallback ativo, mas capturas falharam. Recarregue créditos em console.anthropic.com/settings/billing.",
+      "tag": "⚠️ Crédito",
+      "t": "Anthropic sem crédito — pipeline de captura bloqueada",
+      "why": "Alertas repetidos desde ontem: quota_exceeded e low_credit. Pipelines de captura e conteúdo estão com fallback ou paradas. Recarregue em console.anthropic.com.",
       "go": "iafim"
     },
     {
-      "tag": "📋 FILA",
-      "t": "338 posts OPC esperando sua aprovação",
-      "why": "E-mail de hoje: 338 posts da Oak Park Construction estão na fila de aprovação + 5 novas capturas agendadas para amanhã. Revisar antes que a fila cresça ainda mais.",
+      "tag": "📋 Fila",
+      "t": "338 posts OPC aguardando sua aprovação",
+      "why": "Acumulou — posts prontos parados sem aprovação. Abra o e-mail '⏰ OPC content approvals pending' e despache em lote.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "🎙️ ElevenLabs",
+      "t": "ElevenLabs a 80% do limite de voz neste ciclo",
+      "why": "97.391 de 121.074 créditos usados. Se zerar antes do reset, narrações de vídeo param.",
       "go": "obra"
     },
     {
-      "tag": "🎓 IMÓVEIS",
-      "t": "Real Estate estudo fixo às 8h — Rule 1, não pule",
-      "why": "Agenda de hoje: 'REAL ESTATE — FIRST THING (Rule 1, do not skip)' aparece diariamente às 8h. Compromisso imutável antes de abrir qualquer outra aba.",
+      "tag": "🏫 Caio",
+      "t": "Checar portal FAU de Caio amanhã (28/out)",
+      "why": "A escola adiciona itens no checklist sem notificar. Documento faltante até 1/dez = exclusão automática da loteria. Login: faulabschools.myschoolapp.com.",
       "go": "tip"
-    },
-    {
-      "tag": "🎙️ ELEVENLABS",
-      "t": "ElevenLabs em 80% do limite — créditos acabam antes do mês",
-      "why": "E-mail de hoje: 97.391 de 121.074 créditos usados no ciclo atual. No ritmo atual, os créditos acabam antes da renovação. Revise o consumo ou faça upgrade do plano.",
-      "go": "conteudo"
     }
   ],
   "history": [
     {
-      "date": "2026-10-26",
+      "date": "2026-10-27",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,154 +37,130 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-10-26",
+        "id": "tip-2026-10-27",
         "top": true,
-        "t": "Ritual de Encerramento para TDAH: 5 Min que Fecham o Loop Mental e Param a Ruminação Noturna",
-        "resumo": "O cérebro com TDAH não percebe que o expediente acabou — continua 'processando' tarefas abertas horas depois. O Shutdown Ritual é uma sequência de 5 min que sinaliza ao cérebro: tudo foi registrado, pode soltar.",
-        "porque": "Sem esse sinal explícito, o TDAH mantém loops ativos mesmo de noite: ansiedade de esquecer algo, checagem compulsiva do celular, dificuldade de dormir. A rotina transforma 'tarefas mentais abertas' em itens capturados no papel.",
-        "aplicar": "Hoje: ao fechar o computador, escreva em 2 min — o que ficou pendente, o que foi feito, e a 1 prioridade de amanhã. Diga em voz alta: 'Encerrado.' Repita amanhã até virar hábito.",
-        "plano": "1) Defina um horário fixo de encerramento (ex: 19h) e coloque um alarme com o nome 'ENCERRAR' · 2) 2 min: escaneie inbox e capture tudo aberto em uma lista · 3) 1 min: releia o que foi feito hoje (micro-recompensa para o TDAH) · 4) 1 min: escreva a 1 tarefa mais importante de amanhã, feche o notebook e diga 'Encerrado' como âncora verbal",
+        "t": "Body Doubling para TDAH: Trabalhe com Presença Virtual e Ative o Foco que Trabalhar Sozinha Não Consegue",
+        "resumo": "Trabalhar ao lado de outra pessoa — no mesmo espaço ou por vídeo — ativa o circuito de atenção do TDAH de forma que trabalhar sozinha raramente consegue. A presença, mesmo silenciosa, funciona como âncora.",
+        "porque": "O cérebro com TDAH responde a pistas sociais: a presença de alguém (real ou virtual) reduz a deriva mental e aumenta responsabilidade sem precisar conversar ou ser monitorada. Psychiatrist Edward Hallowell, que tem TDAH, diz que o efeito é quase mágico.",
+        "aplicar": "Use FocusMate (sessões gratuitas de 25/50/75 min com parceiro virtual), YouTube 'study with me' ou simplesmente ligue o vídeo com uma amiga enquanto cada uma trabalha na sua própria tarefa.",
+        "plano": "1) Identifique 1 tarefa que você procrastina há dias · 2) Abra focusmate.com e reserve uma sessão para hoje · 3) Declare a tarefa no chat do parceiro antes de começar · 4) Trabalhe 50 min; ao final, relate o que terminou — a prestação de contas fecha o loop",
         "fonte": {
-          "t": "Shutdown Ritual: A Practice for Productivity — Simply Psychology",
-          "u": "https://www.simplypsychology.org/shutdown-ritual.html"
+          "t": "Life Skills Advocate — Body Doubling para Neurodivergentes",
+          "u": "https://lifeskillsadvocate.com/blog/neurodivergent-toolbox-how-to-use-body-doubling/"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-10-26",
+        "id": "receita-2026-10-27",
         "top": true,
-        "t": "Enchiladas Veganas de Feijão Preto com Queijo Vegano — 40 Min, Assadas, Kid-Friendly",
-        "resumo": "Enchiladas assadas recheadas com feijão preto, milho, pimentão e queijo vegano — cobertas com molho de enchilada e mais queijo. Elaborada o suficiente para jantar de domingo, mas simples de montar. Rende sobras para o dia seguinte.",
-        "porque": "Feijão preto + milho formam proteína vegetal complementar; queijo vegano derretido conquista os kids. Sem leite de vaca, sem glúten se usar tortillas de milho. Alta em fibra e ferro.",
-        "aplicar": "Dica rápida: aqueça as tortillas de milho em papel toalha úmido no micro (30 seg) antes de enrolar — evita que quebrem na hora de montar. O recheio fica pronto enquanto o forno preaquece.",
-        "plano": "1) Refogar cebola + alho + pimentão em azeite por 5 min · 2) Adicionar feijão preto escorrido, milho, cominho, páprica defumada e sal — cozinhar 5 min · 3) Espalhar molho de enchilada no fundo da assadeira, enrolar recheio em 8 tortillas de milho e alinhar lado a lado · 4) Cobrir com mais molho + queijo vegano ralado e assar a 200°C por 20 min até gratinar",
+        "t": "Panqueca de Aveia e Banana Vegana em 15 Min — 4 Ingredientes, Sem Leite de Vaca, Kid-Friendly",
+        "resumo": "Banana amassada + aveia + chia + fermento = massa pronta em 5 minutos. Doura na frigideira sem gordura adicionada. Acompanha geleia, pasta de amendoim ou frutas frescas.",
+        "porque": "Sem laticínios, sem glúten de trigo, sem ovo. O doce natural da banana elimina o açúcar da receita e as crianças adoram. Fácil de dobrar e guardar na geladeira por até 2 dias.",
+        "aplicar": "Café da manhã ou lanche em menos de 20 min. Varia o recheio conforme o que tem na geladeira — funciona frio também.",
+        "plano": "1) Amasse 1 banana madura com garfo · 2) Misture 4 col. sopa de aveia em flocos, 1 col. chá de chia e 1 col. chá de fermento · 3) Deixe descansar 3 min (a chia engrossa a massa) · 4) Doure na frigideira antiaderente em fogo baixo, 2 min de cada lado",
         "fonte": {
-          "t": "Vegan Black Bean Enchiladas — I Heart Vegetables",
-          "u": "https://iheartvegetables.com/?p=18607"
+          "t": "Receiteria — Panqueca de Banana Vegana",
+          "u": "https://www.receiteria.com.br/receita/panqueca-de-banana-vegana/"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-10-26",
+        "id": "merch-2026-10-27",
         "top": true,
-        "t": "Printify 2026: Compare +100 Fornecedores POD e Escolha o Melhor para Bordado e Longlines Femininas — Sem Ficar Presa em Um Só",
-        "resumo": "Printify é um marketplace de fornecedores POD: você escolhe a melhor fábrica para cada produto entre +100 opções nos EUA, Europa e Ásia. Diferente de plataformas com fábrica própria, você não está presa a um único custo de produção.",
-        "porque": "Essa flexibilidade permite encontrar o fornecedor certo para bordado (Monster Digital, QABA) e para longlines femininas (Bella+Canvas via parceiros) com reviews reais de compradores — e trocar sem mudar sua loja.",
-        "aplicar": "Crie conta gratuita, busque 'women longline tee', filtre por avaliação ≥4.5★ e produtor nos EUA. Compare 2-3 fornecedores lado a lado e peça amostras físicas antes de publicar qualquer produto.",
-        "plano": "1) Criar conta gratuita em printify.com e conectar à loja Etsy, Shopify ou woo · 2) Buscar 'women longline tee' e 'embroidery' — filtrar ≥4.5★ + produção EUA · 3) Pedir amostra dos 2 melhores fornecedores (custo ~$20-35 com frete) · 4) Publicar após aprovar a amostra — use o mockup gerador da plataforma para fotos de produto",
+        "t": "PODpartner 2026: A Alternativa Premium para Bordado Real em POD — Awkward Styles Fechou, Este É o Substituto Apontado pelos Reviewers",
+        "resumo": "PODpartner é destacado como a opção de alta qualidade para quem quer bordado de verdade em POD. Não tem a escala da Printful, mas reviewers da ecommerce-platforms.com elogiam o acabamento e posicionamento de marca.",
+        "porque": "Awkward Styles encerrou as atividades em 2026. PODpartner surge como a referência indicada pelos próprios sites de review para quem quer bordado POD premium e fugir das gráficas de massa.",
+        "aplicar": "Avalie para tees longline femininas com bordado. Custo por peça mais alto, mas a diferenciação é real. Peça amostra antes de colocar no catálogo.",
+        "plano": "1) Leia o review completo em ecommerce-platforms.com (link abaixo) · 2) Compare custo por peça de longline com bordado vs Printful · 3) Solicite uma amostra de 1-2 peças · 4) Decida se o posicionamento premium justifica para a sua marca",
         "fonte": {
-          "t": "",
-          "u": ""
+          "t": "Ecommerce Platforms — PODpartner Review 2026",
+          "u": "https://ecommerce-platforms.com/articles/podpartner-review"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-10-26",
+        "id": "conteudo-2026-10-27",
         "top": true,
-        "t": "Descript 2026: Edite Vídeo Editando o Texto — Delete uma Palavra e o Trecho Some do Clipe Automaticamente",
-        "resumo": "Descript transcreve seu vídeo e sincroniza cada palavra ao timestamp. Para editar: selecione o texto que quer cortar e delete — o vídeo e o áudio somem junto. 1 clique remove todos os 'ã', 'hm' e pausas do arquivo inteiro.",
-        "porque": "É a abordagem mais rápida para quem grava muito e edita pouco: sem linha do tempo, sem corte frame a frame. O Underlord (IA da Descript) aceita comandos em português natural: 'corte os silêncios', 'gere clips para redes', 'traduza para inglês'.",
-        "aplicar": "Importe uma gravação hoje e delete 3 frases pelo texto. Teste o botão 'Remove filler words' para sentir a velocidade antes de assinar qualquer plano. Plano gratuito inclui 60 min de mídia/mês.",
-        "plano": "1) Criar conta gratuita em descript.com · 2) Importar um vídeo/podcast e ler a transcrição gerada automaticamente · 3) Deletar trechos no texto para ver o corte no vídeo em tempo real · 4) Testar o Underlord: digitar 'gere 3 clips curtos para Instagram' e avaliar os resultados gerados",
+        "t": "OpusClip 2026: Cole o Link do Vídeo Longo → IA Detecta os Melhores Momentos e Gera Shorts com Score de Viralidade",
+        "resumo": "OpusClip analisa o transcript, identifica os trechos mais engajantes e gera clipes curtos prontos para TikTok, Reels e YouTube Shorts — com legendas, reframing automático e pontuação de viralidade por clipe.",
+        "porque": "Em vez de assistir o vídeo inteiro e editar na mão, a IA seleciona o ouro. O 'virality score' ajuda a priorizar qual clipe postar primeiro — especialmente útil quando você tem horas de material gravado.",
+        "aplicar": "Funciona com vídeos de obras, reviews de projetos, time-lapses longos ou qualquer conteúdo da OPC. Cole o link e a IA trabalha.",
+        "plano": "1) Acesse opus.pro (plano gratuito: 60 créditos/mês) · 2) Cole o link de um vídeo longo da OPC ou YouTube · 3) Escolha os clipes com maior virality score · 4) Revise, adicione branding OPC e publique",
         "fonte": {
-          "t": "Descript Review 2026: AI Audio & Video Editor Tested — Skillscouter",
-          "u": "https://skillscouter.com/descript-review/"
+          "t": "Marc Andrews — Opus Clip Review 2026",
+          "u": "https://marcandrews.com/opus-clip-review-2026-ai-video-shorts-tool-tested/"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-10-26",
+        "id": "obra-2026-10-27",
         "top": true,
-        "t": "REimagineHome AI: Foto do Cômodo Atual → 6 Renders em Estilos Diferentes em 30 Seg — Mostre ao Cliente Antes de Assinar",
-        "resumo": "REimagineHome usa IA para gerar renders fotorrealistas de um ambiente em diferentes estilos (moderno, industrial, escandinavo, etc.) a partir de uma foto do estado atual. Técnica de visualização para client pitch — diferente de geração de vídeo.",
-        "porque": "Clientes da Oak Park Construction assinam mais rápido quando veem como o espaço vai ficar ANTES da obra começar. Render AI gerado durante a reunião transforma proposta em experiência visual — sem contratar designer de interiores.",
-        "aplicar": "Na próxima visita de prospecção: tire uma foto do cômodo. Naquele mesmo dia, gere 3 renders no REimagineHome e envie por WhatsApp antes do orçamento chegar. Publique o antes/depois como Reel.",
-        "plano": "1) Acessar reimaginehome.com (plano gratuito disponível) · 2) Upload da foto do ambiente atual → selecionar 'Modern', 'Industrial' e 'Scandinavian' · 3) Baixar os 3 renders e montar um carousel antes/depois no Canva · 4) Publicar no Instagram da OPC: 'Imagine sua reforma assim — visualização com IA antes da obra começar'",
+        "t": "IACrea 2026: Foto do Cômodo Atual → IA Redesenha em Múltiplos Estilos e Gera Vídeo Comparativo Antes/Depois em 5 Segundos",
+        "resumo": "IACrea tem modos de mobiliário, decoração e reforma. No modo 'Renovate', suba a foto do cômodo existente e a IA gera o redesign em estilos diferentes mais um vídeo de comparação antes/depois automaticamente.",
+        "porque": "Diferente dos geradores de vídeo puros, o IACrea entrega o antes/depois visual pronto para mostrar ao cliente antes de assinar o orçamento. Menos pós-produção, mais impacto comercial.",
+        "aplicar": "Mostre ao cliente como o espaço vai ficar antes de fechar o contrato. Poste o vídeo comparativo nos Stories da OPC como prova de conceito do trabalho.",
+        "plano": "1) Acesse iacrea.com e crie conta (plano gratuito disponível) · 2) Selecione modo 'Renovate' ou 'Furnish' · 3) Suba a foto do cômodo de um projeto atual · 4) Baixe o vídeo antes/depois e poste nos Stories da OPC",
         "fonte": {
-          "t": "REimagine Home AI Review — Unite.AI",
-          "u": "https://www.unite.ai/reimagine-home-review"
+          "t": "AI Home Design — Melhores Ferramentas de Staging Virtual 2026",
+          "u": "https://aihomedesign.com/blog/?p=12080"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-10-26",
+        "id": "geo-2026-10-27",
         "top": true,
-        "t": "Sahel 2026: Como Mali, Burkina Faso e Níger Expulsaram a França e Abriram Espaço para o Corpo África da Rússia",
-        "resumo": "Três golpes militares entre 2020-2023 criaram um 'cinturão de juntas' no coração da África Ocidental. A França foi expulsa. A Rússia entrou com o Corpo África (sucessor do Wagner) — segurança, desinformação e influência estratégica.",
-        "porque": "O Sahel controla rotas migratórias para a Europa, reservas de urânio (Níger = 5% do urânio global) e acesso ao Atlântico Sul. Quem domina o Sahel influencia eleições europeias, suprimento de energia nuclear e fluxo de migrantes.",
-        "aplicar": "Acompanhe o Mali como termômetro: quando o governo Goïta age (contrata russos, expulsa ONG, cancela eleição), em 6-12 meses os efeitos chegam nas manchetes europeias sobre migração e segurança.",
-        "plano": "1) Marcar issafrica.org como fonte de referência — análise sem viés político ocidental · 2) Ler 1 artigo por semana sobre a região · 3) Conectar: notícias sobre migração irregular na Europa frequentemente têm raízes neste conflito · 4) Para pauta de conteúdo: '3 golpes que mudaram a África Ocidental e por que isso importa para você'",
+        "t": "Turquia como Estado Pivô 2026: Membro da OTAN que Negocia com a Rússia e Controla o Acesso ao Mar Negro",
+        "resumo": "A Turquia não é nem aliada total do Ocidente nem parceira da Rússia — é um 'estado pivô' que maximiza liberdade de ação jogando dos dois lados. Controla o Bósforo, borda zonas de conflito e vende drones para múltiplos atores.",
+        "porque": "Com a cúpula da OTAN em Ancara em julho de 2026, Erdoğan negociou mais influência na defesa europeia enquanto mantém laços comerciais com Moscou. O Atlantic Council chama de 'flexibilidade calculada' — a pauta virou manchete geopolítica.",
+        "aplicar": "Para conteúdo de news: o conceito de 'estado pivô' explica por que certos países recusam sanções, mediam conflitos e saem fortalecidos de guerras que devastam outros. Vira série.",
+        "plano": "1) Leia o relatório do Atlantic Council sobre relações EUA-Turquia em 2026 · 2) Pesquise 'pivot state geopolitics' para o conceito teórico · 3) Monte a pauta: 'Por que a Turquia nunca escolhe um lado — e como isso funciona' · 4) Conecte ao conceito de estado pivô para uma série geopolítica",
         "fonte": {
-          "t": "Russia's Africa Corps: More Than Old Wine in a New Bottle — ISS Africa",
-          "u": "https://issafrica.org/iss-today/russias-africa-corps-more-than-old-wine-in-a-new-bottle"
+          "t": "Atlantic Council — Relações EUA-Turquia em 2026",
+          "u": "https://www.atlanticcouncil.org/content-series/ac-turkey-defense-journal/navigating-change-us-turkish-defense-relations-in-2026/"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-10-26",
+        "id": "ads-2026-10-27",
         "top": true,
-        "t": "Google Performance Max (PMax) 2026: 1 Campanha que Aparece no Search, YouTube, Maps, Display e Gmail Simultaneamente",
-        "resumo": "PMax é a campanha que deixa a IA do Google alocar o orçamento entre TODOS os canais de uma vez: busca, YouTube, banners, Google Maps e Gmail. Você fornece os assets, o Google otimiza onde e para quem mostrar.",
-        "porque": "Para a Oak Park Construction, PMax captura quem pesquisa 'reforma de banheiro', quem assiste home improvement no YouTube E quem está procurando construtoras no Maps — em uma campanha unificada, sem duplicar orçamento.",
-        "aplicar": "Antes de criar: liste negativos de palavras-chave e suba sua lista de clientes via Customer Match. Sem isso a IA vai gastar em buscas genéricas. Não pause nos primeiros 30 dias — o período de aprendizado é crítico.",
-        "plano": "1) Criar 1 asset group com 15+ fotos de obras reais da OPC (nada de stock) + 5 títulos + 5 descrições diferentes · 2) Configurar público-sinal com Customer Match da OPC + intenção 'home renovation' · 3) Definir meta de conversão (leads via formulário) e CPA alvo baseado no valor real de um lead · 4) Aguardar 30 dias sem pausar antes de avaliar e ajustar — esse é o erro número 1",
+        "t": "Google Ads Atribuição 2026: Data-Driven vs Last Click — Qual Modelo Revela Onde Seus Leads Realmente Começam",
+        "resumo": "Em 2026, o Google Ads tem apenas 2 modelos: Last Click (todo crédito ao último clique) e Data-Driven (IA distribui crédito por todos os pontos de contato). O DDA é o padrão agora — e muda toda a leitura de performance.",
+        "porque": "Com Last Click, sua campanha de awareness parece não funcionar — mas ela pode estar gerando o lead que outro anúncio 'fecha'. O DDA revela o caminho real do cliente e evita que você corte campanhas que estão trabalhando no topo do funil.",
+        "aplicar": "Para a OPC: verifique qual modelo está ativo. Se for Last Click, migre para Data-Driven e compare a atribuição por 30 dias antes de cortar qualquer campanha.",
+        "plano": "1) Abra Google Ads → Configurações da Conta → Atribuição · 2) Veja qual modelo está ativo · 3) Se for Last Click, mude para Data-Driven Attribution · 4) Aguarde 30 dias e compare: quais campanhas ganharam crédito que não aparecia antes?",
         "fonte": {
-          "t": "Mastering Google Performance Max: A 2026 Strategy Guide — Jumpfly",
-          "u": "https://www.jumpfly.com/blog/mastering-google-performance-max-a-2026-strategy-guide"
+          "t": "Analyzify — Data-Driven Attribution no Google Ads",
+          "u": "https://analyzify.com/hub/data-driven-attribution-model-in-google-ads"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-10-26",
+        "id": "iafim-2026-10-27",
         "top": true,
-        "t": "Zapier AI Agents 2026: Equipe de Agentes com 8.000+ Apps — Qualifica Leads, Faz Triagem de E-mail e Pausa para Aprovação Humana",
-        "resumo": "Zapier lançou Agents nativos — não apenas automações (Zaps), mas agentes com memória, tomada de decisão e capacidade de pausar para aprovação humana antes de agir. Integra com qualquer app do ecossistema Zapier sem código.",
-        "porque": "Diferente de n8n ou Flowise (que exigem self-host ou setup técnico), Zapier Agents funcionam imediatamente com as integrações que você provavelmente já usa: Gmail, Google Drive, Sheets, WhatsApp e Slack.",
-        "aplicar": "Crie um agente teste hoje: 'Quando receber e-mail de lead novo com assunto Orçamento, extraia nome/projeto/telefone, adicione na planilha OPC e me envie para aprovar antes de responder.' Veja o humano-no-loop em ação.",
-        "plano": "1) Acesse zapier.com/agents (plano gratuito com teste disponível) · 2) Criar agente com trigger: 'novo e-mail contendo Orçamento no assunto' · 3) Adicionar ação: extrair dados com IA + adicionar na planilha OPC + gerar rascunho de resposta · 4) Ativar 'human in the loop' — o agente pausa e pede sua aprovação antes de qualquer envio externo",
+        "t": "Lindy AI 2026: Relançada como Assistente Executiva Pessoal — Triagem de E-mail, Agenda e Briefing Diário via iMessage",
+        "resumo": "Em fevereiro de 2026, Lindy foi relançada como assistente executiva individual. Triia sua caixa de entrada, rascunha respostas, organiza agenda e envia um briefing diário por iMessage — sem você abrir o Gmail.",
+        "porque": "Para quem tem TDAH e 338 e-mails pendentes de aprovação, ter um agente que lê, filtra e rascunha respostas é um multiplicador real de tempo. Diferente de Zapier (plataforma) ou n8n (técnico) — o Lindy age como uma pessoa.",
+        "aplicar": "Avalie o plano pago para triagem da OPC. Mas leia reviews independentes antes: Trustpilot mostra 1.7/5 com reclamações de cobrança — verifique no seu contexto antes de pagar.",
+        "plano": "1) Acesse lindy.ai e teste o plano gratuito (400 créditos) · 2) Conecte Gmail e teste a triagem por 1 semana · 3) Avalie se o briefing diário por iMessage funciona para seu fluxo · 4) Compare com Zapier AI Agents (testado ontem) antes de escolher",
         "fonte": {
-          "t": "Zapier's AI Playbook: Proven Tactics for 2026 — Gend.co",
-          "u": "https://www.gend.co/blog/zapier-ai-playbook"
+          "t": "CloudTalk — Lindy AI Review 2026",
+          "u": "https://www.cloudtalk.io/blog/lindy-ai-review/"
         },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "video": {"t": "", "u": ""}
       }
     ]
   }
