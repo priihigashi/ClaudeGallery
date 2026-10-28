@@ -1,35 +1,35 @@
 {
-  "date": "2026-10-27",
+  "date": "2026-10-28",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "⚠️ Crédito",
-      "t": "Anthropic sem crédito — pipeline de captura bloqueada",
-      "why": "Alertas repetidos desde ontem: quota_exceeded e low_credit. Pipelines de captura e conteúdo estão com fallback ou paradas. Recarregue em console.anthropic.com.",
-      "go": "iafim"
-    },
-    {
       "tag": "📋 Fila",
-      "t": "338 posts OPC aguardando sua aprovação",
-      "why": "Acumulou — posts prontos parados sem aprovação. Abra o e-mail '⏰ OPC content approvals pending' e despache em lote.",
+      "t": "Aprovações de conteúdo OPC pendentes na inbox",
+      "why": "E-mail de OPC content approvals pending detectado — peças criadas pela pipeline aguardam sua curadoria hoje.",
       "go": "conteudo"
     },
     {
-      "tag": "🎙️ ElevenLabs",
-      "t": "ElevenLabs a 80% do limite de voz neste ciclo",
-      "why": "97.391 de 121.074 créditos usados. Se zerar antes do reset, narrações de vídeo param.",
-      "go": "obra"
+      "tag": "⚠️ Ads",
+      "t": "ads_pulse.yml falhou — revise antes de gastar mais no Google",
+      "why": "Falha no job 40373835592 + relatório OPC Ads semanal na inbox. Automação offline = investimento em risco.",
+      "go": "ads"
     },
     {
-      "tag": "🏫 Caio",
-      "t": "Checar portal FAU de Caio amanhã (28/out)",
-      "why": "A escola adiciona itens no checklist sem notificar. Documento faltante até 1/dez = exclusão automática da loteria. Login: faulabschools.myschoolapp.com.",
-      "go": "tip"
+      "tag": "📚 Biblioteca",
+      "t": "Inspiration Library: 2.481 itens ativos e zero arquivados — precisa de curadoria",
+      "why": "Biblioteca crescendo sem triagem. Um agente IA pode filtrar e arquivar os melhores em minutos por semana.",
+      "go": "iafim"
+    },
+    {
+      "tag": "🏗️ Pipeline",
+      "t": "Weekly Pipeline Report da semana 26/10 esperando revisão",
+      "why": "Relatório semanal na inbox — conecte os resultados de conteúdo de obra com as métricas de ads antes de planejar a próxima semana.",
+      "go": "obra"
     }
   ],
   "history": [
     {
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,128 +37,128 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-10-27",
+        "id": "tip-2026-10-28",
         "top": true,
-        "t": "Body Doubling para TDAH: Trabalhe com Presença Virtual e Ative o Foco que Trabalhar Sozinha Não Consegue",
-        "resumo": "Trabalhar ao lado de outra pessoa — no mesmo espaço ou por vídeo — ativa o circuito de atenção do TDAH de forma que trabalhar sozinha raramente consegue. A presença, mesmo silenciosa, funciona como âncora.",
-        "porque": "O cérebro com TDAH responde a pistas sociais: a presença de alguém (real ou virtual) reduz a deriva mental e aumenta responsabilidade sem precisar conversar ou ser monitorada. Psychiatrist Edward Hallowell, que tem TDAH, diz que o efeito é quase mágico.",
-        "aplicar": "Use FocusMate (sessões gratuitas de 25/50/75 min com parceiro virtual), YouTube 'study with me' ou simplesmente ligue o vídeo com uma amiga enquanto cada uma trabalha na sua própria tarefa.",
-        "plano": "1) Identifique 1 tarefa que você procrastina há dias · 2) Abra focusmate.com e reserve uma sessão para hoje · 3) Declare a tarefa no chat do parceiro antes de começar · 4) Trabalhe 50 min; ao final, relate o que terminou — a prestação de contas fecha o loop",
+        "t": "Dopamine Menu para TDAH: Monte um Cardápio de Pausas Intencionais e Pare de Cair nas Redes Sociais Entre Tarefas",
+        "resumo": "O Dopamine Menu é uma lista preparada com antecedência de atividades curtas e prazerosas para usar como pausa consciente entre tarefas difíceis. Criado pelo coach de TDAH Eric Tivers, validado pela Mayo Clinic como forma de ativação comportamental estruturada.",
+        "porque": "O cérebro com TDAH precisa de recompensa imediata para se manter em movimento. Sem um cardápio pronto, a pausa vira 40 minutos de redes sociais sem perceber. Com o menu, a pausa é intencional e cronometrada — e você volta.",
+        "aplicar": "Crie seu cardápio agora com 5–8 atividades de 5–15 min que te recarregam de verdade (música, caminhada curta, arrumar uma gaveta). Use o cronômetro — sugestão do especialista: 13 minutos e 17 segundos, pra ser incomum e memorável.",
+        "plano": "1) Abra uma nota agora e escreva seu cardápio: aperitivos (1–3 min), entradas (5 min), pratos principais (15 min) · 2) Coloque o cardápio à vista (papel, widget, nota fixada na tela) · 3) Na próxima tarefa difícil, escolha um item do cardápio como recompensa programada antes de começar · 4) Avalie em 3 dias: quais atividades recarregaram de verdade? Corte as que não funcionaram",
         "fonte": {
-          "t": "Life Skills Advocate — Body Doubling para Neurodivergentes",
-          "u": "https://lifeskillsadvocate.com/blog/neurodivergent-toolbox-how-to-use-body-doubling/"
+          "t": "O Antagonista — Dopamenu: como o cardápio de dopamina pode te ajudar",
+          "u": "https://oantagonista.com.br/brasil/sente-se-desmotivado-descubra-como-o-dopamenu-pode-te-ajudar/"
         },
         "video": {"t": "", "u": ""}
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-10-27",
+        "id": "receita-2026-10-28",
         "top": true,
-        "t": "Panqueca de Aveia e Banana Vegana em 15 Min — 4 Ingredientes, Sem Leite de Vaca, Kid-Friendly",
-        "resumo": "Banana amassada + aveia + chia + fermento = massa pronta em 5 minutos. Doura na frigideira sem gordura adicionada. Acompanha geleia, pasta de amendoim ou frutas frescas.",
-        "porque": "Sem laticínios, sem glúten de trigo, sem ovo. O doce natural da banana elimina o açúcar da receita e as crianças adoram. Fácil de dobrar e guardar na geladeira por até 2 dias.",
-        "aplicar": "Café da manhã ou lanche em menos de 20 min. Varia o recheio conforme o que tem na geladeira — funciona frio também.",
-        "plano": "1) Amasse 1 banana madura com garfo · 2) Misture 4 col. sopa de aveia em flocos, 1 col. chá de chia e 1 col. chá de fermento · 3) Deixe descansar 3 min (a chia engrossa a massa) · 4) Doure na frigideira antiaderente em fogo baixo, 2 min de cada lado",
+        "t": "Sopa de Lentilha Vermelha com Curry e Leite de Coco — 30 Min, Vegana, Kid-Friendly, 1 Panela Só",
+        "resumo": "Sopa cremosa de lentilha vermelha (cozinha sem molho prévio) com leite de coco, curry, açafrão e tomate. Nutritiva, sem laticínios e aprovada por crianças — o leite de coco dá cremosidade sem nenhum produto animal.",
+        "porque": "Lentilha vermelha é proteína vegetal que cozinha em 20 min sem precisar deixar de molho. O curry adiciona sabor complexo com um tempero só. Perfeita para dias mais frios — o outono da Flórida pede isso.",
+        "aplicar": "Funciona como almoço, jantar ou preparo em batch no domingo para cobrir a semana. Congela bem por até 3 meses em porções individuais.",
+        "plano": "1) Refogue cebola, alho e gengibre picados no azeite por 3 min · 2) Adicione 1 col. sopa de curry + 1 col. chá de açafrão, mexa por 1 min · 3) Adicione 1 xícara de lentilha vermelha, 1 lata de tomate pelado, 1 lata de leite de coco e 2 xícaras de água · 4) Cozinhe em fogo médio por 20–25 min até cremoso; sirva com coentro fresco e pão pita",
         "fonte": {
-          "t": "Receiteria — Panqueca de Banana Vegana",
-          "u": "https://www.receiteria.com.br/receita/panqueca-de-banana-vegana/"
+          "t": "Zwilling — Oriental Lentil Soup (Sopa de Lentilha com Curry e Coco)",
+          "u": "https://www.zwilling.com/pt/magazine/receitas-inspiradoras/receitas-pratos-principais/oriental-lentil-soup.html"
         },
         "video": {"t": "", "u": ""}
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-10-27",
+        "id": "merch-2026-10-28",
         "top": true,
-        "t": "PODpartner 2026: A Alternativa Premium para Bordado Real em POD — Awkward Styles Fechou, Este É o Substituto Apontado pelos Reviewers",
-        "resumo": "PODpartner é destacado como a opção de alta qualidade para quem quer bordado de verdade em POD. Não tem a escala da Printful, mas reviewers da ecommerce-platforms.com elogiam o acabamento e posicionamento de marca.",
-        "porque": "Awkward Styles encerrou as atividades em 2026. PODpartner surge como a referência indicada pelos próprios sites de review para quem quer bordado POD premium e fugir das gráficas de massa.",
-        "aplicar": "Avalie para tees longline femininas com bordado. Custo por peça mais alto, mas a diferenciação é real. Peça amostra antes de colocar no catálogo.",
-        "plano": "1) Leia o review completo em ecommerce-platforms.com (link abaixo) · 2) Compare custo por peça de longline com bordado vs Printful · 3) Solicite uma amostra de 1-2 peças · 4) Decida se o posicionamento premium justifica para a sua marca",
+        "t": "Teemill 2026: POD de Algodão Orgânico Certificado com 4.4★ no Trustpilot — A Plataforma para Construir Marca com Ângulo Sustentável",
+        "resumo": "Teemill é POD britânica de algodão orgânico com modelo circular (cliente devolve peça usada e ganha desconto na próxima). Média 4.4 estrelas no Trustpilot com +3.600 avaliações. Plano gratuito. Integra com Shopify.",
+        "porque": "Se o posicionamento da sua marca inclui público feminino que valoriza sustentabilidade, o algodão orgânico certificado é diferencial real — não greenwashing. Produção sob demanda (zero estoque) com energia renovável.",
+        "aplicar": "Atenção: Teemill não faz bordado — use Printful ou Apliiq para isso. Use a Teemill para estampas premium com narrativa sustentável; complemente com outra plataforma para bordados.",
+        "plano": "1) Crie conta gratuita em teemill.com · 2) Suba 2–3 designs e peça amostras (custo do produto + frete para os EUA) · 3) Avalie qualidade do algodão orgânico e prazo de entrega · 4) Decida: o ângulo sustentável encaixa no posicionamento da sua marca? Se sim, ative a loja integrada Shopify",
         "fonte": {
-          "t": "Ecommerce Platforms — PODpartner Review 2026",
-          "u": "https://ecommerce-platforms.com/articles/podpartner-review"
+          "t": "Teemill — Eco Print on Demand (Shopify App)",
+          "u": "https://apps.shopify.com/teemill"
         },
         "video": {"t": "", "u": ""}
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-10-27",
+        "id": "conteudo-2026-10-28",
         "top": true,
-        "t": "OpusClip 2026: Cole o Link do Vídeo Longo → IA Detecta os Melhores Momentos e Gera Shorts com Score de Viralidade",
-        "resumo": "OpusClip analisa o transcript, identifica os trechos mais engajantes e gera clipes curtos prontos para TikTok, Reels e YouTube Shorts — com legendas, reframing automático e pontuação de viralidade por clipe.",
-        "porque": "Em vez de assistir o vídeo inteiro e editar na mão, a IA seleciona o ouro. O 'virality score' ajuda a priorizar qual clipe postar primeiro — especialmente útil quando você tem horas de material gravado.",
-        "aplicar": "Funciona com vídeos de obras, reviews de projetos, time-lapses longos ou qualquer conteúdo da OPC. Cole o link e a IA trabalha.",
-        "plano": "1) Acesse opus.pro (plano gratuito: 60 créditos/mês) · 2) Cole o link de um vídeo longo da OPC ou YouTube · 3) Escolha os clipes com maior virality score · 4) Revise, adicione branding OPC e publique",
+        "t": "Submagic 2026: Upload do Vídeo → Legendas Animadas + B-Roll Automático + Zoom em 1 Clique — 4.7★ em 83 Reviews no G2",
+        "resumo": "Submagic transcreve o áudio, estiliza as legendas com animação, insere B-roll baseado nas palavras-chave do transcript e adiciona zoom/efeito sonoro. Feito para Reels e Shorts verticais. Nota 4.7 no G2 com 83 avaliações reais.",
+        "porque": "Combinação única: legenda + B-roll + zoom em uma única passagem sem abrir editor de vídeo. Para vídeos falando para câmera (tutoriais, dicas, bastidores), é o fluxo mais rápido do mercado hoje — economiza horas por semana.",
+        "aplicar": "Ideal para conteúdo onde você explica algo diretamente para a câmera. Menos indicado para vídeos de B-roll puro sem narração. Plano gratuito disponível para testar.",
+        "plano": "1) Crie conta em submagic.co · 2) Suba um vídeo de 1–3 min que você já gravou · 3) Escolha o estilo visual de legenda (qual chama mais atenção?) · 4) Exporte e compare o tempo gasto vs edição manual — se economizou mais de 30 min, vale o upgrade para o plano pago",
         "fonte": {
-          "t": "Marc Andrews — Opus Clip Review 2026",
-          "u": "https://marcandrews.com/opus-clip-review-2026-ai-video-shorts-tool-tested/"
+          "t": "G2 — Submagic Reviews (4.7★, 83 avaliações)",
+          "u": "https://www.g2.com/sellers/submagic"
         },
         "video": {"t": "", "u": ""}
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-10-27",
+        "id": "obra-2026-10-28",
         "top": true,
-        "t": "IACrea 2026: Foto do Cômodo Atual → IA Redesenha em Múltiplos Estilos e Gera Vídeo Comparativo Antes/Depois em 5 Segundos",
-        "resumo": "IACrea tem modos de mobiliário, decoração e reforma. No modo 'Renovate', suba a foto do cômodo existente e a IA gera o redesign em estilos diferentes mais um vídeo de comparação antes/depois automaticamente.",
-        "porque": "Diferente dos geradores de vídeo puros, o IACrea entrega o antes/depois visual pronto para mostrar ao cliente antes de assinar o orçamento. Menos pós-produção, mais impacto comercial.",
-        "aplicar": "Mostre ao cliente como o espaço vai ficar antes de fechar o contrato. Poste o vídeo comparativo nos Stories da OPC como prova de conceito do trabalho.",
-        "plano": "1) Acesse iacrea.com e crie conta (plano gratuito disponível) · 2) Selecione modo 'Renovate' ou 'Furnish' · 3) Suba a foto do cômodo de um projeto atual · 4) Baixe o vídeo antes/depois e poste nos Stories da OPC",
+        "t": "Pika 2.2 Pikaframes para Reels de Reforma: Foto Antes + Foto Depois → IA Gera a Transição em Vídeo 1080p",
+        "resumo": "Pika 2.2 tem o Pikaframes: defina o quadro inicial (antes da reforma) e o quadro final (depois) — a IA gera a transição cinematográfica entre eles com movimento de câmera. Clipes de até 10 segundos em 1080p. 25 créditos gratuitos/mês.",
+        "porque": "Transição antes/depois é o formato mais viral no nicho de reforma. O Pikaframes resolve exatamente isso: você só fornece as duas fotos e a IA preenche o movimento entre elas — sem edição manual, sem timeline.",
+        "aplicar": "Use Pika para a transição central do Reel da OPC. Combine com música e CTA no CapCut. Resultado: um Reel profissional com menos de 30 min de produção total.",
+        "plano": "1) Acesse pika.art e crie conta (25 créditos/mês grátis) · 2) Selecione Pikaframes — faça upload da foto antes e depois da reforma · 3) Gere a transição em 1080p (até 10 seg) · 4) Importe no CapCut: adicione música, legenda com CTA e exporte em 9:16 para Reels",
         "fonte": {
-          "t": "AI Home Design — Melhores Ferramentas de Staging Virtual 2026",
-          "u": "https://aihomedesign.com/blog/?p=12080"
+          "t": "CapCut — Pika 2.2 Review: Features, Pricing and Alternatives",
+          "u": "https://www.capcut.com/resource/pika-ai"
         },
         "video": {"t": "", "u": ""}
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-10-27",
+        "id": "geo-2026-10-28",
         "top": true,
-        "t": "Turquia como Estado Pivô 2026: Membro da OTAN que Negocia com a Rússia e Controla o Acesso ao Mar Negro",
-        "resumo": "A Turquia não é nem aliada total do Ocidente nem parceira da Rússia — é um 'estado pivô' que maximiza liberdade de ação jogando dos dois lados. Controla o Bósforo, borda zonas de conflito e vende drones para múltiplos atores.",
-        "porque": "Com a cúpula da OTAN em Ancara em julho de 2026, Erdoğan negociou mais influência na defesa europeia enquanto mantém laços comerciais com Moscou. O Atlantic Council chama de 'flexibilidade calculada' — a pauta virou manchete geopolítica.",
-        "aplicar": "Para conteúdo de news: o conceito de 'estado pivô' explica por que certos países recusam sanções, mediam conflitos e saem fortalecidos de guerras que devastam outros. Vira série.",
-        "plano": "1) Leia o relatório do Atlantic Council sobre relações EUA-Turquia em 2026 · 2) Pesquise 'pivot state geopolitics' para o conceito teórico · 3) Monte a pauta: 'Por que a Turquia nunca escolhe um lado — e como isso funciona' · 4) Conecte ao conceito de estado pivô para uma série geopolítica",
+        "t": "Esequibo 2026: A Disputa que Passou de Linha no Mapa para Guerra por 11 Bilhões de Barris de Petróleo na América do Sul",
+        "resumo": "O Esequibo é um território de 160 mil km² que a Venezuela reivindica há mais de 150 anos, mas que a Guiana administra. Em 2015 a ExxonMobil descobriu petróleo no bloco Stabroek — a Guiana produz 400 mil barris/dia e projeta 1 milhão para 2027. A Corte Internacional de Justiça julga o caso em 2026.",
+        "porque": "Melhor exemplo atual de como recursos naturais reconfiguram disputas regionais: um país pequeno virou potência petroleira e enfrenta seu vizinho maior com apoio direto dos EUA — Marco Rubio ameaçou Maduro em 2025 caso atacasse a Guiana ou a ExxonMobil.",
+        "aplicar": "Pauta editorial: o petróleo mudou o mapa na América do Sul. Conecta commodities, soberania e geopolítica em um único ângulo acessível para qualquer audiência.",
+        "plano": "1) Contexto: a Guiana tornou-se um dos países de maior crescimento econômico per capita do mundo por conta do petróleo offshore · 2) Conflito: Venezuela fez referendo em 2023 pedindo a anexação do Esequibo — 95% votaram sim · 3) Geopolítica global: EUA, ExxonMobil e Brasil (que faz fronteira com a Guiana) monitoram de perto · 4) CIJ: sentença prevista para 2026 pode definir o destino do território por décadas",
         "fonte": {
-          "t": "Atlantic Council — Relações EUA-Turquia em 2026",
-          "u": "https://www.atlanticcouncil.org/content-series/ac-turkey-defense-journal/navigating-change-us-turkish-defense-relations-in-2026/"
+          "t": "",
+          "u": ""
         },
         "video": {"t": "", "u": ""}
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-10-27",
+        "id": "ads-2026-10-28",
         "top": true,
-        "t": "Google Ads Atribuição 2026: Data-Driven vs Last Click — Qual Modelo Revela Onde Seus Leads Realmente Começam",
-        "resumo": "Em 2026, o Google Ads tem apenas 2 modelos: Last Click (todo crédito ao último clique) e Data-Driven (IA distribui crédito por todos os pontos de contato). O DDA é o padrão agora — e muda toda a leitura de performance.",
-        "porque": "Com Last Click, sua campanha de awareness parece não funcionar — mas ela pode estar gerando o lead que outro anúncio 'fecha'. O DDA revela o caminho real do cliente e evita que você corte campanhas que estão trabalhando no topo do funil.",
-        "aplicar": "Para a OPC: verifique qual modelo está ativo. Se for Last Click, migre para Data-Driven e compare a atribuição por 30 dias antes de cortar qualquer campanha.",
-        "plano": "1) Abra Google Ads → Configurações da Conta → Atribuição · 2) Veja qual modelo está ativo · 3) Se for Last Click, mude para Data-Driven Attribution · 4) Aguarde 30 dias e compare: quais campanhas ganharam crédito que não aparecia antes?",
+        "t": "Google Local Services Ads 2026: Pague por Lead — Não por Clique — e Apareça Antes de Todo Google Ads Comum na Busca de Reforma",
+        "resumo": "LSA (Local Services Ads) cobram por lead válido (ligação, mensagem, agendamento) — não por clique. Aparecem acima de todos os anúncios comuns, do mapa e dos resultados orgânicos. Cost per lead médio de US$53 para serviços residenciais (benchmark fev/2026). A partir de agosto/2026, a Google migra LSAs para campanhas PMax.",
+        "porque": "Para construtoras como a OPC, o LSA conecta diretamente quem busca reforma com quem presta o serviço — você só paga quando alguém entrou em contato. O selo Google Verified no anúncio aumenta a confiança do cliente.",
+        "aplicar": "Se a OPC ainda não tem LSA ativo, essa é a lacuna mais urgente antes da migração para PMax em agosto/2026. A curva de aprendizado do algoritmo de lead começa agora.",
+        "plano": "1) Acesse ads.google.com/local-services-ads e verifique se home improvement/contractor está disponível no seu ZIP code · 2) Complete o processo Google Verified (background check + licença de construção) · 3) Defina orçamento semanal e selecione categorias: renovation, remodeling, general contractor · 4) Monitore custo por lead na 1ª semana — meta: abaixo de US$80 por lead",
         "fonte": {
-          "t": "Analyzify — Data-Driven Attribution no Google Ads",
-          "u": "https://analyzify.com/hub/data-driven-attribution-model-in-google-ads"
+          "t": "PushLeads — Google Local Service Ads 2026: Setup Guide for Contractors",
+          "u": "https://pushleads.com/google-local-service-ads-in-2026-the-complete-setup-and-optimization-guide-for-contractors/"
         },
         "video": {"t": "", "u": ""}
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-10-27",
+        "id": "iafim-2026-10-28",
         "top": true,
-        "t": "Lindy AI 2026: Relançada como Assistente Executiva Pessoal — Triagem de E-mail, Agenda e Briefing Diário via iMessage",
-        "resumo": "Em fevereiro de 2026, Lindy foi relançada como assistente executiva individual. Triia sua caixa de entrada, rascunha respostas, organiza agenda e envia um briefing diário por iMessage — sem você abrir o Gmail.",
-        "porque": "Para quem tem TDAH e 338 e-mails pendentes de aprovação, ter um agente que lê, filtra e rascunha respostas é um multiplicador real de tempo. Diferente de Zapier (plataforma) ou n8n (técnico) — o Lindy age como uma pessoa.",
-        "aplicar": "Avalie o plano pago para triagem da OPC. Mas leia reviews independentes antes: Trustpilot mostra 1.7/5 com reclamações de cobrança — verifique no seu contexto antes de pagar.",
-        "plano": "1) Acesse lindy.ai e teste o plano gratuito (400 créditos) · 2) Conecte Gmail e teste a triagem por 1 semana · 3) Avalie se o briefing diário por iMessage funciona para seu fluxo · 4) Compare com Zapier AI Agents (testado ontem) antes de escolher",
+        "t": "Relevance AI 2026: US$24M Captados — Crie um Time Completo de Agentes IA sem Código para Vendas, Pesquisa e Automação",
+        "resumo": "Relevance AI é plataforma no-code para criar times autônomos de agentes IA — não um agente único, mas uma equipe onde cada agente tem função específica e os agentes se passam tarefas entre si. US$24M Série B em maio/2025, 40 mil agentes criados, clientes como Activision e SafetyCulture.",
+        "porque": "Diferente do Zapier (automatiza apps) ou n8n (fluxos visuais), a Relevance AI é construída ao redor de workforce: você monta um time de IA como montaria um time humano — cada agente com papel e ferramentas específicas.",
+        "aplicar": "Caso de uso para OPC: agente de qualificação de lead (lê formulário, verifica orçamento, agenda call só para leads quentes) + agente de follow-up (manda mensagem personalizada 48h depois e registra no CRM).",
+        "plano": "1) Crie conta gratuita em relevanceai.com · 2) Escolha um template de agente de vendas ou pesquisa no marketplace · 3) Conecte suas ferramentas (Gmail, planilha, CRM) · 4) Rode o agente em 3 tarefas reais e meça: qualidade do output vs tempo economizado",
         "fonte": {
-          "t": "CloudTalk — Lindy AI Review 2026",
-          "u": "https://www.cloudtalk.io/blog/lindy-ai-review/"
+          "t": "TechCrunch — Relevance AI raises $24M Series B to help anyone build teams of AI agents",
+          "u": "https://techcrunch.com/2025/05/06/relevance-ai-raises-24m-series-b-to-help-anyone-build-teams-of-ai-agents/"
         },
         "video": {"t": "", "u": ""}
       }
