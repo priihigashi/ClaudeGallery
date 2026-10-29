@@ -1,35 +1,35 @@
 {
-  "date": "2026-10-28",
+  "date": "2026-10-29",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "📋 Fila",
-      "t": "Aprovações de conteúdo OPC pendentes na inbox",
-      "why": "E-mail de OPC content approvals pending detectado — peças criadas pela pipeline aguardam sua curadoria hoje.",
+      "tag": "OPC",
+      "t": "Conteúdo OPC aguardando aprovação na fila",
+      "why": "Dois lotes de posts da Oak Park estão pendentes de revisão — aprovar antes do meio-dia mantém o calendário em dia",
       "go": "conteudo"
     },
     {
-      "tag": "⚠️ Ads",
-      "t": "ads_pulse.yml falhou — revise antes de gastar mais no Google",
-      "why": "Falha no job 40373835592 + relatório OPC Ads semanal na inbox. Automação offline = investimento em risco.",
+      "tag": "REEL",
+      "t": "Trial reel 'Coisa antiga, notícia nova' agendado para hoje às 10h",
+      "why": "Formato 6x1 entra hoje — revise a ferramenta de corte automático antes de postar",
+      "go": "obra"
+    },
+    {
+      "tag": "ADS",
+      "t": "OPC Ads Weekly chegou + ads_pulse.yml com falha em 26/10",
+      "why": "Pipeline de ads falhou nesta semana — bom momento para revisar audiências e segmentação",
       "go": "ads"
     },
     {
-      "tag": "📚 Biblioteca",
-      "t": "Inspiration Library: 2.481 itens ativos e zero arquivados — precisa de curadoria",
-      "why": "Biblioteca crescendo sem triagem. Um agente IA pode filtrar e arquivar os melhores em minutos por semana.",
+      "tag": "PIPELINE",
+      "t": "Anthropic quota excedida: captura de conteúdo bloqueada (recorrente)",
+      "why": "Pipeline de captura travou por limite de API — avalie fallback com outro modelo ou aumento de quota",
       "go": "iafim"
-    },
-    {
-      "tag": "🏗️ Pipeline",
-      "t": "Weekly Pipeline Report da semana 26/10 esperando revisão",
-      "why": "Relatório semanal na inbox — conecte os resultados de conteúdo de obra com as métricas de ads antes de planejar a próxima semana.",
-      "go": "obra"
     }
   ],
   "history": [
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,130 +37,154 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-10-28",
+        "id": "tip-2026-10-29",
         "top": true,
-        "t": "Dopamine Menu para TDAH: Monte um Cardápio de Pausas Intencionais e Pare de Cair nas Redes Sociais Entre Tarefas",
-        "resumo": "O Dopamine Menu é uma lista preparada com antecedência de atividades curtas e prazerosas para usar como pausa consciente entre tarefas difíceis. Criado pelo coach de TDAH Eric Tivers, validado pela Mayo Clinic como forma de ativação comportamental estruturada.",
-        "porque": "O cérebro com TDAH precisa de recompensa imediata para se manter em movimento. Sem um cardápio pronto, a pausa vira 40 minutos de redes sociais sem perceber. Com o menu, a pausa é intencional e cronometrada — e você volta.",
-        "aplicar": "Crie seu cardápio agora com 5–8 atividades de 5–15 min que te recarregam de verdade (música, caminhada curta, arrumar uma gaveta). Use o cronômetro — sugestão do especialista: 13 minutos e 17 segundos, pra ser incomum e memorável.",
-        "plano": "1) Abra uma nota agora e escreva seu cardápio: aperitivos (1–3 min), entradas (5 min), pratos principais (15 min) · 2) Coloque o cardápio à vista (papel, widget, nota fixada na tela) · 3) Na próxima tarefa difícil, escolha um item do cardápio como recompensa programada antes de começar · 4) Avalie em 3 dias: quais atividades recarregaram de verdade? Corte as que não funcionaram",
+        "t": "Temptation Bundling para TDAH: Junte o Que Você Ama ao Que Você Evita — e o Cérebro Finalmente Entra em Ação",
+        "resumo": "Estratégia criada pela pesquisadora Katy Milkman (Wharton): você só escuta seu podcast favorito, assiste sua série ou faz algo prazeroso ENQUANTO realiza uma tarefa que costuma evitar. Para TDAH, onde iniciar depende de dopamina disponível, criar uma âncora de recompensa transforma a ativação.",
+        "porque": "O TDAH dificulta o início de tarefas de baixo estímulo — não é falta de vontade, é baixo combustível dopaminérgico. Parear recompensa + obrigação cria antecipação genuína em vez de culpa.",
+        "aplicar": "Monte seu menu pessoal de bundling: podcast favorito exclusivo para relatórios, playlist específica para e-mails, episódio de série para tarefas repetitivas da obra. A regra é rígida: o 'quero' só acontece durante o 'devo', nunca separado.",
+        "plano": "1) Liste 3 tarefas que você mais procrastina esta semana · 2) Escolha um 'quero' diferente e exclusivo para cada uma · 3) Bloqueie no calendário: tarefa + recompensa juntos, 25 min · 4) Teste por 5 dias e anote qual tarefa você passou a antecipar em vez de evitar",
         "fonte": {
-          "t": "O Antagonista — Dopamenu: como o cardápio de dopamina pode te ajudar",
-          "u": "https://oantagonista.com.br/brasil/sente-se-desmotivado-descubra-como-o-dopamenu-pode-te-ajudar/"
+          "t": "Temptation bundling: como parar de procrastinar (Ness Labs)",
+          "u": "https://nesslabs.com/temptation-bundling"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-10-28",
+        "id": "receita-2026-10-29",
         "top": true,
-        "t": "Sopa de Lentilha Vermelha com Curry e Leite de Coco — 30 Min, Vegana, Kid-Friendly, 1 Panela Só",
-        "resumo": "Sopa cremosa de lentilha vermelha (cozinha sem molho prévio) com leite de coco, curry, açafrão e tomate. Nutritiva, sem laticínios e aprovada por crianças — o leite de coco dá cremosidade sem nenhum produto animal.",
-        "porque": "Lentilha vermelha é proteína vegetal que cozinha em 20 min sem precisar deixar de molho. O curry adiciona sabor complexo com um tempero só. Perfeita para dias mais frios — o outono da Flórida pede isso.",
-        "aplicar": "Funciona como almoço, jantar ou preparo em batch no domingo para cobrir a semana. Congela bem por até 3 meses em porções individuais.",
-        "plano": "1) Refogue cebola, alho e gengibre picados no azeite por 3 min · 2) Adicione 1 col. sopa de curry + 1 col. chá de açafrão, mexa por 1 min · 3) Adicione 1 xícara de lentilha vermelha, 1 lata de tomate pelado, 1 lata de leite de coco e 2 xícaras de água · 4) Cozinhe em fogo médio por 20–25 min até cremoso; sirva com coentro fresco e pão pita",
+        "t": "Tacos de Couve-Flor Assada com Guacamole Simples — 25 Min, Veganos, Sem Leite de Vaca, Kids-Approved",
+        "resumo": "Couve-flor em floretes temperada com páprica defumada, cominho, alho em pó e azeite, assada a 220°C por 20 min até dourar e ficar crocante. Servida em tortilhas de milho com guacamole (abacate, limão, sal) e coentro. Queijo vegano opcional. Nada de peixe, nada de leite.",
+        "porque": "Couve-flor assada com páprica defumada tem textura e sabor que conquistam crianças sem precisar de queijo ou carne. Rápida, barata e fácil de montar no prato de cada um — ótima para janta agitada.",
+        "aplicar": "Prepare a couve-flor temperada à noite e guarde na geladeira. Na hora de jantar, vai direto ao forno — 20 minutos e está pronto. Guacamole em 5 minutos enquanto assa.",
+        "plano": "1) Pré-aqueça forno a 220°C · 2) Misture couve-flor + 2 col.sopa azeite + páprica defumada + cominho + alho em pó + sal · 3) Asse 20-22 min virando na metade · 4) Monte nas tortilhas com guacamole simples (1 abacate + limão + sal) e sirva imediatamente",
         "fonte": {
-          "t": "Zwilling — Oriental Lentil Soup (Sopa de Lentilha com Curry e Coco)",
-          "u": "https://www.zwilling.com/pt/magazine/receitas-inspiradoras/receitas-pratos-principais/oriental-lentil-soup.html"
+          "t": "Tacos de couve-flor defumada com maionese de avocado (Catraca Livre)",
+          "u": "https://catracalivre.com.br/gastronomia/tacos-de-couve-flor-defumada-com-maionese-de-avocado-a-receita-criativa-e-cheia-de-sabor-que-vai-surpreender/"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-10-28",
+        "id": "merch-2026-10-29",
         "top": true,
-        "t": "Teemill 2026: POD de Algodão Orgânico Certificado com 4.4★ no Trustpilot — A Plataforma para Construir Marca com Ângulo Sustentável",
-        "resumo": "Teemill é POD britânica de algodão orgânico com modelo circular (cliente devolve peça usada e ganha desconto na próxima). Média 4.4 estrelas no Trustpilot com +3.600 avaliações. Plano gratuito. Integra com Shopify.",
-        "porque": "Se o posicionamento da sua marca inclui público feminino que valoriza sustentabilidade, o algodão orgânico certificado é diferencial real — não greenwashing. Produção sob demanda (zero estoque) com energia renovável.",
-        "aplicar": "Atenção: Teemill não faz bordado — use Printful ou Apliiq para isso. Use a Teemill para estampas premium com narrativa sustentável; complemente com outra plataforma para bordados.",
-        "plano": "1) Crie conta gratuita em teemill.com · 2) Suba 2–3 designs e peça amostras (custo do produto + frete para os EUA) · 3) Avalie qualidade do algodão orgânico e prazo de entrega · 4) Decida: o ângulo sustentável encaixa no posicionamento da sua marca? Se sim, ative a loja integrada Shopify",
+        "t": "Gooten POD 2026: Rede Global de Fabricantes com Bordado Real — 4.3★ no G2 (303 reviews), 95% Ship-on-Time, Alta Margem",
+        "resumo": "Gooten conecta sua loja a uma rede de mais de 50 fabricantes premium com bordado real, DTG e DTF. Mais de 4 milhões de pedidos enviados, taxa de erro abaixo de 2%, 95% ship-on-time. Melhor avaliado por sellers que querem escalar com margem, não para quem está começando. Não produz em casa própria — por isso qualidade pode variar.",
+        "porque": "Diferente da Printful (produção própria, preço alto) e da Printify (marketplace amplo mas variado), a Gooten foca em automação B2B e margens para escala. Se você quer bordado em longlines sem abrir mão de lucro, vale comparar.",
+        "aplicar": "Peça amostras de pelo menos 2 fornecedores diferentes dentro da rede Gooten antes de publicar. Use o painel de comparação de fornecedores por produto para escolher o que melhor serve longline feminina com bordado.",
+        "plano": "1) Crie conta gratuita em gooten.com e conecte sua Shopify/Etsy · 2) Filtre por 'embroidery' + 'women's apparel' e compare fabricantes disponíveis · 3) Peça amostra de 1-2 opções (longline + bordado) · 4) Compare com Printful na mesma peça e decida pelo custo x qualidade",
         "fonte": {
-          "t": "Teemill — Eco Print on Demand (Shopify App)",
-          "u": "https://apps.shopify.com/teemill"
+          "t": "Gooten Review 2025: is it worth it? (Bootstrapping Ecommerce)",
+          "u": "https://bootstrappingecommerce.com/gooten-review/"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-10-28",
+        "id": "conteudo-2026-10-29",
         "top": true,
-        "t": "Submagic 2026: Upload do Vídeo → Legendas Animadas + B-Roll Automático + Zoom em 1 Clique — 4.7★ em 83 Reviews no G2",
-        "resumo": "Submagic transcreve o áudio, estiliza as legendas com animação, insere B-roll baseado nas palavras-chave do transcript e adiciona zoom/efeito sonoro. Feito para Reels e Shorts verticais. Nota 4.7 no G2 com 83 avaliações reais.",
-        "porque": "Combinação única: legenda + B-roll + zoom em uma única passagem sem abrir editor de vídeo. Para vídeos falando para câmera (tutoriais, dicas, bastidores), é o fluxo mais rápido do mercado hoje — economiza horas por semana.",
-        "aplicar": "Ideal para conteúdo onde você explica algo diretamente para a câmera. Menos indicado para vídeos de B-roll puro sem narração. Plano gratuito disponível para testar.",
-        "plano": "1) Crie conta em submagic.co · 2) Suba um vídeo de 1–3 min que você já gravou · 3) Escolha o estilo visual de legenda (qual chama mais atenção?) · 4) Exporte e compare o tempo gasto vs edição manual — se economizou mais de 30 min, vale o upgrade para o plano pago",
+        "t": "Klap AI 2026: Cole o Link do Vídeo Longo → IA Detecta Momentos Virais, Recorta para 9:16 e Adiciona Legendas — 8.94/10 em 53 Reviews",
+        "resumo": "Klap analisa vídeos longos, detecta os melhores momentos por potencial viral, recorta em clips verticais 9:16 com reframing automático do rosto e adiciona legendas. Cada clip recebe uma pontuação de potencial viral. ~85% de acerto na seleção — revisar manualmente antes de postar. Melhor para conteúdo falado (talking-head); vídeos muito visuais precisam de ajuste.",
+        "porque": "Para quem tem uma biblioteca de vídeos longos (podcasts, entrevistas, aulas, reuniões gravadas), o Klap transforma horas de conteúdo em Reels prontos em minutos — sem abrir editor. Ideal para reaproveitar conteúdo existente da Oak Park ou do canal.",
+        "aplicar": "Comece com um vídeo longo que você já tem gravado. Cole o link no Klap, deixe rodar, revise os 5 melhores clips sugeridos e publique os 2 mais relevantes. Tempo real: menos de 30 minutos do link ao Reel.",
+        "plano": "1) Acesse klap.app (plano gratuito disponível para teste) · 2) Cole o link de um vídeo longo do YouTube ou faça upload · 3) Aguarde a análise (~5-10 min) e veja os clips com pontuação viral · 4) Revise, ajuste legendas se necessário e baixe os melhores para postar",
         "fonte": {
-          "t": "G2 — Submagic Reviews (4.7★, 83 avaliações)",
-          "u": "https://www.g2.com/sellers/submagic"
+          "t": "Klap AI review — updated Jul 2026 (Dupple)",
+          "u": "https://dupple.com/reviews/klap-ai"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-10-28",
+        "id": "obra-2026-10-29",
         "top": true,
-        "t": "Pika 2.2 Pikaframes para Reels de Reforma: Foto Antes + Foto Depois → IA Gera a Transição em Vídeo 1080p",
-        "resumo": "Pika 2.2 tem o Pikaframes: defina o quadro inicial (antes da reforma) e o quadro final (depois) — a IA gera a transição cinematográfica entre eles com movimento de câmera. Clipes de até 10 segundos em 1080p. 25 créditos gratuitos/mês.",
-        "porque": "Transição antes/depois é o formato mais viral no nicho de reforma. O Pikaframes resolve exatamente isso: você só fornece as duas fotos e a IA preenche o movimento entre elas — sem edição manual, sem timeline.",
-        "aplicar": "Use Pika para a transição central do Reel da OPC. Combine com música e CTA no CapCut. Resultado: um Reel profissional com menos de 30 min de produção total.",
-        "plano": "1) Acesse pika.art e crie conta (25 créditos/mês grátis) · 2) Selecione Pikaframes — faça upload da foto antes e depois da reforma · 3) Gere a transição em 1080p (até 10 seg) · 4) Importe no CapCut: adicione música, legenda com CTA e exporte em 9:16 para Reels",
+        "t": "Veras (Chaos/EvolveLAB) 2026: Modelo 3D da Obra → IA Gera Render Fotorrealista e Vídeo do Resultado Final — Plugin para Revit, SketchUp e Rhino",
+        "resumo": "Plugin de IA de difusão que roda dentro de Revit, SketchUp, ArchiCAD e Rhino: você tem o modelo 3D, o Veras renderiza versões fotorrealistas do projeto acabado em segundos — e agora também gera clipes de vídeo curtos. Adquirido pela Chaos (makers do V-Ray) em fev/2025. A Oak Park pode transformar qualquer projeto de reforma em visual de portfólio antes mesmo de quebrar a parede.",
+        "porque": "Diferente de ferramentas que trabalham só a partir de fotos (REimagineHome, IACrea), o Veras parte do modelo técnico real — o que garante proporções corretas e serve para apresentar ao cliente e usar no Instagram.",
+        "aplicar": "Se a Oak Park já usa SketchUp ou Revit, instale o plugin Veras (via Chaos marketplace) e gere renders do próximo projeto antes de começar. Use os renders como conteúdo de antes/depois para o Instagram.",
+        "plano": "1) Acesse chaos.com e busque por 'Veras' no marketplace · 2) Instale o plugin no seu software de modelagem (SketchUp é o mais acessível) · 3) Abra um modelo de projeto existente e gere 3-4 variações de render · 4) Compare os renders com as fotos reais do projeto concluído e poste o par antes/depois",
         "fonte": {
-          "t": "CapCut — Pika 2.2 Review: Features, Pricing and Alternatives",
-          "u": "https://www.capcut.com/resource/pika-ai"
+          "t": "Chaos acquires EvolveLAB and its AEC AI tools (Chaos Press)",
+          "u": "https://www.chaos.com/press/chaos-acquires-evolvelab-and-its-aec-ai-tools"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-10-28",
+        "id": "geo-2026-10-29",
         "top": true,
-        "t": "Esequibo 2026: A Disputa que Passou de Linha no Mapa para Guerra por 11 Bilhões de Barris de Petróleo na América do Sul",
-        "resumo": "O Esequibo é um território de 160 mil km² que a Venezuela reivindica há mais de 150 anos, mas que a Guiana administra. Em 2015 a ExxonMobil descobriu petróleo no bloco Stabroek — a Guiana produz 400 mil barris/dia e projeta 1 milhão para 2027. A Corte Internacional de Justiça julga o caso em 2026.",
-        "porque": "Melhor exemplo atual de como recursos naturais reconfiguram disputas regionais: um país pequeno virou potência petroleira e enfrenta seu vizinho maior com apoio direto dos EUA — Marco Rubio ameaçou Maduro em 2025 caso atacasse a Guiana ou a ExxonMobil.",
-        "aplicar": "Pauta editorial: o petróleo mudou o mapa na América do Sul. Conecta commodities, soberania e geopolítica em um único ângulo acessível para qualquer audiência.",
-        "plano": "1) Contexto: a Guiana tornou-se um dos países de maior crescimento econômico per capita do mundo por conta do petróleo offshore · 2) Conflito: Venezuela fez referendo em 2023 pedindo a anexação do Esequibo — 95% votaram sim · 3) Geopolítica global: EUA, ExxonMobil e Brasil (que faz fronteira com a Guiana) monitoram de perto · 4) CIJ: sentença prevista para 2026 pode definir o destino do território por décadas",
+        "t": "Bab-el-Mandeb 2026: Os Houthis Controlam o Corredor de 26km por Onde Passa 12% do Comércio Global — e o Mundo Está Roteando Pelo Cabo da África",
+        "resumo": "O estreito de Bab-el-Mandeb (Iêmen–Djibuti) controla 12% do comércio global, 11% do petróleo marítimo e 8% do GNL. Em setembro/2026, os Houthis completaram o domínio de toda a costa iemenita do Mar Vermelho. Grandes armadoras estão desviando pelo Cabo da Boa Esperança: +20 dias de viagem, +US$1M por rota. Volume de tráfego caiu 50-55% vs. 2023.",
+        "porque": "Cada vez que uma choke point muda de mãos, preços sobem no mundo todo — frete, energia, produtos importados. Este é o caso mais ativo hoje. Entender o mapa do Mar Vermelho explica parte da inflação global e das cadeias de suprimento.",
+        "aplicar": "Próxima vez que ver notícia sobre frete caro ou prazo longo para importação, pense: provavelmente está passando (ou não passando) por Bab-el-Mandeb. Use esse ângulo para conectar geopolítica com custo de construção e materiais.",
+        "plano": "1) Procure 'Bab-el-Mandeb' no mapa (entre Iêmen e Djibuti) · 2) Leia a cobertura da Al Jazeera de set/2026 sobre o avanço Houthi · 3) Veja o rastreador de rotas marítimas Vessel Finder para entender o desvio · 4) Conecte com uma pauta: 'Por que construção fica mais cara quando o Mar Vermelho fecha'",
         "fonte": {
+          "t": "Red Sea nations watch as Houthis seize Bab al-Mandeb strait (Al Jazeera, set/2026)",
+          "u": "https://www.aljazeera.com/news/2026/9/13/red-sea-nations-watch-as-houthis-seize-bab-al-mandeb-strait"
+        },
+        "video": {
           "t": "",
           "u": ""
-        },
-        "video": {"t": "", "u": ""}
+        }
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-10-28",
+        "id": "ads-2026-10-29",
         "top": true,
-        "t": "Google Local Services Ads 2026: Pague por Lead — Não por Clique — e Apareça Antes de Todo Google Ads Comum na Busca de Reforma",
-        "resumo": "LSA (Local Services Ads) cobram por lead válido (ligação, mensagem, agendamento) — não por clique. Aparecem acima de todos os anúncios comuns, do mapa e dos resultados orgânicos. Cost per lead médio de US$53 para serviços residenciais (benchmark fev/2026). A partir de agosto/2026, a Google migra LSAs para campanhas PMax.",
-        "porque": "Para construtoras como a OPC, o LSA conecta diretamente quem busca reforma com quem presta o serviço — você só paga quando alguém entrou em contato. O selo Google Verified no anúncio aumenta a confiança do cliente.",
-        "aplicar": "Se a OPC ainda não tem LSA ativo, essa é a lacuna mais urgente antes da migração para PMax em agosto/2026. A curva de aprendizado do algoritmo de lead começa agora.",
-        "plano": "1) Acesse ads.google.com/local-services-ads e verifique se home improvement/contractor está disponível no seu ZIP code · 2) Complete o processo Google Verified (background check + licença de construção) · 3) Defina orçamento semanal e selecione categorias: renovation, remodeling, general contractor · 4) Monitore custo por lead na 1ª semana — meta: abaixo de US$80 por lead",
+        "t": "Google Ads In-Market + Custom Segments 2026: Apareça para Donos de Casa Que Já Estão Pesquisando Reforma — Não para Quem Está Só Sonhando",
+        "resumo": "In-Market Audiences coloca seus anúncios na frente de quem o Google classifica como 'pronto para contratar' em categorias como 'Home Renovation'. Custom Segments vai além: você alimenta com keywords ('reforma banheiro orçamento') e URLs de concorrentes que seu público visita. Para a Oak Park: comece em modo Observation para coletar dados antes de ativar como Targeting.",
+        "porque": "Campanhas de busca por palavras-chave capturam quem já sabe o que quer. Audiências In-Market + Custom Segments capturam quem ainda está pesquisando — o momento antes da decisão, onde você planta a marca.",
+        "aplicar": "No Google Ads, vá em Audiences > Add Audience Segment > In-Market > Home & Garden > Home Renovation. Adicione em Observation mode primeiro. Em 2-3 semanas você tem dados para decidir se vale escalar para Targeting.",
+        "plano": "1) Abra a campanha principal da Oak Park no Google Ads · 2) Vá em Audiences e adicione o segmento In-Market 'Home Renovation' em Observation · 3) Crie um Custom Segment com as 10 keywords mais fortes de pesquisa de reforma na Flórida · 4) Após 2 semanas, compare taxa de conversão dos segmentos vs. sem segmento e escale o melhor",
         "fonte": {
-          "t": "PushLeads — Google Local Service Ads 2026: Setup Guide for Contractors",
-          "u": "https://pushleads.com/google-local-service-ads-in-2026-the-complete-setup-and-optimization-guide-for-contractors/"
+          "t": "Google Ads In-Market Audiences: How to Reach People Ready to Buy (One PPC Agency)",
+          "u": "https://oneppcagency.co.uk/display-ads/in-market-audiences"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-10-28",
+        "id": "iafim-2026-10-29",
         "top": true,
-        "t": "Relevance AI 2026: US$24M Captados — Crie um Time Completo de Agentes IA sem Código para Vendas, Pesquisa e Automação",
-        "resumo": "Relevance AI é plataforma no-code para criar times autônomos de agentes IA — não um agente único, mas uma equipe onde cada agente tem função específica e os agentes se passam tarefas entre si. US$24M Série B em maio/2025, 40 mil agentes criados, clientes como Activision e SafetyCulture.",
-        "porque": "Diferente do Zapier (automatiza apps) ou n8n (fluxos visuais), a Relevance AI é construída ao redor de workforce: você monta um time de IA como montaria um time humano — cada agente com papel e ferramentas específicas.",
-        "aplicar": "Caso de uso para OPC: agente de qualificação de lead (lê formulário, verifica orçamento, agenda call só para leads quentes) + agente de follow-up (manda mensagem personalizada 48h depois e registra no CRM).",
-        "plano": "1) Crie conta gratuita em relevanceai.com · 2) Escolha um template de agente de vendas ou pesquisa no marketplace · 3) Conecte suas ferramentas (Gmail, planilha, CRM) · 4) Rode o agente em 3 tarefas reais e meça: qualidade do output vs tempo economizado",
+        "t": "Gumloop 2026: Canvas Visual Drag-and-Drop para Agentes de IA sem Código — SOC 2 Certificado, Multi-Provider (Anthropic + OpenAI + Gemini), 8.94/10",
+        "resumo": "Plataforma no-code para construir agentes e automações complexas com canvas visual. Diferencial: suporte a múltiplos provedores de LLM (Anthropic, OpenAI, Gemini) em um mesmo fluxo. SOC 2 Type II e GDPR. Free tier disponível; planos pagos a partir de US$97/mês. Melhor para automações de marketing, vendas e suporte — não para iniciantes que querem algo simples.",
+        "porque": "Com a quota da Anthropic estourando no pipeline de captura, ter um agente que usa fallback automático entre provedores (Claude → GPT → Gemini) resolve o bloqueio sem precisar de programação. Gumloop faz isso nativamente.",
+        "aplicar": "Se o pipeline de captura de conteúdo está travando por quota da Anthropic, construa um fluxo no Gumloop que tenta Claude primeiro e cai para GPT-4o como fallback — sem alterar código.",
+        "plano": "1) Crie conta gratuita em gumloop.com · 2) Explore os templates prontos de 'content pipeline' e 'email automation' · 3) Monte um fluxo simples: trigger por e-mail → sumarização com Claude → fallback GPT-4o se falhar · 4) Conecte ao seu Gmail e teste com 5 e-mails reais antes de escalar",
         "fonte": {
-          "t": "TechCrunch — Relevance AI raises $24M Series B to help anyone build teams of AI agents",
-          "u": "https://techcrunch.com/2025/05/06/relevance-ai-raises-24m-series-b-to-help-anyone-build-teams-of-ai-agents/"
+          "t": "Gumloop Review 2026: AI Workflow Automation (Automation Atlas)",
+          "u": "https://automationatlas.io/answers/gumloop-review-2026/"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ]
   }
