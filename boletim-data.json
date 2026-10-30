@@ -1,35 +1,35 @@
 {
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "OPC",
-      "t": "Conteúdo OPC aguardando aprovação na fila",
-      "why": "Dois lotes de posts da Oak Park estão pendentes de revisão — aprovar antes do meio-dia mantém o calendário em dia",
+      "tag": "📚 Imóveis FL",
+      "t": "Estudo RE às 8h: relógio de 90 dias Cameron Academy em contagem",
+      "why": "Agenda bloqueia o estudo como primeira tarefa do dia (Regra 1 do Finishing Protocol). O prazo de 90 dias começa no dia da compra — cada dia conta.",
+      "go": "tip"
+    },
+    {
+      "tag": "📲 Conteúdo",
+      "t": "Reel trial no ar hoje às 10h — \"Ouvir o outro lado\" no @tentandochegaratevoce",
+      "why": "Agendado no Metricool para publicar às 10h (horário de pico de sexta). Confira se publicou e renomeie o evento com DONE.",
       "go": "conteudo"
     },
     {
-      "tag": "REEL",
-      "t": "Trial reel 'Coisa antiga, notícia nova' agendado para hoje às 10h",
-      "why": "Formato 6x1 entra hoje — revise a ferramenta de corte automático antes de postar",
+      "tag": "🏗️ OPC",
+      "t": "Aprovações de conteúdo paradas — OPC + News aguardando OK",
+      "why": "Dois alertas de aprovações acumuladas na caixa de entrada. Pipeline de captura bloqueada por QUOTA_EXCEEDED da Anthropic.",
       "go": "obra"
     },
     {
-      "tag": "ADS",
-      "t": "OPC Ads Weekly chegou + ads_pulse.yml com falha em 26/10",
-      "why": "Pipeline de ads falhou nesta semana — bom momento para revisar audiências e segmentação",
+      "tag": "🧾 Financeiro",
+      "t": "Checar cobranças de IA — quota Anthropic excedida várias vezes esta semana",
+      "why": "Quatro alertas de QUOTA_EXCEEDED nos últimos 7 dias. Checar créditos no dashboard de finanças e ajustar limite antes que bloqueie novamente.",
       "go": "ads"
-    },
-    {
-      "tag": "PIPELINE",
-      "t": "Anthropic quota excedida: captura de conteúdo bloqueada (recorrente)",
-      "why": "Pipeline de captura travou por limite de API — avalie fallback com outro modelo ou aumento de quota",
-      "go": "iafim"
     }
   ],
   "history": [
     {
-      "date": "2026-10-29",
+      "date": "2026-10-30",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,16 +37,16 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-10-29",
+        "id": "tip-2026-10-30",
         "top": true,
-        "t": "Temptation Bundling para TDAH: Junte o Que Você Ama ao Que Você Evita — e o Cérebro Finalmente Entra em Ação",
-        "resumo": "Estratégia criada pela pesquisadora Katy Milkman (Wharton): você só escuta seu podcast favorito, assiste sua série ou faz algo prazeroso ENQUANTO realiza uma tarefa que costuma evitar. Para TDAH, onde iniciar depende de dopamina disponível, criar uma âncora de recompensa transforma a ativação.",
-        "porque": "O TDAH dificulta o início de tarefas de baixo estímulo — não é falta de vontade, é baixo combustível dopaminérgico. Parear recompensa + obrigação cria antecipação genuína em vez de culpa.",
-        "aplicar": "Monte seu menu pessoal de bundling: podcast favorito exclusivo para relatórios, playlist específica para e-mails, episódio de série para tarefas repetitivas da obra. A regra é rígida: o 'quero' só acontece durante o 'devo', nunca separado.",
-        "plano": "1) Liste 3 tarefas que você mais procrastina esta semana · 2) Escolha um 'quero' diferente e exclusivo para cada uma · 3) Bloqueie no calendário: tarefa + recompensa juntos, 25 min · 4) Teste por 5 dias e anote qual tarefa você passou a antecipar em vez de evitar",
+        "t": "Ciclos Ultradianos 90/20 para TDAH: Trabalhe em Blocos de 90 Min e Pare Antes de Travar",
+        "resumo": "O cérebro alterna ciclos naturais de ~90 min de foco e ~20 min de recuperação (Basic Rest-Activity Cycle). Para TDAH, onde o senso de tempo falha, ancorar o trabalho nesses ciclos com timer visível elimina a decisão de quando parar e previne o burnout que sabota a tarde inteira.",
+        "porque": "O TDAH pode ter ciclos ultradianos mais curtos e irregulares. Ao usar um timer externo como âncora, você para pelo relógio, não pelo cansaço — que no TDAH chega sem aviso e depois de já passar do limite.",
+        "aplicar": "Aplique hoje no estudo de imóveis (8h): 90 min de curso Cameron → 20 min de pausa real sem tela → repita. Nada de 'só mais 5 minutos'.",
+        "plano": "1) Baixe o app Flow — Pomodoro Focus Timer (gratuito, iOS/Android) e configure sessão de 90/20 · 2) Na primeira sessão, feche todas as abas exceto o curso Cameron e o quiz de imóveis · 3) Na pausa: levante, hidrate, não abra redes sociais · 4) Ao final de 3 ciclos (~5h), revise o que completou e ajuste a duração para o seu ritmo real",
         "fonte": {
-          "t": "Temptation bundling: como parar de procrastinar (Ness Labs)",
-          "u": "https://nesslabs.com/temptation-bundling"
+          "t": "Ultradian Rhythm Work Schedule: 90-Minute Focus Cycles",
+          "u": "https://goalsandprogress.com/ultradian-rhythm-work-schedule/"
         },
         "video": {
           "t": "",
@@ -56,16 +56,16 @@
     ],
     "receita": [
       {
-        "id": "receita-2026-10-29",
+        "id": "receita-2026-10-30",
         "top": true,
-        "t": "Tacos de Couve-Flor Assada com Guacamole Simples — 25 Min, Veganos, Sem Leite de Vaca, Kids-Approved",
-        "resumo": "Couve-flor em floretes temperada com páprica defumada, cominho, alho em pó e azeite, assada a 220°C por 20 min até dourar e ficar crocante. Servida em tortilhas de milho com guacamole (abacate, limão, sal) e coentro. Queijo vegano opcional. Nada de peixe, nada de leite.",
-        "porque": "Couve-flor assada com páprica defumada tem textura e sabor que conquistam crianças sem precisar de queijo ou carne. Rápida, barata e fácil de montar no prato de cada um — ótima para janta agitada.",
-        "aplicar": "Prepare a couve-flor temperada à noite e guarde na geladeira. Na hora de jantar, vai direto ao forno — 20 minutos e está pronto. Guacamole em 5 minutos enquanto assa.",
-        "plano": "1) Pré-aqueça forno a 220°C · 2) Misture couve-flor + 2 col.sopa azeite + páprica defumada + cominho + alho em pó + sal · 3) Asse 20-22 min virando na metade · 4) Monte nas tortilhas com guacamole simples (1 abacate + limão + sal) e sirva imediatamente",
+        "t": "Lasanha de Berinjela Vegana com Proteína de Soja e Queijo Vegano — 45 Min, Assada, Kid-Friendly",
+        "resumo": "Camadas de berinjela grelhada, molho de tomate caseiro com proteína de soja (PTS moída), queijo vegano gratinado no topo. Rende 6 porções, congela bem. Sem leite de vaca, sem ovos, sem peixe.",
+        "porque": "Receita elaborada (ciclo de ~4 dias). A berinjela grelhada absorve o molho e se comporta como massa — resultado denso e satisfatório para criança e adulto. PTS fica com textura de carne moída.",
+        "aplicar": "Monte no domingo para ter refeições prontas na semana. Crianças podem ajudar a montar as camadas — atividade de cozinha simples e visual.",
+        "plano": "1) Fatie 2 berinjelas grandes em fatias de 0,5 cm, grelhe com azeite até dourar dos dois lados · 2) Molho: refogue cebola e alho, adicione PTS já hidratada, polpa de tomate, sal, orégano — 15 min em fogo médio · 3) Monte: camada de molho → berinjela → molho → berinjela → finalize com queijo vegano ralado generoso · 4) Forno 200°C por 20 min até o queijo dourar",
         "fonte": {
-          "t": "Tacos de couve-flor defumada com maionese de avocado (Catraca Livre)",
-          "u": "https://catracalivre.com.br/gastronomia/tacos-de-couve-flor-defumada-com-maionese-de-avocado-a-receita-criativa-e-cheia-de-sabor-que-vai-surpreender/"
+          "t": "Lasanha vegana de berinjela e molho de proteína de soja — TudoGostoso",
+          "u": "https://www.tudogostoso.com.br/receita/194075-lasanha-vegana-de-berinjela-e-molho-de-proteina-de-soja.html"
         },
         "video": {
           "t": "",
@@ -75,16 +75,16 @@
     ],
     "merch": [
       {
-        "id": "merch-2026-10-29",
+        "id": "merch-2026-10-30",
         "top": true,
-        "t": "Gooten POD 2026: Rede Global de Fabricantes com Bordado Real — 4.3★ no G2 (303 reviews), 95% Ship-on-Time, Alta Margem",
-        "resumo": "Gooten conecta sua loja a uma rede de mais de 50 fabricantes premium com bordado real, DTG e DTF. Mais de 4 milhões de pedidos enviados, taxa de erro abaixo de 2%, 95% ship-on-time. Melhor avaliado por sellers que querem escalar com margem, não para quem está começando. Não produz em casa própria — por isso qualidade pode variar.",
-        "porque": "Diferente da Printful (produção própria, preço alto) e da Printify (marketplace amplo mas variado), a Gooten foca em automação B2B e margens para escala. Se você quer bordado em longlines sem abrir mão de lucro, vale comparar.",
-        "aplicar": "Peça amostras de pelo menos 2 fornecedores diferentes dentro da rede Gooten antes de publicar. Use o painel de comparação de fornecedores por produto para escolher o que melhor serve longline feminina com bordado.",
-        "plano": "1) Crie conta gratuita em gooten.com e conecte sua Shopify/Etsy · 2) Filtre por 'embroidery' + 'women's apparel' e compare fabricantes disponíveis · 3) Peça amostra de 1-2 opções (longline + bordado) · 4) Compare com Printful na mesma peça e decida pelo custo x qualidade",
+        "t": "T-Pop 2026: POD Ecológico Francês — Algodão Orgânico Certificado, Bordado Real, 4.5★ em 242 Reviews",
+        "resumo": "T-Pop é uma plataforma europeia de print-on-demand sustentável (França) com algodão orgânico (GOTS/OEKO-TEX), bordado real e tees longas femininas. Diferencial: embalagem 100% reciclada sem plástico, integração com Shopify e WooCommerce. Produção ética certificada.",
+        "porque": "Para quem quer posicionamento sustentável na marca de merch, T-Pop entrega as credenciais que Printful e Printify não têm. 4.5★ com 242 avaliações no Shopify App Store. Justifica preço premium com público eco-conscious.",
+        "aplicar": "Se você vende para público de bem-estar, vegano ou eco-conscious, T-Pop é o diferencial de marca que transforma uma tee em escolha de valor. Peça sample antes de lançar.",
+        "plano": "1) Acesse tpop.com e crie conta gratuita · 2) Peça um sample de tee longa feminina bordada (~€15–25) para testar qualidade real · 3) Compare com sua última amostra Printful em textura, cor e acabamento · 4) Se aprovado, conecte à sua Shopify e crie 2–3 produtos piloto com posicionamento eco",
         "fonte": {
-          "t": "Gooten Review 2025: is it worth it? (Bootstrapping Ecommerce)",
-          "u": "https://bootstrappingecommerce.com/gooten-review/"
+          "t": "T-Pop: Eco Print on Demand — Reviews Shopify App Store",
+          "u": "https://appnavigator.io/app/tpop/reviews/528759"
         },
         "video": {
           "t": "",
@@ -94,16 +94,16 @@
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-10-29",
+        "id": "conteudo-2026-10-30",
         "top": true,
-        "t": "Klap AI 2026: Cole o Link do Vídeo Longo → IA Detecta Momentos Virais, Recorta para 9:16 e Adiciona Legendas — 8.94/10 em 53 Reviews",
-        "resumo": "Klap analisa vídeos longos, detecta os melhores momentos por potencial viral, recorta em clips verticais 9:16 com reframing automático do rosto e adiciona legendas. Cada clip recebe uma pontuação de potencial viral. ~85% de acerto na seleção — revisar manualmente antes de postar. Melhor para conteúdo falado (talking-head); vídeos muito visuais precisam de ajuste.",
-        "porque": "Para quem tem uma biblioteca de vídeos longos (podcasts, entrevistas, aulas, reuniões gravadas), o Klap transforma horas de conteúdo em Reels prontos em minutos — sem abrir editor. Ideal para reaproveitar conteúdo existente da Oak Park ou do canal.",
-        "aplicar": "Comece com um vídeo longo que você já tem gravado. Cole o link no Klap, deixe rodar, revise os 5 melhores clips sugeridos e publique os 2 mais relevantes. Tempo real: menos de 30 minutos do link ao Reel.",
-        "plano": "1) Acesse klap.app (plano gratuito disponível para teste) · 2) Cole o link de um vídeo longo do YouTube ou faça upload · 3) Aguarde a análise (~5-10 min) e veja os clips com pontuação viral · 4) Revise, ajuste legendas se necessário e baixe os melhores para postar",
+        "t": "Pictory AI 2.0 (2026): Cole o Roteiro → IA Monta Vídeo com B-Roll do Getty + Legendas em Minutos — $25/mês",
+        "resumo": "Pictory transforma roteiro de texto em vídeo pronto: IA seleciona B-roll do Storyblocks e Getty Images, gera legendas automáticas, adiciona narração e exporta em 1080p. Versão 2.0 lançada em março 2026. Ponto forte: blog post ou script → vídeo para YouTube/Instagram sem abrir editor.",
+        "porque": "Você já tem o roteiro (ou o Claude gera em 2 minutos). O Pictory faz o resto — B-roll, corte, legenda, export — sem timeline. 14 dias de trial gratuito para testar antes de pagar.",
+        "aplicar": "Use para transformar scripts de reforma OPC em vídeos de 60s para o Instagram. Cole o texto, ajuste só os clipes que não ficaram certos, exporte e poste.",
+        "plano": "1) Acesse pictory.ai e inicie o trial (14 dias, sem cartão) · 2) Cole um roteiro de 200 palavras sobre reforma de cozinha · 3) Deixe a IA gerar o vídeo com B-roll automático e legendas · 4) Adicione logo OPC no banner, exporte e teste nos Stories esta semana",
         "fonte": {
-          "t": "Klap AI review — updated Jul 2026 (Dupple)",
-          "u": "https://dupple.com/reviews/klap-ai"
+          "t": "Pictory AI Review 2026: Is It Still One of the Best AI Video Creation Tools?",
+          "u": "https://firebearstudio.com/blog/pictory-ai-review.html"
         },
         "video": {
           "t": "",
@@ -113,16 +113,16 @@
     ],
     "obra": [
       {
-        "id": "obra-2026-10-29",
+        "id": "obra-2026-10-30",
         "top": true,
-        "t": "Veras (Chaos/EvolveLAB) 2026: Modelo 3D da Obra → IA Gera Render Fotorrealista e Vídeo do Resultado Final — Plugin para Revit, SketchUp e Rhino",
-        "resumo": "Plugin de IA de difusão que roda dentro de Revit, SketchUp, ArchiCAD e Rhino: você tem o modelo 3D, o Veras renderiza versões fotorrealistas do projeto acabado em segundos — e agora também gera clipes de vídeo curtos. Adquirido pela Chaos (makers do V-Ray) em fev/2025. A Oak Park pode transformar qualquer projeto de reforma em visual de portfólio antes mesmo de quebrar a parede.",
-        "porque": "Diferente de ferramentas que trabalham só a partir de fotos (REimagineHome, IACrea), o Veras parte do modelo técnico real — o que garante proporções corretas e serve para apresentar ao cliente e usar no Instagram.",
-        "aplicar": "Se a Oak Park já usa SketchUp ou Revit, instale o plugin Veras (via Chaos marketplace) e gere renders do próximo projeto antes de começar. Use os renders como conteúdo de antes/depois para o Instagram.",
-        "plano": "1) Acesse chaos.com e busque por 'Veras' no marketplace · 2) Instale o plugin no seu software de modelagem (SketchUp é o mais acessível) · 3) Abra um modelo de projeto existente e gere 3-4 variações de render · 4) Compare os renders com as fotos reais do projeto concluído e poste o par antes/depois",
+        "t": "Maket.ai para Construtoras: Planta Baixa + Render Fotorrealista com IA — 1M+ Usuários, Share Link para o Cliente",
+        "resumo": "Maket.ai gera plantas baixas e renders fotorrealistas a partir de requisitos em texto, com estilos e materiais ajustáveis. Tem Maket for Builders: share links para o cliente ver o render em 3D antes de começar. Mais de 1 milhão de usuários, $3.4M captados, versão 2.0 em 2026.",
+        "porque": "Construtoras que mostram o resultado visual antes de começar vendem mais rápido e recebem menos revisões. Diferente de ferramentas de redecoração (REimagineHome, IACrea), Maket parte do projeto arquitetônico — mais preciso para OPC.",
+        "aplicar": "Descreva o próximo projeto OPC em texto, gere o render, salve como imagem e use como carrossel no Instagram — 'como vai ficar' vs 'resultado final'.",
+        "plano": "1) Acesse maket.ai/builder-platform e crie conta (plano free disponível) · 2) Descreva um projeto em texto: 'cozinha americana 25m², estilo moderno, ilha central, bancada branca' · 3) Gere o render, escolha o estilo de acabamento · 4) Exporte a imagem e poste no Instagram OPC com pergunta: 'Você escolheria este estilo?'",
         "fonte": {
-          "t": "Chaos acquires EvolveLAB and its AEC AI tools (Chaos Press)",
-          "u": "https://www.chaos.com/press/chaos-acquires-evolvelab-and-its-aec-ai-tools"
+          "t": "Maket for Builders — maket.ai",
+          "u": "https://maket.ai/builder-platform"
         },
         "video": {
           "t": "",
@@ -132,16 +132,16 @@
     ],
     "geo": [
       {
-        "id": "geo-2026-10-29",
+        "id": "geo-2026-10-30",
         "top": true,
-        "t": "Bab-el-Mandeb 2026: Os Houthis Controlam o Corredor de 26km por Onde Passa 12% do Comércio Global — e o Mundo Está Roteando Pelo Cabo da África",
-        "resumo": "O estreito de Bab-el-Mandeb (Iêmen–Djibuti) controla 12% do comércio global, 11% do petróleo marítimo e 8% do GNL. Em setembro/2026, os Houthis completaram o domínio de toda a costa iemenita do Mar Vermelho. Grandes armadoras estão desviando pelo Cabo da Boa Esperança: +20 dias de viagem, +US$1M por rota. Volume de tráfego caiu 50-55% vs. 2023.",
-        "porque": "Cada vez que uma choke point muda de mãos, preços sobem no mundo todo — frete, energia, produtos importados. Este é o caso mais ativo hoje. Entender o mapa do Mar Vermelho explica parte da inflação global e das cadeias de suprimento.",
-        "aplicar": "Próxima vez que ver notícia sobre frete caro ou prazo longo para importação, pense: provavelmente está passando (ou não passando) por Bab-el-Mandeb. Use esse ângulo para conectar geopolítica com custo de construção e materiais.",
-        "plano": "1) Procure 'Bab-el-Mandeb' no mapa (entre Iêmen e Djibuti) · 2) Leia a cobertura da Al Jazeera de set/2026 sobre o avanço Houthi · 3) Veja o rastreador de rotas marítimas Vessel Finder para entender o desvio · 4) Conecte com uma pauta: 'Por que construção fica mais cara quando o Mar Vermelho fecha'",
+        "t": "Canal do Panamá 2026: EUA vs China pelos Portos — O que Está em Jogo nos 80km que Ligam Dois Oceanos",
+        "resumo": "A Suprema Corte do Panamá anulou a concessão da Hutchison (Hong Kong) sobre os portos de Balboa e Cristóbal. Trump declarou que a China 'operava o canal' e os EUA o estavam 'retomando'. Pequim revidou. Nova licitação para novos terminais prevista para 2029 — com empresas chinesas e americanas concorrendo.",
+        "porque": "O canal movimenta 5% do comércio marítimo global e é choke point estratégico. Quem controla os portos influencia inspeções, dados de rastreamento e projeção de poder. A disputa segue o padrão Belt & Road: China usa infraestrutura como soft power.",
+        "aplicar": "Vira pauta: 'Por que EUA e China brigam por 80km de canal?'. Conecta ao IMEC (corredor terrestre), Bab-el-Mandeb e Estreito de Ormuz como padrão global de disputa por corredores.",
+        "plano": "1) Assista ao vídeo 'Panama Canal: Why It Matters' no YouTube (20 min) para contexto histórico · 2) Siga a Autoridade do Canal do Panamá no X/Twitter para updates em tempo real · 3) Leia: por que a BlackRock tentou comprar os portos da Hutchison? (contexto financeiro) · 4) Mapeie: quantos choke points já estudou? Estreito de Ormuz → Bab-el-Mandeb → IMEC → Canal do Panamá",
         "fonte": {
-          "t": "Red Sea nations watch as Houthis seize Bab al-Mandeb strait (Al Jazeera, set/2026)",
-          "u": "https://www.aljazeera.com/news/2026/9/13/red-sea-nations-watch-as-houthis-seize-bab-al-mandeb-strait"
+          "t": "Panamá anuncia novos terminais portuários em meio a disputas EUA-China",
+          "u": "https://www.larepublica.co/globoeconomia/panama-anuncia-dos-terminales-portuarias-en-medio-de-disputas-entre-ee-uu-y-china-4201877"
         },
         "video": {
           "t": "",
@@ -151,16 +151,16 @@
     ],
     "ads": [
       {
-        "id": "ads-2026-10-29",
+        "id": "ads-2026-10-30",
         "top": true,
-        "t": "Google Ads In-Market + Custom Segments 2026: Apareça para Donos de Casa Que Já Estão Pesquisando Reforma — Não para Quem Está Só Sonhando",
-        "resumo": "In-Market Audiences coloca seus anúncios na frente de quem o Google classifica como 'pronto para contratar' em categorias como 'Home Renovation'. Custom Segments vai além: você alimenta com keywords ('reforma banheiro orçamento') e URLs de concorrentes que seu público visita. Para a Oak Park: comece em modo Observation para coletar dados antes de ativar como Targeting.",
-        "porque": "Campanhas de busca por palavras-chave capturam quem já sabe o que quer. Audiências In-Market + Custom Segments capturam quem ainda está pesquisando — o momento antes da decisão, onde você planta a marca.",
-        "aplicar": "No Google Ads, vá em Audiences > Add Audience Segment > In-Market > Home & Garden > Home Renovation. Adicione em Observation mode primeiro. Em 2-3 semanas você tem dados para decidir se vale escalar para Targeting.",
-        "plano": "1) Abra a campanha principal da Oak Park no Google Ads · 2) Vá em Audiences e adicione o segmento In-Market 'Home Renovation' em Observation · 3) Crie um Custom Segment com as 10 keywords mais fortes de pesquisa de reforma na Flórida · 4) Após 2 semanas, compare taxa de conversão dos segmentos vs. sem segmento e escale o melhor",
+        "t": "Google Demand Gen 2026: Campanha de Meio de Funil no YouTube + Gmail + Discover com Vídeo IA",
+        "resumo": "Demand Gen é o formato Google que vai além do Search: aparece em YouTube (Shorts e in-stream), Gmail e Discover com criativo de vídeo ou imagem. Em 2026, ganhou Business Agent no YouTube (usuário conversa com IA ao lado do anúncio) e setup assistido por IA que importa configurações de campanhas existentes.",
+        "porque": "Para Oak Park Construction, captura quem pesquisa reforma mas ainda não clicou. Aparece no YouTube enquanto assiste vídeo de reforma, no Gmail, no Discover. Complementa o Search: awareness + intenção antes do cliente chegar a pesquisar.",
+        "aplicar": "Monte uma campanha Demand Gen com vídeo de 15s de before/after OPC. Orçamento teste: $20/dia por 2 semanas para medir alcance em homeowners na Flórida.",
+        "plano": "1) No Google Ads, crie nova campanha → tipo 'Demand Gen' · 2) Suba vídeo curto (15–30s) de reforma OPC como criativo principal · 3) Defina público: 35–65 anos, interesse em reforma de casa, localização Flórida · 4) Monitore View Rate e custo por visualização — compare com suas campanhas Search atuais ao fim das 2 semanas",
         "fonte": {
-          "t": "Google Ads In-Market Audiences: How to Reach People Ready to Buy (One PPC Agency)",
-          "u": "https://oneppcagency.co.uk/display-ads/in-market-audiences"
+          "t": "Demand Gen Drop September 2026 — Google Business",
+          "u": "https://blog.google/products/ads-commerce/demand-gen-drop-september-2026/"
         },
         "video": {
           "t": "",
@@ -170,16 +170,16 @@
     ],
     "iafim": [
       {
-        "id": "iafim-2026-10-29",
+        "id": "iafim-2026-10-30",
         "top": true,
-        "t": "Gumloop 2026: Canvas Visual Drag-and-Drop para Agentes de IA sem Código — SOC 2 Certificado, Multi-Provider (Anthropic + OpenAI + Gemini), 8.94/10",
-        "resumo": "Plataforma no-code para construir agentes e automações complexas com canvas visual. Diferencial: suporte a múltiplos provedores de LLM (Anthropic, OpenAI, Gemini) em um mesmo fluxo. SOC 2 Type II e GDPR. Free tier disponível; planos pagos a partir de US$97/mês. Melhor para automações de marketing, vendas e suporte — não para iniciantes que querem algo simples.",
-        "porque": "Com a quota da Anthropic estourando no pipeline de captura, ter um agente que usa fallback automático entre provedores (Claude → GPT → Gemini) resolve o bloqueio sem precisar de programação. Gumloop faz isso nativamente.",
-        "aplicar": "Se o pipeline de captura de conteúdo está travando por quota da Anthropic, construa um fluxo no Gumloop que tenta Claude primeiro e cai para GPT-4o como fallback — sem alterar código.",
-        "plano": "1) Crie conta gratuita em gumloop.com · 2) Explore os templates prontos de 'content pipeline' e 'email automation' · 3) Monte um fluxo simples: trigger por e-mail → sumarização com Claude → fallback GPT-4o se falhar · 4) Conecte ao seu Gmail e teste com 5 e-mails reais antes de escalar",
+        "t": "n8n AI Agents 2026: Open Source Self-Hosted com 400+ Integrações — Agentes que Criam e Gerenciam Workflows",
+        "resumo": "n8n é automação open source com nó nativo de AI Agent (LangChain + memória + ferramentas). Em 2026, agentes podem criar novos workflows do zero, modificar configurações, debugar erros via logs e executar testes automáticos. Suporta MCP: cada workflow vira uma ferramenta para outros agentes.",
+        "porque": "Diferente de Zapier e Make, n8n é self-hosted (você controla os dados), gratuito no plano community e permite que agentes gerenciem outros agentes. Para pipeline de conteúdo OPC, um agente monitora posts, cria rascunhos e envia para aprovação — sem você tocar.",
+        "aplicar": "Use para automatizar as aprovações de conteúdo OPC que estão acumuladas. O agente lê os emails pendentes, classifica por urgência e formata para aprovação rápida.",
+        "plano": "1) Acesse n8n.io — plano community gratuito para self-hosted, ou n8n Cloud ($20/mês sem servidor) · 2) Instale via Docker (1 comando) ou use o cloud · 3) Crie seu primeiro workflow: AI Agent + Gmail + Google Sheets para triagem de aprovações · 4) Teste com as aprovações OPC e News pendentes de hoje",
         "fonte": {
-          "t": "Gumloop Review 2026: AI Workflow Automation (Automation Atlas)",
-          "u": "https://automationatlas.io/answers/gumloop-review-2026/"
+          "t": "What is n8n? Full Guide to n8n Automation, AI Agents, and Workflows (2026)",
+          "u": "https://uibakery.io/blog/what-is-n8n"
         },
         "video": {
           "t": "",
