@@ -1,0 +1,191 @@
+{
+  "date": "2026-10-31",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "📚 Imóveis FL",
+      "t": "Exame RE: aula de hoje às 8h + quiz no app depois",
+      "why": "Bloco diário na agenda; curso Cameron Academy em andamento — math ainda é a área crítica para o exame",
+      "go": "tip"
+    },
+    {
+      "tag": "🏗️ Conteúdo OPC",
+      "t": "Aprovações de conteúdo OPC + News pendentes na fila",
+      "why": "Dois e-mails de alerta no inbox; backlog cresce enquanto pipeline aguarda review manual",
+      "go": "conteudo"
+    },
+    {
+      "tag": "🤖 Pipeline Bloqueada",
+      "t": "Anthropic QUOTA_EXCEEDED — capture pipeline parou",
+      "why": "Múltiplos alertas no inbox + Credit Monitor degradado; automação sem dados até quota renovar",
+      "go": "iafim"
+    },
+    {
+      "tag": "📹 Vídeo IA para OPC",
+      "t": "Weekly Plugins Review na segunda (Nov 2) — Kling API na fila para testar",
+      "why": "Evento na agenda; projeto Brazil RE também aguarda fluxo de vídeo IA para lançar no GitHub Pages",
+      "go": "obra"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-31",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-10-31",
+        "top": true,
+        "t": "Task Batching para TDAH: Agrupe Tarefas Similares e Elimine o Custo de Troca de Contexto",
+        "resumo": "O cérebro TDAH paga um preço alto a cada troca de contexto — e-mails misturados com edição de vídeo com resposta de cliente destroem o foco. Task batching agrupa tarefas do mesmo 'tipo cognitivo' em um único bloco de tempo, evitando abrir múltiplas trilhas mentais ao mesmo tempo.",
+        "porque": "Cada switch de tarefa consome recursos executivos que o TDAH já tem em falta. Agrupando e-mails em um bloco único (ex: 11h–11h30), você só 'abre' aquele modo mental uma vez — e fecha. Menos switches = mais conclusões reais no dia. Funciona especialmente bem para aprovações de conteúdo, que tendem a ficar espalhadas.",
+        "aplicar": "Para a Oak Park Construction: separe um bloco de 'aprovações de conteúdo' (30 min), um bloco de 'responder clientes' (20 min), um bloco de 'criar/postar' (45 min). Não misture. Se um e-mail chegar fora do horário, vai para a fila — não interrompe o bloco ativo.",
+        "plano": "1) Liste hoje os 3–4 tipos de tarefa que você mais repete (e-mail, criação, revisão, ligações) · 2) Atribua um bloco fixo no Google Calendar para cada tipo — cores diferentes por tipo · 3) Feche tudo que não pertence ao bloco ativo (abas, apps, notificações) · 4) No fim de cada bloco, marque 'concluído' no Focus Board — o fechamento físico é parte do protocolo TDAH",
+        "fonte": {
+          "t": "Why Task Batching Works for ADHD Brains — Upskill with Eric (Substack)",
+          "u": "https://upskillwitheric.substack.com/p/why-task-batching-works-for-adhd"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-10-31",
+        "top": true,
+        "t": "Curry de Grão-de-Bico com Batata-Doce e Leite de Coco — 30 Min, Vegano, Kid-Friendly",
+        "resumo": "Uma panela só: grão-de-bico enlatado + batata-doce em cubos + leite de coco + curry suave. Cremoso, nutritivo, proteico e naturalmente adocicado — crianças aprovam sem reclamar. Serve 4 com arroz integral.",
+        "porque": "O grão-de-bico traz proteína vegetal + ferro. A batata-doce vira base cremosa sem precisar de laticínios. Leite de coco substitui o creme de leite de vaca e dá gordura boa. Preparação de baixo esforço (tudo numa panela) que encaixa perfeitamente na semana agitada.",
+        "aplicar": "Faça no domingo e guarde até 3 dias na geladeira. Pode congelar por até 2 meses. Sirva com arroz, quinoa ou pão pita. Para crianças que resistem ao curry: reduza pela metade e adicione um fio de pasta de amendoim para suavizar o sabor.",
+        "plano": "1) Refogue cebola + alho + gengibre em azeite por 3 min · 2) Adicione 2 col. curry suave + 1 col. cúrcuma + batata-doce em cubos, mexa 1 min · 3) Junte 1 lata grão-de-bico escorrido + 1 lata leite de coco + ½ xíc água, tampe e cozinhe 20 min · 4) Ajuste o sal, finalize com suco de limão + coentro (opcional) e sirva",
+        "fonte": {
+          "t": "Curry de batata-doce com grão-de-bico — Inner Buddies (PT)",
+          "u": "https://www.innerbuddies.com/pt/pages/recipe/sweet-potato-chickpea-curry"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-10-31",
+        "top": true,
+        "t": "Gelato POD 2026: Rede Global de 90+ Parceiros com Bordado Real — Envio Local nos EUA, Alternativa Direta ao Printful",
+        "resumo": "Gelato conecta sua loja a +90 parceiros de produção em 32 países — o produto é impresso localmente para o cliente final, reduzindo frete e prazo de entrega. Oferece bordado em moletons, bonés e bolsas, catálogo de camisetas femininas, e integração nativa com Shopify, Etsy e WooCommerce. Plano gratuito disponível; Gelato+ tem desconto em roupas premium.",
+        "porque": "Envio local (EUA→EUA) significa prazo menor e frete mais barato — vantagem real vs plataformas que imprimem em um único hub. Revisão independente de 2026 na eCommerce Platforms posiciona o Gelato como concorrente direto ao Printful em qualidade e alcance. O plano Gelato+ inclui frete grátis em roupas premium, melhorando margem.",
+        "aplicar": "Cadastre-se grátis, suba o design e peça um sample de bordado antes de lançar. Teste a tee longline feminina com logo bordado no peito. Compare prazo real de envio EUA→EUA vs Printify antes de escolher fornecedor definitivo. Ponto de atenção: alguns reviews apontam variação na qualidade de impressão direta — bordado tende a ser mais consistente.",
+        "plano": "1) Acesse gelato.com, crie conta gratuita e abra o Product Studio · 2) Busque 'women's tee' ou 'longline' + filtre por parceiros com bordado disponível · 3) Suba o arquivo de bordado (DST) ou use o conversor online deles e visualize o mock em 3D · 4) Faça pedido de sample (~$15–25) antes de publicar na loja — Gelato recomenda checar densidade de ponto após a lavagem",
+        "fonte": {
+          "t": "Gelato Print on Demand Review 2026 — eCommerce Platforms",
+          "u": "https://ecommerce-platforms.com/?p=64504"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-10-31",
+        "top": true,
+        "t": "VEED.io 2026: Magic B-Roll Automático + Legendas Animadas + Correção de Contato Visual — Tudo com 1 Upload",
+        "resumo": "VEED analisa o que você fala no vídeo e sugere clipes de B-roll correspondentes automaticamente (Magic B-Roll). Mais: legendas animadas estilizadas, remoção de ruído de fundo com IA, correção de contato visual (olhar para câmera mesmo gravando de lado) e dublagem em +50 idiomas. A partir de ~$12/mês.",
+        "porque": "Para criadores solo que gravam talking-heads ou tours de obra, VEED elimina horas de edição manual: o B-roll já vem sugerido, as legendas saem formatadas para Reels e o contato visual corrigido dá aparência profissional sem re-gravar. Reviews no G2 apontam 'hit-or-miss' no B-roll gerado — vale revisar as sugestões antes de exportar.",
+        "aplicar": "Para a Oak Park Construction: grave o tour do projeto em 1 take, faça upload no VEED, ative Magic B-Roll (ele sugere clipes de construção/materiais), adicione legendas no estilo que você gosta e exporte em 9:16 para Reels. Resolve a fila de aprovações de conteúdo mais rápido quando o vídeo já chega editado.",
+        "plano": "1) Acesse veed.io, crie projeto e faça upload do vídeo bruto · 2) Clique em 'Subtitles' → 'Auto-Generate' — legendas prontas em segundos, ajuste estilo · 3) Clique em 'Magic B-Roll' e revise as sugestões (troque as que não fazem sentido para construção) · 4) Exporte em 1080p 9:16 e envie para aprovação",
+        "fonte": {
+          "t": "VEED.io Review 2026: Is It Still the Go-To for Fast Video Content? — AI Indigo",
+          "u": "https://aiindigo.com/blog/veed-io-review-2026-is-it-still-the-go-to-for-fast-video-content"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-10-31",
+        "top": true,
+        "t": "Kling AI 3.0 (fev/2026): Foto da Obra → Vídeo 4K 9:16 para Reels com Multi-Shot Storyboard — Sem Aparecer na Câmera",
+        "resumo": "Kling 3.0 (lançado fevereiro 2026) gera vídeos de até 15 segundos em 4K, formato nativo 9:16 para Instagram Reels, a partir de uma foto ou prompt de texto. Recurso novo: multi-shot storyboarding — você encadeia foto antes + foto depois e o modelo gera a transição em vídeo cinematográfico.",
+        "porque": "Para construtoras, a transição antes/depois vira conteúdo de Reels de alto engajamento sem precisar gravar cada etapa. Plano gratuito disponível com marca d'água; planos pagos (~$10+/mês) entregam 1080p e 4K sem watermark. Já está na sua lista de ferramentas para testar no Weekly Plugins Review de segunda (Nov 2).",
+        "aplicar": "Para a Oak Park Construction: tire foto do cômodo antes da reforma + foto depois. No Kling, use o modo image-to-video com câmera slow-pull-back e exporte em 9:16. Cole o clipe no VEED, adicione legendas e logo. Reel completo em menos de 20 minutos sem aparecer na câmera.",
+        "plano": "1) Acesse klingai.com e crie conta gratuita (ou platform.klingai.com para acesso à API) · 2) Selecione 'Image to Video', faça upload da foto da obra e escreva o prompt de movimento (ex: 'slow cinematic pull-back reveal, warm natural lighting, high quality') · 3) Gere 2–3 variações e escolha a melhor antes de exportar · 4) Leve o clipe para VEED para legendas + corte final em 9:16 e publique no Instagram",
+        "fonte": {
+          "t": "Kling AI 3.0 — Artificial Studio (2026)",
+          "u": ""
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-10-31",
+        "top": true,
+        "t": "Triângulo do Lítio: Bolívia, Argentina e Chile Controlam 60% das Reservas Mundiais — e a Disputa pelo Metal dos Carros Elétricos Já Começou",
+        "resumo": "O Triângulo do Lítio (Bolívia, Argentina, Chile) concentra mais de 60% das reservas mundiais do mineral que move baterias de EVs e smartphones. Com projeções indicando que veículos elétricos consumirão 73% de todo o lítio até 2030, a região virou epicentro de disputa entre China (que domina o processamento), EUA, Europa e as próprias nações produtoras.",
+        "porque": "A Bolívia tem as maiores reservas brutas mas menor produção (desafios regulatórios e tecnológicos); o Chile tem a indústria mais madura e consolidada; a Argentina cede concessões para mineradoras estrangeiras enquanto debate soberania. O que acontece aqui afeta o preço de cada carro elétrico e de cada bateria de celular vendida no mundo — e coloca a América do Sul no centro da geopolítica energética.",
+        "aplicar": "Como pauta para conteúdo informativo: 'Sabia que a bateria do seu iPhone depende de 3 países sul-americanos?' funciona como hook de Reel ou carrossel. Para a Oak Park: monitorar preços de cobre e alumínio (correlacionados à corrida por minerais críticos) para antecipar variações no custo de materiais de construção.",
+        "plano": "1) Leia o artigo do Dialogue Earth em PT sobre estratégias regionais do Triângulo (link na fonte) · 2) Assista um explainer de 5 min no YouTube (Vox ou WSJ têm versões excelentes) · 3) Identifique 1 empresa de lítio listada (ALB, SQM ou PLL) e observe o movimento de preços por 1 semana · 4) Crie um card geopolítico para Instagram: 'O metal por trás do EV — e por que a América do Sul manda'",
+        "fonte": {
+          "t": "Triângulo do Lítio: América Latina discute novas estratégias regionais — Dialogue Earth PT",
+          "u": "https://dialogue.earth/pt-br/negocios/57203-triangulo-do-litio-america-latina-discute-novas-estrategias-regionais/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-10-31",
+        "top": true,
+        "t": "Google Ads Scripts + IA 2026: Automatize Alertas de Orçamento, Pausas de Palavras e Relatórios no Sheets — Sem Abrir o Painel Todo Dia",
+        "resumo": "Google Ads Scripts são blocos de JavaScript que rodam automaticamente na sua conta — sem abrir o painel. Funções prontas: alerta por e-mail quando o orçamento ultrapassa 90%, relatório semanal no Google Sheets, pausar palavras com custo alto e zero conversão. Em 2026, é possível integrar com LLMs via UrlFetchApp para análise inteligente de anomalias.",
+        "porque": "Para quem gerencia campanhas de construção e não tem tempo de checar o Ads todo dia, os Scripts resolvem o problema de 'só fui ver quando já tinha gastado tudo'. O Account Anomaly Detector nativo avisa quando algo foge do padrão histórico. A integração com LLM (documentada em julho/2026) permite que o script classifique riscos de política e performance low automaticamente.",
+        "aplicar": "Instale o 'Account Anomaly Detector' (grátis, biblioteca oficial do Google Ads Scripts) na conta da OPC. Configure alerta de orçamento com threshold de 85%. Ative o relatório semanal no Sheets — poupa 30 min de análise manual por semana. Comece apenas monitorando; só ative ações automáticas de pausa após 2 semanas de dados.",
+        "plano": "1) Acesse Google Ads → Tools & Settings → Scripts → + New Script · 2) Cole o 'Account Anomaly Detector' da biblioteca oficial (developers.google.com/google-ads/scripts/docs/solutions) · 3) Configure e-mail de alerta e threshold de gasto · 4) Autorize o script, agende para rodar diariamente às 8h e monitore por 1 semana antes de ativar ações automáticas de lance",
+        "fonte": {
+          "t": "Google Ads Scripts + AI Max: What Automation Still Works in 2026 — DEV Community",
+          "u": "https://dev.to/yositeup/google-ads-scripts-and-ai-max-what-automation-still-works-in-2026-and-what-doesnt-1a4o"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-10-31",
+        "top": true,
+        "t": "Coze (ByteDance) 2026: 600+ Plugins, Open Source e Publica Agente Direto no WhatsApp e Telegram — Freemium, Sem Código",
+        "resumo": "Coze é a plataforma de construção de agentes de IA da ByteDance (dona do TikTok). Freemium + open source (Coze Studio no GitHub). Com visual drag-and-drop, você monta um agente com 600+ plugins nativos (busca na web, geração de imagens, execução de código, formulários) e publica diretamente no WhatsApp, Telegram, Discord ou site — em minutos.",
+        "porque": "Diferente de n8n (requer servidor próprio) e Relevance AI (foco em B2B enterprise), Coze é freemium, visual e publica no WhatsApp — canal que a OPC já usa com clientes. Um agente Coze pode responder perguntas sobre serviços, coletar dados de lead (nome, tipo de reforma, orçamento estimado) e enviar tudo para um Google Sheet automaticamente — sem ocupar seu tempo.",
+        "aplicar": "Para a Oak Park Construction: construa um bot Coze que responde 'Qual serviço você precisa?' com botões (Reforma de banheiro / Cozinha / Construção nova), coleta nome e telefone, e envia a conversa para seu Sheet. Publique no WhatsApp Business — vira triagem automática de leads enquanto você está em obra.",
+        "plano": "1) Acesse coze.com (versão internacional), crie conta gratuita · 2) Clique em 'Create Bot', nomeie e defina o prompt do agente (ex: 'Você é o assistente da Oak Park Construction. Colete nome, tipo de reforma e orçamento desejado.') · 3) Adicione os plugins necessários (Form + Google Sheets + WhatsApp) no visual builder · 4) Teste no preview, publique no canal WhatsApp Business e monitore as primeiras 10 conversas antes de escalar",
+        "fonte": {
+          "t": "Coze (ByteDance) — Agentic Radar (Groupe One Point)",
+          "u": "https://agentic-radar.groupeonepoint.com/solutions/coze-bytedance"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ]
+  }
+}
