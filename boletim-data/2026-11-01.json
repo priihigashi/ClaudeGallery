@@ -1,0 +1,191 @@
+{
+  "date": "2026-11-01",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "⚡ Retell AI",
+      "t": "Você já paga o Retell AI — receipt chegou esta semana e o agente de voz ainda não está configurado",
+      "why": "Assinatura ativa sem uso é dinheiro saindo. 1h de setup e a OPC nunca perde lead por não atender no horário.",
+      "go": "iafim"
+    },
+    {
+      "tag": "📌 Conteúdo OPC",
+      "t": "OPC content approvals pendentes no inbox — pipeline de conteúdo travado",
+      "why": "Conteúdo na fila sem aprovação não vai ao ar. Revisar hoje antes que acumule mais.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "📚 RE Exam",
+      "t": "Florida Pre-License Course — Rule 1 de hoje já está no calendário às 8h (não pular)",
+      "why": "Sem as horas de curso completadas, o exam não libera. Cada capítulo avançado hoje é progresso real.",
+      "go": "tip"
+    },
+    {
+      "tag": "🔌 Plugins Review",
+      "t": "Weekly AI Plugins & Agent Tools Review é amanhã segunda (9h ET) — Retell + Captions + Collov entram na lista",
+      "why": "Três ferramentas novas desta semana para avaliar no Agents Tracker antes que acumulem sem registro.",
+      "go": "iafim"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-11-01",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-11-01",
+        "top": true,
+        "t": "Externalizar Memória de Trabalho para TDAH: Mova as Tarefas da Sua Cabeça para Objetos Físicos — e Pare de Perder o Fio",
+        "resumo": "TDAH tem memória de trabalho fraca — não porque é 'esquecido', mas porque o córtex pré-frontal não retém contexto em segundo plano. A solução não é esforço: é não confiar na memória interna. Um quadro branco à vista vira um segundo cérebro externo que não some quando você abre outra aba.",
+        "porque": "Quando a tarefa não está na sua frente, ela simplesmente não existe para o TDAH (object permanence). Externalizar — quadro branco, post-it gigante no monitor, objeto físico na frente da porta — cria permanência visual que substitui o que a memória de trabalho não sustenta.",
+        "aplicar": "Coloque um mini quadro branco no campo de visão direto do workspace. Escreva as 3 prioridades do dia em letras grandes com o próximo passo de cada. Qualquer ideia ou tarefa que apareça vai para o quadro imediatamente — não fica 'girando'. Não apague até fazer.",
+        "plano": "1) Compre quadro branco pequeno (30×40 cm) e fixe no ponto mais visível da mesa · 2) Todo dia às 8h, escreva as 3 prioridades + 1 próximo passo concreto de cada · 3) Durante o dia: qualquer coisa que surgir na cabeça vai para o quadro em vez de ficar na memória · 4) No final do dia, apague só o que foi feito — o resto migra para amanhã sem precisar lembrar",
+        "fonte": {
+          "t": "Externalise Everything — ADHD Success School (Skool)",
+          "u": "https://www.skool.com/adhd-success-5932/lesson-42-discussion-externalise-everything"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-11-01",
+        "top": true,
+        "t": "Buddha Bowl de Quinoa com Manga, Edamame e Molho de Tahine — 20 Min, Vegano, Kid-Friendly",
+        "resumo": "Tigela colorida com quinoa cozida, cubos de manga fresca, edamame no vapor, abacate fatiado e molho tahine-limão cremoso. Sem leite de vaca, sem fritura. As crianças montam a própria tigela — o que aumenta drasticamente a aceitação.",
+        "porque": "Quinoa é proteína completa (todos os aminoácidos), manga dá dulçor natural que crianças adoram, edamame é proteína de soja sem processamento, e o molho de tahine é cremoso sem laticínios. Pronto em 20 min se a quinoa estiver pré-cozida.",
+        "aplicar": "Cozinhe a quinoa no domingo como meal prep. Na hora da refeição, cada um monta seu bowl com as coberturas. Sirva o molho à parte para quem não gosta de misturado — truque que resolve 90% da resistência de criança.",
+        "plano": "1) Cozinhe 1 xíc. de quinoa em 2 xíc. de água por 15 min (pode ser de véspera e refrigerar) · 2) Steam de edamame congelado: 5 min no micro-ondas com 2 col. água · 3) Molho: 2 col. tahine + suco de 1 limão + 1 col. shoyu + 1 fio de mel + água para afinar até cremoso · 4) Monte: quinoa → edamame → cubos de manga → abacate fatiado → pepino → fio de molho por cima",
+        "fonte": {
+          "t": "Vegan Buddha Bowls with Spicy Mango Sauce — Choosing Chia",
+          "u": "https://choosingchia.com/vegan-buddha-bowls-with-spicy-mango-sauce/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-11-01",
+        "top": true,
+        "t": "Apliiq 2026: POD Especialista em Bordado Real e Streetwear — 4.9★ no Shopify (276+ Reviews), Tees Longline e Custom Labels",
+        "resumo": "Apliiq não é mais um Printful ou Printify: o foco é streetwear de qualidade real — bordado verdadeiro (não DTG), tees longline femininas, hoodies e a opção de woven labels personalizados. Integra direto no Shopify. 93% das avaliações são 5 estrelas.",
+        "porque": "Para construir uma marca de verdade — não 'produto branco com estampa' — Apliiq entrega bordado que revisores descrevem como 'some of the cleanest I've seen in the game'. 4.9★ com 276+ reviews no Shopify é raro na categoria POD.",
+        "aplicar": "Crie 1 produto no Apliiq (tee longline feminina com bordado pequeno no peito esquerdo) e peça amostra física antes de abrir para o público. O setup leva ~1h para quem já tem Shopify. Compare a qualidade com os outros fornecedores que você já testou.",
+        "plano": "1) Crie conta gratuita em apliiq.com e instale o app Shopify · 2) Navegue em 'Women's Longline' e configure bordado pequeno no peito esquerdo (estimativa: +$6-10 por peça) · 3) Faça pedido de 1 amostra física (~$25-35 total) — fotografe ao receber · 4) Compare com Teemill e Gelato que você já avaliou e registre no Agents Tracker antes da review de segunda",
+        "fonte": {
+          "t": "Apliiq Review 2026 — Ecommerce Platforms",
+          "u": "https://ecommerce-platforms.com/?p=89015"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-11-01",
+        "top": true,
+        "t": "Captions.ai 2026: Grave no Celular → IA Corrige Contato Visual, Adiciona B-Roll Automático e Exporta Reel Pronto",
+        "resumo": "App mobile-first que resolve 3 obstáculos de conteúdo solo em uma passagem: corrige o olhar para a câmera mesmo que você esteja lendo o roteiro, insere B-roll automático e gera legendas animadas estilizadas. Uma gravação bruta → Reel editado.",
+        "porque": "O maior bloqueio de conteúdo solo é a pós-edição. Captions elimina cortes, legendas e B-roll numa passagem única. Para conteúdo da OPC ou de nicho pessoal, você não precisa de editor externo para ter vídeo profissional.",
+        "aplicar": "Grave um vídeo de 60s explicando um serviço OPC ou uma reforma recente. Deixe o Captions processar com Eye Contact + Auto B-roll + Caption Styles ativos. Compare a versão bruta com a editada — avalie se o B-roll foi relevante para o seu nicho.",
+        "plano": "1) Baixe Captions.ai (iOS/Android) e crie conta (plano gratuito tem créditos) · 2) Grave 60s sobre um projeto OPC recente ou serviço mais pedido, câmera frontal · 3) Ative: Eye Contact Correction + Auto B-roll + Caption Style (escolha um animado) · 4) Exporte para Reels, publique e anote o que funcionou — B-roll irrelevante é o ponto fraco, então avalie caso a caso",
+        "fonte": {
+          "t": "Captions AI Review 2026 — Tooliverse",
+          "u": "https://tooliverse.ai/tools/captions"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-11-01",
+        "top": true,
+        "t": "Collov AI 2026: Foto do Cômodo → Render Fotorrealista em 6+ Estilos + Virtual Staging — Conteúdo de Reforma que Converte no Instagram",
+        "resumo": "Upload da foto do cômodo atual → Collov AI gera renders de como ficaria após a reforma em múltiplos estilos (moderno, minimalista, rústico, contemporâneo). Funciona para mostrar ao cliente como vai ficar antes de fechar — e para criar conteúdo de antes/depois no Instagram.",
+        "porque": "Instagram de construção/reforma converte quando mostra transformação visual. Collov gera o 'depois' sem precisar finalizar a obra — ou usa para fechar proposta mostrando ao cliente as opções visuais antes de assinar.",
+        "aplicar": "Tire foto de um projeto OPC em andamento. Gere 3 renders em estilos diferentes. Monte um carrossel 'Como vai ficar em 3 estilos — qual você escolheria?' — posts de escolha geram muito comentário e engajamento orgânico.",
+        "plano": "1) Acesse collov.ai e crie conta (plano free tem créditos iniciais) · 2) Faça upload de foto de cômodo de um projeto OPC atual ou concluído · 3) Gere renders em 3 estilos: moderno, rústico e contemporâneo · 4) Monte carrossel 'Antes vs 3 Opções de Depois' para o Instagram OPC — adicione enquete nos Stories para engajamento",
+        "fonte": {
+          "t": "Best AI Interior Design Tools 2026 — Rework Resources",
+          "u": "https://resources.rework.com/tools/ai-tools/best-ai-interior-design-tools-2026"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-11-01",
+        "top": true,
+        "t": "Rota do Ártico 2026: Rússia e China Apostam na Via Marítima do Norte como Alternativa ao Canal de Suez — EUA Fora do Corredor",
+        "resumo": "O derretimento do Ártico está abrindo a Rota do Mar do Norte (NSR) como atalho Europa-Ásia. Em 2026, o volume pode ultrapassar 40 milhões de toneladas. Rússia controla o acesso via Rosatom; China lança os primeiros serviços regulares de contêiner. 95% do tráfego atual é russo/chinês — Ocidente boicotou a rota.",
+        "porque": "Qualquer crise no Canal de Suez (como a dos Houthis, que reaqueceu o tema em 2024-2025) torna a NSR estratégica. A rota encurta em ~30% o percurso Europa-Ásia. O Ocidente ficou de fora por sanções — e China ganhou acesso a um corredor sem concorrência.",
+        "aplicar": "Para pauta geopolítica: conecte 'crise Houthis no Mar Vermelho' → 'alternativa ártica' → 'quem controla o Ártico controla o comércio 2030+'. Ângulo de notícia: corredor russo-chinês que o Ocidente não usa — mas que define o próximo mapa logístico global.",
+        "plano": "1) Leia o relatório Carnegie de set/2026 sobre a NSR: volume, controle russo, tarifas novas de jan/2026 · 2) Note que Hapag-Lloyd, CMA-CGM e MSC se comprometeram a não usar a NSR (sanções) — criando monopólio sino-russo · 3) Conecte ao conflito Ucrânia: sanções isolaram o Ocidente e abriram a rota para o Leste · 4) Use como pauta: 'O corredor que o Ocidente abriu mão — e que a China operacionaliza todos os dias'",
+        "fonte": {
+          "t": "Russia's Northern Sea Route — Carnegie Endowment, set/2026",
+          "u": "https://carnegieendowment.org/russia-eurasia/politika/2026/09/russia-northern-sea-route"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-11-01",
+        "top": true,
+        "t": "Google Ads Negative Keywords com IA 2026: Corte 15-30% do Desperdício Bloqueando Buscas 'Quase Certas' que Nunca Convertem",
+        "resumo": "Em 2026, automação do Google amplia o alcance das campanhas — o que traz mais consultas 'quase certas' que desperdiçam verba sem converter. IA (Claude, scripts ou Windsor.ai) minera o Search Terms Report, detecta padrões de alto gasto + zero conversão e gera lista de negativos prontos para revisar.",
+        "porque": "O maior desperdício não é a busca obviamente errada ('construção DIY tutorial'), mas a 'quase certa' — como 'licença de empreiteiro grátis', 'curso de construção civil', 'vagas obra'. Cortar essas libera verba para leads reais com intenção de contratar.",
+        "aplicar": "Exporte o Search Terms Report dos últimos 30 dias do Google Ads → cole no Claude com instrução simples → adicione os negativos identificados como lista em nível de campanha. Revise manualmente antes de ativar — nunca bloqueie termos de marca sem verificar.",
+        "plano": "1) Em Google Ads → Keywords → Search Terms → filtre últimos 30 dias → Export CSV · 2) Cole no Claude: 'Aqui estão meus termos de busca com gasto e conversões. Classifique os que têm mais de $10 gasto e 0 conversões por tipo de intenção e sugira quais bloquear' · 3) Revise a lista manualmente — cheque se algum termo de alta intenção foi listado por engano · 4) Adicione como lista de negativos em nível de campanha e monitore os próximos 14 dias",
+        "fonte": {
+          "t": "Negative Keywords no Google Ads 2026 — Karooya Blog",
+          "u": "https://karooya.com/blog/negative-keywords-in-google-ads-2026-are-you-using-them-to-filter-traffic-or-control-it"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-11-01",
+        "top": true,
+        "t": "Retell AI: Agente de Voz que Atende Chamadas da OPC, Qualifica o Lead e Transfere para Você — Você Já Tem Assinatura Ativa",
+        "resumo": "Retell AI cria agentes de voz por telefone que atendem chamadas inbound, fazem perguntas de qualificação (tipo de obra, orçamento, localização) e só transferem para você se o lead passar nos critérios. Receipt Stripe chegou esta semana — a assinatura está ativa e o agente ainda não foi configurado.",
+        "porque": "Você já paga o Retell. Sem configurar o agente, é verba saindo sem retorno. Com 1-2h de setup, a OPC atende chamadas 24/7, nunca perde lead por fora do horário, e você só é acionada quando vale a pena.",
+        "aplicar": "Crie um agente 'Recepcionista OPC' no Retell: atende, pergunta tipo de obra + cidade + orçamento estimado, transfere para seu número só se passar nos critérios (obra na área de serviço + orçamento mínimo). Leads frios recebem follow-up por SMS automático.",
+        "plano": "1) Acesse retellai.com com sua conta → New Agent → escolha template 'Lead Qualification' · 2) Configure: nome (Oak Park Construction), serviços (construção residencial e comercial), área (Broward, Miami-Dade, Palm Beach) · 3) Defina critério de transferência: orçamento >$10k + na área de serviço → transfere; abaixo → coleta contato e envia SMS · 4) Conecte número de telefone (Twilio ou nativo) e faça teste ligando você mesma antes de ativar",
+        "fonte": {
+          "t": "How to Build AI Inbound Call Agents for Lead Qualification — Retell AI",
+          "u": "https://www.retellai.com/blog/how-to-build-ai-inbound-call-agents-for-lead-qualification"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ]
+  }
+}
