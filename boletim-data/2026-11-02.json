@@ -1,0 +1,143 @@
+{
+  "date": "2026-11-02",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "📚 RE Flórida",
+      "t": "Usa o 'Se 8h → Abro o Curso' do tip de hoje antes de abrir qualquer app",
+      "why": "Rule 1 no calendário: estudo RE é o primeiro bloco do dia. A implementation intention específica elimina a decisão na hora H — o ponto exato onde o TDAH trava.",
+      "go": "tip"
+    },
+    {
+      "tag": "⚠️ Pipeline Bloqueada",
+      "t": "QUOTA_EXCEEDED Anthropic — pipeline de captura parada, e-mails de alerta recorrentes",
+      "why": "Múltiplos alertas de cota excedida e fallback degradado no inbox. Make.com AI Agents (iafim de hoje) pode redistribuir chamadas de IA entre provedores e reduzir dependência de quota única.",
+      "go": "iafim"
+    },
+    {
+      "tag": "✅ Aprovações Pendentes",
+      "t": "Conteúdo OPC + News aguardando aprovação — dois alertas no inbox",
+      "why": "Acúmulo de rascunhos parados em revisão. InVideo AI (conteudo de hoje) acelera geração de próximos drafts para aliviar a fila.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "🔌 Plugins Review Hoje",
+      "t": "Weekly Plugins & Agent Tools Review — acontece hoje às 9h",
+      "why": "Fourthwall, Luma AI Dream Machine e Make.com Agents estão todos no boletim de hoje — salva os 3 para o intake da revisão semanal.",
+      "go": "merch"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-11-02",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-11-02",
+        "top": true,
+        "t": "Implementation Intentions para TDAH: o Plano 'Se X → Então Y' que Substitui a Força de Vontade na Hora de Começar",
+        "resumo": "Em vez de 'vou estudar hoje', você escreve: 'Se são 8h, então abro o curso — sem abrir mais nada antes'. A IA executiva do TDAH trava na iniciação, não no esforço. Esse plano bypassa exatamente o ponto de falha.",
+        "porque": "Meta-análise de março/2026 confirma que planos 'se-então' são estratégia de baixo custo e alta eficácia para TDAH. Em adultos, é técnica central da TCC para TDAH: substitui a decisão na hora H por um gatilho pré-programado — sem depender de motivação.",
+        "aplicar": "Pega as 3 tarefas do Focus Partner Sheet de amanhã. Para cada uma escreve o par: 'Se [hora/lugar/evento específico], então [ação concreta sem ambiguidade]'.",
+        "plano": "1) Abre o Focus Partner Sheet e olha os 3 de amanhã · 2) Para cada tarefa escreve o par 'Se X → Então Y' com gatilho horário ou situacional específico (ex: 'Se termino o café, então abro o curso — não o Instagram') · 3) Cola num Post-it físico na tela ou cria alarme no celular com label 'ENTÃO: [ação]' · 4) Dia seguinte: confere quantos você ativou — se nenhum funcionou, o gatilho era vago demais; afina para algo mais concreto",
+        "fonte": {"t": "If-Then Plans for ADHD — APSARD", "u": "https://apsard.org/?p=4314"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-11-02",
+        "top": true,
+        "t": "Smash Burger Vegano com Cebola Caramelizada e Queijo Derretível — 35 Min, Elaborado, Kid-Approved",
+        "resumo": "Disco de feijão-preto e aveia prensado em frigideira bem quente → crosta crocante Maillard por fora, macio por dentro. Queijo vegano derretível por cima. Cebola caramelizada por 20 min. Sem leite de vaca, sem carne, aprovado por kids.",
+        "porque": "A técnica smash cria a crosta que o hambúrguer vegano convencional nunca consegue — é a textura que faz criança pedir de novo. Feijão-preto tem proteína e ferro, queijo vegano FL tipo Follow Your Heart derretível completa o combo.",
+        "aplicar": "Frigideira de ferro ou chapa de aço é essencial — antiaderente comum não aguenta o calor para a crosta. Papel manteiga na hora de apertar evita que o disco grude na espátula.",
+        "plano": "1) Prepara a cebola: fatia fino, refoga em azeite em fogo baixo por 20 min mexendo às vezes até dourar · 2) Monta os discos: amassa 1 xíc de feijão-preto cozido + 3 col sopa de farinha de aveia + sal + alho em pó + páprica; faz bolinhas de 80g · 3) Chapa bem quente (fumaçando), coloca bolinha + papel manteiga, aperta forte por 30-45s, tira o papel, vira · 4) Adiciona queijo vegano derretível, tapa com tampa por 30s; monta: pão tostado + molho vegano + picles + alface + cebola caramelizada + disco",
+        "fonte": {"t": "The Ultimate Vegan Smash Burgers Recipe — Tasting Table", "u": "https://www.tastingtable.com/1805979/vegan-smash-burger-recipe/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-11-02",
+        "top": true,
+        "t": "Fourthwall 2026: POD #1 para Criadores com Bordado Real, Longlines e 0% de Taxa de Plataforma — 4.8★ (24+ Reviews de Vendedoras)",
+        "resumo": "Fourthwall ficou em 1º lugar em dois rankings independentes de POD premium de 2026. Zero taxa de plataforma em produtos físicos (só 2,9% + $0,30 no cartão), bordado real disponível, longlines e manga longa com Bella+Canvas, e merchant-of-record incluso.",
+        "porque": "'Merchant-of-record incluso' significa que a Fourthwall recolhe os impostos de venda nos EUA no lugar da criadora — menos burocracia. Rankings de 2026 a colocaram à frente de Printify e Printful para criadoras de conteúdo que querem merch sem loja separada.",
+        "aplicar": "Ideal para integrar loja direto ao perfil do Instagram ou YouTube sem redirecionar para Shopify ou Etsy. Cria uma loja na Fourthwall e coloca o link na bio.",
+        "plano": "1) Cria conta gratuita em fourthwall.com · 2) Navega em Products → Long Sleeve Tees → filtra por método de decoração 'Embroidery' · 3) Configura um design de teste num Bella+Canvas ou Comfort Colors longline (base ~$16-27) · 4) Pede sample antes de lançar — a diferença de qualidade do bordado real vs print vale o investimento no teste",
+        "fonte": {"t": "Best Platforms for Premium Custom Clothing 2026 — ecommerce-platforms.com", "u": "https://ecommerce-platforms.com/print-on-demand/best-platforms-for-premium-custom-clothing-apparel"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-11-02",
+        "top": true,
+        "t": "InVideo AI 2026: Digite o Tema → IA Escreve Roteiro, Monta Vídeo com B-Roll e Voz — Faceless Content para OPC em Minutos",
+        "resumo": "Você digita um prompt, a InVideo AI escreve o roteiro, seleciona B-roll do iStock, adiciona narração em voz IA e monta o vídeo via chat. Integrou com Sora 2 (OpenAI) e VEO 3.1 (Google) em 2026. Plano free: 10 min de geração por semana.",
+        "porque": "Ideal para faceless content — sem aparecer na câmera. Ponto fraco documentado: trava em nomes próprios e termos técnicos, então precisa revisar o roteiro antes de gerar. Revisão pelo próprio chat: 'Troca a cena 2 por azulejos modernos'.",
+        "aplicar": "Para a OPC: usa para gerar rascunços rápidos de vídeo (60-90s) sobre reforma. Revisa o roteiro no chat antes de gerar — troca genéricos por 'Oak Park Construction' e especificações reais do projeto.",
+        "plano": "1) Acessa invideo.io — cria conta no plano free · 2) Prompt: 'Crie um Reel de 60 segundos sobre reforma de cozinha moderna no sul da Flórida, voz feminina, tom profissional' · 3) Revisa o roteiro pelo chat: 'Troca a introdução por [seu texto] e o B-roll da cena 3 por mármore branco' · 4) Testa no plano free (com marca d'água) antes de assinar o pago ($20/mês para exportar limpo)",
+        "fonte": {"t": "InVideo AI Reviews 2026 — Capterra", "u": "https://www.capterra.com/p/180680/InVideo/reviews/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-11-02",
+        "top": true,
+        "t": "Luma AI Dream Machine 2026: Foto Antes + Render Depois → IA Gera Vídeo da Transformação em 9:16 para Reels da OPC",
+        "resumo": "Você sobe a foto real do cômodo como frame inicial e o render como frame final, digita uma instrução e o Dream Machine gera o vídeo da transição. Conteúdo de reforma antes/depois sem aparecer na câmera e sem HeyGen.",
+        "porque": "Diferente do Pika e do Kling (já cobertos), o Dream Machine tem o recurso de 'end frame' — você controla exatamente como o vídeo começa e termina. Combinado com REimagineHome ou Collov AI para gerar o render, cria o fluxo completo de conteúdo visual da OPC.",
+        "aplicar": "Fluxo completo: foto real do cômodo → Collov AI para gerar o render → sobe os dois no Dream Machine → gera a transição em vídeo → finaliza no CapCut com música e texto da OPC.",
+        "plano": "1) Acessa lumalabs.ai → Dream Machine (plano free disponível) · 2) Sobe a foto do cômodo atual como 'Start Frame' · 3) Sobe o render do resultado final (ex: gerado no Collov AI) como 'End Frame' · 4) Prompt: 'Smooth renovation reveal, realistic 9:16 vertical video, dramatic lighting transition, cinematic quality for Instagram Reels'",
+        "fonte": {"t": "Luma AI Dream Machine Roundup: Features, Use Cases & More — Smartprix", "u": "https://www.smartprix.com/bytes/luma-ai-dream-machine-roundup/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-11-02",
+        "top": true,
+        "t": "Estreito de Malaca 2026: O Corredor de 26km que Explica a Paranoia Naval da China — e Por Que a Indonésia Quer Cobrar Pedágio",
+        "resumo": "Cerca de 40% do comércio marítimo global passa por um estreito de 26km entre Malásia, Singapura e Indonésia. Em 2026, com a crise em Ormuz, Malaca virou o novo foco geopolítico: China reafirma liberdade de navegação com Singapura, Indonésia debate pedágio.",
+        "porque": "A China tem um 'dilema de Malaca' estrutural: 80% do petróleo importado passa por ali. Qualquer bloqueio — por EUA, Japão, Índia ou Indonésia — corta o abastecimento. Isso explica as ilhas artificiais no Mar do Sul da China, os portos chineses no Índico (String of Pearls) e o financiamento do Canal de Kra na Tailândia.",
+        "aplicar": "Para sua pauta: quando sair notícia sobre tensão China-EUA no Pacífico, eleições na Indonésia ou acordos portuários asiáticos — Malaca é o contexto que explica o porquê de cada movimento.",
+        "plano": "1) Salva o conceito 'dilema de Malaca' no seu journal de geopolítica · 2) Pesquisa 'Canal de Kra' — projeto tailandês financiado pela China para criar rota alternativa · 3) Lê sobre 'String of Pearls' — cadeia de portos da China do Paquistão ao Myanmar ao redor do Índico · 4) Próxima notícia de tensão marítima na Ásia: testa se o contexto de Malaca explica o movimento",
+        "fonte": {"t": "Dilema de Malaca preocupa o comércio global — Portal Tela", "u": "https://www.portaltela.com/internacional/2026/04/20/dilema-de-malaca-preocupa-o-comercio-global/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-11-02",
+        "top": true,
+        "t": "Google Ads Target ROAS 2026: Ensine a IA do Google que Lead de Cozinha Vale 5x Mais que Lead de Reparo — e Ela Prioriza os Grandes",
+        "resumo": "A maioria das construtoras usa Target CPA — paga igual por todo lead. Se um lead de reforma completa vale $5k e um de reparo vale $300, você deveria usar Target ROAS com valores de conversão diferenciados. A IA do Google aprende a priorizar os leads mais rentáveis.",
+        "porque": "Em agosto de 2026, o Google mudou o comportamento do Smart Bidding em campanhas com orçamento limitado. Quem configura valores de conversão por tipo de serviço extrai mais dos mesmos cliques — sem aumentar orçamento.",
+        "aplicar": "Requisito: mínimo de 30 conversões nos últimos 30 dias. Se ainda não atingiu, mantém Maximize Conversions até lá e configura os valores de conversão agora para coletar dados.",
+        "plano": "1) Google Ads → Ferramentas → Conversões → seleciona a conversão de lead → edita 'Valor' por tipo de formulário (reforma grande: $500, reparo pequeno: $50) · 2) Se tiver <30 conversões/mês: mantém Maximize Conversions · 3) Ao atingir 30: muda para Target ROAS com meta de 300-500% · 4) Espera 2 ciclos completos (2-4 semanas) sem alterar configuração — Smart Bidding precisa de tempo para reaprender antes de você julgar os resultados",
+        "fonte": {"t": "About Target ROAS bidding — Google Ads Help", "u": "https://support.google.com/google-ads/answer/6268637"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-11-02",
+        "top": true,
+        "t": "Make.com AI Agents 2026 (Open Beta): Agente Visual que Decide os Próprios Passos — 1.000 Ops Free, 1.500+ Apps, sem Código",
+        "resumo": "O Make.com relançou AI Agents em fevereiro de 2026: ao contrário dos cenários fixos, o agente analisa a situação e decide quais módulos ativar. Visual drag-and-drop, plano free com 1.000 operações/mês, conecta 1.500+ apps. Maia (assistente de IA) lançado em junho de 2026.",
+        "porque": "Diferença do Zapier (caro no volume) e do n8n (precisa de servidor): Make.com fica no meio-termo — interface visual para não-devs, com AI Agents para fluxos não-lineares. 4.8★ no Product Hunt, open beta ativo para todos os planos.",
+        "aplicar": "Para a OPC: automatiza qualificação de leads — 'Se novo form no site → agente classifica por tipo de serviço → adiciona no sheet + notifica no WhatsApp se for lead de alto valor'.",
+        "plano": "1) Cria conta free em make.com (1.000 operações/mês sem cartão) · 2) Vai em 'AI Agent' no painel — open beta, acessível para todos · 3) Cria cenário de teste: Gmail novo → agente classifica urgência (lead novo vs spam vs resposta) → move para pasta certa · 4) Conecta ao Google Sheets para logging automático de todos os leads recebidos",
+        "fonte": {"t": "Make.com AI Agents 2026: What Changed and How to Use — silentinfotech.com", "u": "https://silentinfotech.com/blog/ai-9/make-com-ai-agents-explained-650"},
+        "video": {"t": "", "u": ""}
+      }
+    ]
+  }
+}
