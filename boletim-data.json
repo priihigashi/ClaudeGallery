@@ -1,35 +1,35 @@
 {
-  "date": "2026-11-02",
+  "date": "2026-11-03",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "📚 RE Flórida",
-      "t": "Usa o 'Se 8h → Abro o Curso' do tip de hoje antes de abrir qualquer app",
-      "why": "Rule 1 no calendário: estudo RE é o primeiro bloco do dia. A implementation intention específica elimina a decisão na hora H — o ponto exato onde o TDAH trava.",
-      "go": "tip"
-    },
-    {
-      "tag": "⚠️ Pipeline Bloqueada",
-      "t": "QUOTA_EXCEEDED Anthropic — pipeline de captura parada, e-mails de alerta recorrentes",
-      "why": "Múltiplos alertas de cota excedida e fallback degradado no inbox. Make.com AI Agents (iafim de hoje) pode redistribuir chamadas de IA entre provedores e reduzir dependência de quota única.",
+      "tag": "🍪 yt-dlp Overdue",
+      "t": "Cookies do yt-dlp vencidos — refresh bi-semanal em atraso no inbox",
+      "why": "Email 'ACTION NEEDED' no inbox: sem cookie fresh, downloads de vídeo param silenciosamente e toda a pipeline de captura trava sem alerta. Renova antes de qualquer outra automação hoje — Lindy.ai de hoje (iafim) pode automatizar o lembrete recorrente.",
       "go": "iafim"
     },
     {
-      "tag": "✅ Aprovações Pendentes",
-      "t": "Conteúdo OPC + News aguardando aprovação — dois alertas no inbox",
-      "why": "Acúmulo de rascunhos parados em revisão. InVideo AI (conteudo de hoje) acelera geração de próximos drafts para aliviar a fila.",
+      "tag": "📰 Verdade Pela Metade",
+      "t": "FORMAT-024 na agenda HOJE às 11h — primeira sessão do debunk semanal",
+      "why": "Template pronto em CONTENT_FORMATS.md. Sessão de hoje é o setup completo: escolher o vídeo mais engajado do @marceloem23, classificar Modo A ou B, e documentar o fluxo. Opus Clip de hoje (conteudo) transforma o resultado em clipe viral sem edição manual.",
       "go": "conteudo"
     },
     {
-      "tag": "🔌 Plugins Review Hoje",
-      "t": "Weekly Plugins & Agent Tools Review — acontece hoje às 9h",
-      "why": "Fourthwall, Luma AI Dream Machine e Make.com Agents estão todos no boletim de hoje — salva os 3 para o intake da revisão semanal.",
-      "go": "merch"
+      "tag": "⚠️ ads_pulse Falhou",
+      "t": "ads_pulse.yml FAILED (run 41526143749) + OPC Ads Weekly chegou — revisar antes de gastar mais",
+      "why": "Dois sinais simultâneos: monitoramento automático quebrou e o relatório semanal está na inbox. Google LSA de hoje (ads) explica por que leads pagos diretamente têm menos risco de falha de automação do que monitoramentos complexos.",
+      "go": "ads"
+    },
+    {
+      "tag": "🧾 Retell AI (2º receipt)",
+      "t": "Novo receipt Stripe Retell AI (#2178-7479) — assinatura ativa, agente ainda não configurado",
+      "why": "Segunda cobrança registrada: produto pago mas não ativado. Time Blindness de hoje (tip) explica exatamente por que esse tipo de tarefa fica 'pra amanhã' infinitamente — usa o Time Timer para reservar 90 min ainda esta semana e configura o agente de uma vez.",
+      "go": "tip"
     }
   ],
   "history": [
     {
-      "date": "2026-11-02",
+      "date": "2026-11-03",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,105 +37,105 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-11-02",
+        "id": "tip-2026-11-03",
         "top": true,
-        "t": "Implementation Intentions para TDAH: o Plano 'Se X → Então Y' que Substitui a Força de Vontade na Hora de Começar",
-        "resumo": "Em vez de 'vou estudar hoje', você escreve: 'Se são 8h, então abro o curso — sem abrir mais nada antes'. A IA executiva do TDAH trava na iniciação, não no esforço. Esse plano bypassa exatamente o ponto de falha.",
-        "porque": "Meta-análise de março/2026 confirma que planos 'se-então' são estratégia de baixo custo e alta eficácia para TDAH. Em adultos, é técnica central da TCC para TDAH: substitui a decisão na hora H por um gatilho pré-programado — sem depender de motivação.",
-        "aplicar": "Pega as 3 tarefas do Focus Partner Sheet de amanhã. Para cada uma escreve o par: 'Se [hora/lugar/evento específico], então [ação concreta sem ambiguidade]'.",
-        "plano": "1) Abre o Focus Partner Sheet e olha os 3 de amanhã · 2) Para cada tarefa escreve o par 'Se X → Então Y' com gatilho horário ou situacional específico (ex: 'Se termino o café, então abro o curso — não o Instagram') · 3) Cola num Post-it físico na tela ou cria alarme no celular com label 'ENTÃO: [ação]' · 4) Dia seguinte: confere quantos você ativou — se nenhum funcionou, o gatilho era vago demais; afina para algo mais concreto",
-        "fonte": {"t": "If-Then Plans for ADHD — APSARD", "u": "https://apsard.org/?p=4314"},
+        "t": "Time Blindness no TDAH: O Relógio que Torna o Tempo Visível — Time Timer + Analógico na Mesa Resolve o que Nenhum App Resolve",
+        "resumo": "TDAH não percebe o tempo passando — não é distração, é neurológico. O Time Timer (disco vermelho que encolhe) e um relógio analógico no campo de visão criam uma 'presença sensorial do tempo' que substitui o radar interno quebrado. Mais barato e mais eficaz do que a maioria dos apps de produtividade.",
+        "porque": "Simply Psychology documenta que o TDAH dificulta o monitoramento contínuo de tempo — causando atrasos crônicos, subestimação de duração de tarefas e a sensação de 'onde foi meu dia?'. Ferramentas visuais físicas — o disco encolhendo, o ponteiro se movendo — criam uma pista sensorial que o cronômetro de texto não consegue replicar.",
+        "aplicar": "Duas ações de baixo custo com alto impacto: um relógio analógico fixo no ponto mais visível da mesa (não digital, não celular), e o app TimeSee ou DuePal como Time Timer digital para blocos de trabalho. Custo total: $5-15 para o relógio + app gratuito.",
+        "plano": "1) Fixa um relógio analógico pequeno no canto superior do monitor — o ponteiro em movimento é a âncora sensorial mais barata que existe · 2) Baixa TimeSee (iOS, gratuito) ou DuePal: configura o disco em 90 min para a sessão de RE study de amanhã às 8h · 3) Regra: o Time Timer começa ANTES de abrir qualquer app — não depois de já estar perdida numa aba · 4) Esta semana: antes de cada tarefa, estima em voz alta quanto tempo vai levar; depois confere — o gap te mostra onde seu TDAH mais subestima o tempo",
+        "fonte": {"t": "Time Blindness: What it is and helpful solutions — Time Timer", "u": "https://timetimer.com/blogs/news/time-blindness"},
         "video": {"t": "", "u": ""}
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-11-02",
+        "id": "receita-2026-11-03",
         "top": true,
-        "t": "Smash Burger Vegano com Cebola Caramelizada e Queijo Derretível — 35 Min, Elaborado, Kid-Approved",
-        "resumo": "Disco de feijão-preto e aveia prensado em frigideira bem quente → crosta crocante Maillard por fora, macio por dentro. Queijo vegano derretível por cima. Cebola caramelizada por 20 min. Sem leite de vaca, sem carne, aprovado por kids.",
-        "porque": "A técnica smash cria a crosta que o hambúrguer vegano convencional nunca consegue — é a textura que faz criança pedir de novo. Feijão-preto tem proteína e ferro, queijo vegano FL tipo Follow Your Heart derretível completa o combo.",
-        "aplicar": "Frigideira de ferro ou chapa de aço é essencial — antiaderente comum não aguenta o calor para a crosta. Papel manteiga na hora de apertar evita que o disco grude na espátula.",
-        "plano": "1) Prepara a cebola: fatia fino, refoga em azeite em fogo baixo por 20 min mexendo às vezes até dourar · 2) Monta os discos: amassa 1 xíc de feijão-preto cozido + 3 col sopa de farinha de aveia + sal + alho em pó + páprica; faz bolinhas de 80g · 3) Chapa bem quente (fumaçando), coloca bolinha + papel manteiga, aperta forte por 30-45s, tira o papel, vira · 4) Adiciona queijo vegano derretível, tapa com tampa por 30s; monta: pão tostado + molho vegano + picles + alface + cebola caramelizada + disco",
-        "fonte": {"t": "The Ultimate Vegan Smash Burgers Recipe — Tasting Table", "u": "https://www.tastingtable.com/1805979/vegan-smash-burger-recipe/"},
+        "t": "Risoto Cremoso de Abóbora com Sálvia e Queijo Vegano — 40 Min, Elaborado, Kid-Friendly",
+        "resumo": "Abóbora kabocha ou butternut assada com azeite → base cremosa laranja-dourada + arroz arbóreo com caldo quente em fios + queijo vegano derretível no final. Sem leite de vaca, cor vibrante, cremoso de verdade. Crianças comem sem perceber que é vegano.",
+        "porque": "Receita elaborada (ciclo de ~4 dias — última elaborada foi a lasanha no dia 30). A técnica de assar a abóbora antes do risoto intensifica o dulçor natural e cria uma base mais rica do que o método cru. Queijo vegano tipo Follow Your Heart Parmezan ou Violife Epic Mature dá a cremosidade que normalmente viria do parmesão animal.",
+        "aplicar": "Asse a abóbora no dia anterior para economizar 15 minutos. A parte do risoto precisa de atenção contínua (concha por vez), mas é meditativa — 20 minutos de mexer sem tela. Sirva com sálvia frita em azeite por cima: o crocante equilibra o cremoso e impressiona criança.",
+        "plano": "1) Corta 400g de abóbora em cubos de 2cm, tempera com azeite + sal + noz-moscada, assa a 200°C por 20 min até dourar nas bordas · 2) Refoga cebola em azeite, adiciona 1 xíc de arbóreo, mexe 1 min, deglaça com 100ml de vinho branco seco (ou suco de limão) até evaporar · 3) Adiciona 4 xíc de caldo de legumes quente, 1 concha por vez, mexendo até absorver antes de adicionar a próxima (~20 min total) · 4) Incorpora a abóbora assada (amasse metade para cremosidade), 2 col. de queijo vegano ralado, finaliza com folhas de sálvia fritas em azeite por cima — serve imediatamente",
+        "fonte": {"t": "3 receitas de risoto vegano fáceis de fazer — NSC Total", "u": "https://www.nsctotal.com.br/cotidiano/3-receitas-de-risoto-vegano-faceis-de-fazer"},
         "video": {"t": "", "u": ""}
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-11-02",
+        "id": "merch-2026-11-03",
         "top": true,
-        "t": "Fourthwall 2026: POD #1 para Criadores com Bordado Real, Longlines e 0% de Taxa de Plataforma — 4.8★ (24+ Reviews de Vendedoras)",
-        "resumo": "Fourthwall ficou em 1º lugar em dois rankings independentes de POD premium de 2026. Zero taxa de plataforma em produtos físicos (só 2,9% + $0,30 no cartão), bordado real disponível, longlines e manga longa com Bella+Canvas, e merchant-of-record incluso.",
-        "porque": "'Merchant-of-record incluso' significa que a Fourthwall recolhe os impostos de venda nos EUA no lugar da criadora — menos burocracia. Rankings de 2026 a colocaram à frente de Printify e Printful para criadoras de conteúdo que querem merch sem loja separada.",
-        "aplicar": "Ideal para integrar loja direto ao perfil do Instagram ou YouTube sem redirecionar para Shopify ou Etsy. Cria uma loja na Fourthwall e coloca o link na bio.",
-        "plano": "1) Cria conta gratuita em fourthwall.com · 2) Navega em Products → Long Sleeve Tees → filtra por método de decoração 'Embroidery' · 3) Configura um design de teste num Bella+Canvas ou Comfort Colors longline (base ~$16-27) · 4) Pede sample antes de lançar — a diferença de qualidade do bordado real vs print vale o investimento no teste",
-        "fonte": {"t": "Best Platforms for Premium Custom Clothing 2026 — ecommerce-platforms.com", "u": "https://ecommerce-platforms.com/print-on-demand/best-platforms-for-premium-custom-clothing-apparel"},
+        "t": "Awkward Styles 2026: POD Especialista em Bordado Real nos EUA — Alta Densidade de Pontos, Tees Femininas e Integração Direta no Shopify",
+        "resumo": "Awkward Styles foca exclusivamente em bordado de alta qualidade para POD: alta contagem de pontos, acabamento profissional em tees, hoodies, bonés e bolsas. Integração nativa com Shopify, WooCommerce e Etsy. Fulfillment nos EUA — prazo menor para clientes americanos do que plataformas europeias.",
+        "porque": "A maioria das plataformas POD oferece bordado como um item entre dezenas de técnicas. Awkward Styles é especialista: toda a estrutura de produção é orientada para bordado. Para uma marca que quer se diferenciar com acabamento de qualidade — não só estampa — é a plataforma mais focada para a tarefa certa.",
+        "aplicar": "Cria 1 produto teste: tee feminina com logo bordado pequeno no peito esquerdo. Pede amostra física antes de abrir para o público. Compare o toque e o acabamento do ponto com Apliiq e Gelato que você já avaliou esta semana.",
+        "plano": "1) Cria conta gratuita em awkward-styles.com e instala o app Shopify · 2) Navega no catálogo de Women's Tees e verifica as opções de corte longo/oversized disponíveis · 3) Configura design simples (logo pequeno, <5.000 pontos para começar) e gera o mock 3D · 4) Faz pedido de amostra (~$20-35) e compara o acabamento do ponto e a qualidade do tecido com os fornecedores já testados esta semana antes de decidir qual usar na primeira coleção",
+        "fonte": {"t": "", "u": ""},
         "video": {"t": "", "u": ""}
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-11-02",
+        "id": "conteudo-2026-11-03",
         "top": true,
-        "t": "InVideo AI 2026: Digite o Tema → IA Escreve Roteiro, Monta Vídeo com B-Roll e Voz — Faceless Content para OPC em Minutos",
-        "resumo": "Você digita um prompt, a InVideo AI escreve o roteiro, seleciona B-roll do iStock, adiciona narração em voz IA e monta o vídeo via chat. Integrou com Sora 2 (OpenAI) e VEO 3.1 (Google) em 2026. Plano free: 10 min de geração por semana.",
-        "porque": "Ideal para faceless content — sem aparecer na câmera. Ponto fraco documentado: trava em nomes próprios e termos técnicos, então precisa revisar o roteiro antes de gerar. Revisão pelo próprio chat: 'Troca a cena 2 por azulejos modernos'.",
-        "aplicar": "Para a OPC: usa para gerar rascunços rápidos de vídeo (60-90s) sobre reforma. Revisa o roteiro no chat antes de gerar — troca genéricos por 'Oak Park Construction' e especificações reais do projeto.",
-        "plano": "1) Acessa invideo.io — cria conta no plano free · 2) Prompt: 'Crie um Reel de 60 segundos sobre reforma de cozinha moderna no sul da Flórida, voz feminina, tom profissional' · 3) Revisa o roteiro pelo chat: 'Troca a introdução por [seu texto] e o B-roll da cena 3 por mármore branco' · 4) Testa no plano free (com marca d'água) antes de assinar o pago ($20/mês para exportar limpo)",
-        "fonte": {"t": "InVideo AI Reviews 2026 — Capterra", "u": "https://www.capterra.com/p/180680/InVideo/reviews/"},
+        "t": "Opus Clip 2026: Vídeo Longo → 10 Clipes Virais em 10 Minutos — IA Seleciona os Melhores Momentos, Adiciona Legendas e Virality Score",
+        "resumo": "Você sobe um vídeo longo (tour de obra, podcast, reunião gravada) e o Opus Clip analisa o conteúdo, seleciona os melhores cortes com Virality Score refinado (jul/2026), adiciona legendas animadas e exporta clipes verticais prontos para Reels e TikTok. Plano free: 60 créditos/mês com watermark.",
+        "porque": "Diferente de InVideo e Captions (que partem do zero), Opus Clip parte de um vídeo que você JÁ TEM. Para a OPC, isso significa: o tour de obra que ficou parado na câmera vira 5-8 clipes de Reel em 10 minutos. Para Verdade Pela Metade, vídeos longos de checagem viram cortes sociais que amplificam o formato. Ponto fraco: não funciona bem para conteúdo de jogo ou visual sem fala — melhor para talking-head.",
+        "aplicar": "Pega o vídeo bruto mais recente que você tem — tour de obra, explicação de serviço, live gravada — e testa no plano free. O Virality Score de julho de 2026 é mais preciso para talking-head do que a versão anterior.",
+        "plano": "1) Acessa opus.pro, cria conta e testa o plano free (60 créditos = 60 minutos de fonte) · 2) Faz upload de vídeo de obra ou reunião — foco em talking-head para melhor resultado · 3) Revisa os 3 melhores clipes pelo Virality Score e edita manualmente o que o modelo não acertou · 4) Exporta sem watermark no plano pago ($15-19/mês) ou testa grátis esta semana antes de decidir assinar",
+        "fonte": {"t": "Opus Clip Review 2026: AI Video Shorts Tool Tested — marcandrews.com", "u": "https://marcandrews.com/opus-clip-review-2026-ai-video-shorts-tool-tested/"},
         "video": {"t": "", "u": ""}
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-11-02",
+        "id": "obra-2026-11-03",
         "top": true,
-        "t": "Luma AI Dream Machine 2026: Foto Antes + Render Depois → IA Gera Vídeo da Transformação em 9:16 para Reels da OPC",
-        "resumo": "Você sobe a foto real do cômodo como frame inicial e o render como frame final, digita uma instrução e o Dream Machine gera o vídeo da transição. Conteúdo de reforma antes/depois sem aparecer na câmera e sem HeyGen.",
-        "porque": "Diferente do Pika e do Kling (já cobertos), o Dream Machine tem o recurso de 'end frame' — você controla exatamente como o vídeo começa e termina. Combinado com REimagineHome ou Collov AI para gerar o render, cria o fluxo completo de conteúdo visual da OPC.",
-        "aplicar": "Fluxo completo: foto real do cômodo → Collov AI para gerar o render → sobe os dois no Dream Machine → gera a transição em vídeo → finaliza no CapCut com música e texto da OPC.",
-        "plano": "1) Acessa lumalabs.ai → Dream Machine (plano free disponível) · 2) Sobe a foto do cômodo atual como 'Start Frame' · 3) Sobe o render do resultado final (ex: gerado no Collov AI) como 'End Frame' · 4) Prompt: 'Smooth renovation reveal, realistic 9:16 vertical video, dramatic lighting transition, cinematic quality for Instagram Reels'",
-        "fonte": {"t": "Luma AI Dream Machine Roundup: Features, Use Cases & More — Smartprix", "u": "https://www.smartprix.com/bytes/luma-ai-dream-machine-roundup/"},
+        "t": "Stylar.ai 2026: Editor de Imagem IA que Troca Só o Que Você Pede — Revestimento, Cor de Parede e Mobília Sem Regenerar a Foto Inteira",
+        "resumo": "Stylar.ai permite inserir, remover ou trocar elementos específicos de uma imagem sem alterar o resto. Para a OPC: sobe a foto do cômodo → seleciona a área do piso → troca o revestimento → mantém tudo mais igual. Gera variações de estilo do mesmo ambiente para mostrar ao cliente antes de fechar.",
+        "porque": "Ferramentas como Collov e REimagineHome regeneram o cômodo inteiro — às vezes mudando elementos que você não queria. Stylar.ai tem controle por área selecionada: você define o que muda e o que fica. Para conteúdo de antes/depois de reforma, oferece um nível de precisão editorial que renders completos não têm.",
+        "aplicar": "Para a OPC: foto de cômodo em reforma → seleciona apenas a parede → gera 3 cores de tinta → exporta comparativo. Sem regenerar o render inteiro, só o elemento que o cliente está indeciso. Resultado: conteúdo de carrossel 'Qual você escolheria?' com foto real do projeto.",
+        "plano": "1) Acessa stylar.ai e cria conta (plano free disponível com créditos iniciais) · 2) Faz upload de foto de cômodo de um projeto OPC atual · 3) Usa a ferramenta de seleção por área: marca apenas o piso ou a parede que quer variar · 4) Gera 3 variações de material ou cor e exporta o comparativo para o Instagram OPC ('Qual acabamento você escolheria para sua cozinha?') ou inclui na proposta para o cliente antes de assinar",
+        "fonte": {"t": "Stylar: Your Ultimate AI Image Editor for Effortless Design Control — Subscribed.FYI 2026", "u": "https://subscribed.fyi/?p=19170"},
         "video": {"t": "", "u": ""}
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-11-02",
+        "id": "geo-2026-11-03",
         "top": true,
-        "t": "Estreito de Malaca 2026: O Corredor de 26km que Explica a Paranoia Naval da China — e Por Que a Indonésia Quer Cobrar Pedágio",
-        "resumo": "Cerca de 40% do comércio marítimo global passa por um estreito de 26km entre Malásia, Singapura e Indonésia. Em 2026, com a crise em Ormuz, Malaca virou o novo foco geopolítico: China reafirma liberdade de navegação com Singapura, Indonésia debate pedágio.",
-        "porque": "A China tem um 'dilema de Malaca' estrutural: 80% do petróleo importado passa por ali. Qualquer bloqueio — por EUA, Japão, Índia ou Indonésia — corta o abastecimento. Isso explica as ilhas artificiais no Mar do Sul da China, os portos chineses no Índico (String of Pearls) e o financiamento do Canal de Kra na Tailândia.",
-        "aplicar": "Para sua pauta: quando sair notícia sobre tensão China-EUA no Pacífico, eleições na Indonésia ou acordos portuários asiáticos — Malaca é o contexto que explica o porquê de cada movimento.",
-        "plano": "1) Salva o conceito 'dilema de Malaca' no seu journal de geopolítica · 2) Pesquisa 'Canal de Kra' — projeto tailandês financiado pela China para criar rota alternativa · 3) Lê sobre 'String of Pearls' — cadeia de portos da China do Paquistão ao Myanmar ao redor do Índico · 4) Próxima notícia de tensão marítima na Ásia: testa se o contexto de Malaca explica o movimento",
-        "fonte": {"t": "Dilema de Malaca preocupa o comércio global — Portal Tela", "u": "https://www.portaltela.com/internacional/2026/04/20/dilema-de-malaca-preocupa-o-comercio-global/"},
+        "t": "Estreito de Taiwan 2026: TSMC Controla 92% dos Chips Avançados — e a Crise de Ormuz de Março Mostrou o Que Acontece Quando uma Rota Fecha",
+        "resumo": "Taiwan produz 92% dos chips de ponta abaixo de 10nm. Em março de 2026, o fechamento do Estreito de Ormuz alertou para o que um bloqueio do Estreito de Taiwan significaria: IA, smartphones, carros elétricos, defesa — tudo para. China analisa um 'quasi-bloqueio econômico' para pressionar sem disparar um tiro. TSMC registrou receita recorde de $35.6 bi no Q1/2026.",
+        "porque": "Um quasi-bloqueio (impedir entregas sem invadir militarmente) pararia as exportações de chips quase imediatamente, sem cruzar o limiar de resposta militar americana. Quanto mais TSMC cresce com a demanda de IA, mais estratégica Taiwan se torna — e mais visada. É o choke point tecnológico mais crítico de 2026.",
+        "aplicar": "Como pauta: 'Por que a IA que você usa hoje pode parar por causa de uma ilha?' — conecta Taiwan → TSMC → semicondutores → dispositivos cotidianos. Para a OPC: componentes de automação residencial e painéis solares têm preços influenciados por essa tensão.",
+        "plano": "1) Lê o artigo do HeyGoTrade de abril/2026 sobre TSMC e risco de cadeia de suprimentos (link na fonte) · 2) Conecta o padrão: Ormuz (energia) → Malaca (logística) → Taiwan (tecnologia) — três choke points, três ameaças ao mesmo sistema · 3) Entende a diferença entre 'bloqueio militar' e 'quasi-bloqueio econômico' — é o segundo que os analistas consideram mais provável no curto prazo · 4) Cria um card geopolítico: '3 pontos que controlam o mundo digital — Ormuz, Malaca, Taiwan'",
+        "fonte": {"t": "TSMC Posts Record Q1 but Chip Supply Chain Faces War Risk — HeyGoTrade", "u": "https://heygotrade.com/en/news/tsmc-record-q1-chip-supply-chain-war-risk-20260414"},
         "video": {"t": "", "u": ""}
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-11-02",
+        "id": "ads-2026-11-03",
         "top": true,
-        "t": "Google Ads Target ROAS 2026: Ensine a IA do Google que Lead de Cozinha Vale 5x Mais que Lead de Reparo — e Ela Prioriza os Grandes",
-        "resumo": "A maioria das construtoras usa Target CPA — paga igual por todo lead. Se um lead de reforma completa vale $5k e um de reparo vale $300, você deveria usar Target ROAS com valores de conversão diferenciados. A IA do Google aprende a priorizar os leads mais rentáveis.",
-        "porque": "Em agosto de 2026, o Google mudou o comportamento do Smart Bidding em campanhas com orçamento limitado. Quem configura valores de conversão por tipo de serviço extrai mais dos mesmos cliques — sem aumentar orçamento.",
-        "aplicar": "Requisito: mínimo de 30 conversões nos últimos 30 dias. Se ainda não atingiu, mantém Maximize Conversions até lá e configura os valores de conversão agora para coletar dados.",
-        "plano": "1) Google Ads → Ferramentas → Conversões → seleciona a conversão de lead → edita 'Valor' por tipo de formulário (reforma grande: $500, reparo pequeno: $50) · 2) Se tiver <30 conversões/mês: mantém Maximize Conversions · 3) Ao atingir 30: muda para Target ROAS com meta de 300-500% · 4) Espera 2 ciclos completos (2-4 semanas) sem alterar configuração — Smart Bidding precisa de tempo para reaprender antes de você julgar os resultados",
-        "fonte": {"t": "About Target ROAS bidding — Google Ads Help", "u": "https://support.google.com/google-ads/answer/6268637"},
+        "t": "Google Local Services Ads 2026 para Construtoras: Paga por Lead (Não por Clique), Badge Verificado e Posição Acima do Search — Setup para a OPC",
+        "resumo": "Google LSA é diferente do Search: você paga por lead qualificado (não por clique), aparece ACIMA dos anúncios de Search, e o Google exige verificação de licença e seguro antes de ativar — o que filtra concorrentes não verificados. Lead médio nos EUA em 2026: $53. Google Guarantee foi encerrada em nov/2025 e substituída pelo Google Verified badge.",
+        "porque": "Para Oak Park Construction (CBC1263425), LSA é ideal: construtora licenciada e segurada em Broward, Miami-Dade, Palm Beach — exatamente o perfil que o Google exige para ativar. Pagar por lead (não por clique) elimina o desperdício com curiosos sem intenção de contratar. ROAS médio relatado: 7.8x.",
+        "aplicar": "Requisito: licença ativa (CBC1263425 ✓) + seguro ativo. Setup leva 1-3 dias para aprovação do Google. Conecta ao CRM para marcar quais leads fecharam — o Google usa esse sinal para otimizar para leads de maior valor.",
+        "plano": "1) Acessa ads.google.com/local-services-ads → 'Get started' → escolhe categoria 'General Contractor' ou 'Home Renovation' · 2) Submete: licença CBC1263425 + certificado de seguro vigente + background check exigido pelo Google para empreiteiras · 3) Aguarda verificação (1-3 dias úteis); configura o perfil enquanto aguarda: fotos dos projetos, serviços, área de atendimento (Broward, Miami-Dade, Palm Beach) · 4) Ao ativar: começa com $50-70/lead e ajusta com base nos resultados reais dos primeiros 30 dias — leads de reforma completa justificam custo maior do que reparos menores",
+        "fonte": {"t": "Google Local Services Ads 2026 — Complete Setup and Optimization Guide for Contractors", "u": "https://pushleads.com/google-local-service-ads-in-2026-the-complete-setup-and-optimization-guide-for-contractors/"},
         "video": {"t": "", "u": ""}
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-11-02",
+        "id": "iafim-2026-11-03",
         "top": true,
-        "t": "Make.com AI Agents 2026 (Open Beta): Agente Visual que Decide os Próprios Passos — 1.000 Ops Free, 1.500+ Apps, sem Código",
-        "resumo": "O Make.com relançou AI Agents em fevereiro de 2026: ao contrário dos cenários fixos, o agente analisa a situação e decide quais módulos ativar. Visual drag-and-drop, plano free com 1.000 operações/mês, conecta 1.500+ apps. Maia (assistente de IA) lançado em junho de 2026.",
-        "porque": "Diferença do Zapier (caro no volume) e do n8n (precisa de servidor): Make.com fica no meio-termo — interface visual para não-devs, com AI Agents para fluxos não-lineares. 4.8★ no Product Hunt, open beta ativo para todos os planos.",
-        "aplicar": "Para a OPC: automatiza qualificação de leads — 'Se novo form no site → agente classifica por tipo de serviço → adiciona no sheet + notifica no WhatsApp se for lead de alto valor'.",
-        "plano": "1) Cria conta free em make.com (1.000 operações/mês sem cartão) · 2) Vai em 'AI Agent' no painel — open beta, acessível para todos · 3) Cria cenário de teste: Gmail novo → agente classifica urgência (lead novo vs spam vs resposta) → move para pasta certa · 4) Conecta ao Google Sheets para logging automático de todos os leads recebidos",
-        "fonte": {"t": "Make.com AI Agents 2026: What Changed and How to Use — silentinfotech.com", "u": "https://silentinfotech.com/blog/ai-9/make-com-ai-agents-explained-650"},
+        "t": "Lindy AI 3.0 (ago/2026): Assistente de IA que Gerencia Inbox, Agenda e Reuniões Como um Funcionário — Sem Código, Trial de 7 Dias",
+        "resumo": "Lindy 3.0 é um 'funcionário de IA' que monitora seu inbox, lê calendário, sugere horários de reunião para externos, faz booking automático, resume reuniões e tria e-mails por urgência. Relançado em agosto de 2026 como AI executive assistant simplificado — sem precisar montar workflows complexos. Começa em ~$49/mês.",
+        "porque": "Diferente de Make.com (automação de fluxos) e n8n (workflows complexos), Lindy é focado em admin pessoal: inbox + agenda + reuniões. Para quem perde horas em triagem de e-mail e scheduling, Lindy faz isso em background. Ponto de atenção: créditos consomem mais do esperado em tarefas com muita análise — monitore os primeiros 3 dias.",
+        "aplicar": "Para a OPC: configura Lindy para triage do inbox por urgência — lead novo OPC notifica imediatamente, aprovações de conteúdo agrupam em 1 batch diário, alertas de pipeline vão para uma pasta específica. Economiza o tempo perdido abrindo o inbox e ficando preso lá.",
+        "plano": "1) Acessa lindy.ai e inicia o trial de 7 dias — conecta Gmail e Google Calendar nos primeiros 5 minutos via OAuth, sem código · 2) Cria um agente de triagem: 'Classifique cada e-mail como: lead OPC | aprovação de conteúdo | alerta de pipeline | outro — me notifique só nos leads OPC imediatamente' · 3) Monitora o uso de créditos nos primeiros 3 dias — se consumir mais do esperado em triagem simples, reduza o número de e-mails que o agente processa por hora · 4) Depois da triagem funcionando: adiciona o segundo agente — scheduling automático de reuniões de avaliação de projeto OPC (sugere horário + envia link de confirmação)",
+        "fonte": {"t": "Lindy Review 2026 — AI Executive Assistant — Tooliverse", "u": "https://tooliverse.ai/tools/lindy-ai"},
         "video": {"t": "", "u": ""}
       }
     ]
