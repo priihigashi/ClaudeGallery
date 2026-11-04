@@ -1,35 +1,35 @@
 {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "🍪 yt-dlp Overdue",
-      "t": "Cookies do yt-dlp vencidos — refresh bi-semanal em atraso no inbox",
-      "why": "Email 'ACTION NEEDED' no inbox: sem cookie fresh, downloads de vídeo param silenciosamente e toda a pipeline de captura trava sem alerta. Renova antes de qualquer outra automação hoje — Lindy.ai de hoje (iafim) pode automatizar o lembrete recorrente.",
-      "go": "iafim"
+      "tag": "REAL ESTATE",
+      "t": "Estudo FL — Regra 1: primeiro da manhã, sem pular",
+      "why": "Bloco diário no calendário (Regra 1 do Finishing Protocol). Curso Cameron Academy ativo — meta de horas até o exame.",
+      "go": "tip"
     },
     {
-      "tag": "📰 Verdade Pela Metade",
-      "t": "FORMAT-024 na agenda HOJE às 11h — primeira sessão do debunk semanal",
-      "why": "Template pronto em CONTENT_FORMATS.md. Sessão de hoje é o setup completo: escolher o vídeo mais engajado do @marceloem23, classificar Modo A ou B, e documentar o fluxo. Opus Clip de hoje (conteudo) transforma o resultado em clipe viral sem edição manual.",
+      "tag": "CONTEÚDO",
+      "t": "Content approvals pendentes: News + OPC",
+      "why": "Dois e-mails de aprovação marcados como ACTION NEEDED na caixa de entrada hoje.",
       "go": "conteudo"
     },
     {
-      "tag": "⚠️ ads_pulse Falhou",
-      "t": "ads_pulse.yml FAILED (run 41526143749) + OPC Ads Weekly chegou — revisar antes de gastar mais",
-      "why": "Dois sinais simultâneos: monitoramento automático quebrou e o relatório semanal está na inbox. Google LSA de hoje (ads) explica por que leads pagos diretamente têm menos risco de falha de automação do que monitoramentos complexos.",
-      "go": "ads"
+      "tag": "INSTAGRAM",
+      "t": "Conferir trial reels amanhã: distrital (completo + gancho B)",
+      "why": "Evento no calendário: comparar tempo médio e compartilhamentos dos dois trials de política — resultado orienta repost.",
+      "go": "obra"
     },
     {
-      "tag": "🧾 Retell AI (2º receipt)",
-      "t": "Novo receipt Stripe Retell AI (#2178-7479) — assinatura ativa, agente ainda não configurado",
-      "why": "Segunda cobrança registrada: produto pago mas não ativado. Time Blindness de hoje (tip) explica exatamente por que esse tipo de tarefa fica 'pra amanhã' infinitamente — usa o Time Timer para reservar 90 min ainda esta semana e configura o agente de uma vez.",
-      "go": "tip"
+      "tag": "PIPELINE",
+      "t": "ads_pulse.yml FALHOU — pipeline de anúncios bloqueada",
+      "why": "GitHub Action falhou no run 41526143749. Verificar logs antes de lançar novos anúncios.",
+      "go": "ads"
     }
   ],
   "history": [
     {
-      "date": "2026-11-03",
+      "date": "2026-11-04",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,105 +37,129 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-11-03",
+        "id": "tip-2026-11-04",
         "top": true,
-        "t": "Time Blindness no TDAH: O Relógio que Torna o Tempo Visível — Time Timer + Analógico na Mesa Resolve o que Nenhum App Resolve",
-        "resumo": "TDAH não percebe o tempo passando — não é distração, é neurológico. O Time Timer (disco vermelho que encolhe) e um relógio analógico no campo de visão criam uma 'presença sensorial do tempo' que substitui o radar interno quebrado. Mais barato e mais eficaz do que a maioria dos apps de produtividade.",
-        "porque": "Simply Psychology documenta que o TDAH dificulta o monitoramento contínuo de tempo — causando atrasos crônicos, subestimação de duração de tarefas e a sensação de 'onde foi meu dia?'. Ferramentas visuais físicas — o disco encolhendo, o ponteiro se movendo — criam uma pista sensorial que o cronômetro de texto não consegue replicar.",
-        "aplicar": "Duas ações de baixo custo com alto impacto: um relógio analógico fixo no ponto mais visível da mesa (não digital, não celular), e o app TimeSee ou DuePal como Time Timer digital para blocos de trabalho. Custo total: $5-15 para o relógio + app gratuito.",
-        "plano": "1) Fixa um relógio analógico pequeno no canto superior do monitor — o ponteiro em movimento é a âncora sensorial mais barata que existe · 2) Baixa TimeSee (iOS, gratuito) ou DuePal: configura o disco em 90 min para a sessão de RE study de amanhã às 8h · 3) Regra: o Time Timer começa ANTES de abrir qualquer app — não depois de já estar perdida numa aba · 4) Esta semana: antes de cada tarefa, estima em voz alta quanto tempo vai levar; depois confere — o gap te mostra onde seu TDAH mais subestima o tempo",
-        "fonte": {"t": "Time Blindness: What it is and helpful solutions — Time Timer", "u": "https://timetimer.com/blogs/news/time-blindness"},
+        "t": "Body Doubling para TDAH: Trabalhe ao Vivo com Alguém — e o Cérebro Para de Fugir",
+        "resumo": "Body doubling é colocar outra pessoa (real ou virtual) no mesmo ambiente enquanto você trabalha. Para TDAH, a presença de uma testemunha externa ativa o sistema de responsabilidade e reduz a evasão de tarefas — sem precisar de conversa ou interação.",
+        "porque": "O TDAH tem dificuldade com regulação interna. Uma presença externa funciona como âncora externa de foco, substituindo o automonitoramento que o cérebro não faz sozinho. Estudos preliminares e relatos de praticantes indicam redução de procrastinação mesmo com parceiro virtual.",
+        "aplicar": "Use o Focusmate (sessões de 25, 50 ou 75 min com um estranho via câmera), entre em salas de estudo no Discord, ou coloque um 'work with me' no YouTube enquanto trabalha. Câmera ligada é o gatilho — a presença percebida é o que ativa o mecanismo.",
+        "plano": "1) Crie conta grátis no Focusmate (focusmate.com). · 2) Agende uma sessão para a primeira tarefa difícil do dia. · 3) Declare a tarefa no início da sessão ('Vou terminar X em 50 min'). · 4) Avalie: o que você conseguiu fazer com parceiro que evitou sozinha?",
+        "fonte": {
+          "t": "ADD Resource Center — Body Doubling para TDAH",
+          "u": "https://www.addrc.org/how-to-be-a-good-body-double-for-someone-with-adhd/"
+        },
         "video": {"t": "", "u": ""}
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-11-03",
+        "id": "receita-2026-11-04",
         "top": true,
-        "t": "Risoto Cremoso de Abóbora com Sálvia e Queijo Vegano — 40 Min, Elaborado, Kid-Friendly",
-        "resumo": "Abóbora kabocha ou butternut assada com azeite → base cremosa laranja-dourada + arroz arbóreo com caldo quente em fios + queijo vegano derretível no final. Sem leite de vaca, cor vibrante, cremoso de verdade. Crianças comem sem perceber que é vegano.",
-        "porque": "Receita elaborada (ciclo de ~4 dias — última elaborada foi a lasanha no dia 30). A técnica de assar a abóbora antes do risoto intensifica o dulçor natural e cria uma base mais rica do que o método cru. Queijo vegano tipo Follow Your Heart Parmezan ou Violife Epic Mature dá a cremosidade que normalmente viria do parmesão animal.",
-        "aplicar": "Asse a abóbora no dia anterior para economizar 15 minutos. A parte do risoto precisa de atenção contínua (concha por vez), mas é meditativa — 20 minutos de mexer sem tela. Sirva com sálvia frita em azeite por cima: o crocante equilibra o cremoso e impressiona criança.",
-        "plano": "1) Corta 400g de abóbora em cubos de 2cm, tempera com azeite + sal + noz-moscada, assa a 200°C por 20 min até dourar nas bordas · 2) Refoga cebola em azeite, adiciona 1 xíc de arbóreo, mexe 1 min, deglaça com 100ml de vinho branco seco (ou suco de limão) até evaporar · 3) Adiciona 4 xíc de caldo de legumes quente, 1 concha por vez, mexendo até absorver antes de adicionar a próxima (~20 min total) · 4) Incorpora a abóbora assada (amasse metade para cremosidade), 2 col. de queijo vegano ralado, finaliza com folhas de sálvia fritas em azeite por cima — serve imediatamente",
-        "fonte": {"t": "3 receitas de risoto vegano fáceis de fazer — NSC Total", "u": "https://www.nsctotal.com.br/cotidiano/3-receitas-de-risoto-vegano-faceis-de-fazer"},
+        "t": "Wraps de Hummus com Legumes Assados — 30 Min, Veganos, Kid-Friendly",
+        "resumo": "Tortilhas recheadas com hummus cremoso, pimentão + abobrinha assados no forno, folhas verdes e queijo vegano ralado. Simples, colorido e fácil de dobrar para o almoço das crianças.",
+        "porque": "Sem leite de vaca, sem peixe, sem frutos do mar. O hummus entrega proteína vegetal e gordura boa; os legumes assados concentram sabor sem precisar de técnica. Crianças aceitam porque podem montar o próprio wrap.",
+        "aplicar": "Corte pimentão vermelho, abobrinha e cebola roxa em tiras. Tempere com azeite, sal, páprica e alho em pó. Asse a 200 °C por 20 min. Espalhe hummus na tortilha, adicione os legumes quentes e folhas de rúcula ou espinafre. Enrole firme.",
+        "plano": "1) Pré-aqueça o forno a 200 °C e corte os legumes em 5 min. · 2) Asse por 20 min enquanto aquece as tortilhas na frigideira seca. · 3) Monte os wraps: hummus + legumes + folhas + queijo vegano. · 4) Sirva imediatamente ou embrulhe em papel-manteiga para a lancheira.",
+        "fonte": {
+          "t": "Plant Power Couple — Easy Vegan Hummus Wrap",
+          "u": "https://www.plantpowercouple.com/?p=5411"
+        },
         "video": {"t": "", "u": ""}
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-11-03",
+        "id": "merch-2026-11-04",
         "top": true,
-        "t": "Awkward Styles 2026: POD Especialista em Bordado Real nos EUA — Alta Densidade de Pontos, Tees Femininas e Integração Direta no Shopify",
-        "resumo": "Awkward Styles foca exclusivamente em bordado de alta qualidade para POD: alta contagem de pontos, acabamento profissional em tees, hoodies, bonés e bolsas. Integração nativa com Shopify, WooCommerce e Etsy. Fulfillment nos EUA — prazo menor para clientes americanos do que plataformas europeias.",
-        "porque": "A maioria das plataformas POD oferece bordado como um item entre dezenas de técnicas. Awkward Styles é especialista: toda a estrutura de produção é orientada para bordado. Para uma marca que quer se diferenciar com acabamento de qualidade — não só estampa — é a plataforma mais focada para a tarefa certa.",
-        "aplicar": "Cria 1 produto teste: tee feminina com logo bordado pequeno no peito esquerdo. Pede amostra física antes de abrir para o público. Compare o toque e o acabamento do ponto com Apliiq e Gelato que você já avaliou esta semana.",
-        "plano": "1) Cria conta gratuita em awkward-styles.com e instala o app Shopify · 2) Navega no catálogo de Women's Tees e verifica as opções de corte longo/oversized disponíveis · 3) Configura design simples (logo pequeno, <5.000 pontos para começar) e gera o mock 3D · 4) Faz pedido de amostra (~$20-35) e compara o acabamento do ponto e a qualidade do tecido com os fornecedores já testados esta semana antes de decidir qual usar na primeira coleção",
-        "fonte": {"t": "", "u": ""},
+        "t": "Printful 2026: POD com Bordado Real + Sublimação — Benchmark de Qualidade com 4.4★ no G2",
+        "resumo": "Printful é a maior plataforma de POD integrada com Shopify, Etsy e WooCommerce. Bordado digital em até 15 cores, camisetas femininas slim e oversized disponíveis, fulfilment global com centros nos EUA e Europa.",
+        "porque": "Com 7.561 reviews no Trustpilot e 4.4★ no G2 (173 avaliações), Printful tem histórico verificável. Para bordado, reviewers reportam resultados limpos em logotipos e chapéus. O maior ponto crítico é inconsistência pontual na estampa — controlável pedindo uma amostra antes de listar.",
+        "aplicar": "Para tees femininas longline bordadas: escolha o blank 'Bella + Canvas 6400' (slim fit) disponível no catálogo. Faça upload do arquivo de bordado em formato .dst ou deixe o Printful converter o vetor. Peça a amostra física (US$5–15) antes de publicar.",
+        "plano": "1) Crie conta grátis em printful.com e conecte sua loja Shopify ou Etsy. · 2) No catálogo, filtre por 'Embroidery' + 'Women's'. · 3) Suba um mock bordado simples (logotipo ou frase). · 4) Peça a amostra e compare textura com o Awkward Styles testado na semana passada.",
+        "fonte": {
+          "t": "Capterra — Printful Reviews 2026",
+          "u": "https://www.capterra.com/p/209769/Printful/reviews"
+        },
         "video": {"t": "", "u": ""}
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-11-03",
+        "id": "conteudo-2026-11-04",
         "top": true,
-        "t": "Opus Clip 2026: Vídeo Longo → 10 Clipes Virais em 10 Minutos — IA Seleciona os Melhores Momentos, Adiciona Legendas e Virality Score",
-        "resumo": "Você sobe um vídeo longo (tour de obra, podcast, reunião gravada) e o Opus Clip analisa o conteúdo, seleciona os melhores cortes com Virality Score refinado (jul/2026), adiciona legendas animadas e exporta clipes verticais prontos para Reels e TikTok. Plano free: 60 créditos/mês com watermark.",
-        "porque": "Diferente de InVideo e Captions (que partem do zero), Opus Clip parte de um vídeo que você JÁ TEM. Para a OPC, isso significa: o tour de obra que ficou parado na câmera vira 5-8 clipes de Reel em 10 minutos. Para Verdade Pela Metade, vídeos longos de checagem viram cortes sociais que amplificam o formato. Ponto fraco: não funciona bem para conteúdo de jogo ou visual sem fala — melhor para talking-head.",
-        "aplicar": "Pega o vídeo bruto mais recente que você tem — tour de obra, explicação de serviço, live gravada — e testa no plano free. O Virality Score de julho de 2026 é mais preciso para talking-head do que a versão anterior.",
-        "plano": "1) Acessa opus.pro, cria conta e testa o plano free (60 créditos = 60 minutos de fonte) · 2) Faz upload de vídeo de obra ou reunião — foco em talking-head para melhor resultado · 3) Revisa os 3 melhores clipes pelo Virality Score e edita manualmente o que o modelo não acertou · 4) Exporta sem watermark no plano pago ($15-19/mês) ou testa grátis esta semana antes de decidir assinar",
-        "fonte": {"t": "Opus Clip Review 2026: AI Video Shorts Tool Tested — marcandrews.com", "u": "https://marcandrews.com/opus-clip-review-2026-ai-video-shorts-tool-tested/"},
+        "t": "Descript 2026: Edite o Vídeo pelo Transcript — IA Underlord Remove Erros e Clona a Sua Voz",
+        "resumo": "Descript transforma vídeo e áudio em texto editável. Apague palavras no transcript para cortar o vídeo, peça ao agente IA 'Underlord' para remover vícios de linguagem, gere clones de voz para corrigir falas sem regravar.",
+        "porque": "Enquanto Opus Clip/Klap recortam clipes automaticamente, o Descript dá controle cirúrgico: você decide cada corte editando como um Google Doc. Para carrosséis de blog, o transcript vira copy pronto. Para Reels, Underlord sugere os highlights mais fortes.",
+        "aplicar": "Importe o vídeo da obra, deixe o Underlord gerar o transcript automático e pedir remoção dos 'éé' e pausas longas. Exporte em 9:16 para o Reel ou use o transcript para criar a legenda do carrossel. Tier gratuito exporta em 720p; pago desbloqueia 4K.",
+        "plano": "1) Acesse descript.com e importe um vídeo de obra existente. · 2) Ative Underlord > 'Remove filler words' para limpar o áudio. · 3) Selecione as frases mais fortes no transcript e exporte o clipe cortado. · 4) Use o texto do transcript como legenda no carrossel da OPC.",
+        "fonte": {
+          "t": "SkillScouter — Descript Review 2026: AI Audio & Video Editor Tested",
+          "u": "https://skillscouter.com/descript-review/"
+        },
         "video": {"t": "", "u": ""}
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-11-03",
+        "id": "obra-2026-11-04",
         "top": true,
-        "t": "Stylar.ai 2026: Editor de Imagem IA que Troca Só o Que Você Pede — Revestimento, Cor de Parede e Mobília Sem Regenerar a Foto Inteira",
-        "resumo": "Stylar.ai permite inserir, remover ou trocar elementos específicos de uma imagem sem alterar o resto. Para a OPC: sobe a foto do cômodo → seleciona a área do piso → troca o revestimento → mantém tudo mais igual. Gera variações de estilo do mesmo ambiente para mostrar ao cliente antes de fechar.",
-        "porque": "Ferramentas como Collov e REimagineHome regeneram o cômodo inteiro — às vezes mudando elementos que você não queria. Stylar.ai tem controle por área selecionada: você define o que muda e o que fica. Para conteúdo de antes/depois de reforma, oferece um nível de precisão editorial que renders completos não têm.",
-        "aplicar": "Para a OPC: foto de cômodo em reforma → seleciona apenas a parede → gera 3 cores de tinta → exporta comparativo. Sem regenerar o render inteiro, só o elemento que o cliente está indeciso. Resultado: conteúdo de carrossel 'Qual você escolheria?' com foto real do projeto.",
-        "plano": "1) Acessa stylar.ai e cria conta (plano free disponível com créditos iniciais) · 2) Faz upload de foto de cômodo de um projeto OPC atual · 3) Usa a ferramenta de seleção por área: marca apenas o piso ou a parede que quer variar · 4) Gera 3 variações de material ou cor e exporta o comparativo para o Instagram OPC ('Qual acabamento você escolheria para sua cozinha?') ou inclui na proposta para o cliente antes de assinar",
-        "fonte": {"t": "Stylar: Your Ultimate AI Image Editor for Effortless Design Control — Subscribed.FYI 2026", "u": "https://subscribed.fyi/?p=19170"},
+        "t": "Adobe Firefly AI Room Design 2026: Foto do Ambiente → Render com Estilo Novo para Reels da OPC",
+        "resumo": "Adobe Firefly tem um modo específico de design de ambientes: envie a foto de um quarto ou cômodo da obra e peça uma transformação com prompt de texto ('modern farmhouse', 'clean contemporary'). O resultado é comercialmente seguro (treinado em conteúdo licenciado).",
+        "porque": "Diferente do Collov AI ou Stylar.ai, o Firefly vive dentro do ecossistema Adobe — a imagem gerada pode ir direto para o Photoshop ou Express para adicionar logo, legenda e ajustes de cor. Isso acelera o fluxo OPC: foto da obra → render IA → post editado em 15 min.",
+        "aplicar": "Abra firefly.adobe.com, vá em 'Generative Fill' ou 'AI Room Design'. Cole a foto do cômodo, escreva o estilo desejado, gere 4 variações. Exporte a melhor e abra no Adobe Express para adicionar logo + call-to-action da OPC. Exporte em 1:1 ou 9:16.",
+        "plano": "1) Acesse firefly.adobe.com com a conta Adobe (plano gratuito inclui créditos mensais). · 2) Use 'AI Room Design' com foto real de uma obra recente. · 3) Gere 4 variações com estilos diferentes (farmhouse, contemporary, minimalist, luxury). · 4) Leve a melhor para o Adobe Express e monte o Reel de 'Antes e Depois'.",
+        "fonte": {
+          "t": "Adobe Firefly — AI Room Design",
+          "u": "https://www.adobe.com/products/firefly/features/ai-room-design"
+        },
         "video": {"t": "", "u": ""}
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-11-03",
+        "id": "geo-2026-11-04",
         "top": true,
-        "t": "Estreito de Taiwan 2026: TSMC Controla 92% dos Chips Avançados — e a Crise de Ormuz de Março Mostrou o Que Acontece Quando uma Rota Fecha",
-        "resumo": "Taiwan produz 92% dos chips de ponta abaixo de 10nm. Em março de 2026, o fechamento do Estreito de Ormuz alertou para o que um bloqueio do Estreito de Taiwan significaria: IA, smartphones, carros elétricos, defesa — tudo para. China analisa um 'quasi-bloqueio econômico' para pressionar sem disparar um tiro. TSMC registrou receita recorde de $35.6 bi no Q1/2026.",
-        "porque": "Um quasi-bloqueio (impedir entregas sem invadir militarmente) pararia as exportações de chips quase imediatamente, sem cruzar o limiar de resposta militar americana. Quanto mais TSMC cresce com a demanda de IA, mais estratégica Taiwan se torna — e mais visada. É o choke point tecnológico mais crítico de 2026.",
-        "aplicar": "Como pauta: 'Por que a IA que você usa hoje pode parar por causa de uma ilha?' — conecta Taiwan → TSMC → semicondutores → dispositivos cotidianos. Para a OPC: componentes de automação residencial e painéis solares têm preços influenciados por essa tensão.",
-        "plano": "1) Lê o artigo do HeyGoTrade de abril/2026 sobre TSMC e risco de cadeia de suprimentos (link na fonte) · 2) Conecta o padrão: Ormuz (energia) → Malaca (logística) → Taiwan (tecnologia) — três choke points, três ameaças ao mesmo sistema · 3) Entende a diferença entre 'bloqueio militar' e 'quasi-bloqueio econômico' — é o segundo que os analistas consideram mais provável no curto prazo · 4) Cria um card geopolítico: '3 pontos que controlam o mundo digital — Ormuz, Malaca, Taiwan'",
-        "fonte": {"t": "TSMC Posts Record Q1 but Chip Supply Chain Faces War Risk — HeyGoTrade", "u": "https://heygotrade.com/en/news/tsmc-record-q1-chip-supply-chain-war-risk-20260414"},
+        "t": "Estreito de Ormuz 2026: Irã Controla o Corredor por Onde Passa 20% do Petróleo Mundial",
+        "resumo": "O Estreito de Ormuz — 54 km de largura entre Irã e Omã — é o ponto de estrangulamento de energia mais crítico do planeta. Em 2026, após ataques dos EUA e Israel ao Irã (fev/26), Teerã usou a ameaça de fechar o estreito como principal alavanca estratégica.",
+        "porque": "Com seus mísseis, drones e redes proxy enfraquecidos, o Irã migrou a estratégia para o controle marítimo. Se o estreito fechar, o petróleo da Arábia Saudita, UAE, Kuwait e Iraque não chega aos mercados mundiais. O preço do barril responde em horas — e o real sente.",
+        "aplicar": "Para pauta: o Estreito de Ormuz explica por que qualquer escalada com o Irã afeta diretamente o preço da gasolina no Brasil e nos EUA. É o elo entre política externa e economia doméstica — a notícia mais relevante para o noticiário econômico brasileiro.",
+        "plano": "1) Mapa mental: Ormuz → Golfo Pérsico → Arábia Saudita, UAE, Kuwait, Iraque (produtores). · 2) Rota alternativa: pipeline saudita até o Mar Vermelho (parcial). · 3) O que o Irã ganha: poder de negociação no programa nuclear e nas sanções. · 4) Pauta-modelo: 'Se o Irã fechar Ormuz por 7 dias, o que acontece com o real?'",
+        "fonte": {
+          "t": "Breakbulk News — Iran's Strait of Hormuz Drills Disrupt Shipping 2026",
+          "u": "https://breakbulk.news/irans-strait-of-hormuz-drills-disrupt-shipping-signal-geopolitical-tensions/"
+        },
         "video": {"t": "", "u": ""}
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-11-03",
+        "id": "ads-2026-11-04",
         "top": true,
-        "t": "Google Local Services Ads 2026 para Construtoras: Paga por Lead (Não por Clique), Badge Verificado e Posição Acima do Search — Setup para a OPC",
-        "resumo": "Google LSA é diferente do Search: você paga por lead qualificado (não por clique), aparece ACIMA dos anúncios de Search, e o Google exige verificação de licença e seguro antes de ativar — o que filtra concorrentes não verificados. Lead médio nos EUA em 2026: $53. Google Guarantee foi encerrada em nov/2025 e substituída pelo Google Verified badge.",
-        "porque": "Para Oak Park Construction (CBC1263425), LSA é ideal: construtora licenciada e segurada em Broward, Miami-Dade, Palm Beach — exatamente o perfil que o Google exige para ativar. Pagar por lead (não por clique) elimina o desperdício com curiosos sem intenção de contratar. ROAS médio relatado: 7.8x.",
-        "aplicar": "Requisito: licença ativa (CBC1263425 ✓) + seguro ativo. Setup leva 1-3 dias para aprovação do Google. Conecta ao CRM para marcar quais leads fecharam — o Google usa esse sinal para otimizar para leads de maior valor.",
-        "plano": "1) Acessa ads.google.com/local-services-ads → 'Get started' → escolhe categoria 'General Contractor' ou 'Home Renovation' · 2) Submete: licença CBC1263425 + certificado de seguro vigente + background check exigido pelo Google para empreiteiras · 3) Aguarda verificação (1-3 dias úteis); configura o perfil enquanto aguarda: fotos dos projetos, serviços, área de atendimento (Broward, Miami-Dade, Palm Beach) · 4) Ao ativar: começa com $50-70/lead e ajusta com base nos resultados reais dos primeiros 30 dias — leads de reforma completa justificam custo maior do que reparos menores",
-        "fonte": {"t": "Google Local Services Ads 2026 — Complete Setup and Optimization Guide for Contractors", "u": "https://pushleads.com/google-local-service-ads-in-2026-the-complete-setup-and-optimization-guide-for-contractors/"},
+        "t": "Google Performance Max 2026: Campanha Única que Veicula em Todos os Canais com IA",
+        "resumo": "Performance Max (PMax) é a campanha que distribui automaticamente anúncios no Search, Display, YouTube, Gmail e Discover com um único orçamento. Em 2026, o Google adicionou palavras-chave negativas no nível da campanha e relatórios de desempenho por canal.",
+        "porque": "Para a OPC, o PMax pode capturar leads em todos os pontos da jornada: quem busca no Google, quem assiste ao YouTube e quem navega em sites de decoração. O risco é a 'caixa preta' — mas os novos relatórios por canal ajudam a entender onde o dinheiro vai.",
+        "aplicar": "Funciona melhor com pelo menos 30 conversões por mês. Se você tem menos, rode primeiro uma campanha de Busca manual para coletar dados. Quando ativar o PMax, suba assets de alta qualidade: 15 imagens (incluindo renders de obra), 5 títulos, 5 descrições e 1 vídeo de 30 s.",
+        "plano": "1) No Google Ads, crie uma campanha Performance Max com objetivo 'Leads'. · 2) Adicione palavras-chave negativas da lista da campanha de Busca existente. · 3) Suba assets: foto de obra real + render IA + logo OPC. · 4) Após 2 semanas, verifique o relatório por canal e corte o canal com pior CPL.",
+        "fonte": {
+          "t": "TechWyse — Mastering Google Performance Max Campaigns: Tips for 2026 Success",
+          "u": "https://www.techwyse.com/blog/google-ads/google-performance-max-campaigns-2026"
+        },
         "video": {"t": "", "u": ""}
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-11-03",
+        "id": "iafim-2026-11-04",
         "top": true,
-        "t": "Lindy AI 3.0 (ago/2026): Assistente de IA que Gerencia Inbox, Agenda e Reuniões Como um Funcionário — Sem Código, Trial de 7 Dias",
-        "resumo": "Lindy 3.0 é um 'funcionário de IA' que monitora seu inbox, lê calendário, sugere horários de reunião para externos, faz booking automático, resume reuniões e tria e-mails por urgência. Relançado em agosto de 2026 como AI executive assistant simplificado — sem precisar montar workflows complexos. Começa em ~$49/mês.",
-        "porque": "Diferente de Make.com (automação de fluxos) e n8n (workflows complexos), Lindy é focado em admin pessoal: inbox + agenda + reuniões. Para quem perde horas em triagem de e-mail e scheduling, Lindy faz isso em background. Ponto de atenção: créditos consomem mais do esperado em tarefas com muita análise — monitore os primeiros 3 dias.",
-        "aplicar": "Para a OPC: configura Lindy para triage do inbox por urgência — lead novo OPC notifica imediatamente, aprovações de conteúdo agrupam em 1 batch diário, alertas de pipeline vão para uma pasta específica. Economiza o tempo perdido abrindo o inbox e ficando preso lá.",
-        "plano": "1) Acessa lindy.ai e inicia o trial de 7 dias — conecta Gmail e Google Calendar nos primeiros 5 minutos via OAuth, sem código · 2) Cria um agente de triagem: 'Classifique cada e-mail como: lead OPC | aprovação de conteúdo | alerta de pipeline | outro — me notifique só nos leads OPC imediatamente' · 3) Monitora o uso de créditos nos primeiros 3 dias — se consumir mais do esperado em triagem simples, reduza o número de e-mails que o agente processa por hora · 4) Depois da triagem funcionando: adiciona o segundo agente — scheduling automático de reuniões de avaliação de projeto OPC (sugere horário + envia link de confirmação)",
-        "fonte": {"t": "Lindy Review 2026 — AI Executive Assistant — Tooliverse", "u": "https://tooliverse.ai/tools/lindy-ai"},
+        "t": "Zapier AI Agents 2026: Agente Autônomo que Conecta 7.000+ Apps e Decide os Próprios Passos",
+        "resumo": "Zapier Agents é uma camada de agentes autônomos sobre o Zapier tradicional. Você descreve a tarefa em linguagem natural e o agente decide quais zaps acionar — sem montar canvas drag-and-drop.",
+        "porque": "Diferente do Make.com ou n8n (fluxo visual), o Zapier Agent aceita instrução por texto. Com 7.000+ integrações nativas, conecta Gmail, Google Sheets, Stripe e qualquer tool já usado na OPC. Plano gratuito inclui 2 agentes e 400 atividades/mês para testar sem custo.",
+        "aplicar": "Crie um agente para triagem de leads: 'Se o formulário chegar com valor > $5.000, adicione ao Sheet e mande e-mail de confirmação'. Avalie em 30 dias antes de pagar o plano pago (~US$50/agente/mês).",
+        "plano": "1) Acesse zapier.com/agents e crie a conta gratuita. · 2) Conecte Gmail + Google Sheets como data sources do agente. · 3) Descreva a tarefa em linguagem natural e defina o trigger (novo lead). · 4) Teste com 5 leads fictícios e compare o tempo vs fluxo manual atual.",
+        "fonte": {
+          "t": "eWeek — Best Agentic AI Tools for Automating Your Life in 2026",
+          "u": "https://www.eweek.com/fr/news/best-agentic-ai-tools-automate-your-life/"
+        },
         "video": {"t": "", "u": ""}
       }
     ]

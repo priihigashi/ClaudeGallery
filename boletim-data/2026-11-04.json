@@ -1,0 +1,167 @@
+{
+  "date": "2026-11-04",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "REAL ESTATE",
+      "t": "Estudo FL — Regra 1: primeiro da manhã, sem pular",
+      "why": "Bloco diário no calendário (Regra 1 do Finishing Protocol). Curso Cameron Academy ativo — meta de horas até o exame.",
+      "go": "tip"
+    },
+    {
+      "tag": "CONTEÚDO",
+      "t": "Content approvals pendentes: News + OPC",
+      "why": "Dois e-mails de aprovação marcados como ACTION NEEDED na caixa de entrada hoje.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "INSTAGRAM",
+      "t": "Conferir trial reels amanhã: distrital (completo + gancho B)",
+      "why": "Evento no calendário: comparar tempo médio e compartilhamentos dos dois trials de política — resultado orienta repost.",
+      "go": "obra"
+    },
+    {
+      "tag": "PIPELINE",
+      "t": "ads_pulse.yml FALHOU — pipeline de anúncios bloqueada",
+      "why": "GitHub Action falhou no run 41526143749. Verificar logs antes de lançar novos anúncios.",
+      "go": "ads"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-11-04",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-11-04",
+        "top": true,
+        "t": "Body Doubling para TDAH: Trabalhe ao Vivo com Alguém — e o Cérebro Para de Fugir",
+        "resumo": "Body doubling é colocar outra pessoa (real ou virtual) no mesmo ambiente enquanto você trabalha. Para TDAH, a presença de uma testemunha externa ativa o sistema de responsabilidade e reduz a evasão de tarefas — sem precisar de conversa ou interação.",
+        "porque": "O TDAH tem dificuldade com regulação interna. Uma presença externa funciona como âncora externa de foco, substituindo o automonitoramento que o cérebro não faz sozinho. Estudos preliminares e relatos de praticantes indicam redução de procrastinação mesmo com parceiro virtual.",
+        "aplicar": "Use o Focusmate (sessões de 25, 50 ou 75 min com um estranho via câmera), entre em salas de estudo no Discord, ou coloque um 'work with me' no YouTube enquanto trabalha. Câmera ligada é o gatilho — a presença percebida é o que ativa o mecanismo.",
+        "plano": "1) Crie conta grátis no Focusmate (focusmate.com). · 2) Agende uma sessão para a primeira tarefa difícil do dia. · 3) Declare a tarefa no início da sessão ('Vou terminar X em 50 min'). · 4) Avalie: o que você conseguiu fazer com parceiro que evitou sozinha?",
+        "fonte": {
+          "t": "ADD Resource Center — Body Doubling para TDAH",
+          "u": "https://www.addrc.org/how-to-be-a-good-body-double-for-someone-with-adhd/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-11-04",
+        "top": true,
+        "t": "Wraps de Hummus com Legumes Assados — 30 Min, Veganos, Kid-Friendly",
+        "resumo": "Tortilhas recheadas com hummus cremoso, pimentão + abobrinha assados no forno, folhas verdes e queijo vegano ralado. Simples, colorido e fácil de dobrar para o almoço das crianças.",
+        "porque": "Sem leite de vaca, sem peixe, sem frutos do mar. O hummus entrega proteína vegetal e gordura boa; os legumes assados concentram sabor sem precisar de técnica. Crianças aceitam porque podem montar o próprio wrap.",
+        "aplicar": "Corte pimentão vermelho, abobrinha e cebola roxa em tiras. Tempere com azeite, sal, páprica e alho em pó. Asse a 200 °C por 20 min. Espalhe hummus na tortilha, adicione os legumes quentes e folhas de rúcula ou espinafre. Enrole firme.",
+        "plano": "1) Pré-aqueça o forno a 200 °C e corte os legumes em 5 min. · 2) Asse por 20 min enquanto aquece as tortilhas na frigideira seca. · 3) Monte os wraps: hummus + legumes + folhas + queijo vegano. · 4) Sirva imediatamente ou embrulhe em papel-manteiga para a lancheira.",
+        "fonte": {
+          "t": "Plant Power Couple — Easy Vegan Hummus Wrap",
+          "u": "https://www.plantpowercouple.com/?p=5411"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-11-04",
+        "top": true,
+        "t": "Printful 2026: POD com Bordado Real + Sublimação — Benchmark de Qualidade com 4.4★ no G2",
+        "resumo": "Printful é a maior plataforma de POD integrada com Shopify, Etsy e WooCommerce. Bordado digital em até 15 cores, camisetas femininas slim e oversized disponíveis, fulfilment global com centros nos EUA e Europa.",
+        "porque": "Com 7.561 reviews no Trustpilot e 4.4★ no G2 (173 avaliações), Printful tem histórico verificável. Para bordado, reviewers reportam resultados limpos em logotipos e chapéus. O maior ponto crítico é inconsistência pontual na estampa — controlável pedindo uma amostra antes de listar.",
+        "aplicar": "Para tees femininas longline bordadas: escolha o blank 'Bella + Canvas 6400' (slim fit) disponível no catálogo. Faça upload do arquivo de bordado em formato .dst ou deixe o Printful converter o vetor. Peça a amostra física (US$5–15) antes de publicar.",
+        "plano": "1) Crie conta grátis em printful.com e conecte sua loja Shopify ou Etsy. · 2) No catálogo, filtre por 'Embroidery' + 'Women's'. · 3) Suba um mock bordado simples (logotipo ou frase). · 4) Peça a amostra e compare textura com o Awkward Styles testado na semana passada.",
+        "fonte": {
+          "t": "Capterra — Printful Reviews 2026",
+          "u": "https://www.capterra.com/p/209769/Printful/reviews"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-11-04",
+        "top": true,
+        "t": "Descript 2026: Edite o Vídeo pelo Transcript — IA Underlord Remove Erros e Clona a Sua Voz",
+        "resumo": "Descript transforma vídeo e áudio em texto editável. Apague palavras no transcript para cortar o vídeo, peça ao agente IA 'Underlord' para remover vícios de linguagem, gere clones de voz para corrigir falas sem regravar.",
+        "porque": "Enquanto Opus Clip/Klap recortam clipes automaticamente, o Descript dá controle cirúrgico: você decide cada corte editando como um Google Doc. Para carrosséis de blog, o transcript vira copy pronto. Para Reels, Underlord sugere os highlights mais fortes.",
+        "aplicar": "Importe o vídeo da obra, deixe o Underlord gerar o transcript automático e pedir remoção dos 'éé' e pausas longas. Exporte em 9:16 para o Reel ou use o transcript para criar a legenda do carrossel. Tier gratuito exporta em 720p; pago desbloqueia 4K.",
+        "plano": "1) Acesse descript.com e importe um vídeo de obra existente. · 2) Ative Underlord > 'Remove filler words' para limpar o áudio. · 3) Selecione as frases mais fortes no transcript e exporte o clipe cortado. · 4) Use o texto do transcript como legenda no carrossel da OPC.",
+        "fonte": {
+          "t": "SkillScouter — Descript Review 2026: AI Audio & Video Editor Tested",
+          "u": "https://skillscouter.com/descript-review/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-11-04",
+        "top": true,
+        "t": "Adobe Firefly AI Room Design 2026: Foto do Ambiente → Render com Estilo Novo para Reels da OPC",
+        "resumo": "Adobe Firefly tem um modo específico de design de ambientes: envie a foto de um quarto ou cômodo da obra e peça uma transformação com prompt de texto ('modern farmhouse', 'clean contemporary'). O resultado é comercialmente seguro (treinado em conteúdo licenciado).",
+        "porque": "Diferente do Collov AI ou Stylar.ai, o Firefly vive dentro do ecossistema Adobe — a imagem gerada pode ir direto para o Photoshop ou Express para adicionar logo, legenda e ajustes de cor. Isso acelera o fluxo OPC: foto da obra → render IA → post editado em 15 min.",
+        "aplicar": "Abra firefly.adobe.com, vá em 'Generative Fill' ou 'AI Room Design'. Cole a foto do cômodo, escreva o estilo desejado, gere 4 variações. Exporte a melhor e abra no Adobe Express para adicionar logo + call-to-action da OPC. Exporte em 1:1 ou 9:16.",
+        "plano": "1) Acesse firefly.adobe.com com a conta Adobe (plano gratuito inclui créditos mensais). · 2) Use 'AI Room Design' com foto real de uma obra recente. · 3) Gere 4 variações com estilos diferentes (farmhouse, contemporary, minimalist, luxury). · 4) Leve a melhor para o Adobe Express e monte o Reel de 'Antes e Depois'.",
+        "fonte": {
+          "t": "Adobe Firefly — AI Room Design",
+          "u": "https://www.adobe.com/products/firefly/features/ai-room-design"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-11-04",
+        "top": true,
+        "t": "Estreito de Ormuz 2026: Irã Controla o Corredor por Onde Passa 20% do Petróleo Mundial",
+        "resumo": "O Estreito de Ormuz — 54 km de largura entre Irã e Omã — é o ponto de estrangulamento de energia mais crítico do planeta. Em 2026, após ataques dos EUA e Israel ao Irã (fev/26), Teerã usou a ameaça de fechar o estreito como principal alavanca estratégica.",
+        "porque": "Com seus mísseis, drones e redes proxy enfraquecidos, o Irã migrou a estratégia para o controle marítimo. Se o estreito fechar, o petróleo da Arábia Saudita, UAE, Kuwait e Iraque não chega aos mercados mundiais. O preço do barril responde em horas — e o real sente.",
+        "aplicar": "Para pauta: o Estreito de Ormuz explica por que qualquer escalada com o Irã afeta diretamente o preço da gasolina no Brasil e nos EUA. É o elo entre política externa e economia doméstica — a notícia mais relevante para o noticiário econômico brasileiro.",
+        "plano": "1) Mapa mental: Ormuz → Golfo Pérsico → Arábia Saudita, UAE, Kuwait, Iraque (produtores). · 2) Rota alternativa: pipeline saudita até o Mar Vermelho (parcial). · 3) O que o Irã ganha: poder de negociação no programa nuclear e nas sanções. · 4) Pauta-modelo: 'Se o Irã fechar Ormuz por 7 dias, o que acontece com o real?'",
+        "fonte": {
+          "t": "Breakbulk News — Iran's Strait of Hormuz Drills Disrupt Shipping 2026",
+          "u": "https://breakbulk.news/irans-strait-of-hormuz-drills-disrupt-shipping-signal-geopolitical-tensions/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-11-04",
+        "top": true,
+        "t": "Google Performance Max 2026: Campanha Única que Veicula em Todos os Canais com IA",
+        "resumo": "Performance Max (PMax) é a campanha que distribui automaticamente anúncios no Search, Display, YouTube, Gmail e Discover com um único orçamento. Em 2026, o Google adicionou palavras-chave negativas no nível da campanha e relatórios de desempenho por canal.",
+        "porque": "Para a OPC, o PMax pode capturar leads em todos os pontos da jornada: quem busca no Google, quem assiste ao YouTube e quem navega em sites de decoração. O risco é a 'caixa preta' — mas os novos relatórios por canal ajudam a entender onde o dinheiro vai.",
+        "aplicar": "Funciona melhor com pelo menos 30 conversões por mês. Se você tem menos, rode primeiro uma campanha de Busca manual para coletar dados. Quando ativar o PMax, suba assets de alta qualidade: 15 imagens (incluindo renders de obra), 5 títulos, 5 descrições e 1 vídeo de 30 s.",
+        "plano": "1) No Google Ads, crie uma campanha Performance Max com objetivo 'Leads'. · 2) Adicione palavras-chave negativas da lista da campanha de Busca existente. · 3) Suba assets: foto de obra real + render IA + logo OPC. · 4) Após 2 semanas, verifique o relatório por canal e corte o canal com pior CPL.",
+        "fonte": {
+          "t": "TechWyse — Mastering Google Performance Max Campaigns: Tips for 2026 Success",
+          "u": "https://www.techwyse.com/blog/google-ads/google-performance-max-campaigns-2026"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-11-04",
+        "top": true,
+        "t": "Zapier AI Agents 2026: Agente Autônomo que Conecta 7.000+ Apps e Decide os Próprios Passos",
+        "resumo": "Zapier Agents é uma camada de agentes autônomos sobre o Zapier tradicional. Você descreve a tarefa em linguagem natural e o agente decide quais zaps acionar — sem montar canvas drag-and-drop.",
+        "porque": "Diferente do Make.com ou n8n (fluxo visual), o Zapier Agent aceita instrução por texto. Com 7.000+ integrações nativas, conecta Gmail, Google Sheets, Stripe e qualquer tool já usado na OPC. Plano gratuito inclui 2 agentes e 400 atividades/mês para testar sem custo.",
+        "aplicar": "Crie um agente para triagem de leads: 'Se o formulário chegar com valor > $5.000, adicione ao Sheet e mande e-mail de confirmação'. Avalie em 30 dias antes de pagar o plano pado (~US$50/agente/mês).",
+        "plano": "1) Acesse zapier.com/agents e crie a conta gratuita. · 2) Conecte Gmail + Google Sheets como data sources do agente. · 3) Descreva a tarefa em linguagem natural e defina o trigger (novo lead). · 4) Teste com 5 leads fictícios e compare o tempo vs fluxo manual atual.",
+        "fonte": {
+          "t": "eWeek — Best Agentic AI Tools for Automating Your Life in 2026",
+          "u": "https://www.eweek.com/fr/news/best-agentic-ai-tools-automate-your-life/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ]
+  }
+}
