@@ -1,0 +1,191 @@
+{
+  "date": "2026-11-05",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "Real Estate",
+      "t": "Curso FL em andamento — estudo de 2h hoje às 8h (Rule 1, não pular)",
+      "why": "Bloco diário no calendário; manter o ritmo protege os $146 de upgrade para live class antes do exame final",
+      "go": "tip"
+    },
+    {
+      "tag": "Instagram",
+      "t": "Trial reels Brasil: comparar gancho B vs reel do feed hoje às 16h",
+      "why": "Dois trials ativos — resultado de tempo médio de visualização decide qual distribuir para todos",
+      "go": "conteudo"
+    },
+    {
+      "tag": "OPC",
+      "t": "2 ligações perdidas hoje na OPC — leads sem retorno",
+      "why": "Missed calls summary no e-mail de hoje; cada ligação não respondida pode ser um orçamento perdido",
+      "go": "ads"
+    },
+    {
+      "tag": "AI Tools",
+      "t": "Retell AI + ElevenLabs: dois pagamentos Stripe ativos — vale integrar num fluxo só",
+      "why": "Recibos recentes mostram assinaturas ativas nas duas plataformas de voz; Retell (atendimento) + ElevenLabs (clonagem de voz) podem trabalhar juntos",
+      "go": "iafim"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-11-05",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-11-05",
+        "top": true,
+        "t": "Modo Espera no TDAH: Por Que Você Trava Horas Antes de um Compromisso — e 3 Saídas Práticas",
+        "resumo": "O Modo Espera acontece quando um evento futuro (reunião, médico, aula) ocupa a sua cabeça e te paralisa por horas antes de começar. O TDAH amplifica o fenômeno porque o cérebro não consegue calcular quanto tempo falta e entra em alerta constante — impossibilitando trabalho profundo no meio do dia.",
+        "porque": "Você perde janelas inteiras de produtividade esperando por algo que começa daqui 3 ou 4 horas. É diferente de procrastinação: você quer trabalhar, mas o compromisso futuro ocupa toda a memória de trabalho.",
+        "aplicar": "Se você tem compromisso às 15h, aceite que a manhã produtiva acabou — e use esse tempo para tarefas de baixo risco que você pode pausar sem custo. Ou renegocie: mova compromissos para o início ou o fim do dia e preserve blocos longos no meio.",
+        "plano": "1) Identifique hoje qual compromisso está gerando o Modo Espera · 2) No seu calendário, 'mova' mentalmente o evento para o início ou fim do dia (mesmo que não seja possível) · 3) Preencha as horas antes com tarefas de baixo risco e fáceis de pausar — sem abrir projetos grandes · 4) Aceite que dias com compromisso produzem menos: sem culpa, com planejamento",
+        "fonte": {
+          "t": "ADHD Waiting Mode — Inflow",
+          "u": "https://www.getinflow.io/post/waiting-mode-hard-to-be-productive-when-you-have-plans"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-11-05",
+        "top": true,
+        "t": "Pad Thai Vegano com Tofu Crocante — 30 Min, Kid-Friendly, Sem Leite de Vaca",
+        "resumo": "Macarrão de arroz com tofu firme em cubos crocantes (truque: amido de milho + frigideira bem quente), molho de tamarindo + tamari, amendoim tostado e cebolinha. Versão completa em 30 minutos, colorida e fácil de aceitar pelos kids.",
+        "porque": "Totalmente vegano, zero laticínio, fácil de fazer em quantidade, e ainda melhor no dia seguinte. O tofu absorve o molho e fica crocante por fora — sem textura borrachuda que crianças rejeitam.",
+        "aplicar": "Tofu firme + 1 colher de amido de milho + frigideira muito quente = crocância sem fritadeira. Substitua molho de peixe por tamari ou molho de peixe vegano. Amendoim pode virar castanha de caju para alérgicos.",
+        "plano": "1) Pressione o tofu firme entre folhas de papel toalha por 15 min para tirar umidade · 2) Corte em cubos de 2 cm, passe no amido e frite em óleo quente até dourar (não mexa muito) · 3) Cozinhe o macarrão de arroz al dente, escorra e reserve · 4) Misture tudo no molho (tamarindo + tamari + açúcar de coco + limão) e finalize com amendoim tostado e cebolinha picada",
+        "fonte": {
+          "t": "Saucy Vegan Pad Thai with Crisp Tofu — VegNews",
+          "u": "https://vegnews.com/vegan-recipes/saucy-vegan-pad-thai-with-crisp-pan-fried-tofu"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-11-05",
+        "top": true,
+        "t": "CustomCat 2026: POD dos EUA com Bordado Sob Demanda por Peça — 4,3★ no Shopify (556 reviews)",
+        "resumo": "Plataforma americana de print-on-demand com sede em Michigan que oferece bordado real (embroidery on demand) por peça unitária, sem MOQ. Integração direta com Shopify. Diferencial frente a Printful e Gelato: bordado disponível em qualquer quantidade, com envio nacional nos EUA em 3–7 dias úteis.",
+        "porque": "A maioria dos PODs cobra bordado apenas em lotes grandes. CustomCat cobra por peça — ideal para loja de médio volume com tees longline femininas personalizadas. Shopify lista 556 avaliações com média 4,3.",
+        "aplicar": "Use para tees longline femininas com bordado de logotipo pequeno no peito — visual de alta qualidade sem estoque. Sempre peça uma amostra antes de lançar publicamente.",
+        "plano": "1) Crie conta em customcat.com e instale o app no Shopify (gratuito) · 2) No catálogo, filtre por tees longline e ative o bordado no designer · 3) Peça uma amostra ($15–25) antes de publicar · 4) Compare qualidade e prazo com Printful lado a lado antes de escalar",
+        "fonte": {
+          "t": "CustomCat Review 2026 — Ecommerce Platforms",
+          "u": "https://ecommerce-platforms.com/articles/customcat-review"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-11-05",
+        "top": true,
+        "t": "Gling AI 2026: Cole o Vídeo Bruto → IA Remove Silêncios, Cacoetes e Takes Ruins Automaticamente — Sem Timeline",
+        "resumo": "Gling transcreve o vídeo, detecta e corta automaticamente silêncios, palavras de preenchimento (né, hm, tipo, então) e takes ruins. O resultado é um transcript editável onde você revisa o corte por texto — sem aprender edição de timeline. Exporta para qualquer editor ou direto para Reels.",
+        "porque": "Se você grava falando direto para a câmera ou faz tutoriais em vídeo, Gling reduz o tempo de edição em 60–80%. Plano free: 1 export por mês com até 1h de mídia.",
+        "aplicar": "Ideal para vídeos talking head (tutoriais, bastidores, depoimentos de clientes da OPC). Grave sem se preocupar com pausas — Gling limpa tudo depois.",
+        "plano": "1) Acesse gling.ai e faça upload do vídeo bruto (até 1h no plano free com marca d'água) · 2) Aguarde a transcrição automática (2–5 min) · 3) Revise o transcript — desmarque cortes que não quer manter · 4) Exporte o vídeo limpo e finalize no CapCut ou suba direto para Reels/TikTok",
+        "fonte": {
+          "t": "Gling AI Silence Remover",
+          "u": "https://gling.ai/silence-remover"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-11-05",
+        "top": true,
+        "t": "Runway Gen-4.5 2026: Foto do Render → Vídeo de 5–10s em 9:16 para Reels da OPC (Gen-3 Alpha aposentado em jul/26)",
+        "resumo": "Gen-3 Alpha foi desativado em julho/2026. O sucessor Gen-4.5 aceita imagem + prompt de texto e gera vídeo de 5–10 segundos com movimento de câmera. Para reforma e construção: foto do cômodo renovado → vídeo com câmera se movendo suavemente pelo ambiente — parece gravação profissional.",
+        "porque": "Um render estático não retém atenção no Reels. Um clipe de 7 segundos com câmera lenta se movendo pelo cômodo aumenta o tempo médio de visualização e cria percepção de qualidade premium para a OPC.",
+        "aplicar": "Foto do antes (obra bruta) + foto do depois (render ou foto finalizada) → dois clipes Runway Gen-4.5 → corte com transição no CapCut → Reel antes/depois em 20–30 segundos.",
+        "plano": "1) Acesse runwayml.com e crie conta (plano free dá créditos iniciais de teste) · 2) Escolha Gen-4.5 Image to Video e faça upload da foto do render ou foto finalizada · 3) Prompt de câmera: 'slow smooth camera move left to right, cinematic, 9:16 vertical' · 4) Gere o clipe de 5–7s, baixe em 9:16 e monte antes/depois no CapCut com transição de corte seco",
+        "fonte": {
+          "t": "Runway Gen-4.5 Image to Video Tool — Newsshooter",
+          "u": "https://www.newsshooter.com/2026/01/21/runway-gen-4-5-image-to-video-tool/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-11-05",
+        "top": true,
+        "t": "Cabos Submarinos 2026: 95% da Internet Passa por 400+ Cabos no Fundo do Mar — e Big Techs Estão Assumindo o Controle",
+        "resumo": "Mais de 400 cabos no fundo dos oceanos carregam 95% do tráfego de dados entre continentes. Antes eram propriedade das operadoras de telecom; agora Google, Meta e Microsoft detêm ou co-financiam a maioria dos novos cabos. Em agosto/2026 a Google anunciou expansão com os cabos Alisios, Canoa e OlaLuz conectando Europa e América.",
+        "porque": "Quem controla os cabos controla a velocidade e o custo da internet de continentes inteiros. No Mar Báltico, incidentes recentes com cabos cortados deixaram governos sem resposta clara sobre se foi sabotagem. O Brasil abriu tomada de subsídios em 2025 para criar uma Política Nacional de Cabos Submarinos.",
+        "aplicar": "Para pauta de conteúdo: 'A guerra invisível no fundo do mar' é um gancho forte para vídeo ou carrossel — poucos sabem que a internet literalmente vive no oceano e que Big Techs estão substituindo os governos no controle dessa infraestrutura.",
+        "plano": "1) Leia a matéria da Xataka BR: cabos submarinos passando de operadoras para big techs · 2) Para pauta visual: explore o mapa interativo em submarinecablemap.com · 3) Monte carrossel: '5 coisas que você não sabia sobre a internet' · 4) Gancho forte para vídeo curto: 'Se um único cabo fosse cortado hoje, o que apagaria?'",
+        "fonte": {
+          "t": "Cabos submarinos: de operadoras para big techs — Xataka BR",
+          "u": "https://www.xataka.com.br/informatica/cabos-submarinos-pertenciam-as-operadoras-e-agora-estao-sendo-controlados-grandes-empresas-tecnologia"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-11-05",
+        "top": true,
+        "t": "YouTube Shorts Ads 2026 para Empresas Locais: Vídeo Vertical 9:16 de $10/dia que Aparece entre os Shorts",
+        "resumo": "YouTube Shorts Ads são vídeos de até 60s em formato 9:16 que aparecem no feed de Shorts entre o conteúdo orgânico. Para empresas locais de construção e reforma: um before/after de 15–30 segundos funciona como anúncio de TV local — com segmentação por raio geográfico e CPM muito abaixo da TV aberta.",
+        "porque": "YouTube Shorts tem mais de 70 bilhões de views/dia. Para OPC, um Reel de reforma com call-to-action 'Peça um orçamento' alcança donos de casa na sua cidade por $10–20/dia — sem pagar agência.",
+        "aplicar": "Crie a campanha no Google Ads como Video Campaign, escolha formato Shorts, segmente por raio de 20 km em torno da OPC + interesses 'home improvement' e 'construction'. Orçamento de entrada: $10/dia.",
+        "plano": "1) No Google Ads, crie nova campanha de Vídeo com objetivo 'Awareness and consideration' · 2) Formato: selecione Shorts (vertical 9:16, até 60s) · 3) Segmentação: raio de 20 km + interesses home improvement/construction + remarketing de visitantes do site · 4) Criativo: vídeo 15–30s, before/after da última reforma com CTA falado e legenda 'Chame a OPC'",
+        "fonte": {
+          "t": "YouTube Shorts Ads: How They Work — Metricool",
+          "u": "https://metricool.com/youtube-shorts-ads/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-11-05",
+        "top": true,
+        "t": "Cassidy AI 2026: Agente de Negócios que Aprende Seus Documentos e Executa Tarefas no Slack, Word e Outlook — Sem Código",
+        "resumo": "Cassidy cria agentes treinados nos seus próprios documentos internos (contratos, manuais, FAQs, planilhas). Cada agente executa tarefas repetitivas: triagem de e-mails, respostas de suporte, qualificação de lead, classificação de tickets. Sem código. Integra no Slack, Teams, Word, Excel e Outlook. Plano Starter gratuito: 3 usuários, 5 agentes.",
+        "porque": "Diferente de Zapier ou Make (que conectam apps), Cassidy é um agente que entende o contexto da sua empresa. Você treina com seus documentos e ele responde com a linguagem e os critérios da empresa — como um funcionário que leu tudo.",
+        "aplicar": "Para OPC: carregue o manual de orçamentos + contratos padrão → crie um agente 'Atendimento OPC' que responde dúvidas frequentes de clientes no e-mail ou WhatsApp com a linguagem certa.",
+        "plano": "1) Acesse cassidyai.com e crie conta Starter (gratuito: 3 usuários, 5 agentes, 5 workflows) · 2) Carregue seus documentos: PDFs, Google Drive, Notion ou Slack · 3) Crie o agente 'Atendimento OPC' com contexto dos contratos e das 10 perguntas mais frequentes de clientes · 4) Conecte ao canal de e-mail ou Slack e teste com perguntas reais antes de ativar",
+        "fonte": {
+          "t": "Cassidy AI Review 2026 — Eesel",
+          "u": "https://www.eesel.ai/blog/cassidy-ai-review"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ]
+  }
+}

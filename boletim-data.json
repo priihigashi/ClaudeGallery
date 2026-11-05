@@ -1,35 +1,35 @@
 {
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "REAL ESTATE",
-      "t": "Estudo FL — Regra 1: primeiro da manhã, sem pular",
-      "why": "Bloco diário no calendário (Regra 1 do Finishing Protocol). Curso Cameron Academy ativo — meta de horas até o exame.",
+      "tag": "Real Estate",
+      "t": "Curso FL em andamento — estudo de 2h hoje às 8h (Rule 1, não pular)",
+      "why": "Bloco diário no calendário; manter o ritmo protege os $146 de upgrade para live class antes do exame final",
       "go": "tip"
     },
     {
-      "tag": "CONTEÚDO",
-      "t": "Content approvals pendentes: News + OPC",
-      "why": "Dois e-mails de aprovação marcados como ACTION NEEDED na caixa de entrada hoje.",
+      "tag": "Instagram",
+      "t": "Trial reels Brasil: comparar gancho B vs reel do feed hoje às 16h",
+      "why": "Dois trials ativos — resultado de tempo médio de visualização decide qual distribuir para todos",
       "go": "conteudo"
     },
     {
-      "tag": "INSTAGRAM",
-      "t": "Conferir trial reels amanhã: distrital (completo + gancho B)",
-      "why": "Evento no calendário: comparar tempo médio e compartilhamentos dos dois trials de política — resultado orienta repost.",
-      "go": "obra"
+      "tag": "OPC",
+      "t": "2 ligações perdidas hoje na OPC — leads sem retorno",
+      "why": "Missed calls summary no e-mail de hoje; cada ligação não respondida pode ser um orçamento perdido",
+      "go": "ads"
     },
     {
-      "tag": "PIPELINE",
-      "t": "ads_pulse.yml FALHOU — pipeline de anúncios bloqueada",
-      "why": "GitHub Action falhou no run 41526143749. Verificar logs antes de lançar novos anúncios.",
-      "go": "ads"
+      "tag": "AI Tools",
+      "t": "Retell AI + ElevenLabs: dois pagamentos Stripe ativos — vale integrar num fluxo só",
+      "why": "Recibos recentes mostram assinaturas ativas nas duas plataformas de voz; Retell (atendimento) + ElevenLabs (clonagem de voz) podem trabalhar juntos",
+      "go": "iafim"
     }
   ],
   "history": [
     {
-      "date": "2026-11-04",
+      "date": "2026-11-05",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,130 +37,154 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-11-04",
+        "id": "tip-2026-11-05",
         "top": true,
-        "t": "Body Doubling para TDAH: Trabalhe ao Vivo com Alguém — e o Cérebro Para de Fugir",
-        "resumo": "Body doubling é colocar outra pessoa (real ou virtual) no mesmo ambiente enquanto você trabalha. Para TDAH, a presença de uma testemunha externa ativa o sistema de responsabilidade e reduz a evasão de tarefas — sem precisar de conversa ou interação.",
-        "porque": "O TDAH tem dificuldade com regulação interna. Uma presença externa funciona como âncora externa de foco, substituindo o automonitoramento que o cérebro não faz sozinho. Estudos preliminares e relatos de praticantes indicam redução de procrastinação mesmo com parceiro virtual.",
-        "aplicar": "Use o Focusmate (sessões de 25, 50 ou 75 min com um estranho via câmera), entre em salas de estudo no Discord, ou coloque um 'work with me' no YouTube enquanto trabalha. Câmera ligada é o gatilho — a presença percebida é o que ativa o mecanismo.",
-        "plano": "1) Crie conta grátis no Focusmate (focusmate.com). · 2) Agende uma sessão para a primeira tarefa difícil do dia. · 3) Declare a tarefa no início da sessão ('Vou terminar X em 50 min'). · 4) Avalie: o que você conseguiu fazer com parceiro que evitou sozinha?",
+        "t": "Modo Espera no TDAH: Por Que Você Trava Horas Antes de um Compromisso — e 3 Saídas Práticas",
+        "resumo": "O Modo Espera acontece quando um evento futuro (reunião, médico, aula) ocupa a sua cabeça e te paralisa por horas antes de começar. O TDAH amplifica o fenômeno porque o cérebro não consegue calcular quanto tempo falta e entra em alerta constante — impossibilitando trabalho profundo no meio do dia.",
+        "porque": "Você perde janelas inteiras de produtividade esperando por algo que começa daqui 3 ou 4 horas. É diferente de procrastinação: você quer trabalhar, mas o compromisso futuro ocupa toda a memória de trabalho.",
+        "aplicar": "Se você tem compromisso às 15h, aceite que a manhã produtiva acabou — e use esse tempo para tarefas de baixo risco que você pode pausar sem custo. Ou renegocie: mova compromissos para o início ou o fim do dia e preserve blocos longos no meio.",
+        "plano": "1) Identifique hoje qual compromisso está gerando o Modo Espera · 2) No seu calendário, 'mova' mentalmente o evento para o início ou fim do dia (mesmo que não seja possível) · 3) Preencha as horas antes com tarefas de baixo risco e fáceis de pausar — sem abrir projetos grandes · 4) Aceite que dias com compromisso produzem menos: sem culpa, com planejamento",
         "fonte": {
-          "t": "ADD Resource Center — Body Doubling para TDAH",
-          "u": "https://www.addrc.org/how-to-be-a-good-body-double-for-someone-with-adhd/"
+          "t": "ADHD Waiting Mode — Inflow",
+          "u": "https://www.getinflow.io/post/waiting-mode-hard-to-be-productive-when-you-have-plans"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-11-04",
+        "id": "receita-2026-11-05",
         "top": true,
-        "t": "Wraps de Hummus com Legumes Assados — 30 Min, Veganos, Kid-Friendly",
-        "resumo": "Tortilhas recheadas com hummus cremoso, pimentão + abobrinha assados no forno, folhas verdes e queijo vegano ralado. Simples, colorido e fácil de dobrar para o almoço das crianças.",
-        "porque": "Sem leite de vaca, sem peixe, sem frutos do mar. O hummus entrega proteína vegetal e gordura boa; os legumes assados concentram sabor sem precisar de técnica. Crianças aceitam porque podem montar o próprio wrap.",
-        "aplicar": "Corte pimentão vermelho, abobrinha e cebola roxa em tiras. Tempere com azeite, sal, páprica e alho em pó. Asse a 200 °C por 20 min. Espalhe hummus na tortilha, adicione os legumes quentes e folhas de rúcula ou espinafre. Enrole firme.",
-        "plano": "1) Pré-aqueça o forno a 200 °C e corte os legumes em 5 min. · 2) Asse por 20 min enquanto aquece as tortilhas na frigideira seca. · 3) Monte os wraps: hummus + legumes + folhas + queijo vegano. · 4) Sirva imediatamente ou embrulhe em papel-manteiga para a lancheira.",
+        "t": "Pad Thai Vegano com Tofu Crocante — 30 Min, Kid-Friendly, Sem Leite de Vaca",
+        "resumo": "Macarrão de arroz com tofu firme em cubos crocantes (truque: amido de milho + frigideira bem quente), molho de tamarindo + tamari, amendoim tostado e cebolinha. Versão completa em 30 minutos, colorida e fácil de aceitar pelos kids.",
+        "porque": "Totalmente vegano, zero laticínio, fácil de fazer em quantidade, e ainda melhor no dia seguinte. O tofu absorve o molho e fica crocante por fora — sem textura borrachuda que crianças rejeitam.",
+        "aplicar": "Tofu firme + 1 colher de amido de milho + frigideira muito quente = crocância sem fritadeira. Substitua molho de peixe por tamari ou molho de peixe vegano. Amendoim pode virar castanha de caju para alérgicos.",
+        "plano": "1) Pressione o tofu firme entre folhas de papel toalha por 15 min para tirar umidade · 2) Corte em cubos de 2 cm, passe no amido e frite em óleo quente até dourar (não mexa muito) · 3) Cozinhe o macarrão de arroz al dente, escorra e reserve · 4) Misture tudo no molho (tamarindo + tamari + açúcar de coco + limão) e finalize com amendoim tostado e cebolinha picada",
         "fonte": {
-          "t": "Plant Power Couple — Easy Vegan Hummus Wrap",
-          "u": "https://www.plantpowercouple.com/?p=5411"
+          "t": "Saucy Vegan Pad Thai with Crisp Tofu — VegNews",
+          "u": "https://vegnews.com/vegan-recipes/saucy-vegan-pad-thai-with-crisp-pan-fried-tofu"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-11-04",
+        "id": "merch-2026-11-05",
         "top": true,
-        "t": "Printful 2026: POD com Bordado Real + Sublimação — Benchmark de Qualidade com 4.4★ no G2",
-        "resumo": "Printful é a maior plataforma de POD integrada com Shopify, Etsy e WooCommerce. Bordado digital em até 15 cores, camisetas femininas slim e oversized disponíveis, fulfilment global com centros nos EUA e Europa.",
-        "porque": "Com 7.561 reviews no Trustpilot e 4.4★ no G2 (173 avaliações), Printful tem histórico verificável. Para bordado, reviewers reportam resultados limpos em logotipos e chapéus. O maior ponto crítico é inconsistência pontual na estampa — controlável pedindo uma amostra antes de listar.",
-        "aplicar": "Para tees femininas longline bordadas: escolha o blank 'Bella + Canvas 6400' (slim fit) disponível no catálogo. Faça upload do arquivo de bordado em formato .dst ou deixe o Printful converter o vetor. Peça a amostra física (US$5–15) antes de publicar.",
-        "plano": "1) Crie conta grátis em printful.com e conecte sua loja Shopify ou Etsy. · 2) No catálogo, filtre por 'Embroidery' + 'Women's'. · 3) Suba um mock bordado simples (logotipo ou frase). · 4) Peça a amostra e compare textura com o Awkward Styles testado na semana passada.",
+        "t": "CustomCat 2026: POD dos EUA com Bordado Sob Demanda por Peça — 4,3★ no Shopify (556 reviews)",
+        "resumo": "Plataforma americana de print-on-demand com sede em Michigan que oferece bordado real (embroidery on demand) por peça unitária, sem MOQ. Integração direta com Shopify. Diferencial frente a Printful e Gelato: bordado disponível em qualquer quantidade, com envio nacional nos EUA em 3–7 dias úteis.",
+        "porque": "A maioria dos PODs cobra bordado apenas em lotes grandes. CustomCat cobra por peça — ideal para loja de médio volume com tees longline femininas personalizadas. Shopify lista 556 avaliações com média 4,3.",
+        "aplicar": "Use para tees longline femininas com bordado de logotipo pequeno no peito — visual de alta qualidade sem estoque. Sempre peça uma amostra antes de lançar publicamente.",
+        "plano": "1) Crie conta em customcat.com e instale o app no Shopify (gratuito) · 2) No catálogo, filtre por tees longline e ative o bordado no designer · 3) Peça uma amostra ($15–25) antes de publicar · 4) Compare qualidade e prazo com Printful lado a lado antes de escalar",
         "fonte": {
-          "t": "Capterra — Printful Reviews 2026",
-          "u": "https://www.capterra.com/p/209769/Printful/reviews"
+          "t": "CustomCat Review 2026 — Ecommerce Platforms",
+          "u": "https://ecommerce-platforms.com/articles/customcat-review"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-11-04",
+        "id": "conteudo-2026-11-05",
         "top": true,
-        "t": "Descript 2026: Edite o Vídeo pelo Transcript — IA Underlord Remove Erros e Clona a Sua Voz",
-        "resumo": "Descript transforma vídeo e áudio em texto editável. Apague palavras no transcript para cortar o vídeo, peça ao agente IA 'Underlord' para remover vícios de linguagem, gere clones de voz para corrigir falas sem regravar.",
-        "porque": "Enquanto Opus Clip/Klap recortam clipes automaticamente, o Descript dá controle cirúrgico: você decide cada corte editando como um Google Doc. Para carrosséis de blog, o transcript vira copy pronto. Para Reels, Underlord sugere os highlights mais fortes.",
-        "aplicar": "Importe o vídeo da obra, deixe o Underlord gerar o transcript automático e pedir remoção dos 'éé' e pausas longas. Exporte em 9:16 para o Reel ou use o transcript para criar a legenda do carrossel. Tier gratuito exporta em 720p; pago desbloqueia 4K.",
-        "plano": "1) Acesse descript.com e importe um vídeo de obra existente. · 2) Ative Underlord > 'Remove filler words' para limpar o áudio. · 3) Selecione as frases mais fortes no transcript e exporte o clipe cortado. · 4) Use o texto do transcript como legenda no carrossel da OPC.",
+        "t": "Gling AI 2026: Cole o Vídeo Bruto → IA Remove Silêncios, Cacoetes e Takes Ruins Automaticamente — Sem Timeline",
+        "resumo": "Gling transcreve o vídeo, detecta e corta automaticamente silêncios, palavras de preenchimento (né, hm, tipo, então) e takes ruins. O resultado é um transcript editável onde você revisa o corte por texto — sem aprender edição de timeline. Exporta para qualquer editor ou direto para Reels.",
+        "porque": "Se você grava falando direto para a câmera ou faz tutoriais em vídeo, Gling reduz o tempo de edição em 60–80%. Plano free: 1 export por mês com até 1h de mídia.",
+        "aplicar": "Ideal para vídeos talking head (tutoriais, bastidores, depoimentos de clientes da OPC). Grave sem se preocupar com pausas — Gling limpa tudo depois.",
+        "plano": "1) Acesse gling.ai e faça upload do vídeo bruto (até 1h no plano free com marca d'água) · 2) Aguarde a transcrição automática (2–5 min) · 3) Revise o transcript — desmarque cortes que não quer manter · 4) Exporte o vídeo limpo e finalize no CapCut ou suba direto para Reels/TikTok",
         "fonte": {
-          "t": "SkillScouter — Descript Review 2026: AI Audio & Video Editor Tested",
-          "u": "https://skillscouter.com/descript-review/"
+          "t": "Gling AI Silence Remover",
+          "u": "https://gling.ai/silence-remover"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-11-04",
+        "id": "obra-2026-11-05",
         "top": true,
-        "t": "Adobe Firefly AI Room Design 2026: Foto do Ambiente → Render com Estilo Novo para Reels da OPC",
-        "resumo": "Adobe Firefly tem um modo específico de design de ambientes: envie a foto de um quarto ou cômodo da obra e peça uma transformação com prompt de texto ('modern farmhouse', 'clean contemporary'). O resultado é comercialmente seguro (treinado em conteúdo licenciado).",
-        "porque": "Diferente do Collov AI ou Stylar.ai, o Firefly vive dentro do ecossistema Adobe — a imagem gerada pode ir direto para o Photoshop ou Express para adicionar logo, legenda e ajustes de cor. Isso acelera o fluxo OPC: foto da obra → render IA → post editado em 15 min.",
-        "aplicar": "Abra firefly.adobe.com, vá em 'Generative Fill' ou 'AI Room Design'. Cole a foto do cômodo, escreva o estilo desejado, gere 4 variações. Exporte a melhor e abra no Adobe Express para adicionar logo + call-to-action da OPC. Exporte em 1:1 ou 9:16.",
-        "plano": "1) Acesse firefly.adobe.com com a conta Adobe (plano gratuito inclui créditos mensais). · 2) Use 'AI Room Design' com foto real de uma obra recente. · 3) Gere 4 variações com estilos diferentes (farmhouse, contemporary, minimalist, luxury). · 4) Leve a melhor para o Adobe Express e monte o Reel de 'Antes e Depois'.",
+        "t": "Runway Gen-4.5 2026: Foto do Render → Vídeo de 5–10s em 9:16 para Reels da OPC (Gen-3 Alpha aposentado em jul/26)",
+        "resumo": "Gen-3 Alpha foi desativado em julho/2026. O sucessor Gen-4.5 aceita imagem + prompt de texto e gera vídeo de 5–10 segundos com movimento de câmera. Para reforma e construção: foto do cômodo renovado → vídeo com câmera se movendo suavemente pelo ambiente — parece gravação profissional.",
+        "porque": "Um render estático não retém atenção no Reels. Um clipe de 7 segundos com câmera lenta se movendo pelo cômodo aumenta o tempo médio de visualização e cria percepção de qualidade premium para a OPC.",
+        "aplicar": "Foto do antes (obra bruta) + foto do depois (render ou foto finalizada) → dois clipes Runway Gen-4.5 → corte com transição no CapCut → Reel antes/depois em 20–30 segundos.",
+        "plano": "1) Acesse runwayml.com e crie conta (plano free dá créditos iniciais de teste) · 2) Escolha Gen-4.5 Image to Video e faça upload da foto do render ou foto finalizada · 3) Prompt de câmera: 'slow smooth camera move left to right, cinematic, 9:16 vertical' · 4) Gere o clipe de 5–7s, baixe em 9:16 e monte antes/depois no CapCut com transição de corte seco",
         "fonte": {
-          "t": "Adobe Firefly — AI Room Design",
-          "u": "https://www.adobe.com/products/firefly/features/ai-room-design"
+          "t": "Runway Gen-4.5 Image to Video Tool — Newsshooter",
+          "u": "https://www.newsshooter.com/2026/01/21/runway-gen-4-5-image-to-video-tool/"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-11-04",
+        "id": "geo-2026-11-05",
         "top": true,
-        "t": "Estreito de Ormuz 2026: Irã Controla o Corredor por Onde Passa 20% do Petróleo Mundial",
-        "resumo": "O Estreito de Ormuz — 54 km de largura entre Irã e Omã — é o ponto de estrangulamento de energia mais crítico do planeta. Em 2026, após ataques dos EUA e Israel ao Irã (fev/26), Teerã usou a ameaça de fechar o estreito como principal alavanca estratégica.",
-        "porque": "Com seus mísseis, drones e redes proxy enfraquecidos, o Irã migrou a estratégia para o controle marítimo. Se o estreito fechar, o petróleo da Arábia Saudita, UAE, Kuwait e Iraque não chega aos mercados mundiais. O preço do barril responde em horas — e o real sente.",
-        "aplicar": "Para pauta: o Estreito de Ormuz explica por que qualquer escalada com o Irã afeta diretamente o preço da gasolina no Brasil e nos EUA. É o elo entre política externa e economia doméstica — a notícia mais relevante para o noticiário econômico brasileiro.",
-        "plano": "1) Mapa mental: Ormuz → Golfo Pérsico → Arábia Saudita, UAE, Kuwait, Iraque (produtores). · 2) Rota alternativa: pipeline saudita até o Mar Vermelho (parcial). · 3) O que o Irã ganha: poder de negociação no programa nuclear e nas sanções. · 4) Pauta-modelo: 'Se o Irã fechar Ormuz por 7 dias, o que acontece com o real?'",
+        "t": "Cabos Submarinos 2026: 95% da Internet Passa por 400+ Cabos no Fundo do Mar — e Big Techs Estão Assumindo o Controle",
+        "resumo": "Mais de 400 cabos no fundo dos oceanos carregam 95% do tráfego de dados entre continentes. Antes eram propriedade das operadoras de telecom; agora Google, Meta e Microsoft detêm ou co-financiam a maioria dos novos cabos. Em agosto/2026 a Google anunciou expansão com os cabos Alisios, Canoa e OlaLuz conectando Europa e América.",
+        "porque": "Quem controla os cabos controla a velocidade e o custo da internet de continentes inteiros. No Mar Báltico, incidentes recentes com cabos cortados deixaram governos sem resposta clara sobre se foi sabotagem. O Brasil abriu tomada de subsídios em 2025 para criar uma Política Nacional de Cabos Submarinos.",
+        "aplicar": "Para pauta de conteúdo: 'A guerra invisível no fundo do mar' é um gancho forte para vídeo ou carrossel — poucos sabem que a internet literalmente vive no oceano e que Big Techs estão substituindo os governos no controle dessa infraestrutura.",
+        "plano": "1) Leia a matéria da Xataka BR: cabos submarinos passando de operadoras para big techs · 2) Para pauta visual: explore o mapa interativo em submarinecablemap.com · 3) Monte carrossel: '5 coisas que você não sabia sobre a internet' · 4) Gancho forte para vídeo curto: 'Se um único cabo fosse cortado hoje, o que apagaria?'",
         "fonte": {
-          "t": "Breakbulk News — Iran's Strait of Hormuz Drills Disrupt Shipping 2026",
-          "u": "https://breakbulk.news/irans-strait-of-hormuz-drills-disrupt-shipping-signal-geopolitical-tensions/"
+          "t": "Cabos submarinos: de operadoras para big techs — Xataka BR",
+          "u": "https://www.xataka.com.br/informatica/cabos-submarinos-pertenciam-as-operadoras-e-agora-estao-sendo-controlados-grandes-empresas-tecnologia"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-11-04",
+        "id": "ads-2026-11-05",
         "top": true,
-        "t": "Google Performance Max 2026: Campanha Única que Veicula em Todos os Canais com IA",
-        "resumo": "Performance Max (PMax) é a campanha que distribui automaticamente anúncios no Search, Display, YouTube, Gmail e Discover com um único orçamento. Em 2026, o Google adicionou palavras-chave negativas no nível da campanha e relatórios de desempenho por canal.",
-        "porque": "Para a OPC, o PMax pode capturar leads em todos os pontos da jornada: quem busca no Google, quem assiste ao YouTube e quem navega em sites de decoração. O risco é a 'caixa preta' — mas os novos relatórios por canal ajudam a entender onde o dinheiro vai.",
-        "aplicar": "Funciona melhor com pelo menos 30 conversões por mês. Se você tem menos, rode primeiro uma campanha de Busca manual para coletar dados. Quando ativar o PMax, suba assets de alta qualidade: 15 imagens (incluindo renders de obra), 5 títulos, 5 descrições e 1 vídeo de 30 s.",
-        "plano": "1) No Google Ads, crie uma campanha Performance Max com objetivo 'Leads'. · 2) Adicione palavras-chave negativas da lista da campanha de Busca existente. · 3) Suba assets: foto de obra real + render IA + logo OPC. · 4) Após 2 semanas, verifique o relatório por canal e corte o canal com pior CPL.",
+        "t": "YouTube Shorts Ads 2026 para Empresas Locais: Vídeo Vertical 9:16 de $10/dia que Aparece entre os Shorts",
+        "resumo": "YouTube Shorts Ads são vídeos de até 60s em formato 9:16 que aparecem no feed de Shorts entre o conteúdo orgânico. Para empresas locais de construção e reforma: um before/after de 15–30 segundos funciona como anúncio de TV local — com segmentação por raio geográfico e CPM muito abaixo da TV aberta.",
+        "porque": "YouTube Shorts tem mais de 70 bilhões de views/dia. Para OPC, um Reel de reforma com call-to-action 'Peça um orçamento' alcança donos de casa na sua cidade por $10–20/dia — sem pagar agência.",
+        "aplicar": "Crie a campanha no Google Ads como Video Campaign, escolha formato Shorts, segmente por raio de 20 km em torno da OPC + interesses 'home improvement' e 'construction'. Orçamento de entrada: $10/dia.",
+        "plano": "1) No Google Ads, crie nova campanha de Vídeo com objetivo 'Awareness and consideration' · 2) Formato: selecione Shorts (vertical 9:16, até 60s) · 3) Segmentação: raio de 20 km + interesses home improvement/construction + remarketing de visitantes do site · 4) Criativo: vídeo 15–30s, before/after da última reforma com CTA falado e legenda 'Chame a OPC'",
         "fonte": {
-          "t": "TechWyse — Mastering Google Performance Max Campaigns: Tips for 2026 Success",
-          "u": "https://www.techwyse.com/blog/google-ads/google-performance-max-campaigns-2026"
+          "t": "YouTube Shorts Ads: How They Work — Metricool",
+          "u": "https://metricool.com/youtube-shorts-ads/"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-11-04",
+        "id": "iafim-2026-11-05",
         "top": true,
-        "t": "Zapier AI Agents 2026: Agente Autônomo que Conecta 7.000+ Apps e Decide os Próprios Passos",
-        "resumo": "Zapier Agents é uma camada de agentes autônomos sobre o Zapier tradicional. Você descreve a tarefa em linguagem natural e o agente decide quais zaps acionar — sem montar canvas drag-and-drop.",
-        "porque": "Diferente do Make.com ou n8n (fluxo visual), o Zapier Agent aceita instrução por texto. Com 7.000+ integrações nativas, conecta Gmail, Google Sheets, Stripe e qualquer tool já usado na OPC. Plano gratuito inclui 2 agentes e 400 atividades/mês para testar sem custo.",
-        "aplicar": "Crie um agente para triagem de leads: 'Se o formulário chegar com valor > $5.000, adicione ao Sheet e mande e-mail de confirmação'. Avalie em 30 dias antes de pagar o plano pago (~US$50/agente/mês).",
-        "plano": "1) Acesse zapier.com/agents e crie a conta gratuita. · 2) Conecte Gmail + Google Sheets como data sources do agente. · 3) Descreva a tarefa em linguagem natural e defina o trigger (novo lead). · 4) Teste com 5 leads fictícios e compare o tempo vs fluxo manual atual.",
+        "t": "Cassidy AI 2026: Agente de Negócios que Aprende Seus Documentos e Executa Tarefas no Slack, Word e Outlook — Sem Código",
+        "resumo": "Cassidy cria agentes treinados nos seus próprios documentos internos (contratos, manuais, FAQs, planilhas). Cada agente executa tarefas repetitivas: triagem de e-mails, respostas de suporte, qualificação de lead, classificação de tickets. Sem código. Integra no Slack, Teams, Word, Excel e Outlook. Plano Starter gratuito: 3 usuários, 5 agentes.",
+        "porque": "Diferente de Zapier ou Make (que conectam apps), Cassidy é um agente que entende o contexto da sua empresa. Você treina com seus documentos e ele responde com a linguagem e os critérios da empresa — como um funcionário que leu tudo.",
+        "aplicar": "Para OPC: carregue o manual de orçamentos + contratos padrão → crie um agente 'Atendimento OPC' que responde dúvidas frequentes de clientes no e-mail ou WhatsApp com a linguagem certa.",
+        "plano": "1) Acesse cassidyai.com e crie conta Starter (gratuito: 3 usuários, 5 agentes, 5 workflows) · 2) Carregue seus documentos: PDFs, Google Drive, Notion ou Slack · 3) Crie o agente 'Atendimento OPC' com contexto dos contratos e das 10 perguntas mais frequentes de clientes · 4) Conecte ao canal de e-mail ou Slack e teste com perguntas reais antes de ativar",
         "fonte": {
-          "t": "eWeek — Best Agentic AI Tools for Automating Your Life in 2026",
-          "u": "https://www.eweek.com/fr/news/best-agentic-ai-tools-automate-your-life/"
+          "t": "Cassidy AI Review 2026 — Eesel",
+          "u": "https://www.eesel.ai/blog/cassidy-ai-review"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ]
   }
