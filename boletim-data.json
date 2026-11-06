@@ -1,35 +1,35 @@
 {
-  "date": "2026-11-05",
+  "date": "2026-11-06",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "Real Estate",
-      "t": "Curso FL em andamento — estudo de 2h hoje às 8h (Rule 1, não pular)",
-      "why": "Bloco diário no calendário; manter o ritmo protege os $146 de upgrade para live class antes do exame final",
-      "go": "tip"
+      "tag": "⚠️ Urgente",
+      "t": "Crédito Anthropic esgotado — pipeline de IA bloqueada",
+      "why": "Dois alertas chegaram hoje cedo: quota_exceeded e fallback ativo. Automações de captura de notícias e downloads de vídeo estão parando ou degradadas.",
+      "go": "iafim"
     },
     {
-      "tag": "Instagram",
-      "t": "Trial reels Brasil: comparar gancho B vs reel do feed hoje às 16h",
-      "why": "Dois trials ativos — resultado de tempo médio de visualização decide qual distribuir para todos",
+      "tag": "📱 Instagram",
+      "t": "@tentandochegaratevoce desconectado do Metricool",
+      "why": "O Instagram Business revogou as permissões — agendamentos e analytics do perfil pararam. Precisa reconectar em Metricool > Settings > Social Profiles.",
       "go": "conteudo"
     },
     {
-      "tag": "OPC",
-      "t": "2 ligações perdidas hoje na OPC — leads sem retorno",
-      "why": "Missed calls summary no e-mail de hoje; cada ligação não respondida pode ser um orçamento perdido",
-      "go": "ads"
+      "tag": "✅ Aprovações",
+      "t": "338 posts OPC + 32 de notícias esperando aprovação",
+      "why": "A pipeline de conteúdo gerou um grande backlog. Quanto mais tempo passa sem aprovação, mais os posts perdem o timing ideal de publicação.",
+      "go": "obra"
     },
     {
-      "tag": "AI Tools",
-      "t": "Retell AI + ElevenLabs: dois pagamentos Stripe ativos — vale integrar num fluxo só",
-      "why": "Recibos recentes mostram assinaturas ativas nas duas plataformas de voz; Retell (atendimento) + ElevenLabs (clonagem de voz) podem trabalhar juntos",
-      "go": "iafim"
+      "tag": "📚 Real Estate",
+      "t": "Curso Cameron Academy — aula de hoje às 8h (Regra 1)",
+      "why": "O bloco diário de 2h no curso pré-licença de 63h está programado. Regra 1 do Finishing Protocol: fazer antes de qualquer outra coisa. Não fazer o exame final até decidir sobre o Livestream ($146 de diferença).",
+      "go": "tip"
     }
   ],
   "history": [
     {
-      "date": "2026-11-05",
+      "date": "2026-11-06",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,16 +37,16 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-11-05",
+        "id": "tip-2026-11-06",
         "top": true,
-        "t": "Modo Espera no TDAH: Por Que Você Trava Horas Antes de um Compromisso — e 3 Saídas Práticas",
-        "resumo": "O Modo Espera acontece quando um evento futuro (reunião, médico, aula) ocupa a sua cabeça e te paralisa por horas antes de começar. O TDAH amplifica o fenômeno porque o cérebro não consegue calcular quanto tempo falta e entra em alerta constante — impossibilitando trabalho profundo no meio do dia.",
-        "porque": "Você perde janelas inteiras de produtividade esperando por algo que começa daqui 3 ou 4 horas. É diferente de procrastinação: você quer trabalhar, mas o compromisso futuro ocupa toda a memória de trabalho.",
-        "aplicar": "Se você tem compromisso às 15h, aceite que a manhã produtiva acabou — e use esse tempo para tarefas de baixo risco que você pode pausar sem custo. Ou renegocie: mova compromissos para o início ou o fim do dia e preserve blocos longos no meio.",
-        "plano": "1) Identifique hoje qual compromisso está gerando o Modo Espera · 2) No seu calendário, 'mova' mentalmente o evento para o início ou fim do dia (mesmo que não seja possível) · 3) Preencha as horas antes com tarefas de baixo risco e fáceis de pausar — sem abrir projetos grandes · 4) Aceite que dias com compromisso produzem menos: sem culpa, com planejamento",
+        "t": "Ancoragem de Hábitos para TDAH: Cole uma Tarefa Nova em Algo que Você Já Faz — o Gatilho Decide por Você",
+        "resumo": "Habit stacking é simples: escolha uma âncora que você já faz sem pensar (fazer café, abrir o computador), cole uma tarefa nova de 2 minutos depois, e dê a si mesma uma mini-recompensa imediata. Para TDAH, tratar a corrente inteira como uma única ação — uma marca no checklist — reduz o atrito de começar.",
+        "porque": "TDAH sobrecarrega a memória de trabalho. Depender de lembretes e força de vontade para iniciar tarefas falha toda hora. Ancorar numa ação existente elimina a decisão de quando começar — o gatilho decide por você, sem esforço mental.",
+        "aplicar": "Para terminar metas do dia: após abrir o computador de manhã → revisar suas 3 tarefas do dia (2 min) → dar play na primeira delas. Um check-off cobre a corrente toda. Segunda âncora à tarde: após almoço → fechar uma tarefa pequena antes de qualquer outra coisa.",
+        "plano": "1) Escolha 1 âncora que você já faz todo dia (café, abrir o computador, escovar os dentes). · 2) Cole UMA tarefa nova de 2 min máx depois: revisar as 3 do dia, responder 1 mensagem pendente, abrir o curso de RE. · 3) Marque a corrente inteira como 'feita' no seu app — não separe os itens em tarefas distintas. · 4) Depois de 7 dias consecutivos, adicione uma segunda âncora (ex: pós-almoço).",
         "fonte": {
-          "t": "ADHD Waiting Mode — Inflow",
-          "u": "https://www.getinflow.io/post/waiting-mode-hard-to-be-productive-when-you-have-plans"
+          "t": "Habit Stacking: A Simple Way to Build Consistent Routines — Life Skills Advocate",
+          "u": "https://lifeskillsadvocate.com/blog/habit-stacking-a-simple-way-to-build-consistent-routines/"
         },
         "video": {
           "t": "",
@@ -56,16 +56,16 @@
     ],
     "receita": [
       {
-        "id": "receita-2026-11-05",
+        "id": "receita-2026-11-06",
         "top": true,
-        "t": "Pad Thai Vegano com Tofu Crocante — 30 Min, Kid-Friendly, Sem Leite de Vaca",
-        "resumo": "Macarrão de arroz com tofu firme em cubos crocantes (truque: amido de milho + frigideira bem quente), molho de tamarindo + tamari, amendoim tostado e cebolinha. Versão completa em 30 minutos, colorida e fácil de aceitar pelos kids.",
-        "porque": "Totalmente vegano, zero laticínio, fácil de fazer em quantidade, e ainda melhor no dia seguinte. O tofu absorve o molho e fica crocante por fora — sem textura borrachuda que crianças rejeitam.",
-        "aplicar": "Tofu firme + 1 colher de amido de milho + frigideira muito quente = crocância sem fritadeira. Substitua molho de peixe por tamari ou molho de peixe vegano. Amendoim pode virar castanha de caju para alérgicos.",
-        "plano": "1) Pressione o tofu firme entre folhas de papel toalha por 15 min para tirar umidade · 2) Corte em cubos de 2 cm, passe no amido e frite em óleo quente até dourar (não mexa muito) · 3) Cozinhe o macarrão de arroz al dente, escorra e reserve · 4) Misture tudo no molho (tamarindo + tamari + açúcar de coco + limão) e finalize com amendoim tostado e cebolinha picada",
+        "t": "Quesadillas de Feijão Preto e Milho com Queijo Vegano — 20 Min, Veganas, Kid-Friendly",
+        "resumo": "Tortilhas integrais recheadas com feijão preto temperado, milho e queijo vegano derretido. Prontas em 20 minutos, sem leite de vaca, e as crianças adoram (tire a pimenta e sirva com guacamole). Recheio pode ser preparado na véspera.",
+        "porque": "Uma das combinações mais amadas da culinária mexicana — crocante por fora, cremoso por dentro. É proteica, fácil de fazer com o que tem na dispensa, e as crianças montam a própria se quiserem. Feijão preto + milho = proteína completa sem nenhum produto animal.",
+        "aplicar": "Excelente para jantar rápido nos dias de semana. Para versão mais elaborada, adicione cogumelos refogados ou tofu defumado. Para kids, corte em triângulos e sirva com molho de abacate.",
+        "plano": "1) Escorra 1 lata de feijão preto, tempere com cominho, alho em pó e sal a gosto. · 2) Misture com ½ xícara de milho (pode ser congelado, já descongelado). · 3) Coloque camada generosa do recheio + queijo vegano ralado em metade de cada tortilha integral. · 4) Dobre e grelhe em frigideira antiaderente por 2–3 min de cada lado até dourar. Sirva com guacamole e salsa.",
         "fonte": {
-          "t": "Saucy Vegan Pad Thai with Crisp Tofu — VegNews",
-          "u": "https://vegnews.com/vegan-recipes/saucy-vegan-pad-thai-with-crisp-pan-fried-tofu"
+          "t": "Vegan Black Bean and Corn Quesadilla — It Doesn't Taste Like Chicken",
+          "u": "https://itdoesnttastelikechicken.com/vegan-black-bean-corn-quesadilla/"
         },
         "video": {
           "t": "",
@@ -75,16 +75,16 @@
     ],
     "merch": [
       {
-        "id": "merch-2026-11-05",
+        "id": "merch-2026-11-06",
         "top": true,
-        "t": "CustomCat 2026: POD dos EUA com Bordado Sob Demanda por Peça — 4,3★ no Shopify (556 reviews)",
-        "resumo": "Plataforma americana de print-on-demand com sede em Michigan que oferece bordado real (embroidery on demand) por peça unitária, sem MOQ. Integração direta com Shopify. Diferencial frente a Printful e Gelato: bordado disponível em qualquer quantidade, com envio nacional nos EUA em 3–7 dias úteis.",
-        "porque": "A maioria dos PODs cobra bordado apenas em lotes grandes. CustomCat cobra por peça — ideal para loja de médio volume com tees longline femininas personalizadas. Shopify lista 556 avaliações com média 4,3.",
-        "aplicar": "Use para tees longline femininas com bordado de logotipo pequeno no peito — visual de alta qualidade sem estoque. Sempre peça uma amostra antes de lançar publicamente.",
-        "plano": "1) Crie conta em customcat.com e instale o app no Shopify (gratuito) · 2) No catálogo, filtre por tees longline e ative o bordado no designer · 3) Peça uma amostra ($15–25) antes de publicar · 4) Compare qualidade e prazo com Printful lado a lado antes de escalar",
+        "t": "Printify 2026: Maior Catálogo POD do Mundo — 900+ Produtos com Bordado Disponível, Peça Amostra Antes de Vender",
+        "resumo": "Printify conecta sua loja a 80+ fornecedores globais e tem 900+ produtos, incluindo longlines femininas e bordado. Não cobra taxa de digitização (Printful cobra). Com 4.000+ reviews no Shopify, é uma das plataformas mais usadas — mas qualidade de bordado varia por fornecedor, então peça amostra antes de lançar.",
+        "porque": "Maior variedade de longlines femininas no catálogo. Sem taxa de digitização de bordado (economiza $5–15 por design vs. Printful). O truque é escolher o fornecedor certo e pedir amostra física — reviews mostram que fornecedores diferentes têm qualidades muito diferentes.",
+        "aplicar": "Para uma linha de tees femininas longline bordadas: escolha fornecedores com avaliações específicas de bordado (Monster Digital, Prodigi). Peça 1 amostra física ($15–30) antes de publicar. Fotografe a peça real — converte mais que mockup digital.",
+        "plano": "1) Crie conta grátis em printify.com e abra o catálogo de tees. · 2) Filtre por 'women's longline' e compare fornecedores por custo e localização de envio (preferir EUA para clientes americanos). · 3) Peça 1 amostra física do modelo escolhido COM o bordado antes de ativar. · 4) Fotografe a peça recebida com boa iluminação e use a foto real no store (não o mockup).",
         "fonte": {
-          "t": "CustomCat Review 2026 — Ecommerce Platforms",
-          "u": "https://ecommerce-platforms.com/articles/customcat-review"
+          "t": "Printify: Print on Demand — Shopify App Store (4.000+ reviews)",
+          "u": "https://apps.shopify.com/printify"
         },
         "video": {
           "t": "",
@@ -94,16 +94,16 @@
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-11-05",
+        "id": "conteudo-2026-11-06",
         "top": true,
-        "t": "Gling AI 2026: Cole o Vídeo Bruto → IA Remove Silêncios, Cacoetes e Takes Ruins Automaticamente — Sem Timeline",
-        "resumo": "Gling transcreve o vídeo, detecta e corta automaticamente silêncios, palavras de preenchimento (né, hm, tipo, então) e takes ruins. O resultado é um transcript editável onde você revisa o corte por texto — sem aprender edição de timeline. Exporta para qualquer editor ou direto para Reels.",
-        "porque": "Se você grava falando direto para a câmera ou faz tutoriais em vídeo, Gling reduz o tempo de edição em 60–80%. Plano free: 1 export por mês com até 1h de mídia.",
-        "aplicar": "Ideal para vídeos talking head (tutoriais, bastidores, depoimentos de clientes da OPC). Grave sem se preocupar com pausas — Gling limpa tudo depois.",
-        "plano": "1) Acesse gling.ai e faça upload do vídeo bruto (até 1h no plano free com marca d'água) · 2) Aguarde a transcrição automática (2–5 min) · 3) Revise o transcript — desmarque cortes que não quer manter · 4) Exporte o vídeo limpo e finalize no CapCut ou suba direto para Reels/TikTok",
+        "t": "CapCut AI 2026: Legendas Automáticas em 130+ Idiomas + B-Roll Gerado por Texto — Editor Padrão para Short-Form",
+        "resumo": "CapCut lançou um conjunto de ferramentas de IA que colocam ele num outro nível para Reels e TikToks: auto-legendas em 130+ idiomas, geração de B-roll via prompt de texto (AI Scenes), auto-reframe para 9:16/1:1/16:9 automático, e script-to-video completo. Plano gratuito permite 5 exports de IA por dia.",
+        "porque": "Para o @tentandochegaratevoce e OPC: é de graça no plano básico e funciona direto no celular. A combinação de legendas automáticas + B-roll gerado economiza horas de edição. AI Scenes gera clipes de fundo a partir de uma descrição de texto — perfeito para complementar gravações.",
+        "aplicar": "Para um Reel de 30s: grave o áudio, suba no CapCut → aplique auto-legendas → use AI Scenes para B-roll de fundo baseado no script → auto-reframe para 9:16 → export. Tempo: ~15 min em vez de 1h de edição manual.",
+        "plano": "1) Baixe o app CapCut ou abra capcut.com no desktop. · 2) Suba um vídeo curto e aplique 'Auto Captions' — edite o estilo das legendas para combinar com seu branding. · 3) Em 'AI Tools' → 'AI Scenes': descreva o B-roll que quer (ex: 'construction site, sunny day, wide angle'). · 4) Use 'Smart Reframe' para adaptar automaticamente para o 9:16 do Instagram sem recortar o rosto.",
         "fonte": {
-          "t": "Gling AI Silence Remover",
-          "u": "https://gling.ai/silence-remover"
+          "t": "CapCut AI Review 2026: The Free TikTok Video Editor That Does Everything — Marc Andrews",
+          "u": "https://marcandrews.com/?p=3063"
         },
         "video": {
           "t": "",
@@ -113,16 +113,16 @@
     ],
     "obra": [
       {
-        "id": "obra-2026-11-05",
+        "id": "obra-2026-11-06",
         "top": true,
-        "t": "Runway Gen-4.5 2026: Foto do Render → Vídeo de 5–10s em 9:16 para Reels da OPC (Gen-3 Alpha aposentado em jul/26)",
-        "resumo": "Gen-3 Alpha foi desativado em julho/2026. O sucessor Gen-4.5 aceita imagem + prompt de texto e gera vídeo de 5–10 segundos com movimento de câmera. Para reforma e construção: foto do cômodo renovado → vídeo com câmera se movendo suavemente pelo ambiente — parece gravação profissional.",
-        "porque": "Um render estático não retém atenção no Reels. Um clipe de 7 segundos com câmera lenta se movendo pelo cômodo aumenta o tempo médio de visualização e cria percepção de qualidade premium para a OPC.",
-        "aplicar": "Foto do antes (obra bruta) + foto do depois (render ou foto finalizada) → dois clipes Runway Gen-4.5 → corte com transição no CapCut → Reel antes/depois em 20–30 segundos.",
-        "plano": "1) Acesse runwayml.com e crie conta (plano free dá créditos iniciais de teste) · 2) Escolha Gen-4.5 Image to Video e faça upload da foto do render ou foto finalizada · 3) Prompt de câmera: 'slow smooth camera move left to right, cinematic, 9:16 vertical' · 4) Gere o clipe de 5–7s, baixe em 9:16 e monte antes/depois no CapCut com transição de corte seco",
+        "t": "REimagineHome.ai 2026: Foto do Cômodo → 8+ Renders Fotorrealistas em Estilos Diferentes — Carrossel de Reforma Pronto para o Instagram",
+        "resumo": "REimagineHome transforma uma foto real do ambiente em renders fotorrealistas com estilos novos (moderno, industrial, escandinavo, etc.). Para a OPC: tire foto de um cômodo antes da reforma, gere 6–8 versões de estilo, monte um carrossel 'Antes + Conceitos' para Instagram e converta em Reel com transição automática.",
+        "porque": "Clientes de reforma precisam visualizar o resultado antes de assinar. Com REimagineHome, a OPC apresenta múltiplas opções de estilo na reunião de projeto — aumenta a confiança do cliente e acelera a decisão. O mesmo conteúdo vira post de Reels mostrando a transformação, sem precisar de HeyGen ou avatar.",
+        "aplicar": "Para o feed da OPC: tire foto de um cômodo atual (antes da reforma), gere 4 estilos diferentes no REimagineHome, monte carrossel 'Antes + 4 Visões'. CTA: 'Qual você escolheria? Comente abaixo.' Formato que gera engajamento altíssimo em contas de reforma.",
+        "plano": "1) Acesse reimaginehome.ai — gratuito para começar (planos pagos para uso intensivo). · 2) Faça upload de foto de um cômodo já finalizado ou em construção. · 3) Escolha 4 estilos diferentes e gere os renders (1–2 min cada). · 4) Exporte como PNG e monte carrossel no CapCut ou Canva — ou converta em Reel com transição de slide automática.",
         "fonte": {
-          "t": "Runway Gen-4.5 Image to Video Tool — Newsshooter",
-          "u": "https://www.newsshooter.com/2026/01/21/runway-gen-4-5-image-to-video-tool/"
+          "t": "REimagineHome — Interior Home Renovation with AI",
+          "u": "https://reimaginehome.ai/interior-home-renovation"
         },
         "video": {
           "t": "",
@@ -132,16 +132,16 @@
     ],
     "geo": [
       {
-        "id": "geo-2026-11-05",
+        "id": "geo-2026-11-06",
         "top": true,
-        "t": "Cabos Submarinos 2026: 95% da Internet Passa por 400+ Cabos no Fundo do Mar — e Big Techs Estão Assumindo o Controle",
-        "resumo": "Mais de 400 cabos no fundo dos oceanos carregam 95% do tráfego de dados entre continentes. Antes eram propriedade das operadoras de telecom; agora Google, Meta e Microsoft detêm ou co-financiam a maioria dos novos cabos. Em agosto/2026 a Google anunciou expansão com os cabos Alisios, Canoa e OlaLuz conectando Europa e América.",
-        "porque": "Quem controla os cabos controla a velocidade e o custo da internet de continentes inteiros. No Mar Báltico, incidentes recentes com cabos cortados deixaram governos sem resposta clara sobre se foi sabotagem. O Brasil abriu tomada de subsídios em 2025 para criar uma Política Nacional de Cabos Submarinos.",
-        "aplicar": "Para pauta de conteúdo: 'A guerra invisível no fundo do mar' é um gancho forte para vídeo ou carrossel — poucos sabem que a internet literalmente vive no oceano e que Big Techs estão substituindo os governos no controle dessa infraestrutura.",
-        "plano": "1) Leia a matéria da Xataka BR: cabos submarinos passando de operadoras para big techs · 2) Para pauta visual: explore o mapa interativo em submarinecablemap.com · 3) Monte carrossel: '5 coisas que você não sabia sobre a internet' · 4) Gancho forte para vídeo curto: 'Se um único cabo fosse cortado hoje, o que apagaria?'",
+        "t": "Mar Vermelho 2026: Houthis Retomaram Ataques a Navios — 12% do Comércio Mundial Desvia pelo Cabo da Boa Esperança",
+        "resumo": "Os rebeldes Houthis do Iêmen reiniciaram ataques a navios no Mar Vermelho após strikes EUA-Israel no Irã em 2026. Mais de 100 navios foram atacados desde 2023. Empresas como Maersk e MSC desviam pelo Cabo da Boa Esperança (11.000 km a mais) — frete e seguros dispararam, impactando o custo de materiais importados globalmente.",
+        "porque": "O Mar Vermelho conecta o Canal de Suez ao oceano Índico — 12% do comércio mundial passa por ali. Quando essa rota fecha, o custo de materiais importados (aço, cerâmica, eletroeletrônicos) sobe globalmente. Para a construção: impacto direto no preço de materiais importados e prazo de entrega nos EUA e no Brasil.",
+        "aplicar": "Para uma pauta educativa no Instagram: explique que a crise no Mar Vermelho é o motivo pelo qual materiais importados atrasam e encarecem — conecta geopolítica com o custo real da obra do cliente. Fácil de adaptar para Reels de 30s.",
+        "plano": "1) Entenda os atores: Houthis (Iêmen) são apoiados pelo Irã e atacam navios ligados a Israel/EUA/aliados. · 2) Veja o impacto: frete subiu 300% no pico de 2024; seguros marítimos triplicaram. · 3) Consequência doméstica: materiais com componentes importados (cerâmica, metais, eletros) ficaram mais caros. · 4) Monitore em tempo real: gCaptain e UKMTO atualizam incidentes diariamente.",
         "fonte": {
-          "t": "Cabos submarinos: de operadoras para big techs — Xataka BR",
-          "u": "https://www.xataka.com.br/informatica/cabos-submarinos-pertenciam-as-operadoras-e-agora-estao-sendo-controlados-grandes-empresas-tecnologia"
+          "t": "Houthis Signal Renewed Red Sea Shipping Attacks After U.S.-Israeli Strikes on Iran — gCaptain",
+          "u": "https://gcaptain.com/houthis-signal-renewed-red-sea-shipping-attacks-after-u-s-israeli-strikes-on-iran"
         },
         "video": {
           "t": "",
@@ -151,16 +151,16 @@
     ],
     "ads": [
       {
-        "id": "ads-2026-11-05",
+        "id": "ads-2026-11-06",
         "top": true,
-        "t": "YouTube Shorts Ads 2026 para Empresas Locais: Vídeo Vertical 9:16 de $10/dia que Aparece entre os Shorts",
-        "resumo": "YouTube Shorts Ads são vídeos de até 60s em formato 9:16 que aparecem no feed de Shorts entre o conteúdo orgânico. Para empresas locais de construção e reforma: um before/after de 15–30 segundos funciona como anúncio de TV local — com segmentação por raio geográfico e CPM muito abaixo da TV aberta.",
-        "porque": "YouTube Shorts tem mais de 70 bilhões de views/dia. Para OPC, um Reel de reforma com call-to-action 'Peça um orçamento' alcança donos de casa na sua cidade por $10–20/dia — sem pagar agência.",
-        "aplicar": "Crie a campanha no Google Ads como Video Campaign, escolha formato Shorts, segmente por raio de 20 km em torno da OPC + interesses 'home improvement' e 'construction'. Orçamento de entrada: $10/dia.",
-        "plano": "1) No Google Ads, crie nova campanha de Vídeo com objetivo 'Awareness and consideration' · 2) Formato: selecione Shorts (vertical 9:16, até 60s) · 3) Segmentação: raio de 20 km + interesses home improvement/construction + remarketing de visitantes do site · 4) Criativo: vídeo 15–30s, before/after da última reforma com CTA falado e legenda 'Chame a OPC'",
+        "t": "Google Ads Customer Match 2026: Faça Upload da Sua Lista de Clientes e a IA Encontra Lookalikes — Threshold Caiu para 100 Usuários",
+        "resumo": "Customer Match permite subir sua lista de emails/telefones de ex-clientes para o Google. O sistema encontra esses usuários no Search, YouTube e Gmail. A partir de março 2026, o Lookalike do Customer Match vira sinal de IA no Demand Gen — sem limitar público manualmente. Mínimo agora é só 100 usuários (antes era 1.000).",
+        "porque": "Para a OPC: se você tem 50–100 emails de ex-clientes satisfeitos, pode criar campanhas que encontram pessoas com perfil similar em toda a rede Google. É o uso mais inteligente de dados próprios — e a maioria das pequenas empresas ainda não usa. Custo menor, conversão maior que público frio.",
+        "aplicar": "Monte lista de emails de clientes OPC → faça upload como Customer Match → crie campanha Demand Gen apontando para a lista como sinal de IA. A IA encontra lookalikes e otimiza automaticamente quem vê seus anúncios.",
+        "plano": "1) Exporte a lista de emails dos seus melhores clientes OPC (mínimo 100, idealmente 300+). · 2) Acesse Google Ads → Ferramentas → Gerenciador de Públicos → Customer Match → '+'. · 3) Faça upload em CSV (nome, email, telefone — mais campos = match maior). · 4) Crie campanha Demand Gen ou PMAX e adicione a lista como sinal — a IA encontra lookalikes e otimiza os lances.",
         "fonte": {
-          "t": "YouTube Shorts Ads: How They Work — Metricool",
-          "u": "https://metricool.com/youtube-shorts-ads/"
+          "t": "Unlocking the Power of Customer Match: Guide to Maximizing Google Ads — Seer Interactive",
+          "u": "https://www.seerinteractive.com/insights/unlocking-the-power-of-customer-match-guide-to-maximizing-google-ads"
         },
         "video": {
           "t": "",
@@ -170,16 +170,16 @@
     ],
     "iafim": [
       {
-        "id": "iafim-2026-11-05",
+        "id": "iafim-2026-11-06",
         "top": true,
-        "t": "Cassidy AI 2026: Agente de Negócios que Aprende Seus Documentos e Executa Tarefas no Slack, Word e Outlook — Sem Código",
-        "resumo": "Cassidy cria agentes treinados nos seus próprios documentos internos (contratos, manuais, FAQs, planilhas). Cada agente executa tarefas repetitivas: triagem de e-mails, respostas de suporte, qualificação de lead, classificação de tickets. Sem código. Integra no Slack, Teams, Word, Excel e Outlook. Plano Starter gratuito: 3 usuários, 5 agentes.",
-        "porque": "Diferente de Zapier ou Make (que conectam apps), Cassidy é um agente que entende o contexto da sua empresa. Você treina com seus documentos e ele responde com a linguagem e os critérios da empresa — como um funcionário que leu tudo.",
-        "aplicar": "Para OPC: carregue o manual de orçamentos + contratos padrão → crie um agente 'Atendimento OPC' que responde dúvidas frequentes de clientes no e-mail ou WhatsApp com a linguagem certa.",
-        "plano": "1) Acesse cassidyai.com e crie conta Starter (gratuito: 3 usuários, 5 agentes, 5 workflows) · 2) Carregue seus documentos: PDFs, Google Drive, Notion ou Slack · 3) Crie o agente 'Atendimento OPC' com contexto dos contratos e das 10 perguntas mais frequentes de clientes · 4) Conecte ao canal de e-mail ou Slack e teste com perguntas reais antes de ativar",
+        "t": "Relevance AI 2026: Construa uma 'Força de Trabalho' de Agentes de IA Sem Código — 40.000 Agentes Criados em Janeiro/2026",
+        "resumo": "Relevance AI é uma plataforma no-code onde você cria agentes de IA especializados (qualificação de leads, outreach, suporte) e os conecta em fluxos. $24M em Series B, 40.000 agentes criados só em janeiro de 2026. Para OPC: um agente que recebe leads por email, faz perguntas de qualificação e preenche o CRM — sem você tocar.",
+        "porque": "Diferente de Zapier (conexões simples) ou Make (fluxos visuais), o Relevance AI foca em agentes que tomam decisões. Um agente pode receber mensagem do Instagram, pesquisar o perfil do lead, classificar o interesse e criar uma tarefa no CRM — tudo automático.",
+        "aplicar": "Para a OPC: crie um agente 'Qualificador de Leads' que recebe formulários do site, faz 3 perguntas de qualificação por email e responde com proposta-padrão ou agenda ligação. Economiza 2–3h por semana de triagem manual.",
+        "plano": "1) Acesse relevanceai.com e crie conta (plano gratuito disponível). · 2) Use o template 'Lead Qualifier' como ponto de partida — já vem configurado para triagem. · 3) Configure com as regras de qualificação da OPC: orçamento mínimo, tipo de projeto, região de atendimento. · 4) Conecte ao Gmail via integração nativa — o agente responde leads automaticamente e registra no seu CRM.",
         "fonte": {
-          "t": "Cassidy AI Review 2026 — Eesel",
-          "u": "https://www.eesel.ai/blog/cassidy-ai-review"
+          "t": "Relevance AI Review 2026: I Used It for 4 Months to Build AI Agents — DEV Community",
+          "u": "https://dev.to/nova_gg/relevance-ai-review-2026-i-used-it-for-4-months-to-build-ai-agents-honest-verdict-4631"
         },
         "video": {
           "t": "",

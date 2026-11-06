@@ -1,0 +1,191 @@
+{
+  "date": "2026-11-06",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "⚠️ Urgente",
+      "t": "Crédito Anthropic esgotado — pipeline de IA bloqueada",
+      "why": "Dois alertas chegaram hoje cedo: quota_exceeded e fallback ativo. Automações de captura de notícias e downloads de vídeo estão parando ou degradadas.",
+      "go": "iafim"
+    },
+    {
+      "tag": "📱 Instagram",
+      "t": "@tentandochegaratevoce desconectado do Metricool",
+      "why": "O Instagram Business revogou as permissões — agendamentos e analytics do perfil pararam. Precisa reconectar em Metricool > Settings > Social Profiles.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "✅ Aprovações",
+      "t": "338 posts OPC + 32 de notícias esperando aprovação",
+      "why": "A pipeline de conteúdo gerou um grande backlog. Quanto mais tempo passa sem aprovação, mais os posts perdem o timing ideal de publicação.",
+      "go": "obra"
+    },
+    {
+      "tag": "📚 Real Estate",
+      "t": "Curso Cameron Academy — aula de hoje às 8h (Regra 1)",
+      "why": "O bloco diário de 2h no curso pré-licença de 63h está programado. Regra 1 do Finishing Protocol: fazer antes de qualquer outra coisa. Não fazer o exame final até decidir sobre o Livestream ($146 de diferença).",
+      "go": "tip"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-11-06",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-11-06",
+        "top": true,
+        "t": "Ancoragem de Hábitos para TDAH: Cole uma Tarefa Nova em Algo que Você Já Faz — o Gatilho Decide por Você",
+        "resumo": "Habit stacking é simples: escolha uma âncora que você já faz sem pensar (fazer café, abrir o computador), cole uma tarefa nova de 2 minutos depois, e dê a si mesma uma mini-recompensa imediata. Para TDAH, tratar a corrente inteira como uma única ação — uma marca no checklist — reduz o atrito de começar.",
+        "porque": "TDAH sobrecarrega a memória de trabalho. Depender de lembretes e força de vontade para iniciar tarefas falha toda hora. Ancorar numa ação existente elimina a decisão de quando começar — o gatilho decide por você, sem esforço mental.",
+        "aplicar": "Para terminar metas do dia: após abrir o computador de manhã → revisar suas 3 tarefas do dia (2 min) → dar play na primeira delas. Um check-off cobre a corrente toda. Segunda âncora à tarde: após almoço → fechar uma tarefa pequena antes de qualquer outra coisa.",
+        "plano": "1) Escolha 1 âncora que você já faz todo dia (café, abrir o computador, escovar os dentes). · 2) Cole UMA tarefa nova de 2 min máx depois: revisar as 3 do dia, responder 1 mensagem pendente, abrir o curso de RE. · 3) Marque a corrente inteira como 'feita' no seu app — não separe os itens em tarefas distintas. · 4) Depois de 7 dias consecutivos, adicione uma segunda âncora (ex: pós-almoço).",
+        "fonte": {
+          "t": "Habit Stacking: A Simple Way to Build Consistent Routines — Life Skills Advocate",
+          "u": "https://lifeskillsadvocate.com/blog/habit-stacking-a-simple-way-to-build-consistent-routines/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-11-06",
+        "top": true,
+        "t": "Quesadillas de Feijão Preto e Milho com Queijo Vegano — 20 Min, Veganas, Kid-Friendly",
+        "resumo": "Tortilhas integrais recheadas com feijão preto temperado, milho e queijo vegano derretido. Prontas em 20 minutos, sem leite de vaca, e as crianças adoram (tire a pimenta e sirva com guacamole). Recheio pode ser preparado na véspera.",
+        "porque": "Uma das combinações mais amadas da culinária mexicana — crocante por fora, cremoso por dentro. É proteica, fácil de fazer com o que tem na dispensa, e as crianças montam a própria se quiserem. Feijão preto + milho = proteína completa sem nenhum produto animal.",
+        "aplicar": "Excelente para jantar rápido nos dias de semana. Para versão mais elaborada, adicione cogumelos refogados ou tofu defumado. Para kids, corte em triângulos e sirva com molho de abacate.",
+        "plano": "1) Escorra 1 lata de feijão preto, tempere com cominho, alho em pó e sal a gosto. · 2) Misture com ½ xícara de milho (pode ser congelado, já descongelado). · 3) Coloque camada generosa do recheio + queijo vegano ralado em metade de cada tortilha integral. · 4) Dobre e grelhe em frigideira antiaderente por 2–3 min de cada lado até dourar. Sirva com guacamole e salsa.",
+        "fonte": {
+          "t": "Vegan Black Bean and Corn Quesadilla — It Doesn't Taste Like Chicken",
+          "u": "https://itdoesnttastelikechicken.com/vegan-black-bean-corn-quesadilla/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-11-06",
+        "top": true,
+        "t": "Printify 2026: Maior Catálogo POD do Mundo — 900+ Produtos com Bordado Disponível, Peça Amostra Antes de Vender",
+        "resumo": "Printify conecta sua loja a 80+ fornecedores globais e tem 900+ produtos, incluindo longlines femininas e bordado. Não cobra taxa de digitização (Printful cobra). Com 4.000+ reviews no Shopify, é uma das plataformas mais usadas — mas qualidade de bordado varia por fornecedor, então peça amostra antes de lançar.",
+        "porque": "Maior variedade de longlines femininas no catálogo. Sem taxa de digitização de bordado (economiza $5–15 por design vs. Printful). O truque é escolher o fornecedor certo e pedir amostra física — reviews mostram que fornecedores diferentes têm qualidades muito diferentes.",
+        "aplicar": "Para uma linha de tees femininas longline bordadas: escolha fornecedores com avaliações específicas de bordado (Monster Digital, Prodigi). Peça 1 amostra física ($15–30) antes de publicar. Fotografe a peça real — converte mais que mockup digital.",
+        "plano": "1) Crie conta grátis em printify.com e abra o catálogo de tees. · 2) Filtre por 'women's longline' e compare fornecedores por custo e localização de envio (preferir EUA para clientes americanos). · 3) Peça 1 amostra física do modelo escolhido COM o bordado antes de ativar. · 4) Fotografe a peça recebida com boa iluminação e use a foto real no store (não o mockup).",
+        "fonte": {
+          "t": "Printify: Print on Demand — Shopify App Store (4.000+ reviews)",
+          "u": "https://apps.shopify.com/printify"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-11-06",
+        "top": true,
+        "t": "CapCut AI 2026: Legendas Automáticas em 130+ Idiomas + B-Roll Gerado por Texto — Editor Padrão para Short-Form",
+        "resumo": "CapCut lançou um conjunto de ferramentas de IA que colocam ele num outro nível para Reels e TikToks: auto-legendas em 130+ idiomas, geração de B-roll via prompt de texto (AI Scenes), auto-reframe para 9:16/1:1/16:9 automático, e script-to-video completo. Plano gratuito permite 5 exports de IA por dia.",
+        "porque": "Para o @tentandochegaratevoce e OPC: é de graça no plano básico e funciona direto no celular. A combinação de legendas automáticas + B-roll gerado economiza horas de edição. AI Scenes gera clipes de fundo a partir de uma descrição de texto — perfeito para complementar gravações.",
+        "aplicar": "Para um Reel de 30s: grave o áudio, suba no CapCut → aplique auto-legendas → use AI Scenes para B-roll de fundo baseado no script → auto-reframe para 9:16 → export. Tempo: ~15 min em vez de 1h de edição manual.",
+        "plano": "1) Baixe o app CapCut ou abra capcut.com no desktop. · 2) Suba um vídeo curto e aplique 'Auto Captions' — edite o estilo das legendas para combinar com seu branding. · 3) Em 'AI Tools' → 'AI Scenes': descreva o B-roll que quer (ex: 'construction site, sunny day, wide angle'). · 4) Use 'Smart Reframe' para adaptar automaticamente para o 9:16 do Instagram sem recortar o rosto.",
+        "fonte": {
+          "t": "CapCut AI Review 2026: The Free TikTok Video Editor That Does Everything — Marc Andrews",
+          "u": "https://marcandrews.com/?p=3063"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-11-06",
+        "top": true,
+        "t": "REimagineHome.ai 2026: Foto do Cômodo → 8+ Renders Fotorrealistas em Estilos Diferentes — Carrossel de Reforma Pronto para o Instagram",
+        "resumo": "REimagineHome transforma uma foto real do ambiente em renders fotorrealistas com estilos novos (moderno, industrial, escandinavo, etc.). Para a OPC: tire foto de um cômodo antes da reforma, gere 6–8 versões de estilo, monte um carrossel 'Antes + Conceitos' para Instagram e converta em Reel com transição automática.",
+        "porque": "Clientes de reforma precisam visualizar o resultado antes de assinar. Com REimagineHome, a OPC apresenta múltiplas opções de estilo na reunião de projeto — aumenta a confiança do cliente e acelera a decisão. O mesmo conteúdo vira post de Reels mostrando a transformação, sem precisar de HeyGen ou avatar.",
+        "aplicar": "Para o feed da OPC: tire foto de um cômodo atual (antes da reforma), gere 4 estilos diferentes no REimagineHome, monte carrossel 'Antes + 4 Visões'. CTA: 'Qual você escolheria? Comente abaixo.' Formato que gera engajamento altíssimo em contas de reforma.",
+        "plano": "1) Acesse reimaginehome.ai — gratuito para começar (planos pagos para uso intensivo). · 2) Faça upload de foto de um cômodo já finalizado ou em construção. · 3) Escolha 4 estilos diferentes e gere os renders (1–2 min cada). · 4) Exporte como PNG e monte carrossel no CapCut ou Canva — ou converta em Reel com transição de slide automática.",
+        "fonte": {
+          "t": "REimagineHome — Interior Home Renovation with AI",
+          "u": "https://reimaginehome.ai/interior-home-renovation"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-11-06",
+        "top": true,
+        "t": "Mar Vermelho 2026: Houthis Retomaram Ataques a Navios — 12% do Comércio Mundial Desvia pelo Cabo da Boa Esperança",
+        "resumo": "Os rebeldes Houthis do Iêmen reiniciaram ataques a navios no Mar Vermelho após strikes EUA-Israel no Irã em 2026. Mais de 100 navios foram atacados desde 2023. Empresas como Maersk e MSC desviam pelo Cabo da Boa Esperança (11.000 km a mais) — frete e seguros dispararam, impactando o custo de materiais importados globalmente.",
+        "porque": "O Mar Vermelho conecta o Canal de Suez ao oceano Índico — 12% do comércio mundial passa por ali. Quando essa rota fecha, o custo de materiais importados (aço, cerâmica, eletroeletrônicos) sobe globalmente. Para a construção: impacto direto no preço de materiais importados e prazo de entrega nos EUA e no Brasil.",
+        "aplicar": "Para uma pauta educativa no Instagram: explique que a crise no Mar Vermelho é o motivo pelo qual materiais importados atrasam e encarecem — conecta geopolítica com o custo real da obra do cliente. Fácil de adaptar para Reels de 30s.",
+        "plano": "1) Entenda os atores: Houthis (Iêmen) são apoiados pelo Irã e atacam navios ligados a Israel/EUA/aliados. · 2) Veja o impacto: frete subiu 300% no pico de 2024; seguros marítimos triplicaram. · 3) Consequência doméstica: materiais com componentes importados (cerâmica, metais, eletros) ficaram mais caros. · 4) Monitore em tempo real: gCaptain e UKMTO atualizam incidentes diariamente.",
+        "fonte": {
+          "t": "Houthis Signal Renewed Red Sea Shipping Attacks After U.S.-Israeli Strikes on Iran — gCaptain",
+          "u": "https://gcaptain.com/houthis-signal-renewed-red-sea-shipping-attacks-after-u-s-israeli-strikes-on-iran"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-11-06",
+        "top": true,
+        "t": "Google Ads Customer Match 2026: Faça Upload da Sua Lista de Clientes e a IA Encontra Lookalikes — Threshold Caiu para 100 Usuários",
+        "resumo": "Customer Match permite subir sua lista de emails/telefones de ex-clientes para o Google. O sistema encontra esses usuários no Search, YouTube e Gmail. A partir de março 2026, o Lookalike do Customer Match vira sinal de IA no Demand Gen — sem limitar público manualmente. Mínimo agora é só 100 usuários (antes era 1.000).",
+        "porque": "Para a OPC: se você tem 50–100 emails de ex-clientes satisfeitos, pode criar campanhas que encontram pessoas com perfil similar em toda a rede Google. É o uso mais inteligente de dados próprios — e a maioria das pequenas empresas ainda não usa. Custo menor, conversão maior que público frio.",
+        "aplicar": "Monte lista de emails de clientes OPC → faça upload como Customer Match → crie campanha Demand Gen apontando para a lista como sinal de IA. A IA encontra lookalikes e otimiza automaticamente quem vê seus anúncios.",
+        "plano": "1) Exporte a lista de emails dos seus melhores clientes OPC (mínimo 100, idealmente 300+). · 2) Acesse Google Ads → Ferramentas → Gerenciador de Públicos → Customer Match → '+'. · 3) Faça upload em CSV (nome, email, telefone — mais campos = match maior). · 4) Crie campanha Demand Gen ou PMAX e adicione a lista como sinal — a IA encontra lookalikes e otimiza os lances.",
+        "fonte": {
+          "t": "Unlocking the Power of Customer Match: Guide to Maximizing Google Ads — Seer Interactive",
+          "u": "https://www.seerinteractive.com/insights/unlocking-the-power-of-customer-match-guide-to-maximizing-google-ads"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-11-06",
+        "top": true,
+        "t": "Relevance AI 2026: Construa uma 'Força de Trabalho' de Agentes de IA Sem Código — 40.000 Agentes Criados em Janeiro/2026",
+        "resumo": "Relevance AI é uma plataforma no-code onde você cria agentes de IA especializados (qualificação de leads, outreach, suporte) e os conecta em fluxos. $24M em Series B, 40.000 agentes criados só em janeiro de 2026. Para OPC: um agente que recebe leads por email, faz perguntas de qualificação e preenche o CRM — sem você tocar.",
+        "porque": "Diferente de Zapier (conexões simples) ou Make (fluxos visuais), o Relevance AI foca em agentes que tomam decisões. Um agente pode receber mensagem do Instagram, pesquisar o perfil do lead, classificar o interesse e criar uma tarefa no CRM — tudo automático.",
+        "aplicar": "Para a OPC: crie um agente 'Qualificador de Leads' que recebe formulários do site, faz 3 perguntas de qualificação por email e responde com proposta-padrão ou agenda ligação. Economiza 2–3h por semana de triagem manual.",
+        "plano": "1) Acesse relevanceai.com e crie conta (plano gratuito disponível). · 2) Use o template 'Lead Qualifier' como ponto de partida — já vem configurado para triagem. · 3) Configure com as regras de qualificação da OPC: orçamento mínimo, tipo de projeto, região de atendimento. · 4) Conecte ao Gmail via integração nativa — o agente responde leads automaticamente e registra no seu CRM.",
+        "fonte": {
+          "t": "Relevance AI Review 2026: I Used It for 4 Months to Build AI Agents — DEV Community",
+          "u": "https://dev.to/nova_gg/relevance-ai-review-2026-i-used-it-for-4-months-to-build-ai-agents-honest-verdict-4631"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ]
+  }
+}
