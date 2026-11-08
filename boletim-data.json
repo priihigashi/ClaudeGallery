@@ -1,35 +1,35 @@
 {
-  "date": "2026-11-07",
+  "date": "2026-11-08",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "URGENTE",
-      "t": "Caio: 2 docs para o portal FAU vencem em 2 dias (deadline 11/9)",
-      "why": "Evento no calendário: relatório escolar + avaliações estaduais de Math/ELA ainda não enviados. Sem upload = excluído do sorteio da FAU Lab School.",
-      "go": "tip"
-    },
-    {
-      "tag": "OPC",
-      "t": "Matthew enviou Licença de Contratante + Seguro — revisar hoje",
-      "why": "Email de ontem com anexo de 1.2 MB. Confirmar se a documentação está atualizada para contratos ativos antes de usar em propostas.",
-      "go": "obra"
+      "tag": "META ADS",
+      "t": "Teste OPC de 3 dias termina amanhã — checar resultados e decidir",
+      "why": "Calendário: anúncios OPC ($4/dia cada campanha) param automaticamente amanhã às 11h30. Abrir o chat META ADS OPC no Claude para ver gasto, leads e custo por lead antes de decidir o próximo passo.",
+      "go": "ads"
     },
     {
       "tag": "CONTEÚDO",
-      "t": "Post falhou no Metricool — 'tentandochegaratevoce' com configurações incompletas",
-      "why": "Notificação do Metricool: publicação não foi ao ar. Corrigir e reagendar antes de perder o slot de engajamento.",
+      "t": "338 posts OPC + 32 news esperando aprovação — fila parada",
+      "why": "Email: pipeline gerou centenas de posts mas nenhum vai ao ar sem aprovação. Dedicar 30 min para aprovar os melhores antes que percam timing.",
       "go": "conteudo"
     },
     {
-      "tag": "IA",
-      "t": "Crédito Anthropic baixo — fallback ativo desde 11h de hoje",
-      "why": "Monitor de crédito disparou: low_credit na Anthropic. Verificar limite do plano para manter os pipelines de IA da OPC e do Boletim funcionando.",
+      "tag": "AGENTS",
+      "t": "Weekly Plugins & Agent Tools Review — amanhã 9h",
+      "why": "Calendário: revisão semanal de MCPs, plugins e agentes de IA no Agents Tracker. Boa hora para avaliar quais automações ativar após o teste de Meta Ads.",
       "go": "iafim"
+    },
+    {
+      "tag": "OPC",
+      "t": "Verizon encerrando email-para-texto por março/2027 — checar contatos @vzwpix",
+      "why": "Email da Verizon: serviço vtext/vzwpix será desativado completamente. Contatos que mandam mensagens por SMS via email (como os @vzwpix no inbox) vão parar de funcionar.",
+      "go": "tip"
     }
   ],
   "history": [
     {
-      "date": "2026-11-07",
+      "date": "2026-11-08",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,16 +37,16 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-11-07",
+        "id": "tip-2026-11-08",
         "top": true,
-        "t": "Hiperfoco Intencional no TDAH: Como Criar as Condições para Entrar no Estado — e Sair Antes de Travar",
-        "resumo": "O hiperfoco não chega aleatoriamente — ele depende de condições específicas de ambiente e tarefa. Ritualizando a entrada (tela única, som constante, tarefa com começo definido e timer visível), você aumenta em muito a chance de ativar o estado de foco profundo.",
-        "porque": "Com TDAH, o hiperfoco é o único estado em que tarefas difíceis terminam de verdade. O problema é achar que ele chega sozinho — na prática, você pode provocá-lo com rituais simples de ambiente, e precisa de alarme de saída para ele não engolir a agenda inteira.",
-        "aplicar": "Antes de qualquer tarefa que precisa de foco profundo: feche tudo exceto uma janela, coloque headphones com brown noise ou música instrumental, escreva à mão 'vou fazer X até produzir Y' e abra o timer visível na mesa.",
-        "plano": "1) Identifique 2-3 tarefas de hoje que merecem hiperfoco — não mais que isso · 2) Monte o ambiente 5 min antes: 1 tela, 1 tarefa, timer analógico ou Time Timer visível · 3) Escreva no papel o que você VAI produzir (não 'trabalhar em X' — resultado concreto) · 4) Defina um alarme de saída (90 min máximo) — sem alarme, o hiperfoco engole a agenda toda",
+        "t": "Regra dos Micro-Passos no TDAH: Quebrar Qualquer Tarefa em 4 Verbos de Ação — e Começar Só pelo Primeiro",
+        "resumo": "Para o TDAH, o maior obstáculo não é o esforço — é a iniciação. A regra: cada tarefa deve virar 4 micro-passos de máx 15 min, cada um começando com um verbo de ação (Abrir, Escrever, Enviar, Postar). Você executa só o primeiro e para.",
+        "porque": "O cérebro com TDAH trava na tarefa abstrata ('organizar a loja'). Micro-passos concretos ('Abrir Shopify > Menu Produtos') ativam o circuito de recompensa por conclusão frequente — cada checkmark é dopamina real. Pesquisas de mai/2026 mostram que a iniciação, não o esforço, é o ponto de bloqueio no TDAH.",
+        "aplicar": "Pegue a próxima tarefa travada da sua lista e escreva: 'Passo 1: [verbo] [objeto específico].' Se o passo tiver mais de uma ação, quebre mais. 'Pagar contas' vira: Abrir app do banco · Ver extrato · Programar pagamento · Fechar e anotar próximo vencimento.",
+        "plano": "1) Escolher 1 tarefa travada da semana e escrever no papel · 2) Decompor em 4 micro-passos com verbo de ação (Abrir, Escrever, Enviar, Postar) · 3) Colocar 15 min no timer e fazer só o passo 1 — parar quando o timer tocar · 4) Riscar o passo 1 e anotar no papel que o próximo começa amanhã às X horas",
         "fonte": {
-          "t": "O que é hiperfoco no TDAH? — Tua Saúde",
-          "u": "https://www.tuasaude.com/medico-responde/hiperfoco-tdah/"
+          "t": "ADHD Micro-tasks Productivity — Tiimo App",
+          "u": "https://www.tiimoapp.com/resource-hub/adhd-microtasks-productivity"
         },
         "video": {
           "t": "",
@@ -56,16 +56,16 @@
     ],
     "receita": [
       {
-        "id": "receita-2026-11-07",
+        "id": "receita-2026-11-08",
         "top": true,
-        "t": "Yakisoba Vegano com Tofu Crocante — 30 Min, Vegano, Kid-Friendly",
-        "resumo": "Macarrão yakisoba com tofu dourado na frigideira, legumes crocantes (repolho, cenoura, brócolis) e molho de shoyu com gengibre fresco. Sem leite de vaca, sem frutos do mar, aprovado por crianças — o segredo é deixar o tofu formar crosta antes de misturar.",
-        "porque": "Rápido, barato e nutritivo, e crianças adoram macarrão com molho saboroso. O tofu crocante substitui proteína animal sem sacrifício de textura — e é muito mais fácil de fazer do que parece.",
-        "aplicar": "Seque bem o tofu com papel toalha antes de fritar — umidade é inimiga da crocância. Frite em fogo alto sem mexer até formar crosta dourada dos dois lados, só depois misture os legumes.",
-        "plano": "1) Pressione o tofu firme por 15 min com peso para tirar o excesso de água, corte em cubos · 2) Frite os cubos em azeite + fio de óleo de gergelim em fogo alto, sem mexer, até dourar — 4-5 min de cada lado · 3) Acrescente cenoura e brócolis, refogue 3 min, depois o repolho fatiado por mais 2 min · 4) Junte o macarrão pré-cozido e o molho (shoyu + gengibre ralado + mel de agave + alho amassado), misture bem e finalize com cebolinha",
+        "t": "Strogonoff de Cogumelos com Creme de Caju — Molho Cremoso Vegano, Arroz e Batata Palha (Elaborado, 40 min)",
+        "resumo": "Cogumelos Paris + shitake refogados em alho e cebola, molho cremoso de castanha-de-caju com extrato de tomate, páprica defumada e mostarda. Sem leite de vaca. Servido com arroz branco e batata palha crocante — kids adoram.",
+        "porque": "Cogumelos têm textura carnuda que convence até carnívoros. O creme de caju derrete no molho sem grudar, absorve os temperos e fica cremoso sem gosto de 'vegano'. Batata palha por cima transforma em comfort food — a galera toda come.",
+        "aplicar": "Rende 4 porções. Creme de caju expresso: 100g de caju cru + 200ml de água batido no liquidificador (demolhar 2h acelera mas não é obrigatório). Substituto rápido: 1 lata de leite de coco (200ml). Cogumelos: não tampar na frigideira — soltar água evapora o sabor.",
+        "plano": "1) Demolhar 100g de caju (2-4h) ou separar 1 lata de leite de coco como substituto · 2) Refogar 500g de cogumelos fatiados em fogo alto até dourar (10 min, sem tampar) · 3) Adicionar molho (creme de caju + 2 col extrato de tomate + 1 col mostarda + páprica defumada + sal) e cozinhar 5 min mexendo · 4) Servir com arroz branco e batata palha crocante generosa por cima",
         "fonte": {
-          "t": "Como fazer um yakisoba vegano gostoso — Nutritotal",
-          "u": "https://nutritotal.com.br/publico-geral/material/como-fazer-um-yakisoba-vegano-gostoso/"
+          "t": "Strogonoff de Cogumelos Vegano — Receiteria",
+          "u": "https://www.receiteria.com.br/receita/strogonoff-de-cogumelos-vegano/"
         },
         "video": {
           "t": "",
@@ -75,16 +75,16 @@
     ],
     "merch": [
       {
-        "id": "merch-2026-11-07",
+        "id": "merch-2026-11-08",
         "top": true,
-        "t": "SPOD 2026: POD da Spreadshirt com Envio em 48h, 721+ Reviews no Shopify e Sem Mensalidade",
-        "resumo": "SPOD (Spreadshirt POD) processa mais de 90% dos pedidos em menos de 48 horas, tem integração nativa com Shopify e 721+ reviews verificados no app. Sem mensalidade — você paga só pelo custo de produção e define sua margem. Catálogo mais enxuto que Printful, mas velocidade de fulfillment é o diferencial.",
-        "porque": "Para uma loja começando, velocidade de envio é crítica para reviews positivos. SPOD entrega mais rápido que a média do mercado POD e não cobra mensalidade — risco zero para testar novos produtos.",
-        "aplicar": "SPOD tem catálogo menor (verifique se tem bordado e longlines femininas antes de migrar). Se não encontrar o modelo exato, use SPOD para básicos com sublimação + Apliiq ou Fourthwall para bordado premium.",
-        "plano": "1) Acesse spod.com e crie conta grátis (sem mensalidade) — conecte ao Shopify pelo app da loja · 2) Busque no catálogo 'embroidery' e 'women's longline' — confirme disponibilidade antes de decidir · 3) Configure margem mínima de 30% sobre o custo de produção para cobrir frete e ads · 4) Peça amostra física do produto escolhido antes de publicar — garante que a qualidade de impressão atende ao padrão",
+        "t": "Gooten 2026: POD com Bordado Real + 150+ Produtos, Integração Shopify e Rede Global — Peça Amostra Antes de Vender",
+        "resumo": "Gooten conecta ao Shopify, tem bordado disponível por peça (sem pedido mínimo), 150+ produtos e rede de impressão em 50+ países. Review de outubro/2025 no Shopify: 'DTG e bordado atenderam minhas expectativas, envio foi rápido.'",
+        "porque": "Diferente de Printify (marketplace com vários fornecedores misturados), Gooten é plataforma de gestão — você escolhe o fornecedor com base em custo, localização e qualidade do sample. Mais controle sobre o resultado final, menos surpresa na caixa do cliente.",
+        "aplicar": "Rota recomendada para bordado: pedir 1 amostra da tee longline feminina antes de publicar na loja. Verificar densidade do bordado, acabamento e prazo real de entrega. Só depois de aprovar o sample, colocar no catálogo.",
+        "plano": "1) Criar conta grátis em gooten.com e conectar ao Shopify · 2) Filtrar catálogo por 'embroidery' + 'women's apparel' · 3) Escolher 1 longline tee feminina e fazer pedido de sample (~$15-20 com frete) · 4) Testar lavagem 2x, fotografar o resultado — só publicar depois de aprovar a qualidade",
         "fonte": {
-          "t": "SPOD Print-on-Demand Review 2026 — MerchTitans",
-          "u": "https://merchtitans.com/blog/spod-print-on-demand-review-2026"
+          "t": "Gooten App Reviews — Shopify / AppNavigator",
+          "u": "https://appnavigator.io/app/gooten/reviews/"
         },
         "video": {
           "t": "",
@@ -94,16 +94,16 @@
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-11-07",
+        "id": "conteudo-2026-11-08",
         "top": true,
-        "t": "Klap.app 2026: Vídeo Longo → Clipes Virais Automáticos — IA Detecta Tópicos e Formata 9:16 para Reels",
-        "resumo": "Klap analisa vídeos longos (podcasts, lives, aulas de obra) e extrai automaticamente os melhores momentos em clipes 9:16 prontos para Reels, Shorts e TikTok. A IA identifica tópicos distintos, adiciona legendas e reformata o vídeo vertical. Acurácia de ~85% na seleção — você revisa e publica.",
-        "porque": "Diferente do Opus Clip (que você já viu aqui), Klap tem interface mais direta e exporta clipes por tema — ideal para conteúdo de reforma onde cada 'momento de transformação' vira um clipe separado. Basic começa em $29/mês.",
-        "aplicar": "Upload do vídeo → Klap detecta os momentos mais fortes por tópico → você aprova os clipes mais relevantes → exporta ou publica via integração. Sem mexer em timeline.",
-        "plano": "1) Acesse klap.app e faça login com Google — plano básico a $29/mês · 2) Faça upload de um vídeo longo de reforma/construção ou de um episódio do conteúdo de Brasil · 3) Revise os clipes sugeridos (a IA acerta ~85%) e aprove os que têm o momento de transformação mais visual · 4) Baixe em 9:16 e agende no Metricool ou publique direto pelo app",
+        "t": "VEED.io 2026: Grave no Celular → IA Gera B-Roll Automático, Legenda Animada em 1 Clique e Reel 9:16 Pronto",
+        "resumo": "VEED transcreve sua narração, gera B-roll de estoque correspondente a cada frase e adiciona legendas animadas automáticas. Em 2026 lançou API de legendas e suporte a Veo 3 para geração de vídeo. Free tier tem watermark; pago a partir de $18/mês.",
+        "porque": "Para talking-head de reforma, o B-roll automático elimina a edição manual de timeline: você narra, a IA monta o cutaway. Funciona melhor com narração clara — fala sem pausas longas produz B-roll mais relevante. Resultado: vídeo profissional sem editor.",
+        "aplicar": "Para a OPC: gravar 60s narrando o antes e o depois de um projeto de reforma. VEED transcreve, identifica momentos-chave e insere B-roll de materiais/construção. Um reel de 60s com B-roll e legenda fica pronto em ~10 min.",
+        "plano": "1) Gravar narração de 60s sobre antes/depois de projeto OPC no celular (voz clara, fundo neutro) · 2) Upload no VEED.io e ativar 'Magic B-Roll' · 3) Revisar os cortes de B-roll sugeridos e substituir o que não encaixar · 4) Ativar 'Auto-Subtitles', exportar em 9:16 e postar como Reel",
         "fonte": {
-          "t": "Klap Review 2026: AI Clip Maker vs Opus Clip — The Brand Hopper",
-          "u": "https://thebrandhopper.com/?p=29231"
+          "t": "VEED.io — AI B-Roll Generator",
+          "u": "https://www.veed.io/tools/ai-b-roll-generator"
         },
         "video": {
           "t": "",
@@ -113,16 +113,16 @@
     ],
     "obra": [
       {
-        "id": "obra-2026-11-07",
+        "id": "obra-2026-11-08",
         "top": true,
-        "t": "Foyr Neo AI Hub 2026: Planta Baixa → 3D → Render Profissional — Workflow Completo para Conteúdo e Proposta da OPC",
-        "resumo": "Foyr Neo integrou IA generativa diretamente no workflow de design de interiores (AI Hub lançado em 2025/26). Diferente das ferramentas de foto→render, Foyr cria projetos do zero: planta baixa em 2D → modelo 3D → renders fotorrealistas para apresentar ao cliente e postar no Instagram. 1M+ usuários, 14 dias grátis.",
-        "porque": "Para a OPC, projetos de reforma completa ficam mais vendáveis com visualizações 3D — o cliente entende o resultado antes de assinar. É uma camada de conteúdo acima de REimagineHome/Collov: você não só mostra o antes/depois, você apresenta o projeto.",
-        "aplicar": "Importar a planta do projeto (ou desenhar no Foyr) → criar o ambiente 3D → aplicar materiais reais (Foyr tem biblioteca de materiais de marcas reais) → exportar renders para proposta + carrossel no Instagram.",
-        "plano": "1) Acesse foyr.com e inicie o trial de 14 dias grátis — sem cartão de crédito obrigatório · 2) Importe a planta baixa de um projeto ativo da OPC ou crie do zero com as ferramentas de arrasto do Foyr · 3) Use o AI Hub para sugerir combinações de acabamentos (piso, parede, mobília) compatíveis com o orçamento e estilo do cliente · 4) Exporte 3-4 renders em alta resolução para usar em proposta comercial + carrossel no Instagram da OPC",
+        "t": "Spacely AI 2026: Renderize o Mesmo Cômodo em 7 Estilos de Tendência — Carrossel 'Qual Você Escolheria?' para a OPC",
+        "resumo": "Spacely.ai publicou os 7 prompts de tendência de metade de 2026: warm palettes, color-drenching, deep teal, sculptural texture, curved furniture, spa bathrooms e energy retrofit aesthetic. Cada prompt gera render fotorrealista em segundos a partir de 1 foto.",
+        "porque": "Renders genéricos são todos iguais no feed. Renders com estilos de tendência específicos criam série de carrossel ('O mesmo banheiro em 3 estilos de 2026') que gera comentários e saves — pessoas adoram escolher o favorito e marcar amigos.",
+        "aplicar": "Tirar foto de um ambiente atual de cliente da OPC (antes ou depois da reforma) e rodar pelo menos 3 dos 7 prompts de tendência. Montar carrossel side-by-side com CTA: 'Qual estilo você colocaria na sua casa?' — engajamento orgânico alto.",
+        "plano": "1) Abrir spacely.ai e criar conta free · 2) Tirar 1 foto de ambiente OPC (banheiro, cozinha ou sala) · 3) Rodar 3 prompts de tendência 2026: 'warm palette', 'spa bathroom' e 'sculptural texture' · 4) Montar carrossel com as 3 variações + legenda com CTA de engajamento",
         "fonte": {
-          "t": "Foyr Neo — Novidades e AI Hub",
-          "u": "https://foyr.com/whats-new/new-features"
+          "t": "Spacely AI — Mid-2026 Interior Design Trends & Prompts",
+          "u": "https://spacely.ai/blog/mid-2026-interior-design-trends-with-prompts-to-try"
         },
         "video": {
           "t": "",
@@ -132,16 +132,16 @@
     ],
     "geo": [
       {
-        "id": "geo-2026-11-07",
+        "id": "geo-2026-11-08",
         "top": true,
-        "t": "Cinturão dos Golpes no Sahel 2026: Rússia Virou o Protetor das Juntas — O que Está em Jogo no Coração da África",
-        "resumo": "Entre 2020 e 2023, nove golpes militares varreram o Sahel. Mali, Burkina Faso e Niger expulsaram tropas francesas e formaram a AES (Alliance des États du Sahel). A Rússia entrou com Wagner, agora rebatizado de Africa Corps sob controle direto do Ministério da Defesa. Em agosto de 2026, o Africa Corps suprimiu uma motim no Niger — segunda intervenção desse tipo no ano.",
-        "porque": "Sahel é a nova arena geopolítica de ouro, urânio (Niger tem 7% das reservas mundiais) e posição estratégica entre o Mediterrâneo e o Atlântico Sul. EUA e Europa perderam influência; Rússia e China avançam. Cada crise de minerais ou preço de energia que você acompanha tem fio que passa pelo Sahel.",
-        "aplicar": "Quando ouvir 'conflito no Mali' ou 'crise no Níger', o pano de fundo é este: junta + Russia + disputa por minerais + jihadistas ainda ativos. É a mesma estrutura que o Wagner tinha na Líbia e na República Centro-Africana — agora institucionalizada.",
-        "plano": "1) Localize Burkina Faso, Mali e Niger no mapa — eles fazem fronteira no coração da África Ocidental · 2) Entenda que o 'risco geopolítico' de ouro e urânio passa por aqui · 3) Palavras-chave para acompanhar: AES, Africa Corps, JNIM (grupo jihadista), Lami Lavrov (encontro de julho/26) · 4) Pauta de conteúdo: compare com o que a mídia brasileira ignora vs o que está de fato acontecendo — Sahel = novo front da guerra fria 2.0",
+        "t": "Mar do Sul da China 2026: Filipinas Inaugura Base nos Spratlys, China Responde com Flares — O 'Ormuz Asiático' Que Vira Pauta",
+        "resumo": "Em abril/2026, as Filipinas inauguram a primeira base da Guarda Costeira no Arquipélago Spratly (Ilha Thitu). China respondeu disparando sinalizadores contra aeronaves filipinas e bloqueando o Recife Scarborough. EUA reafirmaram que ataque à GC filipina ativa tratado de defesa mútua.",
+        "porque": "30% do comércio marítimo mundial passa pelo Mar do Sul da China. Quem controla os Spratlys controla as rotas entre o Indo-Pacífico e a Europa — petróleo, chips (TSMC), cabos submarinos e manufatura asiática passam por aqui. É o 'Estreito de Ormuz do Leste Asiático'.",
+        "aplicar": "Quando sair notícia de 'tensão no Indo-Pacífico' ou 'manobras navais no Leste Asiático', o contexto real é a disputa dos Spratlys. Filipinas vs China é o flashpoint mais provável da região em 2027.",
+        "plano": "1) Buscar mapa dos Spratlys no Google Maps para visualizar o arquipélago vs distância do continente · 2) Comparar os claims: linha dos 9 traços da China vs ZEE de 200nm das Filipinas (UNCLOS 1982) · 3) Paralelismo com outras pautas: assim como Ormuz para petróleo, Spratlys para manufatura asiática · 4) Montar ângulo de pauta: 'Se a China fechar o Mar do Sul da China, o que para de funcionar no mundo?'",
         "fonte": {
-          "t": "Russia's Sahel Strategy: A Coup Alliance — Model Diplomat",
-          "u": "https://modeldiplomat.com/story/russias-sahel-strategy-a-coup-alliance"
+          "t": "Philippines Unveils New Coast Guard Command in Disputed South China Sea — China Global South Project",
+          "u": "https://chinaglobalsouth.com/2026/04/09/philippines-coast-guard-command-spratly-islands-china/"
         },
         "video": {
           "t": "",
@@ -151,16 +151,16 @@
     ],
     "ads": [
       {
-        "id": "ads-2026-11-07",
+        "id": "ads-2026-11-08",
         "top": true,
-        "t": "Google Ads Broad Match + Smart Bidding 2026: A Única Combinação que Funciona — e Por Que Nunca Usar Broad Match Sozinho",
-        "resumo": "Broad Match captura o maior volume de buscas, mas sem Smart Bidding (Target CPA ou Target ROAS) a campanha queima orçamento em buscas irrelevantes. Com Smart Bidding + mínimo de 30 conversões/mês rastreadas, o Google aprende quais buscas amplas convertem de verdade e dá lances maiores só nelas — o resto é filtrado.",
-        "porque": "Para a OPC, Broad Match + Target CPA é a estratégia para escalar volume de leads sem explodir o custo. O Google filtra automaticamente buscas de 'reforma DIY' ou 'reforma barata' que nunca convertem, e prioriza quem busca 'construtora em Chicago' ou 'orçamento reforma cozinha'.",
-        "aplicar": "Use Broad Match ISOLADO em ad groups separados (nunca misture com exact/phrase), defina o Target CPA com base no seu custo histórico por lead, revise os search terms semanalmente por 30 dias e adicione negativos agressivamente no começo.",
-        "plano": "1) Certifique que tem pelo menos 30 conversões/mês rastreadas (formulário ou ligação) antes de ativar Broad Match · 2) Crie um ad group NOVO separado apenas para Broad Match — nunca misture tipos de match no mesmo grupo · 3) Configure Target CPA baseado na média dos últimos 30 dias — sem dados suficientes, comece com Target CPA 20% acima da meta real · 4) Revise o relatório de search terms toda semana e adicione termos irrelevantes como negativos",
+        "t": "Google Demand Gen 2026: Anúncios que Criam Desejo Antes da Busca — YouTube Shorts + Discover + Gmail em 1 Campanha",
+        "resumo": "Demand Gen exibe em YouTube Shorts, feeds do YouTube, Discover e Gmail simultaneamente. A IA otimiza para lookalike audiences dos seus conversores — ideal para apresentar a OPC a quem ainda não busca por reforma mas seria o cliente perfeito.",
+        "porque": "Search captura quem já quer reforma. Demand Gen cria o desejo em quem ainda não sabe que precisa de você. Para construção, onde o ciclo começa com inspiração visual (Instagram, YouTube), anunciar antes da busca encurta o funil de meses para semanas.",
+        "aplicar": "Melhor material: vídeos 9:16 de antes/depois de reforma + 3-5 fotos de projetos de alta qualidade. Budget mínimo para sair do período de aprendizado da IA: $15/dia por 14 dias ($210 total). CPM em vídeo costuma ser menor que Meta para o mesmo público.",
+        "plano": "1) Criar campanha no Google Ads com objetivo 'Leads' e tipo de campanha 'Demand Gen' · 2) Adicionar 1 vídeo 9:16 de reforma OPC + 3-5 fotos de projetos · 3) Configurar 'Similar Audiences' baseado na lista de emails de clientes OPC · 4) Deixar 14 dias antes de avaliar — a IA precisa de pelo menos 50 eventos de conversão para otimizar",
         "fonte": {
-          "t": "Google Ads Broad Match Strategy 2026 — TripleDart",
-          "u": "https://www.tripledart.com/saas-ppc/google-ads-broad-match"
+          "t": "Demand Gen Campaigns Complete Guide 2026 — Social Rails",
+          "u": "https://socialrails.com/social-media-terms/demand-gen-campaigns"
         },
         "video": {
           "t": "",
@@ -170,16 +170,16 @@
     ],
     "iafim": [
       {
-        "id": "iafim-2026-11-07",
+        "id": "iafim-2026-11-08",
         "top": true,
-        "t": "Vapi.ai 2026: Plataforma para Agentes de Voz com <500ms de Latência — Recepcionista, Qualificação e Agendamento para a OPC",
-        "resumo": "Vapi é a plataforma developer-first para agentes de voz que atendem chamadas, qualificam leads e transferem para humano. Latência abaixo de 500ms (a menor do mercado em 2026), freemium com pagamento por uso. Suporte nativo a Claude como LLM base — você descreve o comportamento do agente em texto.",
-        "porque": "Para a OPC, um agente Vapi pode atender chamadas de entrada 24/7, fazer 3 perguntas de qualificação (orçamento, tipo de obra, localização) e transferir para você apenas os leads quentes. Diferente do Retell AI (que você já viu aqui), Vapi dá mais controle sobre o LLM e o fluxo da conversa.",
-        "aplicar": "Vapi se conecta ao número de telefone da empresa via Twilio ou similar. Você configura o assistente em linguagem natural, define quando transferir para humano e recebe transcrição de cada chamada por email.",
-        "plano": "1) Acesse vapi.ai e crie conta (freemium — paga por minuto de voz + uso do LLM) · 2) Crie um assistente descrevendo o comportamento em texto: 'Você é a recepcionista da Oak Park Construction, responde em inglês, faz 3 perguntas de qualificação e agenda um callback com Priscila' · 3) Conecte ao número da OPC via Twilio (~$1/mês + por minuto de chamada) · 4) Teste com chamadas internas por 1 semana antes de ativar para clientes — ajuste o script conforme as transcrições",
+        "t": "n8n AI Agents 2026: Automação Open-Source com Agentes Autônomos — Self-Hosted Gratuito, 500+ Integrações, 400+ Templates",
+        "resumo": "n8n ganhou agentes de IA autônomos em 2026: o agente não só executa passos pré-definidos — ele avalia o resultado anterior e decide o próximo passo sozinho. Self-hosted = $0/mês de execução, sem limite de operações.",
+        "porque": "Diferente de Make ou Zapier (cobram por operação), o n8n self-hosted é gratuito. Para a OPC: agente que recebe lead do site, pergunta ao LLM se é qualificado, cria card no Sheets e manda email de boas-vindas — sem custo de execução por lead.",
+        "aplicar": "Ponto de entrada: versão cloud gratuita do n8n.io (5 fluxos ativos, sem instalar nada). Para escalar sem custo: rodar self-hosted no Railway (plano starter grátis). Template de início: 'AI Lead Qualification Agent' — formulário → LLM qualifica → Sheets → email.",
+        "plano": "1) Criar conta grátis em n8n.io (versão cloud) · 2) Importar template 'AI Agent' da biblioteca de templates do n8n · 3) Conectar ao formulário de contato da OPC e ao Google Sheets · 4) Testar com 3 leads fictícios antes de ativar — validar que a qualificação e os emails saem corretos",
         "fonte": {
-          "t": "Vapi AI Review 2026: Voice AI Platform — ToolDirectory",
-          "u": "https://tooldirectory.ai/tools/vapi"
+          "t": "What is n8n? Full Guide to AI Agents and Workflows 2026 — UIBakery",
+          "u": "https://uibakery.io/blog/what-is-n8n"
         },
         "video": {
           "t": "",

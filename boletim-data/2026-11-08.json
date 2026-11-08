@@ -1,0 +1,191 @@
+{
+  "date": "2026-11-08",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "META ADS",
+      "t": "Teste OPC de 3 dias termina amanhã — checar resultados e decidir",
+      "why": "Calendário: anúncios OPC ($4/dia cada campanha) param automaticamente amanhã às 11h30. Abrir o chat META ADS OPC no Claude para ver gasto, leads e custo por lead antes de decidir o próximo passo.",
+      "go": "ads"
+    },
+    {
+      "tag": "CONTEÚDO",
+      "t": "338 posts OPC + 32 news esperando aprovação — fila parada",
+      "why": "Email: pipeline gerou centenas de posts mas nenhum vai ao ar sem aprovação. Dedicar 30 min para aprovar os melhores antes que percam timing.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "AGENTS",
+      "t": "Weekly Plugins & Agent Tools Review — amanhã 9h",
+      "why": "Calendário: revisão semanal de MCPs, plugins e agentes de IA no Agents Tracker. Boa hora para avaliar quais automações ativar após o teste de Meta Ads.",
+      "go": "iafim"
+    },
+    {
+      "tag": "OPC",
+      "t": "Verizon encerrando email-para-texto por março/2027 — checar contatos @vzwpix",
+      "why": "Email da Verizon: serviço vtext/vzwpix será desativado completamente. Contatos que mandam mensagens por SMS via email (como os @vzwpix no inbox) vão parar de funcionar.",
+      "go": "tip"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-11-08",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-11-08",
+        "top": true,
+        "t": "Regra dos Micro-Passos no TDAH: Quebrar Qualquer Tarefa em 4 Verbos de Ação — e Começar Só pelo Primeiro",
+        "resumo": "Para o TDAH, o maior obstáculo não é o esforço — é a iniciação. A regra: cada tarefa deve virar 4 micro-passos de máx 15 min, cada um começando com um verbo de ação (Abrir, Escrever, Enviar, Postar). Você executa só o primeiro e para.",
+        "porque": "O cérebro com TDAH trava na tarefa abstrata ('organizar a loja'). Micro-passos concretos ('Abrir Shopify > Menu Produtos') ativam o circuito de recompensa por conclusão frequente — cada checkmark é dopamina real. Pesquisas de mai/2026 mostram que a iniciação, não o esforço, é o ponto de bloqueio no TDAH.",
+        "aplicar": "Pegue a próxima tarefa travada da sua lista e escreva: 'Passo 1: [verbo] [objeto específico].' Se o passo tiver mais de uma ação, quebre mais. 'Pagar contas' vira: Abrir app do banco · Ver extrato · Programar pagamento · Fechar e anotar próximo vencimento.",
+        "plano": "1) Escolher 1 tarefa travada da semana e escrever no papel · 2) Decompor em 4 micro-passos com verbo de ação (Abrir, Escrever, Enviar, Postar) · 3) Colocar 15 min no timer e fazer só o passo 1 — parar quando o timer tocar · 4) Riscar o passo 1 e anotar no papel que o próximo começa amanhã às X horas",
+        "fonte": {
+          "t": "ADHD Micro-tasks Productivity — Tiimo App",
+          "u": "https://www.tiimoapp.com/resource-hub/adhd-microtasks-productivity"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-11-08",
+        "top": true,
+        "t": "Strogonoff de Cogumelos com Creme de Caju — Molho Cremoso Vegano, Arroz e Batata Palha (Elaborado, 40 min)",
+        "resumo": "Cogumelos Paris + shitake refogados em alho e cebola, molho cremoso de castanha-de-caju com extrato de tomate, páprica defumada e mostarda. Sem leite de vaca. Servido com arroz branco e batata palha crocante — kids adoram.",
+        "porque": "Cogumelos têm textura carnuda que convence até carnívoros. O creme de caju derrete no molho sem grudar, absorve os temperos e fica cremoso sem gosto de 'vegano'. Batata palha por cima transforma em comfort food — a galera toda come.",
+        "aplicar": "Rende 4 porções. Creme de caju expresso: 100g de caju cru + 200ml de água batido no liquidificador (demolhar 2h acelera mas não é obrigatório). Substituto rápido: 1 lata de leite de coco (200ml). Cogumelos: não tampar na frigideira — soltar água evapora o sabor.",
+        "plano": "1) Demolhar 100g de caju (2-4h) ou separar 1 lata de leite de coco como substituto · 2) Refogar 500g de cogumelos fatiados em fogo alto até dourar (10 min, sem tampar) · 3) Adicionar molho (creme de caju + 2 col extrato de tomate + 1 col mostarda + páprica defumada + sal) e cozinhar 5 min mexendo · 4) Servir com arroz branco e batata palha crocante generosa por cima",
+        "fonte": {
+          "t": "Strogonoff de Cogumelos Vegano — Receiteria",
+          "u": "https://www.receiteria.com.br/receita/strogonoff-de-cogumelos-vegano/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-11-08",
+        "top": true,
+        "t": "Gooten 2026: POD com Bordado Real + 150+ Produtos, Integração Shopify e Rede Global — Peça Amostra Antes de Vender",
+        "resumo": "Gooten conecta ao Shopify, tem bordado disponível por peça (sem pedido mínimo), 150+ produtos e rede de impressão em 50+ países. Review de outubro/2025 no Shopify: 'DTG e bordado atenderam minhas expectativas, envio foi rápido.'",
+        "porque": "Diferente de Printify (marketplace com vários fornecedores misturados), Gooten é plataforma de gestão — você escolhe o fornecedor com base em custo, localização e qualidade do sample. Mais controle sobre o resultado final, menos surpresa na caixa do cliente.",
+        "aplicar": "Rota recomendada para bordado: pedir 1 amostra da tee longline feminina antes de publicar na loja. Verificar densidade do bordado, acabamento e prazo real de entrega. Só depois de aprovar o sample, colocar no catálogo.",
+        "plano": "1) Criar conta grátis em gooten.com e conectar ao Shopify · 2) Filtrar catálogo por 'embroidery' + 'women's apparel' · 3) Escolher 1 longline tee feminina e fazer pedido de sample (~$15-20 com frete) · 4) Testar lavagem 2x, fotografar o resultado — só publicar depois de aprovar a qualidade",
+        "fonte": {
+          "t": "Gooten App Reviews — Shopify / AppNavigator",
+          "u": "https://appnavigator.io/app/gooten/reviews/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-11-08",
+        "top": true,
+        "t": "VEED.io 2026: Grave no Celular → IA Gera B-Roll Automático, Legenda Animada em 1 Clique e Reel 9:16 Pronto",
+        "resumo": "VEED transcreve sua narração, gera B-roll de estoque correspondente a cada frase e adiciona legendas animadas automáticas. Em 2026 lançou API de legendas e suporte a Veo 3 para geração de vídeo. Free tier tem watermark; pago a partir de $18/mês.",
+        "porque": "Para talking-head de reforma, o B-roll automático elimina a edição manual de timeline: você narra, a IA monta o cutaway. Funciona melhor com narração clara — fala sem pausas longas produz B-roll mais relevante. Resultado: vídeo profissional sem editor.",
+        "aplicar": "Para a OPC: gravar 60s narrando o antes e o depois de um projeto de reforma. VEED transcreve, identifica momentos-chave e insere B-roll de materiais/construção. Um reel de 60s com B-roll e legenda fica pronto em ~10 min.",
+        "plano": "1) Gravar narração de 60s sobre antes/depois de projeto OPC no celular (voz clara, fundo neutro) · 2) Upload no VEED.io e ativar 'Magic B-Roll' · 3) Revisar os cortes de B-roll sugeridos e substituir o que não encaixar · 4) Ativar 'Auto-Subtitles', exportar em 9:16 e postar como Reel",
+        "fonte": {
+          "t": "VEED.io — AI B-Roll Generator",
+          "u": "https://www.veed.io/tools/ai-b-roll-generator"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-11-08",
+        "top": true,
+        "t": "Spacely AI 2026: Renderize o Mesmo Cômodo em 7 Estilos de Tendência — Carrossel 'Qual Você Escolheria?' para a OPC",
+        "resumo": "Spacely.ai publicou os 7 prompts de tendência de metade de 2026: warm palettes, color-drenching, deep teal, sculptural texture, curved furniture, spa bathrooms e energy retrofit aesthetic. Cada prompt gera render fotorrealista em segundos a partir de 1 foto.",
+        "porque": "Renders genéricos são todos iguais no feed. Renders com estilos de tendência específicos criam série de carrossel ('O mesmo banheiro em 3 estilos de 2026') que gera comentários e saves — pessoas adoram escolher o favorito e marcar amigos.",
+        "aplicar": "Tirar foto de um ambiente atual de cliente da OPC (antes ou depois da reforma) e rodar pelo menos 3 dos 7 prompts de tendência. Montar carrossel side-by-side com CTA: 'Qual estilo você colocaria na sua casa?' — engajamento orgânico alto.",
+        "plano": "1) Abrir spacely.ai e criar conta free · 2) Tirar 1 foto de ambiente OPC (banheiro, cozinha ou sala) · 3) Rodar 3 prompts de tendência 2026: 'warm palette', 'spa bathroom' e 'sculptural texture' · 4) Montar carrossel com as 3 variações + legenda com CTA de engajamento",
+        "fonte": {
+          "t": "Spacely AI — Mid-2026 Interior Design Trends & Prompts",
+          "u": "https://spacely.ai/blog/mid-2026-interior-design-trends-with-prompts-to-try"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-11-08",
+        "top": true,
+        "t": "Mar do Sul da China 2026: Filipinas Inaugura Base nos Spratlys, China Responde com Flares — O 'Ormuz Asiático' Que Vira Pauta",
+        "resumo": "Em abril/2026, as Filipinas inauguram a primeira base da Guarda Costeira no Arquipélago Spratly (Ilha Thitu). China respondeu disparando sinalizadores contra aeronaves filipinas e bloqueando o Recife Scarborough. EUA reafirmaram que ataque à GC filipina ativa tratado de defesa mútua.",
+        "porque": "30% do comércio marítimo mundial passa pelo Mar do Sul da China. Quem controla os Spratlys controla as rotas entre o Indo-Pacífico e a Europa — petróleo, chips (TSMC), cabos submarinos e manufatura asiática passam por aqui. É o 'Estreito de Ormuz do Leste Asiático'.",
+        "aplicar": "Quando sair notícia de 'tensão no Indo-Pacífico' ou 'manobras navais no Leste Asiático', o contexto real é a disputa dos Spratlys. Filipinas vs China é o flashpoint mais provável da região em 2027.",
+        "plano": "1) Buscar mapa dos Spratlys no Google Maps para visualizar o arquipélago vs distância do continente · 2) Comparar os claims: linha dos 9 traços da China vs ZEE de 200nm das Filipinas (UNCLOS 1982) · 3) Paralelismo com outras pautas: assim como Ormuz para petróleo, Spratlys para manufatura asiática · 4) Montar ângulo de pauta: 'Se a China fechar o Mar do Sul da China, o que para de funcionar no mundo?'",
+        "fonte": {
+          "t": "Philippines Unveils New Coast Guard Command in Disputed South China Sea — China Global South Project",
+          "u": "https://chinaglobalsouth.com/2026/04/09/philippines-coast-guard-command-spratly-islands-china/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-11-08",
+        "top": true,
+        "t": "Google Demand Gen 2026: Anúncios que Criam Desejo Antes da Busca — YouTube Shorts + Discover + Gmail em 1 Campanha",
+        "resumo": "Demand Gen exibe em YouTube Shorts, feeds do YouTube, Discover e Gmail simultaneamente. A IA otimiza para lookalike audiences dos seus conversores — ideal para apresentar a OPC a quem ainda não busca por reforma mas seria o cliente perfeito.",
+        "porque": "Search captura quem já quer reforma. Demand Gen cria o desejo em quem ainda não sabe que precisa de você. Para construção, onde o ciclo começa com inspiração visual (Instagram, YouTube), anunciar antes da busca encurta o funil de meses para semanas.",
+        "aplicar": "Melhor material: vídeos 9:16 de antes/depois de reforma + 3-5 fotos de projetos de alta qualidade. Budget mínimo para sair do período de aprendizado da IA: $15/dia por 14 dias ($210 total). CPM em vídeo costuma ser menor que Meta para o mesmo público.",
+        "plano": "1) Criar campanha no Google Ads com objetivo 'Leads' e tipo de campanha 'Demand Gen' · 2) Adicionar 1 vídeo 9:16 de reforma OPC + 3-5 fotos de projetos · 3) Configurar 'Similar Audiences' baseado na lista de emails de clientes OPC · 4) Deixar 14 dias antes de avaliar — a IA precisa de pelo menos 50 eventos de conversão para otimizar",
+        "fonte": {
+          "t": "Demand Gen Campaigns Complete Guide 2026 — Social Rails",
+          "u": "https://socialrails.com/social-media-terms/demand-gen-campaigns"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-11-08",
+        "top": true,
+        "t": "n8n AI Agents 2026: Automação Open-Source com Agentes Autônomos — Self-Hosted Gratuito, 500+ Integrações, 400+ Templates",
+        "resumo": "n8n ganhou agentes de IA autônomos em 2026: o agente não só executa passos pré-definidos — ele avalia o resultado anterior e decide o próximo passo sozinho. Self-hosted = $0/mês de execução, sem limite de operações.",
+        "porque": "Diferente de Make ou Zapier (cobram por operação), o n8n self-hosted é gratuito. Para a OPC: agente que recebe lead do site, pergunta ao LLM se é qualificado, cria card no Sheets e manda email de boas-vindas — sem custo de execução por lead.",
+        "aplicar": "Ponto de entrada: versão cloud gratuita do n8n.io (5 fluxos ativos, sem instalar nada). Para escalar sem custo: rodar self-hosted no Railway (plano starter grátis). Template de início: 'AI Lead Qualification Agent' — formulário → LLM qualifica → Sheets → email.",
+        "plano": "1) Criar conta grátis em n8n.io (versão cloud) · 2) Importar template 'AI Agent' da biblioteca de templates do n8n · 3) Conectar ao formulário de contato da OPC e ao Google Sheets · 4) Testar com 3 leads fictícios antes de ativar — validar que a qualificação e os emails saem corretos",
+        "fonte": {
+          "t": "What is n8n? Full Guide to AI Agents and Workflows 2026 — UIBakery",
+          "u": "https://uibakery.io/blog/what-is-n8n"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ]
+  }
+}
