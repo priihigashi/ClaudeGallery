@@ -1,35 +1,35 @@
 {
-  "date": "2026-11-09",
+  "date": "2026-11-10",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "URGENTE",
-      "t": "Documentos de Caio para FAU — 3 semanas para o prazo",
-      "why": "Deadline 1/12 no calendário: faltam 2 documentos no portal da FAU Labs (boletim recente + avaliação estadual). Sem upload = excluído da loteria.",
-      "go": "tip"
+      "tag": "🚨 Urgente",
+      "t": "Créditos Anthropic zerados — pipeline de captura bloqueada",
+      "why": "Dois e-mails de alerta hoje: quota_exceeded na pipeline de captura (00h58) e provider degraded às 13h07. Posts OPC não estão sendo capturados enquanto isso não for resolvido. Acesse console.anthropic.com/settings/billing para recarregar.",
+      "go": "iafim"
     },
     {
-      "tag": "ADS",
-      "t": "Meta Ads OPC: resultado do teste de 3 dias vence hoje",
-      "why": "Campanha de teste ($4/dia × 3 anúncios) rodou 6-9/11. Hoje às 12h o calendário pede revisão — ver gasto vs leads antes de decidir o próximo passo.",
-      "go": "ads"
-    },
-    {
-      "tag": "CONTEÚDO",
-      "t": "338 posts OPC aguardando aprovação na fila",
-      "why": "Email de ontem: 338 posts da OPC + 32 de News esperando aprovação no Drive. Carrosséis e Reels prontos — só falta liberar.",
+      "tag": "📋 Backlog",
+      "t": "338 posts OPC + 32 de Notícias aguardando aprovação",
+      "why": "E-mail de ontem: 338 posts da Oak Park Construction e 32 posts de Notícias estão na fila de aprovação. A fila cresce a cada dia sem revisão — é a maior acumulada até agora.",
       "go": "conteudo"
     },
     {
-      "tag": "IA",
-      "t": "Crédito Anthropic baixo — fallback ativo",
-      "why": "Alerta de ontem: provider degraded (low_credit). Repor crédito antes que automações parem (pipeline do boletim, agentes em execução).",
-      "go": "iafim"
+      "tag": "🧾 Amanhã",
+      "t": "Payroll dia 11 — rodar no QuickBooks antes das 10h",
+      "why": "Recorrência mensal: amanhã (11/nov) é o dia do payroll. Agenda às 10h15. QuickBooks → Oak Park Construction - Pri Only. Verificar também se Mike enviou a parte dele.",
+      "go": "ads"
+    },
+    {
+      "tag": "🏥 Pendente",
+      "t": "Autorização Humana para Mia (2 dez) — Marien vai confirmar com gerente",
+      "why": "E-mail de hoje cedo: Marien Felipe confirmou que vai avisar o gerente sobre a autorização para a consulta de 2 de dezembro. Acompanhar a confirmação antes do prazo.",
+      "go": "tip"
     }
   ],
   "history": [
     {
-      "date": "2026-11-09",
+      "date": "2026-11-10",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,130 +37,154 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-11-09",
+        "id": "tip-2026-11-10",
         "top": true,
-        "t": "Dopamine Menu para TDAH: Monte um Cardápio de Ativações Antes de Travar",
-        "resumo": "Crie uma lista pessoal de atividades curtas organizadas como cardápio (Aperitivos 1-5 min, Pratos Principais 20-40 min, Sobremesa pós-entrega). Quando o cérebro emperrar na tarefa, você já tem a próxima ação decidida — sem precisar pensar no momento de baixa dopamina.",
-        "porque": "No TDAH, o problema não é preguiça — é falta de dopamina disponível para iniciar. Decidir o que fazer no momento em que o cérebro está travado é pedir para ele fazer exatamente o que não consegue. O menu elimina essa decisão de antemão.",
-        "aplicar": "Monte os seus Aperitivos agora: música favorita, 5 min de arrumação, café, 10 agachamentos. Pratos Principais: Pomodoro de 25 min, responder 1 email pendente, revisar 1 task do board. Sobremesa: algo que você gosta de verdade, liberado só após concluir.",
-        "plano": "1) Abra uma nota agora e escreva 3 Aperitivos que sempre funcionam pra você · 2) Adicione 2-3 Pratos Principais para sessões de foco real · 3) Defina 1 Sobremesa liberada só após a entrega · 4) Cole o menu visível na área de trabalho — o truque é ver antes de precisar",
+        "t": "Se-Então para TDAH: O Truque de Gollwitzer que Elimina a Decisão na Hora H",
+        "resumo": "Planos de implementação 'se-então' trocam intenção vaga ('vou fazer X') por gatilho concreto ('SE for X hora e eu estiver no Y lugar, ENTÃO abro o documento Z'). Pesquisas mostram aumento significativo na conclusão de tarefas — para o TDAH, onde a falha está na transição entre querer e começar, isso é o truque mais direto.",
+        "porque": "TDAH tem déficit executivo, não de intenção. O 'se-então' externaliza o gatilho e elimina a necessidade de força de vontade no momento — o cérebro já sabe o que fazer antes de precisar decidir.",
+        "aplicar": "Monte 3 se-então hoje: 1 para a tarefa que você mais adia, 1 para o estudo RE das 8h, 1 para revisar aprovações de conteúdo OPC.",
+        "plano": "1) Pega papel ou Notes agora · 2) Escreve: 'Se [horário/lugar/evento], então [ação específica de 1 passo]' · 3) Cole onde vai ver (tela do Mac, agenda do Google) · 4) Revisa amanhã: o gatilho funcionou?",
         "fonte": {
-          "t": "ADHD Dopamine Menu — Tiimo App Resource Hub",
-          "u": "https://www.tiimoapp.com/resource-hub/adhd-dopamine-menu"
+          "t": "BBC Science Focus: How to tackle your to-do list if you struggle with attention",
+          "u": "https://www.sciencefocus.com/science/how-to-tackle-your-to-do-list-if-you-struggle-with-attention"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-11-09",
+        "id": "receita-2026-11-10",
         "top": true,
-        "t": "Pasta Cremosa de Espinafre e Tomate Seco com Molho de Castanha — 25 Min, Vegana, Kid-Friendly",
-        "resumo": "Macarrão al dente com molho cremoso de castanha-de-caju hidratada, espinafre refogado com alho e tomate seco no azeite da conserva. Pronto em 25 minutos, sem leite de vaca, conquista até quem não é vegano.",
-        "porque": "A castanha de caju batida com água vira um creme neutro e saboroso que substitui o creme de leite sem perder a textura. O azeite do tomate seco no refogado amplifica o umami sem nenhum ingrediente extra.",
-        "aplicar": "Para versão kid-friendly: use fusilli ou penne (pegam melhor o molho). Corte o tomate seco em tirinhas finas. Sirva com queijo vegano ralado por cima — derrete em contato com a massa quente.",
-        "plano": "1) Hidrate 100g de castanha-de-caju em água por 20 min · 2) Cozinhe 300g de massa al dente; reserve 1 xíc da água do cozimento · 3) Refogue 2 dentes de alho + 80g de tomate seco no azeite da conserva; adicione 2 xíc de espinafre · 4) Bata a castanha escorrida com ½ xíc da água do macarrão + sal → misture ao refogado → envolva a massa",
+        "t": "Tacos de Grão-de-Bico com Couve-Flor — 30 Min, Veganos, Kid-Friendly",
+        "resumo": "Grão-de-bico e couve-flor assados com cominho, páprica defumada e alho, montados em tortilha de milho com abacate, tomate e limão. Sem leite de vaca, sem peixe, proteico e colorido. Crianças adoram montar na mesa — cada um personaliza a própria.",
+        "porque": "Grão-de-bico assado fica crocante por fora e cremoso por dentro — engana até quem não é vegano. Couve-flor absorve o tempero e vira 'carne' vegetal com textura real. Rápido, barato e sem louça.",
+        "aplicar": "Pré-aqueça o forno a 200°C (400°F). Tempere tudo junto, asse 20 min, monte os tacos. Sobra vira tigela de arroz no dia seguinte.",
+        "plano": "1) Escorra 1 lata de grão-de-bico + 1 xícara de couve-flor em floretes · 2) Tempere com azeite, cominho, páprica defumada, sal e alho em pó · 3) Asse 20 min até dourar · 4) Sirva em tortilha com abacate fatiado, tomate, coentro e limão",
         "fonte": {
-          "t": "Macarrão com espinafre e tomate seco — Receiteria",
-          "u": "https://www.receiteria.com.br/receita/macarrao-com-espinafre-e-tomate-seco/"
+          "t": "Inner Buddies: Tacos de grão-de-bico com couve-flor",
+          "u": "https://www.innerbuddies.com/pt/pages/recipe/chickpea-cauliflower-tacos"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-11-09",
+        "id": "merch-2026-11-10",
         "top": true,
-        "t": "Gelato 2026: POD Global com Produção em 32 Países — Bordado Real + Envio Local sem Frete Internacional",
-        "resumo": "Gelato tem fábricas em 32 países: em vez de enviar dos EUA para a Europa, o pedido imprime no país do cliente. Oferece bordado real, DTG e sublimação. 4.4★ no Trustpilot (3.100+ reviews). Sem mensalidade para começar.",
-        "porque": "Para quem vende fora dos EUA, Gelato resolve o maior problema do POD: frete caro e prazo longo. Um pedido para a Alemanha sai de uma fábrica alemã, não da Flórida. Encurta o prazo de entrega e elimina taxas de importação para o cliente.",
-        "aplicar": "Para a sua loja: valide primeiro com o mercado americano (Printful/Printify têm produção melhor nos EUA). Gelato brilha se você quiser escalar para outros países ou criar uma segunda loja internacional.",
-        "plano": "1) Crie conta grátis em gelato.com · 2) Peça 1 amostra de tee feminina com bordado (Ship to Florida) — avaliar costura e acabamento · 3) Compare com a mesma peça do Printful ou Gooten · 4) Só publique na loja após aprovar a amostra física",
+        "t": "Teelaunch 2026: POD dos EUA com Qualidade Premium, Bordado em Peças Selecionadas e Integração Nativa no Shopify",
+        "resumo": "Teelaunch é um dos PODs mais utilizados por marcas de moda no Shopify, com impressão DTG de alta qualidade e bordado disponível em itens específicos do catálogo. Reviews no Shopify App Store destacam consistência de qualidade e atendimento ao cliente acima da média entre os PODs americanos.",
+        "porque": "Sem mínimo de pedido: você só paga quando vende. Para testar bordado em tees longline femininas sem investimento inicial, o modelo é ideal — peça uma amostra física antes de publicar.",
+        "aplicar": "Acesse teelaunch.com, filtre o catálogo por 'embroidery', escolha um blank feminino longline ou cropped, peça uma amostra ($10–25) para checar qualidade de ponto antes de lançar.",
+        "plano": "1) Crie conta em teelaunch.com (grátis) + conecte ao Shopify · 2) Busque 'embroidery' no catálogo para ver blanks disponíveis · 3) Escolha 1 modelo feminino e faça o design no mockup · 4) Peça amostra física antes de publicar — avalie ponto, acabamento e cor",
         "fonte": {
-          "t": "Gelato Review 2026 — Style Factory Productions",
-          "u": "https://www.stylefactoryproductions.com/blog/gelato-review"
+          "t": "Ecommerce CEO: Teelaunch Reviews & User Ratings",
+          "u": "https://www.ecommerceceo.com/reviews/teelaunch/"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-11-09",
+        "id": "conteudo-2026-11-10",
         "top": true,
-        "t": "Pictory AI 2026: Cole o Roteiro ou o Blog → IA Monta Vídeo com B-Roll de Stock em Minutos",
-        "resumo": "Pictory transforma texto (roteiro, blog post, URL) em vídeo com narração IA, legendas automáticas e B-roll selecionado por linguagem. Lançou Pictory 2.0 em março/2026 e avatares customizados em maio/2026. Plano a partir de $19/mês.",
-        "porque": "Diferente do CapCut ou VEED que editam vídeo que você já gravou, o Pictory cria o vídeo do zero a partir de texto — ideal para transformar posts do blog da OPC em Reels explicativos sem aparecer na câmera.",
-        "aplicar": "Para a OPC: cole um post de blog ou lista de dicas (ex: 'Como preparar o piso antes do revestimento') → Pictory gera vídeo com B-roll de reforma + legenda + narração. Revise e baixe em 9:16 para Reel.",
-        "plano": "1) Crie conta grátis em pictory.ai (plano starter inclui alguns vídeos) · 2) Cole um texto de blog existente na ferramenta 'Script to Video' · 3) Revise os clipes de B-roll sugeridos e troque os que não combinam · 4) Adicione logo e CTA no final → exporte em 9:16",
+        "t": "InVideo AI 2026: Cole o Roteiro ou Prompt → IA Monta Vídeo Completo com B-Roll, Narração e Legendas em Minutos",
+        "resumo": "InVideo AI transforma um prompt de texto ou roteiro em vídeo completo: roteiro gerado, cenas com B-roll de stock, narração por IA e legendas — tudo editável pelo chat sem abrir editor de vídeo. Plano gratuito inclui 10 minutos de geração por semana com marca d'água.",
+        "porque": "Para quem cria conteúdo em volume (Reels, TikTok, YouTube Shorts), é o caminho mais rápido do texto ao vídeo exportável. Diferente do Pictory (ontem), o InVideo escreve o roteiro junto — você não precisa ter o texto pronto.",
+        "aplicar": "Para OPC: cole uma dica de construção em PT ('5 erros na reforma de banheiro') → IA monta o Reel de 30s com imagens, narração e legendas. Troque o B-roll genérico por fotos reais dos projetos.",
+        "plano": "1) Acesse ai.invideo.io → 'Create video' · 2) Descreva o vídeo no chat ou cole o roteiro · 3) Revise cenas e substitua B-stock genérico por fotos da OPC · 4) Exporte em 9:16 (plano free com watermark; pago a partir de $20/mês sem)",
         "fonte": {
-          "t": "Pictory AI Review 2026 — Firebear Studio",
-          "u": "https://firebearstudio.com/blog/pictory-ai-review.html"
+          "t": "Cut The SaaS: InVideo AI Review 2026 — Vale a Pena?",
+          "u": "https://cut-the-saas.com/ai/invideo-ai-review-2026-is-it-actually-worth-it"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-11-09",
+        "id": "obra-2026-11-10",
         "top": true,
-        "t": "Planner 5D AI 2026: Planta Baixa do Cliente → Render 4K Fotorrealista em 3D — Proposta Visual Antes da Obra",
-        "resumo": "Planner 5D cria ambientes 3D a partir de plantas baixas desenhadas no editor. O render em 4K usa ray tracing na nuvem. Diferente das ferramentas de foto (REimagineHome, Spacely), aqui você constrói o projeto do zero — útil para propostas antes da obra começar.",
-        "porque": "Clientes da OPC que ainda não têm o espaço reformado não têm 'foto de antes' para usar em ferramentas baseadas em imagem. Com o Planner 5D, você parte da planta (que a OPC já tem) e gera o render da proposta.",
-        "aplicar": "Para a OPC: use em projetos residenciais onde o cliente quer ver o resultado antes de aprovar. Exporte o render como imagem e use no carrossel do Instagram ('Projeto → Resultado') mesmo antes da obra iniciar.",
-        "plano": "1) Acesse planner5d.com → crie conta grátis · 2) Desenhe ou importe a planta do próximo projeto (arraste paredes no editor) · 3) Adicione móveis e acabamentos do catálogo · 4) Clique em 'Render' → aguarde o 4K na nuvem → baixe e use no Reel ou proposta do cliente",
+        "t": "Virtual Renovation AI 2026: Foto do Ambiente 'Antes' → IA Gera Render 'Depois' em Segundos — Carrossel Antes/Depois para o Instagram da OPC",
+        "resumo": "Ferramentas como VirtualStaging.art geram renders fotorrealistas 'depois da reforma' a partir de uma foto do ambiente atual. Resultado: carrossel antes/depois de alta qualidade para Reels e posts da OPC, sem fotógrafo ou render 3D profissional.",
+        "porque": "Antes/depois performa melhor no Instagram para contas de construção e reforma. Com AI, você produz esse conteúdo em 2 minutos — não 2 dias — e com aparência de rendering profissional.",
+        "aplicar": "Tire uma foto de qualquer ambiente de projeto OPC (em andamento ou finalizado). Faça upload em virtualstaging.art, escolha o estilo (moderno, minimalista, industrial) e baixe o render para o carrossel.",
+        "plano": "1) Escolha 1 ambiente de projeto OPC com boa iluminação · 2) Acesse virtualstaging.art ou stuccco.com · 3) Faça upload + selecione o estilo de reforma desejado · 4) Baixe o par antes/depois e monte carrossel 'Transformação' — adicione logo e CTA no último slide",
         "fonte": {
-          "t": "Top Ferramentas de Design de Interiores com IA 2026 — Planner 5D Blog",
-          "u": "https://planner5d.com/blog/pt/top-ferramentas-de-design-de-interiores-com-ia-em-2023/"
+          "t": "VirtualStaging.art: Guia de Renovação Virtual para Imóveis",
+          "u": "https://www.virtualstaging.art/articles/virtual-renovation-guide-real-estate"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-11-09",
+        "id": "geo-2026-11-10",
         "top": true,
-        "t": "Rota do Ártico 2026: Rússia e China Forjam a 'Rota da Seda Polar' — e Por Que Isso Muda o Mapa Logístico Global",
-        "resumo": "A Rota Marítima do Norte (RMN), que liga a Ásia à Europa pelo Ártico russo, ganhou seu primeiro serviço semanal de contêineres em agosto/2026 (China-Europe Arctic Express). Rússia mira 40 milhões de toneladas em 2026. Se escalar, encurta o trajeto Xangai-Hamburgo de 48 para 33 dias.",
-        "porque": "Enquanto o Canal de Suez e o Estreito de Ormuz viram notícia por bloqueios, a RMN avança silenciosamente como rota alternativa — controlada pela Rússia (apenas seus quebra-gelos operam lá), com permissão obrigatória do governo. É um novo choke point fora do radar.",
-        "aplicar": "Para pauta: o crescimento da RMN mostra que sanções ocidentais à Rússia estão redirecionando — não parando — o comércio. A China financia e Moscou controla o corredor. Conceito-chave: 'Rota da Seda Polar' como contrapeso ao domínio ocidental nos mares do sul.",
-        "plano": "1) Busque no mapa o trajeto Nordeste: Murmansk → Estreito de Bering → Pacífico · 2) Compare com a Rota Sul (Canal de Suez) em tempo e km · 3) Leia sobre a Rosatom (estatal russa que administra a rota) · 4) Acompanhe: se o volume de 40 MT for atingido em 2026, isso vira pauta global",
+        "t": "AUKUS 2026: EUA Estacionam Submarinos Nucleares na Austrália — O Que Muda no Pacífico (e Por Que a China Monitora de Perto)",
+        "resumo": "O acordo AUKUS (EUA-Reino Unido-Austrália) está em execução: submarinos de ataque nucleares americanos chegam à base de Perth ainda em 2026, como deterrente à expansão naval chinesa — que opera 32 submarinos nucleares. É o maior realinhamento de defesa na Ásia-Pacífico desde a Guerra Fria.",
+        "porque": "AUKUS afeta rotas comerciais, semicondutores taiwaneses e qualquer crise futura no Estreito de Malaca. 68% dos australianos apoiam, mas a confiança nos EUA caiu para 31% — essa tensão é a pauta.",
+        "aplicar": "Para pauta: o debate é soberania australiana vs. dependência de Washington. Ponto quente: se Taiwan entrar em crise, a Austrália vira alvo automático?",
+        "plano": "1) Conceito-chave: submarino nuclear = autonomia de propulsão (não armamento nuclear) — essa confusão é comum · 2) O corredor: Indonésia, Mar do Sul da China, Malaca · 3) A clivagem australiana: 68% a favor, 31% confiam nos EUA · 4) Leitura independente: aspistrategist.org.au (Australian Strategic Policy Institute)",
         "fonte": {
-          "t": "Rota do Mar do Norte: Como Rússia e China Estão Forjando a Rota da Seda Polar — O Cafezinho",
-          "u": "https://www.ocafezinho.com/2026/05/28/rota-do-mar-do-norte-como-russia-e-china-estao-forjando-a-rota-da-seda-polar/"
+          "t": "ASPI Strategist: 5 anos de AUKUS — resiliência política notável",
+          "u": "https://www.aspistrategist.org.au/after-five-years-aukuss-political-resilience-is-remarkable/"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-11-09",
+        "id": "ads-2026-11-10",
         "top": true,
-        "t": "Google Ads RSA + Pinning 2026: Quando Travar a Manchete — e Quando Deixar a IA Escolher",
-        "resumo": "Responsive Search Ads (RSAs) testam até 15 manchetes e 4 descrições em combinações automáticas. O 'pinning' trava um ativo numa posição — mas usar demais corta até 75% do potencial de teste e derruba o Ad Strength. Regra 2026: pinar só o que é inegociável (nome, obrigação legal).",
-        "porque": "Muitos anunciantes pinam tudo 'para ter controle' e acabam desligando o motor de aprendizado da IA. RSAs funcionam melhor quando a IA tem pelo menos 8-10 manchetes livres para testar combinações e encontrar o que converte.",
-        "aplicar": "Para a OPC: Headline 1 = pinar o nome (Oak Park Construction). Headlines 2-15 = variações livres de benefício, local e urgência. Nunca pinar Headline 3 ou Description 2 (posição não garantida). Se precisar pinar, adicione 2-3 variações do mesmo pino.",
-        "plano": "1) Abra seus RSAs ativos e veja o Ad Strength — 'Poor' quase sempre = pinings excessivos · 2) Despine tudo exceto o nome da empresa · 3) Escreva 10+ manchetes com variações (serviço, local, prova social, urgência) · 4) Aguarde 2 semanas de dados antes de julgar o desempenho",
+        "t": "Google Call-Only Ads 2026: Anúncio que Só Aceita Ligação — a Campanha Mais Direta para a OPC Gerar Leads por Telefone",
+        "resumo": "Call-Only Ads aparecem exclusivamente no celular e, quando clicados, ligam direto para o número da empresa — sem página de destino. Para negócios locais onde o lead é uma chamada (construção, reforma, HVAC), essa campanha elimina atrito e treina o algoritmo do Google no objetivo real: a ligação.",
+        "porque": "Para a OPC, o objetivo de conversão é a chamada, não o clique. Call-Only Ads ensinam o Google exatamente isso desde o primeiro dia — mais eficiente do que tentar rastrear chamadas via landing page.",
+        "aplicar": "Crie uma campanha separada só com Call-Only Ads para termos como 'general contractor Oak Park', 'reforma cozinha Chicago', 'construção residencial Illinois'. Orçamento inicial: $10/dia.",
+        "plano": "1) Google Ads → Nova campanha → Objetivo: 'Ligações telefônicas' · 2) Selecione formato 'Call-only ad' (aparece só no mobile) · 3) Headline: 'Orçamento Grátis — Ligue Agora' + número direto da OPC · 4) Ative rastreamento de chamadas: mínimo 60 segundos = conversão válida",
         "fonte": {
-          "t": "RSA Headlines 2026: Pinning Strategy Guide — Groas AI",
-          "u": "https://groas.ai/post/google-ads-responsive-search-ad-headlines-2026-examples-pinning-strategy-guide"
+          "t": "MegaDigital: Google Call Ads — Setup, Otimização e Comparação",
+          "u": "https://megadigital.ai/en/blog/google-call-only-ads/"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-11-09",
+        "id": "iafim-2026-11-10",
         "top": true,
-        "t": "Dify.ai 2026: Plataforma Open-Source de Agentes LLM — 154K Stars no GitHub, Self-Hosted ou Cloud",
-        "resumo": "Dify é uma plataforma visual para criar, publicar e monitorar aplicações com LLM — agentes, RAG pipelines e automações. Lançou o Agent Builder em open beta em julho/2026. Roda self-hosted via Docker ou na nuvem. 154.000 stars no GitHub em setembro/2026.",
-        "porque": "Diferente do n8n (automação visual) ou do Zapier AI (SaaS pago), o Dify foca no 'cérebro' do agente — conecta qualquer LLM (Claude, GPT, Gemini), cria fluxos de raciocínio e suporta upload de documentos para RAG. Gratuito para self-host.",
-        "aplicar": "Para a OPC: crie um agente que responde perguntas frequentes de orçamento usando um PDF de tabela de preços como base (RAG). Ou automatize a triagem de leads do formulário do site sem depender de n8n ou Zapier.",
-        "plano": "1) Acesse dify.ai → crie conta cloud grátis (ou rode via Docker localmente) · 2) Crie um novo 'Agent' no painel · 3) Conecte sua API key do Claude · 4) Faça upload de um documento interno (tabela de serviços, FAQ) e teste perguntas em PT-BR",
+        "t": "Make.com AI Agents 2026: Agente Autônomo que Lê, Decide e Executa Fluxos em 1.000+ Apps — Open Beta Desde Fevereiro",
+        "resumo": "O Make.com lançou seus AI Agents em open beta em fevereiro de 2026. O agente recebe um objetivo, usa ferramentas (HTTP, apps, APIs) e decide os próximos passos sozinho — com painel de raciocínio transparente. Integra com 1.000+ apps incluindo Gmail, Drive, Shopify e Slack. Diferente do Zapier: suporta lógica condicional complexa e múltiplas etapas de IA.",
+        "porque": "Para automações que precisam de julgamento — não só 'se X então Y' — o Make é a opção mais poderosa no mercado no-code. Ideal para a OPC: aprovações de conteúdo, triagem de e-mails, movimentação de arquivos no Drive.",
+        "aplicar": "Crie um agente que monitora o e-mail de aprovações de conteúdo → lê o título do post → move para a pasta correta no Drive → notifica você. Tudo sem escrever código.",
+        "plano": "1) Acesse make.com → seção 'AI Agents' (beta, disponível em todos os planos) · 2) Escolha um template de agente de inbox ou pesquisa · 3) Conecte Gmail + Google Drive · 4) Defina o objetivo em linguagem natural — o agente mapeia os passos e você revisa antes de ativar",
         "fonte": {
-          "t": "Dify: The Open-Source Platform for Building Production AI Agents — The Menon Lab",
-          "u": "https://themenonlab.blog/blog/dify-agentic-workflow-platform"
+          "t": "Make.com: Melhores Plataformas de AI Agents 2026",
+          "u": "https://www.make.com/en/blog/best-ai-agent-platforms"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ]
   }
