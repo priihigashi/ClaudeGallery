@@ -1,35 +1,35 @@
 {
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "🚨 Urgente",
-      "t": "Créditos Anthropic zerados — pipeline de captura bloqueada",
-      "why": "Dois e-mails de alerta hoje: quota_exceeded na pipeline de captura (00h58) e provider degraded às 13h07. Posts OPC não estão sendo capturados enquanto isso não for resolvido. Acesse console.anthropic.com/settings/billing para recarregar.",
-      "go": "iafim"
+      "tag": "🏗️ Lead",
+      "t": "Lead novo: James Hill, Lauderhill — build-out comercial com plantas prontas, 0-3 meses",
+      "why": "Chegou pelo Facebook ad (teste). Comercial com plantas prontas é ticket alto — ligar hoje para qualificar antes que esfrie.",
+      "go": "obra"
     },
     {
-      "tag": "📋 Backlog",
-      "t": "338 posts OPC + 32 de Notícias aguardando aprovação",
-      "why": "E-mail de ontem: 338 posts da Oak Park Construction e 32 posts de Notícias estão na fila de aprovação. A fila cresce a cada dia sem revisão — é a maior acumulada até agora.",
-      "go": "conteudo"
+      "tag": "📚 RE Hoje",
+      "t": "Florida RE Study — Rule 1 ativa: curso de 63h no calendário das 8h, não pular",
+      "why": "O cronômetro de 90 dias do Cameron Academy corre. Rule 1: estudo é o primeiro ato do dia, antes de abrir qualquer outra coisa.",
+      "go": "tip"
     },
     {
-      "tag": "🧾 Amanhã",
-      "t": "Payroll dia 11 — rodar no QuickBooks antes das 10h",
-      "why": "Recorrência mensal: amanhã (11/nov) é o dia do payroll. Agenda às 10h15. QuickBooks → Oak Park Construction - Pri Only. Verificar também se Mike enviou a parte dele.",
+      "tag": "🚨 GitHub",
+      "t": "ads_pulse.yml falhou (run 42705860050) — campanha Google Ads pode estar sem monitoramento",
+      "why": "Workflow de automação de Ads quebrou. Verificar logs e reiniciar antes do fim do dia para não perder dados de performance.",
       "go": "ads"
     },
     {
-      "tag": "🏥 Pendente",
-      "t": "Autorização Humana para Mia (2 dez) — Marien vai confirmar com gerente",
-      "why": "E-mail de hoje cedo: Marien Felipe confirmou que vai avisar o gerente sobre a autorização para a consulta de 2 de dezembro. Acompanhar a confirmação antes do prazo.",
-      "go": "tip"
+      "tag": "📱 SMS",
+      "t": "Verizon encerra email-to-SMS até março/2027 — rever sistema de notificação de leads da OPC",
+      "why": "O sistema atual de alerta de leads usa email-to-vtext.com. Precisa de alternativa (Twilio, MessageBird) antes de março/2027 para não perder leads.",
+      "go": "iafim"
     }
   ],
   "history": [
     {
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,154 +37,106 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-11-10",
+        "id": "tip-2026-11-11",
         "top": true,
-        "t": "Se-Então para TDAH: O Truque de Gollwitzer que Elimina a Decisão na Hora H",
-        "resumo": "Planos de implementação 'se-então' trocam intenção vaga ('vou fazer X') por gatilho concreto ('SE for X hora e eu estiver no Y lugar, ENTÃO abro o documento Z'). Pesquisas mostram aumento significativo na conclusão de tarefas — para o TDAH, onde a falha está na transição entre querer e começar, isso é o truque mais direto.",
-        "porque": "TDAH tem déficit executivo, não de intenção. O 'se-então' externaliza o gatilho e elimina a necessidade de força de vontade no momento — o cérebro já sabe o que fazer antes de precisar decidir.",
-        "aplicar": "Monte 3 se-então hoje: 1 para a tarefa que você mais adia, 1 para o estudo RE das 8h, 1 para revisar aprovações de conteúdo OPC.",
-        "plano": "1) Pega papel ou Notes agora · 2) Escreve: 'Se [horário/lugar/evento], então [ação específica de 1 passo]' · 3) Cole onde vai ver (tela do Mac, agenda do Google) · 4) Revisa amanhã: o gatilho funcionou?",
-        "fonte": {
-          "t": "BBC Science Focus: How to tackle your to-do list if you struggle with attention",
-          "u": "https://www.sciencefocus.com/science/how-to-tackle-your-to-do-list-if-you-struggle-with-attention"
-        },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "t": "TDAH e Desregulação Emocional: Como 'Nomear para Domar' Cria 3 Segundos de Janela Antes da Reação",
+        "resumo": "No TDAH, a emoção chega forte e rápida — e o cérebro não freia antes de agir. A técnica 'nomear para domar' (name it to tame it) ativa o córtex pré-frontal só com identificar a emoção em voz alta: 'Estou frustrado agora.' Isso cria 2–3 segundos de janela antes da reação impulsiva.",
+        "porque": "Estimulantes tratam desatenção e hiperatividade, mas NÃO a desregulação emocional (UFRGS). Isso explica reações desproporcionais no trabalho, largada de tarefas no meio e conflitos — e por que a medicação sozinha não resolve esse padrão.",
+        "aplicar": "Antes de mandar uma mensagem raivosa, antes de largar uma tarefa, antes de discutir com alguém: pause 3s e nomeie a emoção em voz alta ou no papel. Um post-it no monitor com 'O que estou sentindo AGORA?' funciona como âncora externa — essencial para TDAH porque o lembrete precisa estar visível.",
+        "plano": "1) Cole um post-it no monitor: 'Nomeia antes de agir.' · 2) Hoje: escolha 1 situação frustrante e aplique — anote o que sentiu e se a reação mudou. · 3) Adicione ao Daily Log de hoje: registre 1 emoção nomeada. · 4) Se o padrão se repetir 3×, pesquise DBT — a terapia com mais evidência para desregulação emocional no TDAH adulto.",
+        "fonte": {"t": "TDAH e Manejo da Raiva — Blog TDAH UFRGS", "u": "https://www.ufrgs.br/blogtdah/2021/09/19/tdah-e-manejo-da-raiva/"},
+        "video": {"t": "", "u": ""}
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-11-10",
+        "id": "receita-2026-11-11",
         "top": true,
-        "t": "Tacos de Grão-de-Bico com Couve-Flor — 30 Min, Veganos, Kid-Friendly",
-        "resumo": "Grão-de-bico e couve-flor assados com cominho, páprica defumada e alho, montados em tortilha de milho com abacate, tomate e limão. Sem leite de vaca, sem peixe, proteico e colorido. Crianças adoram montar na mesa — cada um personaliza a própria.",
-        "porque": "Grão-de-bico assado fica crocante por fora e cremoso por dentro — engana até quem não é vegano. Couve-flor absorve o tempero e vira 'carne' vegetal com textura real. Rápido, barato e sem louça.",
-        "aplicar": "Pré-aqueça o forno a 200°C (400°F). Tempere tudo junto, asse 20 min, monte os tacos. Sobra vira tigela de arroz no dia seguinte.",
-        "plano": "1) Escorra 1 lata de grão-de-bico + 1 xícara de couve-flor em floretes · 2) Tempere com azeite, cominho, páprica defumada, sal e alho em pó · 3) Asse 20 min até dourar · 4) Sirva em tortilha com abacate fatiado, tomate, coentro e limão",
-        "fonte": {
-          "t": "Inner Buddies: Tacos de grão-de-bico com couve-flor",
-          "u": "https://www.innerbuddies.com/pt/pages/recipe/chickpea-cauliflower-tacos"
-        },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "t": "Falafel de Grão-de-Bico na Airfryer — 25 Min, Vegano, Kid-Friendly, Crocante Sem Fritura",
+        "resumo": "Grão-de-bico amassado com salsinha, coentro, alho, cominho e farinha de aveia (liga), modelado em bolinhos e assado na airfryer por 15 min a 200°C. Crocante por fora, macio por dentro. Serve com hummus e pão pita — ou no bowl com arroz.",
+        "porque": "Proteína vegetal completa, sem fritura e sem laticínios. As crianças adoram o formato bolinho — e a massa crua congela bem, então um batch cook no fim de semana vira almoço rápido para a semana toda.",
+        "aplicar": "Para TDAH: faça a massa no domingo à noite (10 min) e guarde na geladeira. Na hora da refeição é só modelar e airfryer — decisão zero. Pode congelar os bolinhos já modelados por até 1 mês.",
+        "plano": "1) Escorra 1 lata de grão-de-bico e amasse com garfo (não liquidifica — deixa textura). · 2) Adicione: 2 dentes de alho picado, ½ cebola, salsinha, 1 col. chá de cominho, sal e 3 col. sopa de farinha de aveia para dar liga. · 3) Modele bolinhos, pincele azeite e asse na airfryer 200°C por 15 min, virando na metade. · 4) Sirva com hummus, tomate, pepino e pão pita — ou congele pré-modelados para a semana.",
+        "fonte": {"t": "Falafel na Air Fryer — Receiteria", "u": "https://www.receiteria.com.br/receita/falafel-na-air-fryer/"},
+        "video": {"t": "", "u": ""}
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-11-10",
+        "id": "merch-2026-11-11",
         "top": true,
-        "t": "Teelaunch 2026: POD dos EUA com Qualidade Premium, Bordado em Peças Selecionadas e Integração Nativa no Shopify",
-        "resumo": "Teelaunch é um dos PODs mais utilizados por marcas de moda no Shopify, com impressão DTG de alta qualidade e bordado disponível em itens específicos do catálogo. Reviews no Shopify App Store destacam consistência de qualidade e atendimento ao cliente acima da média entre os PODs americanos.",
-        "porque": "Sem mínimo de pedido: você só paga quando vende. Para testar bordado em tees longline femininas sem investimento inicial, o modelo é ideal — peça uma amostra física antes de publicar.",
-        "aplicar": "Acesse teelaunch.com, filtre o catálogo por 'embroidery', escolha um blank feminino longline ou cropped, peça uma amostra ($10–25) para checar qualidade de ponto antes de lançar.",
-        "plano": "1) Crie conta em teelaunch.com (grátis) + conecte ao Shopify · 2) Busque 'embroidery' no catálogo para ver blanks disponíveis · 3) Escolha 1 modelo feminino e faça o design no mockup · 4) Peça amostra física antes de publicar — avalie ponto, acabamento e cor",
-        "fonte": {
-          "t": "Ecommerce CEO: Teelaunch Reviews & User Ratings",
-          "u": "https://www.ecommerceceo.com/reviews/teelaunch/"
-        },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "t": "PODpartner 2026: POD Especializado em Bordado Premium — 4.7★ no Shopify App, Sem Mínimo de Pedido",
+        "resumo": "PODpartner é uma plataforma POD cujo core é bordado de qualidade real — diferente de Printful/Printify onde bordado é recurso extra. Com 26 reviews no Shopify app e nota 4.7, foca em camisetas, bonés e peças selecionadas com bordado sob demanda, sem mínimo por pedido.",
+        "porque": "Bordado é o diferencial de qualidade percebida que justifica preço premium em lojas de merch. Uma plataforma com bordado como especialidade (não add-on) tende a ter mais consistência de ponto, posicionamento e acabamento do que generalistas.",
+        "aplicar": "Compare com amostra da Printful: peça 1 peça de cada plataforma com o mesmo design de bordado simples. Avalie: acabamento da pontada, encolhimento após lavagem, prazo de entrega e custo base. Leia os reviews negativos sobre atraso antes de escalar para stock.",
+        "plano": "1) Acesse podpartner.com e crie uma conta gratuita. · 2) Faça upload de 1 design de bordado simples (texto + 1 elemento) para ver o preview e custo base. · 3) Peça 1 amostra de camiseta feminina com bordado. · 4) Compare custo x qualidade x prazo com Printful antes de definir qual usar para a loja principal.",
+        "fonte": {"t": "PODpartner Review — Ecommerce Platforms", "u": "https://ecommerce-platforms.com/articles/podpartner-review"},
+        "video": {"t": "", "u": ""}
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-11-10",
+        "id": "conteudo-2026-11-11",
         "top": true,
-        "t": "InVideo AI 2026: Cole o Roteiro ou Prompt → IA Monta Vídeo Completo com B-Roll, Narração e Legendas em Minutos",
-        "resumo": "InVideo AI transforma um prompt de texto ou roteiro em vídeo completo: roteiro gerado, cenas com B-roll de stock, narração por IA e legendas — tudo editável pelo chat sem abrir editor de vídeo. Plano gratuito inclui 10 minutos de geração por semana com marca d'água.",
-        "porque": "Para quem cria conteúdo em volume (Reels, TikTok, YouTube Shorts), é o caminho mais rápido do texto ao vídeo exportável. Diferente do Pictory (ontem), o InVideo escreve o roteiro junto — você não precisa ter o texto pronto.",
-        "aplicar": "Para OPC: cole uma dica de construção em PT ('5 erros na reforma de banheiro') → IA monta o Reel de 30s com imagens, narração e legendas. Troque o B-roll genérico por fotos reais dos projetos.",
-        "plano": "1) Acesse ai.invideo.io → 'Create video' · 2) Descreva o vídeo no chat ou cole o roteiro · 3) Revise cenas e substitua B-stock genérico por fotos da OPC · 4) Exporte em 9:16 (plano free com watermark; pago a partir de $20/mês sem)",
-        "fonte": {
-          "t": "Cut The SaaS: InVideo AI Review 2026 — Vale a Pena?",
-          "u": "https://cut-the-saas.com/ai/invideo-ai-review-2026-is-it-actually-worth-it"
-        },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "t": "Opus Clip 2026: Cole o Vídeo Longo → IA Detecta os Melhores Momentos e Atribui Score de Viralidade 0–99 por Clipe",
+        "resumo": "Opus Clip analisa fala, emoção e ritmo do vídeo inteiro, extrai os trechos com maior potencial viral e dá um score de 0–99 para cada clipe. Recorte automático do speaker em 9:16, legendas animadas e agendamento direto no TikTok/Reels/Shorts — tudo em uma plataforma.",
+        "porque": "Diferente do CapCut (você corta) ou Klap (detecta tópicos), o Opus Clip usa pontuação de viralidade como critério principal de corte — ideal para quem quer o clipe com maior chance de alcance, não só o mais bonito. A IA aprende os padrões do seu conteúdo ao longo do tempo.",
+        "aplicar": "Para a OPC: suba um vídeo de tour de obra ou antes/depois e deixe o Opus Clip escolher os 5 melhores momentos. Compare o score atribuído com o engajamento real depois de 48h — e ajuste os vídeos que gravar com base nos padrões que o algoritmo valoriza (hook nos primeiros 3s, mudanças de cena, etc.).",
+        "plano": "1) Acesse opus.pro — tier gratuito com 60 créditos/mês. · 2) Faça upload de 1 vídeo de 3–10 min da OPC. · 3) Analise os clipes gerados: veja o score de cada um e por qual motivo o algoritmo priorizou. · 4) Poste o clipe de maior score e compare o alcance com posts normais nos próximos 48h.",
+        "fonte": {"t": "Ultimate Opus Clip Workflow 2026 — FrankX.ai", "u": "https://frankx.ai/blog/ultimate-opus-clip-workflow-2026"},
+        "video": {"t": "", "u": ""}
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-11-10",
+        "id": "obra-2026-11-11",
         "top": true,
-        "t": "Virtual Renovation AI 2026: Foto do Ambiente 'Antes' → IA Gera Render 'Depois' em Segundos — Carrossel Antes/Depois para o Instagram da OPC",
-        "resumo": "Ferramentas como VirtualStaging.art geram renders fotorrealistas 'depois da reforma' a partir de uma foto do ambiente atual. Resultado: carrossel antes/depois de alta qualidade para Reels e posts da OPC, sem fotógrafo ou render 3D profissional.",
-        "porque": "Antes/depois performa melhor no Instagram para contas de construção e reforma. Com AI, você produz esse conteúdo em 2 minutos — não 2 dias — e com aparência de rendering profissional.",
-        "aplicar": "Tire uma foto de qualquer ambiente de projeto OPC (em andamento ou finalizado). Faça upload em virtualstaging.art, escolha o estilo (moderno, minimalista, industrial) e baixe o render para o carrossel.",
-        "plano": "1) Escolha 1 ambiente de projeto OPC com boa iluminação · 2) Acesse virtualstaging.art ou stuccco.com · 3) Faça upload + selecione o estilo de reforma desejado · 4) Baixe o par antes/depois e monte carrossel 'Transformação' — adicione logo e CTA no último slide",
-        "fonte": {
-          "t": "VirtualStaging.art: Guia de Renovação Virtual para Imóveis",
-          "u": "https://www.virtualstaging.art/articles/virtual-renovation-guide-real-estate"
-        },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "t": "RoomGPT 2026: Foto do Ambiente → Redesign AI em 10+ Estilos — Antes/Depois ao Vivo para Fechar Cliente da OPC",
+        "resumo": "RoomGPT transforma uma foto real do cômodo em renders estilizados (moderno, minimalista, industrial, boho, etc.) sem nenhum conhecimento técnico. Upload da foto, escolha do estilo, resultado em segundos — funciona no celular via web. Versão gratuita com até 3 renders por sessão.",
+        "porque": "Para a Oak Park Construction, mostrar ao cliente como o espaço vai ficar ANTES de começar a obra é o maior acelerador de fechamento. Com RoomGPT você gera 5+ opções de estilo numa reunião presencial em tempo real, sem precisar de um designer.",
+        "aplicar": "Na próxima visita de lead (ex: James Hill, Lauderhill): tire uma foto do espaço atual, abra roomgpt.io no celular durante a reunião, gere 3 estilos diferentes em 2 minutos e mostre ao cliente. O 'antes/depois ao vivo' se torna um diferencial competitivo imediato.",
+        "plano": "1) Acesse roomgpt.io — versão gratuita (até 3 renders). · 2) Tire uma foto de um ambiente de projeto atual ou passado como teste. · 3) Gere renders em 3 estilos (ex: Modern, Industrial, Scandinavian) e salve os melhores. · 4) Crie um carrossel de antes/depois para o Instagram da OPC com os renders mais impactantes.",
+        "fonte": {"t": "RoomGPT Review e Alternativas 2026 — Krea.ai", "u": "https://www.krea.ai/blog/roomgpt-review-and-alternatives-in-2026"},
+        "video": {"t": "", "u": ""}
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-11-10",
+        "id": "geo-2026-11-11",
         "top": true,
-        "t": "AUKUS 2026: EUA Estacionam Submarinos Nucleares na Austrália — O Que Muda no Pacífico (e Por Que a China Monitora de Perto)",
-        "resumo": "O acordo AUKUS (EUA-Reino Unido-Austrália) está em execução: submarinos de ataque nucleares americanos chegam à base de Perth ainda em 2026, como deterrente à expansão naval chinesa — que opera 32 submarinos nucleares. É o maior realinhamento de defesa na Ásia-Pacífico desde a Guerra Fria.",
-        "porque": "AUKUS afeta rotas comerciais, semicondutores taiwaneses e qualquer crise futura no Estreito de Malaca. 68% dos australianos apoiam, mas a confiança nos EUA caiu para 31% — essa tensão é a pauta.",
-        "aplicar": "Para pauta: o debate é soberania australiana vs. dependência de Washington. Ponto quente: se Taiwan entrar em crise, a Austrália vira alvo automático?",
-        "plano": "1) Conceito-chave: submarino nuclear = autonomia de propulsão (não armamento nuclear) — essa confusão é comum · 2) O corredor: Indonésia, Mar do Sul da China, Malaca · 3) A clivagem australiana: 68% a favor, 31% confiam nos EUA · 4) Leitura independente: aspistrategist.org.au (Australian Strategic Policy Institute)",
-        "fonte": {
-          "t": "ASPI Strategist: 5 anos de AUKUS — resiliência política notável",
-          "u": "https://www.aspistrategist.org.au/after-five-years-aukuss-political-resilience-is-remarkable/"
-        },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "t": "Estreito de Taiwan 2026: China Mantém Pressão Máxima Mesmo Durante Negociações com EUA — Coerção Como Instrumento Permanente",
+        "resumo": "A China realizou seus maiores exercícios militares em torno de Taiwan no fim de 2025, sancionou 20 empresas de defesa americanas após venda de armas de US$11,1 bi — e ao mesmo tempo negociou visitas presidenciais com Washington. A pressão não para durante a diplomacia: é uma ferramenta permanente de coerção, não uma reação pontual.",
+        "porque": "Taiwan é o maior ponto de tensão geopolítica em 2026. O Pentágono cita 2027 como ano-alvo na análise de invasão. Taiwan concentra 90%+ da fabricação dos chips mais avançados do mundo (TSMC) — um conflito paralisaria a cadeia global de semicondutores e a internet.",
+        "aplicar": "Pauta para conteúdo de notícias: 'Por que os EUA vendem armas para Taiwan enquanto negociam com a China?' — contraintuitivo, viral, educativo. Ângulo mais profundo: compare com Hong Kong 1997 — como a pressão gradual redefiniu soberania sem conflito aberto.",
+        "plano": "1) Contexto: EUA venderam US$11,1 bi em armas → China sancionou 20 empresas de defesa americanas. · 2) Conceito-chave: 'coerção como ferramenta permanente' — Beijing pressiona independente da temperatura diplomática. · 3) Para pauta: o papel do TSMC (Taiwan Semiconductor) na economia global é o gancho mais viral. · 4) Próximo ângulo: relação entre Taiwan e semicondutores — por que o mundo depende de uma ilha de 36 mil km².",
+        "fonte": {"t": "5 Things to Know About China's Coercion Campaign Against Taiwan — FDD", "u": "https://www.fdd.org/analysis/5-things-to-know-about-chinas-coercion-campaign-against-taiwan-and-the-limits-of-leader-level-diplomacy/"},
+        "video": {"t": "", "u": ""}
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-11-10",
+        "id": "ads-2026-11-11",
         "top": true,
-        "t": "Google Call-Only Ads 2026: Anúncio que Só Aceita Ligação — a Campanha Mais Direta para a OPC Gerar Leads por Telefone",
-        "resumo": "Call-Only Ads aparecem exclusivamente no celular e, quando clicados, ligam direto para o número da empresa — sem página de destino. Para negócios locais onde o lead é uma chamada (construção, reforma, HVAC), essa campanha elimina atrito e treina o algoritmo do Google no objetivo real: a ligação.",
-        "porque": "Para a OPC, o objetivo de conversão é a chamada, não o clique. Call-Only Ads ensinam o Google exatamente isso desde o primeiro dia — mais eficiente do que tentar rastrear chamadas via landing page.",
-        "aplicar": "Crie uma campanha separada só com Call-Only Ads para termos como 'general contractor Oak Park', 'reforma cozinha Chicago', 'construção residencial Illinois'. Orçamento inicial: $10/dia.",
-        "plano": "1) Google Ads → Nova campanha → Objetivo: 'Ligações telefônicas' · 2) Selecione formato 'Call-only ad' (aparece só no mobile) · 3) Headline: 'Orçamento Grátis — Ligue Agora' + número direto da OPC · 4) Ative rastreamento de chamadas: mínimo 60 segundos = conversão válida",
-        "fonte": {
-          "t": "MegaDigital: Google Call Ads — Setup, Otimização e Comparação",
-          "u": "https://megadigital.ai/en/blog/google-call-only-ads/"
-        },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "t": "Google Local Services Ads (LSA) 2026: Pague Só Quando o Cliente Ligar — e a Plataforma Está Migrando para o Google Ads Agora",
+        "resumo": "LSA é o único formato do Google onde você paga por lead qualificado (ligação ou mensagem), não por clique. Para construtoras, o badge 'Google Garantido' gera confiança imediata. Em 2026, o Google está migrando LSAs para dentro do Google Ads (Performance Max), centralizando o gerenciamento — janela de oportunidade antes que a concorrência configure.",
+        "porque": "Para a Oak Park Construction, LSA pode ser mais eficiente que busca padrão: pagar por lead real (não por clique desperdiçado) reduz o custo de aquisição. O badge de verificação substitui o papel de indicação de confiança que antes dependia só de reviews.",
+        "aplicar": "Pré-requisitos: Google Business Profile atualizado com licença CBC1263425, 4.5+ estrelas e 50+ reviews. Configure área de serviço em Broward e Miami-Dade. Responda a leads em menos de 1 hora — tempo de resposta afeta o ranking do anúncio.",
+        "plano": "1) Acesse ads.google.com → procure 'Local Services Ads' na aba de campanhas. · 2) Confirme que o Business Profile está completo com número de licença de contratada. · 3) Configure área de serviço e orçamento inicial de $20/dia. · 4) Hoje: como ads_pulse.yml falhou, verifique o dashboard de Ads manualmente para garantir que as campanhas atuais estão rodando.",
+        "fonte": {"t": "Google Local Services Ads — Guia 2026 para Contratados", "u": "https://pushleads.com/google-local-services-ads-in-2026-the-complete-setup-and-optimization-guide-for-contractors/"},
+        "video": {"t": "", "u": ""}
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-11-10",
+        "id": "iafim-2026-11-11",
         "top": true,
-        "t": "Make.com AI Agents 2026: Agente Autônomo que Lê, Decide e Executa Fluxos em 1.000+ Apps — Open Beta Desde Fevereiro",
-        "resumo": "O Make.com lançou seus AI Agents em open beta em fevereiro de 2026. O agente recebe um objetivo, usa ferramentas (HTTP, apps, APIs) e decide os próximos passos sozinho — com painel de raciocínio transparente. Integra com 1.000+ apps incluindo Gmail, Drive, Shopify e Slack. Diferente do Zapier: suporta lógica condicional complexa e múltiplas etapas de IA.",
-        "porque": "Para automações que precisam de julgamento — não só 'se X então Y' — o Make é a opção mais poderosa no mercado no-code. Ideal para a OPC: aprovações de conteúdo, triagem de e-mails, movimentação de arquivos no Drive.",
-        "aplicar": "Crie um agente que monitora o e-mail de aprovações de conteúdo → lê o título do post → move para a pasta correta no Drive → notifica você. Tudo sem escrever código.",
-        "plano": "1) Acesse make.com → seção 'AI Agents' (beta, disponível em todos os planos) · 2) Escolha um template de agente de inbox ou pesquisa · 3) Conecte Gmail + Google Drive · 4) Defina o objetivo em linguagem natural — o agente mapeia os passos e você revisa antes de ativar",
-        "fonte": {
-          "t": "Make.com: Melhores Plataformas de AI Agents 2026",
-          "u": "https://www.make.com/en/blog/best-ai-agent-platforms"
-        },
-        "video": {
-          "t": "",
-          "u": ""
-        }
+        "t": "Flowise 2026: Construa Agentes LLM Arrastando Blocos — Open-Source, Visual, 100+ Integrações, Sem Código",
+        "resumo": "Flowise é uma plataforma open-source para criar agentes de IA e fluxos LLM com interface drag-and-drop. Conecta qualquer LLM (GPT-4, Claude, Llama) a ferramentas, memória, bases de conhecimento RAG e APIs externas — sem escrever código. Ideal para chatbots, agentes de Q&A em documentos e fluxos multiagente.",
+        "porque": "Diferente do n8n (automação geral com módulo de IA) ou do Dify (plataforma completa de apps LLM), o Flowise é especializado na lógica do agente em si: como ele raciocina, acessa ferramentas e mantém memória entre conversas. Muitas equipes usam Flowise para o agente + n8n para as integrações externas.",
+        "aplicar": "Para a OPC: construa um agente que lê o histórico de leads do Google Sheets e responde perguntas sobre o pipeline ('Quantos leads abertos em Lauderhill?'). Se o crédito Anthropic foi zerado (alerta de hoje), o Flowise deixa trocar o nó LLM por GPT-4o como fallback em segundos.",
+        "plano": "1) Acesse flowiseai.com — instale via Docker localmente ou use a versão cloud (plano gratuito disponível). · 2) Arraste um nó 'ChatOpenAI' ou 'ChatAnthropic', conecte a um 'Buffer Memory' e teste uma conversa simples. · 3) Adicione uma Tool de Google Sheets para ler dados de leads em tempo real. · 4) Para o problema de hoje: se Anthropic está com quota_exceeded, troque o nó para GPT-4o no Flowise e os agentes continuam rodando.",
+        "fonte": {"t": "Flowise: O Que É e Melhores Alternativas 2026 — Voiceflow", "u": "https://www.voiceflow.com/blog/flowise-alternative"},
+        "video": {"t": "", "u": ""}
       }
     ]
   }
