@@ -956,5 +956,34 @@ if(typeof wire==='function'){ wire('syncEnableBtn', enableSync); wire('syncNowBt
 renderSyncUI();
 pullSync((ok)=>{ if(ok) pushSync(); });
 </script>
+
+<script>
+/* A short, curated Gold Coast review; original bank and progress keys stay shared. */
+(function setupFocusedReview(){
+  const ids = ["cr-q0312","cr-q0023","ch4-q23","cr-q0026","ch5-q19","ch5-q23","ch5-q27","ch5-q28","ch5-q31","ch5-q24","gc-q07","cr-q0087","cr-q0090","cr-q0984","gc-q04","cr-q0089","gc-q32","cr-q0341","cr-q0976","cr-q0158","cr-q0694","gc-q11","cr-q0163","cr-q0164","cr-q0166","cr-q0162","cr-q0122","cr-q0168","cr-q0966","ax-ch16-03"];
+  if (typeof BANK === 'undefined' || typeof BYID === 'undefined' || ids.some(id => !BYID[id])) return;
+  const toolbar = document.querySelector('.toolbar');
+  if (!toolbar || document.getElementById('focusedReviewBtn')) return;
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.id = 'focusedReviewBtn';
+  button.className = 'gbtn gblue';
+  button.innerHTML = '<span class="gicon" aria-hidden="true">🎯</span><span class="glabel">Revisão focada · 30 questões</span>';
+  button.title = 'Gold Coast: relações, escrow, contratos, hipotecas, cálculos e avaliação.';
+  button.onclick = function(){
+    if (typeof saveCurrent === 'function') saveCurrent();
+    start(ids.map(id => BYID[id]), false);
+    const bar = document.getElementById('resumeBar');
+    if (bar) bar.remove();
+    document.getElementById('quizCard').scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  toolbar.prepend(button);
+  const note = document.createElement('p');
+  note.id = 'focusedReviewNote';
+  note.style.cssText = 'font-size:.85em;line-height:1.5;color:#4c5968;margin:0 0 16px';
+  note.textContent = 'Revisão focada: 30 questões dos capítulos 4, 5, 11, 12, 14 e 16. Seleção para priorizar a revisão; não é um simulado completo nem previsão da prova.';
+  toolbar.insertAdjacentElement('afterend', note);
+})();
+</script>
 </body>
 </html>
