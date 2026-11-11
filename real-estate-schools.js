@@ -121,7 +121,7 @@ function setupSchoolHome(){
     const stream=new Blob([plain]).stream().pipeThrough(new DecompressionStream('gzip'));
     return checkedBank(JSON.parse(await new Response(stream).text()));
   }
-  $('goldCoast').onclick=()=>{busyId++;school='gold-coast';$('quizFrame').removeAttribute('srcdoc');$('quizFrame').src='real-estate-quiz.html';showFrame('Gold Coast');};
+  $('goldCoast').onclick=()=>{busyId++;school='gold-coast';$('quizFrame').removeAttribute('srcdoc');$('quizFrame').src='real-estate-quiz.html?v=20261111-focus30';showFrame('Gold Coast');};
   $('cameron').onclick=async()=>{const job=++busyId;status('Opening Cameron Academy…');try{
     let data=await unlock();if(typeof extendCameronCollection==='function')data=await extendCameronCollection(data,key);const original=await fetchText('real-estate-quiz.html');if(job!==busyId)return;
     const html=buildCameronHTML(original,data);remember();$('unlock').hidden=true;school='cameron';$('quizFrame').removeAttribute('src');$('quizFrame').srcdoc=html;showFrame('Cameron Academy');status('');
