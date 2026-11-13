@@ -1,0 +1,191 @@
+{
+  "date": "2026-11-13",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "📱 Conteúdo",
+      "t": "Reels de Reforma — Postar Antes/Depois Esta Sexta",
+      "why": "Sexta tem pico de engajamento no Instagram; aproveitar para publicar antes/depois de projeto recente da OPC antes do fim de semana",
+      "go": "obra"
+    },
+    {
+      "tag": "🎯 Lead",
+      "t": "Follow-up de Proposta Sem Resposta (48-72h)",
+      "why": "Propostas sem retorno há 48-72h perdem temperatura rápido — ligar ou enviar DM hoje antes das 17h para manter o pipeline quente",
+      "go": "ads"
+    },
+    {
+      "tag": "📚 RE",
+      "t": "Florida Real Estate — Simulado de Fim de Semana",
+      "why": "Curso de 63h: separar 2-3h de simulado sábado pela manhã mantém o ritmo sem comprometer domingo",
+      "go": "tip"
+    },
+    {
+      "tag": "🤖 IA",
+      "t": "Testar Google ADK para Automação de Lead Capture OPC",
+      "why": "ADK permite sub-agentes que qualificam leads automaticamente — potencial para substituir etapas manuais no pipeline da Oak Park",
+      "go": "iafim"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-11-13",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-11-13",
+        "top": true,
+        "t": "Tempo Cego no TDAH: Por Que 'Mais Tarde' Nunca Chega e Como Âncoras Externas Resgatam Sua Tarde",
+        "resumo": "O TDAH bloqueia a percepção interna de tempo — Russell Barkley chama de 'cegueira temporal'. O relógio interno não soa; só existe o agora. Sem âncoras externas, 'mais tarde' vira nunca.",
+        "porque": "Se você termina o dia sem ter feito o que planejou de manhã, não é falta de disciplina — é ausência de sinais físicos de tempo. O cérebro TDAH não percebe horas passando sem pistas externas.",
+        "aplicar": "Coloque um timer visual (TimerCube ou relógio de areia) na mesa. Para cada bloco de trabalho, configure 25 min antes de começar. Adicione alarme audível 5 min antes de qualquer compromisso fixo.",
+        "plano": "1) Compre ou separe um timer físico visível na sua mesa de trabalho · 2) Para cada tarefa do dia, configure o timer ANTES de começar (não depois de sentar) · 3) Adicione alarmes no celular com 5 min de antecedência para cada reunião ou entrega · 4) Revise às 16h o que foi feito — a revisão em si vira uma âncora diária",
+        "fonte": {
+          "t": "ClickUp PT-BR: Como Gerenciar a Cegueira de Tempo",
+          "u": "https://clickup.com/pt-BR/blog/211615/como-gerenciar-a-cegueira-de-tempo"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-11-13",
+        "top": true,
+        "t": "Pizza de Frigideira Vegana — Massa Crocante em 20 Min, Sem Forno, Sem Leite de Vaca, Kid-Friendly",
+        "resumo": "Massa fina feita só com farinha, água, azeite e fermento em pó. Coberta com molho de tomate e queijo vegano ralado. Pronta na frigideira em 20 min — sem forno, sem leite animal.",
+        "porque": "Sexta pede algo rápido que as crianças adoram. Essa pizza não precisa de forno, aceita qualquer cobertura que tiver na geladeira e fica crocante sem gordura extra.",
+        "aplicar": "Ingredientes (2 porções): 1 xíc farinha, ½ xíc água morna, 1 cs azeite, pitada de sal, 1 cc fermento em pó. Cobertura: molho de tomate, queijo vegano ralado (Violife ou caseiro de castanha), azeitona e pimentão colorido.",
+        "plano": "1) Misture farinha, sal e fermento em pó; adicione água e azeite e forme uma bola lisa sem sovar demais · 2) Abra a massa fina (±20 cm) com rolo numa superfície enfarinhada · 3) Leve à frigideira antiaderente em fogo médio-baixo tampada por 5-7 min até firmar por baixo · 4) Vire, espalhe molho e cobertura, tampe por mais 4-5 min até o queijo derreter; sirva na hora",
+        "fonte": {
+          "t": "Receiteria: Pizza Vegana (receita base)",
+          "u": "https://www.receiteria.com.br/receita/pizza-vegana/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-11-13",
+        "top": true,
+        "t": "Tapstitch 2026: POD Premium com Bordado Real + 334 Reviews no Trustpilot — Qualidade que Compete com Printful por Preço Mais Justo",
+        "resumo": "Tapstitch é uma plataforma POD focada em qualidade de acabamento — bordado real, estamparia vívida e camisetas longline femininas no catálogo. 334 reviews verificados no Trustpilot com notas altas.",
+        "porque": "Enquanto Printful domina pelo reconhecimento de marca, Tapstitch compete na qualidade do acabamento a preço mais acessível. Reviews destacam cor vívida e bordado durável mesmo após lavagens repetidas.",
+        "aplicar": "Acesse tapstitch.com, crie conta grátis, navegue pelo catálogo feminino, e peça amostra da longline com bordado antes de listar. Compare lado a lado com seu fornecedor atual.",
+        "plano": "1) Acesse tapstitch.com e crie conta gratuita · 2) Filtre por 'women' e 'longline' no catálogo de produtos · 3) Configure mockup com seu design atual e peça 1-2 amostras físicas · 4) Faça teste de lavagem (10 ciclos) e compare qualidade de bordado antes de migrar",
+        "fonte": {
+          "t": "Tapstitch — Reviews Verificados no Trustpilot (334 avaliações)",
+          "u": "https://ie.trustpilot.com/review/www.tapstitch.com"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-11-13",
+        "top": true,
+        "t": "Captions.ai (Mirage) 2026: Grave no Celular → IA Gera Legendas Animadas + B-Roll Automático — Reels Prontos Sem Editar",
+        "resumo": "Captions.ai (rebrandeado Mirage em 2026) gera legendas precisas, corrige eye-contact na câmera, adiciona B-roll automático por prompt de texto e traduz com lip-sync em 130+ idiomas — tudo no app mobile.",
+        "porque": "Para criadores que gravam sozinhos no celular, elimina os dois maiores gargalos: legenda manual e busca de B-roll. Reels que antes levavam 2h ficam prontos em 20 min.",
+        "aplicar": "Baixe o app Captions (iOS/Android), grave 30-60s direto no app, descreva no campo 'AI Roll' o contexto visual do clip, ajuste fonte da legenda e exporte em 9:16 para Instagram.",
+        "plano": "1) Baixe Captions.ai e crie conta (cheque preço atual em captions.ai — plano pago) · 2) Grave ou importe um Reel de 30-60s da semana · 3) Ative 'AI Roll' e escreva: '[contexto do vídeo] — mostrar B-roll de [cena desejada]' · 4) Ajuste cor e fonte da legenda para identidade visual e exporte direto para o Instagram",
+        "fonte": {
+          "t": "Captions.ai Review 2026 — SendShort",
+          "u": "https://sendshort.ai/guides/captions-review/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-11-13",
+        "top": true,
+        "t": "Roomvo 2026: Cliente Aponta o Celular para o Piso → Vê o Novo Revestimento em AR em Tempo Real — Conteúdo Viral para o Instagram da Oak Park",
+        "resumo": "Roomvo é um visualizador AR sem download de app. O cliente abre no browser, aponta a câmera para o ambiente e vê o novo piso ou revestimento em tempo real. Empresas de reforma usam para gerar Reels de 'experimentar antes de decidir'.",
+        "porque": "Clientes que visualizam o material antes da decisão têm até 5× mais chance de fechar. Para a Oak Park no Instagram, o vídeo 'cliente testando AR ao vivo na obra' é conteúdo orgânico altamente compartilhável — e diferente de tudo que concorrentes postam.",
+        "aplicar": "Cadastre o catálogo de revestimentos da Oak Park em roomvo.com, grave um Reel mostrando um cliente testando o AR no canteiro ou na casa, e adicione CTA: 'Quer ver como fica na sua casa? Me chama no Direct'.",
+        "plano": "1) Acesse get.roomvo.com e solicite demonstração para contratistas · 2) Faça upload de 5-10 amostras dos pisos e revestimentos que vocês mais instalam · 3) Na próxima visita de cliente, grave o momento em que ele testa o AR — isso vira Reel orgânico · 4) Poste com legenda + CTA e responda todos os comentários nas primeiras 2h para impulsionar o algoritmo",
+        "fonte": {
+          "t": "Roomvo Blog: Usando Visualização AR no Marketing de Reforma",
+          "u": "https://get.roomvo.com/blog-post-using-room-visualization-in-your-marketing-outreach/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-11-13",
+        "top": true,
+        "t": "Coreia do Norte + Rússia 2026: 25 Mil Soldados Já Enviados, Moscou Pede 50 Mil Mais — A Aliança que Redefine a Guerra na Ucrânia",
+        "resumo": "Desde outubro de 2024, a Coreia do Norte enviou ~25 mil soldados para a Rússia — 11 mil deles ativos em Kursk. Moscou quer 30-50 mil até o fim de 2026. Em troca: tecnologia militar e treinamento que Kim moderniza o exército norte-coreano.",
+        "porque": "É a primeira vez desde a Guerra da Coreia que tropas norte-coreanas combatem fora do país. O acordo transforma o isolamento de Kim Jong Un em influência geopolítica real — e cria um novo eixo militar que preocupa OTAN, Coreia do Sul e Japão.",
+        "aplicar": "Para pauta de conteúdo: 'O que a aliança Rússia-Coreia do Norte significa para o equilíbrio de poder global e para o Brasil que tem relações com ambos?'.",
+        "plano": "1) Acompanhe Kyiv Independent e Euromaidanpress para números atualizados de tropas e baixas · 2) Para conteúdo: explique o tratado de assistência mútua assinado por Kim e Putin em junho de 2024 · 3) Destaque o que a Coreia do Norte recebe em troca (sistemas S-400, drones, treinamento moderno) · 4) Enquadre o impacto para a Europa, para a OTAN e para aliados asiáticos dos EUA",
+        "fonte": {
+          "t": "Kyiv Independent: 11 Mil Soldados Norte-Coreanos em Kursk no Início de 2026",
+          "u": "https://kyivindependent.com/nearly-11-000-north-korean-troops-stationed-in-russias-kursk-oblast-at-start-of-2026-media-reports"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-11-13",
+        "top": true,
+        "t": "Google Shopping com IA 2026: Target ROAS por Margem de Produto — A Estratégia que Separa Loja Lucrativa de Loja Apenas com Volume",
+        "resumo": "Dois produtos com o mesmo ROAS podem ter lucro completamente diferente se as margens variam. Em 2026, a vantagem no Google Shopping está em segmentar o catálogo por margem e dar um Target ROAS diferente para cada grupo — não usar um único ROAS para tudo.",
+        "porque": "A maioria das lojas define 1 meta de ROAS para todo o catálogo e deixa a IA do Google otimizar sem contexto de margem. Resultado: gasto maior nos produtos baratos e menor nos mais rentáveis.",
+        "aplicar": "Separe o catálogo em 2-3 grupos por margem (alta/média/baixa). Defina Target ROAS maior para margem alta (pode gastar mais por conversão e ainda lucrar) e menor para margem baixa. Revise semanalmente.",
+        "plano": "1) Exporte seu catálogo e calcule margem bruta por produto ou categoria · 2) Crie 2-3 grupos de produtos no Google Merchant Center por faixa de margem · 3) Configure Target ROAS diferente por grupo (ex: 400% para alta margem, 200% para baixa) · 4) Aguarde 2 semanas de dados e compare lucro real — não só o ROAS médio da conta",
+        "fonte": {
+          "t": "Shero Commerce: 10 Estratégias para Dominar Google Shopping em 2026",
+          "u": "https://sherocommerce.com/blogs/insights/google-shopping-optimization"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-11-13",
+        "top": true,
+        "t": "Google ADK 2026: Framework Oficial para Criar Equipes de Agentes de IA — Agente Root Delega Para Sub-Agentes em Python ou TypeScript",
+        "resumo": "O Agent Development Kit (ADK) do Google permite criar sistemas multi-agente onde um agente coordenador distribui tarefas a sub-agentes especializados. Python 2.0 em GA. Integra com Gemini e ferramentas externas via MCP.",
+        "porque": "Diferente de n8n ou Make que automatizam fluxos fixos, o ADK cria agentes que tomam decisões dinâmicas — 'se o lead responder X, fazer Y'. Mais flexível para casos complexos como qualificação de leads ou geração de conteúdo multi-etapa.",
+        "aplicar": "Use o ADK para criar um agente que recebe um novo lead da OPC, consulta o histórico, classifica por prioridade (quente/morno/frio) e envia notificação — tudo sem intervenção manual.",
+        "plano": "1) Acesse adk.dev e siga o tutorial oficial de multi-tool agent (Python, grátis) · 2) Monte um agente simples: input = texto do lead, output = classificação de prioridade · 3) Adicione sub-agente de notificação (email ou SMS via webhook) · 4) Teste com 5 leads reais e compare tempo de qualificação com o processo atual",
+        "fonte": {
+          "t": "ADK Dev: Tutorial Multi-Tool Agent — Documentação Oficial Google",
+          "u": "https://adk.dev/tutorials/multi-tool-agent/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ]
+  }
+}

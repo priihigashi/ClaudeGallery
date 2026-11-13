@@ -1,35 +1,35 @@
 {
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "🔴 URGENTE",
-      "t": "Pipeline de Captura Parada: Anthropic quota_exceeded",
-      "why": "O fluxo automático de captura de vídeos parou às 1h20 AM com erro quota_exceeded. Recarregar créditos em console.anthropic.com/settings/billing para reativar.",
-      "go": "iafim"
-    },
-    {
-      "tag": "📋 Backlog",
-      "t": "338 posts OPC + 32 de News esperando aprovação",
-      "why": "Volume alto de conteúdo no pipeline esperando o seu OK. Revisar no painel antes que fique desatualizado.",
+      "tag": "📱 Conteúdo",
+      "t": "Reels de Reforma — Postar Antes/Depois Esta Sexta",
+      "why": "Sexta tem pico de engajamento no Instagram; aproveitar para publicar antes/depois de projeto recente da OPC antes do fim de semana",
       "go": "obra"
     },
     {
+      "tag": "🎯 Lead",
+      "t": "Follow-up de Proposta Sem Resposta (48-72h)",
+      "why": "Propostas sem retorno há 48-72h perdem temperatura rápido — ligar ou enviar DM hoje antes das 17h para manter o pipeline quente",
+      "go": "ads"
+    },
+    {
       "tag": "📚 RE",
-      "t": "Estudo imobiliário: continua em aberto (Rule 1 do dia)",
-      "why": "O bloco de Real Estate ocupa as 8h todo dia. Hoje a agenda confirma o compromisso — continuar no capítulo atual e 15 min no quiz.",
+      "t": "Florida Real Estate — Simulado de Fim de Semana",
+      "why": "Curso de 63h: separar 2-3h de simulado sábado pela manhã mantém o ritmo sem comprometer domingo",
       "go": "tip"
     },
     {
-      "tag": "🎯 Lead",
-      "t": "Novo lead pelo Facebook: Mike, obra de concreto",
-      "why": "Lead captado hoje pelo anúncio no Meta — projeto concreto, prazo 0-3 meses. Já notificado Michael. Confirmar follow-up.",
-      "go": "ads"
+      "tag": "🤖 IA",
+      "t": "Testar Google ADK para Automação de Lead Capture OPC",
+      "why": "ADK permite sub-agentes que qualificam leads automaticamente — potencial para substituir etapas manuais no pipeline da Oak Park",
+      "go": "iafim"
     }
   ],
   "history": [
     {
-      "date": "2026-11-12",
+      "date": "2026-11-13",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,16 +37,16 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-11-12",
+        "id": "tip-2026-11-13",
         "top": true,
-        "t": "Body Doubling para TDAH: Trabalhar com Alguém Presente Corta a Paralisia na Hora",
-        "resumo": "Body doubling é trabalhar ao lado de outra pessoa — no mesmo ambiente ou virtualmente — sem precisar de ajuda dela. A presença física ou online funciona como âncora externa que substitui o controle executivo que o TDAH deixa em falta.",
-        "porque": "Com TDAH, iniciar e manter tarefas depende de estímulo externo. Uma 'dupla de foco' cria responsabilidade social e dopamina suficiente para o cérebro engatar — especialmente em tarefas de baixo estímulo (estudar, declarar imposto, responder e-mails).",
-        "aplicar": "Use para o bloco de RE às 8h: ligue uma sessão no Focusmate, entre numa sala de co-working virtual no YouTube ('Study with me') ou simplesmente deixe um vídeo de alguém trabalhando. Não precisa conversar — só a presença conta.",
-        "plano": "1) Abra focusmate.com e agende uma sessão de 50 min para amanhã 8h · 2) Ou busque 'study with me 2 horas' no YouTube e deixe tocando · 3) Na sessão: declare em voz alta para a câmera o que vai fazer · 4) Ao terminar, confirme o que concluiu — isso fecha o loop de dopamina",
+        "t": "Tempo Cego no TDAH: Por Que 'Mais Tarde' Nunca Chega e Como Âncoras Externas Resgatam Sua Tarde",
+        "resumo": "O TDAH bloqueia a percepção interna de tempo — Russell Barkley chama de 'cegueira temporal'. O relógio interno não soa; só existe o agora. Sem âncoras externas, 'mais tarde' vira nunca.",
+        "porque": "Se você termina o dia sem ter feito o que planejou de manhã, não é falta de disciplina — é ausência de sinais físicos de tempo. O cérebro TDAH não percebe horas passando sem pistas externas.",
+        "aplicar": "Coloque um timer visual (TimerCube ou relógio de areia) na mesa. Para cada bloco de trabalho, configure 25 min antes de começar. Adicione alarme audível 5 min antes de qualquer compromisso fixo.",
+        "plano": "1) Compre ou separe um timer físico visível na sua mesa de trabalho · 2) Para cada tarefa do dia, configure o timer ANTES de começar (não depois de sentar) · 3) Adicione alarmes no celular com 5 min de antecedência para cada reunião ou entrega · 4) Revise às 16h o que foi feito — a revisão em si vira uma âncora diária",
         "fonte": {
-          "t": "Cleveland Clinic — Body Doubling for ADHD",
-          "u": "https://health.clevelandclinic.org/body-doubling-for-adhd"
+          "t": "ClickUp PT-BR: Como Gerenciar a Cegueira de Tempo",
+          "u": "https://clickup.com/pt-BR/blog/211615/como-gerenciar-a-cegueira-de-tempo"
         },
         "video": {
           "t": "",
@@ -56,16 +56,16 @@
     ],
     "receita": [
       {
-        "id": "receita-2026-11-12",
+        "id": "receita-2026-11-13",
         "top": true,
-        "t": "Curry de Batata Doce com Leite de Coco — 35 Min, Vegano, Kid-Friendly, Molho Cremoso Sem Lactose",
-        "resumo": "Curry tailandês levemente adocicado com batata doce, espinafre e leite de coco integral. Sem lactose, sem frutos do mar. Servido com arroz jasmim — as crianças adoram o molho cremoso e o sabor suave.",
-        "porque": "Batata doce tem beta-caroteno e fibras; o leite de coco fornece gordura boa. Uma das combinações mais completas em nutrição e sabor sem laticínios. Rende bem e fica ainda melhor no dia seguinte.",
-        "aplicar": "Faça uma receita dupla no domingo para ter almoço/janta pronto na segunda. Congela bem por até 1 mês sem perder a textura.",
-        "plano": "1) Refogar cebola, alho e gengibre em azeite por 3 min · 2) Adicionar 2 colheres de pasta de curry vermelho, 2 batatas doces em cubos e 1 lata de leite de coco — cozinhar 20 min · 3) Acrescentar 2 xícaras de espinafre fresco e suco de meio limão · 4) Servir com arroz jasmim e coentro fresco por cima",
+        "t": "Pizza de Frigideira Vegana — Massa Crocante em 20 Min, Sem Forno, Sem Leite de Vaca, Kid-Friendly",
+        "resumo": "Massa fina feita só com farinha, água, azeite e fermento em pó. Coberta com molho de tomate e queijo vegano ralado. Pronta na frigideira em 20 min — sem forno, sem leite animal.",
+        "porque": "Sexta pede algo rápido que as crianças adoram. Essa pizza não precisa de forno, aceita qualquer cobertura que tiver na geladeira e fica crocante sem gordura extra.",
+        "aplicar": "Ingredientes (2 porções): 1 xíc farinha, ½ xíc água morna, 1 cs azeite, pitada de sal, 1 cc fermento em pó. Cobertura: molho de tomate, queijo vegano ralado (Violife ou caseiro de castanha), azeitona e pimentão colorido.",
+        "plano": "1) Misture farinha, sal e fermento em pó; adicione água e azeite e forme uma bola lisa sem sovar demais · 2) Abra a massa fina (±20 cm) com rolo numa superfície enfarinhada · 3) Leve à frigideira antiaderente em fogo médio-baixo tampada por 5-7 min até firmar por baixo · 4) Vire, espalhe molho e cobertura, tampe por mais 4-5 min até o queijo derreter; sirva na hora",
         "fonte": {
-          "t": "Veggie Inspired — Thai Sweet Potato Curry",
-          "u": "https://www.veggieinspired.com/thai-sweet-potato-curry-gluten-free/"
+          "t": "Receiteria: Pizza Vegana (receita base)",
+          "u": "https://www.receiteria.com.br/receita/pizza-vegana/"
         },
         "video": {
           "t": "",
@@ -75,16 +75,16 @@
     ],
     "merch": [
       {
-        "id": "merch-2026-11-12",
+        "id": "merch-2026-11-13",
         "top": true,
-        "t": "Printful 2026: POD Mais Polido do Mercado — Bordado Real + Camiseta Longline Feminina com 4.5★ no G2",
-        "resumo": "Printful integra Shopify, Etsy e WooCommerce com bordado por demanda em cada peça. A Women's High-Waisted Tee (Cotton Heritage OW1086) é classificada pela Printful como ideal para bordado — corte longline, 100% algodão, sem estoque mínimo.",
-        "porque": "Reviews independentes em 2026 (G2: 4.5★, +190 avaliações) colocam a Printful como a mais polida em qualidade de bordado e correspondência de cores. Custo maior que concorrentes, mas o acabamento justifica para peças premium.",
-        "aplicar": "Pedir amostra física da Women's High-Waisted Tee antes de listar. O Printful oferece amostras com desconto para sellers. Compare o bordado lado a lado com um CustomCat ou Gooten para decidir qual plataforma fica na loja.",
-        "plano": "1) Criar conta free em printful.com e conectar ao Shopify · 2) Buscar 'Women's High-Waisted Tee OW1086' no catálogo e criar mock-up com seu design · 3) Pedir 1 amostra física ($14.79 + frete) · 4) Fotografar e comparar qualidade de bordado com outra plataforma antes de publicar",
+        "t": "Tapstitch 2026: POD Premium com Bordado Real + 334 Reviews no Trustpilot — Qualidade que Compete com Printful por Preço Mais Justo",
+        "resumo": "Tapstitch é uma plataforma POD focada em qualidade de acabamento — bordado real, estamparia vívida e camisetas longline femininas no catálogo. 334 reviews verificados no Trustpilot com notas altas.",
+        "porque": "Enquanto Printful domina pelo reconhecimento de marca, Tapstitch compete na qualidade do acabamento a preço mais acessível. Reviews destacam cor vívida e bordado durável mesmo após lavagens repetidas.",
+        "aplicar": "Acesse tapstitch.com, crie conta grátis, navegue pelo catálogo feminino, e peça amostra da longline com bordado antes de listar. Compare lado a lado com seu fornecedor atual.",
+        "plano": "1) Acesse tapstitch.com e crie conta gratuita · 2) Filtre por 'women' e 'longline' no catálogo de produtos · 3) Configure mockup com seu design atual e peça 1-2 amostras físicas · 4) Faça teste de lavagem (10 ciclos) e compare qualidade de bordado antes de migrar",
         "fonte": {
-          "t": "Printful — Best T-Shirts for Embroidery",
-          "u": "https://www.printful.com/blog/best-t-shirts-for-embroidery"
+          "t": "Tapstitch — Reviews Verificados no Trustpilot (334 avaliações)",
+          "u": "https://ie.trustpilot.com/review/www.tapstitch.com"
         },
         "video": {
           "t": "",
@@ -94,16 +94,16 @@
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-11-12",
+        "id": "conteudo-2026-11-13",
         "top": true,
-        "t": "Descript 2026: Edite Vídeo Editando o Texto — IA Transcreve, Você Apaga a Palavra, o Clipe Some",
-        "resumo": "Descript é um editor de vídeo e áudio baseado em transcrição: você vê o que foi dito como texto, e editar o texto edita o vídeo automaticamente. Apague uma frase e o trecho do vídeo vai junto — sem timeline, sem corte manual.",
-        "porque": "Para criadores de conteúdo falado (tutoriais, testemunhos de clientes, Reels com narração), Descript corta o tempo de edição em 60-70% segundo reviews de 2026. Não exige experiência com timeline e funciona direto do script.",
-        "aplicar": "Use para editar os Reels de obra narrados: grave, suba no Descript, leia a transcrição, apague os silêncios e cacoetes clicando no texto. Exporte em 9:16. Para B-roll automático, combine Descript com CapCut ou VEED.io.",
-        "plano": "1) Criar conta free em descript.com (exportação limitada, suficiente para testar) · 2) Subir 1 Reel narrado existente e ver a transcrição automática · 3) Apagar silêncios e erros de fala diretamente no texto · 4) Exportar e comparar o tempo gasto vs edição manual",
+        "t": "Captions.ai (Mirage) 2026: Grave no Celular → IA Gera Legendas Animadas + B-Roll Automático — Reels Prontos Sem Editar",
+        "resumo": "Captions.ai (rebrandeado Mirage em 2026) gera legendas precisas, corrige eye-contact na câmera, adiciona B-roll automático por prompt de texto e traduz com lip-sync em 130+ idiomas — tudo no app mobile.",
+        "porque": "Para criadores que gravam sozinhos no celular, elimina os dois maiores gargalos: legenda manual e busca de B-roll. Reels que antes levavam 2h ficam prontos em 20 min.",
+        "aplicar": "Baixe o app Captions (iOS/Android), grave 30-60s direto no app, descreva no campo 'AI Roll' o contexto visual do clip, ajuste fonte da legenda e exporte em 9:16 para Instagram.",
+        "plano": "1) Baixe Captions.ai e crie conta (cheque preço atual em captions.ai — plano pago) · 2) Grave ou importe um Reel de 30-60s da semana · 3) Ative 'AI Roll' e escreva: '[contexto do vídeo] — mostrar B-roll de [cena desejada]' · 4) Ajuste cor e fonte da legenda para identidade visual e exporte direto para o Instagram",
         "fonte": {
-          "t": "Style Factory Productions — Descript Review 2026",
-          "u": "https://www.stylefactoryproductions.com/blog/descript-review"
+          "t": "Captions.ai Review 2026 — SendShort",
+          "u": "https://sendshort.ai/guides/captions-review/"
         },
         "video": {
           "t": "",
@@ -113,16 +113,16 @@
     ],
     "obra": [
       {
-        "id": "obra-2026-11-12",
+        "id": "obra-2026-11-13",
         "top": true,
-        "t": "Collov AI 2026: Foto do Ambiente → 35+ Estilos de Render em Segundos — Carrossel Antes/Depois para a OPC",
-        "resumo": "Collov AI virtualiza qualquer cômodo em 35+ estilos de design a partir de uma foto do celular. É usado por agentes imobiliários e empresas de reforma para criar visuais de projeto sem contratar designer.",
-        "porque": "Para a Oak Park Construction, cada projeto fotografado vira um carrossel de 'o que poderia ser' — aumenta o engajamento no Instagram e ajuda o cliente a visualizar o resultado antes de assinar. Diferente de outros renders, o Collov mantém a estrutura original do cômodo.",
-        "aplicar": "Fotografar o estado atual de um projeto em andamento (ou finalizado). Subir no Collov AI, gerar 4-6 variações de estilo, exportar as imagens lado a lado e montar um carrossel no Canva ou CapCut.",
-        "plano": "1) Acessar collov.ai e criar conta free (testa com créditos) · 2) Fazer upload da foto de um ambiente OPC real · 3) Gerar 4 estilos diferentes e selecionar os 2 melhores · 4) Montar carrossel 'antes / depois / estilo A / estilo B' e agendar no Metricool",
+        "t": "Roomvo 2026: Cliente Aponta o Celular para o Piso → Vê o Novo Revestimento em AR em Tempo Real — Conteúdo Viral para o Instagram da Oak Park",
+        "resumo": "Roomvo é um visualizador AR sem download de app. O cliente abre no browser, aponta a câmera para o ambiente e vê o novo piso ou revestimento em tempo real. Empresas de reforma usam para gerar Reels de 'experimentar antes de decidir'.",
+        "porque": "Clientes que visualizam o material antes da decisão têm até 5× mais chance de fechar. Para a Oak Park no Instagram, o vídeo 'cliente testando AR ao vivo na obra' é conteúdo orgânico altamente compartilhável — e diferente de tudo que concorrentes postam.",
+        "aplicar": "Cadastre o catálogo de revestimentos da Oak Park em roomvo.com, grave um Reel mostrando um cliente testando o AR no canteiro ou na casa, e adicione CTA: 'Quer ver como fica na sua casa? Me chama no Direct'.",
+        "plano": "1) Acesse get.roomvo.com e solicite demonstração para contratistas · 2) Faça upload de 5-10 amostras dos pisos e revestimentos que vocês mais instalam · 3) Na próxima visita de cliente, grave o momento em que ele testa o AR — isso vira Reel orgânico · 4) Poste com legenda + CTA e responda todos os comentários nas primeiras 2h para impulsionar o algoritmo",
         "fonte": {
-          "t": "G2 — Collov AI Reviews",
-          "u": "https://www.g2.com/products/collov-ai/discuss"
+          "t": "Roomvo Blog: Usando Visualização AR no Marketing de Reforma",
+          "u": "https://get.roomvo.com/blog-post-using-room-visualization-in-your-marketing-outreach/"
         },
         "video": {
           "t": "",
@@ -132,16 +132,16 @@
     ],
     "geo": [
       {
-        "id": "geo-2026-11-12",
+        "id": "geo-2026-11-13",
         "top": true,
-        "t": "BRICS+ 2026: Bloco Chega a 11+ Membros — O Que Muda Quando 40% do PIB Mundial Decide Não Usar o Dólar",
-        "resumo": "O BRICS passou de 5 para 11+ países entre 2024 e 2026, incluindo Egito, UAE, Irã, Etiópia e Indonésia. Com mais de 30 candidatos na fila, o bloco discute comércio em moedas locais e uma alternativa ao SWIFT — reduzindo dependência do dólar.",
-        "porque": "Quando um bloco que representa ~40% do PIB global começa a comercializar em yuan, rupia ou real, os EUA perdem parte do 'privilégio exorbitante' do dólar como moeda de reserva. Isso afeta juros americanos, custo de importação e poder de sanções dos EUA.",
-        "aplicar": "Esta pauta vira conteúdo direto: 'Por que o dólar pode ficar mais caro?' ou 'O que é o BRICS e por que o Brasil está lá?' — temas com alto engajamento em canais de notícias e economia no Brasil.",
-        "plano": "1) Pesquisar a cúpula de setembro 2026 em Nova Delhi para confirmar quantos países entraram · 2) Criar um Reel explicando 'o que é o BRICS em 60 segundos' · 3) Comparar com o G7 em termos de PIB e população (ótimo visual) · 4) Publicar como pauta da semana no canal de notícias",
+        "t": "Coreia do Norte + Rússia 2026: 25 Mil Soldados Já Enviados, Moscou Pede 50 Mil Mais — A Aliança que Redefine a Guerra na Ucrânia",
+        "resumo": "Desde outubro de 2024, a Coreia do Norte enviou ~25 mil soldados para a Rússia — 11 mil deles ativos em Kursk. Moscou quer 30-50 mil até o fim de 2026. Em troca: tecnologia militar e treinamento que Kim moderniza o exército norte-coreano.",
+        "porque": "É a primeira vez desde a Guerra da Coreia que tropas norte-coreanas combatem fora do país. O acordo transforma o isolamento de Kim Jong Un em influência geopolítica real — e cria um novo eixo militar que preocupa OTAN, Coreia do Sul e Japão.",
+        "aplicar": "Para pauta de conteúdo: 'O que a aliança Rússia-Coreia do Norte significa para o equilíbrio de poder global e para o Brasil que tem relações com ambos?'.",
+        "plano": "1) Acompanhe Kyiv Independent e Euromaidanpress para números atualizados de tropas e baixas · 2) Para conteúdo: explique o tratado de assistência mútua assinado por Kim e Putin em junho de 2024 · 3) Destaque o que a Coreia do Norte recebe em troca (sistemas S-400, drones, treinamento moderno) · 4) Enquadre o impacto para a Europa, para a OTAN e para aliados asiáticos dos EUA",
         "fonte": {
-          "t": "Business Today — BRICS tem 11 membros e fila de 30+",
-          "u": "https://www.businesstoday.in/latest/trends/photo/brics-has-11-members-and-a-queue-of-30-plus-more-heres-whos-most-likely-to-join-next-555008-2026-09-11"
+          "t": "Kyiv Independent: 11 Mil Soldados Norte-Coreanos em Kursk no Início de 2026",
+          "u": "https://kyivindependent.com/nearly-11-000-north-korean-troops-stationed-in-russias-kursk-oblast-at-start-of-2026-media-reports"
         },
         "video": {
           "t": "",
@@ -151,16 +151,16 @@
     ],
     "ads": [
       {
-        "id": "ads-2026-11-12",
+        "id": "ads-2026-11-13",
         "top": true,
-        "t": "Google Performance Max 2026: A Campanha de IA que Cobre YouTube, Search e Display ao Mesmo Tempo",
-        "resumo": "Performance Max (PMax) é o tipo de campanha em que a IA do Google decide onde, quando e para quem mostrar o anúncio — cobrindo Search, YouTube Shorts, Display, Gmail e Maps com um único orçamento.",
-        "porque": "Para uma empresa local como a OPC, o PMax pode alcançar leads que não estão buscando ativamente (via YouTube e Display) além dos que já procuram no Search. A IA otimiza em tempo real para conversões — mas exige dados de qualidade para funcionar.",
-        "aplicar": "PMax funciona melhor com 30+ conversões/mês e primeira data de qualidade (Customer Match com e-mails de clientes antigos). Criar uma campanha PMax separada das campanhas de Search existentes, com orçamento menor, e comparar custo por lead em 30 dias.",
-        "plano": "1) Exportar lista de e-mails de clientes anteriores e fazer upload como Customer Match no Google Ads · 2) Criar campanha PMax separada (orçamento $15-20/dia) com objetivo: leads/ligações · 3) Subir pelo menos 3 imagens de obra, 1 vídeo vertical e 5 variações de headline · 4) Aguardar 2 semanas e comparar CPL vs campanha de Search atual",
+        "t": "Google Shopping com IA 2026: Target ROAS por Margem de Produto — A Estratégia que Separa Loja Lucrativa de Loja Apenas com Volume",
+        "resumo": "Dois produtos com o mesmo ROAS podem ter lucro completamente diferente se as margens variam. Em 2026, a vantagem no Google Shopping está em segmentar o catálogo por margem e dar um Target ROAS diferente para cada grupo — não usar um único ROAS para tudo.",
+        "porque": "A maioria das lojas define 1 meta de ROAS para todo o catálogo e deixa a IA do Google otimizar sem contexto de margem. Resultado: gasto maior nos produtos baratos e menor nos mais rentáveis.",
+        "aplicar": "Separe o catálogo em 2-3 grupos por margem (alta/média/baixa). Defina Target ROAS maior para margem alta (pode gastar mais por conversão e ainda lucrar) e menor para margem baixa. Revise semanalmente.",
+        "plano": "1) Exporte seu catálogo e calcule margem bruta por produto ou categoria · 2) Crie 2-3 grupos de produtos no Google Merchant Center por faixa de margem · 3) Configure Target ROAS diferente por grupo (ex: 400% para alta margem, 200% para baixa) · 4) Aguarde 2 semanas de dados e compare lucro real — não só o ROAS médio da conta",
         "fonte": {
-          "t": "TechWyse — Mastering Google PMax 2026",
-          "u": "https://www.techwyse.com/blog/google-ads/google-performance-max-campaigns-2026"
+          "t": "Shero Commerce: 10 Estratégias para Dominar Google Shopping em 2026",
+          "u": "https://sherocommerce.com/blogs/insights/google-shopping-optimization"
         },
         "video": {
           "t": "",
@@ -170,16 +170,16 @@
     ],
     "iafim": [
       {
-        "id": "iafim-2026-11-12",
+        "id": "iafim-2026-11-13",
         "top": true,
-        "t": "CrewAI 2026: Monte uma Equipe de Agentes de IA — Cada Um com Função Diferente, Todos Trabalhando Juntos",
-        "resumo": "CrewAI é um framework Python open-source para orquestrar múltiplos agentes de IA com papéis distintos (pesquisador, escritor, revisor). Cada agente tem ferramentas e objetivos próprios; o CrewAI coordena a sequência e o repasse de informações entre eles.",
-        "porque": "Enquanto Make.com e n8n automatizam fluxos fixos, o CrewAI permite que os agentes tomem decisões dinâmicas — um pesquisa, outro escreve, outro revisa, sem precisar de um humano intermediando cada etapa. Ideal para pipelines de conteúdo, pesquisa e relatórios automáticos.",
-        "aplicar": "Criar uma 'crew' para o pipeline de conteúdo da OPC: Agente 1 busca tendências de reforma no Instagram, Agente 2 escreve o roteiro do Reel, Agente 3 formata para carrossel.",
-        "plano": "1) Instalar CrewAI: pip install crewai (Python 3.10+) · 2) Definir 3 agentes com roles: 'Pesquisador', 'Redator', 'Formatador' · 3) Criar tasks sequenciais: buscar → escrever → formatar · 4) Testar com um tópico de reforma e ver a saída antes de conectar ao pipeline da OPC",
+        "t": "Google ADK 2026: Framework Oficial para Criar Equipes de Agentes de IA — Agente Root Delega Para Sub-Agentes em Python ou TypeScript",
+        "resumo": "O Agent Development Kit (ADK) do Google permite criar sistemas multi-agente onde um agente coordenador distribui tarefas a sub-agentes especializados. Python 2.0 em GA. Integra com Gemini e ferramentas externas via MCP.",
+        "porque": "Diferente de n8n ou Make que automatizam fluxos fixos, o ADK cria agentes que tomam decisões dinâmicas — 'se o lead responder X, fazer Y'. Mais flexível para casos complexos como qualificação de leads ou geração de conteúdo multi-etapa.",
+        "aplicar": "Use o ADK para criar um agente que recebe um novo lead da OPC, consulta o histórico, classifica por prioridade (quente/morno/frio) e envia notificação — tudo sem intervenção manual.",
+        "plano": "1) Acesse adk.dev e siga o tutorial oficial de multi-tool agent (Python, grátis) · 2) Monte um agente simples: input = texto do lead, output = classificação de prioridade · 3) Adicione sub-agente de notificação (email ou SMS via webhook) · 4) Teste com 5 leads reais e compare tempo de qualificação com o processo atual",
         "fonte": {
-          "t": "DataCamp — CrewAI Tutorial: Multi-Agent Systems",
-          "u": "https://www.datacamp.com/tutorial/crew-ai"
+          "t": "ADK Dev: Tutorial Multi-Tool Agent — Documentação Oficial Google",
+          "u": "https://adk.dev/tutorials/multi-tool-agent/"
         },
         "video": {
           "t": "",
