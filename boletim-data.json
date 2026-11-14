@@ -1,35 +1,35 @@
 {
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "📱 Conteúdo",
-      "t": "Reels de Reforma — Postar Antes/Depois Esta Sexta",
-      "why": "Sexta tem pico de engajamento no Instagram; aproveitar para publicar antes/depois de projeto recente da OPC antes do fim de semana",
+      "tag": "⏰",
+      "t": "338 posts OPC aguardando aprovação — urgente revisar antes do fim de semana",
+      "why": "E-mail de hoje 7:39 AM: 338 posts prontos na fila, incluindo 'The Vanity Contrast Trend Explained'. Fim de semana = janela de engajamento alta para reformas no Instagram.",
       "go": "obra"
     },
     {
-      "tag": "🎯 Lead",
-      "t": "Follow-up de Proposta Sem Resposta (48-72h)",
-      "why": "Propostas sem retorno há 48-72h perdem temperatura rápido — ligar ou enviar DM hoje antes das 17h para manter o pipeline quente",
-      "go": "ads"
+      "tag": "⚠️",
+      "t": "Pipeline de captura bloqueada — créditos Anthropic esgotados, precisa top-up",
+      "why": "Dois alertas chegaram hoje: quota_exceeded às 12:53 e low_credit às 11:51. A automação está usando fallbacks — topar os créditos em console.anthropic.com/settings/billing.",
+      "go": "iafim"
     },
     {
-      "tag": "📚 RE",
-      "t": "Florida Real Estate — Simulado de Fim de Semana",
-      "why": "Curso de 63h: separar 2-3h de simulado sábado pela manhã mantém o ritmo sem comprometer domingo",
+      "tag": "📚",
+      "t": "RE FL — capítulo de Real Estate Finance & Mortgages agendado hoje (sáb 8–10 AM)",
+      "why": "Calendário: 'REAL ESTATE — FIRST THING' hoje. E-mail de ontem confirma: próximo capítulo é Finance/Mortgages — área de alto peso no exam de FL.",
       "go": "tip"
     },
     {
-      "tag": "🤖 IA",
-      "t": "Testar Google ADK para Automação de Lead Capture OPC",
-      "why": "ADK permite sub-agentes que qualificam leads automaticamente — potencial para substituir etapas manuais no pipeline da Oak Park",
-      "go": "iafim"
+      "tag": "📡",
+      "t": "Canal Dark tracker crescendo: 2 novos canais de referência adicionados ontem",
+      "why": "Daily Advancer de ontem: 'Se Liga Nessa História' (~700k subs) e outro canal adicionados ao tracker como referências de formato para o Canal Dark.",
+      "go": "conteudo"
     }
   ],
   "history": [
     {
-      "date": "2026-11-13",
+      "date": "2026-11-14",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,16 +37,16 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-11-13",
+        "id": "tip-2026-11-14",
         "top": true,
-        "t": "Tempo Cego no TDAH: Por Que 'Mais Tarde' Nunca Chega e Como Âncoras Externas Resgatam Sua Tarde",
-        "resumo": "O TDAH bloqueia a percepção interna de tempo — Russell Barkley chama de 'cegueira temporal'. O relógio interno não soa; só existe o agora. Sem âncoras externas, 'mais tarde' vira nunca.",
-        "porque": "Se você termina o dia sem ter feito o que planejou de manhã, não é falta de disciplina — é ausência de sinais físicos de tempo. O cérebro TDAH não percebe horas passando sem pistas externas.",
-        "aplicar": "Coloque um timer visual (TimerCube ou relógio de areia) na mesa. Para cada bloco de trabalho, configure 25 min antes de começar. Adicione alarme audível 5 min antes de qualquer compromisso fixo.",
-        "plano": "1) Compre ou separe um timer físico visível na sua mesa de trabalho · 2) Para cada tarefa do dia, configure o timer ANTES de começar (não depois de sentar) · 3) Adicione alarmes no celular com 5 min de antecedência para cada reunião ou entrega · 4) Revise às 16h o que foi feito — a revisão em si vira uma âncora diária",
+        "t": "Próximo Passo Físico para TDAH: Como Converter 'Preciso Terminar Isso' em 1 Ação de 2 Minutos",
+        "resumo": "O cérebro TDAH trava em tarefas abstratas ('terminar o relatório', 'organizar as finanças'). A técnica do Próximo Passo Físico — inspirada no GTD — exige que você defina sempre uma ação com um verbo físico concreto de menos de 2 minutos. Não 'fazer a apresentação', mas 'abrir o PowerPoint e digitar o título do slide 1'.",
+        "porque": "Sem um próximo passo físico claro, a tarefa fica 'suspensa no ar' — o cérebro TDAH percebe a dificuldade como maior do que é e ativa a evitação. Um passo físico de <2 minutos quebra a resistência sem exigir motivação prévia.",
+        "aplicar": "Para cada tarefa travada hoje, escreva o próximo verbo de ação físico. 'Estudar Real Estate' vira 'abrir o Cameron Academy e clicar no capítulo de Finance'. Nada abstrato. Uma ação, um verbo, um objeto.",
+        "plano": "1) Liste 3 tarefas travadas hoje (ex: RE study, e-mails OPC, finanças) · 2) Para cada uma, escreva o próximo passo em <10 palavras com um verbo físico concreto · 3) Execute o primeiro passo antes de decidir qual a segunda · 4) Anote onde parou ('abri no capítulo X, parei no slide 3') para a próxima sessão",
         "fonte": {
-          "t": "ClickUp PT-BR: Como Gerenciar a Cegueira de Tempo",
-          "u": "https://clickup.com/pt-BR/blog/211615/como-gerenciar-a-cegueira-de-tempo"
+          "t": "TDAH e procrastinação: o que acontece no seu cérebro — Revista Oeste",
+          "u": "https://revistaoeste.com/variedades/tdah-e-procrastinacao-o-que-acontece-no-seu-cerebro/"
         },
         "video": {
           "t": "",
@@ -56,16 +56,16 @@
     ],
     "receita": [
       {
-        "id": "receita-2026-11-13",
+        "id": "receita-2026-11-14",
         "top": true,
-        "t": "Pizza de Frigideira Vegana — Massa Crocante em 20 Min, Sem Forno, Sem Leite de Vaca, Kid-Friendly",
-        "resumo": "Massa fina feita só com farinha, água, azeite e fermento em pó. Coberta com molho de tomate e queijo vegano ralado. Pronta na frigideira em 20 min — sem forno, sem leite animal.",
-        "porque": "Sexta pede algo rápido que as crianças adoram. Essa pizza não precisa de forno, aceita qualquer cobertura que tiver na geladeira e fica crocante sem gordura extra.",
-        "aplicar": "Ingredientes (2 porções): 1 xíc farinha, ½ xíc água morna, 1 cs azeite, pitada de sal, 1 cc fermento em pó. Cobertura: molho de tomate, queijo vegano ralado (Violife ou caseiro de castanha), azeitona e pimentão colorido.",
-        "plano": "1) Misture farinha, sal e fermento em pó; adicione água e azeite e forme uma bola lisa sem sovar demais · 2) Abra a massa fina (±20 cm) com rolo numa superfície enfarinhada · 3) Leve à frigideira antiaderente em fogo médio-baixo tampada por 5-7 min até firmar por baixo · 4) Vire, espalhe molho e cobertura, tampe por mais 4-5 min até o queijo derreter; sirva na hora",
+        "t": "Hambúrguer Vegano de Feijão Preto — 25 Min, Crocante por Fora, Kid-Friendly",
+        "resumo": "Hambúrguer caseiro de feijão preto + aveia em flocos + cebola, temperado suave (sem pimenta). Leve ao freezer por 20 min para firmar, frite em fio de azeite e sirva no pão com tomate, alface e maionese vegana. Congela bem para a semana.",
+        "porque": "Alto em proteína vegetal, sem leite de vaca, sem peixe/frutos do mar. Crianças adoram a textura crocante e o formato de hambúrguer. Muito mais barato e gostoso do que o hambúrguer vegano industrializado.",
+        "aplicar": "Adicione queijo vegano por cima nos últimos 2 minutos para derreter. Sirva em pão de hambúrguer com um fio de tahine ou maionese de castanha para elevar o sabor. Faça o dobro da receita e congele em porções.",
+        "plano": "1) Escorra e esmague 2 xícaras de feijão preto cozido (textura rústica, não purê liso) · 2) Misture com ½ xícara de aveia em flocos, ½ cebola picada miúda, 1 dente de alho, sal e azeite · 3) Modele os hambúrgueres e leve ao freezer por 20 min para firmar · 4) Frite em frigideira antiaderente com fio de azeite, 3–4 min de cada lado em fogo médio até dourar",
         "fonte": {
-          "t": "Receiteria: Pizza Vegana (receita base)",
-          "u": "https://www.receiteria.com.br/receita/pizza-vegana/"
+          "t": "Hambúrguer Vegan de Feijão Preto — Bulk.com PT",
+          "u": "https://www.bulk.com/pt/the-core-pt/hamburguer-vegan-de-feijao-preto-receita/"
         },
         "video": {
           "t": "",
@@ -75,16 +75,16 @@
     ],
     "merch": [
       {
-        "id": "merch-2026-11-13",
+        "id": "merch-2026-11-14",
         "top": true,
-        "t": "Tapstitch 2026: POD Premium com Bordado Real + 334 Reviews no Trustpilot — Qualidade que Compete com Printful por Preço Mais Justo",
-        "resumo": "Tapstitch é uma plataforma POD focada em qualidade de acabamento — bordado real, estamparia vívida e camisetas longline femininas no catálogo. 334 reviews verificados no Trustpilot com notas altas.",
-        "porque": "Enquanto Printful domina pelo reconhecimento de marca, Tapstitch compete na qualidade do acabamento a preço mais acessível. Reviews destacam cor vívida e bordado durável mesmo após lavagens repetidas.",
-        "aplicar": "Acesse tapstitch.com, crie conta grátis, navegue pelo catálogo feminino, e peça amostra da longline com bordado antes de listar. Compare lado a lado com seu fornecedor atual.",
-        "plano": "1) Acesse tapstitch.com e crie conta gratuita · 2) Filtre por 'women' e 'longline' no catálogo de produtos · 3) Configure mockup com seu design atual e peça 1-2 amostras físicas · 4) Faça teste de lavagem (10 ciclos) e compare qualidade de bordado antes de migrar",
+        "t": "Apliiq 2026: POD dos EUA Especializado em Bordado Real + Private Label — 324+ Reviews no Shopify",
+        "resumo": "Plataforma de print-on-demand com foco em bordado de alta qualidade e etiqueta personalizada (private label). Produz nos EUA, integra com Shopify e permite adicionar patches bordados em camisetas longline femininas e outros produtos premium.",
+        "porque": "Se diferencia das plataformas genéricas pelo foco em bordado artesanal e branding próprio. Reviews de 2026 no Shopify citam suporte 'impecável' e bordado com qualidade de marca premium. Bordado frontal pequeno (logo/monograma) é o diferencial frente à concorrência.",
+        "aplicar": "Use para camisetas longline com bordado frontal pequeno + estampa nas costas. O custo de bordado ($6–10/peça) é alto, mas justifica preço premium de revenda ($40–60). Compare amostras com Tapstitch antes de escalar.",
+        "plano": "1) Crie conta grátis em apliiq.com e navegue no catálogo de tees femininas longline · 2) Faça upload do seu logo e solicite uma amostra com bordado frontal (monogrma ou logotipo pequeno) · 3) Compare qualidade e prazo com a Tapstitch (boletim de ontem) · 4) Se aprovada, integre ao Shopify e configure 3 SKUs iniciais antes de lançar",
         "fonte": {
-          "t": "Tapstitch — Reviews Verificados no Trustpilot (334 avaliações)",
-          "u": "https://ie.trustpilot.com/review/www.tapstitch.com"
+          "t": "Apliiq — Print On Demand — Shopify App Store",
+          "u": "https://apps.shopify.com/apliiq"
         },
         "video": {
           "t": "",
@@ -94,16 +94,16 @@
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-11-13",
+        "id": "conteudo-2026-11-14",
         "top": true,
-        "t": "Captions.ai (Mirage) 2026: Grave no Celular → IA Gera Legendas Animadas + B-Roll Automático — Reels Prontos Sem Editar",
-        "resumo": "Captions.ai (rebrandeado Mirage em 2026) gera legendas precisas, corrige eye-contact na câmera, adiciona B-roll automático por prompt de texto e traduz com lip-sync em 130+ idiomas — tudo no app mobile.",
-        "porque": "Para criadores que gravam sozinhos no celular, elimina os dois maiores gargalos: legenda manual e busca de B-roll. Reels que antes levavam 2h ficam prontos em 20 min.",
-        "aplicar": "Baixe o app Captions (iOS/Android), grave 30-60s direto no app, descreva no campo 'AI Roll' o contexto visual do clip, ajuste fonte da legenda e exporte em 9:16 para Instagram.",
-        "plano": "1) Baixe Captions.ai e crie conta (cheque preço atual em captions.ai — plano pago) · 2) Grave ou importe um Reel de 30-60s da semana · 3) Ative 'AI Roll' e escreva: '[contexto do vídeo] — mostrar B-roll de [cena desejada]' · 4) Ajuste cor e fonte da legenda para identidade visual e exporte direto para o Instagram",
+        "t": "Fliki.ai 2026: Cole o Roteiro ou o Blog → IA Gera Vídeo com Voz + B-Roll + Legenda — Usa Veo 3.1 e Sora 2",
+        "resumo": "Ferramenta de texto-para-vídeo que converte roteiros, blogs ou prompts em vídeos completos com voz em PT-BR (2.000+ vozes), B-roll de stock, legenda animada e música. Usa modelos de geração de vídeo Veo 3.1 e Sora 2. Plano a partir de $21/mês com plano gratuito.",
+        "porque": "Para conteúdo faceless (sem aparecer na câmera), é uma das mais completas de 2026. Diferente do Captions.ai (legendas + B-roll de gravação pessoal), o Fliki parte do zero — sem precisar gravar nada. Ideal para Reels do OPC, tutoriais de reforma e conteúdo de nicho.",
+        "aplicar": "Pegue um roteiro de 100 palavras sobre 'antes e depois de reforma de banheiro' e converta em Reel em 10 minutos. Teste o plano gratuito antes de assinar.",
+        "plano": "1) Acesse fliki.ai e crie conta gratuita · 2) Cole um roteiro curto (100 palavras) sobre reforma — ex: 'Como reformamos um banheiro em 5 dias por $3.000' · 3) Escolha a voz em PT-BR ou inglês e o estilo de legenda animada · 4) Exporte e compare a qualidade visual com o Captions.ai — escolha o melhor para o Canal Dark e OPC",
         "fonte": {
-          "t": "Captions.ai Review 2026 — SendShort",
-          "u": "https://sendshort.ai/guides/captions-review/"
+          "t": "Fliki.ai — Social Media Video Creator",
+          "u": "https://fliki.ai/use-cases/marketing-and-social-media/social-media-video-creator"
         },
         "video": {
           "t": "",
@@ -113,16 +113,16 @@
     ],
     "obra": [
       {
-        "id": "obra-2026-11-13",
+        "id": "obra-2026-11-14",
         "top": true,
-        "t": "Roomvo 2026: Cliente Aponta o Celular para o Piso → Vê o Novo Revestimento em AR em Tempo Real — Conteúdo Viral para o Instagram da Oak Park",
-        "resumo": "Roomvo é um visualizador AR sem download de app. O cliente abre no browser, aponta a câmera para o ambiente e vê o novo piso ou revestimento em tempo real. Empresas de reforma usam para gerar Reels de 'experimentar antes de decidir'.",
-        "porque": "Clientes que visualizam o material antes da decisão têm até 5× mais chance de fechar. Para a Oak Park no Instagram, o vídeo 'cliente testando AR ao vivo na obra' é conteúdo orgânico altamente compartilhável — e diferente de tudo que concorrentes postam.",
-        "aplicar": "Cadastre o catálogo de revestimentos da Oak Park em roomvo.com, grave um Reel mostrando um cliente testando o AR no canteiro ou na casa, e adicione CTA: 'Quer ver como fica na sua casa? Me chama no Direct'.",
-        "plano": "1) Acesse get.roomvo.com e solicite demonstração para contratistas · 2) Faça upload de 5-10 amostras dos pisos e revestimentos que vocês mais instalam · 3) Na próxima visita de cliente, grave o momento em que ele testa o AR — isso vira Reel orgânico · 4) Poste com legenda + CTA e responda todos os comentários nas primeiras 2h para impulsionar o algoritmo",
+        "t": "REimagineHome 2026: Foto da Fachada do Cliente → IA Gera Render com Nova Fachada em Segundos — Conteúdo Viral de Antes/Depois para o Instagram da OPC",
+        "resumo": "IA que redesenha exterior E interior a partir de uma única foto. Troca revestimento, telhado, janelas, paisagismo e céu com um clique. Freemium com créditos; mais de 30 milhões de designs gerados. Funciona para conteúdo de Instagram de reforma — carrossel antes/depois de fachadas.",
+        "porque": "Para a Oak Park Construction, o antes/depois de fachada tem altíssimo engajamento no Instagram de reforma. Diferente do Roomvo (AR para pisos, boletim de ontem), o REimagineHome cobre a fachada inteira — o que o cliente vê primeiro ao considerar uma reforma.",
+        "aplicar": "Tire uma foto de frente de qualquer obra ativa da OPC. Faça o upload, gere 3 variações de fachada e publique o carrossel antes/depois com CTA: 'Quer ver como ficaria a sua casa? Chama no Direct.' Sem precisar de render 3D profissional.",
+        "plano": "1) Acesse reimaginehome.ai e crie conta gratuita · 2) Faça upload de 1 foto de fachada de obra atual da OPC · 3) Gere 3 variações de estilo (moderno, contemporâneo, colonial/tradicional) · 4) Exporte e monte carrossel 'Antes + 3 Variações' para o Instagram — poste sábado que é o dia de maior engajamento",
         "fonte": {
-          "t": "Roomvo Blog: Usando Visualização AR no Marketing de Reforma",
-          "u": "https://get.roomvo.com/blog-post-using-room-visualization-in-your-marketing-outreach/"
+          "t": "REimagineHome — 2026: The Year AI Became Essential in Interior Design",
+          "u": "https://www.reimaginehome.ai/blogs/ai-essential-interior-design-2026"
         },
         "video": {
           "t": "",
@@ -132,16 +132,16 @@
     ],
     "geo": [
       {
-        "id": "geo-2026-11-13",
+        "id": "geo-2026-11-14",
         "top": true,
-        "t": "Coreia do Norte + Rússia 2026: 25 Mil Soldados Já Enviados, Moscou Pede 50 Mil Mais — A Aliança que Redefine a Guerra na Ucrânia",
-        "resumo": "Desde outubro de 2024, a Coreia do Norte enviou ~25 mil soldados para a Rússia — 11 mil deles ativos em Kursk. Moscou quer 30-50 mil até o fim de 2026. Em troca: tecnologia militar e treinamento que Kim moderniza o exército norte-coreano.",
-        "porque": "É a primeira vez desde a Guerra da Coreia que tropas norte-coreanas combatem fora do país. O acordo transforma o isolamento de Kim Jong Un em influência geopolítica real — e cria um novo eixo militar que preocupa OTAN, Coreia do Sul e Japão.",
-        "aplicar": "Para pauta de conteúdo: 'O que a aliança Rússia-Coreia do Norte significa para o equilíbrio de poder global e para o Brasil que tem relações com ambos?'.",
-        "plano": "1) Acompanhe Kyiv Independent e Euromaidanpress para números atualizados de tropas e baixas · 2) Para conteúdo: explique o tratado de assistência mútua assinado por Kim e Putin em junho de 2024 · 3) Destaque o que a Coreia do Norte recebe em troca (sistemas S-400, drones, treinamento moderno) · 4) Enquadre o impacto para a Europa, para a OTAN e para aliados asiáticos dos EUA",
+        "t": "Mar Vermelho 2026: Houthis Bloquearam o Canal de Suez por 2 Anos — e Por Que o 'Desvio pelo Cabo' Virou a Nova Rota do Comércio Global",
+        "resumo": "Desde 2023, os houthis do Iêmen atacaram 178 navios e reduziram em 90% o tráfego de contêineres pelo Canal de Suez. A Rota do Cabo da Boa Esperança passou a ser a alternativa — adicionando 7 a 14 dias por viagem e elevando o custo do frete global. Em 2026, com o conflito com o Irã, os houthis ameaçaram bloquear o Estreito de Bab el-Mandeb para navios israelenses e sauditas.",
+        "porque": "O Mar Vermelho movimenta 15% do comércio global e 10% do petróleo. Quando fecha (mesmo parcialmente), o custo de frete dispara, a inflação sobe no mundo inteiro e as cadeias de suprimento se reorganizam. Essa crise explica parte da inflação pós-2024 e por que a Europa está comprando energia mais cara.",
+        "aplicar": "Próxima vez que ouvir 'inflação persistente na Europa' ou 'custo de importação subiu', conecte com o Suez. Próxima vez que a gasolina subir, verifique se o petróleo do Golfo está desviando pelo Cabo. É geopolítica que toca no seu bolso direto.",
+        "plano": "1) Olhe um mapa e encontre o Estreito de Bab el-Mandeb — o 'gargalo' que os houthis controlam · 2) Compare a Rota do Suez vs Rota do Cabo: quantos km a mais? quantos dias? · 3) Pesquise quais produtos do seu dia a dia (eletrônicos, roupas, petróleo) passam pelo Mar Vermelho · 4) Siga freightwaves.com para atualizações de frete em tempo real — é o termômetro do comércio global",
         "fonte": {
-          "t": "Kyiv Independent: 11 Mil Soldados Norte-Coreanos em Kursk no Início de 2026",
-          "u": "https://kyivindependent.com/nearly-11-000-north-korean-troops-stationed-in-russias-kursk-oblast-at-start-of-2026-media-reports"
+          "t": "Can the Suez save Asian oil consumers after Houthis shut Bab al-Mandeb? — Al Jazeera",
+          "u": "https://www.aljazeera.com/news/2026/7/22/can-the-suez-save-asian-oil-consumers-after-houthis-shut-bab-al-mandeb"
         },
         "video": {
           "t": "",
@@ -151,16 +151,16 @@
     ],
     "ads": [
       {
-        "id": "ads-2026-11-13",
+        "id": "ads-2026-11-14",
         "top": true,
-        "t": "Google Shopping com IA 2026: Target ROAS por Margem de Produto — A Estratégia que Separa Loja Lucrativa de Loja Apenas com Volume",
-        "resumo": "Dois produtos com o mesmo ROAS podem ter lucro completamente diferente se as margens variam. Em 2026, a vantagem no Google Shopping está em segmentar o catálogo por margem e dar um Target ROAS diferente para cada grupo — não usar um único ROAS para tudo.",
-        "porque": "A maioria das lojas define 1 meta de ROAS para todo o catálogo e deixa a IA do Google otimizar sem contexto de margem. Resultado: gasto maior nos produtos baratos e menor nos mais rentáveis.",
-        "aplicar": "Separe o catálogo em 2-3 grupos por margem (alta/média/baixa). Defina Target ROAS maior para margem alta (pode gastar mais por conversão e ainda lucrar) e menor para margem baixa. Revise semanalmente.",
-        "plano": "1) Exporte seu catálogo e calcule margem bruta por produto ou categoria · 2) Crie 2-3 grupos de produtos no Google Merchant Center por faixa de margem · 3) Configure Target ROAS diferente por grupo (ex: 400% para alta margem, 200% para baixa) · 4) Aguarde 2 semanas de dados e compare lucro real — não só o ROAS médio da conta",
+        "t": "Google Ads AI Max 2026: Fim dos Dynamic Search Ads (DSA) em Fev/2027 — O Que Configurar Antes da Migração Automática",
+        "resumo": "O Google está aposentando os Dynamic Search Ads (DSA) e migrando automaticamente as campanhas para o AI Max for Search a partir de fevereiro de 2027. AI Max adiciona 3 recursos sobre o DSA: search term matching expandido, personalização de texto com IA e expansão de URL final. A migração foi adiada de setembro/2026 para fevereiro/2027 — mas há problemas documentados.",
+        "porque": "Campanhas DSA ativas podem ser migradas automaticamente e mandar tráfego granular para páginas erradas (já documentado: produto específico indo para página genérica). O Google recomenda rodar Campaign Experiments comparando AI Max vs DSA antes de migrar para evitar queda de performance.",
+        "aplicar": "Se a OPC ou clientes usam DSA para reformas/construção, verifique agora quais campanhas DSA existem e se a URL de destino está corretamente mapeada por produto/serviço. Não espere a migração automática.",
+        "plano": "1) Acesse Google Ads → Campanhas → filtre por tipo 'Dynamic Search Ads' · 2) Leia o guia oficial em developers.google.com/ads/blog/posts/2026/06/dynamic-search-ads-dsa-automigration · 3) Configure um Campaign Experiment com AI Max para medir paridade de performance por 4 semanas · 4) Só migre todo o tráfego após confirmar que o AI Max está performando igual ou melhor no CPA",
         "fonte": {
-          "t": "Shero Commerce: 10 Estratégias para Dominar Google Shopping em 2026",
-          "u": "https://sherocommerce.com/blogs/insights/google-shopping-optimization"
+          "t": "Dynamic Search Ads DSA Automigration Delayed to February 2027 — Google Developers",
+          "u": "https://developers.google.com/ads/blog/posts/2026/06/dynamic-search-ads-dsa-automigration"
         },
         "video": {
           "t": "",
@@ -170,16 +170,16 @@
     ],
     "iafim": [
       {
-        "id": "iafim-2026-11-13",
+        "id": "iafim-2026-11-14",
         "top": true,
-        "t": "Google ADK 2026: Framework Oficial para Criar Equipes de Agentes de IA — Agente Root Delega Para Sub-Agentes em Python ou TypeScript",
-        "resumo": "O Agent Development Kit (ADK) do Google permite criar sistemas multi-agente onde um agente coordenador distribui tarefas a sub-agentes especializados. Python 2.0 em GA. Integra com Gemini e ferramentas externas via MCP.",
-        "porque": "Diferente de n8n ou Make que automatizam fluxos fixos, o ADK cria agentes que tomam decisões dinâmicas — 'se o lead responder X, fazer Y'. Mais flexível para casos complexos como qualificação de leads ou geração de conteúdo multi-etapa.",
-        "aplicar": "Use o ADK para criar um agente que recebe um novo lead da OPC, consulta o histórico, classifica por prioridade (quente/morno/frio) e envia notificação — tudo sem intervenção manual.",
-        "plano": "1) Acesse adk.dev e siga o tutorial oficial de multi-tool agent (Python, grátis) · 2) Monte um agente simples: input = texto do lead, output = classificação de prioridade · 3) Adicione sub-agente de notificação (email ou SMS via webhook) · 4) Teste com 5 leads reais e compare tempo de qualificação com o processo atual",
+        "t": "Lindy.ai 2026: Agente de IA Pessoal que Lê seu E-mail, Gerencia sua Agenda e Executa Tarefas — Sem Código, 3.000+ Integrações",
+        "resumo": "Plataforma no-code para criar agentes de IA pessoais que automatizam triagem de e-mail, gestão de calendário, prep para reuniões e pesquisa simples. Descreve a tarefa em linguagem natural e o Lindy executa. Integra Gmail, Google Calendar, Slack, Notion, HubSpot e mais de 3.000 apps. Plano gratuito com ~400 créditos/mês (~40 tarefas).",
+        "porque": "Diferente do CrewAI (equipes de agentes dev, boletim de quarta) ou do Google ADK (framework para programadores), o Lindy é focado em automação pessoal/business sem código. Com 338 posts OPC na fila de aprovação, um agente de triagem de e-mail pagaria o plano em 1 dia.",
+        "aplicar": "Configure um Lindy para: 'Leia meus e-mails de aprovação de conteúdo OPC, categorize por urgência e crie um resumo com os 5 mais urgentes.' Você só vê o resumo e decide — sem abrir cada e-mail individual.",
+        "plano": "1) Acesse lindy.ai e crie conta gratuita (sem cartão necessário) · 2) Configure seu primeiro Lindy: 'Leia e-mails com assunto contendo OPC ou approval e crie resumo diário com os 5 mais urgentes' · 3) Conecte ao Gmail e Google Calendar · 4) Teste por 1 semana e avalie quanto tempo economiza na triagem de inbox",
         "fonte": {
-          "t": "ADK Dev: Tutorial Multi-Tool Agent — Documentação Oficial Google",
-          "u": "https://adk.dev/tutorials/multi-tool-agent/"
+          "t": "Lindy.ai — What is Lindy AI? — Zapier",
+          "u": "https://zapier.com/blog/what-is-lindy/"
         },
         "video": {
           "t": "",

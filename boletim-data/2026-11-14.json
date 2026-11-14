@@ -1,0 +1,191 @@
+{
+  "date": "2026-11-14",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "⏰",
+      "t": "338 posts OPC aguardando aprovação — urgente revisar antes do fim de semana",
+      "why": "E-mail de hoje 7:39 AM: 338 posts prontos na fila, incluindo 'The Vanity Contrast Trend Explained'. Fim de semana = janela de engajamento alta para reformas no Instagram.",
+      "go": "obra"
+    },
+    {
+      "tag": "⚠️",
+      "t": "Pipeline de captura bloqueada — créditos Anthropic esgotados, precisa top-up",
+      "why": "Dois alertas chegaram hoje: quota_exceeded às 12:53 e low_credit às 11:51. A automação está usando fallbacks — topar os créditos em console.anthropic.com/settings/billing.",
+      "go": "iafim"
+    },
+    {
+      "tag": "📚",
+      "t": "RE FL — capítulo de Real Estate Finance & Mortgages agendado hoje (sáb 8–10 AM)",
+      "why": "Calendário: 'REAL ESTATE — FIRST THING' hoje. E-mail de ontem confirma: próximo capítulo é Finance/Mortgages — área de alto peso no exam de FL.",
+      "go": "tip"
+    },
+    {
+      "tag": "📡",
+      "t": "Canal Dark tracker crescendo: 2 novos canais de referência adicionados ontem",
+      "why": "Daily Advancer de ontem: 'Se Liga Nessa História' (~700k subs) e outro canal adicionados ao tracker como referências de formato para o Canal Dark.",
+      "go": "conteudo"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-11-14",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-11-14",
+        "top": true,
+        "t": "Próximo Passo Físico para TDAH: Como Converter 'Preciso Terminar Isso' em 1 Ação de 2 Minutos",
+        "resumo": "O cérebro TDAH trava em tarefas abstratas ('terminar o relatório', 'organizar as finanças'). A técnica do Próximo Passo Físico — inspirada no GTD — exige que você defina sempre uma ação com um verbo físico concreto de menos de 2 minutos. Não 'fazer a apresentação', mas 'abrir o PowerPoint e digitar o título do slide 1'.",
+        "porque": "Sem um próximo passo físico claro, a tarefa fica 'suspensa no ar' — o cérebro TDAH percebe a dificuldade como maior do que é e ativa a evitação. Um passo físico de <2 minutos quebra a resistência sem exigir motivação prévia.",
+        "aplicar": "Para cada tarefa travada hoje, escreva o próximo verbo de ação físico. 'Estudar Real Estate' vira 'abrir o Cameron Academy e clicar no capítulo de Finance'. Nada abstrato. Uma ação, um verbo, um objeto.",
+        "plano": "1) Liste 3 tarefas travadas hoje (ex: RE study, e-mails OPC, finanças) · 2) Para cada uma, escreva o próximo passo em <10 palavras com um verbo físico concreto · 3) Execute o primeiro passo antes de decidir qual a segunda · 4) Anote onde parou ('abri no capítulo X, parei no slide 3') para a próxima sessão",
+        "fonte": {
+          "t": "TDAH e procrastinação: o que acontece no seu cérebro — Revista Oeste",
+          "u": "https://revistaoeste.com/variedades/tdah-e-procrastinacao-o-que-acontece-no-seu-cerebro/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-11-14",
+        "top": true,
+        "t": "Hambúrguer Vegano de Feijão Preto — 25 Min, Crocante por Fora, Kid-Friendly",
+        "resumo": "Hambúrguer caseiro de feijão preto + aveia em flocos + cebola, temperado suave (sem pimenta). Leve ao freezer por 20 min para firmar, frite em fio de azeite e sirva no pão com tomate, alface e maionese vegana. Congela bem para a semana.",
+        "porque": "Alto em proteína vegetal, sem leite de vaca, sem peixe/frutos do mar. Crianças adoram a textura crocante e o formato de hambúrguer. Muito mais barato e gostoso do que o hambúrguer vegano industrializado.",
+        "aplicar": "Adicione queijo vegano por cima nos últimos 2 minutos para derreter. Sirva em pão de hambúrguer com um fio de tahine ou maionese de castanha para elevar o sabor. Faça o dobro da receita e congele em porções.",
+        "plano": "1) Escorra e esmague 2 xícaras de feijão preto cozido (textura rústica, não purê liso) · 2) Misture com ½ xícara de aveia em flocos, ½ cebola picada miúda, 1 dente de alho, sal e azeite · 3) Modele os hambúrgueres e leve ao freezer por 20 min para firmar · 4) Frite em frigideira antiaderente com fio de azeite, 3–4 min de cada lado em fogo médio até dourar",
+        "fonte": {
+          "t": "Hambúrguer Vegan de Feijão Preto — Bulk.com PT",
+          "u": "https://www.bulk.com/pt/the-core-pt/hamburguer-vegan-de-feijao-preto-receita/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-11-14",
+        "top": true,
+        "t": "Apliiq 2026: POD dos EUA Especializado em Bordado Real + Private Label — 324+ Reviews no Shopify",
+        "resumo": "Plataforma de print-on-demand com foco em bordado de alta qualidade e etiqueta personalizada (private label). Produz nos EUA, integra com Shopify e permite adicionar patches bordados em camisetas longline femininas e outros produtos premium.",
+        "porque": "Se diferencia das plataformas genéricas pelo foco em bordado artesanal e branding próprio. Reviews de 2026 no Shopify citam suporte 'impecável' e bordado com qualidade de marca premium. Bordado frontal pequeno (logo/monograma) é o diferencial frente à concorrência.",
+        "aplicar": "Use para camisetas longline com bordado frontal pequeno + estampa nas costas. O custo de bordado ($6–10/peça) é alto, mas justifica preço premium de revenda ($40–60). Compare amostras com Tapstitch antes de escalar.",
+        "plano": "1) Crie conta grátis em apliiq.com e navegue no catálogo de tees femininas longline · 2) Faça upload do seu logo e solicite uma amostra com bordado frontal (monogrma ou logotipo pequeno) · 3) Compare qualidade e prazo com a Tapstitch (boletim de ontem) · 4) Se aprovada, integre ao Shopify e configure 3 SKUs iniciais antes de lançar",
+        "fonte": {
+          "t": "Apliiq — Print On Demand — Shopify App Store",
+          "u": "https://apps.shopify.com/apliiq"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-11-14",
+        "top": true,
+        "t": "Fliki.ai 2026: Cole o Roteiro ou o Blog → IA Gera Vídeo com Voz + B-Roll + Legenda — Usa Veo 3.1 e Sora 2",
+        "resumo": "Ferramenta de texto-para-vídeo que converte roteiros, blogs ou prompts em vídeos completos com voz em PT-BR (2.000+ vozes), B-roll de stock, legenda animada e música. Usa modelos de geração de vídeo Veo 3.1 e Sora 2. Plano a partir de $21/mês com plano gratuito.",
+        "porque": "Para conteúdo faceless (sem aparecer na câmera), é uma das mais completas de 2026. Diferente do Captions.ai (legendas + B-roll de gravação pessoal), o Fliki parte do zero — sem precisar gravar nada. Ideal para Reels do OPC, tutoriais de reforma e conteúdo de nicho.",
+        "aplicar": "Pegue um roteiro de 100 palavras sobre 'antes e depois de reforma de banheiro' e converta em Reel em 10 minutos. Teste o plano gratuito antes de assinar.",
+        "plano": "1) Acesse fliki.ai e crie conta gratuita · 2) Cole um roteiro curto (100 palavras) sobre reforma — ex: 'Como reformamos um banheiro em 5 dias por $3.000' · 3) Escolha a voz em PT-BR ou inglês e o estilo de legenda animada · 4) Exporte e compare a qualidade visual com o Captions.ai — escolha o melhor para o Canal Dark e OPC",
+        "fonte": {
+          "t": "Fliki.ai — Social Media Video Creator",
+          "u": "https://fliki.ai/use-cases/marketing-and-social-media/social-media-video-creator"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-11-14",
+        "top": true,
+        "t": "REimagineHome 2026: Foto da Fachada do Cliente → IA Gera Render com Nova Fachada em Segundos — Conteúdo Viral de Antes/Depois para o Instagram da OPC",
+        "resumo": "IA que redesenha exterior E interior a partir de uma única foto. Troca revestimento, telhado, janelas, paisagismo e céu com um clique. Freemium com créditos; mais de 30 milhões de designs gerados. Funciona para conteúdo de Instagram de reforma — carrossel antes/depois de fachadas.",
+        "porque": "Para a Oak Park Construction, o antes/depois de fachada tem altíssimo engajamento no Instagram de reforma. Diferente do Roomvo (AR para pisos, boletim de ontem), o REimagineHome cobre a fachada inteira — o que o cliente vê primeiro ao considerar uma reforma.",
+        "aplicar": "Tire uma foto de frente de qualquer obra ativa da OPC. Faça o upload, gere 3 variações de fachada e publique o carrossel antes/depois com CTA: 'Quer ver como ficaria a sua casa? Chama no Direct.' Sem precisar de render 3D profissional.",
+        "plano": "1) Acesse reimaginehome.ai e crie conta gratuita · 2) Faça upload de 1 foto de fachada de obra atual da OPC · 3) Gere 3 variações de estilo (moderno, contemporâneo, colonial/tradicional) · 4) Exporte e monte carrossel 'Antes + 3 Variações' para o Instagram — poste sábado que é o dia de maior engajamento",
+        "fonte": {
+          "t": "REimagineHome — 2026: The Year AI Became Essential in Interior Design",
+          "u": "https://www.reimaginehome.ai/blogs/ai-essential-interior-design-2026"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-11-14",
+        "top": true,
+        "t": "Mar Vermelho 2026: Houthis Bloquearam o Canal de Suez por 2 Anos — e Por Que o 'Desvio pelo Cabo' Virou a Nova Rota do Comércio Global",
+        "resumo": "Desde 2023, os houthis do Iêmen atacaram 178 navios e reduziram em 90% o tráfego de contêineres pelo Canal de Suez. A Rota do Cabo da Boa Esperança passou a ser a alternativa — adicionando 7 a 14 dias por viagem e elevando o custo do frete global. Em 2026, com o conflito com o Irã, os houthis ameaçaram bloquear o Estreito de Bab el-Mandeb para navios israelenses e sauditas.",
+        "porque": "O Mar Vermelho movimenta 15% do comércio global e 10% do petróleo. Quando fecha (mesmo parcialmente), o custo de frete dispara, a inflação sobe no mundo inteiro e as cadeias de suprimento se reorganizam. Essa crise explica parte da inflação pós-2024 e por que a Europa está comprando energia mais cara.",
+        "aplicar": "Próxima vez que ouvir 'inflação persistente na Europa' ou 'custo de importação subiu', conecte com o Suez. Próxima vez que a gasolina subir, verifique se o petróleo do Golfo está desviando pelo Cabo. É geopolítica que toca no seu bolso direto.",
+        "plano": "1) Olhe um mapa e encontre o Estreito de Bab el-Mandeb — o 'gargalo' que os houthis controlam · 2) Compare a Rota do Suez vs Rota do Cabo: quantos km a mais? quantos dias? · 3) Pesquise quais produtos do seu dia a dia (eletrônicos, roupas, petróleo) passam pelo Mar Vermelho · 4) Siga freightwaves.com para atualizações de frete em tempo real — é o termômetro do comércio global",
+        "fonte": {
+          "t": "Can the Suez save Asian oil consumers after Houthis shut Bab al-Mandeb? — Al Jazeera",
+          "u": "https://www.aljazeera.com/news/2026/7/22/can-the-suez-save-asian-oil-consumers-after-houthis-shut-bab-al-mandeb"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-11-14",
+        "top": true,
+        "t": "Google Ads AI Max 2026: Fim dos Dynamic Search Ads (DSA) em Fev/2027 — O Que Configurar Antes da Migração Automática",
+        "resumo": "O Google está aposentando os Dynamic Search Ads (DSA) e migrando automaticamente as campanhas para o AI Max for Search a partir de fevereiro de 2027. AI Max adiciona 3 recursos sobre o DSA: search term matching expandido, personalização de texto com IA e expansão de URL final. A migração foi adiada de setembro/2026 para fevereiro/2027 — mas há problemas documentados.",
+        "porque": "Campanhas DSA ativas podem ser migradas automaticamente e mandar tráfego granular para páginas erradas (já documentado: produto específico indo para página genérica). O Google recomenda rodar Campaign Experiments comparando AI Max vs DSA antes de migrar para evitar queda de performance.",
+        "aplicar": "Se a OPC ou clientes usam DSA para reformas/construção, verifique agora quais campanhas DSA existem e se a URL de destino está corretamente mapeada por produto/serviço. Não espere a migração automática.",
+        "plano": "1) Acesse Google Ads → Campanhas → filtre por tipo 'Dynamic Search Ads' · 2) Leia o guia oficial em developers.google.com/ads/blog/posts/2026/06/dynamic-search-ads-dsa-automigration · 3) Configure um Campaign Experiment com AI Max para medir paridade de performance por 4 semanas · 4) Só migre todo o tráfego após confirmar que o AI Max está performando igual ou melhor no CPA",
+        "fonte": {
+          "t": "Dynamic Search Ads DSA Automigration Delayed to February 2027 — Google Developers",
+          "u": "https://developers.google.com/ads/blog/posts/2026/06/dynamic-search-ads-dsa-automigration"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-11-14",
+        "top": true,
+        "t": "Lindy.ai 2026: Agente de IA Pessoal que Lê seu E-mail, Gerencia sua Agenda e Executa Tarefas — Sem Código, 3.000+ Integrações",
+        "resumo": "Plataforma no-code para criar agentes de IA pessoais que automatizam triagem de e-mail, gestão de calendário, prep para reuniões e pesquisa simples. Descreve a tarefa em linguagem natural e o Lindy executa. Integra Gmail, Google Calendar, Slack, Notion, HubSpot e mais de 3.000 apps. Plano gratuito com ~400 créditos/mês (~40 tarefas).",
+        "porque": "Diferente do CrewAI (equipes de agentes dev, boletim de quarta) ou do Google ADK (framework para programadores), o Lindy é focado em automação pessoal/business sem código. Com 338 posts OPC na fila de aprovação, um agente de triagem de e-mail pagaria o plano em 1 dia.",
+        "aplicar": "Configure um Lindy para: 'Leia meus e-mails de aprovação de conteúdo OPC, categorize por urgência e crie um resumo com os 5 mais urgentes.' Você só vê o resumo e decide — sem abrir cada e-mail individual.",
+        "plano": "1) Acesse lindy.ai e crie conta gratuita (sem cartão necessário) · 2) Configure seu primeiro Lindy: 'Leia e-mails com assunto contendo OPC ou approval e crie resumo diário com os 5 mais urgentes' · 3) Conecte ao Gmail e Google Calendar · 4) Teste por 1 semana e avalie quanto tempo economiza na triagem de inbox",
+        "fonte": {
+          "t": "Lindy.ai — What is Lindy AI? — Zapier",
+          "u": "https://zapier.com/blog/what-is-lindy/"
+        },
+        "video": {
+          "t": "",
+          "u": ""
+        }
+      }
+    ]
+  }
+}
