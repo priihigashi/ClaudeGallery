@@ -1,35 +1,35 @@
 {
-  "date": "2026-11-15",
+  "date": "2026-11-17",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "⚠️ Urgente",
-      "t": "Créditos Anthropic esgotados — pipeline de captura bloqueada",
-      "why": "Dois alertas hoje: quota_exceeded + low_credit. A pipeline de conteúdo está travada até a recarga em console.anthropic.com/settings/billing.",
+      "tag": "🧲 Lead OPC",
+      "t": "Nova lead Fabiola Augustin — Fort Lauderdale, projeto comercial, responder hoje",
+      "why": "Chegou hoje às 8h via Facebook Ad. Projeto comercial sem planos ainda, começa em 0–3 meses. Contato: 786-843-5467. Follow-up urgente antes que esfrie.",
+      "go": "ads"
+    },
+    {
+      "tag": "🚨 Pipeline",
+      "t": "ads_pulse.yml falhou — run #43960, debug antes de amanhã",
+      "why": "GitHub Actions falhou no run 43960360134 ontem. Pipeline de monitoramento de anúncios OPC parada. Ver logs em github.com/priihigashi/oak-park-ai-hub/actions.",
       "go": "iafim"
     },
     {
-      "tag": "📱 Instagram",
-      "t": "Trial Reel 'PT, bora conversar?' — conferir e compartilhar ANTES de terça (17/11)",
-      "why": "O trial está ao vivo. Verificar tempo médio de visualização no Metricool e compartilhar com todos antes da votação de terça — depois não conta mais.",
+      "tag": "🔐 Segurança",
+      "t": "Login novo no ElevenLabs — Chrome/macOS, confirmar se foi você",
+      "why": "ElevenLabs enviou alerta de login de dispositivo desconhecido ontem às 17h. Se não foi você, troque a senha e ative 2FA agora.",
       "go": "conteudo"
     },
     {
-      "tag": "🏗️ Lead OPC",
-      "t": "Lead novo: Brayan Osorio — shell construction, começa em 0–3 meses",
-      "why": "Veio pelo Facebook ad. Sem planta ainda. Cidade não informada. Contato: 754-240-1115. Follow-up urgente antes que esfrie.",
-      "go": "obra"
-    },
-    {
-      "tag": "📋 OPC",
-      "t": "338 aprovações de conteúdo OPC pendentes — fila parada",
-      "why": "Email de aprovação na caixa de entrada. Revisar e liberar os posts antes que a fila trave o calendário editorial.",
-      "go": "conteudo"
+      "tag": "📚 RE FL",
+      "t": "Estudo imobiliário hoje às 8h — Regra 1 ativa, não pular",
+      "why": "Bloco de 2h do curso Florida 63-hour Pre-License na agenda. Regra 1 do Finishing Protocol: low-dopamine task PRIMEIRO, antes de e-mail ou apps.",
+      "go": "tip"
     }
   ],
   "history": [
     {
-      "date": "2026-11-15",
+      "date": "2026-11-17",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,128 +37,128 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-11-15",
+        "id": "tip-2026-11-17",
         "top": true,
-        "t": "Efeito Zeigarnik para TDAH: Como 'Abrir o Loop' em 2 Min Força seu Cérebro a Querer Terminar",
-        "resumo": "O efeito Zeigarnik mostra que tarefas inacabadas ficam muito mais vivas na memória do que as concluídas. Para TDAH, onde começar é o maior obstáculo, o truque é: inicie a tarefa por apenas 2 minutos — sem intenção de terminar. Isso cria um 'loop aberto' mental que seu cérebro quer fechar.",
-        "porque": "O TDAH tem dificuldade de ativação, não de execução. Uma vez dentro da tarefa, o flow acontece. O Zeigarnik hack burla a resistência de entrada ao reduzir o compromisso para '2 minutos só' — seu cérebro não resiste a isso.",
-        "aplicar": "Na primeira tarefa que você está evitando hoje: abra o documento ou app e escreva apenas uma frase, ou faça uma única ação. Feche se quiser. O loop estará aberto — você vai querer voltar.",
-        "plano": "1) Escolha a tarefa mais evitada do dia · 2) Configure um timer de 2 minutos · 3) Execute uma única ação starter (abrir, escrever 1 linha, clicar no primeiro passo) · 4) Pare — o loop está aberto e vai puxar você de volta naturalmente",
+        "t": "Regra do MIT para TDAH: 1 Tarefa Mais Importante por Dia — Blinde Esse Tempo Antes de Abrir Qualquer App",
+        "resumo": "MIT (Most Important Task) é o método de escolher UMA única tarefa cujo avanço tornaria o dia um sucesso — e bloqueá-la no calendário antes de abrir e-mail ou redes sociais. Para o TDAH, elimina o 'tudo é urgente' que paralisa a ação.",
+        "porque": "O cérebro TDAH não tem problema de execução — tem problema de ativação e priorização. Escolher 1 item e comprometer um horário específico reduz a decisão para zero no momento H, cortando o ciclo de paralisia antes de começar.",
+        "aplicar": "Toda noite (ou no primeiro minuto do dia), escreva sua MIT para amanhã antes de dormir. No dia seguinte, trabalhe nela primeiro — sem abrir notificações. Se a MIT for o curso RE, trate como inabalável.",
+        "plano": "1) Agora: abra o calendário e bloqueie 60–90 min amanhã cedo como 'MIT — [nome da tarefa]'. · 2) Escreva a MIT em papel ou widget e deixe visível na tela. · 3) Na hora marcada, coloque o celular em modo avião e abra APENAS o arquivo da MIT. · 4) Depois de 60 min concluídos, o dia já foi — tudo o mais é bônus.",
         "fonte": {
-          "t": "Efeito Zeigarnik: por que seu cérebro não esquece o que você não terminou",
-          "u": "https://napratica.org.br/noticias/efeito-zeigarnik-por-que-seu-cerebro-nao-esquece-o-que-voce-nao-terminou"
+          "t": "ADHD Life Hacks: What Actually Works — Big Think",
+          "u": "https://bigthink.com/smart-skills/adhd-life-hacks/"
         },
         "video": {"t": "", "u": ""}
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-11-15",
+        "id": "receita-2026-11-17",
         "top": true,
-        "t": "Risoto de Abóbora Cabotiá com Leite de Coco — Cremoso, Vegano, Kid-Friendly (40 Min)",
-        "resumo": "Arroz arbóreo cozido lentamente com caldo de legumes, purê de abóbora cabotiá assada e leite de coco no lugar do parmesão. Rende 4 porções em ~40 minutos. Resultado: cremoso naturalmente, levemente adocicado, aprovado por crianças.",
-        "porque": "A abóbora cabotiá tem amido suficiente para dar corpo ao risoto sem nenhum laticínio. O leite de coco substitui o parmesão com cremosidade e sabor sem bloquear o perfil da abóbora. Zero leite de vaca, 100% vegano.",
-        "aplicar": "Pode usar abóbora congelada em cubos para acelerar. Substituir caldo por água com 1 cubo de caldo de legumes funciona bem. Servir com salsinha fresca e azeite de finalização.",
-        "plano": "1) Assar 400g de abóbora cabotiá em cubos com azeite e sal a 200°C por 25 min, amassar em purê · 2) Refogar 1 cebola + 2 dentes de alho em azeite · 3) Tostar 1 xíc de arroz arbóreo 2 min, adicionar caldo de legumes quente aos poucos, mexendo sempre · 4) Aos 15 min, misturar o purê de abóbora + 100ml de leite de coco, ajustar sal e servir",
+        "t": "Mujadara Vegana — Lentilha com Arroz e Cebola Caramelizada em 30 Min, Kid-Friendly",
+        "resumo": "Prato clássico do Oriente Médio: lentilha verde + arroz cozidos juntos com cominho, cúrcuma e louro, coroados com cebola caramelizada crocante. Sem glúten, sem leite de vaca, pronto em 30 min. Rende 4 porções.",
+        "porque": "Proteína completa (lentilha + arroz formam aminoácidos essenciais), naturalmente vegano, barato e adorado por crianças pelo sabor suave. Dura 4 dias na geladeira e pode ser congelado em porções.",
+        "aplicar": "Sirva com pão pita, hummus ou salada de tomate para uma refeição completa. Use lentilha verde ou marrom — evite a vermelha (vira purê). Pode substituir cominho por curry suave para versão kids.",
+        "plano": "1) Enxágue 1 xíc de lentilha verde e refogue com 2 dentes de alho + azeite por 2 min. · 2) Adicione 1 xíc de arroz, 3 xíc de água quente, sal, 1 col chá de cominho e pitada de cúrcuma — cozinhe 20 min em fogo baixo com tampa. · 3) Numa frigideira separada, fatie 2 cebolas grandes e caramelize em azeite por 15 min em fogo médio-baixo até dourar bem. · 4) Sirva o arroz-lentilha no prato, cubra com cebola caramelizada e regue com azeite.",
         "fonte": {
-          "t": "Risoto vegano de abóbora — Receiteria",
-          "u": "https://www.receiteria.com.br/receita/risoto-vegano-de-abobora/"
+          "t": "Ela Vegan — Mujadara (Lentils and Rice)",
+          "u": "https://elavegan.com/mujadara-lentils-rice/"
         },
         "video": {"t": "", "u": ""}
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-11-15",
+        "id": "merch-2026-11-17",
         "top": true,
-        "t": "CustomCat 2026: POD dos EUA com Bordado Real + Envio em 3–5 Dias — 4.3★ no Shopify, Sem Mensalidade",
-        "resumo": "CustomCat é uma plataforma POD americana com bordado real (não DTG) em camisetas, bonés e moletons. App Shopify com 4.3★ em 105 avaliações. Produção em Detroit, envio doméstico em 3–5 dias úteis. Sem custo mensal — paga por item.",
-        "porque": "Produção nos EUA = envio em 3–5 dias úteis vs 2–3 semanas dos concorrentes europeus. Bordado real sobe o valor percebido e o preço de venda. Sem mensalidade = risco zero para começar e testar.",
-        "aplicar": "Para loja com público americano, CustomCat pode ganhar na conversão pela rapidez de entrega. Comparar com Printful para camisetas longline femininas: CustomCat ganha em velocidade; Printful tem catálogo maior.",
-        "plano": "1) Criar conta grátis em customcat.com · 2) Instalar o app Shopify e conectar a loja · 3) Pedir 1 sample de camiseta com bordado para avaliar qualidade real · 4) Comparar custo + margem vs Printful antes de lançar o produto",
+        "t": "Printify 2026: Maior Rede POD do Mundo — 900+ Produtos, Bordado Real + Tees Longline Femininas com 4.300+ Reviews",
+        "resumo": "Printify conecta você a 80+ fornecedores globais (Monster Digital para bordado premium, AS Colour para tees femininas de qualidade, SPOD para envio rápido). Plano gratuito disponível; Premium por $29/mês libera descontos de até 20% por item.",
+        "porque": "Escala sem inventário: cada fornecedor tem especialidade distinta. Monster Digital faz bordado real de alta resolução; AS Colour Maple Tee é uma das melhores tees longas femininas em algodão pesado. 4.300+ reviews no Shopify App.",
+        "aplicar": "Para bordado de qualidade, selecione Monster Digital como print provider no catálogo. Para longline femininas, use AS Colour Maple Tee ou Bella+Canvas. Peça sempre 1 sample ($15–25) antes de lançar.",
+        "plano": "1) Crie conta grátis em printify.com e conecte sua loja (Shopify, Etsy ou WooCommerce). · 2) No catálogo, filtre 'Women > T-Shirts' — selecione AS Colour Women's Maple L-S Tee. · 3) Para bordado, busque 'embroidery' e escolha Monster Digital como print provider. · 4) Encomende 1 sample antes de publicar; compare qualidade com Printful na mesma peça.",
         "fonte": {
-          "t": "",
-          "u": ""
+          "t": "Printify — Women's Maple L-S Tee (AS Colour)",
+          "u": "https://printify.com/app/products/10908/as-colour/women-s-maple-l-s-tee"
         },
         "video": {"t": "", "u": ""}
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-11-15",
+        "id": "conteudo-2026-11-17",
         "top": true,
-        "t": "CapCut AI 2026: Edite no Celular → Legendas Automáticas em 130+ Idiomas + B-Roll Gerado por IA, Grátis",
-        "resumo": "CapCut 2026 é gratuito e tem geração de legendas animadas em 130+ idiomas com 1 clique, além de 'AI Scenes' que gera clipes de B-roll de 4–8 segundos a partir de texto. Exporta diretamente para Reels e TikTok no formato vertical correto.",
-        "porque": "Para criar conteúdo no celular sem orçamento de edição, CapCut é o topo do mercado. Legendas automáticas com alta precisão + B-roll gerado por IA eliminam as 2 tarefas que mais travam o processo de criação de Reels.",
-        "aplicar": "Para Oak Park Construction: grave o 'antes e depois' de um ambiente no celular, cole no CapCut, ative as legendas em PT-BR e adicione 1–2 cenas AI para transição. Reel pronto em 15 minutos — sem contratar editor.",
-        "plano": "1) Baixar CapCut grátis (iOS/Android) · 2) Importar o vídeo bruto do projeto OPC · 3) Ativar 'Auto Captions' → revisar erros de termos técnicos/nomes · 4) Usar 'AI Scenes' para gerar B-roll de transição entre antes/depois e exportar no formato 9:16",
+        "t": "Runway Gen-4 2026: Texto ou Foto → Vídeo Cinemático em Segundos — B-Roll de Alta Qualidade Sem Câmera",
+        "resumo": "Runway Gen-4 (evolução do Gen-3 Alpha) é o modelo atual de geração de vídeo da Runway ML: transforma um prompt de texto ou uma imagem em vídeos de até 10s com qualidade cinematográfica, controle de câmera e estilo consistente entre cenas.",
+        "porque": "B-roll customizado para o nicho de reforma e construção sem precisar filmar. Um prompt descreve a cena e o Gen-4 renderiza — perfeito para transições de Reel, cenas de fachada ou ambientes que você ainda não filmou.",
+        "aplicar": "Use para gerar B-roll de ambiente (cozinha reformada, fachada moderna, materiais), transições antes/depois e cutaways de ferramentas. Exporte e importe no CapCut como clipe de transição.",
+        "plano": "1) Acesse runwayml.com → Gen-4 (plano Standard $15/mês ou créditos gratuitos no signup). · 2) Escreva o prompt: 'modern kitchen renovation, natural wood cabinets, cinematic lighting, 4k'. · 3) Gere 3 variações, salve os 2 melhores como MP4. · 4) Importe no CapCut como B-roll e monte o Reel com narração + legenda automática.",
         "fonte": {
-          "t": "CapCut AI Review 2026: The Free TikTok Video Editor That Does Everything",
-          "u": "https://marcandrews.com/?p=3063"
+          "t": "TechCrunch — Runway Gen-3 Alpha: Improved Controls for Video AI",
+          "u": "https://techcrunch.com/2024/06/17/runways-new-video-generating-ai-gen-3-offers-improved-controls"
         },
         "video": {"t": "", "u": ""}
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-11-15",
+        "id": "obra-2026-11-17",
         "top": true,
-        "t": "Foyr Neo AI Hub 2026: Planta Baixa → Render 3D Fotorrealista no Navegador — AI Restyle em 35+ Estilos",
-        "resumo": "Foyr Neo é uma plataforma cloud de design de interiores com IA que converte plantas baixas 2D em renders fotorrealistas 3D diretamente no navegador. Em outubro de 2025, lançou o AI Hub para todos os usuários: AI Restyle (aplica estilos diferentes no mesmo ambiente) e AI Enhance (melhora a qualidade do render com 1 clique).",
-        "porque": "Para Oak Park Construction, mostrar ao cliente como ficará o ambiente reformado em diferentes estilos — antes de começar — aumenta a conversão e reduz revisões. O conteúdo antes/depois vira post de Instagram pronto.",
-        "aplicar": "Pegar a planta de um projeto atual, importar no Foyr Neo e gerar renders em 2–3 estilos diferentes. Usar os renders como carrossel: 'Veja como fica seu ambiente em diferentes estilos — escolha o seu'.",
-        "plano": "1) Criar conta free em foyr.com (plano free tem renders limitados) · 2) Importar ou desenhar a planta baixa do projeto · 3) Usar AI Restyle para gerar 2–3 variações de estilo do mesmo ambiente · 4) Exportar as imagens e montar carrossel no CapCut ou Canva para o Instagram",
+        "t": "Maket.ai 2026: Descreva o Projeto em Texto → IA Gera Planta Baixa Instantânea — Convença o Cliente Antes do Orçamento",
+        "resumo": "Maket.ai gera plantas baixas residenciais a partir de um brief em texto: número de quartos, metragem, layout desejado. A versão 2.0 (out/2026) combina geração de planta + render 3D num único workspace, com verificação de zoneamento.",
+        "porque": "Para Oak Park Construction: mostre ao cliente alternativas de planta antes de fazer o orçamento — acelera aprovação, diferencia a empresa e cria conteúdo de Instagram ao mesmo tempo ('veja como funciona nosso processo criativo').",
+        "aplicar": "Pegar um projeto atual, descrever em texto e gerar 2–3 variações de planta. Usar os renders como carrossel: 'Antes de qualquer obra, mostramos como vai ficar — escolha o seu layout'. Exporte como PDF ou imagem.",
+        "plano": "1) Crie conta em maket.ai (plano Homeowner $20/mês ou free trial com créditos). · 2) Descreva o projeto: '3 quartos, 2 banheiros, cozinha aberta, sala integrada, 180m²'. · 3) Escolha entre as variações geradas e edite proporções dos cômodos. · 4) Exporte como imagem e use no carrossel do Instagram ou no PDF de proposta ao cliente.",
         "fonte": {
-          "t": "Foyr Neo — What's New: AI Hub e novas features 2025",
-          "u": "https://foyr.com/whats-new/new-features"
+          "t": "Maket.ai — AI Floor Plan Generator Guide 2026",
+          "u": "https://www.maket.ai/blog/ai-floor-plan-generator-guide-2026"
         },
         "video": {"t": "", "u": ""}
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-11-15",
+        "id": "geo-2026-11-17",
         "top": true,
-        "t": "Triângulo do Lítio 2026: Argentina, Chile e Bolívia Controlam 50–68% do 'Ouro Branco' — EUA vs China pela Cadeia do EV",
-        "resumo": "Argentina, Chile e Bolívia formam o 'Triângulo do Lítio' — região com mais da metade das reservas mundiais do metal essencial para baterias de EVs e energia renovável. Em 2026, os três países têm governos alinhados aos EUA (após eleição chilena), mas a China já tem presença consolidada na extração e processamento.",
-        "porque": "Lítio é o 'petróleo do século XXI para EVs': quem controla a cadeia produtiva controla o mercado de mobilidade elétrica global. A disputa EUA vs China por essa região define quem lidera a transição energética — e os preços das baterias mundialmente.",
-        "aplicar": "Pauta para conteúdo/stories: 'Os EUA finalmente controlam o lítio da América Latina — ou a China já ganhou?' Ótimo ângulo para explicar geopolítica e transição energética de forma concreta.",
-        "plano": "1) Entender: Bolívia tem as maiores reservas mas menos extração; Chile extrai mais mas vendeu contratos à China · 2) Acompanhar: proposta de integração trilateral CIL (Chile) para criar cadeia de valor regional · 3) Questão central: vai virar 'OPEP do lítio' ou cada país negocia separado? · 4) Assistir o debate sobre nacionalização vs investimento estrangeiro em cada país",
+        "t": "Aliança dos Estados do Sahel 2026: Mali, Burkina Faso e Niger Abandonam a França e Abraçam a Rússia",
+        "resumo": "O trio saheliano formou a AES (Alliance des États du Sahel) em 2023, expulsou tropas francesas e convidou o Africa Corps (ex-Wagner, ~2–3 mil soldados) como parceiro de segurança. Em julho/2026, aprofundaram laços militares com Moscou num ministerial em Niamey — e Rosatom já assinou acordos nucleares com os três países.",
+        "porque": "A mudança redefine quem controla o Sahel — porta de entrada para a África Subsaariana, corredor de migração para a Europa e fonte de urânio (Niger é o 7º maior produtor mundial). É a maior derrota geopolítica da França em décadas.",
+        "aplicar": "Pauta para conteúdo/stories: 'Fim da África Francesa — como 3 golpes militares em 3 anos mudaram o tabuleiro global'. Ângulo concreto: urânio do Niger alimentava reatores nucleares franceses — agora quem abastece?",
+        "plano": "1) Contexto: Mali (2020), Burkina Faso (2022) e Niger (2023) = 3 golpes militares em 3 anos contra governos pró-França. · 2) Understand: Africa Corps = ex-Wagner formalizado pelo Kremlin após morte de Prigozhin. · 3) Conexão Brasil: Rosatom negocia Angra 3 no Brasil ao mesmo tempo que avança no Sahel. · 4) Carrossel: '5 slides — Por que a França perdeu a África' para o canal de geopolítica.",
         "fonte": {
-          "t": "Com vitória da direita no Chile, triângulo do lítio fica sob governos alinhados aos EUA — Brasil de Fato",
-          "u": "https://www.brasildefato.com.br/2025/12/17/com-vitoria-da-direita-no-chile-triangulo-do-litio-e-50-das-reservas-globais-ficam-sob-governos-alinhados-aos-eua-entenda/"
+          "t": "Russia and Sahel States Deepen Military Ties — Polity.org.za (jul/2026)",
+          "u": "https://polity.org.za/article/russia-and-sahel-states-deepen-military-ties-as-insurgent-attacks-persist-2026-07-09"
         },
         "video": {"t": "", "u": ""}
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-11-15",
+        "id": "ads-2026-11-17",
         "top": true,
-        "t": "Google Ads Veo 2026: IA Gera seu Vídeo Publicitário Automático em 3 Formatos — Sem Equipe de Vídeo",
-        "resumo": "O Google usa Veo (seu modelo de IA generativa de vídeo) para criar automaticamente anúncios em vídeo a partir de imagens e texto que você já tem. Gera 3 orientações em simultâneo: horizontal (YouTube), quadrado (Display) e vertical (Shorts). Disponível dentro das campanhas Demand Gen.",
-        "porque": "Para pequenas construtoras sem orçamento de vídeo, isso é game-changer: você tem fotos dos projetos + texto, e a IA monta o vídeo publicitário. Elimina o maior obstáculo para anunciar no YouTube e YouTube Shorts.",
-        "aplicar": "Para Oak Park Construction: carregar 5–10 fotos dos melhores projetos, escrever 3 manchetes e 2 descrições. O Veo gera os vídeos automaticamente. Testar dentro de uma campanha Demand Gen com orçamento baixo (~$10/dia).",
-        "plano": "1) Abrir Google Ads → criar campanha Demand Gen · 2) Na seção de criativos, selecionar 'Auto-generated video ads' · 3) Carregar imagens dos projetos + headline + descrição · 4) Revisar os vídeos gerados e ativar os melhores — eliminar os com artefatos ou texto ilegível",
+        "t": "Enhanced Conversions para Google Ads 2026: Recupere 15–20% das Conversões Perdidas Pelo Cookie Tracking",
+        "resumo": "Enhanced Conversions envia dados de first-party (email/telefone hasheados com SHA-256) ao Google para recuperar conversões que o cookie não capturou. Em junho/2026, o Google unificou o toggle numa única interface — mais simples de ativar.",
+        "porque": "Com cookies de terceiros desaparecendo, campanhas perdem rastreabilidade. Enhanced Conversions recupera conversões perdidas e melhora o Smart Bidding com dados mais completos — especialmente importante para leads por formulário como OPC.",
+        "aplicar": "Para Oak Park Construction: se o cliente liga depois de ver o anúncio mas não converte no site, o Enhanced Conversions captura isso via hash do e-mail do formulário de contato. Essencial para campanha de leads.",
+        "plano": "1) Google Ads → Metas → Conversões → Configurações → Ative 'Enhanced conversions for web'. · 2) Adicione o campo de email/telefone no snippet de conversão do site. · 3) Aguarde 7 dias e compare 'Conversões rastreadas' antes e depois no painel de diagnóstico. · 4) Se CTR >3% mas conversões = 0 (como no seu relatório atual), verifique o diagnóstico de 'Enhanced conversions' e corrija a tag antes do próximo ciclo.",
         "fonte": {
-          "t": "About auto-generated video ads — Google Ads Help",
-          "u": "https://support.google.com/google-ads/answer/16430641"
+          "t": "Google Ads Enhanced Conversions 2026 Update — Taggrs.io",
+          "u": "https://taggrs.io/google-ads-enhanced-conversions-2026-update/"
         },
         "video": {"t": "", "u": ""}
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-11-15",
+        "id": "iafim-2026-11-17",
         "top": true,
-        "t": "Microsoft Agent Framework 2026: O Sucessor do AutoGen que Virou Padrão de Produção para Multi-Agentes",
-        "resumo": "O Microsoft AutoGen entrou em modo de manutenção em outubro de 2025 e foi substituído pelo Microsoft Agent Framework (AGF), que unifica AutoGen e Semantic Kernel em uma plataforma de produção para sistemas multi-agente no Azure. AGF tem observabilidade, tolerância a falha e integração nativa com Azure — o que AutoGen não tinha.",
-        "porque": "Se você usa AutoGen em automações, o relógio está correndo: o AGF é a migração oficial. Para quem quer construir agentes de produção — não só protótipos — o AGF é a aposta certa da Microsoft para 2026+.",
-        "aplicar": "Para Oak Park Construction: um agente AGF pode ler emails de leads, classificar prioridade, criar o follow-up e agendar no calendário — tudo automático. É o próximo nível do pipeline atual de automação.",
-        "plano": "1) Ver documentação atual: github.com/microsoft/autogen (ainda útil para aprendizado) · 2) Explorar Microsoft Agent Framework em learn.microsoft.com · 3) Testar um agente simples que lê um email e classifica tipo de projeto · 4) Comparar com n8n + CrewAI atual para decidir migração",
+        "t": "n8n AI Agents 2026: Arraste e Solte um Agente Autônomo — Open-Source, Self-Hosted, 400+ Integrações",
+        "resumo": "n8n adicionou um nó nativo de AI Agent que combina LLM + ferramentas + memória num único bloco visual. O agente lê e-mails, decide ações e executa fluxos automaticamente — sem código. Cloud grátis para começar; self-hosted 100% grátis (Docker).",
+        "porque": "Open-source com suporte a Claude, GPT-4o e Gemini. Dados ficam no seu servidor. 400+ integrações nativas (Gmail, Sheets, Slack, WhatsApp). Ideal para automatizar triagem de leads, respostas e pipelines de conteúdo — mais flexível que Make.com.",
+        "aplicar": "Para OPC: crie um agente que lê o e-mail de lead, extrai nome/telefone/projeto, registra no Google Sheets e manda notificação via Slack ou Gmail para você — tudo automático em menos de 5 minutos de setup.",
+        "plano": "1) Acesse n8n.io → Cloud (free trial) ou instale self-hosted via Docker: 'docker run -p 5678:5678 n8nio/n8n'. · 2) Arraste o nó 'AI Agent' e conecte um chat model (Claude 3.5 Sonnet). · 3) Adicione tools: 'Gmail Read' + 'Google Sheets Write' + 'Gmail Send'. · 4) Teste com um e-mail de lead fictício e verifique se o agente extrai nome, telefone e projeto corretamente.",
         "fonte": {
-          "t": "From AutoGen v0.4 to Microsoft Agent Framework: A Complete Architectural Evolution",
-          "u": "https://www.besthub.dev/articles/from-autogen-v0-4-to-microsoft-agent-framework-a-complete-architectural-evolution-5a1f31643412"
+          "t": "n8n AI Agent: Building Autonomous Workflows — HatchWorks",
+          "u": "https://hatchworks.com/blog/ai-agents/n8n-ai-agent/"
         },
         "video": {"t": "", "u": ""}
       }

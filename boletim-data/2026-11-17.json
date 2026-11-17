@@ -1,0 +1,167 @@
+{
+  "date": "2026-11-17",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "🧲 Lead OPC",
+      "t": "Nova lead Fabiola Augustin — Fort Lauderdale, projeto comercial, responder hoje",
+      "why": "Chegou hoje às 8h via Facebook Ad. Projeto comercial sem planos ainda, começa em 0–3 meses. Contato: 786-843-5467. Follow-up urgente antes que esfrie.",
+      "go": "ads"
+    },
+    {
+      "tag": "🚨 Pipeline",
+      "t": "ads_pulse.yml falhou — run #43960, debug antes de amanhã",
+      "why": "GitHub Actions falhou no run 43960360134 ontem. Pipeline de monitoramento de anúncios OPC parada. Ver logs em github.com/priihigashi/oak-park-ai-hub/actions.",
+      "go": "iafim"
+    },
+    {
+      "tag": "🔐 Segurança",
+      "t": "Login novo no ElevenLabs — Chrome/macOS, confirmar se foi você",
+      "why": "ElevenLabs enviou alerta de login de dispositivo desconhecido ontem às 17h. Se não foi você, troque a senha e ative 2FA agora.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "📚 RE FL",
+      "t": "Estudo imobiliário hoje às 8h — Regra 1 ativa, não pular",
+      "why": "Bloco de 2h do curso Florida 63-hour Pre-License na agenda. Regra 1 do Finishing Protocol: low-dopamine task PRIMEIRO, antes de e-mail ou apps.",
+      "go": "tip"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-11-17",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-11-17",
+        "top": true,
+        "t": "Regra do MIT para TDAH: 1 Tarefa Mais Importante por Dia — Blinde Esse Tempo Antes de Abrir Qualquer App",
+        "resumo": "MIT (Most Important Task) é o método de escolher UMA única tarefa cujo avanço tornaria o dia um sucesso — e bloqueá-la no calendário antes de abrir e-mail ou redes sociais. Para o TDAH, elimina o 'tudo é urgente' que paralisa a ação.",
+        "porque": "O cérebro TDAH não tem problema de execução — tem problema de ativação e priorização. Escolher 1 item e comprometer um horário específico reduz a decisão para zero no momento H, cortando o ciclo de paralisia antes de começar.",
+        "aplicar": "Toda noite (ou no primeiro minuto do dia), escreva sua MIT para amanhã antes de dormir. No dia seguinte, trabalhe nela primeiro — sem abrir notificações. Se a MIT for o curso RE, trate como inabalável.",
+        "plano": "1) Agora: abra o calendário e bloqueie 60–90 min amanhã cedo como 'MIT — [nome da tarefa]'. · 2) Escreva a MIT em papel ou widget e deixe visível na tela. · 3) Na hora marcada, coloque o celular em modo avião e abra APENAS o arquivo da MIT. · 4) Depois de 60 min concluídos, o dia já foi — tudo o mais é bônus.",
+        "fonte": {
+          "t": "ADHD Life Hacks: What Actually Works — Big Think",
+          "u": "https://bigthink.com/smart-skills/adhd-life-hacks/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-11-17",
+        "top": true,
+        "t": "Mujadara Vegana — Lentilha com Arroz e Cebola Caramelizada em 30 Min, Kid-Friendly",
+        "resumo": "Prato clássico do Oriente Médio: lentilha verde + arroz cozidos juntos com cominho, cúrcuma e louro, coroados com cebola caramelizada crocante. Sem glúten, sem leite de vaca, pronto em 30 min. Rende 4 porções.",
+        "porque": "Proteína completa (lentilha + arroz formam aminoácidos essenciais), naturalmente vegano, barato e adorado por crianças pelo sabor suave. Dura 4 dias na geladeira e pode ser congelado em porções.",
+        "aplicar": "Sirva com pão pita, hummus ou salada de tomate para uma refeição completa. Use lentilha verde ou marrom — evite a vermelha (vira purê). Pode substituir cominho por curry suave para versão kids.",
+        "plano": "1) Enxágue 1 xíc de lentilha verde e refogue com 2 dentes de alho + azeite por 2 min. · 2) Adicione 1 xíc de arroz, 3 xíc de água quente, sal, 1 col chá de cominho e pitada de cúrcuma — cozinhe 20 min em fogo baixo com tampa. · 3) Numa frigideira separada, fatie 2 cebolas grandes e caramelize em azeite por 15 min em fogo médio-baixo até dourar bem. · 4) Sirva o arroz-lentilha no prato, cubra com cebola caramelizada e regue com azeite.",
+        "fonte": {
+          "t": "Ela Vegan — Mujadara (Lentils and Rice)",
+          "u": "https://elavegan.com/mujadara-lentils-rice/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-11-17",
+        "top": true,
+        "t": "Printify 2026: Maior Rede POD do Mundo — 900+ Produtos, Bordado Real + Tees Longline Femininas com 4.300+ Reviews",
+        "resumo": "Printify conecta você a 80+ fornecedores globais (Monster Digital para bordado premium, AS Colour para tees femininas de qualidade, SPOD para envio rápido). Plano gratuito disponível; Premium por $29/mês libera descontos de até 20% por item.",
+        "porque": "Escala sem inventário: cada fornecedor tem especialidade distinta. Monster Digital faz bordado real de alta resolução; AS Colour Maple Tee é uma das melhores tees longas femininas em algodão pesado. 4.300+ reviews no Shopify App.",
+        "aplicar": "Para bordado de qualidade, selecione Monster Digital como print provider no catálogo. Para longline femininas, use AS Colour Maple Tee ou Bella+Canvas. Peça sempre 1 sample ($15–25) antes de lançar.",
+        "plano": "1) Crie conta grátis em printify.com e conecte sua loja (Shopify, Etsy ou WooCommerce). · 2) No catálogo, filtre 'Women > T-Shirts' — selecione AS Colour Women's Maple L-S Tee. · 3) Para bordado, busque 'embroidery' e escolha Monster Digital como print provider. · 4) Encomende 1 sample antes de publicar; compare qualidade com Printful na mesma peça.",
+        "fonte": {
+          "t": "Printify — Women's Maple L-S Tee (AS Colour)",
+          "u": "https://printify.com/app/products/10908/as-colour/women-s-maple-l-s-tee"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-11-17",
+        "top": true,
+        "t": "Runway Gen-4 2026: Texto ou Foto → Vídeo Cinemático em Segundos — B-Roll de Alta Qualidade Sem Câmera",
+        "resumo": "Runway Gen-4 (evolução do Gen-3 Alpha) é o modelo atual de geração de vídeo da Runway ML: transforma um prompt de texto ou uma imagem em vídeos de até 10s com qualidade cinematográfica, controle de câmera e estilo consistente entre cenas.",
+        "porque": "B-roll customizado para o nicho de reforma e construção sem precisar filmar. Um prompt descreve a cena e o Gen-4 renderiza — perfeito para transições de Reel, cenas de fachada ou ambientes que você ainda não filmou.",
+        "aplicar": "Use para gerar B-roll de ambiente (cozinha reformada, fachada moderna, materiais), transições antes/depois e cutaways de ferramentas. Exporte e importe no CapCut como clipe de transição.",
+        "plano": "1) Acesse runwayml.com → Gen-4 (plano Standard $15/mês ou créditos gratuitos no signup). · 2) Escreva o prompt: 'modern kitchen renovation, natural wood cabinets, cinematic lighting, 4k'. · 3) Gere 3 variações, salve os 2 melhores como MP4. · 4) Importe no CapCut como B-roll e monte o Reel com narração + legenda automática.",
+        "fonte": {
+          "t": "TechCrunch — Runway Gen-3 Alpha: Improved Controls for Video AI",
+          "u": "https://techcrunch.com/2024/06/17/runways-new-video-generating-ai-gen-3-offers-improved-controls"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-11-17",
+        "top": true,
+        "t": "Maket.ai 2026: Descreva o Projeto em Texto → IA Gera Planta Baixa Instantânea — Convença o Cliente Antes do Orçamento",
+        "resumo": "Maket.ai gera plantas baixas residenciais a partir de um brief em texto: número de quartos, metragem, layout desejado. A versão 2.0 (out/2026) combina geração de planta + render 3D num único workspace, com verificação de zoneamento.",
+        "porque": "Para Oak Park Construction: mostre ao cliente alternativas de planta antes de fazer o orçamento — acelera aprovação, diferencia a empresa e cria conteúdo de Instagram ao mesmo tempo ('veja como funciona nosso processo criativo').",
+        "aplicar": "Pegar um projeto atual, descrever em texto e gerar 2–3 variações de planta. Usar os renders como carrossel: 'Antes de qualquer obra, mostramos como vai ficar — escolha o seu layout'. Exporte como PDF ou imagem.",
+        "plano": "1) Crie conta em maket.ai (plano Homeowner $20/mês ou free trial com créditos). · 2) Descreva o projeto: '3 quartos, 2 banheiros, cozinha aberta, sala integrada, 180m²'. · 3) Escolha entre as variações geradas e edite proporções dos cômodos. · 4) Exporte como imagem e use no carrossel do Instagram ou no PDF de proposta ao cliente.",
+        "fonte": {
+          "t": "Maket.ai — AI Floor Plan Generator Guide 2026",
+          "u": "https://www.maket.ai/blog/ai-floor-plan-generator-guide-2026"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-11-17",
+        "top": true,
+        "t": "Aliança dos Estados do Sahel 2026: Mali, Burkina Faso e Niger Abandonam a França e Abraçam a Rússia",
+        "resumo": "O trio saheliano formou a AES (Alliance des États du Sahel) em 2023, expulsou tropas francesas e convidou o Africa Corps (ex-Wagner, ~2–3 mil soldados) como parceiro de segurança. Em julho/2026, aprofundaram laços militares com Moscou num ministerial em Niamey — e Rosatom já assinou acordos nucleares com os três países.",
+        "porque": "A mudança redefine quem controla o Sahel — porta de entrada para a África Subsaariana, corredor de migração para a Europa e fonte de urânio (Niger é o 7º maior produtor mundial). É a maior derrota geopolítica da França em décadas.",
+        "aplicar": "Pauta para conteúdo/stories: 'Fim da África Francesa — como 3 golpes militares em 3 anos mudaram o tabuleiro global'. Ângulo concreto: urânio do Niger alimentava reatores nucleares franceses — agora quem abastece?",
+        "plano": "1) Contexto: Mali (2020), Burkina Faso (2022) e Niger (2023) = 3 golpes militares em 3 anos contra governos pró-França. · 2) Understand: Africa Corps = ex-Wagner formalizado pelo Kremlin após morte de Prigozhin. · 3) Conexão Brasil: Rosatom negocia Angra 3 no Brasil ao mesmo tempo que avança no Sahel. · 4) Carrossel: '5 slides — Por que a França perdeu a África' para o canal de geopolítica.",
+        "fonte": {
+          "t": "Russia and Sahel States Deepen Military Ties — Polity.org.za (jul/2026)",
+          "u": "https://polity.org.za/article/russia-and-sahel-states-deepen-military-ties-as-insurgent-attacks-persist-2026-07-09"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-11-17",
+        "top": true,
+        "t": "Enhanced Conversions para Google Ads 2026: Recupere 15–20% das Conversões Perdidas Pelo Cookie Tracking",
+        "resumo": "Enhanced Conversions envia dados de first-party (email/telefone hasheados com SHA-256) ao Google para recuperar conversões que o cookie não capturou. Em junho/2026, o Google unificou o toggle numa única interface — mais simples de ativar.",
+        "porque": "Com cookies de terceiros desaparecendo, campanhas perdem rastreabilidade. Enhanced Conversions recupera conversões perdidas e melhora o Smart Bidding com dados mais completos — especialmente importante para leads por formulário como OPC.",
+        "aplicar": "Para Oak Park Construction: se o cliente liga depois de ver o anúncio mas não converte no site, o Enhanced Conversions captura isso via hash do e-mail do formulário de contato. Essencial para campanha de leads.",
+        "plano": "1) Google Ads → Metas → Conversões → Configurações → Ative 'Enhanced conversions for web'. · 2) Adicione o campo de email/telefone no snippet de conversão do site. · 3) Aguarde 7 dias e compare 'Conversões rastreadas' antes e depois no painel de diagnóstico. · 4) Se CTR >3% mas conversões = 0 (como no seu relatório atual), verifique o diagnóstico de 'Enhanced conversions' e corrija a tag antes do próximo ciclo.",
+        "fonte": {
+          "t": "Google Ads Enhanced Conversions 2026 Update — Taggrs.io",
+          "u": "https://taggrs.io/google-ads-enhanced-conversions-2026-update/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-11-17",
+        "top": true,
+        "t": "n8n AI Agents 2026: Arraste e Solte um Agente Autônomo — Open-Source, Self-Hosted, 400+ Integrações",
+        "resumo": "n8n adicionou um nó nativo de AI Agent que combina LLM + ferramentas + memória num único bloco visual. O agente lê e-mails, decide ações e executa fluxos automaticamente — sem código. Cloud grátis para começar; self-hosted 100% grátis (Docker).",
+        "porque": "Open-source com suporte a Claude, GPT-4o e Gemini. Dados ficam no seu servidor. 400+ integrações nativas (Gmail, Sheets, Slack, WhatsApp). Ideal para automatizar triagem de leads, respostas e pipelines de conteúdo — mais flexível que Make.com.",
+        "aplicar": "Para OPC: crie um agente que lê o e-mail de lead, extrai nome/telefone/projeto, registra no Google Sheets e manda notificação via Slack ou Gmail para você — tudo automático em menos de 5 minutos de setup.",
+        "plano": "1) Acesse n8n.io → Cloud (free trial) ou instale self-hosted via Docker: 'docker run -p 5678:5678 n8nio/n8n'. · 2) Arraste o nó 'AI Agent' e conecte um chat model (Claude 3.5 Sonnet). · 3) Adicione tools: 'Gmail Read' + 'Google Sheets Write' + 'Gmail Send'. · 4) Teste com um e-mail de lead fictício e verifique se o agente extrai nome, telefone e projeto corretamente.",
+        "fonte": {
+          "t": "n8n AI Agent: Building Autonomous Workflows — HatchWorks",
+          "u": "https://hatchworks.com/blog/ai-agents/n8n-ai-agent/"
+        },
+        "video": {"t": "", "u": ""}
+      }
+    ]
+  }
+}
