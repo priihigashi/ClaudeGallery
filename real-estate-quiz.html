@@ -985,6 +985,156 @@ pullSync((ok)=>{ if(ok) pushSync(); });
   toolbar.insertAdjacentElement('afterend', note);
 })();
 </script>
+<!-- VOICE STUDY MODE (Continuador noturno 2026-11-15). Self-contained: remove this whole block to revert. -->
+<style>
+  #vbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:4px 0 10px}
+  #vbar button{font:inherit;font-size:.9em;padding:9px 13px;border-radius:999px;border:2px solid #d8dce6;background:#fff;cursor:pointer;color:#222}
+  #vbar button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+  #vbar button.rec{background:var(--red);border-color:var(--red);color:#fff}
+  #vbar select{font:inherit;font-size:.9em;padding:8px;border-radius:10px;border:2px solid #d8dce6;background:#fff}
+  #vmsg{width:100%;font-size:.85em;color:#666;min-height:1.1em}
+  #vPtt{touch-action:none;user-select:none;-webkit-user-select:none}
+</style>
+<script>
+(function(){
+  var synth = window.speechSynthesis;
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!synth && !SR) return;                       // browser has nothing: leave the quiz untouched
+  var qText = document.getElementById('qText');
+  if (!qText) return;
+  var KEY = 'reqz_voice';
+  var cfg = {auto:false, rate:1};
+  try { var c = JSON.parse(localStorage.getItem(KEY) || '{}'); if (c && typeof c === 'object') { cfg.auto = !!c.auto; if (c.rate) cfg.rate = +c.rate || 1; } } catch(e){}
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(cfg)); } catch(e){} }
+
+  var bar = document.createElement('div'); bar.id = 'vbar';
+  bar.innerHTML =
+    (synth ? '<button type="button" id="vQ">🔊 Ouvir pergunta</button>' +
+             '<button type="button" id="vE" style="display:none">🔊 Ouvir explicação</button>' +
+             '<button type="button" id="vStop">⏹</button>' +
+             '<button type="button" id="vAuto">Ler sozinho</button>' +
+             '<select id="vRate" aria-label="Velocidade"><option value="0.85">0,85x</option><option value="1">1x</option><option value="1.15">1,15x</option><option value="1.3">1,3x</option></select>' : '') +
+    (SR ? '<button type="button" id="vPtt">🎙 Segure e diga A, B, C ou D</button>' : '') +
+    '<div id="vmsg"></div>';
+  qText.parentNode.insertBefore(bar, qText);
+  var $ = function(id){ return document.getElementById(id); };
+  var msg = function(t){ $('vmsg').textContent = t || ''; };
+
+  function enVoice(){
+    if (!synth) return null;
+    var v = synth.getVoices().filter(function(x){ return /^en(-|_)US/i.test(x.lang); });
+    if (!v.length) v = synth.getVoices().filter(function(x){ return /^en/i.test(x.lang); });
+    var pref = v.filter(function(x){ return /natural|samantha|google|aria|jenny/i.test(x.name); });
+    return pref[0] || v[0] || null;
+  }
+  function speak(text){
+    if (!synth || !text) return;
+    synth.cancel();
+    var sent = String(text).replace(/\s+/g,' ').match(/[^.!?]+(?:[.!?]+|$)/g) || [String(text)];
+    var parts = [], buf = '';                         // ~200-char chunks: Chrome cuts very long utterances
+    sent.forEach(function(x){ if ((buf + x).length > 200 && buf){ parts.push(buf); buf = x; } else buf += x; });
+    if (buf.trim()) parts.push(buf);
+    var voice = enVoice();
+    parts.forEach(function(p){
+      var u = new SpeechSynthesisUtterance(p.trim());
+      u.lang = 'en-US'; u.rate = cfg.rate; if (voice) u.voice = voice;
+      synth.speak(u);
+    });
+  }
+  function cur(){ try { return order[viewIdx]; } catch(e){ return null; } }
+  function questionText(q){
+    return q.question + ' ... ' + ['a','b','c','d'].map(function(k){ return 'Option ' + k.toUpperCase() + '. ' + q.options[k] + '.'; }).join(' ');
+  }
+  function explText(q){
+    var t = q.teach;
+    var s = 'The answer is ' + String(q.finalAnswer).toUpperCase() + '. ';
+    if (t){ if (t.answer) s += t.answer + '. '; if (t.why) s += t.why; }
+    else s += (q.aiReasoning || '');
+    return s;
+  }
+  function answered(){ try { return picks[viewIdx] !== undefined; } catch(e){ return false; } }
+  function sync(){
+    if ($('vE')) $('vE').style.display = answered() ? 'inline-block' : 'none';
+    if ($('vAuto')) $('vAuto').classList.toggle('on', cfg.auto);
+    if ($('vRate')) $('vRate').value = String(cfg.rate);
+  }
+
+  if (synth){
+    $('vQ').onclick = function(){ var q = cur(); if (q) speak(questionText(q)); };
+    $('vE').onclick = function(){ var q = cur(); if (q) speak(explText(q)); };
+    $('vStop').onclick = function(){ synth.cancel(); };
+    $('vAuto').onclick = function(){ cfg.auto = !cfg.auto; save(); sync(); if (cfg.auto){ var q = cur(); if (q && !answered()) speak(questionText(q)); } else synth.cancel(); };
+    $('vRate').onchange = function(){ cfg.rate = +this.value || 1; save(); };
+    if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = function(){};  // warms the voice list on Chrome
+  }
+
+  // Wrap the quiz's own functions (no edits inside them).
+  var _render = window.render, _answer = window.answer;
+  if (typeof _render === 'function') window.render = function(){
+    var r = _render.apply(this, arguments);
+    sync(); msg('');
+    if (synth){ synth.cancel(); var q = cur(); if (cfg.auto && q && !answered()) speak(questionText(q)); }
+    return r;
+  };
+  if (typeof _answer === 'function') window.answer = function(k){
+    var r = _answer.apply(this, arguments);
+    sync();
+    if (synth && cfg.auto){ var q = cur(); if (q) speak(explText(q)); }
+    return r;
+  };
+
+  // Push-to-talk: listens ONLY while the button is held. Nothing is recorded or sent by this page.
+  if (SR){
+    var rec = null, heard = '';
+    function pickFrom(text){
+      var q = cur(); if (!q) return null;
+      var t = ' ' + text.toLowerCase().replace(/[^a-z0-9\s]/g,' ') + ' ';
+      var m = t.match(/\b(?:option|letter|letra|answer|resposta)?\s*(a|b|c|d|bee|be|see|sea|si|dee|de)\b/g);
+      var map = {a:'a', b:'b', bee:'b', be:'b', c:'c', see:'c', sea:'c', si:'c', d:'d', dee:'d', de:'d'};
+      if (m){ var last = m[m.length-1].trim().split(/\s+/).pop(); if (map[last]) return map[last]; }
+      var best = null, score = 0;                                     // fallback: said the option text
+      ['a','b','c','d'].forEach(function(k){
+        var words = String(q.options[k]).toLowerCase().split(/\W+/).filter(function(w){ return w.length > 3; });
+        var hit = words.filter(function(w){ return t.indexOf(' ' + w + ' ') >= 0; }).length;
+        var s = words.length ? hit / words.length : 0;
+        if (s > score){ score = s; best = k; }
+      });
+      return score >= 0.6 ? best : null;
+    }
+    function start(e){
+      if (e) e.preventDefault();
+      if (answered()){ msg('Essa já foi respondida. Toque em Next.'); return; }
+      if (synth) synth.cancel();
+      heard = '';
+      try {
+        rec = new SR(); rec.lang = 'en-US'; rec.interimResults = true; rec.maxAlternatives = 3;
+        rec.onresult = function(ev){ heard = ''; for (var i = 0; i < ev.results.length; i++) heard += ' ' + ev.results[i][0].transcript; msg('Ouvi: ' + heard.trim()); };
+        rec.onerror = function(ev){ msg(ev.error === 'not-allowed' ? 'Libere o microfone pro site e tente de novo.' : 'Não ouvi direito, tente de novo.'); };
+        rec.onend = finish;
+        rec.start();
+        $('vPtt').classList.add('rec'); msg('Ouvindo… solte quando terminar.');
+      } catch(err){ msg('Microfone indisponível neste navegador.'); rec = null; }
+    }
+    function stop(e){ if (e) e.preventDefault(); if (rec){ try { rec.stop(); } catch(err){} } }
+    function finish(){
+      $('vPtt').classList.remove('rec'); rec = null;
+      if (!heard.trim()) return;
+      var k = pickFrom(heard);
+      if (!k){ msg('Ouvi "' + heard.trim() + '", mas não entendi a letra. Diga só A, B, C ou D.'); return; }
+      var btn = document.querySelector('#opts .opt[data-k="' + k + '"]');
+      if (btn && !btn.disabled){ msg('Resposta: ' + k.toUpperCase()); btn.click(); }
+    }
+    var p = $('vPtt');
+    p.addEventListener('pointerdown', start);
+    p.addEventListener('pointerup', stop);
+    p.addEventListener('pointerleave', stop);
+    p.addEventListener('pointercancel', stop);
+    p.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+  }
+  sync();
+})();
+</script>
+<!-- /VOICE STUDY MODE -->
 </body>
 </html>
 
