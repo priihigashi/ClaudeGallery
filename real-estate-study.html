@@ -36,3 +36,66 @@
 <section id="study" hidden><header id="studyBar"><button id="homeBtn" class="plain" type="button">← Choose study path</button><span id="schoolLabel"></span></header><iframe id="quizFrame" title="Real estate study quiz" referrerpolicy="no-referrer" allow="clipboard-write"></iframe></section>
 </body></html>
 
+
+<!-- Added 2026-11-17: portable study prompt; existing quiz content preserved. -->
+<script>
+(function(){
+'use strict';
+if(document.getElementById('copyStudyPrompt'))return;
+try{if(window.parent!==window&&window.parent.document.getElementById('copyStudyPrompt'))return;}catch(e){}
+const style=document.createElement('style');
+style.textContent='#studyBar{flex-wrap:wrap;height:auto;min-height:64px;position:sticky;top:0;z-index:100}#schoolLabel{margin-left:auto}#copyStudyPrompt{font:600 14px/1.3 system-ui;padding:10px 12px;border:1px solid #b7cbe4;border-radius:10px;background:#fff;color:#1558a6;cursor:pointer;min-height:44px}.study-prompt-bar{display:flex;justify-content:flex-end;position:sticky;top:0;z-index:100;background:#f5f6fa;padding:8px;gap:8px}#studyPromptDialog{box-sizing:border-box;width:min(94vw,640px);max-height:90dvh;border:1px solid #c7d4e5;border-radius:16px;padding:20px;color:#19314f;font:16px/1.5 system-ui}#studyPromptDialog::backdrop{background:#10243c80}#studyPromptDialog textarea{box-sizing:border-box;width:100%;height:45dvh;font:14px/1.5 system-ui;padding:12px;border:1px solid #aebed2;border-radius:8px}#studyPromptDialog button{font:600 15px system-ui;padding:10px 14px;margin:12px 8px 0 0;border-radius:8px;border:1px solid #b7cbe4;background:white;color:#1558a6}#studyPromptStatus{font:14px system-ui;color:#1558a6}';
+document.head.append(style);
+const button=document.createElement('button');button.id='copyStudyPrompt';button.type='button';button.textContent='Copiar prompt';button.title='Copiar instruções para estudar por voz no celular ou computador';
+let bar=document.getElementById('studyBar');
+if(!bar){bar=document.createElement('div');bar.className='study-prompt-bar';document.body.prepend(bar);}
+bar.append(button);
+const dialog=document.createElement('dialog');dialog.id='studyPromptDialog';
+dialog.innerHTML='<h2>Estudar por voz</h2><p>Copie e cole no chat que você vai usar no celular ou computador. Depois, ative a voz nesse chat.</p><textarea readonly aria-label="Instruções de estudo"></textarea><p id="studyPromptStatus" role="status" aria-live="polite"></p><button type="button" data-copy>Copiar texto</button><button type="button" data-close>Fechar</button>';
+document.body.append(dialog);
+const area=dialog.querySelector('textarea'),status=dialog.querySelector('#studyPromptStatus');
+function context(){
+ let d=document;
+ const frame=document.getElementById('quizFrame');
+ try{if(frame&&frame.contentDocument&&frame.contentDocument.getElementById('qText'))d=frame.contentDocument;}catch(e){}
+ const text=id=>(d.getElementById(id)?.textContent||'').trim();
+ const stem=text('qText')||text('stem');
+ const school=(document.getElementById('schoolLabel')?.textContent||d.title||document.title).trim();
+ const position=text('qPos')||text('qnum');
+ const source=text('qSrc');
+ const options=(d.getElementById('opts')||d.getElementById('choices'))?.innerText||'';
+ return {school,position,source,stem,options:options.trim()};
+}
+function prompt(){
+ const c=context();
+ return [
+'Estudar real estate com a Priih, em português do Brasil, por voz.',
+'Material: https://priihigashi.github.io/ClaudeGallery/real-estate-study.html',
+'Repositório: https://github.com/priihigashi/ClaudeGallery',
+'Arquivos: real-estate-quiz.html (Gold Coast), real-estate-schools.js (Cameron), real-estateu-final.html (RealEstateU). Cameron e RealEstateU usam bancos criptografados. Não presuma que consegue ler esses bancos nem peça para publicar ou expor chaves.',
+'Curso/contexto no momento da cópia: '+c.school,
+c.position?'Posição da sessão: '+c.position:'',
+c.source?'Referência da questão: '+c.source:'',
+c.stem?'Enunciado atual: '+c.stem:'',
+c.options?'Alternativas atuais, sem indicação de resposta: '+c.options:'',
+'Como estudar comigo: eu leio e tento primeiro. Enquanto penso em voz alta, escute sem comentar, confirmar, fazer perguntas ou oferecer ajuda a cada pausa. Se eu disser para esperar, parar ou ficar quieto, aguarde até eu pedir ajuda explicitamente, sem frases de confirmação.',
+'Pode localizar a questão e consultar o material e a resposta em silêncio quando as ferramentas permitirem. Não revele a resposta, não dê pistas, não elimine alternativas e não confirme meu palpite antes de eu autorizar.',
+'Quando eu pedir tradução, traduza somente o enunciado ou o termo solicitado, sem alternativas, exemplos ou explicações de conceitos, a menos que eu peça. Não traduza espontaneamente só porque comecei a ler.',
+'Só quando eu disser que quero discutir, explicar ou revisar: explique uma alternativa por vez, com frases curtas e ritmo calmo. Mostre por que ela se aplica ou não àquela pergunta. Dê exemplos reais e associações para memorizar quando eu pedir ou quando estivermos discutindo.',
+'Use o começo da pergunta para encontrá-la. A revisão focada de 30 questões do Gold Coast embaralha a ordem, portanto o número da sessão não identifica a questão sozinho. O repositório não acompanha meu navegador automaticamente. Não faça capturas de tela.',
+'Se não conseguir acessar o arquivo, use o enunciado copiado acima ou peça apenas o trecho necessário. Nunca invente que consultou o código, que está monitorando a tela ou que uma mudança já foi feita.',
+'Responda apenas ao que eu pedir. Não avance para outra questão por conta própria. Não crie nem mantenha uma goal automática só para esperar eu estudar.'
+ ].filter(Boolean).join('\n\n');
+}
+async function copy(){
+ try{
+  if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(area.value);}
+  else{area.focus();area.select();if(!document.execCommand('copy'))throw Error('manual');}
+  status.textContent='Copiado. Cole no seu chat e ative a voz.';
+ }catch(e){area.focus();area.select();status.textContent='Selecione e copie o texto acima pelo menu do celular.';}
+}
+button.addEventListener('click',()=>{area.value=prompt();status.textContent='';dialog.showModal();copy();});
+dialog.querySelector('[data-copy]').addEventListener('click',copy);
+dialog.querySelector('[data-close]').addEventListener('click',()=>dialog.close());
+})();
+</script>
