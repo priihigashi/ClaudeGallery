@@ -1,35 +1,35 @@
 {
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "🧲 Lead OPC",
-      "t": "Nova lead Fabiola Augustin — Fort Lauderdale, projeto comercial, responder hoje",
-      "why": "Chegou hoje às 8h via Facebook Ad. Projeto comercial sem planos ainda, começa em 0–3 meses. Contato: 786-843-5467. Follow-up urgente antes que esfrie.",
-      "go": "ads"
-    },
-    {
-      "tag": "🚨 Pipeline",
-      "t": "ads_pulse.yml falhou — run #43960, debug antes de amanhã",
-      "why": "GitHub Actions falhou no run 43960360134 ontem. Pipeline de monitoramento de anúncios OPC parada. Ver logs em github.com/priihigashi/oak-park-ai-hub/actions.",
-      "go": "iafim"
-    },
-    {
-      "tag": "🔐 Segurança",
-      "t": "Login novo no ElevenLabs — Chrome/macOS, confirmar se foi você",
-      "why": "ElevenLabs enviou alerta de login de dispositivo desconhecido ontem às 17h. Se não foi você, troque a senha e ative 2FA agora.",
+      "tag": "OPC",
+      "t": "338 posts OPC esperando aprovação",
+      "why": "Backlog acumulou ontem à noite. Usar hoje a ferramenta certa para acelerar a triagem e aprovar os mais prontos.",
       "go": "conteudo"
     },
     {
-      "tag": "📚 RE FL",
-      "t": "Estudo imobiliário hoje às 8h — Regra 1 ativa, não pular",
-      "why": "Bloco de 2h do curso Florida 63-hour Pre-License na agenda. Regra 1 do Finishing Protocol: low-dopamine task PRIMEIRO, antes de e-mail ou apps.",
+      "tag": "ALERTA",
+      "t": "Pipeline parou: Anthropic sem créditos",
+      "why": "Email de ontem: quota_exceeded + credit_monitor degraded. Captura de notícias está bloqueada até recarregar.",
+      "go": "iafim"
+    },
+    {
+      "tag": "REAL ESTATE",
+      "t": "Estudo FL 8h — Protocolo Regra 1 ativo",
+      "why": "Evento diário no calendário: Real Estate é o primeiro bloco do dia, antes de qualquer coisa.",
       "go": "tip"
+    },
+    {
+      "tag": "BRASIL",
+      "t": "PLP 299 vira pauta — 5 reels capturados ontem",
+      "why": "Tributação de dividendos: transcrições e fontes prontas no Drive para roteiro. Tema quente no momento.",
+      "go": "geo"
     }
   ],
   "history": [
     {
-      "date": "2026-11-17",
+      "date": "2026-11-18",
       "label": "Boletim de hoje",
       "note": "8 tópicos pesquisados"
     }
@@ -37,130 +37,154 @@
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-11-17",
+        "id": "tip-2026-11-18",
         "top": true,
-        "t": "Regra do MIT para TDAH: 1 Tarefa Mais Importante por Dia — Blinde Esse Tempo Antes de Abrir Qualquer App",
-        "resumo": "MIT (Most Important Task) é o método de escolher UMA única tarefa cujo avanço tornaria o dia um sucesso — e bloqueá-la no calendário antes de abrir e-mail ou redes sociais. Para o TDAH, elimina o 'tudo é urgente' que paralisa a ação.",
-        "porque": "O cérebro TDAH não tem problema de execução — tem problema de ativação e priorização. Escolher 1 item e comprometer um horário específico reduz a decisão para zero no momento H, cortando o ciclo de paralisia antes de começar.",
-        "aplicar": "Toda noite (ou no primeiro minuto do dia), escreva sua MIT para amanhã antes de dormir. No dia seguinte, trabalhe nela primeiro — sem abrir notificações. Se a MIT for o curso RE, trate como inabalável.",
-        "plano": "1) Agora: abra o calendário e bloqueie 60–90 min amanhã cedo como 'MIT — [nome da tarefa]'. · 2) Escreva a MIT em papel ou widget e deixe visível na tela. · 3) Na hora marcada, coloque o celular em modo avião e abra APENAS o arquivo da MIT. · 4) Depois de 60 min concluídos, o dia já foi — tudo o mais é bônus.",
+        "t": "Temptation Bundling para TDAH: Prenda a Tarefa Chata a Algo que Você Adora — Dopamina Imediata, Não Promessa Futura",
+        "resumo": "Emparelhe 1 tarefa difícil com algo que você adora (podcast favorito, café especial, episódio de série) e libere o prazer só enquanto fizer a tarefa. O cérebro TDAH, movido a dopamina no ato, responde a recompensas imediatas — não à importância da tarefa ou à promessa de sentir-se bem depois.",
+        "porque": "Pesquisa de Katy Milkman (Wharton) mostrou +10–12% de execução quando o prazer está atrelado à tarefa. Para o TDAH, a motivação vem do interesse agora — não do valor futuro. Remover a decisão aumenta a chance de começar.",
+        "aplicar": "Aprove os 338 posts da OPC só enquanto tomar o café favorito. Faça o Real Estate quiz só com a playlist que você reserva para isso. Responda e-mails difíceis só com aquele snack que fica guardado para esse momento.",
+        "plano": "1) Escolha 1 tarefa que você empurra pra amanhã toda semana · 2) Associe a 1 prazer que você não usaria de outra forma (série, comida, podcast específico) · 3) Bloqueie 25 min no calendário com o nome dos dois · 4) Não acesse o prazer fora do bloco — a raridade é o que faz funcionar",
         "fonte": {
-          "t": "ADHD Life Hacks: What Actually Works — Big Think",
-          "u": "https://bigthink.com/smart-skills/adhd-life-hacks/"
+          "t": "Mindcrate: Temptation Bundling for ADHD",
+          "u": "https://mindcrate.vercel.app/use-temptation-bundling-build-consistent-exercise-routine-adhd"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "ClickUp: How to Use Temptation Bundling to Boost Productivity",
+          "u": "https://clickup.com/blog/temptation-bundling/"
+        }
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-11-17",
+        "id": "receita-2026-11-18",
         "top": true,
-        "t": "Mujadara Vegana — Lentilha com Arroz e Cebola Caramelizada em 30 Min, Kid-Friendly",
-        "resumo": "Prato clássico do Oriente Médio: lentilha verde + arroz cozidos juntos com cominho, cúrcuma e louro, coroados com cebola caramelizada crocante. Sem glúten, sem leite de vaca, pronto em 30 min. Rende 4 porções.",
-        "porque": "Proteína completa (lentilha + arroz formam aminoácidos essenciais), naturalmente vegano, barato e adorado por crianças pelo sabor suave. Dura 4 dias na geladeira e pode ser congelado em porções.",
-        "aplicar": "Sirva com pão pita, hummus ou salada de tomate para uma refeição completa. Use lentilha verde ou marrom — evite a vermelha (vira purê). Pode substituir cominho por curry suave para versão kids.",
-        "plano": "1) Enxágue 1 xíc de lentilha verde e refogue com 2 dentes de alho + azeite por 2 min. · 2) Adicione 1 xíc de arroz, 3 xíc de água quente, sal, 1 col chá de cominho e pitada de cúrcuma — cozinhe 20 min em fogo baixo com tampa. · 3) Numa frigideira separada, fatie 2 cebolas grandes e caramelize em azeite por 15 min em fogo médio-baixo até dourar bem. · 4) Sirva o arroz-lentilha no prato, cubra com cebola caramelizada e regue com azeite.",
+        "t": "Pasta e Fagioli Vegana — Macarrão com Feijão Cremoso em 30 Min, Kid-Friendly, Sem Leite de Vaca",
+        "resumo": "Clássico italiano de despensa: feijão canellini (ou branco), macarrão miúdo (ditalini, cotovelo), tomate, alho, azeite e caldo de legumes. Cremoso, quente, satisfatório — e ainda melhor no dia seguinte.",
+        "porque": "Alta proteína vegetal, sem laticínios, ingredientes que geralmente já estão em casa. Crianças adoram a textura cremosa e o macarrão em tamanhos variados (pasta mista). Freeze bem para almoço de semana.",
+        "aplicar": "Troque a carne por feijão e ainda fica mais barato. Faça dose dupla e congela — almoço resolvido por 2 dias sem esforço.",
+        "plano": "1) Refogar 3 dentes de alho + 1 cebola em azeite por 3 min · 2) Adicionar 1 lata de tomate pelado + 2 latas de feijão canellini + 500 ml de caldo de legumes · 3) Ferver e cozinhar 150 g de macarrão miúdo direto na panela por 10 min · 4) Finalizar com nutritional yeast ou queijo vegano ralado (FL) + pimenta-do-reino",
         "fonte": {
-          "t": "Ela Vegan — Mujadara (Lentils and Rice)",
-          "u": "https://elavegan.com/mujadara-lentils-rice/"
+          "t": "Connoisseurus Veg: Vegan Pasta e Fagioli",
+          "u": "https://www.connoisseurusveg.com/?p=8897"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-11-17",
+        "id": "merch-2026-11-18",
         "top": true,
-        "t": "Printify 2026: Maior Rede POD do Mundo — 900+ Produtos, Bordado Real + Tees Longline Femininas com 4.300+ Reviews",
-        "resumo": "Printify conecta você a 80+ fornecedores globais (Monster Digital para bordado premium, AS Colour para tees femininas de qualidade, SPOD para envio rápido). Plano gratuito disponível; Premium por $29/mês libera descontos de até 20% por item.",
-        "porque": "Escala sem inventário: cada fornecedor tem especialidade distinta. Monster Digital faz bordado real de alta resolução; AS Colour Maple Tee é uma das melhores tees longas femininas em algodão pesado. 4.300+ reviews no Shopify App.",
-        "aplicar": "Para bordado de qualidade, selecione Monster Digital como print provider no catálogo. Para longline femininas, use AS Colour Maple Tee ou Bella+Canvas. Peça sempre 1 sample ($15–25) antes de lançar.",
-        "plano": "1) Crie conta grátis em printify.com e conecte sua loja (Shopify, Etsy ou WooCommerce). · 2) No catálogo, filtre 'Women > T-Shirts' — selecione AS Colour Women's Maple L-S Tee. · 3) Para bordado, busque 'embroidery' e escolha Monster Digital como print provider. · 4) Encomende 1 sample antes de publicar; compare qualidade com Printful na mesma peça.",
+        "t": "Gelato 2026: POD Global em 130+ Países, Frete Local, Sem Estoque — 3.100+ Reviews no Trustpilot",
+        "resumo": "Gelato imprime e envia do parceiro mais próximo do cliente (EUA, Europa, Austrália, Brasil), reduzindo frete e tempo de entrega. Plano gratuito disponível, integração direta com Shopify e Etsy.",
+        "porque": "Para quem vende para audiências fora dos EUA, Gelato tem vantagem de custo de frete vs. Printful/Printify. Mais de 3.100 reviews no Trustpilot; reviewers elogiam cores e acabamento. Dupple deu 3.8/5 em jul/2026.",
+        "aplicar": "Ideal para testar vendas internacionais sem pagar frete caro dos EUA para Europa. Comece com 1 produto (tee ou caneca) para validar qualidade antes de expandir o catálogo.",
+        "plano": "1) Criar conta gratuita em gelato.com · 2) Conectar sua loja Shopify ou Etsy · 3) Criar 1 produto de teste e pedir amostra para você mesma antes de publicar · 4) Comparar qualidade com Printful antes de lançar para o público",
         "fonte": {
-          "t": "Printify — Women's Maple L-S Tee (AS Colour)",
-          "u": "https://printify.com/app/products/10908/as-colour/women-s-maple-l-s-tee"
+          "t": "Dupple: Gelato Review 2026",
+          "u": "https://dupple.com/reviews/gelato"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-11-17",
+        "id": "conteudo-2026-11-18",
         "top": true,
-        "t": "Runway Gen-4 2026: Texto ou Foto → Vídeo Cinemático em Segundos — B-Roll de Alta Qualidade Sem Câmera",
-        "resumo": "Runway Gen-4 (evolução do Gen-3 Alpha) é o modelo atual de geração de vídeo da Runway ML: transforma um prompt de texto ou uma imagem em vídeos de até 10s com qualidade cinematográfica, controle de câmera e estilo consistente entre cenas.",
-        "porque": "B-roll customizado para o nicho de reforma e construção sem precisar filmar. Um prompt descreve a cena e o Gen-4 renderiza — perfeito para transições de Reel, cenas de fachada ou ambientes que você ainda não filmou.",
-        "aplicar": "Use para gerar B-roll de ambiente (cozinha reformada, fachada moderna, materiais), transições antes/depois e cutaways de ferramentas. Exporte e importe no CapCut como clipe de transição.",
-        "plano": "1) Acesse runwayml.com → Gen-4 (plano Standard $15/mês ou créditos gratuitos no signup). · 2) Escreva o prompt: 'modern kitchen renovation, natural wood cabinets, cinematic lighting, 4k'. · 3) Gere 3 variações, salve os 2 melhores como MP4. · 4) Importe no CapCut como B-roll e monte o Reel com narração + legenda automática.",
+        "t": "Pika Labs 2026: Cole Texto ou Foto → IA Anima em Segundos — B-Roll Curto com Efeitos de Física para Reels",
+        "resumo": "Pika gera clipes de 3–5 s a partir de texto ou imagem estática com efeitos de física e movimento. Pika 2.5 trouxe controle de cena e extensão de clipe. Plano grátis com 80 créditos/mês. Ideal como B-roll de impacto para Reels e YouTube Shorts.",
+        "porque": "Reels do OPC precisam de B-roll visual sem precisar filmar. Pika cria animação de ambientes (fachada, interior) que complementa o antes/depois. Mais acessível que Runway para clipes curtos de redes sociais.",
+        "aplicar": "Para o próximo Reel de reforma: gere 2–3 clipes Pika mostrando o ambiente ganhando vida (tinta na parede, piso sendo assentado) e intercale com o vídeo real no CapCut.",
+        "plano": "1) Acesse pika.art (plano grátis com 80 créditos/mês) · 2) Cole a descrição do ambiente que quer animar (ex: 'modern kitchen renovation, tiles being placed, warm light') · 3) Gere 3–5 variações e baixe o melhor · 4) Importe no CapCut como B-roll entre os cortes do vídeo real",
         "fonte": {
-          "t": "TechCrunch — Runway Gen-3 Alpha: Improved Controls for Video AI",
-          "u": "https://techcrunch.com/2024/06/17/runways-new-video-generating-ai-gen-3-offers-improved-controls"
+          "t": "AIindigo: Pika Review 2026 — Still a Powerhouse",
+          "u": "https://aiindigo.com/blog/pika-review-2026-still-a-powerhouse-for-ai-video"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-11-17",
+        "id": "obra-2026-11-18",
         "top": true,
-        "t": "Maket.ai 2026: Descreva o Projeto em Texto → IA Gera Planta Baixa Instantânea — Convença o Cliente Antes do Orçamento",
-        "resumo": "Maket.ai gera plantas baixas residenciais a partir de um brief em texto: número de quartos, metragem, layout desejado. A versão 2.0 (out/2026) combina geração de planta + render 3D num único workspace, com verificação de zoneamento.",
-        "porque": "Para Oak Park Construction: mostre ao cliente alternativas de planta antes de fazer o orçamento — acelera aprovação, diferencia a empresa e cria conteúdo de Instagram ao mesmo tempo ('veja como funciona nosso processo criativo').",
-        "aplicar": "Pegar um projeto atual, descrever em texto e gerar 2–3 variações de planta. Usar os renders como carrossel: 'Antes de qualquer obra, mostramos como vai ficar — escolha o seu layout'. Exporte como PDF ou imagem.",
-        "plano": "1) Crie conta em maket.ai (plano Homeowner $20/mês ou free trial com créditos). · 2) Descreva o projeto: '3 quartos, 2 banheiros, cozinha aberta, sala integrada, 180m²'. · 3) Escolha entre as variações geradas e edite proporções dos cômodos. · 4) Exporte como imagem e use no carrossel do Instagram ou no PDF de proposta ao cliente.",
+        "t": "Veras AI 2026 (Chaos): Modelo 3D → Render Fotorrealista em 15–60 s — Plugin para SketchUp, Revit e Rhino",
+        "resumo": "Veras captura o viewport do seu modelo 3D e transforma em render fotorrealista com IA, sem sair do SketchUp. Suporta 20+ estilos. 1 render = 15 a 60 s. Integrado ao ecossistema Chaos (Enscape/V-Ray). Diferente dos outros apps, parte do modelo que você já tem — não de uma foto.",
+        "porque": "Para a Oak Park Construction: modelar o projeto rapidamente no SketchUp → gerar render na hora da reunião com o cliente → postar o 'como vai ficar' no Instagram. Nenhum app anterior nesta série parte do modelo 3D — ângulo completamente novo.",
+        "aplicar": "Para o próximo projeto: abra o SketchUp Free com o modelo do ambiente → instale o plugin Veras → gere 3 renders em estilos diferentes em 3 min → monte carrossel 'Antes / Como vai ficar' para o Instagram do OPC.",
+        "plano": "1) Baixar o plugin em chaos.com/veras (compatível com SketchUp 2021–2025) · 2) Modelar o ambiente do próximo projeto (mesmo simples, sem detalhes) · 3) Testar 3 estilos de render diferentes e comparar · 4) Montar carrossel antes/depois para Instagram do OPC",
         "fonte": {
-          "t": "Maket.ai — AI Floor Plan Generator Guide 2026",
-          "u": "https://www.maket.ai/blog/ai-floor-plan-generator-guide-2026"
+          "t": "Chaos Veras: AI Rendering for Architecture",
+          "u": "https://www.chaos.com/veras"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-11-17",
+        "id": "geo-2026-11-18",
         "top": true,
-        "t": "Aliança dos Estados do Sahel 2026: Mali, Burkina Faso e Niger Abandonam a França e Abraçam a Rússia",
-        "resumo": "O trio saheliano formou a AES (Alliance des États du Sahel) em 2023, expulsou tropas francesas e convidou o Africa Corps (ex-Wagner, ~2–3 mil soldados) como parceiro de segurança. Em julho/2026, aprofundaram laços militares com Moscou num ministerial em Niamey — e Rosatom já assinou acordos nucleares com os três países.",
-        "porque": "A mudança redefine quem controla o Sahel — porta de entrada para a África Subsaariana, corredor de migração para a Europa e fonte de urânio (Niger é o 7º maior produtor mundial). É a maior derrota geopolítica da França em décadas.",
-        "aplicar": "Pauta para conteúdo/stories: 'Fim da África Francesa — como 3 golpes militares em 3 anos mudaram o tabuleiro global'. Ângulo concreto: urânio do Niger alimentava reatores nucleares franceses — agora quem abastece?",
-        "plano": "1) Contexto: Mali (2020), Burkina Faso (2022) e Niger (2023) = 3 golpes militares em 3 anos contra governos pró-França. · 2) Understand: Africa Corps = ex-Wagner formalizado pelo Kremlin após morte de Prigozhin. · 3) Conexão Brasil: Rosatom negocia Angra 3 no Brasil ao mesmo tempo que avança no Sahel. · 4) Carrossel: '5 slides — Por que a França perdeu a África' para o canal de geopolítica.",
+        "t": "Rota da Seda Digital 2026: China Conecta 150+ Países com Cabos Submarinos — O Novo Poder que Passa pelo Fundo do Mar",
+        "resumo": "A HMN Tech (antiga Huawei Marine) participa de 90+ projetos de cabos submarinos globais. EUA e aliados tentam barrar a expansão. 11% dos cabos em operação já são chineses — e a corrida por IA está acelerando a demanda: US$ 100 bi de investimento projetado em infraestrutura submarina em 2026.",
+        "porque": "Quem controla os cabos controla o fluxo de dados globais. Cada tensão diplomática (Taiwan, Mar Vermelho, Sahel) tem um cabo submarino por baixo — é a geopolítica invisível. Para pauta de notícias: ângulo visual forte com mapas de rotas.",
+        "aplicar": "Para o canal de notícias: um carrossel 'O fundo do mar é campo de batalha' com mapa de cabos + disputas recentes vira pauta forte e diferenciada. Use o dado de 60% de meta de mercado da China como gancho.",
+        "plano": "1) Baixar o mapa gratuito de cabos em submarinecablemap.com · 2) Identificar 3 rotas que passam por zonas de conflito recentes (Estreito de Taiwan, Mar Vermelho, Atlântico Sul) · 3) Roteirizar carrossel de 5 slides: o que são, quem controla, o que está em jogo, caso China, o que muda para o Brasil · 4) Publicar como thread ou carrossel no canal de notícias",
         "fonte": {
-          "t": "Russia and Sahel States Deepen Military Ties — Polity.org.za (jul/2026)",
-          "u": "https://polity.org.za/article/russia-and-sahel-states-deepen-military-ties-as-insurgent-attacks-persist-2026-07-09"
+          "t": "CSIS: Safeguarding Subsea Cables — Cyber Infrastructure Competition",
+          "u": "https://www.csis.org/analysis/safeguarding-subsea-cables-protecting-cyber-infrastructure-amid-great-power-competition"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-11-17",
+        "id": "ads-2026-11-18",
         "top": true,
-        "t": "Enhanced Conversions para Google Ads 2026: Recupere 15–20% das Conversões Perdidas Pelo Cookie Tracking",
-        "resumo": "Enhanced Conversions envia dados de first-party (email/telefone hasheados com SHA-256) ao Google para recuperar conversões que o cookie não capturou. Em junho/2026, o Google unificou o toggle numa única interface — mais simples de ativar.",
-        "porque": "Com cookies de terceiros desaparecendo, campanhas perdem rastreabilidade. Enhanced Conversions recupera conversões perdidas e melhora o Smart Bidding com dados mais completos — especialmente importante para leads por formulário como OPC.",
-        "aplicar": "Para Oak Park Construction: se o cliente liga depois de ver o anúncio mas não converte no site, o Enhanced Conversions captura isso via hash do e-mail do formulário de contato. Essencial para campanha de leads.",
-        "plano": "1) Google Ads → Metas → Conversões → Configurações → Ative 'Enhanced conversions for web'. · 2) Adicione o campo de email/telefone no snippet de conversão do site. · 3) Aguarde 7 dias e compare 'Conversões rastreadas' antes e depois no painel de diagnóstico. · 4) Se CTR >3% mas conversões = 0 (como no seu relatório atual), verifique o diagnóstico de 'Enhanced conversions' e corrija a tag antes do próximo ciclo.",
+        "t": "Google Demand Gen 2026: Display Ads Acabou — Sua Verba Agora Vai para YouTube + Gmail + Discover em 1 Campanha",
+        "resumo": "Em mai/2026, o Google encerrou as campanhas Display como tipo independente. Demand Gen (lançada em 2024 no lugar de Discovery) absorveu tudo: YouTube, Gmail, Discover e Maps (beta). Uma campanha, todo o inventário visual do Google. Promessa de +9,5% de ROI vs. Display antiga.",
+        "porque": "Se você ainda tem Display Ads rodando, ela já foi ou será migrada. Para o OPC: Demand Gen é ideal para gerar demanda visual de reforma com vídeos curtos e fotos de projetos — antes do cliente pesquisar ativamente.",
+        "aplicar": "Criar 1 campanha Demand Gen para o OPC com 3 formatos: foto do projeto finalizado, vídeo Reel antes/depois de 15 s, headline 'Transforme sua casa em [X dias]'. Orçamento de teste: $20/dia por 2 semanas.",
+        "plano": "1) Abrir Google Ads → Nova Campanha → Demand Gen · 2) Carregar 3 imagens de projetos OPC + 1 vídeo curto (15 s) · 3) Configurar público similar aos leads atuais + interesses em reforma e decoração · 4) Medir CTR e custo por lead em 14 dias antes de escalar",
         "fonte": {
-          "t": "Google Ads Enhanced Conversions 2026 Update — Taggrs.io",
-          "u": "https://taggrs.io/google-ads-enhanced-conversions-2026-update/"
+          "t": "JudeLuxe: Google Demand Gen Replaces Discovery 2026",
+          "u": "https://www.judeluxe.com/insights/google-ads-demand-gen-replaces-discovery-2026"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-11-17",
+        "id": "iafim-2026-11-18",
         "top": true,
-        "t": "n8n AI Agents 2026: Arraste e Solte um Agente Autônomo — Open-Source, Self-Hosted, 400+ Integrações",
-        "resumo": "n8n adicionou um nó nativo de AI Agent que combina LLM + ferramentas + memória num único bloco visual. O agente lê e-mails, decide ações e executa fluxos automaticamente — sem código. Cloud grátis para começar; self-hosted 100% grátis (Docker).",
-        "porque": "Open-source com suporte a Claude, GPT-4o e Gemini. Dados ficam no seu servidor. 400+ integrações nativas (Gmail, Sheets, Slack, WhatsApp). Ideal para automatizar triagem de leads, respostas e pipelines de conteúdo — mais flexível que Make.com.",
-        "aplicar": "Para OPC: crie um agente que lê o e-mail de lead, extrai nome/telefone/projeto, registra no Google Sheets e manda notificação via Slack ou Gmail para você — tudo automático em menos de 5 minutos de setup.",
-        "plano": "1) Acesse n8n.io → Cloud (free trial) ou instale self-hosted via Docker: 'docker run -p 5678:5678 n8nio/n8n'. · 2) Arraste o nó 'AI Agent' e conecte um chat model (Claude 3.5 Sonnet). · 3) Adicione tools: 'Gmail Read' + 'Google Sheets Write' + 'Gmail Send'. · 4) Teste com um e-mail de lead fictício e verifique se o agente extrai nome, telefone e projeto corretamente.",
+        "t": "Dify.ai 2026: Construa Agentes LLM com Interface Visual — Open-Source, Deploy Local ou Cloud, 60K+ Stars no GitHub",
+        "resumo": "Dify é uma plataforma open-source para criar chatbots, agentes autônomos e pipelines RAG sem código pesado. Builder visual com nodes de agente (Function Calling + ReAct), suporte a qualquer LLM (OpenAI, Anthropic, Llama local), publica como API, web app ou MCP tool.",
+        "porque": "Depois do QUOTA_EXCEEDED da Anthropic (alerta ontem), Dify permite rodar agentes com modelos alternativos (Llama 3, Gemini) sem depender de um único provedor. Auto-hospedado = sem custo fixo de assinatura. 60K+ stars no GitHub; review Dupple: 3.8/5, jul/2026.",
+        "aplicar": "Para o pipeline de captura de notícias: hospedar uma instância Dify com um agente de triagem que roda em modelo local quando a Anthropic estiver fora. Fallback automático, sem custo extra.",
+        "plano": "1) Clonar Dify em github.com/langgenius/dify e rodar com Docker Compose em 5 min · 2) Criar um workflow simples: receber URL → resumir → classificar por tópico · 3) Testar com 10 itens do backlog de notícias pendentes · 4) Comparar custo e velocidade vs. pipeline atual Anthropic",
         "fonte": {
-          "t": "n8n AI Agent: Building Autonomous Workflows — HatchWorks",
-          "u": "https://hatchworks.com/blog/ai-agents/n8n-ai-agent/"
+          "t": "Dupple: Dify Review 2026",
+          "u": "https://dupple.com/reviews/dify"
         },
-        "video": {"t": "", "u": ""}
+        "video": {
+          "t": "",
+          "u": ""
+        }
       }
     ]
   }
