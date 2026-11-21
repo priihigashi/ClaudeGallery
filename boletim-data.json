@@ -1,143 +1,143 @@
 {
-  "date": "2026-11-20",
+  "date": "2026-11-21",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "LEAD",
-      "t": "Nova enquiry OPC — Matamron Bacon, projeto Addition, chegou pelo site hoje",
-      "why": "Formulário enviado às 00:27 de hoje pelo site da OPC. Projeto de Addition. Responder antes que esfrie — leads do site têm janela curta.",
-      "go": "ads"
-    },
-    {
-      "tag": "ALERTA",
-      "t": "Anthropic QUOTA_EXCEEDED de novo esta manhã — pipeline bloqueada pela 3ª vez seguida",
-      "why": "Email 11:01 AM: quota_exceeded novamente. Já são 3 dias consecutivos. Pipeline parada. Recarregar créditos em console.anthropic.com/settings/billing e revisar limites do plano.",
-      "go": "iafim"
-    },
-    {
-      "tag": "MERGE",
-      "t": "PR #343 pronto para merge — reel do PL 5854 aprovado em todos os CIs",
-      "why": "Daily Advancer de ontem confirmou: PR #343 ('Checa reel do PL 5854 com duas contas e dois casos reais') passou nos 3 CIs. Sem merge, o reel não entra em produção.",
+      "tag": "APROVAÇÕES OPC",
+      "t": "2 aprovações de conteúdo pendentes — OPC + News",
+      "why": "Dois emails de aprovação parados hoje. Descript pode acelerar o ciclo de revisão com colaboração em tempo real.",
       "go": "conteudo"
     },
     {
-      "tag": "DOMÍNIO",
-      "t": "Cancelamento de domínio .br em análise — procedimento #1106795 do registro.br",
-      "why": "Email do registro.br chegou ontem: pedido de cancelamento de domínio está em análise. Verificar se foi intencional. Se não foi, agir hoje para evitar perda do domínio.",
-      "go": "obra"
+      "tag": "RETELL AI ATIVO",
+      "t": "Fatura Retell AI chegou — agente de voz pago e subutilizado?",
+      "why": "Receipt Retell AI na caixa de entrada — configure follow-up automático para leads OPC enquanto o pagamento já roda.",
+      "go": "iafim"
+    },
+    {
+      "tag": "QUOTA ANTHROPIC",
+      "t": "Pipeline de captura bloqueada — Anthropic QUOTA_EXCEEDED",
+      "why": "Email de alerta: captura de conteúdo parada desde ontem. Resolver hoje para não perder mais conteúdo agendado.",
+      "go": "tip"
+    },
+    {
+      "tag": "IMÓVEIS FL",
+      "t": "Estudo FL diário ativo — BRICS move capital para novos mercados",
+      "why": "Real Estate Rule 1 ativa. BRICS 2026 reorganiza fluxos de capital imobiliário global — pauta relevante para seu público.",
+      "go": "geo"
     }
   ],
   "history": [
-    {"date": "2026-11-20", "label": "Boletim de hoje", "note": "8 tópicos pesquisados"},
-    {"date": "2026-11-19", "label": "Boletim 19/11", "note": "8 tópicos pesquisados"},
-    {"date": "2026-11-18", "label": "Boletim 18/11", "note": "8 tópicos pesquisados"},
-    {"date": "2026-11-17", "label": "Boletim 17/11", "note": "8 tópicos pesquisados"},
-    {"date": "2026-11-15", "label": "Boletim 15/11", "note": "8 tópicos pesquisados"},
-    {"date": "2026-11-14", "label": "Boletim 14/11", "note": "8 tópicos pesquisados"},
-    {"date": "2026-11-13", "label": "Boletim 13/11", "note": "8 tópicos pesquisados"}
+    {"date": "2026-11-21", "label": "Boletim de hoje", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-20", "label": "Boletim de quinta", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-19", "label": "Boletim de quarta", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-18", "label": "Boletim de terça", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-17", "label": "Boletim de segunda", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-15", "label": "Boletim de sábado", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-14", "label": "Boletim de sexta", "note": "8 tópicos pesquisados"}
   ],
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-11-20",
+        "id": "tip-2026-11-21",
         "top": true,
-        "t": "Cardápio de Dopamina para TDAH — Monte uma Lista de Microrcompensas Pré-Aprovadas e Pare de Depender de Motivação",
-        "resumo": "O Dopamine Menu (criado pela Jessica McCabe do canal How to ADHD) é uma lista personalizada de atividades imediatas que ativam a dopamina: um snack favorito, 5 min de música, um episódio curto, uma caminhada. Quando o cérebro trava, você abre o menu e escolhe — sem decidir sob pressão e sem culpa.",
-        "porque": "O TDAH tem um sistema de recompensa com resposta enfraquecida a recompensas futuras. Recompensas imediatas e concretas são o que realmente ativam o início da ação. Um menu pré-definido elimina o custo cognitivo de decidir quando você já está travada — a decisão foi tomada antecipadamente, em modo de calma.",
-        "aplicar": "Monte o seu menu AGORA (5 min) em 4 categorias: Aperitivos (1–5 min: respirar, dançar 1 música), Pratos Principais (15–30 min: série, banho longo), Sobremesas (1+ h: passeio, compra pequena), Bebidas (qualquer hora: café especial, podcast favorito). Cada item só é 'liberado' como recompensa — não consumido aleatoriamente.",
-        "plano": "1) Abra um post-it ou Notion e escreva 2–3 opções em cada categoria (aperitivo, prato, sobremesa, bebida) · 2) Regra: cada item só é acessado como recompensa — não disponível o tempo todo · 3) Quando travar hoje, abra o menu e escolha 1 aperitivo (máx 5 min) antes de retomar · 4) Revise o menu semanalmente: retire o que virou hábito automático e adicione algo novo para manter o efeito dopaminérgico",
-        "fonte": {"t": "CHADD: Dopamine Menus — the science behind the trend and how it might help people with ADHD", "u": "https://chadd.org/adhd-in-the-news/dopamine-menus-the-science-behind-the-trend-and-how-it-might-help-people-with-adhd/"},
+        "t": "Body Doubling para TDAH: Trabalhe ao Lado de Alguém (Mesmo Online) e Dobre Sua Produtividade",
+        "resumo": "Body doubling é trabalhar na presença de outra pessoa — online ou presencial — para manter o foco. Apps como Focusmate conectam você a um parceiro de foco por videochamada de 25 ou 50 min. A presença social ativa a responsabilidade externa que o cérebro TDAH precisa para começar e terminar tarefas.",
+        "porque": "O TDAH tem déficit de motivação interna, não de inteligência. Uma testemunha externa — mesmo silenciosa — cria responsabilidade social suficiente para o circuito dopaminérgico engajar. Um estudo de 2026 (arXiv) está testando body doubling em realidade virtual como intervenção específica para neurodivergentes.",
+        "aplicar": "Use Focusmate.com para agendar sessões de foco de 25 ou 50 min com um parceiro. Os dois anunciam o que vão fazer, trabalham em silêncio e fazem check-in no final. Gratuito até 3 sessões por semana. Funciona especialmente bem para a primeira tarefa do dia.",
+        "plano": "1) Acesse focusmate.com e crie conta gratuita. · 2) Agende uma sessão para hoje ou amanhã cedo (tem sessões a qualquer hora). · 3) Escolha 1 tarefa que você está evitando há dias. · 4) Apareça, declare o objetivo em 1 frase e execute. Repita 3x por semana por 2 semanas e avalie.",
+        "fonte": {"t": "Cleveland Clinic — Body Doubling for ADHD", "u": "https://health.clevelandclinic.org/body-doubling-for-adhd"},
         "video": {"t": "", "u": ""}
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-11-20",
+        "id": "receita-2026-11-21",
         "top": true,
-        "t": "Tacos de Cogumelos Portobello com Páprica Defumada — Prontos em 25 Min, Kid-Friendly, Sem Leite de Vaca",
-        "resumo": "Cogumelos portobello fatiados, marinados com cominho + páprica defumada + alho + limão, refogados em fogo alto até dourar. Servidos em tortilha de milho com guacamole, repolho crocante e pico de gallo. Sem leite de vaca, sem frutos do mar, prontos em 25 min.",
-        "porque": "Portobello tem textura carnuda que satisfaz sem ficar pastoso — diferente de outros cogumelos. A páprica defumada dá sabor profundo sem picância, o que torna o taco aprovado por crianças. Mais rápido que a maioria das proteínas animais e a versão vegana fica melhor do que a industrializada.",
-        "aplicar": "Fatie os portobellos em tiras de 1 cm (não em cubos — mantém a textura melhor). Frigideira bem quente + fio de azeite. Não mexa por 2 min para dourar. A textura imita frango grelhado quando bem feito. Para crianças mais novas, sirva o cogumelo com arroz e feijão em vez do taco — mesma marinada, formato diferente.",
-        "plano": "1) Fatie 2 portobellos grandes em tiras e marine 10 min em: 2 cs azeite + 1 cc cominho + 1 cc páprica defumada + 1 dente de alho ralado + suco de ½ limão + sal · 2) Frigideira antiaderente bem quente, frite em fogo alto por 2–3 min de cada lado sem mexer até dourar · 3) Sirva em tortilha de milho aquecida com repolho fino fatiado, guacamole e pico de gallo · 4) Variação: adicione feijão preto refogado dentro do taco para aumentar proteína",
-        "fonte": {"t": "Feasting at Home: Chipotle Portobello Tacos", "u": "https://www.feastingathome.com/chipotle-portobello-tacos/"},
+        "t": "Curry de Grão-de-Bico com Leite de Coco — Cremoso, Vegano, Kid-Friendly em 30 Min",
+        "resumo": "Grão-de-bico em lata + leite de coco + tomate + curry suave = jantar fácil, proteico e que as crianças adoram. Sem peixe, sem leite de vaca, pode finalizar com queijo vegano ralado por cima. Ingredientes de dispensa, resultado impressionante.",
+        "porque": "Grão-de-bico tem 15g de proteína por xícara, o curry suave agrada o paladar infantil e o leite de coco dá cremosidade sem laticínios. Com grão-de-bico em lata, o preparo é de 25 minutos. Uma das receitas veganas com maior aprovação de crianças.",
+        "aplicar": "Sirva com arroz branco ou pão naan vegano. Para versão mais kids-friendly, reduza o curry para meia colher e adicione uma pitada de canela — o sabor fica adocicado. Queijo vegano tipo FL ralado por cima é o toque final perfeito.",
+        "plano": "1) Refogue 1 cebola + 2 dentes de alho + 1 colher de gengibre fresco em azeite (5 min). · 2) Adicione ½–1 colher de curry suave + 1 lata de grão-de-bico escorrido + 1 lata de tomate pelado. · 3) Despeje 1 lata de leite de coco e cozinhe 15 min em fogo médio. · 4) Acerte sal, sirva com arroz e finalize com salsinha ou coentro.",
+        "fonte": {"t": "InnerBuddies — Curry de Grão-de-Bico com Couve e Coco", "u": "https://www.innerbuddies.com/pt/pages/recipe/chickpea-kale-coconut-curry"},
         "video": {"t": "", "u": ""}
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-11-20",
+        "id": "merch-2026-11-21",
         "top": true,
-        "t": "Teemill 2026: POD Sustentável com Algodão Orgânico Certificado — 4.200+ Reviews no Trustpilot, Economia Circular Integrada",
-        "resumo": "Teemill é uma plataforma POD britânica com 100% algodão orgânico certificado (GOTS), tinta base aquosa e energia renovável. Diferencial único: 'return and remake' — clientes devolvem a roupa gasta e ganham crédito para nova compra, que vai para nova produção fechando o ciclo. 4.200+ reviews no Trustpilot com score ~4.3.",
-        "porque": "Para marcas com posicionamento eco ou para itens infantis (pais pagam mais por orgânico certificado), Teemill é o único POD que permite comunicar toda a cadeia sustentável no próprio produto. Foco em DTG de qualidade — sem bordado. Se a proposta de valor da sua marca é 'orgânico, sustentável, transparente', não tem concorrente direto no mercado POD.",
-        "aplicar": "Estratégia dual: Teemill para itens com comunicação eco (tees orgânicas, camisetas infantis), Printful/Apliiq para bordado premium. Duas linhas na mesma loja com posicionamentos distintos — ou duas lojas separadas por público.",
-        "plano": "1) Crie conta em teemill.com e explore o catálogo de tees femininas orgânicas · 2) Verifique se há opção de longline feminina disponível (pesquise 'women long' no catálogo) · 3) Peça 1 amostra física para avaliar qualidade do DTG e caimento · 4) Compare com Printful: Teemill ganha em eco-positioning; Printful ganha em bordado e catálogo maior",
-        "fonte": {"t": "Teemill: Eco Print on Demand — Shopify App Store", "u": "https://apps.shopify.com/teemill"},
+        "t": "Printful 2026: POD dos EUA com Bordado Real + Tee Longline Feminina (Cotton Heritage) — 4.5★ G2, Sem Mínimo",
+        "resumo": "Printful combina bordado real de alta qualidade com tees longline femininas (Cotton Heritage OW1086 — corte longo, algodão ultra-macio), integração Shopify em 1 clique, produção nos EUA e sem pedido mínimo. Avaliação 4.5★ no G2 com 193 reviews verificados.",
+        "porque": "Enquanto Gelato e Teemill focam em impressão, bordado exige equipamento específico — e Printful investe nessa categoria. Fulfillment nos EUA significa envio mais rápido para clientes americanos. O OW1086 tem superfície firme ideal para bordado sem showing do backing.",
+        "aplicar": "Sempre peça uma amostra antes de lançar. O blog da Printful tem guia sobre quais tees têm trama mais adequada para bordado. Verifique densidade de pontos e se o backing aparece — esse é o maior erro relatado em reviews negativos.",
+        "plano": "1) Acesse printful.com e crie conta gratuita. · 2) Em Products → T-shirts, filtre por Women e busque Cotton Heritage OW1086. · 3) Faça upload do design e configure como bordado (não DTG). · 4) Peça 1 sample (~$25–30) e avalie qualidade antes de publicar na loja.",
+        "fonte": {"t": "Printful — Best T-Shirts for Embroidery", "u": "https://www.printful.com/blog/best-t-shirts-for-embroidery"},
         "video": {"t": "", "u": ""}
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-11-20",
+        "id": "conteudo-2026-11-21",
         "top": true,
-        "t": "InVideo AI 2026: Cole Roteiro ou Tema → IA Gera Vídeo Completo com Voz PT-BR, B-Roll e Legenda — Sem Gravar Nada",
-        "resumo": "InVideo AI converte um prompt ou roteiro em vídeo completo: script, cenas de stock, voz em PT-BR (2.000+ vozes), música e legenda animada. Templates específicos para Reels e TikTok por nicho, incluindo home renovation. Plano gratuito com marca d'água; pago a partir de ~$20/mês. 25M+ usuários. Motor: GPT-4.1 + Veo 3.1.",
-        "porque": "Diferente do Fliki (texto→vídeo genérico) e do CapCut (edição manual), InVideo tem templates de Reel prontos por nicho. Para criar conteúdo faceless sem câmera — só com o tema ou roteiro. Aviso honesto: reviews são polarizados — ótimo para vídeos simples de nicho, precisa de revisão manual para conteúdo complexo.",
-        "aplicar": "Para o OPC: use o template 'Before & After Home Renovation'. Cole descrição curta do projeto em PT-BR, escolha voz feminina, exporte em 9:16. Compare o resultado com um Reel feito no CapCut — se InVideo ficar bom, automatiza o conteúdo faceless sem depender de gravação.",
-        "plano": "1) Acesse ai.invideo.io e crie conta gratuita · 2) Escolha template de 'home renovation' ou 'construction before after' · 3) Cole roteiro em PT-BR (máx 150 palavras) ou deixe a IA gerar a partir do tema · 4) Revise as cenas geradas, troque as que não ficaram boas, e compare o tempo total vs edição manual no CapCut",
-        "fonte": {"t": "InVideo AI Review 2026 — TechRadar", "u": "https://techradar.com/reviews/invideo-review"},
+        "t": "Descript 2026: Edite Vídeo Apagando Palavras no Texto — Legendas Automáticas + Studio Sound Grátis",
+        "resumo": "Descript transcreve seu vídeo automaticamente e você edita cortando palavras no texto — sem linha do tempo complexa. Legendas síncronas para Reels/TikTok/Shorts incluídas. Plano gratuito já inclui transcrição, remoção de filler words e Studio Sound (melhora o áudio com IA). Plano pago a $16/mês. Colaboração em tempo real.",
+        "porque": "Para quem grava com pausas, re-gravações e muitos 'ahn' (padrão TDAH), o Descript elimina filler words automaticamente. O resultado é vídeo limpo em minutos — sem editar frame a frame. Aprovações de conteúdo pendentes? Descript tem modo de revisão colaborativa.",
+        "aplicar": "Para a Oak Park Construction: grave os clipes de obra no canteiro, importe no Descript, delete as pausas apagando o texto, adicione legendas e exporte em 9:16 para Reels. O fluxo do 'antes/depois' de reforma fica pronto em 15 minutos.",
+        "plano": "1) Acesse descript.com e crie conta gratuita. · 2) Importe 1 vídeo de obra ou de review de cliente. · 3) Deixe transcrever, delete partes indesejadas apagando o texto. · 4) Clique em Captions → Add Captions, ajuste estilo e exporte em 9:16 para Reels.",
+        "fonte": {"t": "Descript — Add Captions to Videos", "u": "https://www.descript.com/tools/add-captions-to-videos"},
         "video": {"t": "", "u": ""}
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-11-20",
+        "id": "obra-2026-11-21",
         "top": true,
-        "t": "Planner 5D AI 2026: Fotografe o Cômodo → IA Gera Planta Baixa + Render 3D Interativo no Celular — Conteúdo para Instagram",
-        "resumo": "Planner 5D combina geração de planta baixa 2D com visualização 3D interativa no navegador — sem instalação. AI Room Recognition (fotografe o cômodo → IA desenha a planta) + AI Furnishing (mobilia o ambiente com 1 clique). Plano básico ~$4,99/mês; free com funcionalidades limitadas. 100M+ projetos criados.",
-        "porque": "Para a Oak Park Construction, o diferencial único é o AI Room Recognition: tire foto de um cômodo real da obra → IA desenha a planta → você mostra ao cliente o layout reformado em 3D antes de assinar. Diferente de todos os outros renders nesta série — parte de uma foto real do espaço existente e gera planta + render juntos.",
-        "aplicar": "Na próxima visita de cliente, tire foto de um cômodo da obra. Acesse planner5d.com no celular, use 'Scan Room' e deixe a IA gerar a planta. Adicione mobiliário com AI Furnishing e mostre ao cliente o 'depois' durante a reunião. Screenshots do 3D viram carrossel no Instagram sem custo extra.",
-        "plano": "1) Acesse planner5d.com e crie conta (plano gratuito com funcionalidades limitadas) · 2) Use 'Scan Room' (AI Room Recognition): fotografe um cômodo real do projeto atual · 3) Adicione mobiliário com 'AI Furnishing' em 1 clique e ajuste o estilo · 4) Faça screenshot do modo 3D e monte carrossel 'Como vai ficar' para o Instagram da OPC com CTA",
-        "fonte": {"t": "Jotform: The 6 Best AI Tools for Interior Design in 2026", "u": "https://www.jotform.com/ai/best-ai-for-interior-design/"},
+        "t": "Remodeled AI 2026: Foto do Cômodo → IA Gera Before/After em 30 Seg — Reel Viral Sem Fotógrafo",
+        "resumo": "Remodeled AI converte fotos de obras em renders de antes/depois com slider comparativo em alta resolução. Em 30 segundos você tem um visual profissional de como o espaço ficará após a reforma — perfeito para Reels, Stories e cards de proposta da Oak Park Construction. Planos a partir de $7/mês.",
+        "porque": "Clientes pedem visualização antes de assinar. Um Reel de before/after gerado por IA gera muito mais engajamento do que foto estática — e você produz sem contratar renderizador. Reels de reforma com slider comparativo são um dos formatos de maior alcance orgânico no Instagram em 2026.",
+        "aplicar": "Use fotos reais de obras em andamento da OPC, gere os renders no Remodeled AI, adicione legenda 'Antes → Depois da Reforma' e poste como Reel com áudio em alta. Cozinhas e banheiros têm melhor performance de engajamento.",
+        "plano": "1) Acesse remodelai.io e faça cadastro (plano a partir de $7/mês). · 2) Tire foto do ambiente atual da obra com boa iluminação. · 3) Faça upload, selecione estilo (moderno, contemporâneo) e gere o render. · 4) Baixe o par antes/depois e monte o Reel com transição de slider no CapCut ou Descript.",
+        "fonte": {"t": "Remodel AI — Best AI Apps for Contractors 2026", "u": "https://www.remodelai.io/blog/best-ai-apps-for-contractors"},
         "video": {"t": "", "u": ""}
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-11-20",
+        "id": "geo-2026-11-21",
         "top": true,
-        "t": "Zona Cinzenta de Taiwan 2026: China Usa Guarda Costeira + Isolamento Marítimo Para Sufocar a Ilha Sem Declarar Guerra",
-        "resumo": "Em 2026, a China opera uma estratégia de zona cinzenta contra Taiwan: voos diários do ELP no ADIZ taiwanês, fiscalização marítima com a Guarda Costeira e inspeção de navios próximos aos portos da ilha. Não é invasão — é asfixia gradual que testa os EUA e a comunidade internacional sem cruzar o limiar formal da guerra.",
-        "porque": "A zona cinzenta é o conceito mais relevante para entender a crise Taiwan-China: ações abaixo do limiar de guerra que acumulam pressão sem dar ao adversário um casus belli claro. É exatamente o mesmo padrão que a Rússia usou contra a Ucrânia de 2014 a 2022 — analogia poderosa para pauta explicativa no canal de notícias.",
-        "aplicar": "Pauta: 'Como a China sufoca Taiwan sem atirar um tiro — a estratégia da zona cinzenta'. Analogia concreta para o público: um credor que chega todo dia na porta sem invadir a casa, mas vai restringindo acesso e movimento até o devedor ceder. Muito visual e concreto para Reels de geopolítica.",
-        "plano": "1) Entenda os 3 instrumentos da zona cinzenta: ELP (voos no ADIZ), Guarda Costeira (inspeção marítima), guerra regulatória (bloqueio alfandegário de navios) · 2) Contexto 2026: EUA em 'trégua' comercial com China → Pequim aproveita para pressionar Taiwan com mais força (fonte: ASPI, jul/2026) · 3) Roteirize carrossel de 5 slides: o que é zona cinzenta, como a China aplica, paralelo com Rússia/Ucrânia, o que os EUA fazem, o que muda para o Brasil · 4) Use mapas do Estreito de Taiwan como visual do carrossel — disponíveis no CSIS e defensa.gob.es",
-        "fonte": {"t": "Gazeta do Povo: Como a China usa uma estratégia silenciosa para sufocar Taiwan", "u": "https://www.gazetadopovo.com.br/mundo/como-a-china-usa-uma-estrategia-silenciosa-para-sufocar-taiwan/"},
+        "t": "BRICS em 2026: 11 Membros, 30+ Candidatos e a Cúpula em Nova Delhi — O Sul Global Reorganiza o Poder",
+        "resumo": "O BRICS agora tem 11 membros e mais de 30 países na fila de adesão. A 18ª Cúpula ocorreu em Nova Delhi em setembro/2026, sob presidência da Índia, com novas admissões esperadas. O bloco representa 49,5% da população mundial, 40% do PIB global e 26% do comércio internacional — construindo uma alternativa real às instituições lideradas pelo Ocidente.",
+        "porque": "Entender o BRICS é entender como o capital se move no Sul Global. Membros negociam em moeda local, contornam o dólar e desenvolvem infraestrutura de pagamento própria. Para negócios com clientes internacionais ou investimentos imobiliários transfronteiriços, esse fluxo de capital é cada vez mais relevante.",
+        "aplicar": "Pauta de conteúdo: 'Por que países do Sul Global trocam o FMI pelo BRICS?' Conecta diretamente com seu público brasileiro nos EUA, que acompanha o impacto do câmbio e das políticas do dólar no Brasil.",
+        "plano": "1) Leia o mapa de expansão do BRICS Lab do MIT (bricslab.mit.edu). · 2) Identifique quais dos 30+ candidatos são parceiros comerciais do Brasil ou mercados imobiliários emergentes. · 3) Monte 3 perguntas: Quem entrou? Por quê? Impacto no câmbio BRL/USD? · 4) Use como pauta de conteúdo geopolítico nos próximos 3 dias.",
+        "fonte": {"t": "MIT BRICS Lab — Expansion Map 2026", "u": "https://bricslab.mit.edu/bricsresearch/brics-map"},
         "video": {"t": "", "u": ""}
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-11-20",
+        "id": "ads-2026-11-21",
         "top": true,
-        "t": "Google Local Services Ads (LSA) 2026: Pague por Lead — O Único Anúncio que Aparece Acima do Search para Contratistas",
-        "resumo": "Local Services Ads são os anúncios 'Google Guaranteed' que aparecem ACIMA dos resultados de pesquisa para buscas como 'contractor near me' ou 'home addition Fort Lauderdale'. Você paga por lead (telefone ou mensagem confirmada), não por clique. Em agosto/2026, o Google migrou o dashboard LSA para dentro do Google Ads, mas o modelo pay-per-lead continua. Custo médio: $25–$130 por lead dependendo da região e serviço.",
-        "porque": "Para a Oak Park Construction, LSA é o canal de maior intenção de compra no Google: o cliente está ativamente buscando um contratista AGORA. Com o badge 'Google Guaranteed', você tem vantagem de credibilidade sobre concorrentes não verificados. Diferente do Performance Max (awareness) ou Demand Gen (interesse), LSA captura quem já quer contratar.",
-        "aplicar": "Se OPC ainda não tem LSA ativo: verificar elegibilidade em ads.google.com/localservices. O processo inclui verificação de licença (CBC1263425), background check do owner e verificação de seguro. Uma vez ativo, o custo por lead é previsível — e você só paga por leads válidos, podendo disputar os irrelevantes.",
-        "plano": "1) Acesse ads.google.com/localservices e verifique se a OPC já tem conta LSA configurada · 2) Se não: inicie o processo de verificação — licença CBC1263425 + seguro + background check do owner · 3) Configure horários de atendimento realistas: LSA penaliza quem não atende o telefone — defina janela em que você garante atendimento · 4) Monitore 'lead quality' por 30 dias e dispute leads irrelevantes para recuperar crédito",
-        "fonte": {"t": "Local Service Ads in 2026: What Changed and How to Win the Channel — SureFire Local", "u": "https://www.surefirelocal.com/?p=58035"},
+        "t": "Performance Max 2026: Os 5 Ajustes que Mais Impactam ROI — Asset Groups, Sinais de Dados e Paciência Estratégica",
+        "resumo": "Performance Max substituiu Smart Shopping, Local Ads e Dynamic Search Ads. Para funcionar bem exige: mínimo 6 semanas de dados, lances por valor de conversão, search themes específicos e asset groups separados por serviço. Empresas de construção e reforma têm bons resultados com leads de alto ticket quando a segmentação é precisa.",
+        "porque": "PMax coloca toda a verba no piloto automático da IA do Google — sem configuração correta ela otimiza volume e não qualidade. Ajustar sinais de audiência e negativar keywords são os dois ajustes com maior impacto imediato em contas de serviços locais.",
+        "aplicar": "Para a Oak Park Construction: crie asset groups separados por serviço ('reforma de cozinha', 'reforma de banheiro', 'adição de cômodo') com imagens reais de obras e landing pages específicas. Use Enhanced Conversions para recuperar leads perdidos por bloqueadores.",
+        "plano": "1) Abra sua conta Google Ads e acesse a campanha Performance Max. · 2) Revise os Asset Groups: há um por serviço principal da OPC? Separe agora. · 3) Adicione Search Themes específicos (ex: 'reforma cozinha Fort Lauderdale'). · 4) Configure Maximize Conversion Value como estratégia de lances e aguarde 6 semanas para o algoritmo calibrar.",
+        "fonte": {"t": "JumpFly — Mastering Google Performance Max: A 2026 Strategy Guide", "u": "https://www.jumpfly.com/blog/mastering-google-performance-max-a-2026-strategy-guide"},
         "video": {"t": "", "u": ""}
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-11-20",
+        "id": "iafim-2026-11-21",
         "top": true,
-        "t": "Relevance AI 2026: Construa Agentes Autônomos Sem Código — 4.3★ no G2, Ideal para Vendas e Ops Sem Programador",
-        "resumo": "Relevance AI é uma plataforma no-code para criar agentes autônomos: você descreve o que o agente deve fazer em linguagem natural, conecta ferramentas (email, CRM, planilha) e ele executa. Plano free com 1.000 créditos/mês; plano Pro ~$19/mês. 4.3★ no G2 (2026). Domain experts de vendas e ops constroem sem precisar de engenheiro.",
-        "porque": "Enquanto n8n (11/17) é fluxo visual mas exige lógica técnica, e LangGraph (11/19) é framework de código puro, o Relevance AI fica no meio: agentes que tomam decisões dinâmicas ('se o lead respondeu X, fazer Y') configurados em linguagem natural. Ideal para OPC: agente que qualifica leads recebidos, verifica histórico e envia follow-up automaticamente.",
-        "aplicar": "Para o problema de leads do site (como o de hoje — Matamron Bacon): configure um agente Relevance AI que lê novos leads do Google Sheets → verifica se o endereço é na área de serviço → envia email de follow-up personalizado → notifica você via Gmail com resumo. Sem código.",
-        "plano": "1) Crie conta em relevanceai.com (free: 1.000 créditos/mês) · 2) Explore o template 'Lead Qualification Agent' no marketplace de templates da plataforma · 3) Conecte ao Google Sheets com os leads do OPC e ao Gmail · 4) Configure 1 regra de decisão: 'se projeto for Addition/Renovation em FL → template A; se fora da área de serviço → template B de redirecionamento'",
-        "fonte": {"t": "Is Relevance AI worth it in 2026? A detailed review — AutomationAtlas", "u": "https://automationatlas.io/answers/relevance-ai-review-2026/"},
+        "t": "CrewAI Studio 2026: Monte Times de Agentes IA Sem Código — Drag-and-Drop, Open-Source, Exportável para Python",
+        "resumo": "CrewAI é um framework open-source de múltiplos agentes onde cada agente tem papel definido (pesquisador, escritor, revisor) e colaboram em fluxos autônomos. O Crew Studio v2 (2026) adiciona interface visual drag-and-drop — você monta o time de agentes sem código e exporta como Python quando quiser. Integra com Zapier para disparar de qualquer gatilho.",
+        "porque": "Diferente de n8n (automação linear) e Dify (LLM workflow), CrewAI é focado em colaboração entre agentes com papéis distintos — ideal para pipelines de conteúdo onde um agente pesquisa, outro escreve e outro revisa. Já tem integração nativa com Zapier para conectar ao seu stack atual.",
+        "aplicar": "Para a Oak Park Construction: crie um crew com 3 agentes — 1 que busca tendências de reforma no Instagram, 1 que escreve o roteiro do Reel e 1 que formata para legenda PT-BR. Integre ao seu pipeline de conteúdo via Zapier.",
+        "plano": "1) Acesse crewai.com e explore o Crew Studio (interface visual, sem código). · 2) Crie um novo Crew com 3 agentes: Researcher, Writer, Formatter. · 3) Defina as tarefas de cada agente em linguagem natural. · 4) Conecte via Zapier ao seu trigger de conteúdo OPC e teste o fluxo com um tópico real.",
+        "fonte": {"t": "CrewAI Blog — Build Agentic Workflows Without Code", "u": "https://blog.crewai.com/enabling-domain-experts-to-build-and-deploy-agentic-workflows-without-the-need-to-write-code"},
         "video": {"t": "", "u": ""}
       }
     ]
