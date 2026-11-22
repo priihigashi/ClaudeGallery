@@ -1,0 +1,145 @@
+{
+  "date": "2026-11-22",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "LEAD OPC",
+      "t": "Novo lead Michael Reilly — Pompano Beach, verificar área de serviço",
+      "why": "Email CCiado para você: novo lead em Pompano Beach. Localidade fora do padrão Fort Lauderdale — confirme se está na área de serviço antes do follow-up. Leads esfriaram em menos de 24h sem resposta.",
+      "go": "ads"
+    },
+    {
+      "tag": "SEGURANÇA",
+      "t": "Alerta Google Workspace: login suspeito detectado — verificar agora",
+      "why": "Google Workspace enviou alerta de suspicious login. Se não foi você, trocar a senha e ativar 2FA nos apps conectados (Gmail, Drive, automações). Acesso não autorizado pode comprometer o pipeline de conteúdo.",
+      "go": "iafim"
+    },
+    {
+      "tag": "PLUGINS",
+      "t": "Weekly Plugins Review amanhã às 9h — separar os de triagem desta semana",
+      "why": "Calendário confirma: Weekly Intake de AI tools em 11/23. Listar hoje os plugins/ferramentas testados nesta semana poupa 20 min amanhã e garante que nada fica em 'talvez' por mais uma semana.",
+      "go": "iafim"
+    },
+    {
+      "tag": "INSTAGRAM",
+      "t": "Metricool: 1 nova atualização em 'tentandochegaratevoce' — conferir engajamento",
+      "why": "Email Metricool chegou hoje. Conta 'tentandochegaratevoce' tem dados novos. Checar tempo médio de visualização e taxa de engajamento dos Reels mais recentes para ajustar o próximo conteúdo.",
+      "go": "conteudo"
+    }
+  ],
+  "history": [
+    {"date": "2026-11-22", "label": "Boletim de hoje", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-21", "label": "Boletim de sexta", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-20", "label": "Boletim de quinta", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-19", "label": "Boletim de quarta", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-18", "label": "Boletim de terça", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-17", "label": "Boletim de segunda", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-15", "label": "Boletim de sábado", "note": "8 tópicos pesquisados"}
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-11-22",
+        "top": true,
+        "t": "Cegueira Temporal do TDAH: Use um Timer Visual (não digital) para 'Ver' o Tempo Passar e Parar de Perder Prazos",
+        "resumo": "O TDAH causa cegueira temporal neurológica: o cérebro não sente o tempo passar. Um relógio digital diz '14:32' — mas isso é um número abstrato. O Time Timer (ou equivalente) mostra o tempo que resta como um disco colorido que encolhe visualmente na sua frente. Você não precisa de disciplina para 'sentir' o tempo — você o vê acontecendo.",
+        "porque": "Pesquisas confirmam que o TDAH tem déficit no sentido interno do tempo (não da memória). Versões visuais de contagem regressiva — um disco colorido que desaparece — são processadas diretamente pelo sistema visual sem passar pela memória de trabalho. Para tarefas de 25–60 min, o Time Timer foi uma das 3 ferramentas mais citadas por adultos com TDAH como transformadoras na prática diária (ADHD Without the Guilt, 2025).",
+        "aplicar": "Coloque o timer no campo de visão central — não escondido na lateral da tela. Use para o bloco de RE às 8h (60 min), para a sessão de aprovação de conteúdo OPC (25 min) e para qualquer tarefa que você costuma 'começar já já' por horas. O disco vermelho que encolhe ativa a urgência sem ansiedade — o prazo está ali, visível, não abstrato.",
+        "plano": "1) Compre um Time Timer físico (a partir de $29 no Amazon, modelo de mesa) ou baixe o app Time Timer Official ($3.99). · 2) Para hoje: use na sessão de RE às 8h — configure 60 min e deixe em cima da mesa. · 3) Regra de uso: sempre que você diz 'vou fazer em 5 minutos', configure 5 min no timer imediatamente — se o disco esvaziar, você sabe que o tempo passou de verdade. · 4) Versão gratuita: timeanddate.com/timer tem um timer visual em qualquer navegador.",
+        "fonte": {"t": "ADHD Without the Guilt: 3 cheap tools that solve ADHD time blindness better than any app", "u": "https://adhdwithouttheguilt.substack.com/p/3-cheap-tools-that-solve-adhd-time"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-11-22",
+        "top": true,
+        "t": "Pad Thai Vegano com Tofu Crocante e Amendoim — Pronto em 30 Min, Kid-Friendly, Sem Leite de Vaca",
+        "resumo": "Macarrão de arroz refogado com tofu crocante, broto de feijão, cebolinha e molho de tamarindo-tamari. Finalizado com amendoim tostado e raspas de limão. Sem peixe, sem leite de vaca, sem frutos do mar. Crianças adoram a crocância do amendoim e do tofu. Rende 3 porções em 30 min.",
+        "porque": "O macarrão de arroz é naturalmente gluten-free e cozinha em 8 min — acelera muito o preparo. O tofu bem prensado e frito em fogo alto fica crocante por fora, o que a maioria das crianças acha divertido. O molho de tamarindo-tamari dá o sabor umami sem peixe (versão vegana sem fish sauce). Uma das receitas veganas mais compartilhadas no Pinterest em 2026.",
+        "aplicar": "Presse o tofu por 20 min antes para retirar o excesso de água — esse é o truque para ficar crocante. Frite em fogo alto sem mexer por 3 min de cada lado. Para crianças menores, corte o tofu em cubos menores e reduza o tamarindo pela metade — o sabor fica mais suave. Pode substituir tamarindo por suco de limão + açúcar mascavo se não encontrar.",
+        "plano": "1) Hidrate 200g de macarrão de arroz em água morna por 20 min; enquanto isso, presse 300g de tofu firme em papel toalha e corte em cubos. · 2) Misture o molho: 3 cs tamari + 1 cs pasta de tamarindo (ou 2 cs suco de limão) + 1 cs açúcar mascavo + 1 cc óleo de gergelim. · 3) Frigideira bem quente com 2 cs de óleo: frite o tofu 3 min sem mexer até dourar, vire e repita; reserve. · 4) Na mesma frigideira, refogue 2 dentes de alho por 1 min, adicione o macarrão escorrido + molho + tofu, refogue 2 min, desligue e finalize com broto de feijão, cebolinha, amendoim tostado e rodelas de limão.",
+        "fonte": {"t": "Simple Vegan Blog — Vegan Pad Thai", "u": "https://simpleveganblog.com/vegan-pad-thai/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-11-22",
+        "top": true,
+        "t": "Tapstitch 2026: 4.7★ Shopify para DTG de Qualidade em Longlines Femininas — Mas Sem Bordado Real (e Por Que Isso Importa)",
+        "resumo": "Tapstitch é uma plataforma POD com 4.7★ no Shopify (84% avaliações de 5 estrelas) focada em DTG de alta qualidade — fabric weight, cores vibrantes e impressão consistente. Destaca-se em tees longline femininas. Ponto crítico: NÃO oferece bordado real (só texto em fontes pré-definidas), o que a diferencia das plataformas da semana. Use para designs gráficos; para bordado, continue com Printful ou Apliiq.",
+        "porque": "Reviews de 2026 no Trustpilot citam consistência de impressão e qualidade do tecido como os maiores diferenciais. Muitos dizem que o 'fabric weight and finishing details' superam o esperado para POD. A falta de bordado não é um defeito — é uma escolha estratégica: Tapstitch se posiciona como o melhor para DTG artístico em peças premium. Para uma loja com 2 linhas (gráfica + bordado), ela segura a linha gráfica.",
+        "aplicar": "Estratégia de 2 fornecedores: Tapstitch para coleção de estampas artísticas/gráficas em longlines femininas, Printful ou Apliiq para a linha de bordado. Peça sample de ambos no mesmo design e compare side-by-side antes de lançar. O preço do Tapstitch costuma ser competitivo com Printful para DTG.",
+        "plano": "1) Crie conta em tapstitch.com e navegue no catálogo de tees femininas longline. · 2) Faça upload de um design gráfico (não bordado) e configure o produto. · 3) Peça 1 sample ($20–28) e compare a qualidade de impressão com sua parceira atual de DTG. · 4) Se a qualidade for superior, migre sua linha de estampas para Tapstitch e mantenha Printful/Apliiq só para bordado.",
+        "fonte": {"t": "Tapstitch Reviews 2026 — Trustpilot", "u": "https://uk.trustpilot.com/review/www.tapstitch.com"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-11-22",
+        "top": true,
+        "t": "Captions.ai 2026: Grave com o Celular → IA Corta, Legenda em 200+ Estilos e Reframing Automático — Para Quem Aparece na Câmera",
+        "resumo": "Captions.ai é um editor de vídeo mobile-first para conteúdo de talking head (você na câmera). Grave, e a IA remove pausas, adiciona legendas em 200+ estilos animados, faz reframing automático e permite editar via prompt de texto ('retire o ruído de fundo', 'acelere 10%'). Freemium com marca d'água; plano pago a partir de $15/mês. Diferente de todos os outros: começa com SUA gravação, não com texto.",
+        "porque": "Para criadores que aparecem na câmera — vlogs de obra, tour de projeto, depoimentos de cliente — o Captions.ai é o mais rápido do mercado para polir um vídeo bruto. Não precisa gravar de novo se gaguejar: a IA detecta filler words e oferece corte automático. Reviews de 2026 citam 'AI-powered subtitles very accurate' e 'editing features powerful and intuitive for short-form content (TikTok, Reels, Shorts)'.",
+        "aplicar": "Para o OPC: grave um tour rápido de obra diretamente no celular, importe no Captions.ai, deixe a IA cortar as pausas e gerar legendas, ajuste o estilo e exporte em 9:16. Para o canal de notícias: grave o comentário do dia em voz, use o Captions para transformar em Reel em 5 minutos. Muito mais rápido que CapCut para conteúdo de câmera pessoal.",
+        "plano": "1) Baixe o app Captions.ai (iOS/Android) — plano free disponível, com marca d'água. · 2) Grave um vídeo de 60–90 segundos da obra ou de um comentário sobre um tema do canal. · 3) Deixe a IA gerar as legendas e revisar os cortes automáticos. · 4) Compare o tempo total (gravação → Reel publicável) com o fluxo atual no CapCut — se ficar mais rápido, substitua para conteúdo de câmera pessoal.",
+        "fonte": {"t": "Captions.ai Review 2026 — SendShort", "u": "https://sendshort.ai/guides/captions-review/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-11-22",
+        "top": true,
+        "t": "DroneDeploy 2026: Fotos de Progresso de Obra → IA Monta Timeline Antes/Durante/Depois — Conteúdo Viral para Instagram da OPC",
+        "resumo": "DroneDeploy usa IA para organizar todas as fotos de obra (celular, 360°, drone) em uma timeline visual de progresso, comparando o mesmo ângulo em datas diferentes. O resultado é uma documentação automática que vira conteúdo de Instagram de alto desempenho: progressão de semanas em 15 segundos. Integra com Autodesk Construction Cloud. Plano gratuito disponível para funcionalidades básicas.",
+        "porque": "Para a Oak Park Construction, o diferencial único é a comparação automática de progresso no mesmo ponto de vista — a ferramenta encontra fotos do mesmo ângulo em datas diferentes e monta o 'antes/durante/depois' sem você precisar organizar manualmente. Um Reel de 15 segundos mostrando 4 semanas de reforma tem taxa de engajamento muito acima da média no Instagram de construção e reforma.",
+        "aplicar": "Na próxima visita de obra: tire 5–10 fotos do mesmo cômodo em vários ângulos. Repita o processo na visita seguinte no mesmo ângulo. DroneDeploy identifica automaticamente as fotos correspondentes e monta a comparação. Screenshots da timeline viram carrossel ou Reel de progresso — zero edição manual.",
+        "plano": "1) Acesse dronedeploy.com e crie conta (plano free disponível). · 2) Instale o app no celular e crie um projeto para a obra atual da OPC. · 3) Na próxima visita, tire fotos sistemáticas: 1 foto de cada canto do cômodo + foto de fachada. Repita na visita seguinte nos mesmos ângulos. · 4) Na plataforma, acesse 'Progress' — a IA monta a comparação. Faça screenshot da timeline e monte o Reel de progresso no CapCut com música em alta.",
+        "fonte": {"t": "DroneDeploy: How Construction Photo Management Software Turns Progress Photos Into Hard Data", "u": "https://dronedeploy.com/blog/how-construction-photo-management-software-turns-progress-photos-into-hard-data"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-11-22",
+        "top": true,
+        "t": "Corrida pelo Ártico 2026: EUA, Rússia e China Brigam pela Última Grande Fronteira — Rota Marítima, Petróleo e Poder Nuclear",
+        "resumo": "O degelo do Ártico está abrindo a Rota do Mar do Norte — um atalho entre Europa e Ásia que corta 40% da distância vs. o Canal de Suez. Rússia e China fizeram comboios navais conjuntos próximos ao Alasca em 2026. A OTAN realizou o exercício Nordic Response 2026 com 20.000+ soldados e 50 navios de guerra. O Ártico tem 13% das reservas de petróleo não descobertas e 30% do gás natural global — e apenas a Rússia tem uma frota robusta de quebra-gelos para acessá-lo no inverno.",
+        "porque": "O Ártico é o próximo grande teatro de competição global — mas diferente de Taiwan ou do Sahel, quase não aparece na mídia brasileira. É uma pauta visual fortíssima: mapas de rotas, navios militares no gelo, números que chocam (13% do petróleo mundial). Para o canal de notícias: a corrida pelo Ártico é a geopolítica de 2026 que todo mundo deveria conhecer mas quase ninguém conta.",
+        "aplicar": "Pauta de conteúdo: 'O gelo derreteu — e o mundo inteiro quer uma fatia'. Ângulo concreto para o público: a Rota do Ártico encurtando rotas de navios cargueiros impacta diretamente o preço de importações no Brasil. Carrossel de 5 slides: o que é a Rota do Mar do Norte, quem controla, o que a Rússia tem que os EUA não têm (quebra-gelos), China como 'Estado quase ártico', impacto para o Brasil.",
+        "plano": "1) Entenda os 3 ativos disputados: rota comercial (Rota do Mar do Norte), recursos naturais (petróleo + gás) e posição militar estratégica (mísseis e submarinos no Polo Norte). · 2) Fato-chave: OTAN tem ~5 quebra-gelos modernos; Rússia tem 40+. Essa assimetria define quem controla o acesso no inverno. · 3) Rússia + China: comboios navais conjuntos próximos ao Alasca em 2026 — sinal claro de coordenação estratégica. · 4) Monte carrossel com mapa do Ártico mostrando a rota e as bases militares — disponível gratuitamente no NSIDC (National Snow and Ice Data Center).",
+        "fonte": {"t": "Modern Diplomacy: The Arctic Frontline — NATO, Russia, and China's Race for the North (mai/2026)", "u": "https://moderndiplomacy.eu/2026/05/14/the-arctic-frontline-nato-russia-and-chinas-race-for-the-north/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-11-22",
+        "top": true,
+        "t": "RLSA 2026: Dê Lances Maiores Para Quem Já Visitou o Site da OPC — O Recurso Mais Subestimado do Google Ads para Contratistas",
+        "resumo": "RLSA (Remarketing Lists for Search Ads) permite mostrar anúncios diferentes e dar lances maiores quando alguém que já visitou seu site faz uma nova busca no Google. Para a Oak Park Construction: alguém acessou a página de 'Home Addition' mas não enviou o formulário → 2 dias depois busca 'contractor Fort Lauderdale' novamente → você aparece com lance 2x maior e mensagem customizada. Requer mínimo de 1.000 cookies na lista antes de ativar.",
+        "porque": "Leads de segunda visita têm taxa de conversão muito maior do que visitantes novos — eles já conhecem a empresa, já demonstraram intenção. RLSA é o único recurso do Google Ads que captura esse momento da segunda busca. Para contratistas de alto ticket (projetos $20k–$100k), o custo de dar um lance maior para um lead quente é irrelevante comparado ao valor do projeto.",
+        "aplicar": "Para OPC: crie uma lista de 'Visitou a página de serviços ou adição/reforma nos últimos 30 dias'. Nas campanhas de Search existentes, adicione essa lista como 'Bid Adjustment +50%' — isso não filtra quem vê o anúncio, apenas sobe o lance quando a pessoa da lista busca. Depois que a lista atingir 1.000 usuários, considere uma campanha separada só para remarketing com mensagem específica: 'Ainda pensando na reforma? Fale com a OPC hoje.'",
+        "plano": "1) Google Ads → Ferramentas → Audience Manager → crie lista 'Visitantes de serviços nos últimos 30 dias' usando o tag de remarketing do seu site. · 2) Aguarde a lista atingir 1.000 usuários (pode levar 2–4 semanas dependendo do tráfego). · 3) Nas campanhas de Search da OPC, vá em Audiences e adicione a lista como 'Observation' com Bid Adjustment de +50%. · 4) Monitore CPL (custo por lead) dessa audiência vs. o geral por 30 dias — a diferença de qualidade justifica o investimento.",
+        "fonte": {"t": "KlientBoost: RLSA — The Quiet Lever That Separates Efficient Accounts From Wasteful Ones (Q2 2026)", "u": "https://klientboost.com/ppc/rlsa/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-11-22",
+        "top": true,
+        "t": "Flowise 2026: Construa Pipelines LLM Arrastando Nós — Open-Source, Auto-Hospedado, 54k Stars no GitHub",
+        "resumo": "Flowise é um construtor visual open-source de agentes e pipelines LLM baseado em LangChain e LlamaIndex. Arraste nós de LLM, ferramentas, memória e RAG para montar workflows complexos de agentes — sem código. 54.000+ stars no GitHub. Auto-hospedado = gratuito. Melhor para RAG (documentos internos), chatbots e protótipos de agentes.",
+        "porque": "Diferente de n8n (automação visual genérica, boletim 11/17), Dify (plataforma com UI de produto, 11/18), LangGraph (código Python puro, 11/19) e CrewAI (times de agentes, 11/21), o Flowise é o ponto médio ideal: visual como n8n, mas focado em LLM + RAG como LangGraph, com self-hosting como Dify. Para construir um agente que lê documentos da OPC e responde perguntas de clientes, Flowise é o mais rápido para prototipar.",
+        "aplicar": "Para o problema de Anthropic QUOTA_EXCEEDED (recorrente nesta semana): hospedar Flowise localmente e conectar a um modelo alternativo (Llama 3 via Ollama local ou Gemini 1.5 Flash via API gratuita) como fallback. Quando a Anthropic fica offline, o agente muda para o modelo alternativo automaticamente dentro do mesmo fluxo visual.",
+        "plano": "1) Instale via Docker: docker run -d -p 3000:3000 flowiseai/flowise (funciona no Mac, Windows, Linux). · 2) Acesse localhost:3000 e explore os templates prontos — tem um de 'RAG Chatbot' que funciona em 5 min. · 3) Configure um fluxo com 2 LLMs em série: Anthropic Claude como principal + Llama via Ollama como fallback em caso de erro. · 4) Teste com 10 perguntas sobre os serviços da OPC — compare velocidade e qualidade vs. pipeline atual.",
+        "fonte": {"t": "DEV Community: Flowise Review 2026 — 4 months building AI agents, honest verdict", "u": "https://dev.to/nova_gg/flowise-review-2026-i-used-it-for-4-months-to-build-ai-agents-honest-verdict-57nh"},
+        "video": {"t": "", "u": ""}
+      }
+    ]
+  }
+}
