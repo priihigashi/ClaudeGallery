@@ -1,0 +1,145 @@
+{
+  "date": "2026-11-20",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "LEAD",
+      "t": "Nova enquiry OPC — Matamron Bacon, projeto Addition, chegou pelo site hoje",
+      "why": "Formulário enviado às 00:27 de hoje pelo site da OPC. Projeto de Addition. Responder antes que esfrie — leads do site têm janela curta.",
+      "go": "ads"
+    },
+    {
+      "tag": "ALERTA",
+      "t": "Anthropic QUOTA_EXCEEDED de novo esta manhã — pipeline bloqueada pela 3ª vez seguida",
+      "why": "Email 11:01 AM: quota_exceeded novamente. Já são 3 dias consecutivos. Pipeline parada. Recarregar créditos em console.anthropic.com/settings/billing e revisar limites do plano.",
+      "go": "iafim"
+    },
+    {
+      "tag": "MERGE",
+      "t": "PR #343 pronto para merge — reel do PL 5854 aprovado em todos os CIs",
+      "why": "Daily Advancer de ontem confirmou: PR #343 ('Checa reel do PL 5854 com duas contas e dois casos reais') passou nos 3 CIs. Sem merge, o reel não entra em produção.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "DOMÍNIO",
+      "t": "Cancelamento de domínio .br em análise — procedimento #1106795 do registro.br",
+      "why": "Email do registro.br chegou ontem: pedido de cancelamento de domínio está em análise. Verificar se foi intencional. Se não foi, agir hoje para evitar perda do domínio.",
+      "go": "obra"
+    }
+  ],
+  "history": [
+    {"date": "2026-11-20", "label": "Boletim de hoje", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-19", "label": "Boletim 19/11", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-18", "label": "Boletim 18/11", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-17", "label": "Boletim 17/11", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-15", "label": "Boletim 15/11", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-14", "label": "Boletim 14/11", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-13", "label": "Boletim 13/11", "note": "8 tópicos pesquisados"}
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-11-20",
+        "top": true,
+        "t": "Cardápio de Dopamina para TDAH — Monte uma Lista de Microrcompensas Pré-Aprovadas e Pare de Depender de Motivação",
+        "resumo": "O Dopamine Menu (criado pela Jessica McCabe do canal How to ADHD) é uma lista personalizada de atividades imediatas que ativam a dopamina: um snack favorito, 5 min de música, um episódio curto, uma caminhada. Quando o cérebro trava, você abre o menu e escolhe — sem decidir sob pressão e sem culpa.",
+        "porque": "O TDAH tem um sistema de recompensa com resposta enfraquecida a recompensas futuras. Recompensas imediatas e concretas são o que realmente ativam o início da ação. Um menu pré-definido elimina o custo cognitivo de decidir quando você já está travada — a decisão foi tomada antecipadamente, em modo de calma.",
+        "aplicar": "Monte o seu menu AGORA (5 min) em 4 categorias: Aperitivos (1–5 min: respirar, dançar 1 música), Pratos Principais (15–30 min: série, banho longo), Sobremesas (1+ h: passeio, compra pequena), Bebidas (qualquer hora: café especial, podcast favorito). Cada item só é 'liberado' como recompensa — não consumido aleatoriamente.",
+        "plano": "1) Abra um post-it ou Notion e escreva 2–3 opções em cada categoria (aperitivo, prato, sobremesa, bebida) · 2) Regra: cada item só é acessado como recompensa — não disponível o tempo todo · 3) Quando travar hoje, abra o menu e escolha 1 aperitivo (máx 5 min) antes de retomar · 4) Revise o menu semanalmente: retire o que virou hábito automático e adicione algo novo para manter o efeito dopaminérgico",
+        "fonte": {"t": "CHADD: Dopamine Menus — the science behind the trend and how it might help people with ADHD", "u": "https://chadd.org/adhd-in-the-news/dopamine-menus-the-science-behind-the-trend-and-how-it-might-help-people-with-adhd/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-11-20",
+        "top": true,
+        "t": "Tacos de Cogumelos Portobello com Páprica Defumada — Prontos em 25 Min, Kid-Friendly, Sem Leite de Vaca",
+        "resumo": "Cogumelos portobello fatiados, marinados com cominho + páprica defumada + alho + limão, refogados em fogo alto até dourar. Servidos em tortilha de milho com guacamole, repolho crocante e pico de gallo. Sem leite de vaca, sem frutos do mar, prontos em 25 min.",
+        "porque": "Portobello tem textura carnuda que satisfaz sem ficar pastoso — diferente de outros cogumelos. A páprica defumada dá sabor profundo sem picância, o que torna o taco aprovado por crianças. Mais rápido que a maioria das proteínas animais e a versão vegana fica melhor do que a industrializada.",
+        "aplicar": "Fatie os portobellos em tiras de 1 cm (não em cubos — mantém a textura melhor). Frigideira bem quente + fio de azeite. Não mexa por 2 min para dourar. A textura imita frango grelhado quando bem feito. Para crianças mais novas, sirva o cogumelo com arroz e feijão em vez do taco — mesma marinada, formato diferente.",
+        "plano": "1) Fatie 2 portobellos grandes em tiras e marine 10 min em: 2 cs azeite + 1 cc cominho + 1 cc páprica defumada + 1 dente de alho ralado + suco de ½ limão + sal · 2) Frigideira antiaderente bem quente, frite em fogo alto por 2–3 min de cada lado sem mexer até dourar · 3) Sirva em tortilha de milho aquecida com repolho fino fatiado, guacamole e pico de gallo · 4) Variação: adicione feijão preto refogado dentro do taco para aumentar proteína",
+        "fonte": {"t": "Feasting at Home: Chipotle Portobello Tacos", "u": "https://www.feastingathome.com/chipotle-portobello-tacos/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-11-20",
+        "top": true,
+        "t": "Teemill 2026: POD Sustentável com Algodão Orgânico Certificado — 4.200+ Reviews no Trustpilot, Economia Circular Integrada",
+        "resumo": "Teemill é uma plataforma POD britânica com 100% algodão orgânico certificado (GOTS), tinta base aquosa e energia renovável. Diferencial único: 'return and remake' — clientes devolvem a roupa gasta e ganham crédito para nova compra, que vai para nova produção fechando o ciclo. 4.200+ reviews no Trustpilot com score ~4.3.",
+        "porque": "Para marcas com posicionamento eco ou para itens infantis (pais pagam mais por orgânico certificado), Teemill é o único POD que permite comunicar toda a cadeia sustentável no próprio produto. Foco em DTG de qualidade — sem bordado. Se a proposta de valor da sua marca é 'orgânico, sustentável, transparente', não tem concorrente direto no mercado POD.",
+        "aplicar": "Estratégia dual: Teemill para itens com comunicação eco (tees orgânicas, camisetas infantis), Printful/Apliiq para bordado premium. Duas linhas na mesma loja com posicionamentos distintos — ou duas lojas separadas por público.",
+        "plano": "1) Crie conta em teemill.com e explore o catálogo de tees femininas orgânicas · 2) Verifique se há opção de longline feminina disponível (pesquise 'women long' no catálogo) · 3) Peça 1 amostra física para avaliar qualidade do DTG e caimento · 4) Compare com Printful: Teemill ganha em eco-positioning; Printful ganha em bordado e catálogo maior",
+        "fonte": {"t": "Teemill: Eco Print on Demand — Shopify App Store", "u": "https://apps.shopify.com/teemill"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-11-20",
+        "top": true,
+        "t": "InVideo AI 2026: Cole Roteiro ou Tema → IA Gera Vídeo Completo com Voz PT-BR, B-Roll e Legenda — Sem Gravar Nada",
+        "resumo": "InVideo AI converte um prompt ou roteiro em vídeo completo: script, cenas de stock, voz em PT-BR (2.000+ vozes), música e legenda animada. Templates específicos para Reels e TikTok por nicho, incluindo home renovation. Plano gratuito com marca d'água; pago a partir de ~$20/mês. 25M+ usuários. Motor: GPT-4.1 + Veo 3.1.",
+        "porque": "Diferente do Fliki (texto→vídeo genérico) e do CapCut (edição manual), InVideo tem templates de Reel prontos por nicho. Para criar conteúdo faceless sem câmera — só com o tema ou roteiro. Aviso honesto: reviews são polarizados — ótimo para vídeos simples de nicho, precisa de revisão manual para conteúdo complexo.",
+        "aplicar": "Para o OPC: use o template 'Before & After Home Renovation'. Cole descrição curta do projeto em PT-BR, escolha voz feminina, exporte em 9:16. Compare o resultado com um Reel feito no CapCut — se InVideo ficar bom, automatiza o conteúdo faceless sem depender de gravação.",
+        "plano": "1) Acesse ai.invideo.io e crie conta gratuita · 2) Escolha template de 'home renovation' ou 'construction before after' · 3) Cole roteiro em PT-BR (máx 150 palavras) ou deixe a IA gerar a partir do tema · 4) Revise as cenas geradas, troque as que não ficaram boas, e compare o tempo total vs edição manual no CapCut",
+        "fonte": {"t": "InVideo AI Review 2026 — TechRadar", "u": "https://techradar.com/reviews/invideo-review"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-11-20",
+        "top": true,
+        "t": "Planner 5D AI 2026: Fotografe o Cômodo → IA Gera Planta Baixa + Render 3D Interativo no Celular — Conteúdo para Instagram",
+        "resumo": "Planner 5D combina geração de planta baixa 2D com visualização 3D interativa no navegador — sem instalação. AI Room Recognition (fotografe o cômodo → IA desenha a planta) + AI Furnishing (mobilia o ambiente com 1 clique). Plano básico ~$4,99/mês; free com funcionalidades limitadas. 100M+ projetos criados.",
+        "porque": "Para a Oak Park Construction, o diferencial único é o AI Room Recognition: tire foto de um cômodo real da obra → IA desenha a planta → você mostra ao cliente o layout reformado em 3D antes de assinar. Diferente de todos os outros renders nesta série — parte de uma foto real do espaço existente e gera planta + render juntos.",
+        "aplicar": "Na próxima visita de cliente, tire foto de um cômodo da obra. Acesse planner5d.com no celular, use 'Scan Room' e deixe a IA gerar a planta. Adicione mobiliário com AI Furnishing e mostre ao cliente o 'depois' durante a reunião. Screenshots do 3D viram carrossel no Instagram sem custo extra.",
+        "plano": "1) Acesse planner5d.com e crie conta (plano gratuito com funcionalidades limitadas) · 2) Use 'Scan Room' (AI Room Recognition): fotografe um cômodo real do projeto atual · 3) Adicione mobiliário com 'AI Furnishing' em 1 clique e ajuste o estilo · 4) Faça screenshot do modo 3D e monte carrossel 'Como vai ficar' para o Instagram da OPC com CTA",
+        "fonte": {"t": "Jotform: The 6 Best AI Tools for Interior Design in 2026", "u": "https://www.jotform.com/ai/best-ai-for-interior-design/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-11-20",
+        "top": true,
+        "t": "Zona Cinzenta de Taiwan 2026: China Usa Guarda Costeira + Isolamento Marítimo Para Sufocar a Ilha Sem Declarar Guerra",
+        "resumo": "Em 2026, a China opera uma estratégia de zona cinzenta contra Taiwan: voos diários do ELP no ADIZ taiwanês, fiscalização marítima com a Guarda Costeira e inspeção de navios próximos aos portos da ilha. Não é invasão — é asfixia gradual que testa os EUA e a comunidade internacional sem cruzar o limiar formal da guerra.",
+        "porque": "A zona cinzenta é o conceito mais relevante para entender a crise Taiwan-China: ações abaixo do limiar de guerra que acumulam pressão sem dar ao adversário um casus belli claro. É exatamente o mesmo padrão que a Rússia usou contra a Ucrânia de 2014 a 2022 — analogia poderosa para pauta explicativa no canal de notícias.",
+        "aplicar": "Pauta: 'Como a China sufoca Taiwan sem atirar um tiro — a estratégia da zona cinzenta'. Analogia concreta para o público: um credor que chega todo dia na porta sem invadir a casa, mas vai restringindo acesso e movimento até o devedor ceder. Muito visual e concreto para Reels de geopolítica.",
+        "plano": "1) Entenda os 3 instrumentos da zona cinzenta: ELP (voos no ADIZ), Guarda Costeira (inspeção marítima), guerra regulatória (bloqueio alfandegário de navios) · 2) Contexto 2026: EUA em 'trégua' comercial com China → Pequim aproveita para pressionar Taiwan com mais força (fonte: ASPI, jul/2026) · 3) Roteirize carrossel de 5 slides: o que é zona cinzenta, como a China aplica, paralelo com Rússia/Ucrânia, o que os EUA fazem, o que muda para o Brasil · 4) Use mapas do Estreito de Taiwan como visual do carrossel — disponíveis no CSIS e defensa.gob.es",
+        "fonte": {"t": "Gazeta do Povo: Como a China usa uma estratégia silenciosa para sufocar Taiwan", "u": "https://www.gazetadopovo.com.br/mundo/como-a-china-usa-uma-estrategia-silenciosa-para-sufocar-taiwan/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-11-20",
+        "top": true,
+        "t": "Google Local Services Ads (LSA) 2026: Pague por Lead — O Único Anúncio que Aparece Acima do Search para Contratistas",
+        "resumo": "Local Services Ads são os anúncios 'Google Guaranteed' que aparecem ACIMA dos resultados de pesquisa para buscas como 'contractor near me' ou 'home addition Fort Lauderdale'. Você paga por lead (telefone ou mensagem confirmada), não por clique. Em agosto/2026, o Google migrou o dashboard LSA para dentro do Google Ads, mas o modelo pay-per-lead continua. Custo médio: $25–$130 por lead dependendo da região e serviço.",
+        "porque": "Para a Oak Park Construction, LSA é o canal de maior intenção de compra no Google: o cliente está ativamente buscando um contratista AGORA. Com o badge 'Google Guaranteed', você tem vantagem de credibilidade sobre concorrentes não verificados. Diferente do Performance Max (awareness) ou Demand Gen (interesse), LSA captura quem já quer contratar.",
+        "aplicar": "Se OPC ainda não tem LSA ativo: verificar elegibilidade em ads.google.com/localservices. O processo inclui verificação de licença (CBC1263425), background check do owner e verificação de seguro. Uma vez ativo, o custo por lead é previsível — e você só paga por leads válidos, podendo disputar os irrelevantes.",
+        "plano": "1) Acesse ads.google.com/localservices e verifique se a OPC já tem conta LSA configurada · 2) Se não: inicie o processo de verificação — licença CBC1263425 + seguro + background check do owner · 3) Configure horários de atendimento realistas: LSA penaliza quem não atende o telefone — defina janela em que você garante atendimento · 4) Monitore 'lead quality' por 30 dias e dispute leads irrelevantes para recuperar crédito",
+        "fonte": {"t": "Local Service Ads in 2026: What Changed and How to Win the Channel — SureFire Local", "u": "https://www.surefirelocal.com/?p=58035"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-11-20",
+        "top": true,
+        "t": "Relevance AI 2026: Construa Agentes Autônomos Sem Código — 4.3★ no G2, Ideal para Vendas e Ops Sem Programador",
+        "resumo": "Relevance AI é uma plataforma no-code para criar agentes autônomos: você descreve o que o agente deve fazer em linguagem natural, conecta ferramentas (email, CRM, planilha) e ele executa. Plano free com 1.000 créditos/mês; plano Pro ~$19/mês. 4.3★ no G2 (2026). Domain experts de vendas e ops constroem sem precisar de engenheiro.",
+        "porque": "Enquanto n8n (11/17) é fluxo visual mas exige lógica técnica, e LangGraph (11/19) é framework de código puro, o Relevance AI fica no meio: agentes que tomam decisões dinâmicas ('se o lead respondeu X, fazer Y') configurados em linguagem natural. Ideal para OPC: agente que qualifica leads recebidos, verifica histórico e envia follow-up automaticamente.",
+        "aplicar": "Para o problema de leads do site (como o de hoje — Matamron Bacon): configure um agente Relevance AI que lê novos leads do Google Sheets → verifica se o endereço é na área de serviço → envia email de follow-up personalizado → notifica você via Gmail com resumo. Sem código.",
+        "plano": "1) Crie conta em relevanceai.com (free: 1.000 créditos/mês) · 2) Explore o template 'Lead Qualification Agent' no marketplace de templates da plataforma · 3) Conecte ao Google Sheets com os leads do OPC e ao Gmail · 4) Configure 1 regra de decisão: 'se projeto for Addition/Renovation em FL → template A; se fora da área de serviço → template B de redirecionamento'",
+        "fonte": {"t": "Is Relevance AI worth it in 2026? A detailed review — AutomationAtlas", "u": "https://automationatlas.io/answers/relevance-ai-review-2026/"},
+        "video": {"t": "", "u": ""}
+      }
+    ]
+  }
+}
