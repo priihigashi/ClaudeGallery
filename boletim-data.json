@@ -1,143 +1,141 @@
 {
-  "date": "2026-11-23",
+  "date": "2026-11-24",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "LEAD OPC",
-      "t": "Novo lead Mac Arthur — cidade não informada, follow-up urgente",
-      "why": "Lead chegou CCiado para você hoje. Cidade não informada — antes do follow-up, confirme se o projeto é em Broward County. Leads sem localidade conhecida esfriaram em menos de 24h sem resposta.",
+      "tag": "URGENTE",
+      "t": "GitHub Actions: ads_pulse.yml falhou (run #45286250600)",
+      "why": "Rotina de anúncios quebrou — relatório de hoje pode estar incompleto.",
       "go": "ads"
     },
     {
-      "tag": "PLUGINS",
-      "t": "Weekly Plugins Review hoje às 9h — Make.com AI Agents entra na triagem desta semana",
-      "why": "Calendário confirma: Weekly Intake de AI tools em 11/23 às 9h. Make.com AI Agents (beta aberto fev/2026) é candidato forte para substituir fluxos manuais de qualificação de lead — separar hoje antes da reunião.",
-      "go": "iafim"
-    },
-    {
-      "tag": "NEWS BRASIL",
-      "t": "Peça do dia News Brasil agendada para 11:44h — Claude pede o Mac",
-      "why": "Calendário mostra tarefa automática às 11:44h para criação de conteúdo News Brasil. Com pipeline de captura possivelmente bloqueada (QUOTA), priorize esta peça manual para não perder o slot de publicação de meio-dia.",
+      "tag": "PENDENTE",
+      "t": "Conteúdos para aprovação: OPC + News",
+      "why": "Dois lotes de conteúdo aguardando revisão antes de publicar.",
       "go": "conteudo"
     },
     {
-      "tag": "FINANÇAS IA",
-      "t": "Finance check às 10h — confirmar que novas ferramentas testadas não ativaram cobrança",
-      "why": "Semana de testes de novas plataformas. Finance check (Tiller, 10h) é o momento de verificar se Make.com, VEED ou Apliiq ativaram trial com cartão. Subscriptions de IA esquecidas somam rápido — TDAH + muitas ferramentas = cobrança invisível.",
+      "tag": "META",
+      "t": "Real Estate na agenda de hoje (8h, Regra 1)",
+      "why": "Curso Cameron Academy — prazo de 90 dias correndo. Avançar 1 capítulo hoje.",
       "go": "tip"
+    },
+    {
+      "tag": "CONTEÚDO",
+      "t": "Conferir trial reel UGC Dog Man hoje às 18h",
+      "why": "Trial B (stickers, postado 23/11) — se engajamento alto, compartilhar com todos.",
+      "go": "obra"
     }
   ],
   "history": [
-    {"date": "2026-11-23", "label": "Boletim de hoje", "note": "8 tópicos pesquisados"},
-    {"date": "2026-11-22", "label": "Boletim de sábado", "note": "8 tópicos pesquisados"},
-    {"date": "2026-11-21", "label": "Boletim de sexta", "note": "8 tópicos pesquisados"},
-    {"date": "2026-11-20", "label": "Boletim de quinta", "note": "8 tópicos pesquisados"},
-    {"date": "2026-11-19", "label": "Boletim de quarta", "note": "8 tópicos pesquisados"},
-    {"date": "2026-11-18", "label": "Boletim de terça", "note": "8 tópicos pesquisados"},
-    {"date": "2026-11-17", "label": "Boletim de segunda", "note": "8 tópicos pesquisados"}
+    {
+      "date": "2026-11-24",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
   ],
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-11-23",
+        "id": "tip-2026-11-24",
         "top": true,
-        "t": "Ruído Marrom para TDAH: Coloque no Fundo e Dobre a Concentração em Tarefas sem Dopamina",
-        "resumo": "Ruído marrom é um som grave contínuo (chuva forte, trovão distante, motor de avião) que encobre ruídos ambientais sem sobrecarregar o cérebro. Uma meta-análise de 2024 mostrou que ruído branco e rosa têm benefícios pequenos mas reais de atenção em pessoas com TDAH — sem o mesmo efeito em pessoas sem TDAH. O ruído marrom funciona por stochastic resonance: um fundo sonoro estável reduz a variância dos estímulos ambientais, ajudando o cérebro a filtrar o irrelevante. Diferente de música, não ativa processamento linguístico: você ouve mas não processa — o foco fica disponível para a tarefa.",
-        "porque": "O TDAH tem dificuldade de filtrar estímulos irrelevantes e de ativar a atenção sustentada. O ruído marrom cria um 'fundo neutro' que satura o sistema de atenção com um estímulo constante e previsível — reduzindo a janela para distrações. Cleveland Clinic confirma que pode diminuir a 'chatter' mental e criar estado de foco mais rapidamente. Funciona especialmente bem para tarefas de baixa dopamina (leitura, estudo, aprovações repetitivas).",
-        "aplicar": "Use para o bloco de Real Estate às 8h (a tarefa com menor dopamina intrínseca — Regra 1 do Finishing Protocol). Coloque no fone com volume médio-baixo antes de abrir o material do curso Cameron. Teste também nas aprovações de conteúdo pendentes (OPC + News) — são tarefas repetitivas que o ruído marrom facilita ao reduzir o custo de retornar ao contexto após interrupções.",
-        "plano": "1) Acesse mynoise.net no browser → clique em 'Brown Noise' → sem login, sem custo. Configure volume entre 40–60% e use por 25–50 min de estudo RE. · 2) Alternativa paga com evidência maior: Brain.fm (a partir de $6.99/mês) usa ruído + música IA otimizada especificamente para foco/TDAH — resultado geralmente superior ao ruído puro. · 3) Teste também Pink Noise se o marrom parecer muito grave — há mais pesquisa publicada sobre rosa para TDAH. · 4) Regra de uso: coloque o áudio ANTES de abrir a tarefa para instalar o estado mental de foco antes de precisar dele.",
-        "fonte": {"t": "Cleveland Clinic — Brown Noise: What It Is and How It Affects Your Brain", "u": "https://health.clevelandclinic.org/brown-noise"},
+        "t": "Friction Hack para TDAH: Monte a Tarefa ANTES e Comece sem Atrito",
+        "resumo": "Para o cérebro TDAH, a fase de setup (abrir arquivo, achar fone, limpar mesa) é uma barreira separada da tarefa em si. Eliminar esse atrito antecipadamente cria um gatilho automático: o ambiente pronto ativa o início.",
+        "porque": "Tarefa difícil de iniciar? O problema raramente é a tarefa — é o setup. Cada microbarreira consome dopamina antes de você começar. Remova todas ontem.",
+        "aplicar": "Antes de dormir (ou no fim do dia): deixe o documento da tarefa de amanhã aberto na tela, o fone no lugar, o timer configurado, a cadeira posicionada. Quando sentar, já começa.",
+        "plano": "1) Escolha a 1 tarefa mais difícil de amanhã agora · 2) Abra o arquivo/app necessário e deixe visível · 3) Ponha o fone ou coisa que usa na frente do teclado · 4) Configure o timer de 25 min — só aperta 'iniciar' de manhã",
+        "fonte": {"t": "ADHD Starting Tasks: Proven Strategies to Overcome Initiation Paralysis", "u": "https://neurolaunch.com/adhd-starting-tasks/"},
         "video": {"t": "", "u": ""}
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-11-23",
+        "id": "receita-2026-11-24",
         "top": true,
-        "t": "Lasanha Vegana de Cogumelos com Bechamel de Cajú — Elaborada, Cremosa, Sem Leite de Vaca, Kid-Friendly",
-        "resumo": "Lasanha em camadas com ragù de cogumelos paris e portobello, bechamel cremoso feito com castanha de cajú, espinafre refogado e queijo vegano derretível por cima. Sem peixe, sem leite de vaca, sem ovos na massa. Rende 6 porções farta. Fica ainda melhor no dia seguinte — perfeita para preparar num domingo e comer na semana. O bechamel de cajú é a grande revelação: cremoso, neutro e derrete como o molho tradicional.",
-        "porque": "Cogumelos dão textura carnosa e umami profundo sem precisar de carne — o ragù fica parecido com bolonhesa. O bechamel de cajú (castanha crua + água + manteiga vegana + farinha) elimina completamente os laticínios sem perder cremosidade. Rende 6 porções — vale cada minuto do preparo. Para crianças: cogumelos paris têm sabor mais suave que shiitake e portobello, ideais para adaptações infantis.",
-        "aplicar": "Mergulhe 1 xícara de cajú crú em água morna por 1h antes de começar (isso suaviza o sabor e facilita o processamento no liquidificador). Para versão kids: use apenas cogumelos paris (mais suaves), reduza o tomilho pela metade e adicione uma pitada de noz-moscada no bechamel — o sabor fica mais neutro e agradável para crianças. Queijo vegano derretível (Violife, Follow Your Heart) por cima é o 'truque' de aprovação infantil.",
-        "plano": "1) Bechamel de cajú: bata 1 xíc cajú escorrido + 2 xíc água no liquidificador. Leve ao fogo com 2 cs manteiga vegana + 2 cs farinha, mexendo sempre por 8 min até engrossar. Tempere com sal, noz-moscada. · 2) Ragù: refogue 1 cebola + 3 dentes alho em azeite. Adicione 500g de cogumelos fatiados, 1 lata de tomate pelado, sal, pimenta, 1 cc tomilho — cozinhe 20 min. · 3) Monte as camadas: massa de lasanha (pré-cozida ou seca molhada no molho) → ragù → espinafre refogado → bechamel → repetir 2×. Cubra com queijo vegano ralado. · 4) Forno a 180°C: 15 min coberto com alumínio + 15 min descoberto para gratinar. Aguardar 10 min antes de cortar.",
-        "fonte": {"t": "Receiteria — Lasanha de Cogumelos e Espinafre", "u": "https://www.receiteria.com.br/receita/lasanha-de-cogumelos-e-espinafre/"},
+        "t": "Hambúrguer Vegano de Lentilha + Batata-Doce — Pronto em 30 Min, Kid-Friendly",
+        "resumo": "Lentilha cozida + purê de batata-doce + aveia + temperos defumados = hambúrguer que segura na forma, não esfarela e as crianças adoram. Sem leite, sem ovo, sem glúten se usar aveia certificada.",
+        "porque": "Mais proteína que o hambúrguer de grão-de-bico, sabor adocicado que kids aprovam, preparo fácil e gela bem para a semana.",
+        "aplicar": "Faça o dobro e congele os discos crus separados por papel manteiga — semana resolvida. Sirva com queijo vegano derretido (FL) e pão de forma integral.",
+        "plano": "1) Cozinhe 1 xíc lentilha + asse 1 batata-doce média (forno 200°C/35 min) · 2) Amasse juntos, misture ½ xíc aveia + alho + páprica defumada + sal · 3) Forme discos e leve ao freezer 20 min para firmar · 4) Grelhe em frigideira antiaderente 4 min cada lado",
+        "fonte": {"t": "Hambúrguer de lentilha fácil — Receiteria", "u": "https://www.receiteria.com.br/receita/hamburguer-de-lentilha-facil/"},
         "video": {"t": "", "u": ""}
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-11-23",
+        "id": "merch-2026-11-24",
         "top": true,
-        "t": "Apliiq 2026 — Private Label POD com Bordado Real + Etiqueta Personalizada: 4.7★ Shopify, Fashion-First, $6–10 por Bordado",
-        "resumo": "Apliiq é uma plataforma POD americana focada em marcas de moda — private label (sua etiqueta interna costurada na peça), bordado real (~$6–10/unidade), DTG e cut-and-sew. 4.7★ no Shopify App Store com 526+ reviews. Diferencial único: cada peça sai com etiqueta personalizada sem pedido mínimo — posicionamento de marca, não produto genérico. Fulfillment nos EUA. Integra com Shopify.",
-        "porque": "Apliiq é o POD ideal para quem quer construir uma MARCA, não só vender camisetas. O private label (rótulo interno personalizado) eleva a percepção de qualidade sem inventário. Para uma linha de longline femininas com bordado de qualidade, Apliiq compete diretamente com Printful — com posicionamento mais fashion e ênfase em branding. Reviews elogiam consistência do bordado e qualidade dos blanks; poucos reclamam de bordado solto (problema resolvido pelo CS segundo vários relatos). Aviso real: sem opção de frete rápido para amostra — só envio padrão.",
-        "aplicar": "Estratégia de 2 fornecedores: Apliiq para a linha de private label bordado (peças âncora com sua marca), Tapstitch para a linha de DTG artístico (gráficos sem bordado). Compare custo e qualidade de 1 peça bordada Apliiq vs. Printful no mesmo design antes de decidir qual fornecedor âncora para bordado premium.",
-        "plano": "1) Acesse apliiq.com e crie conta gratuita. Instale o app no Shopify (apps.shopify.com/apliiq). · 2) Navegue no catálogo de tees femininas — procure opções longline ou de corte longo. Configure 1 produto com bordado (placement: peito esquerdo, manga ou costas) e ative private label. · 3) Peça 1 sample bordado antes de publicar (~$25–35 incluindo bordado e envio). · 4) Compare side-by-side com Printful: bordado ($6–10 extra Apliiq vs. $5–8 Printful), backing visível ou não, qualidade do blank, e tempo de fulfillment. Escolha o vencedor como parceiro âncora para bordado.",
-        "fonte": {"t": "Apliiq — Print On Demand na Shopify App Store", "u": "https://apps.shopify.com/apliiq"},
+        "t": "Prodigi 2026: POD Global Premium com Bordado Real — Frete Local em 10+ Países",
+        "resumo": "Prodigi imprime e envia de gráficas locais nos EUA, UK, Europa e Austrália — o cliente recebe em 2–5 dias sem pagar frete internacional. Oferece bordado (embroidery), DTG e sublimação em tees, hoodies e acessórios.",
+        "porque": "Se você vende para clientes fora dos EUA, Prodigi elimina o custo de frete internacional que come a margem do Printful/Printify. Bordado premium disponível, sem MOQ.",
+        "aplicar": "Compare o custo total (produto + frete) de um pedido para UK via Prodigi vs. Printful. Para coleções voltadas ao público europeu ou australiano, Prodigi normalmente ganha no preço final ao cliente.",
+        "plano": "1) Crie conta grátis em prodigi.com e explore o catálogo de apparel · 2) Adicione 1 tee longline feminina com seu design via integração Shopify ou Etsy · 3) Peça amostra física com bordado antes de publicar · 4) Compare custo total vs. plataforma atual",
+        "fonte": {"t": "", "u": ""},
         "video": {"t": "", "u": ""}
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-11-23",
+        "id": "conteudo-2026-11-24",
         "top": true,
-        "t": "VEED.io 2026 — Editor de Vídeo Completo no Browser: Legendas Automáticas em 125+ Idiomas, Avatares IA e 4K Export",
-        "resumo": "VEED.io é um editor de vídeo browser-based all-in-one: corte, legendas automáticas em 125+ idiomas (incluindo PT-BR), remoção de fundo em 1 clique, avatares IA (você escreve o script e um avatar fala), tradução automática e export em qualquer formato. Sem instalação. TechRadar 2026: 'polished AI video platform, excellent subtitle tools, 4K exports.' Plano free com marca d'água; pago a partir de ~$12–19/mês. 4.5★ no G2.",
-        "porque": "VEED é o único editor que combina tudo no browser sem instalação: você importa um vídeo, adiciona legendas em PT-BR em 1 clique, remove o fundo, traduz para inglês e exporta em 9:16 — sem CapCut, sem Premiere, sem arquivo local. Para o pipeline OPC + News: ideal para quem edita em vários dispositivos (Mac, iPad). Reviews G2: 'AI-generated closed captions save time and I can manually adjust them for accuracy'. O avatar IA permite criar conteúdo faceless sem câmera — só você escrevendo o script.",
-        "aplicar": "Para as aprovações OPC + News pendentes: importe os vídeos de obra no VEED, adicione legendas automáticas em PT-BR em 1 clique, ajuste os erros manualmente e exporte em 9:16. Para a peça do dia News Brasil (agendada para 11:44h): use os avatares IA para criar conteúdo faceless sem câmera quando o pipeline de captura estiver bloqueado.",
-        "plano": "1) Acesse veed.io e crie conta gratuita. Sem instalação — funciona no browser. · 2) Importe 1 vídeo de obra existente. Clique em 'Auto Subtitles' e selecione PT-BR. · 3) Revise as legendas geradas (a IA acerta ~85–90%; corrija erros de nomes próprios). Export em 9:16 para Reels. · 4) Para o canal de notícias: explore 'AI Avatars' — escreva script de 60s, escolha avatar, gere o vídeo sem filmar nada. Compare o tempo total com o fluxo atual.",
-        "fonte": {"t": "VEED Review 2026 — TechRadar", "u": "https://www.techradar.com/au/reviews/veed-review"},
+        "t": "Kling AI 2.0: Foto ou Texto → B-Roll Cinemático em Segundos — Alternativa ao Runway",
+        "resumo": "Kling 2.0 (Kuaishou) gera B-roll de ambiente e takes de personagem único com qualidade cinematográfica. Especialidade: planos estáticos, pans e dollys em ambientes. Melhor que Runway Gen-4 para establishing shots de cenário.",
+        "porque": "Runway Gen-4 domina, mas Kling 2.0 se destaca em shots de ambiente com um plano gratuito (limitado) e pago a partir de $29/mês. Vale testar para takes de overview e abertura de reel de obra.",
+        "aplicar": "Use Kling para gerar o B-roll de abertura do reel (establishing shot da obra) e Runway/Pika para takes de detalhe. Diminui custo e diversifica o visual.",
+        "plano": "1) Crie conta em klingai.com (plano free: 66 créditos/dia) · 2) Descreva o ambiente da obra em inglês + instrução de câmera no fim do prompt · 3) Gere 2–3 variações do mesmo shot · 4) Escolha a melhor para abrir o reel",
+        "fonte": {"t": "Kling 2.0 Review: State of the Art AI Video Quality — Decrypt", "u": "https://decrypt.co/315436/kling-2-review-ai-video-generator"},
         "video": {"t": "", "u": ""}
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-11-23",
+        "id": "obra-2026-11-24",
         "top": true,
-        "t": "Buildertrend 2026 — O Seu Processo de Obra JÁ É o Conteúdo: CRM de Contratista que Vira Pipeline para Instagram",
-        "resumo": "Buildertrend é o CRM de gestão de projetos de construção mais usado nos EUA (4.5★ Capterra, 2.485+ reviews verificados em out/2026). Funciona como: plano financeiro + cronograma + portal do cliente + documentação de fotos/vídeos de progresso por fase. O ângulo que transforma o investimento em conteúdo: cada foto de progresso tirada na obra e enviada pelo app vira conteúdo documentado de antes/durante/depois que você poste diretamente no Instagram da OPC — sem edição extra.",
-        "porque": "A maioria dos contratistas fotografa o progresso da obra para o cliente — mas descarta o conteúdo depois. Buildertrend centraliza e organiza essas fotos por fase do projeto (demolição → estrutura → acabamento → entrega). Esse arquivo cronológico é exatamente o formato de Reel/carrossel de maior engajamento no Instagram de reforma e construção. Você já faz o trabalho — só falta estruturar para publicar. Um review de 2026 cita: 'made the sales-to-project handoff easier and cheaper than Salesforce.'",
-        "aplicar": "Para a OPC: crie um projeto no Buildertrend para a próxima obra. Configure 4–5 fases (demolição, estrutura, hidráulica/elétrica, acabamento, entrega). Tire 3–5 fotos padronizadas em cada fase e suba no portal. No final de cada semana, as fotos de cada fase viram 1 carrossel de progresso ou 1 Reel de timeline no Instagram.",
-        "plano": "1) Acesse buildertrend.com e explore o plano de acesso (contato com vendas para preço — referências citam ~$49/usuário/mês; plano básico para testar fluxo). · 2) Crie 1 projeto piloto para a obra atual: adicione fases, datas e o cliente ao portal. · 3) Na próxima visita de obra, tire fotos sistemáticas com o app mobile do Buildertrend — elas ficam organizadas por fase automaticamente. · 4) No final da semana: exporte as fotos da fase mais visualmente impactante → monte o carrossel de progresso no VEED ou CapCut → publique no Instagram da OPC com CTA.",
-        "fonte": {"t": "Buildertrend Reviews 2026 — Capterra", "u": "https://www.capterra.com/p/70092/Buildertrend/reviews/"},
+        "t": "Foyr Neo 2026: Planta Baixa + Render 4K em Minutos — Nível Profissional Para Fechar Contrato",
+        "resumo": "Foyr Neo é uma plataforma cloud que vai do esboço de planta baixa ao render fotorrealista 4K sem instalar nada. 60k+ objetos 3D, AI Restyle para trocar estilo do ambiente e exporta vídeo walkthrough. Ideal para apresentação de proposta de reforma.",
+        "porque": "Diferente do Planner 5D (mais casual), Foyr Neo tem nível profissional e é o que designers de alto padrão usam para fechar contrato com cliente antes de começar a obra.",
+        "aplicar": "Fotografe o cômodo do cliente, use AI Restyle para mostrar 3 estilos diferentes (moderno, industrial, minimalista) em 10 min. Poste o antes/depois como reel para OPC.",
+        "plano": "1) Acesse foyr.com e inicie trial gratuito (7 dias) · 2) Crie um novo projeto com a planta baixa do cômodo · 3) Use AI Restyle para aplicar 3 estilos ao ambiente · 4) Exporte 2 imagens 4K: before + after para o reel",
+        "fonte": {"t": "The 6 best AI tools for interior design in 2026 — Jotform", "u": "https://www.jotform.com/ai/best-ai-for-interior-design/"},
         "video": {"t": "", "u": ""}
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-11-23",
+        "id": "geo-2026-11-24",
         "top": true,
-        "t": "Mar Vermelho 2026 — Houthis Voltam a Atacar e o Mundo Paga a Conta: Como o Conflito no Iêmen Encarece Materiais de Construção",
-        "resumo": "Desde julho/2026, os Houthis retomaram ataques no Mar Vermelho: 12 ataques ou tentativas documentados pelo Africa Center em três meses. O tráfego semanal caiu para 25 navios cargueiros — uma fração do normal. Seguradoras elevaram prêmios de guerra de 0,1% para 0,7–1,0% do valor do navio por viagem (cerca de +$1M por round-trip). Resultado imediato: sobretaxas de $500–1.500 por contêiner de Maersk e ZIM. O Canal de Suez e o Mar Vermelho conectam Europa, Oriente Médio e Ásia — 15% do comércio marítimo global passa por ali.",
-        "porque": "Para a Oak Park Construction, aço e materiais importados da China/Coreia chegam via Suez → Mar Vermelho. Cada onda de ataques cria um ciclo de alta de frete que pressiona custos de construção 3–6 meses depois — exatamente o horizonte de planejamento de um projeto de reforma. Para o canal de notícias: a ligação conflito armado → preço da reforma é a pauta mais concreta que existe. Fato viral: 'O tiro disparado no Iêmen encarece o metro quadrado em São Paulo.'",
-        "aplicar": "Pauta de conteúdo: 'Por que a guerra no Iêmen encarece sua reforma — a rota que você nunca ouviu falar.' Ângulo visual: mapa do Mar Vermelho com a rota alternativa pelo Cabo da Boa Esperança (adiciona 10–14 dias e $1–2M de combustível por viagem). Conexão Brasil: aço e manufaturados chineses para o Brasil passam majoritariamente por essa rota — impacto direto no preço de materiais.",
-        "plano": "1) Entenda a rota: Mar Mediterrâneo → Canal de Suez → Mar Vermelho → Oceano Índico. Os Houthis atacam no gargalo sul (Estreito de Bab-el-Mandeb). Desvio alternativo: contornar a África pelo Cabo → +14 dias + $1–2M de combustível por viagem. · 2) Impacto imediato: seguro de guerra 10× mais caro por travessia + sobretaxas por contêiner ($500–1.500). Construction Briefing (UK) confirma: aço e materiais de construção estão entre os mais expostos. · 3) Fato viral para Reel: 'O conflito no Iêmen faz a reforma encarecer no Brasil.' Lógica: Houthi ataca navio → frete sobe → aço importado sobe → custo de construção sobe → comprador paga. · 4) Monte carrossel de 4 slides: quem são os Houthis, onde é o gargalo, o que sobe de preço, impacto para o Brasil — mapa livre no Natural Earth ou Mapbox.",
-        "fonte": {"t": "Africa Center for Strategic Studies — 2026 Houthi Red Sea Threats", "u": "https://africacenter.org/spotlight/2026-houthi-red-sea-threats/"},
+        "t": "Corredor do Cáucaso do Sul 2026: EUA, Armênia e Azerbaijão Constroem Ferrovia que Pode Remodelar a Eurásia",
+        "resumo": "O projeto TRIPP (Trans-Regional Infrastructure and Prosperity Path), liderado pelos EUA, propõe conectar Armênia e Azerbaijão por ferrovia via Nakhchivan. Se concluído em 2027, cria rota comercial alternativa que contorna a Rússia e rivaliza com a Nova Rota da Seda chinesa.",
+        "porque": "É o ponto de inflexão pós-Nagorno-Karabakh: a Rússia perde influência sobre a Armênia, a Geórgia perde o monopólio de trânsito, a China enfrenta concorrência. A rota que dominar a logística daqui define décadas.",
+        "aplicar": "Pauta para news: 'O acordo que pode tirar a Armênia da órbita russa — e por que os EUA estão pagando por isso'. Fácil de viralizar com mapa animado.",
+        "plano": "1) Leia o relatório Carnegie Endowment sobre TRIPP (março 2026) · 2) Marque os 3 beneficiados (EUA, Armênia, Azerbaijão) e 3 perdedores (Rússia, Geórgia, corredor chinês) · 3) Monte carrossel com mapa do trajeto · 4) Poste como pauta geopolítica na série de news",
+        "fonte": {"t": "Rewiring the South Caucasus: TRIPP and the New Geopolitics of Connectivity — Carnegie Endowment", "u": "https://carnegieendowment.org/research/2026/03/rewiring-the-south-caucasus-tripp-and-the-new-geopolitics-of-connectivity"},
         "video": {"t": "", "u": ""}
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-11-23",
+        "id": "ads-2026-11-24",
         "top": true,
-        "t": "RSA Pinning 2026 — Fixe 1 Headline de Credencial e Garanta que Licença + Área de Serviço Aparecem em TODA Impressão da OPC",
-        "resumo": "Responsive Search Ads testam combinações de até 15 headlines automaticamente. Por padrão, o Google proíbe 'fixar tudo' — mas recomenda em 2026 uma estratégia híbrida: fixar 1 headline de conformidade/credencial e deixar os demais rotar. Para a Oak Park Construction: fixar 'Licensed & Insured · Broward County' ou 'Fort Lauderdale's Trusted Contractor' garante que a credencial aparece em TODA impressão, sem depender da IA do Google escolher naquele leilão específico.",
-        "porque": "Em anúncios de serviços de alto ticket (reforma, construção), a credencial da licença e a área de serviço fazem diferença para a conversão — o cliente não pode assumir que o contratista é licenciado. Se a IA do Google não escolher esse headline naquela impressão, você perde a diferenciação imediata. A diretriz oficial do Google para 2026: fixar compliance e brand copy deliberadamente; deixar promoções e ofertas rotarem dinamicamente. Aviso: fixar pode baixar o Ad Strength de Excellent para Good — para serviços locais de alto ticket, geralmente vale a troca.",
-        "aplicar": "Para OPC: nas campanhas de Search ativas, abra cada RSA e identifique qual headline tem sua licença (CBC1263425) ou área de serviço (Fort Lauderdale / Broward County). Prine esse headline na posição 1 (sempre aparece primeiro) ou posição 2 (sempre aparece, não necessariamente primeiro). Deixe os demais sem fixação.",
-        "plano": "1) Google Ads → Suas campanhas → Anúncios → clique em 1 RSA para editar. · 2) Identifique o headline de credencial/área: 'Licensed & Insured · Fort Lauderdale', 'Serving Broward County Since [ano]' ou similar. Se não existir, crie agora. · 3) No campo do headline, clique em 'Pin to position' e escolha Position 1 ou 2. Salve. · 4) Monitore Ad Strength: se cair de Excellent para Good, avalie se a garantia da credencial sempre visível justifica. Para leads de alto ticket como reforma de $20k–$100k, a credencial fixa geralmente converte melhor do que combinações dinâmicas sem ela.",
-        "fonte": {"t": "Google Ads Help — About Responsive Search Ads", "u": "https://support.google.com/google-ads/answer/7684791"},
+        "t": "Smart Bidding com Target ROAS 2026: Configure o Alvo Certo e a IA Trabalha por Você",
+        "resumo": "Target ROAS é a estratégia onde você define quanto quer ganhar por $1 gasto (ex: 500% = $5 de retorno). A IA do Google ajusta o lance em cada leilão usando 70+ sinais em tempo real — mas só funciona se o alvo for calibrado com dados reais do histórico.",
+        "porque": "Configurar Target ROAS muito alto (acima do histórico) faz a campanha travar — a IA não encontra leilões que justifiquem o lance. Regra de ouro: comece com o ROAS histórico médio dos últimos 30 dias.",
+        "aplicar": "Para OPC: calcule ROAS atual (receita ÷ gasto). Se for 300%, comece o Target em 280–300%. Nunca coloque 500% de cara — campanha fica parada. Ajuste +10% a cada 2 semanas se tiver conversões.",
+        "plano": "1) Abra Google Ads > Campanhas > Lances · 2) Mude para Smart Bidding > Maximizar valor de conversão com Target ROAS · 3) Coloque o ROAS atual -5% como alvo inicial · 4) Monitore impressões e conversões por 2 semanas antes de ajustar",
+        "fonte": {"t": "About Smart Bidding — Google Ads Help", "u": "https://support.google.com/google-ads/answer/7065882"},
         "video": {"t": "", "u": ""}
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-11-23",
+        "id": "iafim-2026-11-24",
         "top": true,
-        "t": "Make.com AI Agents 2026 — Visual Automation + IA que Decide Sozinha: Beta Aberto desde Fev/2026, Gratuito para Começar",
-        "resumo": "Make.com (antigo Integromat) lançou AI Agents em beta aberto em fevereiro/2026. Você descreve o que o agente deve fazer em linguagem natural via Maia (o construtor IA do Make), e ele gera e executa o fluxo. O Reasoning Panel mostra cada decisão do agente passo a passo — como um debugger de IA transparente. Plano free disponível; pago a partir de ~$9/mês. G2: 4.7★. Rival direto do n8n (11/17) — Make tem interface mais polida e suporte enterprise; n8n ganha em self-hosting e custo zero.",
-        "porque": "Diferente de n8n (open-source, mais técnico, self-hosted), Make.com é a solução cloud com interface refinada para quem não quer gerenciar servidor. O AI Agent nativo do Make toma decisões dinâmicas dentro do fluxo visual: 'se o lead disse X, envie proposta A; se disse Y, envie proposta B'. Para OPC: agente que lê lead → decide qual serviço → envia proposta → notifica você. Para o Weekly Plugins Review de hoje às 9h: Make é candidato forte para substituir fluxos manuais de qualificação.",
-        "aplicar": "Para o problema de leads sem cidade (como Mac Arthur hoje): configure um agente Make que recebe lead por email → extrai nome, serviço, cidade → se cidade não informada, envia reply automático pedindo localização → atualiza Google Sheets → notifica você com resumo. Tudo automático, sem você responder a cada lead individualmente.",
-        "plano": "1) Acesse make.com e crie conta gratuita (plano free disponível, sem cartão). · 2) Em 'Create a scenario', clique em 'Build with AI' (Maia) e descreva: 'Quando recebo email de lead, extraia nome, cidade, serviço e adicione no Google Sheets, depois notifique meu Gmail'. · 3) Revise o fluxo gerado — o Reasoning Panel mostra cada nó e decisão. Ajuste a lógica de qualificação de área de serviço (Broward County = sim → próximo passo; fora = template B de redirecionamento). · 4) Ative e teste com 1 email de lead fictício. Compare com seu workflow atual — se funcionar mais rápido, migre 1 automação por semana começando pela de leads.",
-        "fonte": {"t": "Make.com AI Agents Review 2026 — DEV Community", "u": "https://dev.to/onsen/make-review-2026-pros-cons-pricing-explained-4ifm"},
+        "t": "Lindy AI 2026: Agente Pessoal que Lê seu Gmail, Agenda e Age — Sem Código",
+        "resumo": "Lindy cria agentes que monitoram Gmail, respondem emails, fazem triagem de agenda e conectam com 200+ apps — tudo configurado em linguagem natural, sem código. Plano gratuito com 400 créditos/mês (~40 tarefas).",
+        "porque": "Diferente do n8n ou Make.com (que precisam de setup técnico), Lindy funciona como um assistente: você descreve o que quer que ele faça, ele aprende e executa. Ideal para triagem de email e pré-agendamento.",
+        "aplicar": "Use Lindy para triagem de emails de leads da OPC: agente lê novos emails, identifica solicitações de orçamento e cria tarefa no calendário automaticamente. Libera 20–30 min/dia.",
+        "plano": "1) Crie conta grátis em lindy.ai (sem cartão) · 2) Escolha o template 'Email Triage' · 3) Conecte sua conta Gmail · 4) Defina 3 regras: orçamento → criar evento; newsletter → arquivar; fatura → mover para pasta Finance",
+        "fonte": {"t": "Lindy Reviews — G2", "u": "https://www.g2.com/products/lindy-lindy"},
         "video": {"t": "", "u": ""}
       }
     ]

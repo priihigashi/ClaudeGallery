@@ -1,0 +1,143 @@
+{
+  "date": "2026-11-24",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "URGENTE",
+      "t": "GitHub Actions: ads_pulse.yml falhou (run #45286250600)",
+      "why": "Rotina de anúncios quebrou — relatório de hoje pode estar incompleto.",
+      "go": "ads"
+    },
+    {
+      "tag": "PENDENTE",
+      "t": "Conteúdos para aprovação: OPC + News",
+      "why": "Dois lotes de conteúdo aguardando revisão antes de publicar.",
+      "go": "conteudo"
+    },
+    {
+      "tag": "META",
+      "t": "Real Estate na agenda de hoje (8h, Regra 1)",
+      "why": "Curso Cameron Academy — prazo de 90 dias correndo. Avançar 1 capítulo hoje.",
+      "go": "tip"
+    },
+    {
+      "tag": "CONTEÚDO",
+      "t": "Conferir trial reel UGC Dog Man hoje às 18h",
+      "why": "Trial B (stickers, postado 23/11) — se engajamento alto, compartilhar com todos.",
+      "go": "obra"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-11-24",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-11-24",
+        "top": true,
+        "t": "Friction Hack para TDAH: Monte a Tarefa ANTES e Comece sem Atrito",
+        "resumo": "Para o cérebro TDAH, a fase de setup (abrir arquivo, achar fone, limpar mesa) é uma barreira separada da tarefa em si. Eliminar esse atrito antecipadamente cria um gatilho automático: o ambiente pronto ativa o início.",
+        "porque": "Tarefa difícil de iniciar? O problema raramente é a tarefa — é o setup. Cada microbarreira consome dopamina antes de você começar. Remova todas ontem.",
+        "aplicar": "Antes de dormir (ou no fim do dia): deixe o documento da tarefa de amanhã aberto na tela, o fone no lugar, o timer configurado, a cadeira posicionada. Quando sentar, já começa.",
+        "plano": "1) Escolha a 1 tarefa mais difícil de amanhã agora · 2) Abra o arquivo/app necessário e deixe visível · 3) Ponha o fone ou coisa que usa na frente do teclado · 4) Configure o timer de 25 min — só aperta 'iniciar' de manhã",
+        "fonte": {"t": "ADHD Starting Tasks: Proven Strategies to Overcome Initiation Paralysis", "u": "https://neurolaunch.com/adhd-starting-tasks/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-11-24",
+        "top": true,
+        "t": "Hambúrguer Vegano de Lentilha + Batata-Doce — Pronto em 30 Min, Kid-Friendly",
+        "resumo": "Lentilha cozida + purê de batata-doce + aveia + temperos defumados = hambúrguer que segura na forma, não esfarela e as crianças adoram. Sem leite, sem ovo, sem glúten se usar aveia certificada.",
+        "porque": "Mais proteína que o hambúrguer de grão-de-bico, sabor adocicado que kids aprovam, preparo fácil e gela bem para a semana.",
+        "aplicar": "Faça o dobro e congele os discos crus separados por papel manteiga — semana resolvida. Sirva com queijo vegano derretido (FL) e pão de forma integral.",
+        "plano": "1) Cozinhe 1 xíc lentilha + asse 1 batata-doce média (forno 200°C/35 min) · 2) Amasse juntos, misture ½ xíc aveia + alho + páprica defumada + sal · 3) Forme discos e leve ao freezer 20 min para firmar · 4) Grelhe em frigideira antiaderente 4 min cada lado",
+        "fonte": {"t": "Hambúrguer de lentilha fácil — Receiteria", "u": "https://www.receiteria.com.br/receita/hamburguer-de-lentilha-facil/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-11-24",
+        "top": true,
+        "t": "Prodigi 2026: POD Global Premium com Bordado Real — Frete Local em 10+ Países",
+        "resumo": "Prodigi imprime e envia de gráficas locais nos EUA, UK, Europa e Austrália — o cliente recebe em 2–5 dias sem pagar frete internacional. Oferece bordado (embroidery), DTG e sublimação em tees, hoodies e acessórios.",
+        "porque": "Se você vende para clientes fora dos EUA, Prodigi elimina o custo de frete internacional que come a margem do Printful/Printify. Bordado premium disponível, sem MOQ.",
+        "aplicar": "Compare o custo total (produto + frete) de um pedido para UK via Prodigi vs. Printful. Para coleções voltadas ao público europeu ou australiano, Prodigi normalmente ganha no preço final ao cliente.",
+        "plano": "1) Crie conta grátis em prodigi.com e explore o catálogo de apparel · 2) Adicione 1 tee longline feminina com seu design via integração Shopify ou Etsy · 3) Peça amostra física com bordado antes de publicar · 4) Compare custo total vs. plataforma atual",
+        "fonte": {"t": "", "u": ""},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-11-24",
+        "top": true,
+        "t": "Kling AI 2.0: Foto ou Texto → B-Roll Cinemático em Segundos — Alternativa ao Runway",
+        "resumo": "Kling 2.0 (Kuaishou) gera B-roll de ambiente e takes de personagem único com qualidade cinematográfica. Especialidade: planos estáticos, pans e dollys em ambientes. Melhor que Runway Gen-4 para establishing shots de cenário.",
+        "porque": "Runway Gen-4 domina, mas Kling 2.0 se destaca em shots de ambiente com um plano gratuito (limitado) e pago a partir de $29/mês. Vale testar para takes de overview e abertura de reel de obra.",
+        "aplicar": "Use Kling para gerar o B-roll de abertura do reel (establishing shot da obra) e Runway/Pika para takes de detalhe. Diminui custo e diversifica o visual.",
+        "plano": "1) Crie conta em klingai.com (plano free: 66 créditos/dia) · 2) Descreva o ambiente da obra em inglês + instrução de câmera no fim do prompt · 3) Gere 2–3 variações do mesmo shot · 4) Escolha a melhor para abrir o reel",
+        "fonte": {"t": "Kling 2.0 Review: State of the Art AI Video Quality — Decrypt", "u": "https://decrypt.co/315436/kling-2-review-ai-video-generator"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-11-24",
+        "top": true,
+        "t": "Foyr Neo 2026: Planta Baixa + Render 4K em Minutos — Nível Profissional Para Fechar Contrato",
+        "resumo": "Foyr Neo é uma plataforma cloud que vai do esboço de planta baixa ao render fotorrealista 4K sem instalar nada. 60k+ objetos 3D, AI Restyle para trocar estilo do ambiente e exporta vídeo walkthrough. Ideal para apresentação de proposta de reforma.",
+        "porque": "Diferente do Planner 5D (mais casual), Foyr Neo tem nível profissional e é o que designers de alto padrão usam para fechar contrato com cliente antes de começar a obra.",
+        "aplicar": "Fotografe o cômodo do cliente, use AI Restyle para mostrar 3 estilos diferentes (moderno, industrial, minimalista) em 10 min. Poste o antes/depois como reel para OPC.",
+        "plano": "1) Acesse foyr.com e inicie trial gratuito (7 dias) · 2) Crie um novo projeto com a planta baixa do cômodo · 3) Use AI Restyle para aplicar 3 estilos ao ambiente · 4) Exporte 2 imagens 4K: before + after para o reel",
+        "fonte": {"t": "The 6 best AI tools for interior design in 2026 — Jotform", "u": "https://www.jotform.com/ai/best-ai-for-interior-design/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-11-24",
+        "top": true,
+        "t": "Corredor do Cáucaso do Sul 2026: EUA, Armênia e Azerbaijão Constroem Ferrovia que Pode Remodelar a Eurásia",
+        "resumo": "O projeto TRIPP (Trans-Regional Infrastructure and Prosperity Path), liderado pelos EUA, propõe conectar Armênia e Azerbaijão por ferrovia via Nakhchivan. Se concluído em 2027, cria rota comercial alternativa que contorna a Rússia e rivaliza com a Nova Rota da Seda chinesa.",
+        "porque": "É o ponto de inflexão pós-Nagorno-Karabakh: a Rússia perde influência sobre a Armênia, a Geórgia perde o monopólio de trânsito, a China enfrenta concorrência. A rota que dominar a logística daqui define décadas.",
+        "aplicar": "Pauta para news: 'O acordo que pode tirar a Armênia da órbita russa — e por que os EUA estão pagando por isso'. Fácil de viralizar com mapa animado.",
+        "plano": "1) Leia o relatório Carnegie Endowment sobre TRIPP (março 2026) · 2) Marque os 3 beneficiados (EUA, Armênia, Azerbaijão) e 3 perdedores (Rússia, Geórgia, corredor chinês) · 3) Monte carrossel com mapa do trajeto · 4) Poste como pauta geopolítica na série de news",
+        "fonte": {"t": "Rewiring the South Caucasus: TRIPP and the New Geopolitics of Connectivity — Carnegie Endowment", "u": "https://carnegieendowment.org/research/2026/03/rewiring-the-south-caucasus-tripp-and-the-new-geopolitics-of-connectivity"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-11-24",
+        "top": true,
+        "t": "Smart Bidding com Target ROAS 2026: Configure o Alvo Certo e a IA Trabalha por Você",
+        "resumo": "Target ROAS é a estratégia onde você define quanto quer ganhar por $1 gasto (ex: 500% = $5 de retorno). A IA do Google ajusta o lance em cada leilão usando 70+ sinais em tempo real — mas só funciona se o alvo for calibrado com dados reais do histórico.",
+        "porque": "Configurar Target ROAS muito alto (acima do histórico) faz a campanha travar — a IA não encontra leilões que justifiquem o lance. Regra de ouro: comece com o ROAS histórico médio dos últimos 30 dias.",
+        "aplicar": "Para OPC: calcule ROAS atual (receita ÷ gasto). Se for 300%, comece o Target em 280–300%. Nunca coloque 500% de cara — campanha fica parada. Ajuste +10% a cada 2 semanas se tiver conversões.",
+        "plano": "1) Abra Google Ads > Campanhas > Lances · 2) Mude para Smart Bidding > Maximizar valor de conversão com Target ROAS · 3) Coloque o ROAS atual -5% como alvo inicial · 4) Monitore impressões e conversões por 2 semanas antes de ajustar",
+        "fonte": {"t": "About Smart Bidding — Google Ads Help", "u": "https://support.google.com/google-ads/answer/7065882"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-11-24",
+        "top": true,
+        "t": "Lindy AI 2026: Agente Pessoal que Lê seu Gmail, Agenda e Age — Sem Código",
+        "resumo": "Lindy cria agentes que monitoram Gmail, respondem emails, fazem triagem de agenda e conectam com 200+ apps — tudo configurado em linguagem natural, sem código. Plano gratuito com 400 créditos/mês (~40 tarefas).",
+        "porque": "Diferente do n8n ou Make.com (que precisam de setup técnico), Lindy funciona como um assistente: você descreve o que quer que ele faça, ele aprende e executa. Ideal para triagem de email e pré-agendamento.",
+        "aplicar": "Use Lindy para triagem de emails de leads da OPC: agente lê novos emails, identifica solicitações de orçamento e cria tarefa no calendário automaticamente. Libera 20–30 min/dia.",
+        "plano": "1) Crie conta grátis em lindy.ai (sem cartão) · 2) Escolha o template 'Email Triage' · 3) Conecte sua conta Gmail · 4) Defina 3 regras: orçamento → criar evento; newsletter → arquivar; fatura → mover para pasta Finance",
+        "fonte": {"t": "Lindy Reviews — G2", "u": "https://www.g2.com/products/lindy-lindy"},
+        "video": {"t": "", "u": ""}
+      }
+    ]
+  }
+}
