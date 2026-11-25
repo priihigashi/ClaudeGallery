@@ -1,141 +1,167 @@
 {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "generated_by": "routine",
   "highlights": [
     {
-      "tag": "URGENTE",
-      "t": "GitHub Actions: ads_pulse.yml falhou (run #45286250600)",
-      "why": "Rotina de anúncios quebrou — relatório de hoje pode estar incompleto.",
+      "tag": "LEAD OPC",
+      "t": "Novo lead Angelo Garcia — cidade não informada, follow-up urgente",
+      "why": "Lead CCiado para você hoje. Cidade não informada — antes do follow-up, confirme se o projeto é em Broward County. Leads sem localidade esfriaram em menos de 24h sem resposta.",
       "go": "ads"
     },
     {
-      "tag": "PENDENTE",
-      "t": "Conteúdos para aprovação: OPC + News",
-      "why": "Dois lotes de conteúdo aguardando revisão antes de publicar.",
-      "go": "conteudo"
+      "tag": "ALERTA",
+      "t": "Credit Monitor degraded — fallback ativo para pipeline de conteúdo",
+      "why": "Email hoje: provedor de API com degradação, fallback ativado. Verificar qual serviço está impactado e se a captura automática de conteúdo está rodando com o backup.",
+      "go": "iafim"
     },
     {
-      "tag": "META",
-      "t": "Real Estate na agenda de hoje (8h, Regra 1)",
-      "why": "Curso Cameron Academy — prazo de 90 dias correndo. Avançar 1 capítulo hoje.",
+      "tag": "FINANÇAS IA",
+      "t": "Finance check às 10h — verificar cobranças de ferramentas testadas esta semana",
+      "why": "Calendário confirma: Tiller check às 10h. Semana intensa de testes de novas plataformas POD, agentes e ferramentas de vídeo. Checar se algum trial ativou cobrança automática.",
       "go": "tip"
     },
     {
-      "tag": "CONTEÚDO",
-      "t": "Conferir trial reel UGC Dog Man hoje às 18h",
-      "why": "Trial B (stickers, postado 23/11) — se engajamento alto, compartilhar com todos.",
-      "go": "obra"
+      "tag": "NEWS BRASIL",
+      "t": "Peça do dia News Brasil agendada para 11:44h — Claude pede o Mac",
+      "why": "Calendário confirma tarefa automática às 11:44h para criação de conteúdo News Brasil. Com Credit Monitor degraded, confirmar que o pipeline de captura está funcionando antes de criar a peça.",
+      "go": "conteudo"
     }
   ],
   "history": [
-    {
-      "date": "2026-11-24",
-      "label": "Boletim de hoje",
-      "note": "8 tópicos pesquisados"
-    }
+    {"date": "2026-11-25", "label": "Boletim de hoje", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-24", "label": "Boletim de segunda", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-23", "label": "Boletim de domingo", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-22", "label": "Boletim de sábado", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-21", "label": "Boletim de sexta", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-20", "label": "Boletim de quinta", "note": "8 tópicos pesquisados"},
+    {"date": "2026-11-19", "label": "Boletim de quarta", "note": "8 tópicos pesquisados"}
   ],
   "topics": {
     "tip": [
       {
-        "id": "tip-2026-11-24",
+        "id": "tip-2026-11-25",
         "top": true,
-        "t": "Friction Hack para TDAH: Monte a Tarefa ANTES e Comece sem Atrito",
-        "resumo": "Para o cérebro TDAH, a fase de setup (abrir arquivo, achar fone, limpar mesa) é uma barreira separada da tarefa em si. Eliminar esse atrito antecipadamente cria um gatilho automático: o ambiente pronto ativa o início.",
-        "porque": "Tarefa difícil de iniciar? O problema raramente é a tarefa — é o setup. Cada microbarreira consome dopamina antes de você começar. Remova todas ontem.",
-        "aplicar": "Antes de dormir (ou no fim do dia): deixe o documento da tarefa de amanhã aberto na tela, o fone no lugar, o timer configurado, a cadeira posicionada. Quando sentar, já começa.",
-        "plano": "1) Escolha a 1 tarefa mais difícil de amanhã agora · 2) Abra o arquivo/app necessário e deixe visível · 3) Ponha o fone ou coisa que usa na frente do teclado · 4) Configure o timer de 25 min — só aperta 'iniciar' de manhã",
-        "fonte": {"t": "ADHD Starting Tasks: Proven Strategies to Overcome Initiation Paralysis", "u": "https://neurolaunch.com/adhd-starting-tasks/"},
+        "t": "Brain Dump para TDAH: Despeje Tudo para Fora da Cabeça em 5 Min e Libere a Memória de Trabalho",
+        "resumo": "A memória de trabalho do TDAH é frágil — dura segundos a um minuto. Um brain dump transfere todas as tarefas, preocupações e ideias abertas para papel ou app externo ANTES de começar o trabalho. Capturar primeiro, organizar depois: o objetivo é esvaziar, não resolver.",
+        "porque": "CHADD confirma que o TDAH tem déficit de armazenamento na memória de trabalho — não de inteligência ou priorização. Manter loops abertos na cabeça consome a capacidade disponível para a tarefa atual. Externalizar tudo — 'o que está na minha cabeça agora?' — libera capacidade cognitiva imediata. Escrever à mão pode reforçar a retenção melhor do que digitar para cérebros com TDAH, segundo o NeuroLaunch. Diferente de temporizadores e ruído marrom (que ativam o foco), o brain dump remove ativamente a interferência antes de começar.",
+        "aplicar": "Antes de abrir qualquer app de trabalho: 5 min de brain dump em papel ou no Notion. Regra: escreva TUDO — tarefas, medos, coisas que você não quer esquecer, ideias aleatórias. Não avalie, não ordene, só despeja. Depois separe em 3 pilhas: 'fazer hoje', 'delegar ou esta semana', 'deixar ir'. Para o finance check de 10h: brain dump antes de abrir o Tiller para não perder nenhum compromisso enquanto olha as finanças.",
+        "plano": "1) Pegue papel ou abra Notion — bloco em branco, sem template, sem pressão · 2) Escreva por 5 min tudo que está na sua cabeça (tarefas, preocupações, ideias, recados) sem filtrar — velocidade importa mais que organização · 3) Releia e separe: o que é 'hoje', o que é 'esta semana', o que pode ir para o backlog ou o lixo · 4) O primeiro item da lista 'hoje' vira sua âncora — começa por ele, sem abrir redes sociais ou email antes",
+        "fonte": {
+          "t": "NeuroLaunch — ADHD Brain Dump: Unleashing Creativity and Clearing Mental Clutter",
+          "u": "https://neurolaunch.com/adhd-brain-dump/"
+        },
         "video": {"t": "", "u": ""}
       }
     ],
     "receita": [
       {
-        "id": "receita-2026-11-24",
+        "id": "receita-2026-11-25",
         "top": true,
-        "t": "Hambúrguer Vegano de Lentilha + Batata-Doce — Pronto em 30 Min, Kid-Friendly",
-        "resumo": "Lentilha cozida + purê de batata-doce + aveia + temperos defumados = hambúrguer que segura na forma, não esfarela e as crianças adoram. Sem leite, sem ovo, sem glúten se usar aveia certificada.",
-        "porque": "Mais proteína que o hambúrguer de grão-de-bico, sabor adocicado que kids aprovam, preparo fácil e gela bem para a semana.",
-        "aplicar": "Faça o dobro e congele os discos crus separados por papel manteiga — semana resolvida. Sirva com queijo vegano derretido (FL) e pão de forma integral.",
-        "plano": "1) Cozinhe 1 xíc lentilha + asse 1 batata-doce média (forno 200°C/35 min) · 2) Amasse juntos, misture ½ xíc aveia + alho + páprica defumada + sal · 3) Forme discos e leve ao freezer 20 min para firmar · 4) Grelhe em frigideira antiaderente 4 min cada lado",
-        "fonte": {"t": "Hambúrguer de lentilha fácil — Receiteria", "u": "https://www.receiteria.com.br/receita/hamburguer-de-lentilha-facil/"},
+        "t": "Shakshuka Vegana com Tofu e Feijão Branco — 1 Panela, 30 Min, Kid-Friendly, Sem Leite de Vaca",
+        "resumo": "Molho encorpado de tomate, pimentão e cominho com tofu firme amassado (imita o ovo poché da versão original) e feijão branco para proteína extra. Uma panela, 30 minutos, resulta num jantar quente e satisfatório. Sirva com pão pita integral ou arroz para crianças.",
+        "porque": "O tofu amassado em pedaços irregulares absorve o molho de tomate e fica com textura similar à clara de ovo — sem nenhum laticínio. O feijão branco adiciona proteína e deixa a receita ainda mais saciante. Sem peixe, sem leite de vaca, sem frutos do mar. Para crianças: molho mais suave (omitir harissa ou pimenta), servir com arroz branco em vez de pão. Rende bem para freezer: o molho dura 3 meses congelado.",
+        "aplicar": "O truque de textura: use tofu extra-firme prensado por 20 minutos antes. Parta em pedaços irregulares com as mãos — não corte em cubos. Frite no molho até absorver o caldo e firmar. Para versão kids: retire a porção deles antes de adicionar qualquer tempero apimentado — o molho base de tomate + pimentão é naturalmente suave e adocicado.",
+        "plano": "1) Refogue 1 cebola + 3 dentes de alho + 1 pimentão vermelho em azeite por 5 min · 2) Adicione 1 lata de tomate pelado + ½ cc cominho + ½ cc páprica defumada + sal — cozinhe 10 min em fogo médio · 3) Adicione 1 lata de feijão branco escorrido + 300g de tofu extra-firme em pedaços irregulares; tampe e cozinhe 10 min mexendo uma vez · 4) Finalize com salsinha fresca + queijo vegano cremoso (FL) por cima. Sirva com pão pita integral aquecido",
+        "fonte": {
+          "t": "Rainbow Plant Life — Vegan Shakshuka with Tofu and White Beans",
+          "u": "https://rainbowplantlife.com/vegan-shakshuka-with-tofu-and-white-beans"
+        },
         "video": {"t": "", "u": ""}
       }
     ],
     "merch": [
       {
-        "id": "merch-2026-11-24",
+        "id": "merch-2026-11-25",
         "top": true,
-        "t": "Prodigi 2026: POD Global Premium com Bordado Real — Frete Local em 10+ Países",
-        "resumo": "Prodigi imprime e envia de gráficas locais nos EUA, UK, Europa e Austrália — o cliente recebe em 2–5 dias sem pagar frete internacional. Oferece bordado (embroidery), DTG e sublimação em tees, hoodies e acessórios.",
-        "porque": "Se você vende para clientes fora dos EUA, Prodigi elimina o custo de frete internacional que come a margem do Printful/Printify. Bordado premium disponível, sem MOQ.",
-        "aplicar": "Compare o custo total (produto + frete) de um pedido para UK via Prodigi vs. Printful. Para coleções voltadas ao público europeu ou australiano, Prodigi normalmente ganha no preço final ao cliente.",
-        "plano": "1) Crie conta grátis em prodigi.com e explore o catálogo de apparel · 2) Adicione 1 tee longline feminina com seu design via integração Shopify ou Etsy · 3) Peça amostra física com bordado antes de publicar · 4) Compare custo total vs. plataforma atual",
-        "fonte": {"t": "", "u": ""},
+        "t": "Printify 2026: Acesse 80+ Fornecedores Globais de POD em 1 Conta — Compare Qualidade e Frete por Produto e Troque Sem Recriar a Loja",
+        "resumo": "Printify funciona como um marketplace de provedores de impressão: você escolhe o melhor fornecedor para cada produto com base em localização, qualidade e preço. 7.100+ reviews no Trustpilot. Plano gratuito com até 5 lojas; Premium $29/mês desbloqueia 20% de desconto em todos os produtos. Integra com Shopify, Etsy, WooCommerce e mais.",
+        "porque": "Diferente de Printful (fornecedor único, qualidade garantida mas preço mais alto) e Prodigi (rede premium), o Printify tem 80+ provedores e você decide qual usa para cada produto. Para bordado em longline feminina: compare qual dos provedores têm bordado real disponível e peça samples de 2–3 fornecedores diferentes. Se um decepcionar, troque o fornecedor sem mudar a loja — a maior vantagem competitiva do modelo de marketplace. Aviso real: qualidade varia entre provedores — sempre peça sample antes de publicar.",
+        "aplicar": "Para bordado premium: filtre fornecedores nos EUA com bordado disponível (ícone Embroidery no catálogo). Para longline feminina, busque Bella+Canvas 6500 ou similar disponível em provedores com rating alto. Compare 2 provedores no mesmo design antes de decidir. Para o custo total (produto + bordado + frete), Printify geralmente ganha vs. Printful; Printful ganha em consistência de qualidade.",
+        "plano": "1) Crie conta em printify.com — plano free disponível, sem cartão · 2) Em Product Catalog, filtre por 'Women T-shirts' e ative filtro de provedores com bordado disponível · 3) Escolha o mesmo produto em 2 provedores diferentes (compare ratings e localização) e peça 1 sample de cada · 4) Compare side-by-side: custo total, qualidade do bordado e prazo. Use o vencedor como parceiro âncora para bordado; se mudar de ideia depois, troca o provedor sem mexer no produto da loja",
+        "fonte": {
+          "t": "Printify — Print On Demand na Shopify App Store",
+          "u": "https://apps.shopify.com/printify"
+        },
         "video": {"t": "", "u": ""}
       }
     ],
     "conteudo": [
       {
-        "id": "conteudo-2026-11-24",
+        "id": "conteudo-2026-11-25",
         "top": true,
-        "t": "Kling AI 2.0: Foto ou Texto → B-Roll Cinemático em Segundos — Alternativa ao Runway",
-        "resumo": "Kling 2.0 (Kuaishou) gera B-roll de ambiente e takes de personagem único com qualidade cinematográfica. Especialidade: planos estáticos, pans e dollys em ambientes. Melhor que Runway Gen-4 para establishing shots de cenário.",
-        "porque": "Runway Gen-4 domina, mas Kling 2.0 se destaca em shots de ambiente com um plano gratuito (limitado) e pago a partir de $29/mês. Vale testar para takes de overview e abertura de reel de obra.",
-        "aplicar": "Use Kling para gerar o B-roll de abertura do reel (establishing shot da obra) e Runway/Pika para takes de detalhe. Diminui custo e diversifica o visual.",
-        "plano": "1) Crie conta em klingai.com (plano free: 66 créditos/dia) · 2) Descreva o ambiente da obra em inglês + instrução de câmera no fim do prompt · 3) Gere 2–3 variações do mesmo shot · 4) Escolha a melhor para abrir o reel",
-        "fonte": {"t": "Kling 2.0 Review: State of the Art AI Video Quality — Decrypt", "u": "https://decrypt.co/315436/kling-2-review-ai-video-generator"},
+        "t": "ElevenLabs 2026: Clone a Sua Voz em PT-BR em 1 Min e Narre Qualquer Roteiro Sem Gravar de Novo — $11 Bi de Valuation, 1M+ Criadores",
+        "resumo": "ElevenLabs gera vozes ultra-realistas e permite clonar sua própria voz com poucos minutos de áudio. Suporta PT-BR nativo (texto → fala com entonação natural). Plano Starter (~$5/mês): 30.000 caracteres/mês + Professional Voice Cloning. Multilingual — a mesma voz clonada fala qualquer idioma. 2026: valuation de $11 bilhões, $500M ARR, 1M+ criadores.",
+        "porque": "Diferente de VEED (subtítulos + avatares genéricos), InVideo (vídeo automático com banco de imagens) e Captions.ai (edição de fala já gravada), o ElevenLabs resolve um problema específico: você tem o roteiro mas não quer (ou não pode) gravar agora. Para o canal de notícias PT-BR: escreva o script da peça do dia, cole no ElevenLabs, selecione sua voz clonada → narração pronta em 30 segundos. Para OPC: narração de vídeos de obra sem depender de qualidade de gravação do celular em canteiro barulhento.",
+        "aplicar": "Para a Peça do dia News Brasil (11:44h): se o ambiente de gravação não estiver ideal, use ElevenLabs com voz clonada para narrar o roteiro. Cole o texto, ajuste velocidade (90–95% do normal para PT-BR natural), exporte como MP3 e sincronize com o vídeo no VEED ou CapCut. Economiza o tempo de gravar, editar pausas e refilmar.",
+        "plano": "1) Acesse elevenlabs.io e crie conta gratuita (10.000 caracteres/mês sem cartão) · 2) Em 'Voice Lab', acesse 'Instant Voice Cloning': grave 1 minuto de fala natural e deixe a IA criar sua réplica de voz · 3) Vá em 'Text to Speech', selecione sua voz clonada e cole o roteiro da peça do dia em PT-BR · 4) Ajuste Stability: 50% + Clarity: 75% para PT-BR natural — compare com gravação real. Se ficou bom, use nos próximos conteúdos faceless sem câmera",
+        "fonte": {
+          "t": "ElevenLabs — Clonagem de Voz em Português",
+          "u": "https://elevenlabs.io/languages/portuguese"
+        },
         "video": {"t": "", "u": ""}
       }
     ],
     "obra": [
       {
-        "id": "obra-2026-11-24",
+        "id": "obra-2026-11-25",
         "top": true,
-        "t": "Foyr Neo 2026: Planta Baixa + Render 4K em Minutos — Nível Profissional Para Fechar Contrato",
-        "resumo": "Foyr Neo é uma plataforma cloud que vai do esboço de planta baixa ao render fotorrealista 4K sem instalar nada. 60k+ objetos 3D, AI Restyle para trocar estilo do ambiente e exporta vídeo walkthrough. Ideal para apresentação de proposta de reforma.",
-        "porque": "Diferente do Planner 5D (mais casual), Foyr Neo tem nível profissional e é o que designers de alto padrão usam para fechar contrato com cliente antes de começar a obra.",
-        "aplicar": "Fotografe o cômodo do cliente, use AI Restyle para mostrar 3 estilos diferentes (moderno, industrial, minimalista) em 10 min. Poste o antes/depois como reel para OPC.",
-        "plano": "1) Acesse foyr.com e inicie trial gratuito (7 dias) · 2) Crie um novo projeto com a planta baixa do cômodo · 3) Use AI Restyle para aplicar 3 estilos ao ambiente · 4) Exporte 2 imagens 4K: before + after para o reel",
-        "fonte": {"t": "The 6 best AI tools for interior design in 2026 — Jotform", "u": "https://www.jotform.com/ai/best-ai-for-interior-design/"},
+        "t": "Hover 2026: Fotografe o Imóvel com o Celular → IA Gera Modelo 3D com Medidas Reais + Proposta Pronta em 20 Min — Nova Plataforma Lançada Jan/2026",
+        "resumo": "Hover transforma fotos de celular de qualquer propriedade em modelo 3D detalhado com medidas, materiais e estimativa de projeto. Em janeiro de 2026, lançou a Connected Visual Platform — medição, design, estimativa e proposta em 1 fluxo único. Integra com Trussi, Xactimate e outros sistemas de estimativa. Planos a partir de ~$159/ano.",
+        "porque": "A diferença para todas as outras ferramentas de render desta série: Hover parte de fotos REAIS do exterior do imóvel, não de modelos 3D pré-criados ou fotos de interiores vazios. Para a OPC: fotografe a fachada ou o cômodo do projeto pelo celular → Hover gera o modelo 3D com medidas reais → integra com seu sistema de estimativa. Economiza 2–4h de medição manual por projeto e elimina erros de medição. O modelo 3D também vira conteúdo de Instagram: 'antes da obra — modelo aprovado pela família X'.",
+        "aplicar": "Para o próximo projeto de Addition ou reforma de fachada: use o app Hover no celular para fotografar o imóvel em 360° (protocolo guiado pelo app — 5–10 min). Hover gera o modelo em ~20 min. Screenshots do 3D viram conteúdo visual de proposta e de Instagram ao mesmo tempo — um processo, dois entregáveis.",
+        "plano": "1) Acesse hover.to/product e solicite demo ou inicie trial — pricing começa em ~$159/ano por usuário · 2) Instale o app no celular e siga o protocolo de fotos guiado (fotografe todos os lados do imóvel) · 3) Aguarde o modelo 3D (15–25 min) e explore as medidas e estimativas geradas automaticamente · 4) Na reunião com o cliente, mostre o modelo 3D e gere a proposta ali mesmo. Screenshots do 3D para Instagram: 'O projeto aprovado — Oak Park Construction'",
+        "fonte": {
+          "t": "Construction Dive: Hover Launches Connected Visual AI Platform (jan/2026)",
+          "u": "https://www.constructiondive.com/press-release/20260113-hover-launches-connected-visual-platform-to-streamline-home-improvement-wor-1/"
+        },
         "video": {"t": "", "u": ""}
       }
     ],
     "geo": [
       {
-        "id": "geo-2026-11-24",
+        "id": "geo-2026-11-25",
         "top": true,
-        "t": "Corredor do Cáucaso do Sul 2026: EUA, Armênia e Azerbaijão Constroem Ferrovia que Pode Remodelar a Eurásia",
-        "resumo": "O projeto TRIPP (Trans-Regional Infrastructure and Prosperity Path), liderado pelos EUA, propõe conectar Armênia e Azerbaijão por ferrovia via Nakhchivan. Se concluído em 2027, cria rota comercial alternativa que contorna a Rússia e rivaliza com a Nova Rota da Seda chinesa.",
-        "porque": "É o ponto de inflexão pós-Nagorno-Karabakh: a Rússia perde influência sobre a Armênia, a Geórgia perde o monopólio de trânsito, a China enfrenta concorrência. A rota que dominar a logística daqui define décadas.",
-        "aplicar": "Pauta para news: 'O acordo que pode tirar a Armênia da órbita russa — e por que os EUA estão pagando por isso'. Fácil de viralizar com mapa animado.",
-        "plano": "1) Leia o relatório Carnegie Endowment sobre TRIPP (março 2026) · 2) Marque os 3 beneficiados (EUA, Armênia, Azerbaijão) e 3 perdedores (Rússia, Geórgia, corredor chinês) · 3) Monte carrossel com mapa do trajeto · 4) Poste como pauta geopolítica na série de news",
-        "fonte": {"t": "Rewiring the South Caucasus: TRIPP and the New Geopolitics of Connectivity — Carnegie Endowment", "u": "https://carnegieendowment.org/research/2026/03/rewiring-the-south-caucasus-tripp-and-the-new-geopolitics-of-connectivity"},
+        "t": "AES 2026 — Mali, Burkina Faso e Niger Criam a Sua Própria 'NATO': Rússia Preenche o Vácuo da França na África Ocidental",
+        "resumo": "A Alliance des États du Sahel (AES), formada após três golpes militares de 2021–2023, lançou sua Força Unificada de 6.000 soldados em Niamey em 2026. A Rússia — via Africa Corps (sucessor da Wagner) — é o principal parceiro militar: em julho/2026, Lavrov se reuniu com líderes do AES e pledgeou cooperação mais forte. A França foi expulsa dos três países; EUA e Europa perderam acesso às bases militares da região.",
+        "porque": "O Sahel é o maior vazio de poder geopolítico de 2026 que quase não aparece no noticiário brasileiro. A expulsão da França e a entrada da Rússia redefinem quem controla o coração da África — onde estão parte significativa das reservas mundiais de ouro, urânio e lítio. Para o canal de notícias: 'Como a Rússia tomou a África sem atirar um tiro nos EUA' — carrossel de alta viralidade com mapa do Sahel + linha do tempo dos golpes. Angola diferente de QUAD, Ártico, Taiwan e Mar Vermelho — região completamente nova na série.",
+        "aplicar": "Pauta: 'O trio africano que expulsou a França e abraçou Putin — o que é o AES e por que importa'. Ângulo concreto: Mali, Burkina Faso e Niger controlam corredores de migração para Europa, rotas de mineração e fronteiras que afetam acordos que o Brasil acompanha na ONU. Visual forte: mapa de golpes de estado 2020–2023 + mapa de bases militares abandonadas pela França.",
+        "plano": "1) Entenda os 3 golpes: Mali (ago/2020 + mai/2021), Burkina Faso (jan + set/2022), Niger (jul/2023) — todos antifranceses, todos convidaram a Rússia · 2) O que a Rússia ganhou: acesso a 3 países com reservas de ouro (Mali = 3º produtor africano), urânio (Niger abastecia 15% do urânio francês) e fronteiras com 7 outros países · 3) AES em 2026: criou Força Unificada em Niamey, se retirou da CEDEAO, fala em criar moeda comum · 4) Roteirize carrossel: 'O Sahel virou laboratório de influência russa' — mapa de golpes, o que a França perdeu, o que a Rússia ganhou, impacto no preço de minerais no Brasil",
+        "fonte": {
+          "t": "The Defense Post: Russia and Sahel States Pledge Stronger Military Ties (jul/2026)",
+          "u": "https://thedefensepost.com/2026/07/09/russia-sahel-support/"
+        },
         "video": {"t": "", "u": ""}
       }
     ],
     "ads": [
       {
-        "id": "ads-2026-11-24",
+        "id": "ads-2026-11-25",
         "top": true,
-        "t": "Smart Bidding com Target ROAS 2026: Configure o Alvo Certo e a IA Trabalha por Você",
-        "resumo": "Target ROAS é a estratégia onde você define quanto quer ganhar por $1 gasto (ex: 500% = $5 de retorno). A IA do Google ajusta o lance em cada leilão usando 70+ sinais em tempo real — mas só funciona se o alvo for calibrado com dados reais do histórico.",
-        "porque": "Configurar Target ROAS muito alto (acima do histórico) faz a campanha travar — a IA não encontra leilões que justifiquem o lance. Regra de ouro: comece com o ROAS histórico médio dos últimos 30 dias.",
-        "aplicar": "Para OPC: calcule ROAS atual (receita ÷ gasto). Se for 300%, comece o Target em 280–300%. Nunca coloque 500% de cara — campanha fica parada. Ajuste +10% a cada 2 semanas se tiver conversões.",
-        "plano": "1) Abra Google Ads > Campanhas > Lances · 2) Mude para Smart Bidding > Maximizar valor de conversão com Target ROAS · 3) Coloque o ROAS atual -5% como alvo inicial · 4) Monitore impressões e conversões por 2 semanas antes de ajustar",
-        "fonte": {"t": "About Smart Bidding — Google Ads Help", "u": "https://support.google.com/google-ads/answer/7065882"},
+        "t": "Google Ads Ad Scheduling 2026: Pause os Anúncios Quando Você Não Atende o Telefone — O Corte de Verba Mais Simples e Mais Ignorado por Contratistas",
+        "resumo": "Ad scheduling (dayparting) define em quais dias e horários seus anúncios aparecem. Para contratistas locais: se você não atende telefone depois das 20h, cada clique nesse período é verba desperdiçada — a pessoa liga, não atende, vai para o concorrente. KlientBoost (Q2/2026) reporta clientes que reduziram custo por lead em 20–30% apenas ajustando o horário de exibição para coincidir com o atendimento real.",
+        "porque": "Leads de reforma são decisões de alto valor — a pessoa pesquisa, clica no anúncio, liga e espera ser atendida imediatamente. Um lead às 23h que não consegue falar com ninguém não converte e ainda custou o clique. Local Services Ads (já configurados na OPC) têm configuração específica de horário de operação — cada hora fora do atendimento real é CPL desperdiçado. Ajustar para os horários reais de atendimento é o corte de verba mais subestimado no Google Ads de serviços locais.",
+        "aplicar": "Para OPC: revise o calendário de atendimento real. Se a equipe atende 8h–19h de seg–sex e 9h–14h no sábado, configure exatamente isso nas campanhas. No LSA, vá em 'Business Hours' e espelhe o horário real. Para Search Ads: campanha → Edit → Ad Schedule. Aguarde 2–4 semanas antes de fazer ajustes granulares por hora.",
+        "plano": "1) Google Ads → Suas campanhas → clique em 1 campanha → aba 'Ad Schedule' (Programação de anúncios) · 2) Adicione os dias e horários em que a OPC atende telefone (ex: seg–sex 8h–19h; sáb 9h–14h) e pause o restante · 3) Em Local Services Ads: vá em Configurações do Perfil → Business Hours e espelhe os mesmos horários de atendimento · 4) Após 4 semanas: acesse Relatórios → Hora do Dia e Dia da Semana para identificar picos de conversão — ajuste lances +20% nesses horários específicos",
+        "fonte": {
+          "t": "KlientBoost: Google Ads Dayparting — The Decision Framework (Q2/2026)",
+          "u": "https://klientboost.com/ppc/dayparting/"
+        },
         "video": {"t": "", "u": ""}
       }
     ],
     "iafim": [
       {
-        "id": "iafim-2026-11-24",
+        "id": "iafim-2026-11-25",
         "top": true,
-        "t": "Lindy AI 2026: Agente Pessoal que Lê seu Gmail, Agenda e Age — Sem Código",
-        "resumo": "Lindy cria agentes que monitoram Gmail, respondem emails, fazem triagem de agenda e conectam com 200+ apps — tudo configurado em linguagem natural, sem código. Plano gratuito com 400 créditos/mês (~40 tarefas).",
-        "porque": "Diferente do n8n ou Make.com (que precisam de setup técnico), Lindy funciona como um assistente: você descreve o que quer que ele faça, ele aprende e executa. Ideal para triagem de email e pré-agendamento.",
-        "aplicar": "Use Lindy para triagem de emails de leads da OPC: agente lê novos emails, identifica solicitações de orçamento e cria tarefa no calendário automaticamente. Libera 20–30 min/dia.",
-        "plano": "1) Crie conta grátis em lindy.ai (sem cartão) · 2) Escolha o template 'Email Triage' · 3) Conecte sua conta Gmail · 4) Defina 3 regras: orçamento → criar evento; newsletter → arquivar; fatura → mover para pasta Finance",
-        "fonte": {"t": "Lindy Reviews — G2", "u": "https://www.g2.com/products/lindy-lindy"},
+        "t": "Zapier AI Agents 2026: Descreva o que o Agente Deve Fazer em Linguagem Natural e Ele Executa Sozinho — Mais Polido que n8n, Sem Código",
+        "resumo": "Zapier lançou AI Agents como camada nativa da plataforma: você descreve o que o agente deve fazer, o Zapier propõe um conjunto de ações, você aprova e o agente entra em modo autônomo. Integração com 7.000+ apps. Plano com agentes inclui 400 atividades/mês; pago a partir de ~$19/mês. Review DEV Community (8 meses de uso): 'melhor para tarefas estreitas e mensuráveis como qualificação de lead, triagem de email e follow-up de vendas'.",
+        "porque": "Diferente de Lindy AI (email triage só) e Make.com AI Agents (fluxos visuais mais técnicos), o Zapier AI Agents é a camada de agente em cima de uma base de automação que você possivelmente já usa (7.000+ apps integrados). Para a OPC: o agente lê novos emails de lead → extrai nome, cidade e serviço → verifica área de serviço → envia reply personalizado → notifica você com resumo. Aviso: funciona melhor para tarefas estreitas e bem definidas do que para decisões complexas. Sem self-hosting (vs n8n), mais polido e fácil que Make para usuários sem experiência técnica.",
+        "aplicar": "Para o lead Angelo Garcia (sem cidade): configure um agente Zapier que, ao receber email com 'NEW LEAD', extrai os dados → se cidade em branco, envia reply pedindo localização do projeto → atualiza Google Sheets de leads com status 'Aguardando localização'. Resolve o problema de lead sem cidade sem você intervir manualmente a cada caso.",
+        "plano": "1) Acesse zapier.com → Agents (menu lateral) e crie conta se ainda não tem · 2) Clique em 'Create Agent' e descreva em linguagem natural: 'Quando receber email com NEW LEAD, extrair nome e cidade; se cidade não informada, responder ao remetente pedindo localização do projeto; adicionar no Google Sheets de leads' · 3) Revise as ações propostas pelo Zapier, conecte Gmail e Google Sheets e ative · 4) Teste com 1 email fictício de lead sem cidade — verifique se o reply saiu correto e os dados foram para a planilha antes de deixar rodar em produção",
+        "fonte": {
+          "t": "DEV Community: Zapier AI Review 2026 — 8 meses construindo agentes, veredicto honesto",
+          "u": "https://dev.to/nova_gg/zapier-ai-review-2026-i-used-it-for-8-months-to-build-ai-agents-honest-verdict-2c4m"
+        },
         "video": {"t": "", "u": ""}
       }
     ]
