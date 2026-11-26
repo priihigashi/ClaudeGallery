@@ -1,0 +1,167 @@
+{
+  "date": "2026-11-26",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "NOVO LEAD",
+      "t": "Lead Angelo Garcia aguarda cidade para proposta",
+      "why": "Lead entrou sem localização — confirme cidade hoje para avançar com estimativa da OPC",
+      "go": "ads"
+    },
+    {
+      "tag": "FALHA",
+      "t": "ads_pulse.yml falhou — run #45286250600",
+      "why": "Pipeline de monitoramento de anúncios da OPC quebrou — conferir GitHub Actions e corrigir antes de perder dados de campanha",
+      "go": "ads"
+    },
+    {
+      "tag": "REAL ESTATE",
+      "t": "Estudo de licença imobiliária FL ativo às 8h",
+      "why": "Cameron Academy 63h rodando todo dia (Rule 1). Próximo: completar horas e fazer prova presencial em Oakland Park — DBPR $62.75 + Livescan + exame $36.75",
+      "go": "tip"
+    },
+    {
+      "tag": "CONTEÚDO",
+      "t": "Peças de News Brasil e OPC aguardam aprovação",
+      "why": "GitHub Actions gerou conteúdo novo — entrar e aprovar hoje para não atrasar a publicação automática do pipeline",
+      "go": "conteudo"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-11-26",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-11-26",
+        "top": true,
+        "t": "Task Batching para TDAH — Agrupe Tarefas Similares em Blocos e Corte a Troca de Contexto pela Metade",
+        "resumo": "Separe suas tarefas em grupos similares (e-mails juntos, ligações juntas, edições juntas) e execute cada grupo de uma vez. Para o cérebro TDAH, trocar de tipo de tarefa custa mais energia do que para cérebros neurotípicos — reduzir essas trocas libera foco real.",
+        "porque": "Cada troca de contexto força o cérebro a 'reinicializar'. Para TDAH, isso é especialmente caro: estudos citados pela Asana e CHADD mostram que interrupções custam em média 23 minutos para recuperar o foco — e cérebros TDAH têm mais dificuldade nessa reconexão proativa.",
+        "aplicar": "Monte 3 blocos fixos no seu dia: 1) Administrativo (e-mails, mensagens, orçamentos), 2) Criação (conteúdo, posts, vídeos), 3) Execução (ligações, visitas, tarefas físicas). Não misture os tipos dentro de um bloco.",
+        "plano": "1) Liste todas as tarefas de hoje · 2) Categorize cada uma em Administrativo, Criação ou Execução · 3) Ordene dentro de cada bloco (mais difícil primeiro) · 4) Execute um bloco completo antes de abrir o próximo",
+        "fonte": {
+          "t": "Task Batching — Asana",
+          "u": "https://asana.com/resources/task-batching"
+        },
+        "video": { "t": "", "u": "" }
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-11-26",
+        "top": true,
+        "t": "Panquecas de Aveia com Banana — Veganas, 3 Ingredientes, 15 Min, Kid-Friendly",
+        "resumo": "Aveia + banana madura + leite de amêndoa = panquecas fofas sem ovo e sem leite de vaca. Canela e baunilha completam o sabor. Sem açúcar refinado — a banana já adoça. Prontas em 15 minutos.",
+        "porque": "Rápida, natural, sem glúten (se usar aveia certificada), sem leite de vaca e sem ovo. Zero técnica especial: amasse, misture, grelhe. As crianças adoram e dá para preparar a massa na noite anterior.",
+        "aplicar": "Monte a massa na noite anterior para agilizar o café da manhã. Sirva com frutas frescas, pasta de amendoim ou mel de agave. Adicione queijo vegano cremoso ao lado se quiser versão salgada.",
+        "plano": "1) Amasse 1 banana madura com um garfo até virar pasta · 2) Misture 1 xícara de aveia em flocos finos + ⅔ xícara de leite de amêndoa + canela e baunilha a gosto · 3) Deixe descansar 5 min para a aveia absorver · 4) Grelhe em frigideira antiaderente em fogo médio, 2-3 min de cada lado",
+        "fonte": {
+          "t": "Vegan Banana Oat Pancakes — The Conscious Plant Kitchen",
+          "u": "https://www.theconsciousplantkitchen.com/pt/vegan-banana-oat-pancakes/"
+        },
+        "video": { "t": "", "u": "" }
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-11-26",
+        "top": true,
+        "t": "Gelato 2026 — POD Local em 32+ Países, Bordado Premium e Produção em 24h",
+        "resumo": "Gelato produz seus produtos no país mais perto do comprador — frete rápido e barato. Oferece bordado em camisetas, moletons e bonés por demanda. 4.3★ nos reviews de 2026. Integra direto com Shopify e Etsy.",
+        "porque": "Produção local significa qualidade mais consistente e entrega em 24-48h para o cliente final. Ideal para escalar fora dos EUA sem pagar frete internacional caro. Os reviews de 2026 destacam o bom atendimento ao cliente.",
+        "aplicar": "Use o bordado como linha premium e o DTG para camisetas básicas. Sempre peça amostra física antes de listar na loja — alguns usuários reportaram variação de qualidade entre lotes.",
+        "plano": "1) Acesse gelato.com e crie conta gratuita · 2) Explore a seção de bordado (custom-embroidery) e selecione modelo de camiseta · 3) Faça upload do design e ajuste posicionamento + cores do fio · 4) Peça amostra física antes de publicar na loja",
+        "fonte": {
+          "t": "Gelato Review 2026 — Style Factory Productions",
+          "u": "https://www.stylefactoryproductions.com/blog/gelato-review"
+        },
+        "video": { "t": "", "u": "" }
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-11-26",
+        "top": true,
+        "t": "CapCut AI 2026 — Legendas Automáticas em 50+ Idiomas, Remoção de Fundo e Script-to-Video para Reels",
+        "resumo": "Cole um roteiro no CapCut AI e ele gera o vídeo com stock, narração e legendas. Ou grave com o celular: um clique remove o fundo e adiciona legendas estilizadas em dezenas de estilos. Funciona no browser e no app.",
+        "porque": "Elimina as partes mais chatas da edição — fundo, legenda e cortes básicos ficam prontos em minutos. Muito usado para Reels de antes/depois e tutoriais rápidos. Plano gratuito com recursos generosos.",
+        "aplicar": "Use o 'Script to Video' para transformar os roteiros de dicas de reforma da OPC em Reels automaticamente. Cole o texto, selecione o estilo visual e ajuste antes de exportar em 9:16.",
+        "plano": "1) Acesse capcut.com (browser) ou baixe o app · 2) Escolha 'Script to Video' e cole o roteiro pronto · 3) Selecione tom e estilo visual desejado · 4) Ajuste legendas, troque stock footage e exporte em 9:16 para Instagram",
+        "fonte": {
+          "t": "Auto Captions AI Video Editor — CapCut",
+          "u": "https://www.capcut.com/resource/auto-captions-ai-video-editor"
+        },
+        "video": { "t": "", "u": "" }
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-11-26",
+        "top": true,
+        "t": "Runway Gen-4.5 2026 — Fotos de Reforma → B-Roll Cinemático em Segundos para o Instagram da OPC",
+        "resumo": "Use as fotos já tiradas na obra (antes e depois) como referência — o Runway Gen-4.5 gera o vídeo de transformação no meio. Exporte direto em formato para Instagram. Gen-3 Alpha foi aposentado em jul/2026; versão atual é Gen-4.5.",
+        "porque": "Você JÁ TEM as fotos de obra. O Runway transforma esse conteúdo existente em vídeo viral sem precisar contratar filmagem. É replicável para cada projeto finalizado da OPC com menos de 5 minutos de trabalho.",
+        "aplicar": "Passe a foto 'antes' (cômodo bruto) e a foto 'depois' (reforma concluída) como frames de referência — a IA cria a animação de transição. Exporte em 9:16 para Reel.",
+        "plano": "1) Escolha 1 projeto da OPC com foto clara de antes e depois · 2) Acesse runway.com e abra Gen-4.5 (Image to Video) · 3) Faça upload da foto 'antes' como frame inicial e configure a transformação · 4) Exporte em 9:16 e poste como Reel — adicione música trending",
+        "fonte": {
+          "t": "Before and After Video Generator — Runway",
+          "u": "https://runway.com/resources/before-after-video-generator"
+        },
+        "video": { "t": "", "u": "" }
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-11-26",
+        "top": true,
+        "t": "Polônia 2026 — Da Vítima a Potência: 4,8% do PIB em Defesa e o Maior Exército da Europa a Caminho",
+        "resumo": "A Polônia gasta mais em defesa (% do PIB) do que qualquer outro membro da OTAN em 2026 — $53 bilhões, 4,8% do PIB. O PM Tusk prometeu o maior exército terrestre da Europa. Com os EUA reduzindo presença no continente, Varsóvia virou o novo escudo europeu.",
+        "porque": "Em 2022, a Polônia gastava 2,2% do PIB em defesa. Em 2026, chegou a 4,8%. É uma das transformações geopolíticas mais rápidas dos últimos 50 anos — e revela como a guerra na Ucrânia realinhou completamente a segurança europeia.",
+        "aplicar": "Use como pauta: 'O país que mais cresce militarmente no mundo agora é europeu' — ótimo ângulo para conteúdo de geopolítica acessível. Compare com o Brasil (1,2% do PIB) para gerar identificação.",
+        "plano": "1) Leia a cobertura do RealClearDefense e Jamestown Foundation · 2) Mapeie o contraste: Polônia 4,8% vs. Brasil 1,2% do PIB · 3) Monte linha do tempo: 2022 (guerra começa) → 2026 (maior exército em formação) · 4) Roteirize: 'Como um país de 38M de pessoas virou a espinha dorsal da OTAN'",
+        "fonte": {
+          "t": "Polish Army Set to be Largest in Europe — RealClearDefense",
+          "u": "https://www.realcleardefense.com/articles/2026/05/30/polish_army_set_to_be_largest_in_europe_1185741.html"
+        },
+        "video": { "t": "", "u": "" }
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-11-26",
+        "top": true,
+        "t": "Call Assets em RSA 2026 — Google Aposentou o Call-Only Ad: Como Continuar Gerando Leads por Telefone",
+        "resumo": "Desde fevereiro de 2026, não é mais possível criar Call-Only Ads. Eles param completamente em fevereiro de 2027. A substituição: adicione um Call Asset ao seu RSA e o botão de ligar aparece direto na busca — mesmo resultado, nova casa.",
+        "porque": "Se a OPC ainda roda Call-Only Ads, estão com prazo contado. Migrar para Call Assets preserva os leads por telefone sem reinventar a campanha. É a migração obrigatória que muitas empresas locais ainda não fizeram.",
+        "aplicar": "Acesse a campanha de busca da OPC, adicione um 'Call Asset' com o número da empresa e ative o rastreamento de chamadas. O botão de ligar aparece automaticamente nos anúncios de busca existentes.",
+        "plano": "1) Acesse Google Ads → Ativos (Assets) → Adicionar Call Asset · 2) Coloque o número da OPC com rastreamento ativo · 3) Ative 'Conversion tracking' para chamadas de +60 segundos · 4) Pause qualquer campanha Call-Only existente antes de fev/2027",
+        "fonte": {
+          "t": "About Call Ads — Google Ads Help",
+          "u": "https://support.google.com/google-ads/answer/6341403"
+        },
+        "video": { "t": "", "u": "" }
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-11-26",
+        "top": true,
+        "t": "Letta (ex-MemGPT) 2026 — Agente IA com Memória Persistente: Lembra de Projetos, Decisões e Contexto Entre Sessões",
+        "resumo": "Letta é o framework open-source que dá 'memória de longo prazo' para agentes IA. O agente escreve e lê em memória archival fora do context window, lembrando de tudo entre sessões — projetos, decisões, histórico de leads.",
+        "porque": "Enquanto ChatGPT e Claude resetam a cada sessão, um agente Letta guarda projetos, decisões e histórico permanentemente. Ideal como assistente permanente de automação da OPC ou McFolling — sem re-explicar contexto toda vez.",
+        "aplicar": "Construa um agente Letta com 'core memory' da OPC (projetos ativos, leads em aberto, regras de negócio). Ele lembra entre sessões usando archival_memory_insert para salvar e archival_memory_search para recuperar.",
+        "plano": "1) Acesse letta.ai e crie conta (plano gratuito disponível) · 2) Leia a doc de memória: 'archival_memory_insert' para salvar informações · 3) Crie um agente com core memory preenchido com contexto da OPC · 4) Teste fazendo o agente lembrar de 3 decisões de um projeto em sessões separadas",
+        "fonte": {
+          "t": "Letta Agent Memory Architecture — Letta Docs",
+          "u": "https://docs.letta.com/guides/agents/architectures/memgpt"
+        },
+        "video": { "t": "", "u": "" }
+      }
+    ]
+  }
+}
