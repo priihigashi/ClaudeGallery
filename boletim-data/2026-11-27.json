@@ -1,0 +1,143 @@
+{
+  "date": "2026-11-27",
+  "generated_by": "routine",
+  "highlights": [
+    {
+      "tag": "URGENTE",
+      "t": "Prazo FAU: confira o portal do Caio até 1º/dez",
+      "why": "A escola adiciona itens de checklist SEM avisar — aplicação incompleta até 1º/dez = excluída do sorteio de admissão. Faltam 4 dias.",
+      "go": "tip"
+    },
+    {
+      "tag": "LEAD",
+      "t": "Novo lead OPC: Jannett Spence — follow-up pendente",
+      "why": "Lead chegou ontem. Quanto antes o contato em construção, maior a taxa de conversão — leads esfriados em 24h caem drasticamente.",
+      "go": "obra"
+    },
+    {
+      "tag": "AUTOMAÇÃO",
+      "t": "OPC Media Sorter falhou 2× — pipeline de conteúdo quebrado",
+      "why": "Falhas nos runs 45906823003 e 45717096977 indicam problema ativo. Conteúdo não está sendo processado automaticamente.",
+      "go": "iafim"
+    },
+    {
+      "tag": "CONTEÚDO",
+      "t": "Verificar trials: Nikolas juiz + tomate — resultados disponíveis hoje",
+      "why": "Trial do Nikolas como juiz da Câmara estava agendado para 10h Miami hoje. Veja tempo médio de visualização e compartilhamentos antes de decidir se publica.",
+      "go": "conteudo"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-11-27",
+      "label": "Boletim de hoje",
+      "note": "8 tópicos pesquisados"
+    }
+  ],
+  "topics": {
+    "tip": [
+      {
+        "id": "tip-2026-11-27",
+        "top": true,
+        "t": "Intenção de Implementação para TDAH: Troque 'Preciso Fazer X' por 'Quando Y, Então X'",
+        "resumo": "A pesquisa mais sólida sobre TDAH e produtividade não é sobre força de vontade — é sobre amarrar a ação a um gatilho concreto. Em vez de 'preciso trabalhar no projeto', você programa: 'quando fechar o e-mail das 9h, abro o documento e digito o título'. O cérebro com TDAH responde ao gatilho, não à intenção vaga.",
+        "porque": "Estudos com crianças com TDAH mostram que planos se-então reduzem erros e aumentam o seguimento de tarefas, equiparando o desempenho ao de crianças sem TDAH. Para adultos, o impacto é eliminar a 'lacuna de ação' — a distância dolorosa entre querer fazer e começar.",
+        "aplicar": "Esta semana: escolha 1 tarefa que você adiou 3+ dias. Monte a frase: 'Quando [evento concreto do seu dia], então farei [primeiro passo minúsculo]'. O primeiro passo deve ser tão pequeno que seja impossível de recusar — abrir o arquivo, digitar um nome, fazer uma ligação de 2 minutos.",
+        "plano": "1) Liste 3 tarefas travadas. · 2) Para cada uma, escreva o gatilho concreto (horário, local ou evento). · 3) Defina o primeiro passo em menos de 2 minutos. · 4) Coloque na agenda como evento — não como tarefa genérica.",
+        "fonte": {"t": "CHADD: Remembering the Future — Prospective Memory & ADHD", "u": "https://chadd.org/?p=70609"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "receita": [
+      {
+        "id": "receita-2026-11-27",
+        "top": true,
+        "t": "Risoto de Beterraba com Levedura Nutricional — Rosa, Vegano, Elaborado, Kid-Friendly",
+        "resumo": "Risoto cor-de-rosa vibrante feito com beterraba ralada, arroz arbóreo, caldo de legumes e levedura nutricional no lugar do queijo. Sem manteiga animal, sem nata — só sabor rico e cor que a criança adora. Rende 4 porções em ~45 min.",
+        "porque": "A beterraba libera açúcar natural no arroz durante o cozimento, criando cremosidade sem laticínios. A levedura nutricional entrega umami e 'sabor de queijo' com proteína extra. É elaborado mas o processo é simples — só exige atenção ao mexer. Cor rosa natural impressiona crianças e visitas.",
+        "aplicar": "Monte o mise en place antes de começar: beterraba ralada, caldo quente na panelinha, cebola picada. Com TDAH, interromper para ralar beterraba no meio do risoto quebra o ritmo e queima o arroz — tudo preparado antes é a chave.",
+        "plano": "1) Ferva 1L de caldo de legumes; mantenha quente em fogo baixo. · 2) Refogue cebola + alho em azeite 3 min; adicione 300g arroz arbóreo, mexa 2 min. · 3) Adicione 2 beterrabas médias raladas; incorpore bem. · 4) Vá adicionando o caldo colher a colher mexendo sempre (20–25 min); finalize com 2 col. sopa levedura nutricional, 1 col. sopa azeite extra e sal.",
+        "fonte": {"t": "Receiteria: Risoto de Beterraba", "u": "https://www.receiteria.com.br/receita/risoto-de-beterraba/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "merch": [
+      {
+        "id": "merch-2026-11-27",
+        "top": true,
+        "t": "CustomCat 2026: Bordado Rápido dos EUA com 4.4★ no Shopify — POD Sem Mensalidade",
+        "resumo": "CustomCat é uma plataforma de print-on-demand baseada em Detroit com foco em bordado rápido para o mercado americano. 4.4★ com 557 avaliações no Shopify App Store. Integra direto à loja sem custo de assinatura — você paga só por produto produzido.",
+        "porque": "Para quem quer tees e moletons bordados sem MOQ alto, CustomCat é uma das poucas opções com bordado real, fulfillment nos EUA (menos custo de frete para clientes americanos) e integração direta com Shopify ou WooCommerce. Merchants elogiam consistência de qualidade e atendimento.",
+        "aplicar": "CustomCat funciona melhor para peças bordadas destinadas ao mercado americano. Para longline feminina, compare o catálogo deles com Printful antes de decidir — o Printful tem mais opções de estilo feminino, mas o CustomCat pode sair mais barato no bordado.",
+        "plano": "1) Crie conta grátis em customcat.com. · 2) Navegue no catálogo de women's tees com bordado disponível. · 3) Peça 1 sample da peça que mais te agrada — ver qualidade real é inegociável. · 4) Compare lado a lado com 1 sample do Printful (Cotton Heritage) para decidir qual entra na loja.",
+        "fonte": {"t": "CustomCat Review 2026 — Ecommerce Platforms", "u": "https://ecommerce-platforms.com/?p=86958"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "conteudo": [
+      {
+        "id": "conteudo-2026-11-27",
+        "top": true,
+        "t": "Opus Clip 2026: Cole o Link do Vídeo Longo → IA Extrai os Melhores Clipes para Reels em Minutos",
+        "resumo": "Opus Clip analisa vídeos longos (podcasts, aulas, lives) e extrai automaticamente clipes curtos para TikTok, Reels e YouTube Shorts. Cada clipe recebe uma 'Virality Score' de 0–99 baseada em hook, ritmo e tendência. Speaker detection mantém o rosto centralizado na vertical. 4.8★ no G2.",
+        "porque": "Se você tem lives ou vídeos longos parados, Opus Clip transforma 1 hora de conteúdo em 10–20 clipes prontos sem edição manual. Economia real de tempo para quem publica em múltiplas plataformas. Diferente de CapCut ou VEED, ele não edita — ele seleciona e recorta automaticamente.",
+        "aplicar": "Teste primeiro com um vídeo de 10–15 min que você já tem — não com o seu melhor conteúdo ainda. Espere ~40% dos clipes gerados serem descartáveis; os 60% restantes costumam ter algo aproveitável com ajuste mínimo de legenda.",
+        "plano": "1) Crie conta em opus.pro (plano gratuito disponível). · 2) Cole o link de um vídeo do YouTube ou faça upload direto. · 3) Revise os clipes por Virality Score — foque nos top 3. · 4) Baixe, adicione legenda final no CapCut se necessário, e publique como trial reel.",
+        "fonte": {"t": "Opus Clip Reviews — G2", "u": "https://www.g2.com/products/opus-clip/reviews"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "obra": [
+      {
+        "id": "obra-2026-11-27",
+        "top": true,
+        "t": "Matterport 3D 2026: Documente a Reforma com Tour Virtual e Publique no Instagram — Leads 95% Mais Propensos a Contato",
+        "resumo": "Matterport transforma qualquer obra ou reforma em um tour 3D interativo compartilhável no Instagram Stories e Facebook. Construtores usam para mostrar progresso de obra (antes/durante/depois) em vez de fotos estáticas — o tour se vende sozinho.",
+        "porque": "Compradores são 95% mais propensos a entrar em contato quando veem um tour Matterport (dado da empresa, verificar com cautela). Para a OPC, isso resolve um problema real: mostrar reformas em andamento sem precisar de fotógrafo ou edição elaborada — o tour 3D faz o trabalho com o app do celular.",
+        "aplicar": "Funciona melhor para reformas completas (kitchen remodel, full gut) onde a transformação é visual. Use em obras já em andamento para criar uma série de conteúdo 'progresso da obra' que você reutiliza em várias fases — antes, estrutura, acabamento, entrega.",
+        "plano": "1) Baixe o app Matterport no celular (iOS/Android) — capture um cômodo de obra como teste gratuito. · 2) Compare o resultado com fotos normais que você já usou no Instagram. · 3) Se aprovado, adicione ao processo padrão de início de obra como documentação + ativo de conteúdo. · 4) Compartilhe o link do tour nos Stories com CTA para o perfil da OPC.",
+        "fonte": {"t": "Matterport: Construção + 3D Digital Twins (caso Xtour)", "u": "https://matterport.com/industries/case-studies/xtour-3d-transformed-construction-quality-assurance-with-matterport-digital-twins"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "geo": [
+      {
+        "id": "geo-2026-11-27",
+        "top": true,
+        "t": "Estreito de Malaca 2026: USD 2,4 Tri por um Canal de 2,5km — O Novo Ponto de Pressão Global",
+        "resumo": "Com a crise no Estreito de Ormuz em 2026, os olhos do mundo voltaram para o Estreito de Malaca — o canal entre Indonésia e Malásia por onde passam ~21% do comércio marítimo global e grande parte do petróleo importado pela China. Uma crise ali afetaria toda a cadeia de suprimentos asiática.",
+        "porque": "Em abril de 2026, EUA e Indonésia assinaram parceria de defesa. Um novo órgão da ASEAN foi criado especificamente para proteger o estreito. Bloomberg o chama de 'o ponto de estrangulamento mais movimentado do mundo'. É o tipo de chokepoint geopolítico que vira pauta nas news.",
+        "aplicar": "Conceito para usar em conteúdo: 'choke points' — estreitos e canais que controlam o fluxo de comércio global. Quem controla os chokepoints controla preços, suprimentos e política. Outros exemplos: Canal de Suez, Bósforo, Estreito de Taiwan.",
+        "plano": "1) Mapeie os 5 principais chokepoints marítimos do mundo num mapa visual. · 2) Pesquise qual percentual do comércio e do petróleo passa por cada um. · 3) Conecte com notícias recentes (Ormuz/Irã, Houthis no Mar Vermelho). · 4) Transforme em infográfico/carrossel — 'Os 5 estreitos que controlam o mundo'.",
+        "fonte": {"t": "The Jakarta Post: Could the Strait of Malacca Be the Next Global Flashpoint?", "u": "https://www.thejakartapost.com/opinion/2026/04/30/could-the-strait-of-malacca-be-the-next-global-flashpoint"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "ads": [
+      {
+        "id": "ads-2026-11-27",
+        "top": true,
+        "t": "Google AI Max 2026: Suas Campanhas DSA Migram em Fevereiro — O Que Preparar Agora",
+        "resumo": "O Google está aposentando os Dynamic Search Ads (DSA) e migrando automaticamente para o AI Max for Search a partir de fevereiro de 2027. Se você tem campanhas DSA, precisa preparar site e configurações antes da migração para não perder controle sobre tráfego e copy gerado pela IA.",
+        "porque": "AI Max escreve headlines e descrições a partir do conteúdo das páginas do seu site e expande URLs automaticamente. Sem configuração prévia, pode enviar tráfego para páginas erradas e criar anúncios fora do tom da sua marca. A preparação agora evita surpresas no CPA.",
+        "aplicar": "Para a OPC: adicione noindex nas páginas que não devem receber tráfego pago (política de privacidade, portal do cliente). Revise H1 e meta titles das páginas principais — são elas que a IA vai usar para escrever os anúncios da sua empresa.",
+        "plano": "1) Acesse Google Ads → verifique se tem campanhas DSA ativas. · 2) Exporte dados de baseline das campanhas DSA (conversões, CPA, ROAS). · 3) Configure brand controls e location controls no AI Max antes da migração. · 4) Monitore search terms de perto nas primeiras 2 semanas pós-migração — relatório semanal.",
+        "fonte": {"t": "Google Blog: DSA Upgrade to AI Max 2026", "u": "https://blog.google/products/ads-commerce/dsa-upgrade-to-ai-max-2026/"},
+        "video": {"t": "", "u": ""}
+      }
+    ],
+    "iafim": [
+      {
+        "id": "iafim-2026-11-27",
+        "top": true,
+        "t": "n8n 2026: Automação Open-Source com Agentes IA, 400+ Integrações e Self-Hosting Gratuito",
+        "resumo": "n8n é uma plataforma de automação visual open-source que, desde a versão 2.0 (jan/2026), tem suporte nativo a agentes IA com LangChain, 70+ nós de IA e memória persistente. Versão community gratuita para self-hosting com execuções ilimitadas; cloud ~$20/mês.",
+        "porque": "Diferente do Zapier (SaaS fechado) e do Make.com (abordado esta semana), o n8n roda no seu próprio servidor — seus dados não saem da sua infraestrutura. Para fluxos sensíveis (leads de clientes, contratos, emails da OPC), isso é vantagem real de privacidade e custo no longo prazo.",
+        "aplicar": "Se o OPC Media Sorter está quebrando com frequência, n8n pode ser usado para reconstruir o pipeline com mais controle e logs detalhados de execução. É mais técnico que Zapier mas o canvas visual reduz bastante a curva — e tem logs de erro muito mais detalhados.",
+        "plano": "1) Teste a versão cloud gratuita em n8n.io — sem instalação necessária. · 2) Monte 1 workflow simples: 'quando email chega com tag X → salva em planilha'. · 3) Se aprovado, considere self-hosting no Railway ou Render (plano gratuito para workloads leves). · 4) Migre gradualmente os fluxos mais críticos do Make.com para o n8n.",
+        "fonte": {"t": "n8n Review 2026: Pricing, AI Agents, and Who It Fits — eesel.ai", "u": "https://www.eesel.ai/blog/n8n-review"},
+        "video": {"t": "", "u": ""}
+      }
+    ]
+  }
+}
